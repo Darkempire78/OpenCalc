@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        android:layout_margin="8dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -320,7 +321,7 @@
                 android:textColor="#fff"
                 android:textSize="42sp" />
         </TableRow>
-        -->
+
     </TableLayout>
 
     <EditText
@@ -335,6 +336,7 @@
         android:text=""
         android:textAlignment="textEnd"
         android:textSize="90sp"
+        android:layout_marginHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -347,6 +349,7 @@
         android:text=""
         android:textAlignment="textEnd"
         android:textSize="45sp"
+        android:layout_marginHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
