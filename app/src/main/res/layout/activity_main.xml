@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#121212">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -12,7 +13,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        android:layout_margin="8dp">
+        android:padding="8dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -329,27 +330,30 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:autofillHints="false"
-        android:background="@android:color/transparent"
+        android:background="#484a40"
         android:inputType="none"
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:text=""
+        android:textColor="#fff"
         android:textAlignment="textEnd"
         android:textSize="90sp"
-        android:layout_marginHorizontal="11dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/resultDisplay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:scrollHorizontally="true"
         android:singleLine="true"
+        android:background="@drawable/display_background"
         android:text=""
+        android:layout_weight="1"
         android:textAlignment="textEnd"
         android:textSize="45sp"
-        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
@@ -366,5 +370,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_baseline_more_vert_24"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
