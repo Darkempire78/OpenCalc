@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import org.mariuszgromada.math.mxparser.*
 
 
@@ -21,9 +23,75 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Themes
+        Log.i(TAG, "Phone: " + AppCompatDelegate.getDefaultNightMode().toString() + " Light: " + AppCompatDelegate.MODE_NIGHT_NO.toString() + " System: "+AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM.toString() + " Dark: " + AppCompatDelegate.MODE_NIGHT_YES.toString())
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES || AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_UNSPECIFIED) {
+            setTheme(R.style.darkTheme) //when dark mode is enabled, we use the dark theme
+        } else {
+            setTheme(R.style.AppTheme)  //default app theme
+        }
+
         setContentView(R.layout.activity_main)
 
+        // check the current selected theme
+        checkTheme()
+
+        // Disable the keyboard on display EditText
         display.showSoftInputOnFocus = false
+    }
+
+    fun selectThemeDialog(view: View) {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.select_theme_title))
+        val styles = arrayOf("Light", "Dark", "System default")
+        val checkedItem = MyPreferences(this).darkMode+
+
+
+        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    MyPreferences(this).darkMode = 0
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+                1 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    MyPreferences(this).darkMode = 1
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+                2 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                    MyPreferences(this).darkMode = 2
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+            }
+
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun checkTheme() {
+        when (MyPreferences(this).darkMode) {
+            0 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                delegate.applyDayNight()
+            }
+            1 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                delegate.applyDayNight()
+            }
+            2 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                delegate.applyDayNight()
+            }
+        }
     }
 
     fun updateDisplay(value: String) {
