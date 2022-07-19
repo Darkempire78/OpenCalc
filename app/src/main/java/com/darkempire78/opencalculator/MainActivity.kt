@@ -4,7 +4,9 @@ import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +40,18 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         display.showSoftInputOnFocus = false
+
+        // Long press backspace button
+        val backspaceButton = findViewById<ImageButton>(R.id.backspaceButton)
+
+        // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
+        backspaceButton.setOnLongClickListener {
+            display.setText("")
+
+            // Clear resultDisplay
+            resultDisplay.setText("")
+            true
+        }
     }
 
     fun selectThemeDialog(view: View) {
@@ -84,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
     fun updateDisplay(value: String) {
         var formerValue = display.text.toString()
-        var cursorPosition = display.selectionStart.toInt()
+        var cursorPosition = display.selectionStart
         var leftValue = formerValue.subSequence(0, cursorPosition).toString()
         var rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 

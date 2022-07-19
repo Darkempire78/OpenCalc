@@ -365,6 +365,7 @@
         android:textAlignment="textEnd"
         android:textSize="45sp"
         android:paddingHorizontal="10dp"
+        android:freezesText="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
