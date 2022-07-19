@@ -25,4 +25,17 @@
         <item name="button_equals_color">@color/dark_button_equals_color</item>
     </style>
 
+    <!-- <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+    </style> -->
+
+    <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+    </style>
+
+    <style name="RobotoFontCondensedMedium" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
 </resources>

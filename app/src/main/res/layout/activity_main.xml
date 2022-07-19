@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="?attr/background_color">
+    android:background="?attr/background_color" >
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -22,7 +22,7 @@
 
             <Button
                 android:id="@+id/clearButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -37,7 +37,7 @@
 
             <Button
                 android:id="@+id/parenthesesButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -52,7 +52,7 @@
 
             <Button
                 android:id="@+id/exponentButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -67,7 +67,7 @@
 
             <Button
                 android:id="@+id/devideButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -88,7 +88,7 @@
 
             <Button
                 android:id="@+id/sevenButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -102,7 +102,7 @@
 
             <Button
                 android:id="@+id/eightButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -116,7 +116,7 @@
 
             <Button
                 android:id="@+id/nineButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -130,7 +130,7 @@
 
             <Button
                 android:id="@+id/multiplyButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -151,7 +151,7 @@
 
             <Button
                 android:id="@+id/fourButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -165,7 +165,7 @@
 
             <Button
                 android:id="@+id/fiveButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -179,7 +179,7 @@
 
             <Button
                 android:id="@+id/sixButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -193,7 +193,7 @@
 
             <Button
                 android:id="@+id/substractButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -214,7 +214,7 @@
 
             <Button
                 android:id="@+id/oneButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -228,7 +228,7 @@
 
             <Button
                 android:id="@+id/twoButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -242,7 +242,7 @@
 
             <Button
                 android:id="@+id/threeButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -256,7 +256,7 @@
 
             <Button
                 android:id="@+id/addButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -277,7 +277,7 @@
 
             <Button
                 android:id="@+id/zeroButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -291,7 +291,7 @@
 
             <Button
                 android:id="@+id/pointButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -305,7 +305,7 @@
 
             <ImageButton
                 android:id="@+id/backspaceButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -317,7 +317,7 @@
 
             <Button
                 android:id="@+id/equalsButton"
-                style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                style="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -335,6 +335,7 @@
 
     <EditText
         android:id="@+id/input"
+        style="@style/RobotoFontCondensedMedium"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:autofillHints="false"
@@ -352,6 +353,7 @@
 
     <TextView
         android:id="@+id/resultDisplay"
+        style="@style/RobotoFontCondensedMedium"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollHorizontally="true"
@@ -382,7 +384,7 @@
 
     <ImageButton
         android:id="@+id/settingsButton"
-        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
