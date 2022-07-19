@@ -5,5 +5,8 @@
         <attr name="background_color" format="color"/>
         <attr name="text_color" format="color"/>
         <attr name="button_color" format="color"/>
+        <attr name="button_symbol_color" format="color"/>
+        <attr name="button_clear_color" format="color"/>
+        <attr name="button_equals_color" format="color"/>
     </declare-styleable>
 </resources>

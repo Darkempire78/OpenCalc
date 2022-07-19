@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="light_foreground_color">#D3D3D3</color>
+    <color name="light_foreground_color">#EFEFEF</color>
     <color name="light_background_color">#fff</color>
     <color name="light_text_color">#000</color>
     <color name="light_button_color">#EFEFEF</color>
+    <color name="light_button_symbol_color">#B4D2E4</color>
+    <color name="light_button_clear_color">#B7DABD</color>
+    <color name="light_button_equals_color">#E1BECD</color>
 
-    <color name="dark_foreground_color">#52534D</color>
+    <color name="dark_foreground_color">#535353</color>
     <color name="dark_background_color">#121212</color>
     <color name="dark_text_color">#EFEFEF</color>
     <color name="dark_button_color">#333333</color>
+    <color name="dark_button_symbol_color">#0070BC</color>
+    <color name="dark_button_clear_color">#008E18</color>
+    <color name="dark_button_equals_color">#DC2272</color>
 </resources>
