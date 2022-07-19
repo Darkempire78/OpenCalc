@@ -1,7 +1,9 @@
 package com.darkempire78.opencalculator
 
+import android.content.ContentValues.TAG
+import android.nfc.Tag
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -284,11 +286,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun backspaceButton(view: View) {
-        var cursorPosition = display.selectionStart.toInt()
+        var cursorPosition = display.selectionStart
         var textLength = display.text.length
 
+        Log.i(TAG, "TESTTETSTTE : " + cursorPosition.toString())
+
         if (cursorPosition != 0 && textLength != 0) {
-            var newValue = display.text.subSequence(0, textLength - 1).toString()
+            var newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(cursorPosition, textLength).toString()
             display.setText(newValue)
 
             display.setSelection(cursorPosition - 1)
