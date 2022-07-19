@@ -46,8 +46,7 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.select_theme_title))
         val styles = arrayOf("Light", "Dark", "System default")
-        val checkedItem = MyPreferences(this).darkMode+
-
+        val checkedItem = MyPreferences(this).darkMode
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
             when (which) {
@@ -114,12 +113,17 @@ class MainActivity : AppCompatActivity() {
 
     fun updateResultDisplay() {
         var calculation = display.text.toString()
-        calculation = calculation.replace('×', '*')
-        calculation = calculation.replace('÷', '/')
 
-        val exp = Expression(calculation)
-        val result = exp.calculate().toString()
-        resultDisplay.setText(result)
+        if (calculation != "") {
+            calculation = calculation.replace('×', '*')
+            calculation = calculation.replace('÷', '/')
+
+            val exp = Expression(calculation)
+            val result = exp.calculate().toString()
+            resultDisplay.setText(result)
+        } else {
+            resultDisplay.setText("")
+        }
     }
 
     fun zeroButton(view: View) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#121212">
+    android:background="?attr/background_color">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -330,7 +330,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:autofillHints="false"
-        android:background="#484a40"
+        android:background="?attr/foreground_color"
         android:inputType="none"
         android:scrollHorizontally="true"
         android:singleLine="true"

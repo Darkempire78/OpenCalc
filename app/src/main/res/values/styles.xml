@@ -1,22 +1,22 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="background_color">#ffff</item>
-        <item name="text_color">#000</item>
-        <item name="button_color">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/light_foreground_color</item>
+
+        <item name="foreground_color">@color/light_foreground_color</item>
+        <item name="background_color">@color/light_background_color</item>
+        <item name="text_color">@color/light_text_color</item>
+        <item name="button_color">@color/light_button_color</item>
     </style>
 
     <!-- dark application theme. -->
     <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#000</item>
-        <item name="colorPrimaryDark">#000</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="background_color">#131313</item>
-        <item name="text_color">#ffff</item>
-        <item name="button_color">#ffff</item>
+        <item name="android:statusBarColor">@color/dark_foreground_color</item>
+
+        <item name="foreground_color">@color/dark_foreground_color</item>
+        <item name="background_color">@color/dark_background_color</item>
+        <item name="text_color">@color/dark_text_color</item>
+        <item name="button_color">@color/dark_button_color</item>
     </style>
 
 </resources>
