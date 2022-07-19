@@ -110,16 +110,20 @@ class MainActivity : AppCompatActivity() {
             val exp = Expression(calculation)
             var result = exp.calculate().toString()
 
-            // If the double ends with .0 we remove the .0
-            if ((exp.calculate() * 10) % 10 == 0.0) {
-                result = String.format("%.0f", exp.calculate())
+            if (result != "NaN" && result != "Infinity") {
+                // If the double ends with .0 we remove the .0
+                if ((exp.calculate() * 10) % 10 == 0.0) {
+                    result = String.format("%.0f", exp.calculate())
+                    resultDisplay.setText(result)
+                } else {
+                    resultDisplay.setText(result)
+                }
                 resultDisplay.setText(result)
+            } else if (result == "Infinity") {
+                resultDisplay.setText("Infinity")
             } else {
-                resultDisplay.setText(result)
+                resultDisplay.setText("")
             }
-            resultDisplay.setText(result)
-        } else {
-            resultDisplay.setText("")
         }
     }
 
@@ -216,6 +220,8 @@ class MainActivity : AppCompatActivity() {
 
             // Clear resultDisplay
             resultDisplay.setText("")
+        } else {
+            resultDisplay.setText(result)
         }
     }
 
