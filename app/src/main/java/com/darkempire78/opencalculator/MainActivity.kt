@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Themes
-        Log.i(TAG, "Phone: " + AppCompatDelegate.getDefaultNightMode().toString() + " Light: " + AppCompatDelegate.MODE_NIGHT_NO.toString() + " System: "+AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM.toString() + " Dark: " + AppCompatDelegate.MODE_NIGHT_YES.toString())
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES || AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_UNSPECIFIED) {
             setTheme(R.style.darkTheme) //when dark mode is enabled, we use the dark theme
         } else {
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.select_theme_title))
-        val styles = arrayOf("Light", "Dark", "System default")
+        val styles = arrayOf("Light", "Dark")
         val checkedItem = MyPreferences(this).darkMode
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
@@ -59,12 +58,6 @@ class MainActivity : AppCompatActivity() {
                 1 -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     MyPreferences(this).darkMode = 1
-                    delegate.applyDayNight()
-                    dialog.dismiss()
-                }
-                2 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                    MyPreferences(this).darkMode = 2
                     delegate.applyDayNight()
                     dialog.dismiss()
                 }
@@ -84,10 +77,6 @@ class MainActivity : AppCompatActivity() {
             }
             1 -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                delegate.applyDayNight()
-            }
-            2 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                 delegate.applyDayNight()
             }
         }
@@ -119,7 +108,13 @@ class MainActivity : AppCompatActivity() {
             calculation = calculation.replace('÷', '/')
 
             val exp = Expression(calculation)
-            val result = exp.calculate().toString()
+            var result = exp.calculate().toString()
+            if ((exp.calculate() * 10) % 10 == 0.0) {
+                result = String.format("%.0f", exp.calculate())
+                resultDisplay.setText(result)
+            } else {
+                resultDisplay.setText(result)
+            }
             resultDisplay.setText(result)
         } else {
             resultDisplay.setText("")
@@ -203,12 +198,17 @@ class MainActivity : AppCompatActivity() {
         calculation = calculation.replace('÷', '/')
 
         val exp = Expression(calculation)
-        val result = exp.calculate().toString()
+        var result = exp.calculate().toString()
 
         mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
 
         if (result != "NaN" && result != "Infinity") {
-            display.setText(result)
+            if ((exp.calculate() * 10) % 10 == 0.0) {
+                result = String.format("%.0f", exp.calculate())
+                display.setText(result)
+            } else {
+                display.setText(result)
+            }
             // Set cursor
             display.setSelection(display.text.length)
 

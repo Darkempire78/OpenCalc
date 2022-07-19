@@ -13,6 +13,6 @@
     <color name="dark_text_color">#EFEFEF</color>
     <color name="dark_button_color">#333333</color>
     <color name="dark_button_symbol_color">#0070BC</color>
-    <color name="dark_button_clear_color">#008E18</color>
+    <color name="dark_button_clear_color">#008E24</color>
     <color name="dark_button_equals_color">#DC2272</color>
 </resources>
