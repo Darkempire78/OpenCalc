@@ -351,21 +351,23 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/resultDisplay"
         style="@style/RobotoFontCondensedMedium"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollHorizontally="true"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
         android:singleLine="true"
         android:background="@drawable/display_background"
         android:text=""
-        android:textColor="?attr/text_color"
+        android:textColor="?attr/text_second_color"
         android:layout_weight="1"
         android:textAlignment="textEnd"
         android:textSize="45sp"
         android:paddingHorizontal="10dp"
-        android:freezesText="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 

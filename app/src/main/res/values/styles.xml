@@ -6,6 +6,7 @@
         <item name="foreground_color">@color/light_foreground_color</item>
         <item name="background_color">@color/light_background_color</item>
         <item name="text_color">@color/light_text_color</item>
+        <item name="text_second_color">@color/light_text_second_color</item>
         <item name="button_color">@color/light_button_color</item>
         <item name="button_symbol_color">@color/light_button_symbol_color</item>
         <item name="button_clear_color">@color/light_button_clear_color</item>
@@ -19,6 +20,7 @@
         <item name="foreground_color">@color/dark_foreground_color</item>
         <item name="background_color">@color/dark_background_color</item>
         <item name="text_color">@color/dark_text_color</item>
+        <item name="text_second_color">@color/dark_text_second_color</item>
         <item name="button_color">@color/dark_button_color</item>
         <item name="button_symbol_color">@color/dark_button_symbol_color</item>
         <item name="button_clear_color">#00BA20</item>

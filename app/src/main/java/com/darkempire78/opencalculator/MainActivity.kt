@@ -1,10 +1,8 @@
 package com.darkempire78.opencalculator
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
+import android.text.method.ScrollingMovementMethod
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -46,10 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         backspaceButton.setOnLongClickListener {
-
             display.setText("")
-
-            // Clear resultDisplay
             resultDisplay.setText("")
             true
         }
@@ -129,7 +124,6 @@ class MainActivity : AppCompatActivity() {
                 // If the double ends with .0 we remove the .0
                 if ((exp.calculate() * 10) % 10 == 0.0) {
                     result = String.format("%.0f", exp.calculate())
-                    Log.i(TAG, result + " ::::: " + calculation)
                     if (result != calculation) {
                         resultDisplay.setText(result)
                     } else {
