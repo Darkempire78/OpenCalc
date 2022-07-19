@@ -109,6 +109,8 @@ class MainActivity : AppCompatActivity() {
 
             val exp = Expression(calculation)
             var result = exp.calculate().toString()
+
+            // If the double ends with .0 we remove the .0
             if ((exp.calculate() * 10) % 10 == 0.0) {
                 result = String.format("%.0f", exp.calculate())
                 resultDisplay.setText(result)
