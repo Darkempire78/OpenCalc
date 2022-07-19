@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         backspaceButton.setOnLongClickListener {
+
             display.setText("")
 
             // Clear resultDisplay
@@ -128,16 +129,26 @@ class MainActivity : AppCompatActivity() {
                 // If the double ends with .0 we remove the .0
                 if ((exp.calculate() * 10) % 10 == 0.0) {
                     result = String.format("%.0f", exp.calculate())
-                    resultDisplay.setText(result)
+                    Log.i(TAG, result + " ::::: " + calculation)
+                    if (result != calculation) {
+                        resultDisplay.setText(result)
+                    } else {
+                        resultDisplay.setText("")
+                    }
                 } else {
-                    resultDisplay.setText(result)
+                    if (result != calculation) {
+                        resultDisplay.setText(result)
+                    } else {
+                        resultDisplay.setText("")
+                    }
                 }
-                resultDisplay.setText(result)
             } else if (result == "Infinity") {
                 resultDisplay.setText("Infinity")
             } else {
                 resultDisplay.setText("")
             }
+        } else {
+            resultDisplay.setText("")
         }
     }
 
@@ -217,25 +228,29 @@ class MainActivity : AppCompatActivity() {
         calculation = calculation.replace('×', '*')
         calculation = calculation.replace('÷', '/')
 
-        val exp = Expression(calculation)
-        var result = exp.calculate().toString()
+        if (calculation != "") {
+            val exp = Expression(calculation)
+            var result = exp.calculate().toString()
 
-        mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
+            mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
 
-        if (result != "NaN" && result != "Infinity") {
-            if ((exp.calculate() * 10) % 10 == 0.0) {
-                result = String.format("%.0f", exp.calculate())
-                display.setText(result)
+            if (result != "NaN" && result != "Infinity") {
+                if ((exp.calculate() * 10) % 10 == 0.0) {
+                    result = String.format("%.0f", exp.calculate())
+                    display.setText(result)
+                } else {
+                    display.setText(result)
+                }
+                // Set cursor
+                display.setSelection(display.text.length)
+
+                // Clear resultDisplay
+                resultDisplay.setText("")
             } else {
-                display.setText(result)
+                resultDisplay.setText(result)
             }
-            // Set cursor
-            display.setSelection(display.text.length)
-
-            // Clear resultDisplay
-            resultDisplay.setText("")
         } else {
-            resultDisplay.setText(result)
+            resultDisplay.setText("")
         }
     }
 
