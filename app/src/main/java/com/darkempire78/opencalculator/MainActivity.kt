@@ -7,9 +7,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -24,6 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     private val resultDisplay: TextView
     get() = findViewById(R.id.resultDisplay)
+
+    private val scientistModeRow2: TableRow
+    get() = findViewById(R.id.scientistModeRow2)
+
+    private val scientistModeRow3: TableRow
+    get() = findViewById(R.id.scientistModeRow3)
+
+    private val scientistModeSwitchButton: Button
+    get() = findViewById(R.id.scientistModeSwitchButton)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -349,6 +356,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         updateResultDisplay()
+    }
+
+    fun scientistModeSwitchButton(view: View) {
+        if(scientistModeRow2.visibility != View.VISIBLE)
+        {
+            scientistModeRow2.setVisibility(View.VISIBLE)
+            scientistModeRow3.setVisibility(View.VISIBLE)
+            scientistModeSwitchButton.setText("∧")
+        } else {
+            scientistModeRow2.setVisibility(View.GONE)
+            scientistModeRow3.setVisibility(View.GONE)
+            scientistModeSwitchButton.setText("∨")
+        }
     }
 
 }

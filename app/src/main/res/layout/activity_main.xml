@@ -94,7 +94,8 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/foreground_color"
-                android:text="^"
+                android:text="@string/scientistModeSwitchButton"
+                android:onClick="scientistModeSwitchButton"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
@@ -102,9 +103,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/scientistModeRow2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1">
+            android:layout_weight="0.1"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/degreeButton"
@@ -182,9 +185,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/scientistModeRow3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1">
+            android:layout_weight="0.1"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/invButton"

@@ -39,4 +39,6 @@
     <string name="factorial">!</string>
     <string name="square">√</string>
 
+    <string name="scientistModeSwitchButton">∨</string>
+
 </resources>
