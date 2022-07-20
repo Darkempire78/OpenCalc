@@ -18,16 +18,262 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="0.1">
 
             <Button
-                android:id="@+id/clearButton"
-                style="@style/RobotoFontCondensedLight"
+                android:id="@+id/squareButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/square"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/piButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/pi"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/devideBy100Button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/devideBy100"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/factorialButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/factorial"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/scientistModeSwitchButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="0.7"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/foreground_color"
+                android:text="^"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1">
+
+            <Button
+                android:id="@+id/degreeButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/degree"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/sinusButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/sinus"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/cosinusButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/cosinus"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/tangentButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/tangent"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/emptyScientistMode1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="0.7"
+                android:backgroundTint="@android:color/transparent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1">
+
+            <Button
+                android:id="@+id/invButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/inv"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/eButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/e"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/naturalLogarithmButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/naturalLogarithm"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/logarithmButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:background="@drawable/circle"
+                android:backgroundTint="?attr/background_color"
+                android:onClick="clearButton"
+                android:text="@string/logarithm"
+                android:textAllCaps="false"
+                android:textColor="?attr/text_color"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/emptyScientistMode2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="0.7"
+                android:backgroundTint="@android:color/transparent" />
+
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/clearButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_clear_color"
                 android:onClick="clearButton"
@@ -37,12 +283,12 @@
 
             <Button
                 android:id="@+id/parenthesesButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="parenthesesButton"
@@ -52,12 +298,12 @@
 
             <Button
                 android:id="@+id/exponentButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="exponentButton"
@@ -67,12 +313,12 @@
 
             <Button
                 android:id="@+id/devideButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="devideButton"
@@ -88,12 +334,12 @@
 
             <Button
                 android:id="@+id/sevenButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="sevenButton"
                 android:text="@string/seven"
@@ -102,12 +348,12 @@
 
             <Button
                 android:id="@+id/eightButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="eightButton"
                 android:text="@string/eight"
@@ -116,12 +362,12 @@
 
             <Button
                 android:id="@+id/nineButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="nineButton"
                 android:text="@string/nine"
@@ -130,12 +376,12 @@
 
             <Button
                 android:id="@+id/multiplyButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="multiplyButton"
@@ -151,12 +397,12 @@
 
             <Button
                 android:id="@+id/fourButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="fourButton"
                 android:text="@string/four"
@@ -165,12 +411,12 @@
 
             <Button
                 android:id="@+id/fiveButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="fiveButton"
                 android:text="@string/five"
@@ -179,12 +425,12 @@
 
             <Button
                 android:id="@+id/sixButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="sixButton"
                 android:text="@string/six"
@@ -193,12 +439,12 @@
 
             <Button
                 android:id="@+id/substractButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="substractButton"
@@ -214,12 +460,12 @@
 
             <Button
                 android:id="@+id/oneButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="oneButton"
                 android:text="@string/one"
@@ -228,12 +474,12 @@
 
             <Button
                 android:id="@+id/twoButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="twoButton"
                 android:text="@string/two"
@@ -242,12 +488,12 @@
 
             <Button
                 android:id="@+id/threeButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="threeButton"
                 android:text="@string/three"
@@ -256,12 +502,12 @@
 
             <Button
                 android:id="@+id/addButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="addButton"
@@ -277,12 +523,12 @@
 
             <Button
                 android:id="@+id/zeroButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="zeroButton"
                 android:text="@string/zero"
@@ -291,12 +537,12 @@
 
             <Button
                 android:id="@+id/pointButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:onClick="pointButton"
                 android:text="@string/point"
@@ -305,7 +551,8 @@
 
             <ImageButton
                 android:id="@+id/backspaceButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -317,12 +564,12 @@
 
             <Button
                 android:id="@+id/equalsButton"
-                style="@style/RobotoFontCondensedLight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:height="100dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_equals_color"
                 android:onClick="equalsButton"
@@ -376,18 +623,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <ImageButton
         android:id="@+id/settingsButton"
         style="@style/RobotoFontCondensedLight"
+        android:fontFamily="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

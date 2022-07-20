@@ -24,4 +24,19 @@
     <string name="exponent">^</string>
     <string name="backspace"> </string>
 
+    <string name="devideBy100">%</string>
+    <string name="degree">DEG</string>
+    <string name="sinus">sin</string>
+    <string name="cosinus">cos</string>
+
+    <string name="tangent">tan</string>
+    <string name="inv">INV</string>
+    <string name="e">e</string>
+    <string name="naturalLogarithm">ln</string>
+
+    <string name="logarithm">log</string>
+    <string name="pi">π</string>
+    <string name="factorial">!</string>
+    <string name="square">√</string>
+
 </resources>
