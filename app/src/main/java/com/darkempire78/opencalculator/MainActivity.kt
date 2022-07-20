@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         display.setText(newValue)
 
         // Increase cursor position
-        display.setSelection(cursorPosition + 1)
+        display.setSelection(cursorPosition + value.length)
 
         // Update resultDisplay
         updateResultDisplay()
@@ -120,6 +120,7 @@ class MainActivity : AppCompatActivity() {
         if (calculation != "") {
             calculation = calculation.replace('×', '*')
             calculation = calculation.replace('÷', '/')
+            calculation = calculation.replace("log", "log10")
 
             val exp = Expression(calculation)
             var result = exp.calculate().toString()
@@ -214,6 +215,54 @@ class MainActivity : AppCompatActivity() {
         updateDisplay("^")
     }
 
+    fun sinusButton(view: View) {
+        updateDisplay("sin(")
+    }
+
+    fun cosinusButton(view: View) {
+        updateDisplay("cos(")
+    }
+
+    fun tangentButton(view: View) {
+        updateDisplay("tan(")
+    }
+
+    fun eButton(view: View) {
+        updateDisplay("e")
+    }
+
+    fun naturalLogarithmButton(view: View) {
+        updateDisplay("ln(")
+    }
+
+    fun logarithmButton(view: View) {
+        updateDisplay("log(")
+    }
+
+    fun piButton(view: View) {
+        updateDisplay("π")
+    }
+
+    fun factorialButton(view: View) {
+        updateDisplay("!")
+    }
+
+    fun squareButton(view: View) {
+        updateDisplay("√")
+    }
+
+    fun devideBy100(view: View) {
+        updateDisplay("%")
+    }
+
+    fun degreeButton(view: View) {
+
+    }
+
+    fun invButton(view: View) {
+
+    }
+
     fun clearButton(view: View) {
         display.setText("")
 
@@ -225,6 +274,7 @@ class MainActivity : AppCompatActivity() {
         var calculation = display.text.toString()
         calculation = calculation.replace('×', '*')
         calculation = calculation.replace('÷', '/')
+        calculation = calculation.replace("log", "log10")
 
         if (calculation != "") {
             val exp = Expression(calculation)
