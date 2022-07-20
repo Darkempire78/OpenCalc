@@ -7,7 +7,9 @@
     <color name="light_button_color">#EFEFEF</color>
     <color name="light_button_symbol_color">#B4D2E4</color>
     <color name="light_button_clear_color">#B7DABD</color>
-    <color name="light_button_equals_color">#E1BECD</color>
+    <color name="light_button_equals_color">#DCB5C5</color>
+    <color name="light_button_ripple_color">#C3C3C3</color>
+
 
     <color name="dark_foreground_color">#535353</color>
     <color name="dark_background_color">#121212</color>
@@ -15,6 +17,7 @@
     <color name="dark_text_second_color">#DDDDDD</color>
     <color name="dark_button_color">#333333</color>
     <color name="dark_button_symbol_color">#0070BC</color>
-    <color name="dark_button_clear_color">#008E24</color>
-    <color name="dark_button_equals_color">#DC2272</color>
+    <color name="dark_button_clear_color">#00BA20</color>
+    <color name="dark_button_equals_color">#B3004D</color>
+    <color name="dark_button_ripple_color">#9E9E9E</color>
 </resources>

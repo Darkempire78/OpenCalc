@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="?attr/button_ripple_color"
+    tools:targetApi="lollipop">
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="1000dp"/>
@@ -7,4 +10,4 @@
 
         </shape>
     </item>
-</selector>
+</ripple>

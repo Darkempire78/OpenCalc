@@ -1,8 +1,10 @@
 package com.darkempire78.opencalculator
 
 import android.content.ContentValues.TAG
-import android.nfc.Tag
+import android.content.Context
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -288,8 +290,6 @@ class MainActivity : AppCompatActivity() {
     fun backspaceButton(view: View) {
         var cursorPosition = display.selectionStart
         var textLength = display.text.length
-
-        Log.i(TAG, "TESTTETSTTE : " + cursorPosition.toString())
 
         if (cursorPosition != 0 && textLength != 0) {
             var newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(cursorPosition, textLength).toString()
