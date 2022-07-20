@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private val scientistModeRow3: TableRow
     get() = findViewById(R.id.scientistModeRow3)
 
-    private val scientistModeSwitchButton: Button
+    private val scientistModeSwitchButton: ImageButton
     get() = findViewById(R.id.scientistModeSwitchButton)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -363,11 +363,11 @@ class MainActivity : AppCompatActivity() {
         {
             scientistModeRow2.setVisibility(View.VISIBLE)
             scientistModeRow3.setVisibility(View.VISIBLE)
-            scientistModeSwitchButton.setText("∧")
+            scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
         } else {
             scientistModeRow2.setVisibility(View.GONE)
             scientistModeRow3.setVisibility(View.GONE)
-            scientistModeSwitchButton.setText("∨")
+            scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
         }
     }
 

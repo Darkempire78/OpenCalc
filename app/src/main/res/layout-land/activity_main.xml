@@ -113,7 +113,7 @@
                 android:textSize="28sp" />
 
             <Button
-                android:id="@+id/multiplyButton"
+                android:id="@+id/devideButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
@@ -122,8 +122,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
-                android:onClick="multiplyButton"
-                android:text="@string/multiply"
+                android:onClick="devideButton"
+                android:text="@string/devide"
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
@@ -247,8 +247,10 @@
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
+
+
             <Button
-                android:id="@+id/substractButton"
+                android:id="@+id/multiplyButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
@@ -257,8 +259,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
-                android:onClick="substractButton"
-                android:text="@string/substract"
+                android:onClick="multiplyButton"
+                android:text="@string/multiply"
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
@@ -382,7 +384,7 @@
                 android:textSize="28sp" />
 
             <Button
-                android:id="@+id/addButton"
+                android:id="@+id/substractButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
@@ -391,8 +393,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
-                android:onClick="addButton"
-                android:text="@string/add"
+                android:onClick="substractButton"
+                android:text="@string/substract"
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
@@ -514,7 +516,7 @@
                 app:srcCompat="@drawable/backspace" />
 
             <Button
-                android:id="@+id/devideButton"
+                android:id="@+id/addButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
@@ -523,8 +525,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
-                android:onClick="devideButton"
-                android:text="@string/devide"
+                android:onClick="addButton"
+                android:text="@string/add"
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
@@ -561,7 +563,7 @@
         android:textColor="?attr/text_color"
         android:textAlignment="textEnd"
         android:textSize="65sp"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -581,7 +583,7 @@
         android:layout_weight="1"
         android:textAlignment="textEnd"
         android:textSize="35sp"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 

@@ -13,19 +13,22 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        android:padding="8dp">
+        android:paddingHorizontal="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="0dp">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0">
+            android:layout_weight="0"
+            android:layout_marginBottom="2dp">
 
             <Button
                 android:id="@+id/squareButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -41,7 +44,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -57,7 +60,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -73,7 +76,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -84,21 +87,21 @@
                 android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/scientistModeSwitchButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="0.7"
+                android:layout_margin="2dp"
+                android:layout_weight="0.6"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/foreground_color"
-                android:text="@string/scientistModeSwitchButton"
                 android:onClick="scientistModeSwitchButton"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"/>
 
         </TableRow>
 
@@ -114,7 +117,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -130,7 +133,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -146,7 +149,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -162,7 +165,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -178,8 +181,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="0.7"
+                android:layout_margin="2dp"
+                android:layout_weight="0.6"
                 android:backgroundTint="@android:color/transparent" />
 
         </TableRow>
@@ -196,7 +199,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -212,7 +215,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -228,7 +231,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -244,7 +247,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:background="@drawable/circle"
@@ -260,8 +263,8 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="0.7"
+                android:layout_margin="2dp"
+                android:layout_weight="0.6"
                 android:backgroundTint="@android:color/transparent" />
 
         </TableRow>
@@ -620,6 +623,7 @@
         android:textAlignment="textEnd"
         android:textSize="45sp"
         android:paddingHorizontal="10dp"
+        android:paddingBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
