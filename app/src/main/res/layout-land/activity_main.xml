@@ -420,11 +420,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-
-
-
-
-
             <Button
                 android:id="@+id/sinusButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -613,5 +608,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+    <TextView
+        android:id="@+id/DegreeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        style="@style/RobotoFontCondensedMedium"
+        android:textSize="25sp"
+        android:text="DEG"
+        android:textColor="?attr/text_third_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

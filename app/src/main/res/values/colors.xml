@@ -4,6 +4,7 @@
     <color name="light_background_color">#fff</color>
     <color name="light_text_color">#000</color>
     <color name="light_text_second_color">#353535</color>
+    <color name="light_text_third_color">#7E7E7E</color>
     <color name="light_button_color">#EFEFEF</color>
     <color name="light_button_symbol_color">#B4D2E4</color>
     <color name="light_button_clear_color">#B7DABD</color>
@@ -15,6 +16,7 @@
     <color name="dark_background_color">#121212</color>
     <color name="dark_text_color">#EFEFEF</color>
     <color name="dark_text_second_color">#DDDDDD</color>
+    <color name="dark_text_third_color">#B1B1B1</color>
     <color name="dark_button_color">#333333</color>
     <color name="dark_button_symbol_color">#0070BC</color>
     <color name="dark_button_clear_color">#00BA20</color>

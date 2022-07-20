@@ -18,22 +18,26 @@ class MainActivity : AppCompatActivity() {
 
     // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
     private val display: EditText
-    get() = findViewById(R.id.input)
+        get() = findViewById(R.id.input)
 
     private val resultDisplay: TextView
-    get() = findViewById(R.id.resultDisplay)
+        get() = findViewById(R.id.resultDisplay)
 
     private val scientistModeRow2: TableRow
-    get() = findViewById(R.id.scientistModeRow2)
+        get() = findViewById(R.id.scientistModeRow2)
 
     private val scientistModeRow3: TableRow
-    get() = findViewById(R.id.scientistModeRow3)
+        get() = findViewById(R.id.scientistModeRow3)
 
     private val scientistModeSwitchButton: ImageButton
-    get() = findViewById(R.id.scientistModeSwitchButton)
+        get() = findViewById(R.id.scientistModeSwitchButton)
 
     private val degreeButton: Button
         get() = findViewById(R.id.degreeButton)
+
+    private val degreeTextView: TextView
+        get() = findViewById(R.id.DegreeTextView)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -277,6 +281,7 @@ class MainActivity : AppCompatActivity() {
             mXparser.setDegreesMode()
         }
 
+        degreeTextView.setText(degreeButton.text.toString())
         updateResultDisplay()
     }
 
@@ -378,10 +383,14 @@ class MainActivity : AppCompatActivity() {
             scientistModeRow2.setVisibility(View.VISIBLE)
             scientistModeRow3.setVisibility(View.VISIBLE)
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            degreeTextView.setVisibility(View.VISIBLE)
+            degreeTextView.setText(degreeButton.text.toString())
         } else {
             scientistModeRow2.setVisibility(View.GONE)
             scientistModeRow3.setVisibility(View.GONE)
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            degreeTextView.setVisibility(View.GONE)
+            degreeTextView.setText(degreeButton.text.toString())
         }
     }
 
