@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     private val scientistModeSwitchButton: ImageButton
     get() = findViewById(R.id.scientistModeSwitchButton)
 
+    private val degreeButton: Button
+        get() = findViewById(R.id.degreeButton)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -59,6 +62,9 @@ class MainActivity : AppCompatActivity() {
             resultDisplay.setText("")
             true
         }
+
+        // Set degree by default
+        mXparser.setDegreesMode()
     }
 
     fun selectThemeDialog(view: View) {
@@ -263,7 +269,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun degreeButton(view: View) {
+        if (degreeButton.text.toString() == "DEG") {
+            degreeButton.setText("RAD")
+            mXparser.setRadiansMode()
+        } else {
+            degreeButton.setText("DEG")
+            mXparser.setDegreesMode()
+        }
 
+        updateResultDisplay()
     }
 
     fun invButton(view: View) {
