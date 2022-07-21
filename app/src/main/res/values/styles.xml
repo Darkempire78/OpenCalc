@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/light_foreground_color</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
 
         <item name="foreground_color">@color/light_foreground_color</item>
@@ -19,6 +20,7 @@
     <!-- dark application theme. -->
     <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/dark_foreground_color</item>
+        <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/dark_background_color</item>
 
         <item name="foreground_color">@color/dark_foreground_color</item>

@@ -595,7 +595,7 @@
         android:layout_height="0dp"
         android:autofillHints="false"
         android:background="?attr/foreground_color"
-        android:inputType="none"
+        android:inputType="textNoSuggestions"
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:text=""
