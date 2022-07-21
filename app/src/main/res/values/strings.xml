@@ -27,16 +27,22 @@
     <string name="devideBy100">%</string>
     <string name="degree">DEG</string>
     <string name="sinus">sin</string>
+    <string name="sinusInv">sin⁻¹</string>
     <string name="cosinus">cos</string>
+    <string name="cosinusInv">cos⁻¹</string>
 
     <string name="tangent">tan</string>
+    <string name="tangentInv">tan⁻¹</string>
     <string name="inv">INV</string>
     <string name="e">e</string>
     <string name="naturalLogarithm">ln</string>
+    <string name="naturalLogarithmInv">e^</string>
 
     <string name="logarithm">log</string>
+    <string name="logarithmInv">10^</string>
     <string name="pi">π</string>
     <string name="factorial">!</string>
     <string name="square">√</string>
+    <string name="squareInv">x²</string>
 
 </resources>

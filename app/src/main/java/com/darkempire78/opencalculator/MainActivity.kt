@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
     private val degreeTextView: TextView
         get() = findViewById(R.id.DegreeTextView)
 
+    private val invButton: Button
+        get() = findViewById(R.id.invButton)
+
+    private var isInvButtonClicked = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -233,15 +238,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sinusButton(view: View) {
-        updateDisplay("sin(")
+        if (isInvButtonClicked == false) {
+            updateDisplay("sin(")
+        } else {
+            updateDisplay("arcsin(")
+        }
     }
 
     fun cosinusButton(view: View) {
-        updateDisplay("cos(")
+        if (isInvButtonClicked == false) {
+            updateDisplay("cos(")
+        } else {
+            updateDisplay("arccos(")
+        }
+
     }
 
     fun tangentButton(view: View) {
-        updateDisplay("tan(")
+        if (isInvButtonClicked == false) {
+            updateDisplay("tan(")
+        } else {
+            updateDisplay("arctan(")
+        }
     }
 
     fun eButton(view: View) {
@@ -249,11 +267,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun naturalLogarithmButton(view: View) {
-        updateDisplay("ln(")
+        if (isInvButtonClicked == false) {
+            updateDisplay("ln(")
+        } else {
+            updateDisplay("exp(")
+        }
+
     }
 
     fun logarithmButton(view: View) {
-        updateDisplay("log(")
+        if (isInvButtonClicked == false) {
+            updateDisplay("log(")
+        } else {
+            updateDisplay("10^")
+        }
     }
 
     fun piButton(view: View) {
@@ -265,7 +292,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun squareButton(view: View) {
-        updateDisplay("√")
+        if (isInvButtonClicked == false) {
+            updateDisplay("√")
+        } else {
+            updateDisplay("^2")
+        }
+
     }
 
     fun devideBy100(view: View) {
@@ -286,7 +318,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun invButton(view: View) {
+        if (isInvButtonClicked == false) {
+            isInvButtonClicked = true
 
+            // change buttons
+            findViewById<Button>(R.id.sinusButton).setText(R.string.sinusInv)
+            findViewById<Button>(R.id.cosinusButton).setText(R.string.cosinusInv)
+            findViewById<Button>(R.id.tangentButton).setText(R.string.tangentInv)
+            findViewById<Button>(R.id.naturalLogarithmButton).setText(R.string.naturalLogarithmInv)
+            findViewById<Button>(R.id.logarithmButton).setText(R.string.logarithmInv)
+            findViewById<Button>(R.id.squareButton).setText(R.string.squareInv)
+        } else {
+            isInvButtonClicked = false
+
+            // change buttons
+            findViewById<Button>(R.id.sinusButton).setText(R.string.sinus)
+            findViewById<Button>(R.id.cosinusButton).setText(R.string.cosinus)
+            findViewById<Button>(R.id.tangentButton).setText(R.string.tangent)
+            findViewById<Button>(R.id.naturalLogarithmButton).setText(R.string.naturalLogarithm)
+            findViewById<Button>(R.id.logarithmButton).setText(R.string.logarithm)
+            findViewById<Button>(R.id.squareButton).setText(R.string.square)
+        }
     }
 
     fun clearButton(view: View) {
