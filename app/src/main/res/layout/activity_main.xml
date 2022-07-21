@@ -280,14 +280,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_clear_color"
                 android:onClick="clearButton"
                 android:text="@string/clear"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/parenthesesButton"
@@ -295,14 +296,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="parenthesesButton"
                 android:text="@string/parentheses"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/exponentButton"
@@ -310,14 +312,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="exponentButton"
                 android:text="@string/exponent"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/devideButton"
@@ -325,14 +328,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="devideButton"
                 android:text="@string/devide"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
         </TableRow>
 
         <TableRow
@@ -346,13 +350,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="sevenButton"
                 android:text="@string/seven"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/eightButton"
@@ -360,13 +365,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="eightButton"
                 android:text="@string/eight"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/nineButton"
@@ -374,13 +380,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="nineButton"
                 android:text="@string/nine"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/multiplyButton"
@@ -388,14 +395,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="multiplyButton"
                 android:text="@string/multiply"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
         </TableRow>
 
         <TableRow
@@ -409,13 +417,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="fourButton"
                 android:text="@string/four"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/fiveButton"
@@ -423,13 +432,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="fiveButton"
                 android:text="@string/five"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/sixButton"
@@ -437,13 +447,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="sixButton"
                 android:text="@string/six"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/substractButton"
@@ -451,14 +462,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="substractButton"
                 android:text="@string/substract"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
         </TableRow>
 
         <TableRow
@@ -472,13 +484,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="oneButton"
                 android:text="@string/one"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/twoButton"
@@ -486,13 +499,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="twoButton"
                 android:text="@string/two"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/threeButton"
@@ -500,13 +514,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="threeButton"
                 android:text="@string/three"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/addButton"
@@ -514,14 +529,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_symbol_color"
                 android:onClick="addButton"
                 android:text="@string/add"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
         </TableRow>
 
         <TableRow
@@ -535,13 +551,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="zeroButton"
                 android:text="@string/zero"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/pointButton"
@@ -549,13 +566,14 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:onClick="pointButton"
                 android:text="@string/point"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
 
             <ImageButton
                 android:id="@+id/backspaceButton"
@@ -563,7 +581,8 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:contentDescription="@string/backspace"
@@ -576,14 +595,15 @@
                 android:fontFamily="@style/RobotoFontCondensedLight"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="7dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="?attr/button_equals_color"
                 android:onClick="equalsButton"
                 android:text="@string/equals"
                 android:textColor="?attr/text_color"
-                android:textSize="42sp" />
+                android:textSize="36sp" />
         </TableRow>
 
     </TableLayout>
@@ -601,7 +621,7 @@
         android:text=""
         android:textColor="?attr/text_color"
         android:textAlignment="textEnd"
-        android:textSize="75sp"
+        android:textSize="65sp"
         android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
