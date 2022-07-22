@@ -169,6 +169,24 @@ class MainActivity : AppCompatActivity() {
             calculation = calculation.replace('÷', '/')
             calculation = calculation.replace("log", "log10")
 
+            // Add ")" which lack
+            var openParentheses = 0
+            var closeParentheses = 0
+
+            for (i in 0..calculation.length-1) {
+                if (calculation[i] == '(') {
+                    openParentheses += 1
+                }
+                if (calculation[i] == ')') {
+                    closeParentheses += 1
+                }
+            }
+            if (closeParentheses < openParentheses) {
+                for (i in 0..openParentheses-closeParentheses-1) {
+                    calculation += ')'
+                }
+            }
+
             val exp = Expression(calculation)
             var result = exp.calculate().toString()
 
@@ -484,7 +502,6 @@ class MainActivity : AppCompatActivity() {
             degreeTextView.visibility = View.VISIBLE
             degreeTextView.text = degreeButton.text.toString()
         } else {
-
             scientistModeRow2.visibility = View.GONE
             scientistModeRow3.visibility = View.GONE
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
