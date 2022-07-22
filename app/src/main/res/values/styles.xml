@@ -5,6 +5,9 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
 
+        <item name="android:itemBackground">@color/light_background_color</item>
+        <item name="android:textColor">@color/light_text_color</item>
+
         <item name="foreground_color">@color/light_foreground_color</item>
         <item name="background_color">@color/light_background_color</item>
         <item name="text_color">@color/light_text_color</item>
@@ -22,6 +25,9 @@
         <item name="android:statusBarColor">@color/dark_foreground_color</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/dark_background_color</item>
+
+        <item name="android:itemBackground">@color/dark_background_color</item>
+        <item name="android:textColor">@color/dark_text_color</item>
 
         <item name="foreground_color">@color/dark_foreground_color</item>
         <item name="background_color">@color/dark_background_color</item>

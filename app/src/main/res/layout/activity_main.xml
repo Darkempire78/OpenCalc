@@ -669,7 +669,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/ic_baseline_more_vert_24"
-        android:onClick="selectThemeDialog"
+        android:onClick="openAppMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_more_vert_24" />

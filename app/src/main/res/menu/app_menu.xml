@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/app_menu_theme_button"
+        android:title="@string/app_menu_theme"
+        android:onClick="selectThemeDialog" />
+
+    <item
+        android:id="@+id/app_menu_github_button"
+        android:title="@string/app_menu_github"
+        android:onClick="openGithubLink"
+        />
+</menu>

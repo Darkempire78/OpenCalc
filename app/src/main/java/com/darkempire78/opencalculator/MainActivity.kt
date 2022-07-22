@@ -1,11 +1,9 @@
 package com.darkempire78.opencalculator
 
-import android.content.ContentValues.TAG
-import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
-import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -37,9 +35,6 @@ class MainActivity : AppCompatActivity() {
 
     private val degreeTextView: TextView
         get() = findViewById(R.id.DegreeTextView)
-
-    private val invButton: Button
-        get() = findViewById(R.id.invButton)
 
     private var isInvButtonClicked = false
 
@@ -76,10 +71,31 @@ class MainActivity : AppCompatActivity() {
         mXparser.setDegreesMode()
     }
 
-    fun selectThemeDialog(view: View) {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }*/
+
+    fun openAppMenu(view: View) {
+        var popup = PopupMenu(this, view);
+        var inflater = popup.menuInflater
+        inflater.inflate(R.menu.app_menu, popup.menu);
+        popup.show();
+    }
+
+    fun openGithubLink(menuItem: MenuItem) {
+        val browserIntent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("https://github.com/Darkempire78/OpenCalc")
+        )
+        startActivity(browserIntent)
+    }
+
+    fun selectThemeDialog(menuItem: MenuItem) {
 
         val builder = AlertDialog.Builder(this)
-        builder.setTitle(getString(R.string.select_theme_title))
+        //builder.setTitle(getString(R.string.select_theme_title))
+
         val styles = arrayOf("Light", "Dark")
         val checkedItem = MyPreferences(this).darkMode
 
@@ -438,7 +454,10 @@ class MainActivity : AppCompatActivity() {
         var textLength = display.text.length
 
         if (cursorPosition != 0 && textLength != 0) {
-            var newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(cursorPosition, textLength).toString()
+            var newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(
+                cursorPosition,
+                textLength
+            ).toString()
             display.setText(newValue)
 
             display.setSelection(cursorPosition - 1)
