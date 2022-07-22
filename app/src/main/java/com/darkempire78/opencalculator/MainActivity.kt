@@ -1,15 +1,18 @@
 package com.darkempire78.opencalculator
 
+import android.animation.LayoutTransition
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import org.mariuszgromada.math.mxparser.*
+import org.mariuszgromada.math.mxparser.Expression
+import org.mariuszgromada.math.mxparser.mXparser
 
 
 class MainActivity : AppCompatActivity() {
@@ -63,12 +66,18 @@ class MainActivity : AppCompatActivity() {
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         backspaceButton.setOnLongClickListener {
             display.setText("")
-            resultDisplay.setText("")
+            resultDisplay.text = ""
             true
         }
 
         // Set degree by default
         mXparser.setDegreesMode()
+
+        // Set default animations and disable the fade out default animation
+        var tableLayout = findViewById<ViewGroup>(R.id.tableLayout)
+        val lt = LayoutTransition()
+        lt.disableTransitionType(LayoutTransition.DISAPPEARING)
+        tableLayout.setLayoutTransition(lt)
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -77,8 +86,8 @@ class MainActivity : AppCompatActivity() {
     }*/
 
     fun openAppMenu(view: View) {
-        var popup = PopupMenu(this, view);
-        var inflater = popup.menuInflater
+        val popup = PopupMenu(this, view);
+        val inflater = popup.menuInflater
         inflater.inflate(R.menu.app_menu, popup.menu);
         popup.show();
     }
@@ -135,12 +144,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateDisplay(value: String) {
-        var formerValue = display.text.toString()
-        var cursorPosition = display.selectionStart
-        var leftValue = formerValue.subSequence(0, cursorPosition).toString()
-        var rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
+        val formerValue = display.text.toString()
+        val cursorPosition = display.selectionStart
+        val leftValue = formerValue.subSequence(0, cursorPosition).toString()
+        val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
-        var newValue = leftValue + value + rightValue
+        val newValue = leftValue + value + rightValue
 
         // Update Display
         display.setText(newValue)
@@ -152,7 +161,7 @@ class MainActivity : AppCompatActivity() {
         updateResultDisplay()
     }
 
-    fun updateResultDisplay() {
+    private fun updateResultDisplay() {
         var calculation = display.text.toString()
 
         if (calculation != "") {
@@ -168,24 +177,24 @@ class MainActivity : AppCompatActivity() {
                 if ((exp.calculate() * 10) % 10 == 0.0) {
                     result = String.format("%.0f", exp.calculate())
                     if (result != calculation) {
-                        resultDisplay.setText(result)
+                        resultDisplay.text = result
                     } else {
-                        resultDisplay.setText("")
+                        resultDisplay.text = ""
                     }
                 } else {
                     if (result != calculation) {
-                        resultDisplay.setText(result)
+                        resultDisplay.text = result
                     } else {
-                        resultDisplay.setText("")
+                        resultDisplay.text = ""
                     }
                 }
             } else if (result == "Infinity") {
-                resultDisplay.setText("Infinity")
+                resultDisplay.text = "Infinity"
             } else {
-                resultDisplay.setText("")
+                resultDisplay.text = ""
             }
         } else {
-            resultDisplay.setText("")
+            resultDisplay.text = ""
         }
     }
 
@@ -254,7 +263,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sinusButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("sin(")
         } else {
             updateDisplay("arcsin(")
@@ -262,7 +271,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cosinusButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("cos(")
         } else {
             updateDisplay("arccos(")
@@ -271,7 +280,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun tangentButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("tan(")
         } else {
             updateDisplay("arctan(")
@@ -283,7 +292,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun naturalLogarithmButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("ln(")
         } else {
             updateDisplay("exp(")
@@ -292,7 +301,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun logarithmButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("log(")
         } else {
             updateDisplay("10^")
@@ -308,7 +317,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun squareButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             updateDisplay("√")
         } else {
             updateDisplay("^2")
@@ -322,14 +331,14 @@ class MainActivity : AppCompatActivity() {
 
     fun degreeButton(view: View) {
         if (degreeButton.text.toString() == "DEG") {
-            degreeButton.setText("RAD")
+            degreeButton.text = "RAD"
             mXparser.setRadiansMode()
         } else {
-            degreeButton.setText("DEG")
+            degreeButton.text = "DEG"
             mXparser.setDegreesMode()
         }
 
-        degreeTextView.setText(degreeButton.text.toString())
+        degreeTextView.text = degreeButton.text.toString()
         updateResultDisplay()
     }
 
@@ -361,7 +370,7 @@ class MainActivity : AppCompatActivity() {
         display.setText("")
 
         // Clear resultDisplay
-        resultDisplay.setText("")
+        resultDisplay.text = ""
     }
 
     fun equalsButton(view: View) {
@@ -405,23 +414,23 @@ class MainActivity : AppCompatActivity() {
                 display.setSelection(display.text.length)
 
                 // Clear resultDisplay
-                resultDisplay.setText("")
+                resultDisplay.text = ""
             } else {
-                resultDisplay.setText(result)
+                resultDisplay.text = result
             }
         } else {
-            resultDisplay.setText("")
+            resultDisplay.text = ""
         }
     }
 
     fun parenthesesButton(view: View) {
-        var cursorPosition = display.selectionStart
-        var textLength = display.text.length
+        val cursorPosition = display.selectionStart
+        val textLength = display.text.length
 
         var openParentheses = 0
         var closeParentheses = 0
 
-        var text = display.text.toString()
+        val text = display.text.toString()
 
         // https://kotlinlang.org/docs/ranges.html
         // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
@@ -450,11 +459,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun backspaceButton(view: View) {
-        var cursorPosition = display.selectionStart
-        var textLength = display.text.length
+        val cursorPosition = display.selectionStart
+        val textLength = display.text.length
 
         if (cursorPosition != 0 && textLength != 0) {
-            var newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(
+            val newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(
                 cursorPosition,
                 textLength
             ).toString()
@@ -469,17 +478,18 @@ class MainActivity : AppCompatActivity() {
     fun scientistModeSwitchButton(view: View) {
         if(scientistModeRow2.visibility != View.VISIBLE)
         {
-            scientistModeRow2.setVisibility(View.VISIBLE)
-            scientistModeRow3.setVisibility(View.VISIBLE)
+            scientistModeRow2.visibility = View.VISIBLE
+            scientistModeRow3.visibility = View.VISIBLE
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            degreeTextView.setVisibility(View.VISIBLE)
-            degreeTextView.setText(degreeButton.text.toString())
+            degreeTextView.visibility = View.VISIBLE
+            degreeTextView.text = degreeButton.text.toString()
         } else {
-            scientistModeRow2.setVisibility(View.GONE)
-            scientistModeRow3.setVisibility(View.GONE)
+
+            scientistModeRow2.visibility = View.GONE
+            scientistModeRow3.visibility = View.GONE
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            degreeTextView.setVisibility(View.GONE)
-            degreeTextView.setText(degreeButton.text.toString())
+            degreeTextView.visibility = View.GONE
+            degreeTextView.text = degreeButton.text.toString()
         }
     }
 

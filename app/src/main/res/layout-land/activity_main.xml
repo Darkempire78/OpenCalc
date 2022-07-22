@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="?attr/background_color" >
+    android:background="?attr/background_color"
+    android:animateLayoutChanges="true">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -604,7 +605,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/ic_baseline_more_vert_24"
-        android:onClick="selectThemeDialog"
+        android:onClick="openAppMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_more_vert_24" />
