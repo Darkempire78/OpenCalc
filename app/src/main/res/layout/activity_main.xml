@@ -638,6 +638,7 @@
         android:focusable="false"
         android:singleLine="true"
         android:background="@drawable/display_background"
+        android:inputType="textNoSuggestions"
         android:text=""
         android:textColor="?attr/text_second_color"
         android:layout_weight="1"
