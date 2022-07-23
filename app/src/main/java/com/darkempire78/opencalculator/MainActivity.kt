@@ -74,7 +74,8 @@ class MainActivity : AppCompatActivity() {
         mXparser.setDegreesMode()
 
         // Set default animations and disable the fade out default animation
-        var tableLayout = findViewById<ViewGroup>(R.id.tableLayout)
+        // https://stackoverflow.com/questions/19943466/android-animatelayoutchanges-true-what-can-i-do-if-the-fade-out-effect-is-un
+        val tableLayout = findViewById<ViewGroup>(R.id.tableLayout)
         val lt = LayoutTransition()
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
         tableLayout.setLayoutTransition(lt)
