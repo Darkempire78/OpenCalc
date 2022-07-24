@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+*.apk
+app/release/output-metadata.json
