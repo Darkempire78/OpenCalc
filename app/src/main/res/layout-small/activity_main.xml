@@ -38,7 +38,7 @@
                 android:text="@string/square"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/piButton"
@@ -54,7 +54,7 @@
                 android:text="@string/pi"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/devideBy100Button"
@@ -70,7 +70,7 @@
                 android:text="@string/devideBy100"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/factorialButton"
@@ -86,7 +86,7 @@
                 android:text="@string/factorial"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <ImageButton
                 android:id="@+id/scientistModeSwitchButton"
@@ -101,7 +101,7 @@
                 android:onClick="scientistModeSwitchButton"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp"
+                android:textSize="22sp"
                 app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"/>
 
         </TableRow>
@@ -128,7 +128,7 @@
                 android:text="@string/degree"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/sinusButton"
@@ -144,7 +144,7 @@
                 android:text="@string/sinus"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/cosinusButton"
@@ -160,7 +160,7 @@
                 android:text="@string/cosinus"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/tangentButton"
@@ -176,7 +176,7 @@
                 android:text="@string/tangent"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/emptyScientistMode1"
@@ -194,7 +194,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <Button
                 android:id="@+id/invButton"
@@ -210,7 +211,7 @@
                 android:text="@string/inv"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/eButton"
@@ -226,7 +227,7 @@
                 android:text="@string/e"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/naturalLogarithmButton"
@@ -242,7 +243,7 @@
                 android:text="@string/naturalLogarithm"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/logarithmButton"
@@ -258,7 +259,7 @@
                 android:text="@string/logarithm"
                 android:textAllCaps="false"
                 android:textColor="?attr/text_color"
-                android:textSize="26sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/emptyScientistMode2"
@@ -290,7 +291,7 @@
                 android:onClick="clearButton"
                 android:text="@string/clear"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/parenthesesButton"
@@ -306,7 +307,7 @@
                 android:onClick="parenthesesButton"
                 android:text="@string/parentheses"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/exponentButton"
@@ -322,7 +323,7 @@
                 android:onClick="exponentButton"
                 android:text="@string/exponent"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/devideButton"
@@ -338,7 +339,7 @@
                 android:onClick="devideButton"
                 android:text="@string/devide"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -359,7 +360,7 @@
                 android:onClick="sevenButton"
                 android:text="@string/seven"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/eightButton"
@@ -374,7 +375,7 @@
                 android:onClick="eightButton"
                 android:text="@string/eight"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/nineButton"
@@ -389,7 +390,7 @@
                 android:onClick="nineButton"
                 android:text="@string/nine"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/multiplyButton"
@@ -405,7 +406,7 @@
                 android:onClick="multiplyButton"
                 android:text="@string/multiply"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -426,7 +427,7 @@
                 android:onClick="fourButton"
                 android:text="@string/four"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/fiveButton"
@@ -441,7 +442,7 @@
                 android:onClick="fiveButton"
                 android:text="@string/five"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/sixButton"
@@ -456,7 +457,7 @@
                 android:onClick="sixButton"
                 android:text="@string/six"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/substractButton"
@@ -472,7 +473,7 @@
                 android:onClick="substractButton"
                 android:text="@string/substract"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -493,7 +494,7 @@
                 android:onClick="oneButton"
                 android:text="@string/one"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/twoButton"
@@ -508,7 +509,7 @@
                 android:onClick="twoButton"
                 android:text="@string/two"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/threeButton"
@@ -523,7 +524,7 @@
                 android:onClick="threeButton"
                 android:text="@string/three"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/addButton"
@@ -539,7 +540,7 @@
                 android:onClick="addButton"
                 android:text="@string/add"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -560,7 +561,7 @@
                 android:onClick="zeroButton"
                 android:text="@string/zero"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/pointButton"
@@ -575,7 +576,7 @@
                 android:onClick="pointButton"
                 android:text="@string/point"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/backspaceButton"
@@ -605,7 +606,7 @@
                 android:onClick="equalsButton"
                 android:text="@string/equals"
                 android:textColor="?attr/text_color"
-                android:textSize="32sp" />
+                android:textSize="30sp" />
         </TableRow>
 
     </TableLayout>
