@@ -27,7 +27,9 @@ width="30%">](https://f-droid.org/)
 
 ### :camera: Screenshots
 
-<img src="" width="48%" />
+<img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="20%" />
+<img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="20%" />
+<img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="20%" />
 
 
 ## 💬 Discord
