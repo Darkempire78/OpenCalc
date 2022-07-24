@@ -11,12 +11,13 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
 <a href="https://discord.com/invite/sPvJmY7mcV"><img src="https://img.shields.io/discord/831524351311609907?color=%237289DA&label=DISCORD&style=for-the-badge"></a>
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+<!-- [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
 alt="Get it on F-Droid"
-height="100">](https://f-droid.org/)
+height="100">](https://f-droid.org/) -->
 [<img src="https://raw.githubusercontent.com/deckerst/common/main/assets/get-it-on-github.png"
       alt='Get it on GitHub'
       height="100">](https://github.com/Darkempire78/OpenCalc/releases/latest)
+~~Fdroid (soon)~~
 &nbsp;&nbsp;
 
 <div align="left">
