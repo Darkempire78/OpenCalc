@@ -13,10 +13,10 @@
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
 alt="Get it on F-Droid"
-width="30%">](https://f-droid.org/)
+height="100">](https://f-droid.org/)
 [<img src="https://raw.githubusercontent.com/deckerst/common/main/assets/get-it-on-github.png"
       alt='Get it on GitHub'
-      height="80">](https://github.com/Darkempire78/OpenCalc/releases/latest)
+      height="100">](https://github.com/Darkempire78/OpenCalc/releases/latest)
 &nbsp;&nbsp;
 
 <div align="left">
