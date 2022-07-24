@@ -16,7 +16,8 @@ alt="Get it on F-Droid"
 height="100">](https://f-droid.org/) -->
 [<img src="https://raw.githubusercontent.com/deckerst/common/main/assets/get-it-on-github.png"
       alt='Get it on GitHub'
-      height="100">](https://github.com/Darkempire78/OpenCalc/releases/latest)
+      height="100">](https://github.com/Darkempire78/OpenCalc/releases/latest) 
+
 ~~Fdroid (soon)~~
 &nbsp;&nbsp;
 
