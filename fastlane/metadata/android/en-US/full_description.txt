@@ -1,7 +1,7 @@
 A simple and beautiful calculator for Android
 
 📖 Features
-	- Back & Light theme
+	- Back, Light and Amoled theme
 	- Scientific mode
 	- Portrait and landscape orientation
 	- More...

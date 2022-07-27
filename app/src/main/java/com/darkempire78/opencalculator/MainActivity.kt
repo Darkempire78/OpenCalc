@@ -3,15 +3,16 @@ package com.darkempire78.opencalculator
 import android.animation.LayoutTransition
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.constraintlayout.widget.ConstraintLayout
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 
@@ -43,11 +44,19 @@ class MainActivity : AppCompatActivity() {
     private var isInvButtonClicked = false
 
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Themes
         when (MyPreferences(this).darkMode) {
+            -1 -> {
+                if (resources.configuration.isNightModeActive) {
+                    setTheme(R.style.darkTheme)
+                } else {
+                    setTheme(R.style.AppTheme)
+                }
+            }
             1 -> {
                 setTheme(R.style.darkTheme)
             }
@@ -55,7 +64,11 @@ class MainActivity : AppCompatActivity() {
                 setTheme(R.style.amoledTheme)
             }
             else -> {
-                setTheme(R.style.AppTheme)  //default app theme
+                if (resources.configuration.isNightModeActive) {
+                    setTheme(R.style.darkTheme)
+                } else {
+                    setTheme(R.style.AppTheme)
+                }
             }
         }
 
@@ -111,35 +124,35 @@ class MainActivity : AppCompatActivity() {
         startActivity(browserIntent)
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
     fun selectThemeDialog(menuItem: MenuItem) {
 
         val builder = AlertDialog.Builder(this)
         //builder.setTitle(getString(R.string.select_theme_title))
 
-        val styles = arrayOf("Light", "Dark", "Amoled")
-        val checkedItem = MyPreferences(this).darkMode
+        val styles = arrayOf("System", "Light", "Dark", "Amoled")
+        val checkedItem = MyPreferences(this).darkMode + 1
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
             when (which) {
                 0 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    MyPreferences(this).darkMode = 0
-                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = -1
                     dialog.dismiss()
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                     reloadActivity()
                 }
                 1 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    MyPreferences(this).darkMode = 1
-                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 0
                     dialog.dismiss()
                     reloadActivity()
                 }
                 2 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    MyPreferences(this).darkMode = 1
+                    dialog.dismiss()
+                    reloadActivity()
+                }
+                3 -> {
                     MyPreferences(this).darkMode = 2
-                    delegate.applyDayNight()
-                    applyAmoledTheme()
                     dialog.dismiss()
                     reloadActivity()
                 }
@@ -154,10 +167,6 @@ class MainActivity : AppCompatActivity() {
     fun reloadActivity() {
         finish();
         startActivity(intent);
-    }
-
-    fun applyAmoledTheme() {
-        findViewById<ConstraintLayout>(R.id.mainConstraintLayout).setBackgroundColor(resources.getColor(R.color.amoled_background_color))
     }
 
     private fun checkTheme() {
