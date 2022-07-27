@@ -41,6 +41,26 @@
         <item name="button_ripple_color">@color/dark_button_ripple_color</item>
     </style>
 
+    <style name="amoledTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/amoled_foreground_color</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/amoled_background_color</item>
+
+        <item name="android:itemBackground">@color/amoled_background_color</item>
+        <item name="android:textColor">@color/amoled_text_color</item>
+
+        <item name="foreground_color">@color/amoled_foreground_color</item>
+        <item name="background_color">@color/amoled_background_color</item>
+        <item name="text_color">@color/amoled_text_color</item>
+        <item name="text_second_color">@color/amoled_text_second_color</item>
+        <item name="text_third_color">@color/amoled_text_third_color</item>
+        <item name="button_color">@color/amoled_button_color</item>
+        <item name="button_symbol_color">@color/amoled_button_symbol_color</item>
+        <item name="button_clear_color">@color/amoled_button_clear_color</item>
+        <item name="button_equals_color">@color/amoled_button_equals_color</item>
+        <item name="button_ripple_color">@color/amoled_button_ripple_color</item>
+    </style>
+
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>

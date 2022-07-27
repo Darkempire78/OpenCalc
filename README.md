@@ -6,7 +6,6 @@
 
 ### A simple and beautiful calculator for Android
 
-
 [![Latest Release](https://img.shields.io/github/v/release/Darkempire78/OpenCalc.svg?logo=github&style=for-the-badge)](https://github.com/Darkempire78/OpenCalc/releases/latest)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
 <a href="https://discord.com/invite/sPvJmY7mcV"><img src="https://img.shields.io/discord/831524351311609907?color=%237289DA&label=DISCORD&style=for-the-badge"></a>
@@ -25,7 +24,7 @@ height="100">](https://f-droid.org/) -->
 
 ## :book: Features
 
-* Back & Light theme
+* Back, Light and Amoled theme
 * Scientific mode
 * Portrait and landscape orientation
 * More...
@@ -36,7 +35,6 @@ height="100">](https://f-droid.org/) -->
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="20%" />
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="20%" />
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="20%" />
-
 
 ## 💬 Discord
 

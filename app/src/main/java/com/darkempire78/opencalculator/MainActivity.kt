@@ -11,6 +11,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.constraintlayout.widget.ConstraintLayout
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 
@@ -46,10 +47,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Themes
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES || AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_UNSPECIFIED) {
-            setTheme(R.style.darkTheme) //when dark mode is enabled, we use the dark theme
-        } else {
-            setTheme(R.style.AppTheme)  //default app theme
+        when (MyPreferences(this).darkMode) {
+            1 -> {
+                setTheme(R.style.darkTheme)
+            }
+            2 -> {
+                setTheme(R.style.amoledTheme)
+            }
+            else -> {
+                setTheme(R.style.AppTheme)  //default app theme
+            }
         }
 
         setContentView(R.layout.activity_main)
@@ -81,10 +88,13 @@ class MainActivity : AppCompatActivity() {
         tableLayout.setLayoutTransition(lt)
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.app_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }*/
+    fun changeTheme(theme: Int) {
+        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra("set_theme", theme)
+        startActivity(intent)
+    }
 
     fun openAppMenu(view: View) {
         val popup = PopupMenu(this, view);
@@ -106,7 +116,7 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         //builder.setTitle(getString(R.string.select_theme_title))
 
-        val styles = arrayOf("Light", "Dark")
+        val styles = arrayOf("Light", "Dark", "Amoled")
         val checkedItem = MyPreferences(this).darkMode
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
@@ -116,12 +126,22 @@ class MainActivity : AppCompatActivity() {
                     MyPreferences(this).darkMode = 0
                     delegate.applyDayNight()
                     dialog.dismiss()
+                    reloadActivity()
                 }
                 1 -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     MyPreferences(this).darkMode = 1
                     delegate.applyDayNight()
                     dialog.dismiss()
+                    reloadActivity()
+                }
+                2 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    MyPreferences(this).darkMode = 2
+                    delegate.applyDayNight()
+                    applyAmoledTheme()
+                    dialog.dismiss()
+                    reloadActivity()
                 }
             }
 
@@ -129,6 +149,15 @@ class MainActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    fun reloadActivity() {
+        finish();
+        startActivity(intent);
+    }
+
+    fun applyAmoledTheme() {
+        findViewById<ConstraintLayout>(R.id.mainConstraintLayout).setBackgroundColor(resources.getColor(R.color.amoled_background_color))
     }
 
     private fun checkTheme() {

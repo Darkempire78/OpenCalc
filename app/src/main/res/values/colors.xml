@@ -11,7 +11,6 @@
     <color name="light_button_equals_color">#DCB5C5</color>
     <color name="light_button_ripple_color">#C3C3C3</color>
 
-
     <color name="dark_foreground_color">#535353</color>
     <color name="dark_background_color">#121212</color>
     <color name="dark_text_color">#EFEFEF</color>
@@ -22,4 +21,15 @@
     <color name="dark_button_clear_color">#00BA20</color>
     <color name="dark_button_equals_color">#B3004D</color>
     <color name="dark_button_ripple_color">#9E9E9E</color>
+
+    <color name="amoled_foreground_color">#000</color>
+    <color name="amoled_background_color">#000</color>
+    <color name="amoled_text_color">#EFEFEF</color>
+    <color name="amoled_text_second_color">#BDBDBD</color>
+    <color name="amoled_text_third_color">#B1B1B1</color>
+    <color name="amoled_button_color">#000</color>
+    <color name="amoled_button_symbol_color">#000</color>
+    <color name="amoled_button_clear_color">#000</color>
+    <color name="amoled_button_equals_color">#000</color>
+    <color name="amoled_button_ripple_color">#9E9E9E</color>
 </resources>
