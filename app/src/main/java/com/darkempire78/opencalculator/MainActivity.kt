@@ -27,9 +27,6 @@ class MainActivity : AppCompatActivity() {
     private val degreeTextView = findViewById<TextView>(R.id.DegreeTextView)
     private var isInvButtonClicked = false
 
-    private var isInvButtonClicked = false
-
-
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,10 +92,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openAppMenu(view: View) {
-        val popup = PopupMenu(this, view);
+        val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
-        inflater.inflate(R.menu.app_menu, popup.menu);
-        popup.show();
+        inflater.inflate(R.menu.app_menu, popup.menu)
+        popup.show()
     }
 
     fun openGithubLink(menuItem: MenuItem) {
@@ -327,7 +324,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun invButton(view: View) {
-        if (isInvButtonClicked == false) {
+        if (!isInvButtonClicked) {
             isInvButtonClicked = true
 
             // change buttons
