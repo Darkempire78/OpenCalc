@@ -50,7 +50,7 @@ class Themes(private val context: Context) {
         dialog.show()
     }
 
-    fun reloadActivity() {
+    private fun reloadActivity() {
         (context as Activity).finish()
         startActivity(context, context.intent, null);
     }
