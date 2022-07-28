@@ -24,7 +24,7 @@ height="100">](https://f-droid.org/) -->
 
 ## :book: Features
 
-* Back, Light and Amoled theme
+* Dark, Light and Amoled theme
 * Scientific mode
 * Portrait and landscape orientation
 * More...
