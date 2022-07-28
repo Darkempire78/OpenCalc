@@ -13,6 +13,9 @@
 <!-- [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
 alt="Get it on F-Droid"
 height="100">](https://f-droid.org/) -->
+[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
+      alt='Get it on IzzyOnDroid'
+      height="100">](https://apt.izzysoft.de/fdroid/index/apk/com.darkempire78.opencalculator)
 [<img src="https://raw.githubusercontent.com/deckerst/common/main/assets/get-it-on-github.png"
       alt='Get it on GitHub'
       height="100">](https://github.com/Darkempire78/OpenCalc/releases/latest) 
