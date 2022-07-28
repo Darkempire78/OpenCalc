@@ -2,7 +2,7 @@ New:
 - Vibration system
 
 Change:
-- code improvement
+- Code improvement
 
 Fix:
-- Follow the theme system at the first launch 
+- Follow the system theme at the first launch 
