@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,11 @@ class MainActivity : AppCompatActivity() {
 
         // Themes
         Themes(this)
+
+        // Check Vibration preference
+        if (MyPreferences(this).vibrationMode) {
+            //vibrationAppMenu.isChecked = true
+        }
 
         when (MyPreferences(this).darkMode) {
             -1 -> {
@@ -102,7 +108,12 @@ class MainActivity : AppCompatActivity() {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
         inflater.inflate(R.menu.app_menu, popup.menu)
+        popup.menu.findItem(R.id.app_menu_vibration_button).isChecked = MyPreferences(this).vibrationMode;
         popup.show()
+    }
+
+    fun checkVibration(menuItem: MenuItem) {
+        MyPreferences(this).vibrationMode = !menuItem.isChecked
     }
 
     fun openGithubLink(menuItem: MenuItem) {
@@ -113,7 +124,15 @@ class MainActivity : AppCompatActivity() {
         startActivity(browserIntent)
     }
 
-    private fun updateDisplay(value: String) {
+    private fun updateDisplay(view: View, value: String) {
+        // Vibrate when key pressed
+        if (MyPreferences(this).vibrationMode) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+                view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_PRESS)
+            }
+        }
+
+        
         val formerValue = display.text.toString()
         val cursorPosition = display.selectionStart
         val leftValue = formerValue.subSequence(0, cursorPosition).toString()
@@ -187,134 +206,134 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun zeroButton(view: View) {
-        updateDisplay("0")
+        updateDisplay(view, "0")
     }
 
     fun oneButton(view: View) {
-        updateDisplay("1")
+        updateDisplay(view, "1")
     }
 
     fun twoButton(view: View) {
-        updateDisplay("2")
+        updateDisplay(view, "2")
     }
 
     fun threeButton(view: View) {
-        updateDisplay("3")
+        updateDisplay(view, "3")
     }
 
     fun fourButton(view: View) {
-        updateDisplay("4")
+        updateDisplay(view, "4")
     }
 
     fun fiveButton(view: View) {
-        updateDisplay("5")
+        updateDisplay(view, "5")
     }
 
     fun sixButton(view: View) {
-        updateDisplay("6")
+        updateDisplay(view, "6")
     }
 
     fun sevenButton(view: View) {
-        updateDisplay("7")
+        updateDisplay(view, "7")
     }
 
     fun eightButton(view: View) {
-        updateDisplay("8")
+        updateDisplay(view, "8")
     }
 
     fun nineButton(view: View) {
-        updateDisplay("9")
+        updateDisplay(view, "9")
     }
 
     fun addButton(view: View) {
-        updateDisplay("+")
+        updateDisplay(view, "+")
     }
 
     fun substractButton(view: View) {
-        updateDisplay("-")
+        updateDisplay(view, "-")
     }
 
     fun pointButton(view: View) {
-        updateDisplay(".")
+        updateDisplay(view, ".")
     }
 
     fun devideButton(view: View) {
-        updateDisplay("÷")
+        updateDisplay(view, "÷")
     }
 
     fun multiplyButton(view: View) {
-        updateDisplay("×")
+        updateDisplay(view, "×")
     }
 
     fun exponentButton(view: View) {
-        updateDisplay("^")
+        updateDisplay(view, "^")
     }
 
     fun sinusButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("sin(")
+            updateDisplay(view, "sin(")
         } else {
-            updateDisplay("arcsin(")
+            updateDisplay(view, "arcsin(")
         }
     }
 
     fun cosinusButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("cos(")
+            updateDisplay(view, "cos(")
         } else {
-            updateDisplay("arccos(")
+            updateDisplay(view, "arccos(")
         }
 
     }
 
     fun tangentButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("tan(")
+            updateDisplay(view, "tan(")
         } else {
-            updateDisplay("arctan(")
+            updateDisplay(view, "arctan(")
         }
     }
 
     fun eButton(view: View) {
-        updateDisplay("e")
+        updateDisplay(view, "e")
     }
 
     fun naturalLogarithmButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("ln(")
+            updateDisplay(view, "ln(")
         } else {
-            updateDisplay("exp(")
+            updateDisplay(view, "exp(")
         }
 
     }
 
     fun logarithmButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("log(")
+            updateDisplay(view, "log(")
         } else {
-            updateDisplay("10^")
+            updateDisplay(view, "10^")
         }
     }
 
     fun piButton(view: View) {
-        updateDisplay("π")
+        updateDisplay(view, "π")
     }
 
     fun factorialButton(view: View) {
-        updateDisplay("!")
+        updateDisplay(view, "!")
     }
 
     fun squareButton(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay("√")
+            updateDisplay(view, "√")
         } else {
-            updateDisplay("^2")
+            updateDisplay(view, "^2")
         }
 
     }
 
     fun devideBy100(view: View) {
-        updateDisplay("%")
+        updateDisplay(view, "%")
     }
 
     fun degreeButton(view: View) {
@@ -435,12 +454,12 @@ class MainActivity : AppCompatActivity() {
                 textLength - 1,
                 textLength
             ) == "(") {
-            updateDisplay("(")
+            updateDisplay(view, "(")
         } else if (closeParentheses < openParentheses && display.text.toString().subSequence(
                 textLength - 1,
                 textLength
             ) != "(") {
-            updateDisplay(")")
+            updateDisplay(view, ")")
         }
 
         updateResultDisplay()

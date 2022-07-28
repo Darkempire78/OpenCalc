@@ -6,6 +6,12 @@
         android:onClick="selectThemeDialog" />
 
     <item
+        android:id="@+id/app_menu_vibration_button"
+        android:title="@string/app_menu_vibration"
+        android:checkable="true"
+        android:onClick="checkVibration"/>
+
+    <item
         android:id="@+id/app_menu_github_button"
         android:title="@string/app_menu_github"
         android:onClick="openGithubLink"

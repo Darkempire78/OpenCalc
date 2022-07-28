@@ -1,0 +1,8 @@
+New: 
+- Vibration system
+
+Change:
+- code improvement
+
+Fix:
+- Follow the theme system at the first launch 
