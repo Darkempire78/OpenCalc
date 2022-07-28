@@ -10,9 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 
@@ -49,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Themes
+        Themes(this)
+
         when (MyPreferences(this).darkMode) {
             -1 -> {
                 if (resources.configuration.isNightModeActive) {
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // check the current selected theme
-        checkTheme()
+        Themes(this).checkTheme()
 
         // Disable the keyboard on display EditText
         display.showSoftInputOnFocus = false
@@ -98,15 +98,12 @@ class MainActivity : AppCompatActivity() {
         val tableLayout = findViewById<ViewGroup>(R.id.tableLayout)
         val lt = LayoutTransition()
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
-        tableLayout.setLayoutTransition(lt)
+        tableLayout.layoutTransition = lt
     }
 
-    fun changeTheme(theme: Int) {
-        finish()
-        val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-        intent.putExtra("set_theme", theme)
-        startActivity(intent)
+    @RequiresApi(Build.VERSION_CODES.R)
+    fun selectThemeDialog(menuItem: MenuItem) {
+        Themes(this).openDialogThemeSelector()
     }
 
     fun openAppMenu(view: View) {
@@ -124,65 +121,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(browserIntent)
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
-    fun selectThemeDialog(menuItem: MenuItem) {
-
-        val builder = AlertDialog.Builder(this)
-        //builder.setTitle(getString(R.string.select_theme_title))
-
-        val styles = arrayOf("System", "Light", "Dark", "Amoled")
-        val checkedItem = MyPreferences(this).darkMode + 1
-
-        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
-            when (which) {
-                0 -> {
-                    MyPreferences(this).darkMode = -1
-                    dialog.dismiss()
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                    reloadActivity()
-                }
-                1 -> {
-                    MyPreferences(this).darkMode = 0
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                2 -> {
-                    MyPreferences(this).darkMode = 1
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                3 -> {
-                    MyPreferences(this).darkMode = 2
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-            }
-
-        }
-
-        val dialog = builder.create()
-        dialog.show()
-    }
-
-    fun reloadActivity() {
-        finish();
-        startActivity(intent);
-    }
-
-    private fun checkTheme() {
-        when (MyPreferences(this).darkMode) {
-            0 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                delegate.applyDayNight()
-            }
-            1 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                delegate.applyDayNight()
-            }
-        }
-    }
-
-    fun updateDisplay(value: String) {
+    private fun updateDisplay(value: String) {
         val formerValue = display.text.toString()
         val cursorPosition = display.selectionStart
         val leftValue = formerValue.subSequence(0, cursorPosition).toString()
