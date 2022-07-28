@@ -42,11 +42,6 @@ class MainActivity : AppCompatActivity() {
         // Themes
         Themes(this)
 
-        // Check Vibration preference
-        if (MyPreferences(this).vibrationMode) {
-            //vibrationAppMenu.isChecked = true
-        }
-
         when (MyPreferences(this).darkMode) {
             -1 -> {
                 if (resources.configuration.isNightModeActive) {
