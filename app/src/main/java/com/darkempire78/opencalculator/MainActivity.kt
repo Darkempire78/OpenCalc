@@ -18,26 +18,14 @@ import org.mariuszgromada.math.mxparser.mXparser
 class MainActivity : AppCompatActivity() {
 
     // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
-    private val display: EditText
-        get() = findViewById(R.id.input)
-
-    private val resultDisplay: TextView
-        get() = findViewById(R.id.resultDisplay)
-
-    private val scientistModeRow2: TableRow
-        get() = findViewById(R.id.scientistModeRow2)
-
-    private val scientistModeRow3: TableRow
-        get() = findViewById(R.id.scientistModeRow3)
-
-    private val scientistModeSwitchButton: ImageButton
-        get() = findViewById(R.id.scientistModeSwitchButton)
-
-    private val degreeButton: Button
-        get() = findViewById(R.id.degreeButton)
-
-    private val degreeTextView: TextView
-        get() = findViewById(R.id.DegreeTextView)
+    private val display = findViewById<EditText>(R.id.input)
+    private val resultDisplay = findViewById<TextView>(R.id.resultDisplay)
+    private val scientistModeRow2 = findViewById<TableRow>(R.id.scientistModeRow2)
+    private val scientistModeRow3 = findViewById<TableRow>(R.id.scientistModeRow3)
+    private val scientistModeSwitchButton = findViewById<ImageButton>(R.id.scientistModeSwitchButton)
+    private val degreeButton = findViewById<Button>(R.id.degreeButton)
+    private val degreeTextView = findViewById<TextView>(R.id.DegreeTextView)
+    private var isInvButtonClicked = false
 
     private var isInvButtonClicked = false
 
