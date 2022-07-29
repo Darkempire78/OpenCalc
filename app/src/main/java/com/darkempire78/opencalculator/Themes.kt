@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat.startActivity
 
 class Themes(private val context: Context) {
 
-    @RequiresApi(Build.VERSION_CODES.R)
     fun openDialogThemeSelector() {
 
         val builder = AlertDialog.Builder(context)

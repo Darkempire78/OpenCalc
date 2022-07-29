@@ -2,15 +2,14 @@ package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.mariuszgromada.math.mxparser.Expression
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
     private var isInvButtonClicked = false
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,21 +28,28 @@ class MainActivity : AppCompatActivity() {
         Themes(this)
 
         when (MyPreferences(this).darkMode) {
+            // System
             -1 -> {
-                if (resources.configuration.isNightModeActive) {
+                if (checkIfDarkModeIsEnabledByDefault()) {
                     setTheme(R.style.darkTheme)
                 } else {
                     setTheme(R.style.AppTheme)
                 }
             }
+            // Light mode
+            0 -> {
+                setTheme(R.style.AppTheme)
+            }
+            // Dark mode
             1 -> {
                 setTheme(R.style.darkTheme)
             }
+            // amoled mode
             2 -> {
                 setTheme(R.style.amoledTheme)
             }
             else -> {
-                if (resources.configuration.isNightModeActive) {
+                if (checkIfDarkModeIsEnabledByDefault()) {
                     setTheme(R.style.darkTheme)
                 } else {
                     setTheme(R.style.AppTheme)
@@ -77,7 +82,17 @@ class MainActivity : AppCompatActivity() {
         tableLayout.layoutTransition = lt
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
+    private fun checkIfDarkModeIsEnabledByDefault (): Boolean =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            resources.configuration.isNightModeActive
+        } else
+            when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+                Configuration.UI_MODE_NIGHT_YES -> true
+                Configuration.UI_MODE_NIGHT_NO -> false
+                Configuration.UI_MODE_NIGHT_UNDEFINED -> true
+                else -> true
+            }
+
     fun selectThemeDialog(menuItem: MenuItem) {
         Themes(this).openDialogThemeSelector()
     }
@@ -456,7 +471,7 @@ class MainActivity : AppCompatActivity() {
 
     fun backspaceButton(view: View) {
         keyVibration(view)
-        
+
         val cursorPosition = input.selectionStart
         val textLength = input.text.length
 
