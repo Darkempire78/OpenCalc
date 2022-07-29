@@ -119,14 +119,17 @@ class MainActivity : AppCompatActivity() {
         startActivity(browserIntent)
     }
 
-    private fun updateDisplay(view: View, value: String) {
-        // Vibrate when key pressed
+    fun keyVibration(view : View) {
         if (MyPreferences(this).vibrationMode) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
                 view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_PRESS)
             }
         }
+    }
 
+    private fun updateDisplay(view: View, value: String) {
+        // Vibrate when key pressed
+        keyVibration(view)
         
         val formerValue = display.text.toString()
         val cursorPosition = display.selectionStart
@@ -332,6 +335,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun degreeButton(view: View) {
+        keyVibration(view)
+
         if (degreeButton.text.toString() == "DEG") {
             degreeButton.text = "RAD"
             mXparser.setRadiansMode()
@@ -345,6 +350,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun invButton(view: View) {
+        keyVibration(view)
+
         if (!isInvButtonClicked) {
             isInvButtonClicked = true
 
@@ -369,6 +376,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clearButton(view: View) {
+        keyVibration(view)
+
         display.setText("")
 
         // Clear resultDisplay
@@ -376,6 +385,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun equalsButton(view: View) {
+        keyVibration(view)
+
         var calculation = display.text.toString()
         calculation = calculation.replace('×', '*')
         calculation = calculation.replace('÷', '/')
