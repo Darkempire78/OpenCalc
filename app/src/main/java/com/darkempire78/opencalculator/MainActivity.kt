@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 
@@ -19,20 +20,6 @@ import org.mariuszgromada.math.mxparser.mXparser
 class MainActivity : AppCompatActivity() {
 
     // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
-    private val display: EditText
-        get() = findViewById(R.id.input)
-    private val resultDisplay: TextView
-        get() = findViewById(R.id.resultDisplay)
-    private val scientistModeRow2: TableRow
-        get() = findViewById(R.id.scientistModeRow2)
-    private val scientistModeRow3: TableRow
-        get() = findViewById(R.id.scientistModeRow3)
-    private val scientistModeSwitchButton: ImageButton
-        get() = findViewById(R.id.scientistModeSwitchButton)
-    private val degreeButton: Button
-        get() = findViewById(R.id.degreeButton)
-    private val degreeTextView: TextView
-        get() = findViewById(R.id.DegreeTextView)
     private var isInvButtonClicked = false
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -71,15 +58,12 @@ class MainActivity : AppCompatActivity() {
         Themes(this).checkTheme()
 
         // Disable the keyboard on display EditText
-        display.showSoftInputOnFocus = false
-
-        // Long press backspace button
-        val backspaceButton = findViewById<ImageButton>(R.id.backspaceButton)
-
+        input.showSoftInputOnFocus = false
+        
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         backspaceButton.setOnLongClickListener {
-            display.setText("")
-            resultDisplay.text = ""
+            input.setText("")
+            resultDisplay.setText("")
             true
         }
 
@@ -88,7 +72,6 @@ class MainActivity : AppCompatActivity() {
 
         // Set default animations and disable the fade out default animation
         // https://stackoverflow.com/questions/19943466/android-animatelayoutchanges-true-what-can-i-do-if-the-fade-out-effect-is-un
-        val tableLayout = findViewById<ViewGroup>(R.id.tableLayout)
         val lt = LayoutTransition()
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
         tableLayout.layoutTransition = lt
@@ -131,25 +114,25 @@ class MainActivity : AppCompatActivity() {
         // Vibrate when key pressed
         keyVibration(view)
         
-        val formerValue = display.text.toString()
-        val cursorPosition = display.selectionStart
+        val formerValue = input.text.toString()
+        val cursorPosition = input.selectionStart
         val leftValue = formerValue.subSequence(0, cursorPosition).toString()
         val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
         val newValue = leftValue + value + rightValue
 
         // Update Display
-        display.setText(newValue)
+        input.setText(newValue)
 
         // Increase cursor position
-        display.setSelection(cursorPosition + value.length)
+        input.setSelection(cursorPosition + value.length)
 
         // Update resultDisplay
         updateResultDisplay()
     }
 
     private fun updateResultDisplay() {
-        var calculation = display.text.toString()
+        var calculation = input.text.toString()
 
         if (calculation != "") {
             calculation = calculation.replace('×', '*')
@@ -182,24 +165,24 @@ class MainActivity : AppCompatActivity() {
                 if ((exp.calculate() * 10) % 10 == 0.0) {
                     result = String.format("%.0f", exp.calculate())
                     if (result != calculation) {
-                        resultDisplay.text = result
+                        resultDisplay.setText(result)
                     } else {
-                        resultDisplay.text = ""
+                        resultDisplay.setText("")
                     }
                 } else {
                     if (result != calculation) {
-                        resultDisplay.text = result
+                        resultDisplay.setText(result)
                     } else {
-                        resultDisplay.text = ""
+                        resultDisplay.setText("")
                     }
                 }
             } else if (result == "Infinity") {
-                resultDisplay.text = "Infinity"
+                resultDisplay.setText("Infinity")
             } else {
-                resultDisplay.text = ""
+                resultDisplay.setText("")
             }
         } else {
-            resultDisplay.text = ""
+            resultDisplay.setText("")
         }
     }
 
@@ -356,38 +339,38 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = true
 
             // change buttons
-            findViewById<Button>(R.id.sinusButton).setText(R.string.sinusInv)
-            findViewById<Button>(R.id.cosinusButton).setText(R.string.cosinusInv)
-            findViewById<Button>(R.id.tangentButton).setText(R.string.tangentInv)
-            findViewById<Button>(R.id.naturalLogarithmButton).setText(R.string.naturalLogarithmInv)
-            findViewById<Button>(R.id.logarithmButton).setText(R.string.logarithmInv)
-            findViewById<Button>(R.id.squareButton).setText(R.string.squareInv)
+            sinusButton.setText(R.string.sinusInv)
+            cosinusButton.setText(R.string.cosinusInv)
+            tangentButton.setText(R.string.tangentInv)
+            naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
+            logarithmButton.setText(R.string.logarithmInv)
+            squareButton.setText(R.string.squareInv)
         } else {
             isInvButtonClicked = false
 
             // change buttons
-            findViewById<Button>(R.id.sinusButton).setText(R.string.sinus)
-            findViewById<Button>(R.id.cosinusButton).setText(R.string.cosinus)
-            findViewById<Button>(R.id.tangentButton).setText(R.string.tangent)
-            findViewById<Button>(R.id.naturalLogarithmButton).setText(R.string.naturalLogarithm)
-            findViewById<Button>(R.id.logarithmButton).setText(R.string.logarithm)
-            findViewById<Button>(R.id.squareButton).setText(R.string.square)
+            sinusButton.setText(R.string.sinus)
+            cosinusButton.setText(R.string.cosinus)
+            tangentButton.setText(R.string.tangent)
+            naturalLogarithmButton.setText(R.string.naturalLogarithm)
+            logarithmButton.setText(R.string.logarithm)
+            squareButton.setText(R.string.square)
         }
     }
 
     fun clearButton(view: View) {
         keyVibration(view)
 
-        display.setText("")
+        input.setText("")
 
         // Clear resultDisplay
-        resultDisplay.text = ""
+        resultDisplay.setText("")
     }
 
     fun equalsButton(view: View) {
         keyVibration(view)
 
-        var calculation = display.text.toString()
+        var calculation = input.text.toString()
         calculation = calculation.replace('×', '*')
         calculation = calculation.replace('÷', '/')
         calculation = calculation.replace("log", "log10")
@@ -419,31 +402,31 @@ class MainActivity : AppCompatActivity() {
             if (result != "NaN" && result != "Infinity") {
                 if ((exp.calculate() * 10) % 10 == 0.0) {
                     result = String.format("%.0f", exp.calculate())
-                    display.setText(result)
+                    input.setText(result)
                 } else {
-                    display.setText(result)
+                    input.setText(result)
                 }
                 // Set cursor
-                display.setSelection(display.text.length)
+                input.setSelection(input.text.length)
 
                 // Clear resultDisplay
-                resultDisplay.text = ""
+                resultDisplay.setText("")
             } else {
-                resultDisplay.text = result
+                resultDisplay.setText(result)
             }
         } else {
-            resultDisplay.text = ""
+            resultDisplay.setText("")
         }
     }
 
     fun parenthesesButton(view: View) {
-        val cursorPosition = display.selectionStart
-        val textLength = display.text.length
+        val cursorPosition = input.selectionStart
+        val textLength = input.text.length
 
         var openParentheses = 0
         var closeParentheses = 0
 
-        val text = display.text.toString()
+        val text = input.text.toString()
 
         // https://kotlinlang.org/docs/ranges.html
         // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
@@ -456,12 +439,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (openParentheses == closeParentheses || display.text.toString().subSequence(
+        if (openParentheses == closeParentheses || input.text.toString().subSequence(
                 textLength - 1,
                 textLength
             ) == "(") {
             updateDisplay(view, "(")
-        } else if (closeParentheses < openParentheses && display.text.toString().subSequence(
+        } else if (closeParentheses < openParentheses && input.text.toString().subSequence(
                 textLength - 1,
                 textLength
             ) != "(") {
@@ -472,17 +455,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun backspaceButton(view: View) {
-        val cursorPosition = display.selectionStart
-        val textLength = display.text.length
+        val cursorPosition = input.selectionStart
+        val textLength = input.text.length
 
         if (cursorPosition != 0 && textLength != 0) {
-            val newValue = display.text.subSequence(0, cursorPosition - 1).toString() + display.text.subSequence(
+            val newValue = input.text.subSequence(0, cursorPosition - 1).toString() + input.text.subSequence(
                 cursorPosition,
                 textLength
             ).toString()
-            display.setText(newValue)
+            input.setText(newValue)
 
-            display.setSelection(cursorPosition - 1)
+            input.setSelection(cursorPosition - 1)
         }
 
         updateResultDisplay()
