@@ -455,6 +455,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun backspaceButton(view: View) {
+        keyVibration(view)
+        
         val cursorPosition = input.selectionStart
         val textLength = input.text.length
 
