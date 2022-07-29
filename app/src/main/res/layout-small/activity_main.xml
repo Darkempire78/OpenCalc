@@ -680,7 +680,7 @@
         app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
     <TextView
-        android:id="@+id/DegreeTextView"
+        android:id="@+id/degreeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
