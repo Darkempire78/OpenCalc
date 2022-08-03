@@ -50,7 +50,7 @@ class Themes(private val context: Context) {
                         MyPreferences(context).darkMode = 3
                         dialog.dismiss()
                         reloadActivity()
-                    }else{
+                    } else {
                         Toast.makeText(context, "Sorry Material You isn't Available", Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
                     }
@@ -77,6 +77,9 @@ class Themes(private val context: Context) {
             }
             1 -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            3 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
     }
