@@ -51,7 +51,12 @@ class MainActivity : AppCompatActivity() {
             // Material You
             3->
             {
-                setTheme(R.style.materialYou)
+                if (checkIfDarkModeIsEnabledByDefault()) {
+                    setTheme(R.style.materialYouDark)
+                } else {
+                    setTheme(R.style.materialYouLight)
+                }
+
             }
             else -> {
                 if (checkIfDarkModeIsEnabledByDefault()) {
