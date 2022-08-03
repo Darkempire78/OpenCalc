@@ -26,7 +26,7 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 ## :book: Features
 
-* Dark, Light and Amoled theme
+* Dark, Light, Amoled and Material You theme
 * Scientific mode
 * Portrait and landscape orientation
 * More...
