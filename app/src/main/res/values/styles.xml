@@ -61,6 +61,23 @@
         <item name="button_ripple_color">@color/amoled_button_ripple_color</item>
     </style>
 
+    <style name="materialYou" parent="AppTheme">
+
+        <item name="foreground_color">@color/material_dynamic_secondary90</item>
+        <item name="background_color">@color/light_background_color</item>
+
+        <item name="text_color">@color/light_text_color</item>
+
+        <item name="button_color">@color/material_dynamic_neutral95</item>
+        <item name="button_symbol_color">@color/material_dynamic_secondary90</item>
+        <item name="button_clear_color">@color/material_dynamic_tertiary90</item>
+        <item name="button_equals_color">@color/material_dynamic_primary90</item>
+        <item name="button_ripple_color">@color/dark_button_ripple_color</item>
+
+        <item name="android:statusBarColor" >@color/material_dynamic_secondary90</item>
+        <item name="android:navigationBarColor">@color/light_background_color</item>
+    </style>
+
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
