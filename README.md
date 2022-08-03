@@ -4,7 +4,7 @@
 
 # OpenCalc
 
-### A simple and beautiful calculator for Android
+### A simple and beautiful calculator for Android.
 
 [![Latest Release](https://img.shields.io/github/v/release/Darkempire78/OpenCalc.svg?logo=github&style=for-the-badge)](https://github.com/Darkempire78/OpenCalc/releases/latest)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
@@ -26,9 +26,9 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 ## :book: Features
 
-* Dark, Light and Amoled theme
-* Scientific mode
-* Portrait and landscape orientation
+* Dark, Light, Amoled and Material You theme,
+* Scientific mode,
+* Portrait and landscape orientation,
 * More...
 
 ### :camera: Screenshots
@@ -42,7 +42,7 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 ## 💬 Discord
 
-Join the Discord server !
+Join the Discord server!
 
 [![](https://i.imgur.com/UfyvtOL.png)](https://discord.gg/sPvJmY7mcV)
 
@@ -54,4 +54,4 @@ Please make sure to update tests as appropriate.
 
 ## :scroll: License
 
-This project is under [GPLv3](https://github.com/Darkempire78/Raid-Protect-Discord-Bot/blob/master/LICENSE).
+This project is licensed under [GPLv3](https://github.com/Darkempire78/Raid-Protect-Discord-Bot/blob/master/LICENSE).
