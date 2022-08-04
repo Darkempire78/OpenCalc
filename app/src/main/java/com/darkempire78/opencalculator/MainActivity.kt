@@ -201,33 +201,29 @@ class MainActivity : AppCompatActivity() {
                     // If the double ends with .0 we remove the .0
                     if ((exp.calculate() * 10) % 10 == 0.0) {
                         result = String.format("%.0f", exp.calculate())
-                        if (result != calculation) {
-                            withContext(Dispatchers.Main) {
-                                resultDisplay.setText(result)
-                            }
-                        } else {
-                            withContext(Dispatchers.Main) {
-                                resultDisplay.setText("")
-                            }
+                        withContext(Dispatchers.Main) {
+                            if (result != calculation) resultDisplay.setText(result)
+                            else resultDisplay.setText("")
                         }
                     } else {
-                        if (result != calculation) {
-                            withContext(Dispatchers.Main) {
+                        withContext(Dispatchers.Main) {
+
+                            if (result != calculation) {
                                 resultDisplay.setText(result)
-                            }
-                        } else {
-                            withContext(Dispatchers.Main) {
+                            } else {
                                 resultDisplay.setText("")
                             }
                         }
                     }
-                } else if (result == "Infinity") {
-                    withContext(Dispatchers.Main) {
+                } else withContext(Dispatchers.Main) {
+                    if (result == "Infinity") {
+
                         resultDisplay.setText("Infinity")
-                    }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        resultDisplay.setText("")
+
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            resultDisplay.setText("")
+                        }
                     }
                 }
             } else {
@@ -521,7 +517,8 @@ class MainActivity : AppCompatActivity() {
 
         if (cursorPosition != 0 && textLength != 0) {
             val newValue =
-                input.text.subSequence(0, cursorPosition - 1).toString() + input.text.subSequence(
+                input.text.subSequence(0, cursorPosition - 1)
+                    .toString() + input.text.subSequence(
                     cursorPosition,
                     textLength
                 ).toString()
