@@ -9,9 +9,13 @@ import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 
@@ -20,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
     private var isInvButtonClicked = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +54,7 @@ class MainActivity : AppCompatActivity() {
                 setTheme(R.style.amoledTheme)
             }
             // Material You
-            3->
-            {
+            3 -> {
                 if (checkIfDarkModeIsEnabledByDefault()) {
                     setTheme(R.style.materialYouDark)
                 } else {
@@ -74,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         input.showSoftInputOnFocus = false
-        
+
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         backspaceButton.setOnLongClickListener {
             input.setText("")
@@ -92,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         tableLayout.layoutTransition = lt
     }
 
-    private fun checkIfDarkModeIsEnabledByDefault (): Boolean =
+    private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             resources.configuration.isNightModeActive
         } else
@@ -111,7 +115,8 @@ class MainActivity : AppCompatActivity() {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
         inflater.inflate(R.menu.app_menu, popup.menu)
-        popup.menu.findItem(R.id.app_menu_vibration_button).isChecked = MyPreferences(this).vibrationMode;
+        popup.menu.findItem(R.id.app_menu_vibration_button).isChecked =
+            MyPreferences(this).vibrationMode;
         popup.show()
     }
 
@@ -127,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(browserIntent)
     }
 
-    fun keyVibration(view : View) {
+    private fun keyVibration(view: View) {
         if (MyPreferences(this).vibrationMode) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
                 view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_PRESS)
@@ -136,78 +141,100 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDisplay(view: View, value: String) {
-        // Vibrate when key pressed
-        keyVibration(view)
-        
-        val formerValue = input.text.toString()
-        val cursorPosition = input.selectionStart
-        val leftValue = formerValue.subSequence(0, cursorPosition).toString()
-        val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
+        lifecycleScope.launch(Dispatchers.Default) {
+            withContext(Dispatchers.Main) {
+                // Vibrate when key pressed
+                keyVibration(view)
+            }
 
-        val newValue = leftValue + value + rightValue
+            val formerValue = input.text.toString()
+            val cursorPosition = input.selectionStart
+            val leftValue = formerValue.subSequence(0, cursorPosition).toString()
+            val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
-        // Update Display
-        input.setText(newValue)
+            val newValue = leftValue + value + rightValue
 
-        // Increase cursor position
-        input.setSelection(cursorPosition + value.length)
+            withContext(Dispatchers.Main) {
+                // Update Display
+                input.setText(newValue)
 
-        // Update resultDisplay
-        updateResultDisplay()
+                // Increase cursor position
+                input.setSelection(cursorPosition + value.length)
+
+                // Update resultDisplay
+                updateResultDisplay()
+            }
+        }
     }
 
     private fun updateResultDisplay() {
-        var calculation = input.text.toString()
+        lifecycleScope.launch(Dispatchers.Default) {
+            var calculation = input.text.toString()
 
-        if (calculation != "") {
-            calculation = calculation.replace('×', '*')
-            calculation = calculation.replace('÷', '/')
-            calculation = calculation.replace("log", "log10")
+            if (calculation != "") {
+                calculation = calculation.replace('×', '*')
+                calculation = calculation.replace('÷', '/')
+                calculation = calculation.replace("log", "log10")
 
-            // Add ")" which lack
-            var openParentheses = 0
-            var closeParentheses = 0
+                // Add ")" which lack
+                var openParentheses = 0
+                var closeParentheses = 0
 
-            for (i in 0..calculation.length-1) {
-                if (calculation[i] == '(') {
-                    openParentheses += 1
+                for (i in 0..calculation.length - 1) {
+                    if (calculation[i] == '(') {
+                        openParentheses += 1
+                    }
+                    if (calculation[i] == ')') {
+                        closeParentheses += 1
+                    }
                 }
-                if (calculation[i] == ')') {
-                    closeParentheses += 1
+                if (closeParentheses < openParentheses) {
+                    for (i in 0..openParentheses - closeParentheses - 1) {
+                        calculation += ')'
+                    }
                 }
-            }
-            if (closeParentheses < openParentheses) {
-                for (i in 0..openParentheses-closeParentheses-1) {
-                    calculation += ')'
-                }
-            }
 
-            val exp = Expression(calculation)
-            var result = exp.calculate().toString()
+                val exp = Expression(calculation)
+                var result = exp.calculate().toString()
 
-            if (result != "NaN" && result != "Infinity") {
-                // If the double ends with .0 we remove the .0
-                if ((exp.calculate() * 10) % 10 == 0.0) {
-                    result = String.format("%.0f", exp.calculate())
-                    if (result != calculation) {
-                        resultDisplay.setText(result)
+                if (result != "NaN" && result != "Infinity") {
+                    // If the double ends with .0 we remove the .0
+                    if ((exp.calculate() * 10) % 10 == 0.0) {
+                        result = String.format("%.0f", exp.calculate())
+                        if (result != calculation) {
+                            withContext(Dispatchers.Main) {
+                                resultDisplay.setText(result)
+                            }
+                        } else {
+                            withContext(Dispatchers.Main) {
+                                resultDisplay.setText("")
+                            }
+                        }
                     } else {
-                        resultDisplay.setText("")
+                        if (result != calculation) {
+                            withContext(Dispatchers.Main) {
+                                resultDisplay.setText(result)
+                            }
+                        } else {
+                            withContext(Dispatchers.Main) {
+                                resultDisplay.setText("")
+                            }
+                        }
+                    }
+                } else if (result == "Infinity") {
+                    withContext(Dispatchers.Main) {
+                        resultDisplay.setText("Infinity")
                     }
                 } else {
-                    if (result != calculation) {
-                        resultDisplay.setText(result)
-                    } else {
+                    withContext(Dispatchers.Main) {
                         resultDisplay.setText("")
                     }
                 }
-            } else if (result == "Infinity") {
-                resultDisplay.setText("Infinity")
             } else {
-                resultDisplay.setText("")
+                withContext(Dispatchers.Main) {
+                    resultDisplay.setText("")
+                }
             }
-        } else {
-            resultDisplay.setText("")
         }
     }
 
@@ -393,54 +420,59 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun equalsButton(view: View) {
-        keyVibration(view)
 
-        var calculation = input.text.toString()
-        calculation = calculation.replace('×', '*')
-        calculation = calculation.replace('÷', '/')
-        calculation = calculation.replace("log", "log10")
+        lifecycleScope.launch(Dispatchers.Default) {
+            keyVibration(view)
 
-        if (calculation != "") {
-            // Add ")" which lack
-            var openParentheses = 0
-            var closeParentheses = 0
+            var calculation = input.text.toString()
+            calculation = calculation.replace('×', '*')
+            calculation = calculation.replace('÷', '/')
+            calculation = calculation.replace("log", "log10")
 
-            for (i in 0..calculation.length-1) {
-                if (calculation[i] == '(') {
-                    openParentheses += 1
+            if (calculation != "") {
+                // Add ")" which lack
+                var openParentheses = 0
+                var closeParentheses = 0
+
+                for (i in 0..calculation.length - 1) {
+                    if (calculation[i] == '(') {
+                        openParentheses += 1
+                    }
+                    if (calculation[i] == ')') {
+                        closeParentheses += 1
+                    }
                 }
-                if (calculation[i] == ')') {
-                    closeParentheses += 1
+                if (closeParentheses < openParentheses) {
+                    for (i in 0..openParentheses - closeParentheses - 1) {
+                        calculation += ')'
+                    }
                 }
-            }
-            if (closeParentheses < openParentheses) {
-                for (i in 0..openParentheses-closeParentheses-1) {
-                    calculation += ')'
-                }
-            }
 
-            val exp = Expression(calculation)
-            var result = exp.calculate().toString()
+                val exp = Expression(calculation)
+                var result = exp.calculate().toString()
 
-            mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
+                mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
 
-            if (result != "NaN" && result != "Infinity") {
-                if ((exp.calculate() * 10) % 10 == 0.0) {
-                    result = String.format("%.0f", exp.calculate())
-                    input.setText(result)
+                if (result != "NaN" && result != "Infinity") {
+                    if ((exp.calculate() * 10) % 10 == 0.0) {
+                        result = String.format("%.0f", exp.calculate())
+                        withContext(Dispatchers.Main) { input.setText(result) }
+                    } else {
+                        withContext(Dispatchers.Main) { input.setText(result) }
+                    }
+                    // Set cursor
+                    withContext(Dispatchers.Main) {
+                        input.setSelection(input.text.length)
+
+                        // Clear resultDisplay
+                        resultDisplay.setText("")
+                    }
                 } else {
-                    input.setText(result)
+                    withContext(Dispatchers.Main) { resultDisplay.setText(result) }
                 }
-                // Set cursor
-                input.setSelection(input.text.length)
-
-                // Clear resultDisplay
-                resultDisplay.setText("")
             } else {
-                resultDisplay.setText(result)
+                withContext(Dispatchers.Main) { resultDisplay.setText("") }
             }
-        } else {
-            resultDisplay.setText("")
         }
     }
 
@@ -455,7 +487,7 @@ class MainActivity : AppCompatActivity() {
 
         // https://kotlinlang.org/docs/ranges.html
         // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
-        for (i in 0..cursorPosition-1) {
+        for (i in 0..cursorPosition - 1) {
             if (text[i] == '(') {
                 openParentheses += 1
             }
@@ -467,12 +499,14 @@ class MainActivity : AppCompatActivity() {
         if (openParentheses == closeParentheses || input.text.toString().subSequence(
                 textLength - 1,
                 textLength
-            ) == "(") {
+            ) == "("
+        ) {
             updateDisplay(view, "(")
         } else if (closeParentheses < openParentheses && input.text.toString().subSequence(
                 textLength - 1,
                 textLength
-            ) != "(") {
+            ) != "("
+        ) {
             updateDisplay(view, ")")
         }
 
@@ -486,10 +520,11 @@ class MainActivity : AppCompatActivity() {
         val textLength = input.text.length
 
         if (cursorPosition != 0 && textLength != 0) {
-            val newValue = input.text.subSequence(0, cursorPosition - 1).toString() + input.text.subSequence(
-                cursorPosition,
-                textLength
-            ).toString()
+            val newValue =
+                input.text.subSequence(0, cursorPosition - 1).toString() + input.text.subSequence(
+                    cursorPosition,
+                    textLength
+                ).toString()
             input.setText(newValue)
 
             input.setSelection(cursorPosition - 1)
@@ -499,8 +534,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun scientistModeSwitchButton(view: View) {
-        if(scientistModeRow2.visibility != View.VISIBLE)
-        {
+        if (scientistModeRow2.visibility != View.VISIBLE) {
             scientistModeRow2.visibility = View.VISIBLE
             scientistModeRow3.visibility = View.VISIBLE
             scientistModeSwitchButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
