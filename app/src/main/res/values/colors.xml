@@ -32,4 +32,5 @@
     <color name="amoled_button_clear_color">#000</color>
     <color name="amoled_button_equals_color">#000</color>
     <color name="amoled_button_ripple_color">#9E9E9E</color>
+    <color name="amoled_separator_color">#EFEFEF</color>
 </resources>

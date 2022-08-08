@@ -665,6 +665,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="?attr/separator_color"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        tools:ignore="MissingConstraints" />
+
     <ImageButton
         android:id="@+id/settingsButton"
         style="@style/RobotoFontCondensedLight"
