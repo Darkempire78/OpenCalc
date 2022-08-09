@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/app_menu_github_button"
-        android:title="@string/app_menu_github"
-        android:onClick="openGithubLink"
+        android:title="@string/app_menu_about"
+        android:onClick="openAbout"
         />
 </menu>

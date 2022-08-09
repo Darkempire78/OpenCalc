@@ -19,6 +19,7 @@
         <item name="button_equals_color">@color/light_button_equals_color</item>
         <item name="button_ripple_color">@color/light_button_ripple_color</item>
         <item name="separator_color">@color/light_background_color</item>
+        <item name="about_button_color">@color/light_button_color</item>
     </style>
 
     <!-- dark application theme. -->
@@ -41,6 +42,7 @@
         <item name="button_equals_color">@color/dark_button_equals_color</item>
         <item name="button_ripple_color">@color/dark_button_ripple_color</item>
         <item name="separator_color">@color/dark_background_color</item>
+        <item name="about_button_color">@color/dark_text_third_color</item>
     </style>
 
     <style name="amoledTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -62,12 +64,14 @@
         <item name="button_equals_color">@color/amoled_button_equals_color</item>
         <item name="button_ripple_color">@color/amoled_button_ripple_color</item>
         <item name="separator_color">@color/amoled_separator_color</item>
+        <item name="about_button_color">@color/amoled_text_third_color</item>
     </style>
 
     <style name="materialYouLight" parent="AppTheme">
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
         <item name="background_color">@color/light_background_color</item>
         <item name="separator_color">@color/light_background_color</item>
+        <item name="about_button_color">@color/material_dynamic_tertiary90</item>
 
         <item name="android:itemBackground">@color/light_background_color</item>
         <item name="android:textColor">@color/light_text_color</item>
@@ -91,6 +95,7 @@
         <item name="foreground_color">@color/material_dynamic_secondary20</item>
         <item name="background_color">@color/dark_background_color</item>
         <item name="separator_color">@color/dark_background_color</item>
+        <item name="about_button_color">@color/dark_text_color</item>
 
         <item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/dark_text_color</item>

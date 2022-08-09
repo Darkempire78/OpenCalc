@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/backspace.xml" value="0.216" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/circle.xml" value="0.216" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/circleIcon.xml" value="0.216" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/discord_circle_button.xml" value="0.141" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/github_circle_button.xml" value="0.1625" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1705" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/tip_circle_button.xml" value="0.141" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-land/activity_main.xml" value="0.21164021164021163" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-small/activity_main.xml" value="0.3797071129707113" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1875" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_about.xml" value="0.1923899102180419" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main-small.xml" value="0.25" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/menu/app_menu.xml" value="0.1911073108165883" />

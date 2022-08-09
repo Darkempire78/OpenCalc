@@ -124,12 +124,9 @@ class MainActivity : AppCompatActivity() {
         MyPreferences(this).vibrationMode = !menuItem.isChecked
     }
 
-    fun openGithubLink(menuItem: MenuItem) {
-        val browserIntent = Intent(
-            Intent.ACTION_VIEW,
-            Uri.parse("https://github.com/Darkempire78/OpenCalc")
-        )
-        startActivity(browserIntent)
+    fun openAbout(menuItem: MenuItem) {
+        val intent = Intent(this, AboutActivity::class.java)
+        startActivity(intent, null)
     }
 
     private fun keyVibration(view: View) {
