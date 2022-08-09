@@ -7,6 +7,8 @@
 
         <item name="android:itemBackground">@color/light_background_color</item>
         <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:colorControlNormal">@color/light_text_color</item>
+        <item name="android:colorControlActivated">@color/light_text_color</item>
 
         <item name="foreground_color">@color/light_foreground_color</item>
         <item name="background_color">@color/light_background_color</item>
@@ -30,6 +32,8 @@
 
         <item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:colorControlNormal">@color/dark_text_color</item>
+        <item name="android:colorControlActivated">@color/dark_text_color</item>
 
         <item name="foreground_color">@color/dark_foreground_color</item>
         <item name="background_color">@color/dark_background_color</item>
@@ -50,8 +54,10 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
 
-        <item name="android:itemBackground">@color/amoled_background_color</item>
+        <item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/amoled_text_color</item>
+        <item name="android:colorControlNormal">@color/amoled_text_color</item>
+        <item name="android:colorControlActivated">@color/amoled_text_color</item>
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
         <item name="background_color">@color/amoled_background_color</item>
@@ -75,6 +81,8 @@
 
         <item name="android:itemBackground">@color/light_background_color</item>
         <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:colorControlNormal">@color/light_text_color</item>
+        <item name="android:colorControlActivated">@color/light_text_color</item>
 
         <item name="text_color">@color/light_text_color</item>
         <item name="text_second_color">@color/light_text_second_color</item>
@@ -99,6 +107,8 @@
 
         <item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:colorControlNormal">@color/dark_text_color</item>
+        <item name="android:colorControlActivated">@color/dark_text_color</item>
 
         <item name="text_color">@color/dark_text_color</item>
         <item name="text_second_color">@color/dark_text_second_color</item>
