@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenCalc</string>
+    <string name="app_name_display">Calculatrice</string>
+    <string name="select_theme_title">Choisissez le thème</string>
+    <string name="app_menu_theme">Thème</string>
+    <string name="app_menu_vibration">Vibration</string>
+    <string name="app_menu_about">A propos</string>
+</resources>

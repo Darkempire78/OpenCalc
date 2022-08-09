@@ -1,54 +1,55 @@
 <resources>
     <string name="app_name">OpenCalc</string>
+    <string name="app_name_display">Calculator</string>
+
     <string name="select_theme_title">Select Theme</string>
 
-    <string name="zero">0</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
+    <string name="three" translatable="false">3</string>
+    <string name="four" translatable="false">4</string>
+    <string name="five" translatable="false">5</string>
+    <string name="six" translatable="false">6</string>
+    <string name="seven" translatable="false">7</string>
+    <string name="eight" translatable="false">8</string>
+    <string name="nine" translatable="false">9</string>
 
-    <string name="clear">AC</string>
-    <string name="parentheses">(  )</string>
-    <string name="add">+</string>
-    <string name="substract">-</string>
-    <string name="point">.</string>
-    <string name="equals">=</string>
-    <string name="devide">÷</string>
-    <string name="multiply">×</string>
-    <string name="exponent">^</string>
-    <string name="backspace"> </string>
+    <string name="clear" translatable="false">AC</string>
+    <string name="parentheses" translatable="false">(  )</string>
+    <string name="add" translatable="false">+</string>
+    <string name="substract" translatable="false">-</string>
+    <string name="point" translatable="false">.</string>
+    <string name="equals" translatable="false">=</string>
+    <string name="devide" translatable="false">÷</string>
+    <string name="multiply" translatable="false">×</string>
+    <string name="exponent" translatable="false">^</string>
+    <string name="backspace" translatable="false"> </string>
 
-    <string name="devideBy100">%</string>
-    <string name="degree">DEG</string>
-    <string name="sinus">sin</string>
-    <string name="sinusInv">sin⁻¹</string>
-    <string name="cosinus">cos</string>
-    <string name="cosinusInv">cos⁻¹</string>
+    <string name="devideBy100" translatable="false">%</string>
+    <string name="degree" translatable="false">DEG</string>
+    <string name="sinus" translatable="false">sin</string>
+    <string name="sinusInv" translatable="false">sin⁻¹</string>
+    <string name="cosinus" translatable="false">cos</string>
+    <string name="cosinusInv" translatable="false">cos⁻¹</string>
 
-    <string name="tangent">tan</string>
-    <string name="tangentInv">tan⁻¹</string>
-    <string name="inv">INV</string>
-    <string name="e">e</string>
-    <string name="naturalLogarithm">ln</string>
-    <string name="naturalLogarithmInv">e^</string>
+    <string name="tangent" translatable="false">tan</string>
+    <string name="tangentInv" translatable="false">tan⁻¹</string>
+    <string name="inv" translatable="false">INV</string>
+    <string name="e" translatable="false">e</string>
+    <string name="naturalLogarithm" translatable="false">ln</string>
+    <string name="naturalLogarithmInv" translatable="false">e^</string>
 
-    <string name="logarithm">log</string>
-    <string name="logarithmInv">10^</string>
-    <string name="pi">π</string>
-    <string name="factorial">!</string>
-    <string name="square">√</string>
-    <string name="squareInv">x²</string>
+    <string name="logarithm" translatable="false">log</string>
+    <string name="logarithmInv" translatable="false">10^</string>
+    <string name="pi" translatable="false">π</string>
+    <string name="factorial" translatable="false">!</string>
+    <string name="square" translatable="false">√</string>
+    <string name="squareInv" translatable="false">x²</string>
 
     <!-- App Menu -->
     <string name="app_menu_theme">Theme</string>
     <string name="app_menu_vibration">Vibration</string>
-    <string name="app_menu_github">GitHub</string>
+    <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
-
 </resources>
