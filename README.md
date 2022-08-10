@@ -31,6 +31,10 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 * Portrait and landscape orientation,
 * More...
 
+### 🇺🇸 Translation
+
+Available in : 🇺🇸, 🇫🇷, 🇹🇷
+
 ### :camera: Screenshots
 
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="15%" />
