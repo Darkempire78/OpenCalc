@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_menu_about">عن التطبيق</string>
+    <string name="app_menu_vibration">الاهتزاز</string>
+    <string name="app_menu_theme">السمة</string>
+    <string name="app_name_display">الحاسبة</string>
+    <string name="select_theme_title">اختيار السمة</string>
 </resources>
