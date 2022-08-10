@@ -4,5 +4,5 @@
     <string name="select_theme_title">Choisissez le thème</string>
     <string name="app_menu_theme">Thème</string>
     <string name="app_menu_vibration">Vibration</string>
-    <string name="app_menu_about">A propos</string>
+    <string name="app_menu_about">À propos</string>
 </resources>
