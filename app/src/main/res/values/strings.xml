@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OpenCalc</string>
+    <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
     <string name="select_theme_title">Select Theme</string>

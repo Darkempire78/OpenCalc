@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">Temayı seçin</string>
+    <string name="app_name_display">Hesaplayıcı</string>
+    <string name="app_menu_theme">Tema</string>
+    <string name="app_menu_vibration">Titreşim</string>
+    <string name="app_menu_about">Hakkında</string>
+</resources>
