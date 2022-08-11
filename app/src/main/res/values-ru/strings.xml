@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">Выберите тему</string>
+    <string name="app_name_display">Калькулятор</string>
+    <string name="app_menu_theme">Тема</string>
+    <string name="app_menu_vibration">Вибрация</string>
+    <string name="app_menu_about">О</string>
+</resources>
