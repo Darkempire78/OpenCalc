@@ -31,9 +31,9 @@ object NumberFormatter {
             if (it.contains(decimalSeparatorSymbol)) {
                 val integersPart = it.substring(0, it.indexOf(decimalSeparatorSymbol))
                 val fractions = it.substring(it.indexOf(decimalSeparatorSymbol) + 1)
-                DecimalFormat().format(integersPart.toLong()) + decimalSeparatorSymbol + fractions
+                DecimalFormat().format(integersPart.toBigDecimal()) + decimalSeparatorSymbol + fractions
             } else {
-                DecimalFormat().format(it.toLong())
+                DecimalFormat().format(it.toBigDecimal())
             }
         }
     }
