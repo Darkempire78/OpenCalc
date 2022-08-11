@@ -463,7 +463,7 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
-                var formattedResult = NumberFormatter.format(result)
+                var formattedResult = NumberFormatter.format(result.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
 
