@@ -1,7 +1,9 @@
 package com.darkempire78.opencalculator
 
 
+import android.util.Log
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
 object NumberFormatter {
     val TAG = "Mah "
@@ -25,7 +27,8 @@ object NumberFormatter {
     fun extractNumbers(text: String): List<Number> {
         val results = numberRegex.findAll(text)
         val resultsList: List<Number> = results.map {
-            if (it.value.contains("."))
+            val decimalSeparator = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+            if (it.value.contains(decimalSeparator))
                 it.value.toDouble()
             else
                 it.value.toLong()
@@ -35,12 +38,15 @@ object NumberFormatter {
 
     private fun addSeparators(numbersList: List<Number>): List<String> {
         numbersList.map { DecimalFormat().format(it) }
+        Log.i(TAG, "SEP COMA : "+ DecimalFormatSymbols.getInstance().decimalSeparator.toString())
+        Log.i(TAG, "SEP MILL : "+ DecimalFormatSymbols.getInstance().groupingSeparator.toString())
         return numbersList.map { DecimalFormat().format(it) }
     }
 
     private fun removeSeparators(text: String): String {
-        return if (text.contains(",")) {
-            text.replace(",", "")
+        val groupingSeparator = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+        return if (text.contains(groupingSeparator)) {
+            text.replace(groupingSeparator, "")
         } else {
             text
         }

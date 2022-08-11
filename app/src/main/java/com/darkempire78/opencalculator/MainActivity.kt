@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
+import java.text.DecimalFormatSymbols
 
 
 class MainActivity : AppCompatActivity() {
@@ -96,9 +97,8 @@ class MainActivity : AppCompatActivity() {
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
         tableLayout.layoutTransition = lt
 
-//        input.setOnCapturedPointerListener()
-
-
+        // Set decimalSeparator
+        pointButton.text = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
@@ -177,10 +177,7 @@ class MainActivity : AppCompatActivity() {
             var calculation = input.text.toString()
 
             if (calculation != "") {
-                calculation = calculation.replace('×', '*')
-                calculation = calculation.replace('÷', '/')
-                calculation = calculation.replace("log", "log10")
-                calculation = calculation.replace(",","")
+                calculation = replaceSymbolsFromCalculation(calculation)
 
                 // Add ")" which lack
                 var openParentheses = 0
@@ -202,6 +199,8 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
+                result = result.replace(".", DecimalFormatSymbols.getInstance().decimalSeparator.toString(),)
+
                 var formattedResult = NumberFormatter.format(result)
 
                 if (result != "NaN" && result != "Infinity") {
@@ -243,6 +242,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun replaceSymbolsFromCalculation(calculation: String): String {
+        var calculation2 = calculation.replace('×', '*')
+        calculation2 = calculation2.replace('÷', '/')
+        calculation2 = calculation2.replace("log", "log10")
+        calculation2 = calculation2.replace(DecimalFormatSymbols.getInstance().groupingSeparator.toString(),"")
+        calculation2 = calculation2.replace(DecimalFormatSymbols.getInstance().decimalSeparator.toString(),".")
+        return calculation2
     }
 
     fun zeroButton(view: View) {
@@ -294,7 +302,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointButton(view: View) {
-        updateDisplay(view, ".")
+        val decimalSeparator = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+        updateDisplay(view, decimalSeparator)
     }
 
     fun devideButton(view: View) {
@@ -432,10 +441,7 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             var calculation = input.text.toString()
-            calculation = calculation.replace('×', '*')
-            calculation = calculation.replace('÷', '/')
-            calculation = calculation.replace("log", "log10")
-            calculation = calculation.replace(",","")
+            calculation = replaceSymbolsFromCalculation(calculation)
 
             if (calculation != "") {
                 // Add ")" which lack
