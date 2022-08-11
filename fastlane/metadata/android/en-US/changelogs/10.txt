@@ -1,0 +1,5 @@
+Change:
+- add separators for large numbers
+- add Italian translation
+- add Arabic translation
+- add Turkish translation
