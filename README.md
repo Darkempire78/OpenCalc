@@ -33,7 +33,7 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 ## 🇺🇸 Translation
 
-Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪
+Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪, 🇦🇿
 
 ## :camera: Screenshots
 
