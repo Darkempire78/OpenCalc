@@ -3,9 +3,9 @@ package com.darkempire78.opencalculator
 import android.animation.LayoutTransition
 import android.content.Intent
 import android.content.res.Configuration
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -18,11 +18,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
+import java.text.DecimalFormatSymbols
 
 
 class MainActivity : AppCompatActivity() {
 
-    // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
+    val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
 
 
@@ -94,6 +95,9 @@ class MainActivity : AppCompatActivity() {
         val lt = LayoutTransition()
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
         tableLayout.layoutTransition = lt
+
+        // Set decimalSeparator
+        pointButton.text = decimalSeparatorSymbol
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
@@ -151,12 +155,15 @@ class MainActivity : AppCompatActivity() {
 
             val newValue = leftValue + value + rightValue
 
+            val newValueFormatted = NumberFormatter.format(newValue)
+
+            val cursorOffset = newValueFormatted.length - newValue.length
             withContext(Dispatchers.Main) {
                 // Update Display
-                input.setText(newValue)
+                input.setText(newValueFormatted)
 
                 // Increase cursor position
-                input.setSelection(cursorPosition + value.length)
+                input.setSelection(cursorPosition + value.length + cursorOffset)
 
                 // Update resultDisplay
                 updateResultDisplay()
@@ -164,14 +171,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun replaceSymbolsFromCalculation(calculation: String): String {
+        var calculation2 = calculation.replace('×', '*')
+        calculation2 = calculation2.replace('÷', '/')
+        calculation2 = calculation2.replace("log", "log10")
+        calculation2 = calculation.replace(NumberFormatter.groupingSeparatorSymbol,"")
+        calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol,".")
+        return calculation2
+    }
+
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             var calculation = input.text.toString()
 
             if (calculation != "") {
-                calculation = calculation.replace('×', '*')
-                calculation = calculation.replace('÷', '/')
-                calculation = calculation.replace("log", "log10")
+                calculation = replaceSymbolsFromCalculation(calculation)
+
 
                 // Add ")" which lack
                 var openParentheses = 0
@@ -193,20 +208,26 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
+                result = result.replace(".", decimalSeparatorSymbol)
+                var formattedResult = NumberFormatter.format(result)
 
                 if (result != "NaN" && result != "Infinity") {
                     // If the double ends with .0 we remove the .0
                     if ((exp.calculate() * 10) % 10 == 0.0) {
                         result = String.format("%.0f", exp.calculate())
+                        formattedResult = NumberFormatter.format(result)
+
                         withContext(Dispatchers.Main) {
-                            if (result != calculation) resultDisplay.setText(result)
+                            if (result != calculation){
+                                resultDisplay.setText(formattedResult)
+                            }
                             else resultDisplay.setText("")
                         }
                     } else {
                         withContext(Dispatchers.Main) {
 
                             if (result != calculation) {
-                                resultDisplay.setText(result)
+                                resultDisplay.setText(formattedResult)
                             } else {
                                 resultDisplay.setText("")
                             }
@@ -280,7 +301,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointButton(view: View) {
-        updateDisplay(view, ".")
+        val decimalSeparator = decimalSeparatorSymbol
+        updateDisplay(view, decimalSeparator)
     }
 
     fun devideButton(view: View) {
@@ -418,9 +440,7 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             var calculation = input.text.toString()
-            calculation = calculation.replace('×', '*')
-            calculation = calculation.replace('÷', '/')
-            calculation = calculation.replace("log", "log10")
+            calculation = replaceSymbolsFromCalculation(calculation)
 
             if (calculation != "") {
                 // Add ")" which lack
@@ -443,15 +463,17 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
+                var formattedResult = NumberFormatter.format(result.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
 
                 if (result != "NaN" && result != "Infinity") {
                     if ((exp.calculate() * 10) % 10 == 0.0) {
                         result = String.format("%.0f", exp.calculate())
-                        withContext(Dispatchers.Main) { input.setText(result) }
+                        formattedResult = NumberFormatter.format(result)
+                        withContext(Dispatchers.Main) { input.setText(formattedResult) }
                     } else {
-                        withContext(Dispatchers.Main) { input.setText(result) }
+                        withContext(Dispatchers.Main) { input.setText(formattedResult) }
                     }
                     // Set cursor
                     withContext(Dispatchers.Main) {
@@ -461,7 +483,7 @@ class MainActivity : AppCompatActivity() {
                         resultDisplay.setText("")
                     }
                 } else {
-                    withContext(Dispatchers.Main) { resultDisplay.setText(result) }
+                    withContext(Dispatchers.Main) { resultDisplay.setText(formattedResult) }
                 }
             } else {
                 withContext(Dispatchers.Main) { resultDisplay.setText("") }
@@ -513,15 +535,18 @@ class MainActivity : AppCompatActivity() {
         val textLength = input.text.length
 
         if (cursorPosition != 0 && textLength != 0) {
-            val newValue =
-                input.text.subSequence(0, cursorPosition - 1)
-                    .toString() + input.text.subSequence(
-                    cursorPosition,
-                    textLength
-                ).toString()
-            input.setText(newValue)
 
-            input.setSelection(cursorPosition - 1)
+            val newValue = input.text.subSequence(0, cursorPosition - 1).toString() +
+                           input.text.subSequence(cursorPosition, textLength).toString()
+
+            val newValueFormatted = NumberFormatter.format(newValue)
+
+            val cursorOffset = newValueFormatted.length - newValue.length
+
+            input.setText(newValueFormatted)
+
+            input.setSelection((cursorPosition - 1 + cursorOffset).takeIf { it > 0 } ?: 0)
+
         }
 
         updateResultDisplay()
