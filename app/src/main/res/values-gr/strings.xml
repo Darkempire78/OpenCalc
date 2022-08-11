@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">Επιλέξτε θέμα</string>
+    <string name="app_name_display">Αριθμομηχανή</string>
+    <string name="app_menu_theme">Θέμα</string>
+    <string name="app_menu_vibration">Δόνηση</string>
+    <string name="app_menu_about">Σχετικά</string>
+</resources>
