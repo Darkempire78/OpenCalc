@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        NumberFormatter.extractNumbers("(log(5.99) *2)/4 +85.35") // 5.99, 2, 4, 85.35
         // Themes
         Themes(this)
 
@@ -172,15 +171,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun replaceSymbolsFromCalculation(calculation: String): String {
+        var calculation2 = calculation.replace('×', '*')
+        calculation2 = calculation2.replace('÷', '/')
+        calculation2 = calculation2.replace("log", "log10")
+        calculation2 = calculation.replace(NumberFormatter.groupingSeparatorSymbol,"")
+        calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol,".")
+        return calculation2
+    }
+
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             var calculation = input.text.toString()
 
             if (calculation != "") {
-                calculation = calculation.replace('×', '*')
-                calculation = calculation.replace('÷', '/')
-                calculation = calculation.replace("log", "log10")
-                calculation = calculation.replace(",","")
+                calculation = replaceSymbolsFromCalculation(calculation)
+
 
                 // Add ")" which lack
                 var openParentheses = 0
@@ -432,10 +438,7 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             var calculation = input.text.toString()
-            calculation = calculation.replace('×', '*')
-            calculation = calculation.replace('÷', '/')
-            calculation = calculation.replace("log", "log10")
-            calculation = calculation.replace(",","")
+            calculation = replaceSymbolsFromCalculation(calculation)
 
             if (calculation != "") {
                 // Add ")" which lack
@@ -537,7 +540,6 @@ class MainActivity : AppCompatActivity() {
             val newValueFormatted = NumberFormatter.format(newValue)
 
             val cursorOffset = newValueFormatted.length - newValue.length
-            Log.e("Mah ", "cursorPosition: $cursorPosition,  cursorOffset: $cursorOffset", )
 
             input.setText(newValueFormatted)
 
