@@ -18,11 +18,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
+import java.text.DecimalFormatSymbols
 
 
 class MainActivity : AppCompatActivity() {
 
-    // https://stackoverflow.com/questions/34197026/android-content-pm-applicationinfo-android-content-context-getapplicationinfo
+    val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
 
 
@@ -95,9 +96,8 @@ class MainActivity : AppCompatActivity() {
         lt.disableTransitionType(LayoutTransition.DISAPPEARING)
         tableLayout.layoutTransition = lt
 
-//        input.setOnCapturedPointerListener()
-
-
+        // Set decimalSeparator
+        pointButton.text = decimalSeparatorSymbol
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
@@ -208,6 +208,7 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
+                result = result.replace(".", decimalSeparatorSymbol)
                 var formattedResult = NumberFormatter.format(result)
 
                 if (result != "NaN" && result != "Infinity") {
@@ -300,7 +301,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointButton(view: View) {
-        updateDisplay(view, ".")
+        val decimalSeparator = decimalSeparatorSymbol
+        updateDisplay(view, decimalSeparator)
     }
 
     fun devideButton(view: View) {
