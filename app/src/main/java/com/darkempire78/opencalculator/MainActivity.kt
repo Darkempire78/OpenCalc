@@ -1,6 +1,7 @@
 package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
@@ -199,7 +200,7 @@ class MainActivity : AppCompatActivity() {
 
                 val exp = Expression(calculation)
                 var result = exp.calculate().toString()
-                result = result.replace(".", DecimalFormatSymbols.getInstance().decimalSeparator.toString(),)
+                result = result.replace(".", DecimalFormatSymbols.getInstance().decimalSeparator.toString())
 
                 var formattedResult = NumberFormatter.format(result)
 
