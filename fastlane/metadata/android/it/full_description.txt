@@ -1,0 +1,7 @@
+Una calcolatrice semplice e bella per Android
+
+📖 Caratteristiche
+	- Tema scuro, chiaro e amoled
+	- Modalità scientifica
+	- Orientamento verticale o orizzontale
+	- E altro...
