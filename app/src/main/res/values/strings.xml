@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
@@ -19,7 +19,7 @@
     <string name="parentheses" translatable="false">(  )</string>
     <string name="add" translatable="false">+</string>
     <string name="substract" translatable="false">-</string>
-    <string name="point" translatable="false">.</string>
+    <string name="point" tools:ignore="MissingTranslation">.</string>
     <string name="equals" translatable="false">=</string>
     <string name="devide" translatable="false">÷</string>
     <string name="multiply" translatable="false">×</string>
