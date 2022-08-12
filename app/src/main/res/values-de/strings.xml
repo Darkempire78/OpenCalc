@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name_display">Rechner</string>
+
+    <string name="select_theme_title">Wähle Aussehen</string>
+
+    <!-- App Menu -->
+    <string name="app_menu_theme">Aussehen</string>
+    <string name="app_menu_vibration">Vibration</string>
+    <string name="app_menu_about">Über</string>a
+</resources>
