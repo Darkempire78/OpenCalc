@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -23,7 +22,7 @@ import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
 
-    val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+    private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
 
 
@@ -171,54 +170,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun replaceSymbolsFromCalculation(calculation: String): String {
+    private fun replaceSymbolsFromCalculation(calculation: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("log", "log10")
-        calculation2 = calculation.replace(NumberFormatter.groupingSeparatorSymbol,"")
+        calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol,"")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol,".")
         return calculation2
     }
 
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
-            var calculation = input.text.toString()
+            val calculation = input.text.toString()
 
             if (calculation != "") {
-                calculation = replaceSymbolsFromCalculation(calculation)
+                val exp = getExpression(calculation)
+                val result = exp.calculate()
+                var resultString = result.toString()
+                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-
-                // Add ")" which lack
-                var openParentheses = 0
-                var closeParentheses = 0
-
-                for (i in 0..calculation.length - 1) {
-                    if (calculation[i] == '(') {
-                        openParentheses += 1
-                    }
-                    if (calculation[i] == ')') {
-                        closeParentheses += 1
-                    }
-                }
-                if (closeParentheses < openParentheses) {
-                    for (i in 0..openParentheses - closeParentheses - 1) {
-                        calculation += ')'
-                    }
-                }
-
-                val exp = Expression(calculation)
-                var result = exp.calculate().toString()
-                result = result.replace(".", decimalSeparatorSymbol)
-                var formattedResult = NumberFormatter.format(result)
-
-                if (result != "NaN" && result != "Infinity") {
+                if (resultString != "NaN" && resultString != "Infinity") {
                     // If the double ends with .0 we remove the .0
-                    if ((exp.calculate() * 10) % 10 == 0.0) {
-                        result = String.format("%.0f", exp.calculate())
-                        formattedResult = NumberFormatter.format(result)
+                    if ((result * 10) % 10 == 0.0) {
+                        resultString = String.format("%.0f", result)
+                        formattedResult = NumberFormatter.format(resultString)
 
                         withContext(Dispatchers.Main) {
-                            if (result != calculation){
+                            if (resultString != calculation){
                                 resultDisplay.setText(formattedResult)
                             }
                             else resultDisplay.setText("")
@@ -226,7 +204,7 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         withContext(Dispatchers.Main) {
 
-                            if (result != calculation) {
+                            if (resultString != calculation) {
                                 resultDisplay.setText(formattedResult)
                             } else {
                                 resultDisplay.setText("")
@@ -234,7 +212,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else withContext(Dispatchers.Main) {
-                    if (result == "Infinity") {
+                    if (resultString == "Infinity") {
 
                         resultDisplay.setText("Infinity")
 
@@ -250,6 +228,65 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun addParenthesis(calculation: String): String {
+        // Add ")" which lack
+        var cleanCalculation = calculation
+        var openParentheses = 0
+        var closeParentheses = 0
+
+        for (i in 0..calculation.length - 1) {
+            if (calculation[i] == '(') {
+                openParentheses += 1
+            }
+            if (calculation[i] == ')') {
+                closeParentheses += 1
+            }
+        }
+        if (closeParentheses < openParentheses) {
+            for (i in 0..openParentheses - closeParentheses - 1) {
+                cleanCalculation += ')'
+            }
+        }
+
+        return cleanCalculation
+    }
+
+    /* Transform any calculation string containing %
+     * to respect the user friend (non-mathematical) way (see issue #35)
+     */
+    private fun getPercentString(calculation: String): String {
+        val percentPos = calculation.lastIndexOf('%')
+        // find the last operator before the last %
+        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '×','÷', '('))
+        if (operatorBeforePercentPos < 1) {
+            return calculation
+        }
+        // extract the first part of the calculation
+        var calculationStringFirst = calculation.subSequence(0, operatorBeforePercentPos).toString()
+
+        // recursively parse it
+        if (calculationStringFirst.contains('%')) {
+            calculationStringFirst = getPercentString(calculationStringFirst)
+        }
+        // check if there are already some parenthesis, so we skip formatting
+        if (calculation[operatorBeforePercentPos] == '(') {
+            return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+        }
+        calculationStringFirst = "($calculationStringFirst)"
+        // modify the calculation to have something like (X)+(Y%*X)
+        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
+    }
+
+    private fun getExpression(calculation: String): Expression  {
+        var cleanCalculation = replaceSymbolsFromCalculation(calculation)
+        cleanCalculation = addParenthesis(cleanCalculation)
+        if (cleanCalculation.contains('%')) {
+            cleanCalculation = getPercentString(cleanCalculation)
+        }
+
+        return Expression(cleanCalculation)
     }
 
     fun zeroButton(view: View) {
@@ -439,38 +476,20 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.Default) {
             keyVibration(view)
 
-            var calculation = input.text.toString()
-            calculation = replaceSymbolsFromCalculation(calculation)
+            val calculation = input.text.toString()
 
             if (calculation != "") {
-                // Add ")" which lack
-                var openParentheses = 0
-                var closeParentheses = 0
+                val exp = getExpression(calculation)
+                val result = exp.calculate()
+                var resultString = result.toString()
+                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                for (i in 0..calculation.length - 1) {
-                    if (calculation[i] == '(') {
-                        openParentheses += 1
-                    }
-                    if (calculation[i] == ')') {
-                        closeParentheses += 1
-                    }
-                }
-                if (closeParentheses < openParentheses) {
-                    for (i in 0..openParentheses - closeParentheses - 1) {
-                        calculation += ')'
-                    }
-                }
+                mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
 
-                val exp = Expression(calculation)
-                var result = exp.calculate().toString()
-                var formattedResult = NumberFormatter.format(result.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
-                mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + exp.calculate())
-
-                if (result != "NaN" && result != "Infinity") {
-                    if ((exp.calculate() * 10) % 10 == 0.0) {
-                        result = String.format("%.0f", exp.calculate())
-                        formattedResult = NumberFormatter.format(result)
+                if (resultString != "NaN" && resultString != "Infinity") {
+                    if ((result * 10) % 10 == 0.0) {
+                        resultString = String.format("%.0f", result)
+                        formattedResult = NumberFormatter.format(resultString)
                         withContext(Dispatchers.Main) { input.setText(formattedResult) }
                     } else {
                         withContext(Dispatchers.Main) { input.setText(formattedResult) }
