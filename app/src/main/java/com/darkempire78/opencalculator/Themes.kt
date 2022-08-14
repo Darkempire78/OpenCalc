@@ -2,24 +2,18 @@ package com.darkempire78.opencalculator
 
 import android.app.Activity
 import android.content.Context
-import android.os.Build
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.get
 import com.google.android.material.color.DynamicColors
 
 class Themes(private val context: Context) {
 
     fun openDialogThemeSelector() {
-
         val builder = AlertDialog.Builder(context)
-        //builder.setTitle(getString(R.string.select_theme_title))
 
-
-        val styles = arrayOf("System", "Light", "Dark", "Amoled","Material You")
+        val styles = arrayOf("System", "Light", "Dark", "Amoled", "Material You")
         val checkedItem = MyPreferences(context).darkMode + 1
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
@@ -46,7 +40,7 @@ class Themes(private val context: Context) {
                     reloadActivity()
                 }
                 4 -> {
-                    if (DynamicColors.isDynamicColorAvailable()){
+                    if (DynamicColors.isDynamicColorAvailable()) {
                         MyPreferences(context).darkMode = 3
                         dialog.dismiss()
                         reloadActivity()
@@ -64,7 +58,7 @@ class Themes(private val context: Context) {
 
     private fun reloadActivity() {
         (context as Activity).finish()
-        startActivity(context, context.intent, null);
+        startActivity(context, context.intent, null)
     }
 
     fun checkTheme() {

@@ -5,4 +5,5 @@
     <string name="app_menu_theme">Θέμα</string>
     <string name="app_menu_vibration">Δόνηση</string>
     <string name="app_menu_about">Σχετικά</string>
+    <string name="infinity">Infinity</string>
 </resources>

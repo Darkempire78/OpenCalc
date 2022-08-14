@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
@@ -52,4 +52,5 @@
     <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
+    <string name="infinity">Infinity</string>
 </resources>
