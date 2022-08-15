@@ -22,7 +22,7 @@
         android:text=""
         android:textColor="?attr/text_color"
         android:textAlignment="textEnd"
-        android:textSize="60sp"
+        android:textSize="55sp"
         android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
         android:textColor="?attr/text_second_color"
         android:layout_weight="1"
         android:textAlignment="textEnd"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:paddingHorizontal="10dp"
         android:paddingBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -56,7 +56,7 @@
         android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultDisplay"
-        app:umanoPanelHeight="31dp"
+        app:umanoPanelHeight="41dp"
         app:umanoShadowHeight="0dp"
         tools:ignore="MissingConstraints">
 
@@ -682,7 +682,7 @@
                 android:id="@+id/history_recylcle_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="22dp"
                 android:background="?attr/background_color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -691,9 +691,10 @@
 
             <View
                 android:id="@+id/sliding_layout_button"
-                android:layout_width="40dp"
-                android:layout_height="3dp"
-                android:layout_marginVertical="14dp"
+                android:layout_width="30dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="24dp"
                 android:background="?attr/text_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

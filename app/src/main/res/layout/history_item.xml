@@ -19,7 +19,7 @@
             android:text="sjdfjd"
             android:background="?attr/background_color"
             android:textColor="?attr/text_color"
-            android:textSize="45sp"
+            android:textSize="40sp"
             tools:ignore="MissingConstraints" />
 
         <TextView
