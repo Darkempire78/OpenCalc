@@ -1,6 +1,7 @@
 package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -621,5 +623,19 @@ class MainActivity : AppCompatActivity() {
             binding.degreeTextView.visibility = View.GONE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide keyboard
+        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        if (currentFocus != null) {
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+
+
+        // Disable the keyboard on display EditText
+        binding.input.showSoftInputOnFocus = false
     }
 }
