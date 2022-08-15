@@ -282,6 +282,9 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getPercentString(calculation: String): String {
         val percentPos = calculation.lastIndexOf('%')
+        if (percentPos < 1) {
+            return calculation
+        }
         // find the last operator before the last %
         val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '×', '÷', '('))
         if (operatorBeforePercentPos < 1) {
