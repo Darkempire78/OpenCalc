@@ -1,0 +1,46 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <TextView
+            android:id="@+id/history_item_calculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="10dp"
+            android:text="sjdfjd"
+            android:textColor="?attr/text_color"
+            android:textSize="45sp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/history_item_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="sjdfjd"
+            android:textColor="?attr/text_second_color"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/foreground_color"
+            app:layout_constraintTop_toBottomOf="@+id/history_item_result"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

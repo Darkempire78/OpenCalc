@@ -7,6 +7,7 @@
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/circle.xml" value="0.216" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/circleIcon.xml" value="0.216" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/discord_circle_button.xml" value="0.141" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/display_background.xml" value="0.1995" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/github_circle_button.xml" value="0.1625" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1705" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/tip_circle_button.xml" value="0.141" />
@@ -15,7 +16,8 @@
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1875" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_about.xml" value="0.1923899102180419" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main-small.xml" value="0.25" />
-        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/history_item.xml" value="0.19153484395040615" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/menu/app_menu.xml" value="0.1911073108165883" />
         <entry key="..\:/Users/mhmoudhabib/AndroidStudioProjects/OpenCalc/app/src/main/res/drawable/circle.xml" value="0.1995" />
         <entry key="..\:/Users/mhmoudhabib/AndroidStudioProjects/OpenCalc/app/src/main/res/layout-land/activity_main.xml" value="0.26145833333333335" />

@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var historyAdapter: HistoryAdapter
+    private lateinit var historyLayoutMgr: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +100,26 @@ class MainActivity : AppCompatActivity() {
 
         // Set decimalSeparator
         binding.pointButton.text = decimalSeparatorSymbol
+
+        // Set history
+        historyLayoutMgr = LinearLayoutManager(
+            this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+        binding.historyRecylcleView?.layoutManager = historyLayoutMgr
+        historyAdapter = HistoryAdapter(mutableListOf()) {
+            value -> run {
+            val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
+                updateDisplay(window.decorView, valueUpdated)
+            }
+        }
+        binding.historyRecylcleView?.adapter = historyAdapter
+        // Set values
+        val historyList = MyPreferences(this).getHistory()
+        historyAdapter.appendHistory(historyList)
+        // Scroll to the bottom of the recycle view
+        binding.historyRecylcleView?.smoothScrollToPosition(historyAdapter.itemCount - 1);
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
@@ -477,6 +501,26 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
+
+                // Save to history
+                val history = MyPreferences(this@MainActivity).getHistory()
+                history.add(
+                    History(
+                        calculation = exp.expressionString.toString(),
+                        result = resultString,
+                    )
+                )
+                MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                // Update history variables
+                withContext(Dispatchers.Main) {
+                    historyAdapter.appendOneHistoryElement(History(
+                        calculation = exp.expressionString.toString(),
+                        result = resultString,
+                    ))
+                    // Scroll to the bottom of the recycle view
+                    binding.historyRecylcleView?.smoothScrollToPosition(historyAdapter.itemCount - 1);
+                }
+
 
                 if (resultString != "NaN" && resultString != "Infinity") {
                     if ((result * 10) % 10 == 0.0) {
