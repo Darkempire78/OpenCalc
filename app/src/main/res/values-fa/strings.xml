@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_display">ماشین حساب</string>
+    <string name="select_theme_title">یک تم انتخاب کنید</string>
+    <string name="app_menu_theme">تم</string>
+    <string name="app_menu_vibration">ویبره</string>
+    <string name="app_menu_about">درباره</string>
+</resources>
