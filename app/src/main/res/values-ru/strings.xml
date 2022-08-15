@@ -4,6 +4,6 @@
     <string name="app_name_display">Калькулятор</string>
     <string name="app_menu_theme">Тема</string>
     <string name="app_menu_vibration">Вибрация</string>
-    <string name="app_menu_about">О</string>
-    <string name="infinity">Infinity</string>
+    <string name="app_menu_about">О приложении</string>
+    <string name="infinity">Бесконечность</string>
 </resources>
