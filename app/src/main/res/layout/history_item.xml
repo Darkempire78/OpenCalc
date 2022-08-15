@@ -17,6 +17,7 @@
             android:paddingVertical="4dp"
             android:paddingHorizontal="10dp"
             android:text="sjdfjd"
+            android:background="?attr/background_color"
             android:textColor="?attr/text_color"
             android:textSize="45sp"
             tools:ignore="MissingConstraints" />
@@ -29,6 +30,7 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="4dp"
             android:text="sjdfjd"
+            android:background="?attr/background_color"
             android:textColor="?attr/text_second_color"
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
