@@ -13,6 +13,7 @@
 
         <item name="foreground_color">@color/light_foreground_color</item>
         <item name="background_color">@color/light_background_color</item>
+        <item name="history_background_color">@color/light_history_background_color</item>
         <item name="text_color">@color/light_text_color</item>
         <item name="text_second_color">@color/light_text_second_color</item>
         <item name="text_third_color">@color/light_text_third_color</item>
@@ -39,6 +40,7 @@
 
         <item name="foreground_color">@color/dark_foreground_color</item>
         <item name="background_color">@color/dark_background_color</item>
+        <item name="history_background_color">@color/dark_history_background_color</item>
         <item name="text_color">@color/dark_text_color</item>
         <item name="text_second_color">@color/dark_text_second_color</item>
         <item name="text_third_color">@color/dark_text_third_color</item>
@@ -64,6 +66,7 @@
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
         <item name="background_color">@color/amoled_background_color</item>
+        <item name="history_background_color">@color/amoled_history_background_color</item>
         <item name="text_color">@color/amoled_text_color</item>
         <item name="text_second_color">@color/amoled_text_second_color</item>
         <item name="text_third_color">@color/amoled_text_third_color</item>
@@ -80,6 +83,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
         <item name="background_color">@color/light_background_color</item>
+        <item name="history_background_color">@color/material_dynamic_secondary95</item>
         <item name="separator_color">@color/light_background_color</item>
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
 
@@ -107,6 +111,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="foreground_color">@color/material_dynamic_secondary20</item>
         <item name="background_color">@color/dark_background_color</item>
+        <item name="history_background_color">@color/material_dynamic_secondary10</item>
         <item name="separator_color">@color/dark_background_color</item>
         <item name="about_button_color">@color/dark_text_color</item>
 

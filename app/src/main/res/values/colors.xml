@@ -2,6 +2,7 @@
 <resources>
     <color name="light_foreground_color">#EFEFEF</color>
     <color name="light_background_color">#fff</color>
+    <color name="light_history_background_color">#fff</color>
     <color name="light_text_color">#000</color>
     <color name="light_text_second_color">#595959</color>
     <color name="light_text_third_color">#7E7E7E</color>
@@ -13,6 +14,7 @@
 
     <color name="dark_foreground_color">#535353</color>
     <color name="dark_background_color">#121212</color>
+    <color name="dark_history_background_color">#404040</color>
     <color name="dark_text_color">#EFEFEF</color>
     <color name="dark_text_second_color">#BDBDBD</color>
     <color name="dark_text_third_color">#B1B1B1</color>
@@ -24,6 +26,7 @@
 
     <color name="amoled_foreground_color">#000</color>
     <color name="amoled_background_color">#000</color>
+    <color name="amoled_history_background_color">#000</color>
     <color name="amoled_text_color">#EFEFEF</color>
     <color name="amoled_text_second_color">#BDBDBD</color>
     <color name="amoled_text_third_color">#B1B1B1</color>
