@@ -1,18 +1,17 @@
 package com.darkempire78.opencalculator
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_about.*
+import androidx.appcompat.app.AppCompatActivity
+import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAboutBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -47,7 +46,6 @@ class AboutActivity : AppCompatActivity() {
                 } else {
                     setTheme(R.style.materialYouLight)
                 }
-
             }
             else -> {
                 if (checkIfDarkModeIsEnabledByDefault()) {
@@ -58,24 +56,25 @@ class AboutActivity : AppCompatActivity() {
             }
         }
 
-        setContentView(R.layout.activity_main)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         // check the current selected theme
         Themes(this).checkTheme()
         setContentView(R.layout.activity_about)
 
         // Set app version
-        val manager = this.packageManager
-        val info = manager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
-        about_app_version.text = "v${info.versionName}"
+        val versionName =  "v" + this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES).versionName
+        binding.aboutAppVersion.text = versionName
 
         // back button
-        about_back_button.setOnClickListener() {
+        binding.aboutBackButton.setOnClickListener() {
             finish()
         }
 
         // Github
-        about_github_button.setOnClickListener() {
+        binding.aboutGithubButton.setOnClickListener() {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://github.com/Darkempire78/OpenCalc")
@@ -84,7 +83,7 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Discord
-        about_discord_button.setOnClickListener() {
+        binding.aboutDiscordButton.setOnClickListener() {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://discord.com/invite/sPvJmY7mcV")
@@ -96,11 +95,12 @@ class AboutActivity : AppCompatActivity() {
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             resources.configuration.isNightModeActive
-        } else
+        } else {
             when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
                 Configuration.UI_MODE_NIGHT_YES -> true
                 Configuration.UI_MODE_NIGHT_NO -> false
                 Configuration.UI_MODE_NIGHT_UNDEFINED -> true
                 else -> true
             }
+        }
 }

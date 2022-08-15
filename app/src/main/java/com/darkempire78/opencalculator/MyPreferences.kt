@@ -3,7 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.Context
 import androidx.preference.PreferenceManager
 
-class MyPreferences(context: Context?) {
+class MyPreferences(context: Context) {
 
     // https://proandroiddev.com/dark-mode-on-android-app-with-kotlin-dc759fc5f0e1
     companion object {

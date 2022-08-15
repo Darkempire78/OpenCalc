@@ -5,4 +5,5 @@
     <string name="app_menu_theme">Thème</string>
     <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_about">À propos</string>
+    <string name="infinity">Infinity</string>
 </resources>

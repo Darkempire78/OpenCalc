@@ -1,6 +1,5 @@
 package com.darkempire78.opencalculator
 
-
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 
@@ -8,7 +7,6 @@ object NumberFormatter {
     val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private val numberRegex = "([0-9]+\\$decimalSeparatorSymbol[0-9]+)|([0-9]+)".toRegex()
-
 
     fun format(text: String): String {
         val textNoSeparator = removeSeparators(text)
@@ -42,4 +40,3 @@ object NumberFormatter {
         return text.replace(groupingSeparatorSymbol, "")
     }
 }
-

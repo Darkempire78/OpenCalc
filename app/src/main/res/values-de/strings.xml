@@ -6,5 +6,6 @@
     <!-- App Menu -->
     <string name="app_menu_theme">Aussehen</string>
     <string name="app_menu_vibration">Vibration</string>
-    <string name="app_menu_about">Über</string>a
+    <string name="app_menu_about">Über</string>
+    <string name="infinity">Infinity</string>a
 </resources>
