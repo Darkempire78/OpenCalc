@@ -1,6 +1,7 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/light_foreground_color</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
@@ -26,6 +27,7 @@
 
     <!-- dark application theme. -->
     <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/dark_foreground_color</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/dark_background_color</item>
@@ -50,6 +52,7 @@
     </style>
 
     <style name="amoledTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/amoled_foreground_color</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
@@ -74,6 +77,7 @@
     </style>
 
     <style name="materialYouLight" parent="AppTheme">
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
         <item name="background_color">@color/light_background_color</item>
         <item name="separator_color">@color/light_background_color</item>
@@ -100,6 +104,7 @@
     </style>
 
     <style name="materialYouDark" parent="AppTheme">
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="foreground_color">@color/material_dynamic_secondary20</item>
         <item name="background_color">@color/dark_background_color</item>
         <item name="separator_color">@color/dark_background_color</item>
