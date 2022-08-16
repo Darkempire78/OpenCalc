@@ -33,6 +33,10 @@ class MyPreferences(context: Context) {
 
     fun saveHistory(context: Context, history: List<History>){
         val gson = Gson()
-        MyPreferences(context).history = gson.toJson(history) // Convert to json
+        val history2 = history.toMutableList()
+        if (history2.size > 50) {
+            history2.removeAt(0)
+        }
+        MyPreferences(context).history = gson.toJson(history2) // Convert to json
     }
 }
