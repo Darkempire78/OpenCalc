@@ -62,7 +62,6 @@ class AboutActivity : AppCompatActivity() {
 
         // check the current selected theme
         Themes(this).checkTheme()
-        setContentView(R.layout.activity_about)
 
         // Set app version
         val versionName =  "v" + this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES).versionName
