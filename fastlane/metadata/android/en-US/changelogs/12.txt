@@ -1,0 +1,8 @@
+New:
+- History
+
+Change:
+- Optimisation
+
+Fix:
+- Result display issues
