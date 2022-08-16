@@ -28,6 +28,7 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 * Dark, Light, Amoled and Material You theme,
 * Scientific mode,
+* History,
 * Portrait and landscape orientation,
 * More...
 
