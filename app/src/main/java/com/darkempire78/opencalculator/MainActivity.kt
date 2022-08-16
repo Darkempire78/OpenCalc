@@ -229,13 +229,13 @@ class MainActivity : AppCompatActivity() {
                         formattedResult = NumberFormatter.format(resultString)
 
                         withContext(Dispatchers.Main) {
-                            if (resultString != calculation) {
+                            if (formattedResult != calculation) {
                                 binding.resultDisplay.setText(formattedResult)
                             } else binding.resultDisplay.setText("")
                         }
                     } else {
                         withContext(Dispatchers.Main) {
-                            if (resultString != calculation) {
+                            if (formattedResult != calculation) {
                                 binding.resultDisplay.setText(formattedResult)
                             } else {
                                 binding.resultDisplay.setText("")
