@@ -16,10 +16,9 @@
             android:gravity="end"
             android:paddingVertical="4dp"
             android:paddingHorizontal="10dp"
-            android:text="sjdfjd"
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_color"
-            android:textSize="40sp"
+            android:textSize="35sp"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -29,10 +28,9 @@
             android:gravity="end"
             android:paddingHorizontal="10dp"
             android:paddingVertical="4dp"
-            android:text="sjdfjd"
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_second_color"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
             tools:ignore="MissingConstraints" />
 
