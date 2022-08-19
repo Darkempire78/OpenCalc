@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">テーマを選択</string>
+    <string name="app_name_display">電卓</string>
+    <string name="app_menu_theme">テーマ</string>
+    <string name="app_menu_vibration">振動</string>
+    <string name="app_menu_about">約</string>
+    <string name="infinity">無限大</string>
+</resources>
