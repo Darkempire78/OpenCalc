@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
+    private var isEqualLastAction = false
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var historyAdapter: HistoryAdapter
@@ -114,20 +115,20 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager.VERTICAL,
             false
         )
-        binding.historyRecylcleView?.layoutManager = historyLayoutMgr
+        binding.historyRecylcleView.layoutManager = historyLayoutMgr
         historyAdapter = HistoryAdapter(mutableListOf()) {
             value -> run {
                 val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
                 updateDisplay(window.decorView, valueUpdated)
             }
         }
-        binding.historyRecylcleView?.adapter = historyAdapter
+        binding.historyRecylcleView.adapter = historyAdapter
         // Set values
         val historyList = MyPreferences(this).getHistory()
         historyAdapter.appendHistory(historyList)
         // Scroll to the bottom of the recycle view
         if (historyAdapter.itemCount > 0) {
-            binding.historyRecylcleView?.smoothScrollToPosition(historyAdapter.itemCount - 1);
+            binding.historyRecylcleView.smoothScrollToPosition(historyAdapter.itemCount - 1);
         }
     }
 
@@ -174,6 +175,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDisplay(view: View, value: String) {
+        // Reset input with current number if following "equal"
+        if (isEqualLastAction) {
+            val anyNumber = "0123456789$decimalSeparatorSymbol".toCharArray().map {
+                it.toString()
+            }
+            if (anyNumber.contains(value)) {
+                    binding.input.setText("")
+            }
+            isEqualLastAction = false
+        }
+
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
                 // Vibrate when key pressed
@@ -530,7 +542,7 @@ class MainActivity : AppCompatActivity() {
                         result = resultString,
                     ))
                     // Scroll to the bottom of the recycle view
-                    binding.historyRecylcleView?.smoothScrollToPosition(historyAdapter.itemCount - 1);
+                    binding.historyRecylcleView.smoothScrollToPosition(historyAdapter.itemCount - 1);
                 }
 
 
@@ -552,6 +564,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                 }
+                isEqualLastAction = true
             } else {
                 withContext(Dispatchers.Main) { binding.resultDisplay.setText("") }
             }
