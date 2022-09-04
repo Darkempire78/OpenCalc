@@ -72,6 +72,15 @@ class AboutActivity : AppCompatActivity() {
             finish()
         }
 
+        // Tip
+        binding.aboutTipButton.setOnClickListener() {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.paypal.me/ImDarkempire")
+            )
+            startActivity(browserIntent)
+        }
+
         // Github
         binding.aboutGithubButton.setOnClickListener() {
             val browserIntent = Intent(
