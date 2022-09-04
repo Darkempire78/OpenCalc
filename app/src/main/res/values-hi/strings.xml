@@ -3,6 +3,7 @@
     <string name="app_name_display">कैलकुलेटर</string>
     <string name="select_theme_title">थीम चयन</string>
     <string name="app_menu_theme">थीम</string>
-    <string name="app_menu_vibration">कंपन</string>
-    <string name="app_menu_about">के बारे में</string>
+    <string name="app_menu_vibration">वाइब्रेशन</string>
+    <string name="app_menu_about">ऐप के बारे में</string>
+    <string name="infinity">इंफिनिटी</string>
 </resources>
