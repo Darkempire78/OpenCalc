@@ -3,4 +3,4 @@ New:
 
 Change:
 - Update translations
-- Clear inout if number pressed after equal
+- Clear input if number pressed after equal
