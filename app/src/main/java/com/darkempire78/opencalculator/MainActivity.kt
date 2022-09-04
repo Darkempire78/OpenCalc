@@ -527,19 +527,23 @@ class MainActivity : AppCompatActivity() {
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
 
                 // Save to history
+                if ((result * 10) % 10 == 0.0) {
+                    resultString = String.format("%.0f", result)
+                    formattedResult = NumberFormatter.format(resultString)
+                }
                 val history = MyPreferences(this@MainActivity).getHistory()
                 history.add(
                     History(
-                        calculation = exp.expressionString.toString(),
-                        result = resultString,
+                        calculation = calculation,
+                        result = formattedResult,
                     )
                 )
                 MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
                 // Update history variables
                 withContext(Dispatchers.Main) {
                     historyAdapter.appendOneHistoryElement(History(
-                        calculation = exp.expressionString.toString(),
-                        result = resultString,
+                        calculation = calculation,
+                        result = formattedResult,
                     ))
                     // Scroll to the bottom of the recycle view
                     binding.historyRecylcleView.smoothScrollToPosition(historyAdapter.itemCount - 1);
