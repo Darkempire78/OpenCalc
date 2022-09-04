@@ -18,7 +18,7 @@
     <string name="clear" translatable="false">AC</string>
     <string name="parentheses" translatable="false">(  )</string>
     <string name="add" translatable="false">+</string>
-    <string name="substract" translatable="false">-</string>
+    <string name="substract" translatable="false">−</string>
     <string name="point" translatable="false">.</string>
     <string name="equals" translatable="false">=</string>
     <string name="devide" translatable="false">÷</string>
