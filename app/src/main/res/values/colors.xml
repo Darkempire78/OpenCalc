@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="app_icon_background_color">#4684E3</color>
     <color name="light_foreground_color">#EFEFEF</color>
     <color name="light_background_color">#fff</color>
     <color name="light_history_background_color">#fff</color>

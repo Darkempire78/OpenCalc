@@ -1,10 +1,12 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/light_foreground_color</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
+        <item name="android:windowBackground">@color/dark_background_color</item>
 
         <item name="android:itemBackground">@color/light_background_color</item>
         <item name="android:textColor">@color/light_text_color</item>
