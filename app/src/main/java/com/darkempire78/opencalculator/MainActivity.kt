@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         historyAdapter.appendHistory(historyList)
         // Scroll to the bottom of the recycle view
         if (historyAdapter.itemCount > 0) {
-            binding.historyRecylcleView.smoothScrollToPosition(historyAdapter.itemCount - 1);
+            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
         }
     }
 
@@ -546,7 +546,7 @@ class MainActivity : AppCompatActivity() {
                         result = formattedResult,
                     ))
                     // Scroll to the bottom of the recycle view
-                    binding.historyRecylcleView.smoothScrollToPosition(historyAdapter.itemCount - 1);
+                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
                 }
 
 
