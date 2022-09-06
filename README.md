@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="OpenCalc" align="center">
+<img width="200" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" alt="OpenCalc" align="center">
 
 # OpenCalc
 
