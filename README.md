@@ -24,6 +24,8 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 <div align="left">
 
+`You can view this README in your own language:` [🇹🇷](https://github.com/vixpr/OpenCalc/blob/main/readme/turkish.readme.md)
+
 ## :book: Features
 
 * Dark, Light, Amoled and Material You theme,
