@@ -59,4 +59,4 @@ Please make sure to update tests as appropriate.
 
 ## :scroll: License
 
-This project is licensed under [GPLv3](https://github.com/Darkempire78/Raid-Protect-Discord-Bot/blob/master/LICENSE).
+This project is licensed under [GPLv3](/LICENSE)
