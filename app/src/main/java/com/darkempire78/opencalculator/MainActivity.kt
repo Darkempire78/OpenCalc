@@ -82,11 +82,6 @@ class MainActivity : AppCompatActivity() {
         // check the current selected theme
         Themes(this).checkTheme()
 
-        // Hide keyboard
-        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        if (currentFocus != null) {
-            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-        }
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
 
@@ -652,12 +647,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
-        // Hide keyboard
-        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        if (currentFocus != null) {
-            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-        }
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
