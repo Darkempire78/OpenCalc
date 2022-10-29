@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">থিম নির্বাচন করুন</string>
+    <string name="app_name_display">ক্যালকুলেটর</string>
+    <string name="app_menu_theme">থিম</string>
+    <string name="app_menu_vibration">কম্পন</string>
+    <string name="app_menu_about">সম্পর্কিত</string>
+</resources>
