@@ -14,3 +14,4 @@
 .cxx
 *.apk
 app/release/output-metadata.json
+*.aab
