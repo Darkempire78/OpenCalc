@@ -590,10 +590,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (openParentheses == closeParentheses || binding.input.text.toString().subSequence(
-                textLength - 1,
-                textLength
-            ) == "("
+        if (openParentheses == closeParentheses
+            || binding.input.text.toString().subSequence(textLength - 1, textLength) == "("
+            || binding.input.text.toString().subSequence(textLength - 1, textLength) in "×÷+−^"
         ) {
             updateDisplay(view, "(")
         } else if (closeParentheses < openParentheses && binding.input.text.toString().subSequence(
