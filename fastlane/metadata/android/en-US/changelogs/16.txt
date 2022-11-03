@@ -1,0 +1,4 @@
+Fix:
+- Input scrollbar
+- Necessary scroll to see result
+- Clear input if number pressed after equal
