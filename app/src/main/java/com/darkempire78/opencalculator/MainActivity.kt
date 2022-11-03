@@ -9,7 +9,9 @@ import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import android.view.inputmethod.InputMethodManager
+import android.widget.HorizontalScrollView
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -125,6 +127,19 @@ class MainActivity : AppCompatActivity() {
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
         }
+
+        // Do not clear after equal button if you move the cursor
+        binding.input.setAccessibilityDelegate(object : View.AccessibilityDelegate() {
+            override fun sendAccessibilityEvent(host: View, eventType: Int) {
+                super.sendAccessibilityEvent(host, eventType)
+                if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED){
+                    isEqualLastAction = false
+                }
+                if (!binding.input.isCursorVisible) {
+                    binding.input.isCursorVisible = true
+                }
+            }
+        })
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
@@ -177,8 +192,15 @@ class MainActivity : AppCompatActivity() {
             }
             if (anyNumber.contains(value)) {
                     binding.input.setText("")
+            } else {
+                binding.input.setSelection(binding.input.text.length)
+                binding.inputHorizontalScrollView!!.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
             }
             isEqualLastAction = false
+        }
+
+        if (!binding.input.isCursorVisible) {
+            binding.input.isCursorVisible = true
         }
 
         lifecycleScope.launch(Dispatchers.Default) {
@@ -555,7 +577,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     // Set cursor
                     withContext(Dispatchers.Main) {
-                        binding.input.setSelection(binding.input.text.length)
+                        // Scroll to the beginning
+                        binding.input.setSelection(0)
+                        // Hide the cursor
+                        binding.input.isCursorVisible = false
 
                         // Clear resultDisplay
                         binding.resultDisplay.setText("")
