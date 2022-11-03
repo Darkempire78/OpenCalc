@@ -577,11 +577,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     // Set cursor
                     withContext(Dispatchers.Main) {
-                        // Scroll to the beginning
-                        binding.input.setSelection(0)
                         // Hide the cursor
                         binding.input.isCursorVisible = false
-
+                        // Scroll to the beginning
+                        binding.input.setSelection(0)
                         // Clear resultDisplay
                         binding.resultDisplay.setText("")
                     }
