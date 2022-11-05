@@ -311,6 +311,29 @@ class MainActivity : AppCompatActivity() {
         return cleanCalculation
     }
 
+    private fun addMultiply(calculation: String): String {
+        // Add "*" which lack
+
+        var cleanCalculation = calculation
+
+        for (i in 0..calculation.length - 1) {
+            if (calculation[i] == '(') {
+                if (i != 0 && (calculation[i-1] in "123456789)")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
+                }
+            } else if (calculation[i] == ')') {
+                if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+2)
+                }
+            }
+        }
+
+        return cleanCalculation
+    }
+
+    fun String.addCharAtIndex(char: Char, index: Int) =
+        StringBuilder(this).apply { insert(index, char) }.toString()
+
     /* Transform any calculation string containing %
      * to respect the user friend (non-mathematical) way (see issue #35)
      */
@@ -343,6 +366,7 @@ class MainActivity : AppCompatActivity() {
     private fun getCleanExpression(calculation: String): String {
         var cleanCalculation = replaceSymbolsFromCalculation(calculation)
         cleanCalculation = addParenthesis(cleanCalculation)
+        cleanCalculation = addMultiply(cleanCalculation)
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
         }
@@ -534,6 +558,7 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             val calculation = binding.input.text.toString()
+
             print("\n\n--------------")
             var calculationTmp = getCleanExpression(binding.input.text.toString())
             calculationTmp = calculationTmp.replace("%", "/100")
