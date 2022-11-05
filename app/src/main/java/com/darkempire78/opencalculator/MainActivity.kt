@@ -246,7 +246,7 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-                val exp = getExpression(calculation)
+                val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
@@ -340,14 +340,14 @@ class MainActivity : AppCompatActivity() {
         return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
     }
 
-    private fun getExpression(calculation: String): Expression {
+    private fun getCleanExpression(calculation: String): String {
         var cleanCalculation = replaceSymbolsFromCalculation(calculation)
         cleanCalculation = addParenthesis(cleanCalculation)
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
         }
 
-        return Expression(cleanCalculation)
+        return cleanCalculation
     }
 
     fun zeroButton(view: View) {
@@ -534,9 +534,15 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             val calculation = binding.input.text.toString()
+            print("\n\n--------------")
+            var calculationTmp = getCleanExpression(binding.input.text.toString())
+            calculationTmp = calculationTmp.replace("%", "/100")
+            calculationTmp = calculationTmp.replace("log10", "logten")
+            println(Calculator().evaluate(calculationTmp))
+            print("\n-------------\n\n")
 
             if (calculation != "") {
-                val exp = getExpression(calculation)
+                val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
