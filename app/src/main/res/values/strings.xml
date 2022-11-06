@@ -47,10 +47,12 @@
     <string name="square" translatable="false">√</string>
     <string name="squareInv" translatable="false">x²</string>
 
+    <string name="infinity">Infinity</string>
+
     <!-- App Menu -->
     <string name="app_menu_theme">Theme</string>
     <string name="app_menu_vibration">Vibration</string>
+    <string name="app_menu_clear_history">Clear History</string>
     <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
-    <string name="infinity">Infinity</string>
 </resources>

@@ -176,6 +176,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent, null)
     }
 
+    fun clearHistory(menuItem: MenuItem) {
+        // Clear preferences
+        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf<History>())
+        // Clear drawer
+        historyAdapter.clearHistory()
+    }
+
     private fun keyVibration(view: View) {
         if (MyPreferences(this).vibrationMode) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {

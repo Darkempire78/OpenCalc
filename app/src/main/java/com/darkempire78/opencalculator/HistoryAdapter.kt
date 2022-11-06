@@ -32,10 +32,10 @@ class HistoryAdapter(
             )
         }
 
-    fun appendOneHistoryElement(history: History) {
-        this.history.add(history)
-        notifyDataSetChanged()
-    }
+        fun appendOneHistoryElement(history: History) {
+            this.history.add(history)
+            notifyDataSetChanged()
+        }
 
         fun clearHistory() {
             this.history.clear()
