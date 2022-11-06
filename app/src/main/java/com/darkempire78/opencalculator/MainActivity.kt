@@ -566,12 +566,12 @@ class MainActivity : AppCompatActivity() {
 
             val calculation = binding.input.text.toString()
 
-            print("\n\n--------------")
+            /*print("\n\n--------------")
             var calculationTmp = getCleanExpression(binding.input.text.toString())
             calculationTmp = calculationTmp.replace("%", "/100")
             calculationTmp = calculationTmp.replace("log10", "logten")
             println(Calculator().evaluate(calculationTmp))
-            print("\n-------------\n\n")
+            print("\n-------------\n\n")*/
 
             if (calculation != "") {
                 val exp = Expression(getCleanExpression(calculation))
