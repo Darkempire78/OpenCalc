@@ -1,0 +1,8 @@
+Kalkulator yang indah dan sederhana untuk Android
+
+📖 Fitur
+	* Tema Gelap, Terang, Amoled dan Material You,
+	* Mode sains,
+	* Riwayat,
+	* Orientasi potret dan lanskap,
+	* Lainnya...
