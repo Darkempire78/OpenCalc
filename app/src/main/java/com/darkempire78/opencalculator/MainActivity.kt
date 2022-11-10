@@ -1,6 +1,8 @@
 package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -140,6 +142,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        // LongClick on result to copy it
+        binding.resultDisplay.setOnLongClickListener {
+            when {
+                binding.resultDisplay.text.toString() != "" -> {
+                    val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copied result", binding.resultDisplay.text)
+                    clipboardManager.setPrimaryClip(clip)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
