@@ -1,5 +1,8 @@
 package com.darkempire78.opencalculator
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +62,18 @@ class HistoryAdapter(
                 }
                 result.setOnClickListener {
                     onElementClick.invoke(history.result)
+                }
+                calculation.setOnLongClickListener {
+                    val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copied history calculation", history.calculation)
+                    clipboardManager.setPrimaryClip(clip)
+                    true // Or false if not consumed
+                }
+                result.setOnLongClickListener {
+                    val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copied history result", history.result)
+                    clipboardManager.setPrimaryClip(clip)
+                    true // Or false if not consumed
                 }
             }
         }
