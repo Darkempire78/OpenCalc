@@ -13,13 +13,16 @@ import com.google.android.material.color.DynamicColors
 class Themes(private val context: Context) {
 
     private val themeMap = mapOf(
-        /* System */      -1 to if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme,
+        /* System */      -1 to
+            if (DynamicColors.isDynamicColorAvailable()) {
+                if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark else R.style.materialYouLight
+            } else {
+                if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme
+            },
         /* Light mode */   0 to R.style.AppTheme,
         /* Dark mode */    1 to R.style.darkTheme,
         /* amoled mode */  2 to R.style.amoledTheme,
-        /* Material You */ 3 to
-                if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark
-                else R.style.materialYouLight
+        /* Material You */ 3 to if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark else R.style.materialYouLight
     )
 
     fun openDialogThemeSelector() {
@@ -31,10 +34,16 @@ class Themes(private val context: Context) {
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
             when (which) {
                 0 -> {
-                    MyPreferences(context).darkMode = -1
-                    dialog.dismiss()
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                    reloadActivity()
+                    if (DynamicColors.isDynamicColorAvailable()) {
+                        MyPreferences(context).darkMode = 3
+                        dialog.dismiss()
+                        reloadActivity()
+                    } else {
+                        MyPreferences(context).darkMode = -1
+                        dialog.dismiss()
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                        reloadActivity()
+                    }
                 }
                 1 -> {
                     MyPreferences(context).darkMode = 0
