@@ -13,10 +13,10 @@ import com.google.android.material.color.DynamicColors
 class Themes(private val context: Context) {
 
     private val themeMap = mapOf(
-        /* System */ -1 to if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme,
-        /* Light mode */ 0 to R.style.AppTheme,
-        /* Dark mode */ 1 to R.style.darkTheme,
-        /* amoled mode */ 2 to R.style.amoledTheme,
+        /* System */      -1 to if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme,
+        /* Light mode */   0 to R.style.AppTheme,
+        /* Dark mode */    1 to R.style.darkTheme,
+        /* amoled mode */  2 to R.style.amoledTheme,
         /* Material You */ 3 to
                 if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark
                 else R.style.materialYouLight
