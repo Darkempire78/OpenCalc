@@ -68,12 +68,12 @@ class AboutActivity : AppCompatActivity() {
         binding.aboutAppVersion.text = versionName
 
         // back button
-        binding.aboutBackButton.setOnClickListener() {
+        binding.aboutBackButton.setOnClickListener {
             finish()
         }
 
         // Tip
-        binding.aboutTipButton.setOnClickListener() {
+        binding.aboutTipButton.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://www.paypal.me/ImDarkempire")
@@ -82,7 +82,7 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Github
-        binding.aboutGithubButton.setOnClickListener() {
+        binding.aboutGithubButton.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://github.com/Darkempire78/OpenCalc")
@@ -91,7 +91,7 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Discord
-        binding.aboutDiscordButton.setOnClickListener() {
+        binding.aboutDiscordButton.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://discord.com/invite/sPvJmY7mcV")

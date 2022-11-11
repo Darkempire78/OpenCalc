@@ -19,7 +19,7 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
     var vibrationMode = preferences.getBoolean(KEY_VIBRATION_STATUS, true)
         set(value) = preferences.edit().putBoolean(KEY_VIBRATION_STATUS, value).apply()
-    var history = preferences.getString(KEY_HISTORY, null)
+    private var history = preferences.getString(KEY_HISTORY, null)
         set(value) = preferences.edit().putString(KEY_HISTORY, value).apply()
 
     fun getHistory(): MutableList<History> {
@@ -27,7 +27,7 @@ class MyPreferences(context: Context) {
         return if (preferences.getString(KEY_HISTORY, null) != null) {
             gson.fromJson(history, Array<History>::class.java).asList().toMutableList()
         } else {
-            mutableListOf<History>()
+            mutableListOf()
         }
     }
 

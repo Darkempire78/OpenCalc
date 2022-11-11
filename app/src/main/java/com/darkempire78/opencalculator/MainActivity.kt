@@ -1,18 +1,16 @@
 package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
+import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
-import android.view.inputmethod.InputMethodManager
 import android.widget.HorizontalScrollView
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
@@ -91,11 +89,11 @@ class MainActivity : AppCompatActivity() {
         historyAdapter.appendHistory(historyList)
         // Scroll to the bottom of the recycle view
         if (historyAdapter.itemCount > 0) {
-            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
+            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
 
         // Do not clear after equal button if you move the cursor
-        binding.input.setAccessibilityDelegate(object : View.AccessibilityDelegate() {
+        binding.input.accessibilityDelegate = object : View.AccessibilityDelegate() {
             override fun sendAccessibilityEvent(host: View, eventType: Int) {
                 super.sendAccessibilityEvent(host, eventType)
                 if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED){
@@ -105,7 +103,7 @@ class MainActivity : AppCompatActivity() {
                     binding.input.isCursorVisible = true
                 }
             }
-        })
+        }
 
         // LongClick on result to copy it
         binding.resultDisplay.setOnLongClickListener {
@@ -145,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clearHistory(menuItem: MenuItem) {
         // Clear preferences
-        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf<History>())
+        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf())
         // Clear drawer
         historyAdapter.clearHistory()
     }
@@ -168,7 +166,7 @@ class MainActivity : AppCompatActivity() {
                     binding.input.setText("")
             } else {
                 binding.input.setSelection(binding.input.text.length)
-                binding.inputHorizontalScrollView!!.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+                binding.inputHorizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
             }
             isEqualLastAction = false
         }
@@ -268,7 +266,7 @@ class MainActivity : AppCompatActivity() {
         var openParentheses = 0
         var closeParentheses = 0
 
-        for (i in 0..calculation.length - 1) {
+        for (i in calculation.indices) {
             if (calculation[i] == '(') {
                 openParentheses += 1
             }
@@ -277,7 +275,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         if (closeParentheses < openParentheses) {
-            for (i in 0..openParentheses - closeParentheses - 1) {
+            for (i in 0 until openParentheses - closeParentheses) {
                 cleanCalculation += ')'
             }
         }
@@ -290,7 +288,7 @@ class MainActivity : AppCompatActivity() {
 
         var cleanCalculation = calculation
 
-        for (i in 0..calculation.length - 1) {
+        for (i in calculation.indices) {
             if (calculation[i] == '(') {
                 if (i != 0 && (calculation[i-1] in "123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
@@ -305,7 +303,7 @@ class MainActivity : AppCompatActivity() {
         return cleanCalculation
     }
 
-    fun String.addCharAtIndex(char: Char, index: Int) =
+    private fun String.addCharAtIndex(char: Char, index: Int) =
         StringBuilder(this).apply { insert(index, char) }.toString()
 
     /* Transform any calculation string containing %
@@ -477,6 +475,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, "%")
     }
 
+    @SuppressLint("SetTextI18n")
     fun degreeButton(view: View) {
         keyVibration(view)
 
@@ -568,7 +567,7 @@ class MainActivity : AppCompatActivity() {
                         result = formattedResult,
                     ))
                     // Scroll to the bottom of the recycle view
-                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
+                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                 }
 
 
@@ -610,7 +609,7 @@ class MainActivity : AppCompatActivity() {
 
         // https://kotlinlang.org/docs/ranges.html
         // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
-        for (i in 0..cursorPosition - 1) {
+        for (i in 0 until cursorPosition) {
             if (text[i] == '(') {
                 openParentheses += 1
             }
