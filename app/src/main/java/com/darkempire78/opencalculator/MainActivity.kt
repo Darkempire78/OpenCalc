@@ -92,6 +92,9 @@ class MainActivity : AppCompatActivity() {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
 
+        // Focus by default
+        binding.input.requestFocus()
+
         // Do not clear after equal button if you move the cursor
         binding.input.accessibilityDelegate = object : View.AccessibilityDelegate() {
             override fun sendAccessibilityEvent(host: View, eventType: Int) {
