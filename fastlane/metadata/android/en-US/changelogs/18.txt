@@ -1,0 +1,7 @@
+New:
+- Long click to copy a value
+- Indonesian translation
+
+Fixed:
+- scroll on landscape mode
+- focus issue
