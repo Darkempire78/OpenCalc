@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class HistoryAdapter(
@@ -67,12 +68,14 @@ class HistoryAdapter(
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copied history calculation", history.calculation)
                     clipboardManager.setPrimaryClip(clip)
+                    Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true // Or false if not consumed
                 }
                 result.setOnLongClickListener {
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copied history result", history.result)
                     clipboardManager.setPrimaryClip(clip)
+                    Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true // Or false if not consumed
                 }
             }

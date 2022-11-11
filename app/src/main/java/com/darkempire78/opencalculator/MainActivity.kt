@@ -13,6 +13,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.HorizontalScrollView
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -115,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                     val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copied result", binding.resultDisplay.text)
                     clipboardManager.setPrimaryClip(clip)
+                    Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false

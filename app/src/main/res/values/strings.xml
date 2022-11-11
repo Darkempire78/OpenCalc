@@ -55,4 +55,7 @@
     <string name="app_menu_clear_history">Clear History</string>
     <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
+
+    <!-- Others -->
+    <string name="value_copied">Copied</string>
 </resources>
