@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="app_name_display">Калькулятор</string>
     <string name="select_theme_title">Выберите тему</string>
-    <string name="app_name_display">Калькулятор</string>
+    
+    <string name="infinity">Бесконечность</string>
+
+    <!-- Меню приложения -->
     <string name="app_menu_theme">Тема</string>
     <string name="app_menu_vibration">Вибрация</string>
+    <string name="app_menu_clear_history">Очистить Историю</string>
     <string name="app_menu_about">О приложении</string>
-    <string name="infinity">Бесконечность</string>
+    
+    <!-- Другое -->
+    <string name="value_copied">Скопировано</string>
 </resources>
