@@ -3,16 +3,14 @@ package com.darkempire78.opencalculator
 import android.animation.LayoutTransition
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
-import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +26,8 @@ import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
 
-    private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+    private val decimalSeparatorSymbol =
+        DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private lateinit var binding: ActivityMainBinding
@@ -79,8 +78,8 @@ class MainActivity : AppCompatActivity() {
             false
         )
         binding.historyRecylcleView.layoutManager = historyLayoutMgr
-        historyAdapter = HistoryAdapter(mutableListOf()) {
-            value -> run {
+        historyAdapter = HistoryAdapter(mutableListOf()) { value ->
+            run {
                 val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
                 updateDisplay(window.decorView, valueUpdated)
             }
@@ -98,7 +97,7 @@ class MainActivity : AppCompatActivity() {
         binding.input.setAccessibilityDelegate(object : View.AccessibilityDelegate() {
             override fun sendAccessibilityEvent(host: View, eventType: Int) {
                 super.sendAccessibilityEvent(host, eventType)
-                if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED){
+                if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED) {
                     isEqualLastAction = false
                 }
                 if (!binding.input.isCursorVisible) {
@@ -119,6 +118,10 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    fun keyPadMappingToDisplay(view: View) {
+        updateDisplay(view, (view as Button).text as String)
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
@@ -165,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                 it.toString()
             }
             if (anyNumber.contains(value)) {
-                    binding.input.setText("")
+                binding.input.setText("")
             } else {
                 binding.input.setSelection(binding.input.text.length)
                 binding.inputHorizontalScrollView!!.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
@@ -223,7 +226,12 @@ class MainActivity : AppCompatActivity() {
                 val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                var formattedResult = NumberFormatter.format(
+                    resultString.replace(
+                        ".",
+                        NumberFormatter.decimalSeparatorSymbol
+                    )
+                )
 
                 if (resultString != "NaN" && resultString != "Infinity") {
                     // If the double ends with .0 we remove the .0
@@ -292,12 +300,12 @@ class MainActivity : AppCompatActivity() {
 
         for (i in 0..calculation.length - 1) {
             if (calculation[i] == '(') {
-                if (i != 0 && (calculation[i-1] in "123456789)")) {
+                if (i != 0 && (calculation[i - 1] in "123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                 }
             } else if (calculation[i] == ')') {
-                if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+2)
+                if (i + 1 < calculation.length && (calculation[i + 1] in "123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i + 2)
                 }
             }
         }
@@ -317,7 +325,8 @@ class MainActivity : AppCompatActivity() {
             return calculation
         }
         // find the last operator before the last %
-        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '×', '÷', '('))
+        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1)
+            .lastIndexOfAny(charArrayOf('-', '+', '×', '÷', '('))
         if (operatorBeforePercentPos < 1) {
             return calculation
         }
@@ -330,11 +339,17 @@ class MainActivity : AppCompatActivity() {
         }
         // check if there are already some parenthesis, so we skip formatting
         if (calculation[operatorBeforePercentPos] == '(') {
-            return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+            return calculationStringFirst + calculation.subSequence(
+                operatorBeforePercentPos,
+                calculation.length
+            )
         }
         calculationStringFirst = "($calculationStringFirst)"
         // modify the calculation to have something like (X)+(Y%*X)
-        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
+        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(
+            operatorBeforePercentPos + 1,
+            percentPos
+        ) + ")" + calculation.subSequence(percentPos, calculation.length)
     }
 
     private fun getCleanExpression(calculation: String): String {
@@ -348,134 +363,6 @@ class MainActivity : AppCompatActivity() {
         return cleanCalculation
     }
 
-    fun zeroButton(view: View) {
-        updateDisplay(view, "0")
-    }
-
-    fun oneButton(view: View) {
-        updateDisplay(view, "1")
-    }
-
-    fun twoButton(view: View) {
-        updateDisplay(view, "2")
-    }
-
-    fun threeButton(view: View) {
-        updateDisplay(view, "3")
-    }
-
-    fun fourButton(view: View) {
-        updateDisplay(view, "4")
-    }
-
-    fun fiveButton(view: View) {
-        updateDisplay(view, "5")
-    }
-
-    fun sixButton(view: View) {
-        updateDisplay(view, "6")
-    }
-
-    fun sevenButton(view: View) {
-        updateDisplay(view, "7")
-    }
-
-    fun eightButton(view: View) {
-        updateDisplay(view, "8")
-    }
-
-    fun nineButton(view: View) {
-        updateDisplay(view, "9")
-    }
-
-    fun addButton(view: View) {
-        updateDisplay(view, "+")
-    }
-
-    fun substractButton(view: View) {
-        updateDisplay(view, "-")
-    }
-
-    fun pointButton(view: View) {
-        val decimalSeparator = decimalSeparatorSymbol
-        updateDisplay(view, decimalSeparator)
-    }
-
-    fun devideButton(view: View) {
-        updateDisplay(view, "÷")
-    }
-
-    fun multiplyButton(view: View) {
-        updateDisplay(view, "×")
-    }
-
-    fun exponentButton(view: View) {
-        updateDisplay(view, "^")
-    }
-
-    fun sinusButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "sin(")
-        } else {
-            updateDisplay(view, "arcsin(")
-        }
-    }
-
-    fun cosinusButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "cos(")
-        } else {
-            updateDisplay(view, "arccos(")
-        }
-    }
-
-    fun tangentButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "tan(")
-        } else {
-            updateDisplay(view, "arctan(")
-        }
-    }
-
-    fun eButton(view: View) {
-        updateDisplay(view, "e")
-    }
-
-    fun naturalLogarithmButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "ln(")
-        } else {
-            updateDisplay(view, "exp(")
-        }
-    }
-
-    fun logarithmButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "log(")
-        } else {
-            updateDisplay(view, "10^")
-        }
-    }
-
-    fun piButton(view: View) {
-        updateDisplay(view, "π")
-    }
-
-    fun factorialButton(view: View) {
-        updateDisplay(view, "!")
-    }
-
-    fun squareButton(view: View) {
-        if (!isInvButtonClicked) {
-            updateDisplay(view, "√")
-        } else {
-            updateDisplay(view, "^2")
-        }
-    }
-
-    fun devideBy100(view: View) {
-        updateDisplay(view, "%")
-    }
 
     fun degreeButton(view: View) {
         keyVibration(view)
@@ -544,7 +431,12 @@ class MainActivity : AppCompatActivity() {
                 val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                var formattedResult = NumberFormatter.format(
+                    resultString.replace(
+                        ".",
+                        NumberFormatter.decimalSeparatorSymbol
+                    )
+                )
 
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
 
@@ -563,10 +455,12 @@ class MainActivity : AppCompatActivity() {
                 MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
                 // Update history variables
                 withContext(Dispatchers.Main) {
-                    historyAdapter.appendOneHistoryElement(History(
-                        calculation = calculation,
-                        result = formattedResult,
-                    ))
+                    historyAdapter.appendOneHistoryElement(
+                        History(
+                            calculation = calculation,
+                            result = formattedResult,
+                        )
+                    )
                     // Scroll to the bottom of the recycle view
                     binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1);
                 }
