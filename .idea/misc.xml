@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/backspace.xml" value="0.162" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/backspace_720dp.xml" value="0.162" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.13" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-land/activity_main.xml" value="0.19858781994704325" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw600dp/history_item.xml" value="0.16" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.15019762845849802" />
+        <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout-sw720dp/history_item.xml" value="0.17281420765027322" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_about.xml" value="0.1774262505344164" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/layout/activity_main.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/cleme/OneDrive/Bureau/OpenCalc/app/src/main/res/menu/app_menu.xml" value="0.1774262505344164" />
