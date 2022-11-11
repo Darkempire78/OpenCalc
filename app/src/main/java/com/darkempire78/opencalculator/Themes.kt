@@ -34,16 +34,9 @@ class Themes(private val context: Context) {
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
             when (which) {
                 0 -> {
-                    if (DynamicColors.isDynamicColorAvailable()) {
-                        MyPreferences(context).darkMode = 3
-                        dialog.dismiss()
-                        reloadActivity()
-                    } else {
-                        MyPreferences(context).darkMode = -1
-                        dialog.dismiss()
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                        reloadActivity()
-                    }
+                    MyPreferences(context).darkMode = -1
+                    dialog.dismiss()
+                    reloadActivity()
                 }
                 1 -> {
                     MyPreferences(context).darkMode = 0
