@@ -492,7 +492,7 @@ class MainActivity : AppCompatActivity() {
             mXparser.setDegreesMode()
         }
 
-        binding.degreeTextView.text = binding.degreeButton.text.toString()
+        binding.degreeTextView?.text = binding.degreeButton.text.toString()
         updateResultDisplay()
     }
 
@@ -666,14 +666,14 @@ class MainActivity : AppCompatActivity() {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            binding.degreeTextView.visibility = View.VISIBLE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            binding.degreeTextView?.visibility = View.VISIBLE
+            binding.degreeTextView?.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            binding.degreeTextView.visibility = View.GONE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            binding.degreeTextView?.visibility = View.GONE
+            binding.degreeTextView?.text = binding.degreeButton.text.toString()
         }
     }
 
