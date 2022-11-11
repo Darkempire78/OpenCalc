@@ -1,6 +1,8 @@
 package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -38,45 +40,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Themes
-        Themes(this)
+        val themes = Themes(this)
+        setTheme(themes.getTheme())
 
-        when (MyPreferences(this).darkMode) {
-            // System
-            -1 -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.darkTheme)
-                } else {
-                    setTheme(R.style.AppTheme)
-                }
-            }
-            // Light mode
-            0 -> {
-                setTheme(R.style.AppTheme)
-            }
-            // Dark mode
-            1 -> {
-                setTheme(R.style.darkTheme)
-            }
-            // amoled mode
-            2 -> {
-                setTheme(R.style.amoledTheme)
-            }
-            // Material You
-            3 -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.materialYouDark)
-                } else {
-                    setTheme(R.style.materialYouLight)
-                }
-            }
-            else -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.darkTheme)
-                } else {
-                    setTheme(R.style.AppTheme)
-                }
-            }
-        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -140,6 +106,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        // LongClick on result to copy it
+        binding.resultDisplay.setOnLongClickListener {
+            when {
+                binding.resultDisplay.text.toString() != "" -> {
+                    val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copied result", binding.resultDisplay.text)
+                    clipboardManager.setPrimaryClip(clip)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
