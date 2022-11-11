@@ -1,0 +1,8 @@
+New:
+- Toast when you copy a value
+
+Fixed:
+- Follow system theme supports Material You
+- Improve support for tablet
+- Improve support for small screen size
+- Icon not displayed for Android lower than 8
