@@ -40,45 +40,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Themes
-        Themes(this)
+        val themes = Themes(this)
+        setTheme(themes.getTheme())
 
-        when (MyPreferences(this).darkMode) {
-            // System
-            -1 -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.darkTheme)
-                } else {
-                    setTheme(R.style.AppTheme)
-                }
-            }
-            // Light mode
-            0 -> {
-                setTheme(R.style.AppTheme)
-            }
-            // Dark mode
-            1 -> {
-                setTheme(R.style.darkTheme)
-            }
-            // amoled mode
-            2 -> {
-                setTheme(R.style.amoledTheme)
-            }
-            // Material You
-            3 -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.materialYouDark)
-                } else {
-                    setTheme(R.style.materialYouLight)
-                }
-            }
-            else -> {
-                if (checkIfDarkModeIsEnabledByDefault()) {
-                    setTheme(R.style.darkTheme)
-                } else {
-                    setTheme(R.style.AppTheme)
-                }
-            }
-        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -156,18 +120,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            resources.configuration.isNightModeActive
-        } else {
-            when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
-                Configuration.UI_MODE_NIGHT_YES -> true
-                Configuration.UI_MODE_NIGHT_NO -> false
-                Configuration.UI_MODE_NIGHT_UNDEFINED -> true
-                else -> true
-            }
-        }
 
     fun selectThemeDialog(menuItem: MenuItem) {
         Themes(this).openDialogThemeSelector()

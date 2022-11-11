@@ -2,6 +2,8 @@ package com.darkempire78.opencalculator
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Configuration
+import android.os.Build
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
@@ -9,6 +11,16 @@ import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.color.DynamicColors
 
 class Themes(private val context: Context) {
+
+    private val themeMap = mapOf(
+        /* System */      -1 to if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme,
+        /* Light mode */   0 to R.style.AppTheme,
+        /* Dark mode */    1 to R.style.darkTheme,
+        /* amoled mode */  2 to R.style.amoledTheme,
+        /* Material You */ 3 to
+                if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark
+                else R.style.materialYouLight
+    )
 
     fun openDialogThemeSelector() {
         val builder = AlertDialog.Builder(context)
@@ -77,4 +89,20 @@ class Themes(private val context: Context) {
             }
         }
     }
+
+    fun getTheme(): Int = themeMap[MyPreferences(context).darkMode]
+        ?: if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme
+
+
+    private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            context.resources.configuration.isNightModeActive
+        } else {
+            when (context.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+                Configuration.UI_MODE_NIGHT_YES -> true
+                Configuration.UI_MODE_NIGHT_NO -> false
+                Configuration.UI_MODE_NIGHT_UNDEFINED -> true
+                else -> true
+            }
+        }
 }
