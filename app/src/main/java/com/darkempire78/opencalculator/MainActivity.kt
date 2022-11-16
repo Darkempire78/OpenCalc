@@ -290,7 +290,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun addMultiply(calculation: String): String {
         // Add "*" which lack
-
         var cleanCalculation = calculation
 
         for (i in calculation.indices) {
@@ -301,6 +300,11 @@ class MainActivity : AppCompatActivity() {
             } else if (calculation[i] == ')') {
                 if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+2)
+                }
+            }
+            if (calculation[i] == '!') {
+                if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                 }
             }
         }
