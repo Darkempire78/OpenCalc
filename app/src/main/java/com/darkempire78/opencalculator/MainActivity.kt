@@ -292,23 +292,21 @@ class MainActivity : AppCompatActivity() {
         // Add "*" which lack
         var cleanCalculation = calculation
 
-        for (i in calculation.indices) {
-            if (calculation[i] == '(') {
-                if (i != 0 && (calculation[i-1] in "123456789)")) {
+        for (i in cleanCalculation.indices)
+            if (cleanCalculation[i] == '(') {
+                if (i != 0 && (cleanCalculation[i-1] in "123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                 }
-            } else if (calculation[i] == ')') {
-                if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+2)
+            } else if (cleanCalculation[i] == ')') {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                 }
-            }
-            if (calculation[i] == '!') {
-                if (i+1 < calculation.length && (calculation[i+1] in "123456789(")) {
+            } else if (cleanCalculation[i] == '!') {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                 }
             }
-        }
-
+        
         return cleanCalculation
     }
 
