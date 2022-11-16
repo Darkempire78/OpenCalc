@@ -306,7 +306,7 @@ class MainActivity : AppCompatActivity() {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                 }
             }
-        
+
         return cleanCalculation
     }
 
