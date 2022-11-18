@@ -646,18 +646,34 @@ class MainActivity : AppCompatActivity() {
 
         val cursorPosition = binding.input.selectionStart
         val textLength = binding.input.text.length
+        var newValue = ""
+        var isFunction = false
+        var functionLength = 0
 
         if (cursorPosition != 0 && textLength != 0) {
-            val newValue = binding.input.text.subSequence(0, cursorPosition - 1).toString() +
-                    binding.input.text.subSequence(cursorPosition, textLength).toString()
+            // Check if it is a function to delete
+            val functionsList = listOf("arccos(", "arcsin(", "arctan(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
+            for (function in functionsList) {
+                var text = binding.input.text.subSequence(0, cursorPosition).toString()
+                if (text.endsWith(function)) {
+                    newValue = binding.input.text.subSequence(0, cursorPosition - function.length).toString() +
+                            binding.input.text.subSequence(cursorPosition, textLength).toString()
+                    isFunction = true
+                    functionLength = function.length - 1
+                    break
+                }
+            }
+            // Else
+            if (!isFunction) {
+                newValue = binding.input.text.subSequence(0, cursorPosition - 1).toString() +
+                        binding.input.text.subSequence(cursorPosition, textLength).toString()
+            }
 
             val newValueFormatted = NumberFormatter.format(newValue)
-
             val cursorOffset = newValueFormatted.length - newValue.length
 
             binding.input.setText(newValueFormatted)
-
-            binding.input.setSelection((cursorPosition - 1 + cursorOffset).takeIf { it > 0 } ?: 0)
+            binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 } ?: 0)
         }
 
         updateResultDisplay()
