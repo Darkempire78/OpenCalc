@@ -210,6 +210,7 @@ class MainActivity : AppCompatActivity() {
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("%", "/100")
         calculation2 = calculation2.replace("log", "logten")
+        calculation2 = calculation2.replace("E", "*10^")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
         return calculation2
