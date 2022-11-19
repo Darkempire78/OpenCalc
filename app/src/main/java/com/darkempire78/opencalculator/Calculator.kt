@@ -68,6 +68,8 @@ class Calculator {
                     x = equation.substring(startPos, pos).toDouble()
                 } else if (eat('e'.code)) {
                     x = exp(1.0)
+                } else if (eat('π'.code)) {
+                    x = Math.PI
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -100,8 +102,6 @@ class Calculator {
                                 "Unknown function: $func"
                             )
                         }
-                } else if (eat('π'.code)) {
-                    x = Math.PI
                 } else {
                     throw RuntimeException("Unexpected: " + ch.toChar())
                 }
