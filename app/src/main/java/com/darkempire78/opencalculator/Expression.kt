@@ -119,8 +119,7 @@ class Expression {
                     val functionsList = listOf("arcos", "arcsin", "arctan", "cos", "sin", "tan", "ln", "log", "exp")
                     for (function in functionsList) {
                         val text = cleanCalculation.subSequence(0, i+1).toString()
-                        if (text.endsWith(function)) {
-                            val ze = text[text.length - function.length - 1]
+                        if (text.endsWith(function) && !text.startsWith(function)) {
                             if (text[text.length - function.length - 1] != '*') {
                                 cleanCalculation = cleanCalculation.subSequence(0, i - function.length + 1).toString() +
                                         "*" + function + cleanCalculation.subSequence(i+1, cleanCalculation.length).toString()
