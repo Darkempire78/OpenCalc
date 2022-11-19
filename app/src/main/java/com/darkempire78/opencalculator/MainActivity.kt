@@ -11,6 +11,7 @@ import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
+import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.PopupMenu
 import android.widget.Toast
@@ -252,44 +253,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun zeroButton(view: View) {
-        updateDisplay(view, "0")
-    }
-
-    fun oneButton(view: View) {
-        updateDisplay(view, "1")
-    }
-
-    fun twoButton(view: View) {
-        updateDisplay(view, "2")
-    }
-
-    fun threeButton(view: View) {
-        updateDisplay(view, "3")
-    }
-
-    fun fourButton(view: View) {
-        updateDisplay(view, "4")
-    }
-
-    fun fiveButton(view: View) {
-        updateDisplay(view, "5")
-    }
-
-    fun sixButton(view: View) {
-        updateDisplay(view, "6")
-    }
-
-    fun sevenButton(view: View) {
-        updateDisplay(view, "7")
-    }
-
-    fun eightButton(view: View) {
-        updateDisplay(view, "8")
-    }
-
-    fun nineButton(view: View) {
-        updateDisplay(view, "9")
+    fun keyDigitPadMappingToDisplay(view: View) {
+        updateDisplay(view, (view as Button).text as String)
     }
 
     fun addButton(view: View) {

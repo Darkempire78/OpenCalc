@@ -429,7 +429,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="sevenButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/seven"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -444,7 +444,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="eightButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/eight"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -459,7 +459,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="nineButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/nine"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -496,7 +496,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="fourButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/four"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -511,7 +511,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="fiveButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/five"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -526,7 +526,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="sixButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/six"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -563,7 +563,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="oneButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/one"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -578,7 +578,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="twoButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/two"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -593,7 +593,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="threeButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/three"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
@@ -630,7 +630,7 @@
                         android:layout_marginVertical="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/circle"
-                        android:onClick="zeroButton"
+                        android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/zero"
                         android:textColor="?attr/text_color"
                         android:textSize="60sp" />
