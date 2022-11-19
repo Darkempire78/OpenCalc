@@ -12,7 +12,7 @@ class Calculator {
         }
         return factorial.toDouble()
     }
-    fun evaluate(equation: String): Double {
+    fun evaluate(equation: String, isDegreeModeActivated: Boolean): Double {
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
             var pos = -1
@@ -69,7 +69,7 @@ class Calculator {
                 } else if (eat('e'.code)) {
                     x = exp(1.0)
                 } else if (eat('π'.code)) {
-                    x = Math.PI
+                        x = Math.PI
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -79,29 +79,48 @@ class Calculator {
                     } else {
                         x = parseFactor()
                     }
-                    x =
-                        when (func) {
-                            "sqrt" -> sqrt(x)
-                            "sin" -> sin(
-                                Math.toRadians(
-                                    x
-                                )
-                            )
-                            "cos" -> cos(
-                                Math.toRadians(x)
-                            )
-                            "tan" -> tan(Math.toRadians(x))
-                            "arcsin" -> asin(x)
-                            "arccos" -> acos(x)
-                            "arctan" -> atan(x)
-                            "ln" -> ln(x)
-                            "logten" -> log10(x)
-                            "exp" -> exp(x)
-                            "factorial" -> factorial(x)
-                            else -> throw RuntimeException(
-                                "Unknown function: $func"
-                            )
+                    if (func == "sqrt" ) x = sqrt(x)
+                    else if (func == "ln" ) x = ln(x)
+                    else if (func == "logten" ) x = log10(x)
+                    else if (func == "exp" ) x = exp(x)
+                    else if (func == "factorial" ) x = factorial(x)
+                    else if (func == "sin" )
+                        x = if (isDegreeModeActivated) {
+                            sin(Math.toDegrees(x))
+                        } else {
+                            sin(Math.toRadians(x))
                         }
+                    else if (func == "cos" )
+                        x = if (isDegreeModeActivated) {
+                            cos(Math.toDegrees(x))
+                        } else {
+                            cos(Math.toRadians(x))
+                        }
+                    else if (func == "tan" )
+                        x = if (isDegreeModeActivated) {
+                            tan(Math.toDegrees(x))
+                        } else {
+                            tan(Math.toRadians(x))
+                        }
+                    else if (func == "arcsin" )
+                        x = if (isDegreeModeActivated) {
+                            asin(Math.toDegrees(x))
+                        } else {
+                            asin(Math.toRadians(x))
+                        }
+                    else if (func == "arccos" )
+                        x = if (isDegreeModeActivated) {
+                            acos(Math.toDegrees(x))
+                        } else {
+                            acos(Math.toRadians(x))
+                        }
+                    else if (func == "arctan" )
+                        x = if (isDegreeModeActivated) {
+                            atan(Math.toDegrees(x))
+                        } else {
+                            atan(Math.toRadians(x))
+                        }
+                    else x = Double.NaN
                 } else {
                     throw RuntimeException("Unexpected: " + ch.toChar())
                 }

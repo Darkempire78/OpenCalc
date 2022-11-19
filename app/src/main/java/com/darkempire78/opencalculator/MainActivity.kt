@@ -21,7 +21,6 @@ import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.mariuszgromada.math.mxparser.mXparser
 import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
+    private var isDegreeModeActivated = true // Set degree by default
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var historyAdapter: HistoryAdapter
@@ -57,9 +57,6 @@ class MainActivity : AppCompatActivity() {
             binding.resultDisplay.setText("")
             true
         }
-
-        // Set degree by default
-        mXparser.setDegreesMode()
 
         // Set default animations and disable the fade out default animation
         // https://stackoverflow.com/questions/19943466/android-animatelayoutchanges-true-what-can-i-do-if-the-fade-out-effect-is-un
@@ -224,7 +221,7 @@ class MainActivity : AppCompatActivity() {
 
             if (calculation != "") {
                 val calculationTmp = getCleanExpression(binding.input.text.toString())
-                val result = Calculator().evaluate(calculationTmp)
+                val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
@@ -333,10 +330,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun formatSquare(calculation: String): String {
         // Replace √5 by sqrt(5)
-        var cleanCalculation = "$calculation " // P1. It's a bad fix to support the √ if it is the penultimate character
+        var cleanCalculation = calculation
         var parenthesisOpened = 0
 
-        for (i in cleanCalculation.indices)
+        var cleanCalculationLength = cleanCalculation.length
+        var i = 0
+        while (i < cleanCalculationLength) {
             if (i < cleanCalculation.length - 1) {
                 if (parenthesisOpened > 0) {
                     if (cleanCalculation[i+1] in "(*-/+^") {
@@ -349,8 +348,10 @@ class MainActivity : AppCompatActivity() {
                     parenthesisOpened += 1
                 }
             }
+            i++
+        }
         cleanCalculation = cleanCalculation.replace("√", "sqrt")
-        return cleanCalculation.dropLast(1) // P2. It's a bad fix to support the √ if it is the penultimate character
+        return cleanCalculation
     }
 
     private fun formatFactorial(calculation: String): String {
@@ -358,7 +359,9 @@ class MainActivity : AppCompatActivity() {
         var cleanCalculation = calculation
         var parenthesisOpened = 0
 
-        for (i in cleanCalculation.indices.reversed()) {
+        var cleanCalculationLength = cleanCalculation.length
+        var i = 0
+        while (i < cleanCalculationLength) {
             if (i > 0) {
                 if (parenthesisOpened > 0) {
                     if (cleanCalculation[i-1] in ")*-/+^") {
@@ -372,6 +375,7 @@ class MainActivity : AppCompatActivity() {
                     parenthesisOpened += 1
                 }
             }
+            i ++
         }
 
         while (parenthesisOpened > 0) {
@@ -565,10 +569,10 @@ class MainActivity : AppCompatActivity() {
 
         if (binding.degreeButton.text.toString() == "DEG") {
             binding.degreeButton.text = "RAD"
-            mXparser.setRadiansMode()
+            isDegreeModeActivated = false
         } else {
             binding.degreeButton.text = "DEG"
-            mXparser.setDegreesMode()
+            isDegreeModeActivated = true
         }
 
         binding.degreeTextView?.text = binding.degreeButton.text.toString()
@@ -636,7 +640,7 @@ class MainActivity : AppCompatActivity() {
                 */
 
                 val calculationTmp = getCleanExpression(binding.input.text.toString())
-                val result = Calculator().evaluate(calculationTmp)
+                val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
