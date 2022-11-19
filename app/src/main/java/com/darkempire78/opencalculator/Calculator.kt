@@ -1,8 +1,17 @@
 package com.darkempire78.opencalculator
 
+import java.math.BigInteger
 import kotlin.math.*
 
 class Calculator {
+
+    fun factorial(number: Double): Double {
+        var factorial: BigInteger = BigInteger("1")
+        for (i in 1..number.toInt()) {
+            factorial *= i.toBigInteger()
+        }
+        return factorial.toDouble()
+    }
     fun evaluate(equation: String): Double {
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
@@ -28,12 +37,6 @@ class Calculator {
                 return x
             }
 
-            // Grammar:
-            // expression = term | expression `+` term | expression `-` term
-            // term = factor | term `*` factor | term `/` factor
-            // factor = `+` factor | `-` factor | `(` expression `)` | number
-            //        | functionName `(` expression `)` | functionName factor
-            //        | factor `^` factor
             fun parseExpression(): Double {
                 var x = parseTerm()
                 while (true) {
@@ -92,6 +95,7 @@ class Calculator {
                             "ln" -> ln(x)
                             "logten" -> log10(x)
                             "exp" -> exp(x)
+                            "factorial" -> factorial(x)
                             else -> throw RuntimeException(
                                 "Unknown function: $func"
                             )

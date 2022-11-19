@@ -316,7 +316,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun formatSquare(calculation: String): String {
         // Replace √5 by sqrt(5)
-        var cleanCalculation = "$calculation " // It's a bad fix to support the √ if it is the penultimate character
+        var cleanCalculation = "$calculation " // P1. It's a bad fix to support the √ if it is the penultimate character
         var parenthesisOpened = 0
 
         for (i in cleanCalculation.indices)
@@ -333,7 +333,39 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         cleanCalculation = cleanCalculation.replace("√", "sqrt")
-        return cleanCalculation.dropLast(1)
+        return cleanCalculation.dropLast(1) // P2. It's a bad fix to support the √ if it is the penultimate character
+    }
+
+    private fun formatFactorial(calculation: String): String {
+        // Replace 5! by factorial(5)
+        var cleanCalculation = calculation
+        var parenthesisOpened = 0
+
+        for (i in cleanCalculation.indices.reversed()) {
+            if (i > 0) {
+                if (parenthesisOpened > 0) {
+                    if (cleanCalculation[i-1] in ")*-/+^") {
+                        cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
+                        cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
+                        parenthesisOpened -= 1
+                    }
+                }
+                if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
+                    cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
+                    parenthesisOpened += 1
+                }
+            }
+        }
+
+        while (parenthesisOpened > 0) {
+            cleanCalculation = cleanCalculation.addCharAtIndex('(', 0)
+            cleanCalculation = cleanCalculation.addCharAtIndex('F', 0)
+            parenthesisOpened -= 1
+        }
+
+        cleanCalculation = cleanCalculation.replace("!", "")
+        cleanCalculation = cleanCalculation.replace("F", "factorial")
+        return cleanCalculation
     }
 
     private fun String.addCharAtIndex(char: Char, index: Int) =
@@ -372,6 +404,7 @@ class MainActivity : AppCompatActivity() {
         var cleanCalculation = replaceSymbolsFromCalculation(calculation)
         cleanCalculation = addMultiply(cleanCalculation)
         cleanCalculation = formatSquare(cleanCalculation)
+        cleanCalculation = formatFactorial(cleanCalculation)
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
         }
@@ -572,14 +605,15 @@ class MainActivity : AppCompatActivity() {
             calculationTmp = calculationTmp.replace("log10", "logten")
             println(calculationTmp)
             println(Calculator().evaluate(calculationTmp))
-            print("\n-------------\n\n")*/
+            print("\n-------------\n\n")
+            
+             */
 
             if (calculation != "") {
                 val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
 
                 // Save to history
