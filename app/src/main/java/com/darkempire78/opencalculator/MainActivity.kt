@@ -362,7 +362,7 @@ class MainActivity : AppCompatActivity() {
 
         var cleanCalculationLength = cleanCalculation.length
         var i = cleanCalculationLength - 1
-        while (i >= 0) {
+        while (i > 0) {
             if (parenthesisOpened > 0) {
                 if (cleanCalculation[i-1] in ")*-/+^") {
                     cleanCalculation = cleanCalculation.addCharAtIndex('(', i)

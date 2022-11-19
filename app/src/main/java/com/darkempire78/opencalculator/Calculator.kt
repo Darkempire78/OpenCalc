@@ -6,7 +6,7 @@ import kotlin.math.*
 class Calculator {
 
     fun factorial(number: Double): Double {
-        var factorial: BigInteger = BigInteger("1")
+        var factorial = BigInteger("1")
         for (i in 1..number.toInt()) {
             factorial *= i.toBigInteger()
         }
