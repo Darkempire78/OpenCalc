@@ -1,11 +1,18 @@
 package com.darkempire78.opencalculator
 
+import java.math.BigInteger
 import kotlin.math.*
 
 class Calculator {
-    fun evaluate(equation: String): Double {
-        println("\n\n$equation")
 
+    fun factorial(number: Double): Double {
+        var factorial: BigInteger = BigInteger("1")
+        for (i in 1..number.toInt()) {
+            factorial *= i.toBigInteger()
+        }
+        return factorial.toDouble()
+    }
+    fun evaluate(equation: String): Double {
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
             var pos = -1
@@ -30,12 +37,6 @@ class Calculator {
                 return x
             }
 
-            // Grammar:
-            // expression = term | expression `+` term | expression `-` term
-            // term = factor | term `*` factor | term `/` factor
-            // factor = `+` factor | `-` factor | `(` expression `)` | number
-            //        | functionName `(` expression `)` | functionName factor
-            //        | factor `^` factor
             fun parseExpression(): Double {
                 var x = parseTerm()
                 while (true) {
@@ -66,7 +67,9 @@ class Calculator {
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
                     x = equation.substring(startPos, pos).toDouble()
                 } else if (eat('e'.code)) {
-                    x = Math.exp(1.0)
+                    x = exp(1.0)
+                } else if (eat('π'.code)) {
+                    x = Math.PI
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -93,12 +96,12 @@ class Calculator {
                             "arctan" -> atan(x)
                             "ln" -> ln(x)
                             "logten" -> log10(x)
+                            "exp" -> exp(x)
+                            "factorial" -> factorial(x)
                             else -> throw RuntimeException(
                                 "Unknown function: $func"
                             )
                         }
-                } else if (eat('π'.code)) {
-                    x = Math.PI
                 } else {
                     throw RuntimeException("Unexpected: " + ch.toChar())
                 }

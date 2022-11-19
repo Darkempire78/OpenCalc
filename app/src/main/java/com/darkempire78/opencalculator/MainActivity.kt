@@ -24,7 +24,6 @@ import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.mariuszgromada.math.mxparser.Expression
 import org.mariuszgromada.math.mxparser.mXparser
 import java.text.DecimalFormatSymbols
 
@@ -240,7 +239,8 @@ class MainActivity : AppCompatActivity() {
     private fun replaceSymbolsFromCalculation(calculation: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
-        calculation2 = calculation2.replace("log", "log10")
+        calculation2 = calculation2.replace("%", "/100")
+        calculation2 = calculation2.replace("log", "logten")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
         return calculation2
@@ -251,8 +251,8 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-                val exp = Expression(getCleanExpression(calculation))
-                val result = exp.calculate()
+                val calculationTmp = getCleanExpression(binding.input.text.toString())
+                val result = Calculator().evaluate(calculationTmp)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
@@ -319,22 +319,97 @@ class MainActivity : AppCompatActivity() {
     private fun addMultiply(calculation: String): String {
         // Add "*" which lack
         var cleanCalculation = calculation
+        var cleanCalculationLength = cleanCalculation.length
+        var i = 0
+        while (i < cleanCalculationLength) {
 
-        for (i in cleanCalculation.indices)
             if (cleanCalculation[i] == '(') {
                 if (i != 0 && (cleanCalculation[i-1] in "123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
+                    cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == ')') {
                 if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
+                    cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == '!') {
                 if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
+                    cleanCalculationLength ++
+                }
+            } else if (i-1 >= 0 && cleanCalculation[i] == '√') {
+                if (cleanCalculation[i-1] !in "+-/*") {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
+                    cleanCalculationLength ++
+                }
+            } else if (cleanCalculation[i] == 'π') {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
+                    cleanCalculationLength ++
+                }
+                if (i-1 >= 0 && (cleanCalculation[i-1] in "123456789)")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
+                    cleanCalculationLength ++
                 }
             }
+            i ++
+        }
 
+        return cleanCalculation
+    }
+
+    private fun formatSquare(calculation: String): String {
+        // Replace √5 by sqrt(5)
+        var cleanCalculation = "$calculation " // P1. It's a bad fix to support the √ if it is the penultimate character
+        var parenthesisOpened = 0
+
+        for (i in cleanCalculation.indices)
+            if (i < cleanCalculation.length - 1) {
+                if (parenthesisOpened > 0) {
+                    if (cleanCalculation[i+1] in "(*-/+^") {
+                        cleanCalculation = cleanCalculation.addCharAtIndex(')', i+1)
+                        parenthesisOpened -= 1
+                    }
+                }
+                if (cleanCalculation[i] == '√' && cleanCalculation[i+1] != '(') {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('(', i+1)
+                    parenthesisOpened += 1
+                }
+            }
+        cleanCalculation = cleanCalculation.replace("√", "sqrt")
+        return cleanCalculation.dropLast(1) // P2. It's a bad fix to support the √ if it is the penultimate character
+    }
+
+    private fun formatFactorial(calculation: String): String {
+        // Replace 5! by factorial(5)
+        var cleanCalculation = calculation
+        var parenthesisOpened = 0
+
+        for (i in cleanCalculation.indices.reversed()) {
+            if (i > 0) {
+                if (parenthesisOpened > 0) {
+                    if (cleanCalculation[i-1] in ")*-/+^") {
+                        cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
+                        cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
+                        parenthesisOpened -= 1
+                    }
+                }
+                if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
+                    cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
+                    parenthesisOpened += 1
+                }
+            }
+        }
+
+        while (parenthesisOpened > 0) {
+            cleanCalculation = cleanCalculation.addCharAtIndex('(', 0)
+            cleanCalculation = cleanCalculation.addCharAtIndex('F', 0)
+            parenthesisOpened -= 1
+        }
+
+        cleanCalculation = cleanCalculation.replace("!", "")
+        cleanCalculation = cleanCalculation.replace("F", "factorial")
         return cleanCalculation
     }
 
@@ -372,11 +447,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun getCleanExpression(calculation: String): String {
         var cleanCalculation = replaceSymbolsFromCalculation(calculation)
-        cleanCalculation = addParenthesis(cleanCalculation)
         cleanCalculation = addMultiply(cleanCalculation)
+        cleanCalculation = formatSquare(cleanCalculation)
+        cleanCalculation = formatFactorial(cleanCalculation)
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
         }
+        cleanCalculation = addParenthesis(cleanCalculation)
 
         return cleanCalculation
     }
@@ -567,20 +644,30 @@ class MainActivity : AppCompatActivity() {
 
             val calculation = binding.input.text.toString()
 
-            /*print("\n\n--------------")
+            /*print("\n\n--------------\n")
             var calculationTmp = getCleanExpression(binding.input.text.toString())
             calculationTmp = calculationTmp.replace("%", "/100")
             calculationTmp = calculationTmp.replace("log10", "logten")
+            println(calculationTmp)
             println(Calculator().evaluate(calculationTmp))
-            print("\n-------------\n\n")*/
+            print("\n-------------\n\n")
+
+             */
 
             if (calculation != "") {
+                /*
                 val exp = Expression(getCleanExpression(calculation))
                 val result = exp.calculate()
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
                 mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
+                */
+
+                val calculationTmp = getCleanExpression(binding.input.text.toString())
+                val result = Calculator().evaluate(calculationTmp)
+                var resultString = result.toString()
+                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+
 
                 // Save to history
                 if ((result * 10) % 10 == 0.0) {
@@ -682,7 +769,7 @@ class MainActivity : AppCompatActivity() {
             // Check if it is a function to delete
             val functionsList = listOf("arccos(", "arcsin(", "arctan(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
             for (function in functionsList) {
-                var text = binding.input.text.subSequence(0, cursorPosition).toString()
+                val text = binding.input.text.subSequence(0, cursorPosition).toString()
                 if (text.endsWith(function)) {
                     newValue = binding.input.text.subSequence(0, cursorPosition - function.length).toString() +
                             binding.input.text.subSequence(cursorPosition, textLength).toString()
