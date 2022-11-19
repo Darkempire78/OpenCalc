@@ -17,7 +17,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.sothree.slidinguppanel.PanelSlideListener
+import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -92,6 +95,31 @@ class MainActivity : AppCompatActivity() {
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
+
+
+        binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
+            override fun onPanelSlide(panel: View, slideOffset: Float) {
+                if (slideOffset == 0f) { // If the panel got collapsed
+                    binding.slidingLayout.scrollableView = binding.historyRecylcleView
+                }
+            }
+            override fun onPanelStateChanged(panel: View, previousState: PanelState, newState: PanelState) {
+                if(newState == PanelState.ANCHORED){// To prevent the panel from getting stuck in the middle
+                    binding.slidingLayout.panelState = PanelState.EXPANDED
+                }
+            }
+        })
+        binding.historyRecylcleView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1) && binding.slidingLayout.panelState.name.equals("EXPANDED", true)) {
+                    // Enable scroll-to-collapse behavior if the recycler was scrolled to the bottom and the panel is actually expanded.
+                    binding.slidingLayout.scrollableView = null
+                }
+            }
+        })
+
+
 
         // Focus by default
         binding.input.requestFocus()
