@@ -122,7 +122,7 @@ class Calculator {
                         }
                     else x = Double.NaN
                 } else {
-                    throw RuntimeException("Unexpected: " + ch.toChar())
+                    x = Double.NaN
                 }
                 if (eat('^'.code)) x = x.pow(parseFactor()) // exponentiation
                 return x

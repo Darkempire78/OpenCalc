@@ -360,22 +360,22 @@ class MainActivity : AppCompatActivity() {
         var parenthesisOpened = 0
 
         var cleanCalculationLength = cleanCalculation.length
-        var i = 0
-        while (i < cleanCalculationLength) {
-            if (i > 0) {
-                if (parenthesisOpened > 0) {
-                    if (cleanCalculation[i-1] in ")*-/+^") {
-                        cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
-                        cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
-                        parenthesisOpened -= 1
-                    }
-                }
-                if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
-                    cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
-                    parenthesisOpened += 1
+        var i = cleanCalculationLength - 1
+        while (i >= 0) {
+            if (parenthesisOpened > 0) {
+                if (cleanCalculation[i-1] in ")*-/+^") {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
+                    cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
+                    parenthesisOpened -= 1
+                    i += 2
                 }
             }
-            i ++
+            if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
+                cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
+                parenthesisOpened += 1
+                i += 1
+            }
+            i --
         }
 
         while (parenthesisOpened > 0) {
