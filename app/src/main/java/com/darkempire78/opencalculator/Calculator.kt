@@ -86,39 +86,39 @@ class Calculator {
                     else if (func == "factorial" ) x = factorial(x)
                     else if (func == "sin" )
                         x = if (isDegreeModeActivated) {
-                            sin(Math.toDegrees(x))
-                        } else {
                             sin(Math.toRadians(x))
+                        } else {
+                            sin(x)
                         }
                     else if (func == "cos" )
                         x = if (isDegreeModeActivated) {
-                            cos(Math.toDegrees(x))
-                        } else {
                             cos(Math.toRadians(x))
+                        } else {
+                            cos(x)
                         }
                     else if (func == "tan" )
                         x = if (isDegreeModeActivated) {
-                            tan(Math.toDegrees(x))
-                        } else {
                             tan(Math.toRadians(x))
+                        } else {
+                            tan(x)
                         }
                     else if (func == "arcsin" )
                         x = if (isDegreeModeActivated) {
-                            asin(Math.toDegrees(x))
-                        } else {
                             asin(Math.toRadians(x))
+                        } else {
+                            asin(x)
                         }
                     else if (func == "arccos" )
                         x = if (isDegreeModeActivated) {
-                            acos(Math.toDegrees(x))
-                        } else {
                             acos(Math.toRadians(x))
+                        } else {
+                            acos(x)
                         }
                     else if (func == "arctan" )
                         x = if (isDegreeModeActivated) {
-                            atan(Math.toDegrees(x))
-                        } else {
                             atan(Math.toRadians(x))
+                        } else {
+                            atan(x)
                         }
                     else x = Double.NaN
                 } else {
