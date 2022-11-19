@@ -205,23 +205,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceSymbolsFromCalculation(calculation: String): String {
-        var calculation2 = calculation.replace('×', '*')
-        calculation2 = calculation2.replace('÷', '/')
-        calculation2 = calculation2.replace("%", "/100")
-        calculation2 = calculation2.replace("log", "logten")
-        calculation2 = calculation2.replace("E", "*10^")
-        calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
-        calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
-        return calculation2
-    }
-
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-                val calculationTmp = getCleanExpression(binding.input.text.toString())
+                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
@@ -261,178 +250,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun addParenthesis(calculation: String): String {
-        // Add ")" which lack
-        var cleanCalculation = calculation
-        var openParentheses = 0
-        var closeParentheses = 0
-
-        for (i in calculation.indices) {
-            if (calculation[i] == '(') {
-                openParentheses += 1
-            }
-            if (calculation[i] == ')') {
-                closeParentheses += 1
-            }
-        }
-        if (closeParentheses < openParentheses) {
-            for (i in 0 until openParentheses - closeParentheses) {
-                cleanCalculation += ')'
-            }
-        }
-
-        return cleanCalculation
-    }
-
-    private fun addMultiply(calculation: String): String {
-        // Add "*" which lack
-        var cleanCalculation = calculation
-        var cleanCalculationLength = cleanCalculation.length
-        var i = 0
-        while (i < cleanCalculationLength) {
-
-            if (cleanCalculation[i] == '(') {
-                if (i != 0 && (cleanCalculation[i-1] in "123456789)")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
-                    cleanCalculationLength ++
-                }
-            } else if (cleanCalculation[i] == ')') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
-                    cleanCalculationLength ++
-                }
-            } else if (cleanCalculation[i] == '!') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
-                    cleanCalculationLength ++
-                }
-            } else if (i-1 >= 0 && cleanCalculation[i] == '√') {
-                if (cleanCalculation[i-1] !in "+-/*") {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
-                    cleanCalculationLength ++
-                }
-            } else if (cleanCalculation[i] == 'π') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
-                    cleanCalculationLength ++
-                }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "123456789)")) {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
-                    cleanCalculationLength ++
-                }
-            }
-            i ++
-        }
-
-        return cleanCalculation
-    }
-
-    private fun formatSquare(calculation: String): String {
-        // Replace √5 by sqrt(5)
-        var cleanCalculation = calculation
-        var parenthesisOpened = 0
-
-        var cleanCalculationLength = cleanCalculation.length
-        var i = 0
-        while (i < cleanCalculationLength) {
-            if (i < cleanCalculation.length - 1) {
-                if (parenthesisOpened > 0) {
-                    if (cleanCalculation[i+1] in "(*-/+^") {
-                        cleanCalculation = cleanCalculation.addCharAtIndex(')', i+1)
-                        parenthesisOpened -= 1
-                    }
-                }
-                if (cleanCalculation[i] == '√' && cleanCalculation[i+1] != '(') {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('(', i+1)
-                    parenthesisOpened += 1
-                }
-            }
-            i++
-        }
-        cleanCalculation = cleanCalculation.replace("√", "sqrt")
-        return cleanCalculation
-    }
-
-    private fun formatFactorial(calculation: String): String {
-        // Replace 5! by factorial(5)
-        var cleanCalculation = calculation
-        var parenthesisOpened = 0
-
-        var cleanCalculationLength = cleanCalculation.length
-        var i = cleanCalculationLength - 1
-        while (i > 0) {
-            if (parenthesisOpened > 0) {
-                if (cleanCalculation[i-1] in ")*-/+^") {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
-                    cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
-                    parenthesisOpened -= 1
-                    i += 2
-                }
-            }
-            if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
-                cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
-                parenthesisOpened += 1
-                i += 1
-            }
-            i --
-        }
-
-        while (parenthesisOpened > 0) {
-            cleanCalculation = cleanCalculation.addCharAtIndex('(', 0)
-            cleanCalculation = cleanCalculation.addCharAtIndex('F', 0)
-            parenthesisOpened -= 1
-        }
-
-        cleanCalculation = cleanCalculation.replace("!", "")
-        cleanCalculation = cleanCalculation.replace("F", "factorial")
-        return cleanCalculation
-    }
-
-    private fun String.addCharAtIndex(char: Char, index: Int) =
-        StringBuilder(this).apply { insert(index, char) }.toString()
-
-    /* Transform any calculation string containing %
-     * to respect the user friend (non-mathematical) way (see issue #35)
-     */
-    private fun getPercentString(calculation: String): String {
-        val percentPos = calculation.lastIndexOf('%')
-        if (percentPos < 1) {
-            return calculation
-        }
-        // find the last operator before the last %
-        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '×', '÷', '('))
-        if (operatorBeforePercentPos < 1) {
-            return calculation
-        }
-        // extract the first part of the calculation
-        var calculationStringFirst = calculation.subSequence(0, operatorBeforePercentPos).toString()
-
-        // recursively parse it
-        if (calculationStringFirst.contains('%')) {
-            calculationStringFirst = getPercentString(calculationStringFirst)
-        }
-        // check if there are already some parenthesis, so we skip formatting
-        if (calculation[operatorBeforePercentPos] == '(') {
-            return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
-        }
-        calculationStringFirst = "($calculationStringFirst)"
-        // modify the calculation to have something like (X)+(Y%*X)
-        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
-    }
-
-    private fun getCleanExpression(calculation: String): String {
-        var cleanCalculation = replaceSymbolsFromCalculation(calculation)
-        cleanCalculation = addMultiply(cleanCalculation)
-        cleanCalculation = formatSquare(cleanCalculation)
-        cleanCalculation = formatFactorial(cleanCalculation)
-        if (cleanCalculation.contains('%')) {
-            cleanCalculation = getPercentString(cleanCalculation)
-        }
-        cleanCalculation = addParenthesis(cleanCalculation)
-
-        return cleanCalculation
     }
 
     fun zeroButton(view: View) {
@@ -608,10 +425,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clearButton(view: View) {
         keyVibration(view)
-
         binding.input.setText("")
-
-        // Clear resultDisplay
         binding.resultDisplay.setText("")
     }
 
@@ -621,30 +435,11 @@ class MainActivity : AppCompatActivity() {
 
             val calculation = binding.input.text.toString()
 
-            /*print("\n\n--------------\n")
-            var calculationTmp = getCleanExpression(binding.input.text.toString())
-            calculationTmp = calculationTmp.replace("%", "/100")
-            calculationTmp = calculationTmp.replace("log10", "logten")
-            println(calculationTmp)
-            println(Calculator().evaluate(calculationTmp))
-            print("\n-------------\n\n")
-
-             */
-
             if (calculation != "") {
-                /*
-                val exp = Expression(getCleanExpression(calculation))
-                val result = exp.calculate()
-                var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-                mXparser.consolePrintln("Res: " + exp.expressionString.toString() + " = " + result)
-                */
-
-                val calculationTmp = getCleanExpression(binding.input.text.toString())
+                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
 
                 // Save to history
                 if ((result * 10) % 10 == 0.0) {
@@ -668,7 +463,6 @@ class MainActivity : AppCompatActivity() {
                     // Scroll to the bottom of the recycle view
                     binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                 }
-
 
                 if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
                     if ((result * 10) % 10 == 0.0) {

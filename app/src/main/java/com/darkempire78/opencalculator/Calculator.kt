@@ -13,6 +13,7 @@ class Calculator {
         return factorial.toDouble()
     }
     fun evaluate(equation: String, isDegreeModeActivated: Boolean): Double {
+        println("\n\n$equation")
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
             var pos = -1
