@@ -225,7 +225,7 @@ class MainActivity : AppCompatActivity() {
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                if (resultString != "NaN" && resultString != "Infinity") {
+                if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
@@ -669,7 +669,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
 
-                if (resultString != "NaN" && resultString != "Infinity") {
+                if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
@@ -687,7 +687,11 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText("")
                     }
                 } else {
-                    withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
+                    if (resultString == "Infinity") {
+                        binding.resultDisplay.setText(getString(R.string.infinity))
+                    } else {
+                        withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
+                    }
                 }
                 isEqualLastAction = true
             } else {
