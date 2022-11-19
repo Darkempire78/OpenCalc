@@ -4,8 +4,6 @@ import kotlin.math.*
 
 class Calculator {
     fun evaluate(equation: String): Double {
-        println("\n\n$equation")
-
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
             var pos = -1
@@ -66,7 +64,7 @@ class Calculator {
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
                     x = equation.substring(startPos, pos).toDouble()
                 } else if (eat('e'.code)) {
-                    x = Math.exp(1.0)
+                    x = exp(1.0)
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -93,6 +91,7 @@ class Calculator {
                             "arctan" -> atan(x)
                             "ln" -> ln(x)
                             "logten" -> log10(x)
+                            "exp" -> exp(x)
                             else -> throw RuntimeException(
                                 "Unknown function: $func"
                             )
