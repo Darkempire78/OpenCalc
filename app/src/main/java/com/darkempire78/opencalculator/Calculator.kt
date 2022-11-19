@@ -79,48 +79,44 @@ class Calculator {
                     } else {
                         x = parseFactor()
                     }
-                    if (func == "sqrt" ) x = sqrt(x)
-                    else if (func == "ln" ) x = ln(x)
-                    else if (func == "logten" ) x = log10(x)
-                    else if (func == "exp" ) x = exp(x)
-                    else if (func == "factorial" ) x = factorial(x)
-                    else if (func == "sin" )
-                        x = if (isDegreeModeActivated) {
+                    when (func) {
+                        "sqrt" -> x = sqrt(x)
+                        "ln" -> x = ln(x)
+                        "logten" -> x = log10(x)
+                        "exp" -> x = exp(x)
+                        "factorial" -> x = factorial(x)
+                        "sin" -> x = if (isDegreeModeActivated) {
                             sin(Math.toRadians(x))
                         } else {
                             sin(x)
                         }
-                    else if (func == "cos" )
-                        x = if (isDegreeModeActivated) {
+                        "cos" -> x = if (isDegreeModeActivated) {
                             cos(Math.toRadians(x))
                         } else {
                             cos(x)
                         }
-                    else if (func == "tan" )
-                        x = if (isDegreeModeActivated) {
+                        "tan" -> x = if (isDegreeModeActivated) {
                             tan(Math.toRadians(x))
                         } else {
                             tan(x)
                         }
-                    else if (func == "arcsin" )
-                        x = if (isDegreeModeActivated) {
+                        "arcsin" -> x = if (isDegreeModeActivated) {
                             asin(Math.toRadians(x))
                         } else {
                             asin(x)
                         }
-                    else if (func == "arccos" )
-                        x = if (isDegreeModeActivated) {
+                        "arccos" -> x = if (isDegreeModeActivated) {
                             acos(Math.toRadians(x))
                         } else {
                             acos(x)
                         }
-                    else if (func == "arctan" )
-                        x = if (isDegreeModeActivated) {
+                        "arctan" -> x = if (isDegreeModeActivated) {
                             atan(Math.toRadians(x))
                         } else {
                             atan(x)
                         }
-                    else x = Double.NaN
+                        else -> x = Double.NaN
+                    }
                 } else {
                     x = Double.NaN
                 }
