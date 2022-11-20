@@ -76,7 +76,7 @@ class Calculator {
                     val func: String = equation.substring(startPos, pos)
                     if (eat('('.code)) {
                         x = parseExpression()
-                        if (!eat(')'.code)) throw RuntimeException("Missing ')' after argument to $func")
+                        if (!eat(')'.code)) x = parseFactor()
                     } else {
                         x = parseFactor()
                     }
