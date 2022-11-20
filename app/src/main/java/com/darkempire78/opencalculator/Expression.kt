@@ -110,7 +110,16 @@ class Expression {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "123456789)")) {
+                if (i-1 >= 0 && (cleanCalculation[i-1] in "πe123456789)")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
+                    cleanCalculationLength ++
+                }
+            } else if (cleanCalculation[i] == 'e') {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "π123456789(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
+                    cleanCalculationLength ++
+                }
+                if (i-1 >= 0 && (cleanCalculation[i-1] in "πe123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
