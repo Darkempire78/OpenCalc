@@ -8,4 +8,9 @@
     <string name="infinity">Infini</string>
     <string name="app_menu_clear_history">Supprimer l\'historique</string>
     <string name="value_copied">Copié</string>
+    <string name="theme_system">Système</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="theme_material_you">Material You</string>
 </resources>

@@ -56,6 +56,13 @@
     <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
 
+    <!-- Theme choices -->
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="theme_material_you">Material You</string>
+
     <!-- Others -->
     <string name="value_copied">Copied</string>
 </resources>
