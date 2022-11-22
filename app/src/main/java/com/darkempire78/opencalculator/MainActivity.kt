@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.sothree.slidinguppanel.PanelSlideListener
+import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -89,6 +91,19 @@ class MainActivity : AppCompatActivity() {
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
+
+        binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
+            override fun onPanelSlide(panel: View, slideOffset: Float) {
+                if (slideOffset == 0f) { // If the panel got collapsed
+                    binding.slidingLayout.scrollableView = binding.historyRecylcleView
+                }
+            }
+            override fun onPanelStateChanged(panel: View, previousState: PanelState, newState: PanelState) {
+                if (newState == PanelState.ANCHORED){ // To prevent the panel from getting stuck in the middle
+                    binding.slidingLayout.panelState = PanelState.EXPANDED
+                }
+            }
+        })
 
         // Focus by default
         binding.input.requestFocus()
