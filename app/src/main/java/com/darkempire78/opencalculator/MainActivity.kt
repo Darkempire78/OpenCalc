@@ -484,8 +484,6 @@ class MainActivity : AppCompatActivity() {
 
         val text = binding.input.text.toString()
 
-        // https://kotlinlang.org/docs/ranges.html
-        // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
         for (i in 0 until cursorPosition) {
             if (text[i] == '(') {
                 openParentheses += 1
