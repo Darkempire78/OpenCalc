@@ -18,7 +18,7 @@ class Calculator {
         }
     }
 
-    fun gammaLanczos(x: Double): Double {
+    private fun gammaLanczos(x: Double): Double {
         // https://rosettacode.org/wiki/Gamma_function
         var xx = x
         val p = doubleArrayOf(

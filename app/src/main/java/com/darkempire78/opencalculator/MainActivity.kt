@@ -521,11 +521,15 @@ class MainActivity : AppCompatActivity() {
     fun backspaceButton(view: View) {
         keyVibration(view)
 
-        val cursorPosition = binding.input.selectionStart
+        var cursorPosition = binding.input.selectionStart
         val textLength = binding.input.text.length
         var newValue = ""
         var isFunction = false
         var functionLength = 0
+
+        if (isEqualLastAction) {
+            cursorPosition = textLength
+        }
 
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete
