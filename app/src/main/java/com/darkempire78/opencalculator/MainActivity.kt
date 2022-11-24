@@ -209,6 +209,15 @@ class MainActivity : AppCompatActivity() {
 
             val cursorOffset = newValueFormatted.length - newValue.length
             withContext(Dispatchers.Main) {
+                // Avoid two decimalSeparator in the same number
+                if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
+                    if (binding.input.text.toString().isNotEmpty() && binding.input.text.toString().last() in "0123456789\\$decimalSeparatorSymbol")  {
+                        val lastNumber = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                        if (decimalSeparatorSymbol in lastNumber) {
+                            return@withContext
+                        }
+                    }
+                }
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
