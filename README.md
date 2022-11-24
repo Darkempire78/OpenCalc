@@ -7,7 +7,7 @@
 ### A simple and beautiful calculator for Android.
 
 [![Latest Release](https://img.shields.io/github/v/release/Darkempire78/OpenCalc.svg?logo=github&style=for-the-badge)](https://github.com/Darkempire78/OpenCalc/releases/latest)
-[![GitHub all releases](https://img.shields.io/github/downloads/Darkempire78/OpenCalc/total?color=blue&label=downloads&style=for-the-badge)](https://github.com/Darkempire/OpenCalc/releases/latest)
+[![GitHub all releases](https://img.shields.io/github/downloads/Darkempire78/OpenCalc/total?color=blue&label=downloads&style=for-the-badge)](https://github.com/Darkempire78/OpenCalc/releases/latest)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
 <a href="https://discord.com/invite/sPvJmY7mcV"><img src="https://img.shields.io/discord/831524351311609907?color=%237289DA&label=DISCORD&style=for-the-badge"></a>
 
