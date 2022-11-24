@@ -63,7 +63,7 @@ class Calculator {
             fun parse(): Double {
                 nextChar()
                 val x = parseExpression()
-                if (pos < equation.length) throw RuntimeException("Unexpected: " + ch.toChar())
+                if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expressoion: " + equation)
                 return x
             }
 
