@@ -92,17 +92,17 @@ class Expression {
         while (i < cleanCalculationLength) {
 
             if (cleanCalculation[i] == '(') {
-                if (i != 0 && (cleanCalculation[i-1] in "\\${NumberFormatter.decimalSeparatorSymbol}e0123456789)")) {
+                if (i != 0 && (cleanCalculation[i-1] in ".e0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == ')') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "\\${NumberFormatter.decimalSeparatorSymbol}0123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == '!') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "\\${NumberFormatter.decimalSeparatorSymbol}0123456789π(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789π(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
@@ -112,20 +112,20 @@ class Expression {
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == 'π') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "\\${NumberFormatter.decimalSeparatorSymbol}0123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "\\${NumberFormatter.decimalSeparatorSymbol}%πe0123456789)")) {
+                if (i-1 >= 0 && (cleanCalculation[i-1] in ".%πe0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == 'e') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "\\${NumberFormatter.decimalSeparatorSymbol}π0123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "π0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "\\${NumberFormatter.decimalSeparatorSymbol}%πe0123456789)")) {
+                if (i-1 >= 0 && (cleanCalculation[i-1] in ".%πe0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
