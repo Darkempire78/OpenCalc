@@ -205,11 +205,12 @@ class MainActivity : AppCompatActivity() {
 
             val newValue = leftValue + value + rightValue
 
-            val newValueFormatted = NumberFormatter.format(newValue)
+            var newValueFormatted = NumberFormatter.format(newValue)
 
             val cursorOffset = newValueFormatted.length - newValue.length
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
+                // 1. When you click on the decimalSeparator button
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
                     if (binding.input.text.toString().isNotEmpty() && binding.input.text.toString().last() in "0123456789\\$decimalSeparatorSymbol")  {
                         val lastNumber = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
@@ -218,6 +219,33 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
+                // 2. When you click on a former calculation from the history
+                if (binding.input.text.isNotEmpty() && cursorPosition > 0) {
+                    if (NumberFormatter.extractNumbers(value).isNotEmpty()) {
+                        val firstValueNumber = NumberFormatter.extractNumbers(value).first()
+                        val lastValueNumber = NumberFormatter.extractNumbers(value).last()
+                        var tmpNewValue = newValue
+                        if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
+                            var numberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                            var numberAfter = ""
+                            if (cursorPosition < binding.input.text.length - 1) {
+                                numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
+                            }
+                            var tmpValue = value
+                            var numberBeforeParenthesisLength = 0
+                            if (decimalSeparatorSymbol in numberBefore) {
+                                numberBefore = "($numberBefore)"
+                                numberBeforeParenthesisLength += 2
+                            }
+                            if (decimalSeparatorSymbol in  numberAfter) {
+                                tmpValue = "($value)"
+                            }
+                            tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
+                            newValueFormatted = NumberFormatter.format(tmpNewValue)
+                        }
+                    }
+                }
+
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
