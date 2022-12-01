@@ -6,7 +6,7 @@ import java.text.DecimalFormatSymbols
 object NumberFormatter {
     val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
-    private val numberRegex = "([0-9]+\\$decimalSeparatorSymbol[0-9]+)|([0-9]+)|\\$decimalSeparatorSymbol[0-9]+".toRegex()
+    private val numberRegex = "([0-9]+\\$decimalSeparatorSymbol[0-9]+)|([0-9]+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol[0-9]+)|(\\$decimalSeparatorSymbol)|([0-9]+)".toRegex()
 
     fun format(text: String): String {
         val textNoSeparator = removeSeparators(text)
@@ -19,7 +19,7 @@ object NumberFormatter {
         return textWithSeparators
     }
 
-    private fun extractNumbers(text: String): List<String> {
+    fun extractNumbers(text: String): List<String> {
         val results = numberRegex.findAll(text)
         return results.map { it.value }.toList()
     }

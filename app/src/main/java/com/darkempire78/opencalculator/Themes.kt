@@ -28,7 +28,7 @@ class Themes(private val context: Context) {
     fun openDialogThemeSelector() {
         val builder = AlertDialog.Builder(context)
 
-        val styles = arrayOf("System", "Light", "Dark", "Amoled", "Material You")
+        val styles = arrayOf(context.getString(R.string.theme_system), context.getString(R.string.theme_light), context.getString(R.string.theme_dark), context.getString(R.string.theme_amoled), context.getString(R.string.theme_material_you))
         val checkedItem = MyPreferences(context).darkMode + 1
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->

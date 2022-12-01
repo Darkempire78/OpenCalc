@@ -18,7 +18,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
@@ -93,7 +92,6 @@ class MainActivity : AppCompatActivity() {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
 
-
         binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
             override fun onPanelSlide(panel: View, slideOffset: Float) {
                 if (slideOffset == 0f) { // If the panel got collapsed
@@ -101,22 +99,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             override fun onPanelStateChanged(panel: View, previousState: PanelState, newState: PanelState) {
-                if(newState == PanelState.ANCHORED){// To prevent the panel from getting stuck in the middle
+                if (newState == PanelState.ANCHORED){ // To prevent the panel from getting stuck in the middle
                     binding.slidingLayout.panelState = PanelState.EXPANDED
                 }
             }
         })
-        binding.historyRecylcleView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if (!recyclerView.canScrollVertically(1) && binding.slidingLayout.panelState.name.equals("EXPANDED", true)) {
-                    // Enable scroll-to-collapse behavior if the recycler was scrolled to the bottom and the panel is actually expanded.
-                    binding.slidingLayout.scrollableView = null
-                }
-            }
-        })
-
-
 
         // Focus by default
         binding.input.requestFocus()
@@ -222,6 +209,15 @@ class MainActivity : AppCompatActivity() {
 
             val cursorOffset = newValueFormatted.length - newValue.length
             withContext(Dispatchers.Main) {
+                // Avoid two decimalSeparator in the same number
+                if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
+                    if (binding.input.text.toString().isNotEmpty() && binding.input.text.toString().last() in "0123456789\\$decimalSeparatorSymbol")  {
+                        val lastNumber = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                        if (decimalSeparatorSymbol in lastNumber) {
+                            return@withContext
+                        }
+                    }
+                }
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
@@ -497,8 +493,6 @@ class MainActivity : AppCompatActivity() {
 
         val text = binding.input.text.toString()
 
-        // https://kotlinlang.org/docs/ranges.html
-        // https://www.reddit.com/r/Kotlin/comments/couh07/getting_error_operator_cannot_be_applied_to_char/
         for (i in 0 until cursorPosition) {
             if (text[i] == '(') {
                 openParentheses += 1
@@ -510,7 +504,7 @@ class MainActivity : AppCompatActivity() {
 
         if (openParentheses == closeParentheses
             || binding.input.text.toString().subSequence(textLength - 1, textLength) == "("
-            || binding.input.text.toString().subSequence(textLength - 1, textLength) in "×÷+−^"
+            || binding.input.text.toString().subSequence(textLength - 1, textLength) in "×÷+-^"
         ) {
             updateDisplay(view, "(")
         } else if (closeParentheses < openParentheses && binding.input.text.toString().subSequence(
@@ -527,11 +521,15 @@ class MainActivity : AppCompatActivity() {
     fun backspaceButton(view: View) {
         keyVibration(view)
 
-        val cursorPosition = binding.input.selectionStart
+        var cursorPosition = binding.input.selectionStart
         val textLength = binding.input.text.length
         var newValue = ""
         var isFunction = false
         var functionLength = 0
+
+        if (isEqualLastAction) {
+            cursorPosition = textLength
+        }
 
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete

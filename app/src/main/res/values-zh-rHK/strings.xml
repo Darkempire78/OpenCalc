@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_display">計算機</string>
+    <string name="select_theme_title">選擇主題</string>
+    <string name="infinity">無限</string>
+    <!-- App Menu -->
+    <string name="app_menu_theme">主題</string>
+    <string name="app_menu_vibration">震動</string>
+    <string name="app_menu_clear_history">清除計算記錄</string>
+    <string name="app_menu_about">關於</string>
+    <!-- Theme choices -->
+    <string name="theme_system">預設</string>
+    <string name="theme_light">燈光</string>
+    <string name="theme_dark">黑暗</string>
+    <string name="theme_amoled">Amoled黑</string>
+    <string name="theme_material_you">Material You</string>
+    <!-- Others -->
+    <string name="value_copied">已複製</string>
+</resources>

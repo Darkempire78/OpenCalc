@@ -5,10 +5,15 @@ class Expression {
     fun getCleanExpression(calculation: String): String {
         var cleanCalculation = replaceSymbolsFromCalculation(calculation)
         cleanCalculation = addMultiply(cleanCalculation)
-        cleanCalculation = formatSquare(cleanCalculation)
-        cleanCalculation = formatFactorial(cleanCalculation)
+        if (cleanCalculation.contains('√')) {
+            cleanCalculation = formatSquare(cleanCalculation)
+        }
+        if (cleanCalculation.contains('!')) {
+            cleanCalculation = formatFactorial(cleanCalculation)
+        }
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
+            cleanCalculation = cleanCalculation.replace("%", "/100")
         }
         cleanCalculation = addParenthesis(cleanCalculation)
 
@@ -18,7 +23,6 @@ class Expression {
     private fun replaceSymbolsFromCalculation(calculation: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
-        calculation2 = calculation2.replace("%", "/100")
         calculation2 = calculation2.replace("log", "logten")
         calculation2 = calculation2.replace("E", "*10^")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
@@ -35,7 +39,7 @@ class Expression {
             return calculation
         }
         // find the last operator before the last %
-        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '×', '÷', '('))
+        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '('))
         if (operatorBeforePercentPos < 1) {
             return calculation
         }
@@ -51,8 +55,10 @@ class Expression {
             return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
         }
         calculationStringFirst = "($calculationStringFirst)"
+
         // modify the calculation to have something like (X)+(Y%*X)
-        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "×(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
+        return calculationStringFirst + calculation[operatorBeforePercentPos] + calculationStringFirst + "*(" + calculation.subSequence(operatorBeforePercentPos + 1, percentPos) + ")" + calculation.subSequence(percentPos, calculation.length)
+
     }
 
     private fun addParenthesis(calculation: String): String {
@@ -86,17 +92,17 @@ class Expression {
         while (i < cleanCalculationLength) {
 
             if (cleanCalculation[i] == '(') {
-                if (i != 0 && (cleanCalculation[i-1] in "123456789)")) {
+                if (i != 0 && (cleanCalculation[i-1] in ".e0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == ')') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == '!') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789π(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
@@ -106,20 +112,20 @@ class Expression {
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == 'π') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "πe123456789)")) {
+                if (i-1 >= 0 && (cleanCalculation[i-1] in ".%πe0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == 'e') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "π123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "π0123456789(")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
-                if (i-1 >= 0 && (cleanCalculation[i-1] in "πe123456789)")) {
+                if (i-1 >= 0 && (cleanCalculation[i-1] in ".%πe0123456789)")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
