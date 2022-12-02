@@ -212,9 +212,16 @@ class MainActivity : AppCompatActivity() {
                 // Avoid two decimalSeparator in the same number
                 // 1. When you click on the decimalSeparator button
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
-                    if (binding.input.text.toString().isNotEmpty() && binding.input.text.toString().last() in "0123456789\\$decimalSeparatorSymbol")  {
-                        val lastNumber = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
-                        if (decimalSeparatorSymbol in lastNumber) {
+                    if (binding.input.text.toString().isNotEmpty())  {
+                        var lastNumberBefore = ""
+                        if (cursorPosition > 0) {
+                            lastNumberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                        }
+                        var firstNumberAfter = ""
+                        if (cursorPosition < binding.input.text.length-1) {
+                            firstNumberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
+                        }
+                        if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
                         }
                     }
