@@ -95,7 +95,12 @@ class Calculator {
                     if (!eat(')'.code)) throw RuntimeException("Missing ')'")
                 } else if (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) { // numbers
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
-                    x = equation.substring(startPos, pos).toDouble()
+                    val string = equation.substring(startPos, pos)
+                    x = if (string.count { it == '.' } > 1) {
+                        Double.NaN
+                    } else {
+                        string.toDouble()
+                    }
                 } else if (eat('e'.code)) {
                     x = exp(1.0)
                 } else if (eat('π'.code)) {
