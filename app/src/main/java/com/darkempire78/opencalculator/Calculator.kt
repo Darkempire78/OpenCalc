@@ -120,35 +120,72 @@ class Calculator {
                         "logten" -> x = log10(x)
                         "exp" -> x = exp(x)
                         "factorial" -> x = factorial(x)
-                        "sin" -> x = if (isDegreeModeActivated) {
-                            sin(Math.toRadians(x))
+                        "sin" -> if (isDegreeModeActivated) {
+                            x = sin(Math.toRadians(x))
+                            // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            sin(x)
+                            x = sin(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
-                        "cos" -> x = if (isDegreeModeActivated) {
-                            cos(Math.toRadians(x))
+                        "cos" -> if (isDegreeModeActivated) {
+                            x = cos(Math.toRadians(x))
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            cos(x)
+                            x = cos(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
-                        "tan" -> x = if (isDegreeModeActivated) {
-                            tan(Math.toRadians(x))
+                        "tan" -> if (isDegreeModeActivated) {
+                            x = tan(Math.toRadians(x))
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            tan(x)
+                            x = tan(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
-                        "arcsin" -> x = if (isDegreeModeActivated) {
-                            asin(Math.toRadians(x))
+                        "arcsin" -> if (isDegreeModeActivated) {
+                            x = asin(Math.toRadians(x))
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            asin(x)
+                            x = asin(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
-                        "arccos" -> x = if (isDegreeModeActivated) {
-                            acos(Math.toRadians(x))
+                        "arccos" -> if (isDegreeModeActivated) {
+                            x = acos(Math.toRadians(x))
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            acos(x)
+                            x = acos(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
-                        "arctan" -> x = if (isDegreeModeActivated) {
-                            atan(Math.toRadians(x))
+                        "arctan" -> if (isDegreeModeActivated) {
+                            x = atan(Math.toRadians(x))
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         } else {
-                            atan(x)
+                            x = atan(x)
+                            if (x < 1.0E-14) {
+                                x = round(x)
+                            }
                         }
                         else -> x = Double.NaN
                     }

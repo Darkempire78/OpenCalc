@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() {
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
                     if (binding.input.text.toString().isNotEmpty())  {
                         var lastNumberBefore = ""
-                        if (cursorPosition > 0) {
+                        if (cursorPosition > 0  && binding.input.text.toString().substring(0, cursorPosition).last() in "0123456789\\$decimalSeparatorSymbol") {
                             lastNumberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
                         }
                         var firstNumberAfter = ""
@@ -271,11 +271,15 @@ class MainActivity : AppCompatActivity() {
 
             if (calculation != "") {
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
-                val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+                var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                 if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
+                    // If result = -0, change it to 0
+                    if (result == -0.0) {
+                        result = 0.0
+                    }
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
