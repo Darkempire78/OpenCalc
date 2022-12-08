@@ -226,7 +226,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 // 2. When you click on a former calculation from the history
-                if (binding.input.text.isNotEmpty() && cursorPosition > 0) {
+                if (binding.input.text.isNotEmpty()
+                    && cursorPosition > 0
+                    && decimalSeparatorSymbol in value
+                    && value != decimalSeparatorSymbol // The value should not be *only* the decimal separator
+                ) {
                     if (NumberFormatter.extractNumbers(value).isNotEmpty()) {
                         val firstValueNumber = NumberFormatter.extractNumbers(value).first()
                         val lastValueNumber = NumberFormatter.extractNumbers(value).last()
