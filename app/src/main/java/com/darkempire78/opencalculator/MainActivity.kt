@@ -207,7 +207,6 @@ class MainActivity : AppCompatActivity() {
 
             var newValueFormatted = NumberFormatter.format(newValue)
 
-            val cursorOffset = newValueFormatted.length - newValue.length
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
                 // 1. When you click on the decimalSeparator button
@@ -257,6 +256,7 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setText(newValueFormatted)
 
                 // Increase cursor position
+                val cursorOffset = newValueFormatted.length - newValue.length
                 binding.input.setSelection(cursorPosition + value.length + cursorOffset)
 
                 // Update resultDisplay
