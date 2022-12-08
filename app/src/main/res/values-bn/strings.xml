@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="select_theme_title">থিম নির্বাচন করুন</string>
     <string name="app_name_display">ক্যালকুলেটর</string>
+
+    <string name="select_theme_title">থিম বাছুন</string>
+
+    <string name="infinity">অসীম</string>
+
+    <!-- App Menu -->
     <string name="app_menu_theme">থিম</string>
-    <string name="app_menu_vibration">কম্পন</string>
-    <string name="app_menu_about">সম্পর্কিত</string>
+    <string name="app_menu_vibration">ভাইব্রেশন</string>
+    <string name="app_menu_clear_history">ইতিহাস মুছুন</string>
+    <string name="app_menu_about">সম্পর্কে</string>
+
+    <!-- Theme choices -->
+    <string name="theme_system">সিস্টেম</string>
+    <string name="theme_light">লাইট</string>
+    <string name="theme_dark">ডার্ক</string>
+    <string name="theme_material_you">ম্যাটেরিয়াল ইউ</string>
+
+    <!-- Others -->
+    <string name="value_copied">অনুলিপি করা হয়েছে</string>
 </resources>
