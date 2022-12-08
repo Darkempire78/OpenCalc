@@ -192,7 +192,15 @@ class Calculator {
                 } else {
                     x = Double.NaN
                 }
-                if (eat('^'.code)) x = x.pow(parseFactor()) // exponentiation
+                if (eat('^'.code)) {
+                    x = x.pow(parseFactor())
+                    // To fix sqrt(2)^2 = 2
+                    val decimal = x.toInt()
+                    val fractional = x - decimal
+                    if (fractional < 1.0E-14) {
+                        x = decimal.toDouble()
+                    }
+                } // exponentiation
                 return x
             }
         }.parse()
