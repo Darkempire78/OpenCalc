@@ -27,13 +27,14 @@ object NumberFormatter {
     private fun addSeparators(numbersList: List<String>): List<String> {
         return numbersList.map {
             if (it.contains(decimalSeparatorSymbol)) {
-                var tmp = it
-                if (it[0].toString() == decimalSeparatorSymbol) {
-                    tmp = "0" + tmp
+                if (it.first() == decimalSeparatorSymbol[0]) {
+                    //this means the floating point number doesn't have integers
+                    it
+                } else {
+                    val integersPart = it.substring(0, it.indexOf(decimalSeparatorSymbol))
+                    val fractions = it.substring(it.indexOf(decimalSeparatorSymbol) + 1)
+                    DecimalFormat().format(integersPart.toBigDecimal()) + decimalSeparatorSymbol + fractions
                 }
-                val integersPart = tmp.substring(0, tmp.indexOf(decimalSeparatorSymbol))
-                val fractions = tmp.substring(tmp.indexOf(decimalSeparatorSymbol) + 1)
-                DecimalFormat().format(integersPart.toBigDecimal()) + decimalSeparatorSymbol + fractions
             } else {
                 DecimalFormat().format(it.toBigDecimal())
             }
