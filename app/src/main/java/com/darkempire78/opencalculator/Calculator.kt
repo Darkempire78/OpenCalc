@@ -1,5 +1,6 @@
 package com.darkempire78.opencalculator
 
+import java.math.BigDecimal
 import java.math.BigInteger
 import kotlin.math.*
 
@@ -7,14 +8,14 @@ class Calculator {
 
     fun factorial(number: Double): Double {
         val decimalPartOfNumber = number - number.toInt()
-        if (decimalPartOfNumber == 0.0) {
+        return if (decimalPartOfNumber == 0.0) {
             var factorial = BigInteger("1")
             for (i in 1..number.toInt()) {
                 factorial *= i.toBigInteger()
             }
-            return factorial.toDouble()
+            factorial.toDouble()
         } else {
-            return gammaLanczos(number+1)
+            gammaLanczos(number+1)
         }
     }
 
@@ -99,7 +100,7 @@ class Calculator {
                     x = if (string.count { it == '.' } > 1) {
                         Double.NaN
                     } else {
-                        if ((string.length == 1).and(string[0] == '.')) {
+                        if ((string.length == 1) && (string[0] == '.')) {
                             Double.NaN
                         } else {
                             string.toDouble()
