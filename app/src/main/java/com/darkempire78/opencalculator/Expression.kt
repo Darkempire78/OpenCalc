@@ -107,7 +107,7 @@ class Expression {
                     cleanCalculationLength ++
                 }
             } else if (i-1 >= 0 && cleanCalculation[i] == '√') {
-                if (cleanCalculation[i-1] !in "+-/*") {
+                if (cleanCalculation[i-1] !in "+-/*(") {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
                     cleanCalculationLength ++
                 }
