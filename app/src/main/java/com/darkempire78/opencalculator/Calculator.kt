@@ -99,7 +99,11 @@ class Calculator {
                     x = if (string.count { it == '.' } > 1) {
                         Double.NaN
                     } else {
-                        string.toDouble()
+                        if ((string.length == 1).and(string[0] == '.')) {
+                            Double.NaN
+                        } else {
+                            string.toDouble()
+                        }
                     }
                 } else if (eat('e'.code)) {
                     x = exp(1.0)
