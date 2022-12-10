@@ -5,6 +5,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/light_foreground_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
         <item name="android:windowBackground">@color/dark_background_color</item>
 
@@ -33,6 +34,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/dark_foreground_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
         <item name="android:navigationBarColor">@color/dark_background_color</item>
 
         <item name="android:itemBackground">@color/dark_background_color</item>
@@ -59,6 +61,7 @@
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@color/amoled_foreground_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
 
         <item name="android:itemBackground">@color/dark_background_color</item>
@@ -107,6 +110,7 @@
         <item name="android:statusBarColor" >@color/material_dynamic_secondary90</item>
         <item name="android:navigationBarColor">@color/light_background_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
     </style>
 
     <style name="materialYouDark" parent="AppTheme">
@@ -135,6 +139,7 @@
         <item name="android:statusBarColor" >@color/material_dynamic_secondary20</item>
         <item name="android:navigationBarColor">@color/dark_background_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
