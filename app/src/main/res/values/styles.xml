@@ -154,19 +154,20 @@
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:background">@drawable/circle</item>
         <item name="android:textColor">?attr/text_color</item>
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">@dimen/calculator_button_text_size</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/button_horizontal_margin</item>
         <item name="android:layout_marginVertical" tools:targetApi="o">@dimen/button_vertical_margin</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
+    <!-- used in landscape -->
     <style name="CalculatorButton.Small">
-        <item name="android:textSize">26sp</item>
+        <item name="android:textSize">@dimen/calculator_button_text_size</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
     <style name="CalculatorButton.Function">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">@dimen/calculator_button_function_text_size</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:background">@null</item>
         <!-- PI breaks without this -->

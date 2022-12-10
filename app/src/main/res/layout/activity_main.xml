@@ -97,62 +97,46 @@
 
                     <Button
                         android:id="@+id/squareButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="squareButton"
                         android:text="@string/square"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/piButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="piButton"
                         android:text="@string/pi"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/devideBy100Button"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="devideBy100"
                         android:text="@string/devideBy100"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/factorialButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="factorialButton"
                         android:text="@string/factorial"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <ImageButton
@@ -176,69 +160,51 @@
                     android:id="@+id/scientistModeRow2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:visibility="gone"
+                    tools:visibility="visible"
                     >
 
                     <Button
                         android:id="@+id/degreeButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="degreeButton"
-                        android:text="@string/degree"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:textSize="22sp"
+                        android:text="@string/degree"/>
 
                     <Button
                         android:id="@+id/sinusButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="sinusButton"
-                        android:text="@string/sinus"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/sinus" />
 
                     <Button
                         android:id="@+id/cosinusButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="cosinusButton"
-                        android:text="@string/cosinus"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/cosinus" />
 
                     <Button
                         android:id="@+id/tangentButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="tangentButton"
-                        android:text="@string/tangent"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/tangent" />
 
                     <Button
                         android:id="@+id/emptyScientistMode1"
@@ -255,68 +221,49 @@
                     android:id="@+id/scientistModeRow3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:visibility="gone">
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/invButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="invButton"
-                        android:text="@string/inv"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/inv" />
 
                     <Button
                         android:id="@+id/eButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="eButton"
-                        android:text="@string/e"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/e" />
 
                     <Button
                         android:id="@+id/naturalLogarithmButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="naturalLogarithmButton"
-                        android:text="@string/naturalLogarithm"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/naturalLogarithm" />
 
                     <Button
                         android:id="@+id/logarithmButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="logarithmButton"
-                        android:text="@string/logarithm"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/logarithm" />
 
                     <Button
                         android:id="@+id/emptyScientistMode2"
@@ -342,7 +289,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:text="@string/clear" />
 
                     <ImageButton
@@ -525,7 +472,6 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:paddingTop="0dp"
                         android:onClick="pointButton"
                         app:srcCompat="@drawable/dot" />
 
