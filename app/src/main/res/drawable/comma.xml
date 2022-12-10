@@ -1,0 +1,11 @@
+<vector android:height="24dp" android:tint="?attr/text_color"
+    android:viewportHeight="24" android:viewportWidth="24"
+    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:scaleX="@dimen/icon_scale"
+        android:scaleY="@dimen/icon_scale"
+        android:translateX="@dimen/icon_translate"
+        android:translateY="@dimen/icon_translate">
+        <path android:fillColor="@android:color/white" android:pathData="m 12,9.17 c -1.451,-3.94e-4 -2.63,1.21 -2.63,2.63 0,1.45 1.21,2.63 2.63,2.63 -0.1,0.35 -0.46,1.41 -0.86,2.1 l 1.88,0 c 0,0 1.55,-2.1 1.64,-4.7 0,-1.45 -1.21,-2.63 -2.63,-2.63 z"/>
+    </group>
+</vector>

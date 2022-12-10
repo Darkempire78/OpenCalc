@@ -13,6 +13,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        binding.pointButton.text = decimalSeparatorSymbol
+        (binding.pointButton as ImageButton).setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.comma else R.drawable.dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(
