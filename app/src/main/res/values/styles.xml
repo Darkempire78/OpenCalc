@@ -1,73 +1,52 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:statusBarColor">@color/light_foreground_color</item>
+    <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-        <item name="android:navigationBarColor">@color/light_background_color</item>
-        <item name="android:windowBackground">@color/dark_background_color</item>
-
-        <item name="android:itemBackground">@color/light_background_color</item>
-        <item name="android:textColor">@color/light_text_color</item>
-        <item name="android:colorControlNormal">@color/light_text_color</item>
-        <item name="android:colorControlActivated">@color/light_text_color</item>
-
-        <item name="foreground_color">@color/light_foreground_color</item>
-        <item name="background_color">@color/light_background_color</item>
-        <item name="history_background_color">@color/light_history_background_color</item>
-        <item name="text_color">@color/light_text_color</item>
-        <item name="text_second_color">@color/light_text_second_color</item>
-        <item name="text_third_color">@color/light_text_third_color</item>
-        <item name="button_color">@color/light_button_color</item>
-        <item name="button_symbol_color">@color/light_button_symbol_color</item>
-        <item name="button_clear_color">@color/light_button_clear_color</item>
-        <item name="button_equals_color">@color/light_button_equals_color</item>
-        <item name="button_ripple_color">@color/light_button_ripple_color</item>
-        <item name="separator_color">@color/light_background_color</item>
-        <item name="about_button_color">@color/light_button_color</item>
     </style>
 
-    <!-- dark application theme. -->
-    <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:statusBarColor">@color/dark_foreground_color</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
-        <item name="android:navigationBarColor">@color/dark_background_color</item>
 
-        <item name="android:itemBackground">@color/dark_background_color</item>
-        <item name="android:textColor">@color/dark_text_color</item>
-        <item name="android:colorControlNormal">@color/dark_text_color</item>
-        <item name="android:colorControlActivated">@color/dark_text_color</item>
+        <item name="android:statusBarColor">@color/foreground_color</item>
+        <item name="android:navigationBarColor">@color/background_color</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <!--<item name="android:windowBackground">@color/dark_background_color</item>-->
 
-        <item name="foreground_color">@color/dark_foreground_color</item>
-        <item name="background_color">@color/dark_background_color</item>
-        <item name="history_background_color">@color/dark_history_background_color</item>
-        <item name="text_color">@color/dark_text_color</item>
-        <item name="text_second_color">@color/dark_text_second_color</item>
-        <item name="text_third_color">@color/dark_text_third_color</item>
-        <item name="button_color">@color/dark_button_color</item>
-        <item name="button_symbol_color">@color/dark_button_symbol_color</item>
-        <item name="button_clear_color">@color/dark_button_clear_color</item>
-        <item name="button_equals_color">@color/dark_button_equals_color</item>
-        <item name="button_ripple_color">@color/dark_button_ripple_color</item>
-        <item name="separator_color">@color/dark_background_color</item>
-        <item name="about_button_color">@color/dark_text_third_color</item>
+        <!--<item name="android:itemBackground">@color/background_color</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:colorControlNormal">@color/text_color</item>
+        <item name="android:colorControlActivated">@color/text_color</item>-->
+
+        <item name="foreground_color">@color/foreground_color</item>
+        <item name="background_color">@color/background_color</item>
+        <item name="history_background_color">@color/history_background_color</item>
+        <item name="text_color">@color/text_color</item>
+        <item name="text_second_color">@color/text_second_color</item>
+        <item name="text_third_color">@color/text_third_color</item>
+        <item name="button_color">@color/button_color</item>
+        <item name="button_symbol_color">@color/button_symbol_color</item>
+        <item name="button_clear_color">@color/button_clear_color</item>
+        <item name="button_equals_color">@color/button_equals_color</item>
+        <item name="button_ripple_color">@color/button_ripple_color</item>
+        <item name="separator_color">@color/background_color</item>
+        <item name="about_button_color">@color/button_color</item>
     </style>
 
-    <style name="amoledTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AmoledTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
+
         <item name="android:statusBarColor">@color/amoled_foreground_color</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
 
-        <item name="android:itemBackground">@color/dark_background_color</item>
+        <!--<item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/amoled_text_color</item>
         <item name="android:colorControlNormal">@color/amoled_text_color</item>
-        <item name="android:colorControlActivated">@color/amoled_text_color</item>
+        <item name="android:colorControlActivated">@color/amoled_text_color</item>-->
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
         <item name="background_color">@color/amoled_background_color</item>
@@ -84,62 +63,18 @@
         <item name="about_button_color">@color/amoled_text_third_color</item>
     </style>
 
-    <style name="materialYouLight" parent="AppTheme">
-        <item name="android:windowActionBarOverlay">true</item>
+    <style name="MaterialYouTheme" parent="AppTheme">
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
-        <item name="background_color">@color/light_background_color</item>
         <item name="history_background_color">@color/material_dynamic_secondary95</item>
-        <item name="separator_color">@color/light_background_color</item>
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
-
-        <item name="android:itemBackground">@color/light_background_color</item>
-        <item name="android:textColor">@color/light_text_color</item>
-        <item name="android:colorControlNormal">@color/light_text_color</item>
-        <item name="android:colorControlActivated">@color/light_text_color</item>
-
-        <item name="text_color">@color/light_text_color</item>
-        <item name="text_second_color">@color/light_text_second_color</item>
-        <item name="text_third_color">@color/light_text_third_color</item>
 
         <item name="button_color">@color/material_dynamic_neutral95</item>
         <item name="button_symbol_color">@color/material_dynamic_secondary90</item>
         <item name="button_clear_color">@color/material_dynamic_tertiary90</item>
         <item name="button_equals_color">@color/material_dynamic_primary90</item>
-        <item name="button_ripple_color">@color/dark_button_ripple_color</item>
+        <!--<item name="button_ripple_color">@color/dark_button_ripple_color</item>-->
 
-        <item name="android:statusBarColor" >@color/material_dynamic_secondary90</item>
-        <item name="android:navigationBarColor">@color/light_background_color</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-    </style>
-
-    <style name="materialYouDark" parent="AppTheme">
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="foreground_color">@color/material_dynamic_secondary20</item>
-        <item name="background_color">@color/dark_background_color</item>
-        <item name="history_background_color">@color/material_dynamic_secondary10</item>
-        <item name="separator_color">@color/dark_background_color</item>
-        <item name="about_button_color">@color/dark_text_color</item>
-
-        <item name="android:itemBackground">@color/dark_background_color</item>
-        <item name="android:textColor">@color/dark_text_color</item>
-        <item name="android:colorControlNormal">@color/dark_text_color</item>
-        <item name="android:colorControlActivated">@color/dark_text_color</item>
-
-        <item name="text_color">@color/dark_text_color</item>
-        <item name="text_second_color">@color/dark_text_second_color</item>
-        <item name="text_third_color">@color/dark_text_third_color</item>
-
-        <item name="button_color">@color/material_dynamic_neutral20</item>
-        <item name="button_symbol_color">@color/material_dynamic_secondary30</item>
-        <item name="button_clear_color">@color/material_dynamic_tertiary30</item>
-        <item name="button_equals_color">@color/material_dynamic_primary30</item>
-        <item name="button_ripple_color">@color/dark_button_ripple_color</item>
-
-        <item name="android:statusBarColor" >@color/material_dynamic_secondary20</item>
-        <item name="android:navigationBarColor">@color/dark_background_color</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+        <item name="android:statusBarColor">@color/material_dynamic_secondary90</item>
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">

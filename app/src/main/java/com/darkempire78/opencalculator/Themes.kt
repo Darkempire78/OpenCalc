@@ -2,101 +2,106 @@ package com.darkempire78.opencalculator
 
 import android.app.Activity
 import android.content.Context
-import android.content.res.Configuration
-import android.os.Build
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.startActivity
+import com.darkempire78.opencalculator.databinding.DialogThemeSelectionBinding
 import com.google.android.material.color.DynamicColors
 
 class Themes(private val context: Context) {
 
-    private val themeMap = mapOf(
-        /* System */      -1 to
-            if (DynamicColors.isDynamicColorAvailable()) {
-                if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark else R.style.materialYouLight
-            } else {
-                if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme
-            },
-        /* Light mode */   0 to R.style.AppTheme,
-        /* Dark mode */    1 to R.style.darkTheme,
-        /* amoled mode */  2 to R.style.amoledTheme,
-        /* Material You */ 3 to if (checkIfDarkModeIsEnabledByDefault()) R.style.materialYouDark else R.style.materialYouLight
-    )
+    companion object {
+        private const val DEFAULT_THEME_INDEX = 0
+        const val AMOLED_THEME_INDEX = 1
+        private const val MATERIAL_YOU_THEME_INDEX = 2
 
-    fun openDialogThemeSelector() {
-        val builder = AlertDialog.Builder(context)
+        private val themeMap = mapOf(
+            DEFAULT_THEME_INDEX to R.style.AppTheme,
+            AMOLED_THEME_INDEX to R.style.AmoledTheme,
+            MATERIAL_YOU_THEME_INDEX to R.style.MaterialYouTheme
+        )
 
-        val styles = arrayOf(context.getString(R.string.theme_system), context.getString(R.string.theme_light), context.getString(R.string.theme_dark), context.getString(R.string.theme_amoled), context.getString(R.string.theme_material_you))
-        val checkedItem = MyPreferences(context).darkMode + 1
+        fun openDialogThemeSelector(context: Context, layoutInflater: LayoutInflater) {
 
-        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
-            when (which) {
-                0 -> {
-                    MyPreferences(context).darkMode = -1
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                1 -> {
-                    MyPreferences(context).darkMode = 0
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                2 -> {
-                    MyPreferences(context).darkMode = 1
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                3 -> {
-                    MyPreferences(context).darkMode = 2
-                    dialog.dismiss()
-                    reloadActivity()
-                }
-                4 -> {
-                    if (DynamicColors.isDynamicColorAvailable()) {
-                        MyPreferences(context).darkMode = 3
-                        dialog.dismiss()
-                        reloadActivity()
-                    } else {
-                        Toast.makeText(context, "Sorry Material You isn't Available", Toast.LENGTH_SHORT).show()
-                        dialog.dismiss()
-                    }
-                }
+            val preferences = MyPreferences(context)
+
+            val builder = AlertDialog.Builder(context)
+
+            val themes = arrayListOf(
+                context.getString(R.string.theme_default),
+                context.getString(R.string.theme_amoled),
+            )
+            if (DynamicColors.isDynamicColorAvailable())
+                themes.add(context.getString(R.string.theme_material_you))
+
+            val dayNightModes = mapOf(
+                context.getString(R.string.theme_follow_system) to AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM,
+                context.getString(R.string.theme_dark) to AppCompatDelegate.MODE_NIGHT_YES,
+                context.getString(R.string.theme_light) to AppCompatDelegate.MODE_NIGHT_NO,
+            )
+            val dayNightModeIndexes = mapOf(
+                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM to 0,
+                AppCompatDelegate.MODE_NIGHT_YES to 1,
+                AppCompatDelegate.MODE_NIGHT_NO to 2
+            )
+
+            builder.setTitle(R.string.theme_dialog_title)
+
+            var themeSelection = preferences.theme
+
+            val dialogBinding = DialogThemeSelectionBinding.inflate(layoutInflater)
+            val listTheme = dialogBinding.listTheme
+            val spinnerDayNightOverride = dialogBinding.spinnerDayNightOverride
+
+            val themeAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_single_choice, themes)
+            listTheme.setOnItemClickListener { _, _, position, _ ->
+                themeSelection = position
+                spinnerDayNightOverride.isEnabled = position != AMOLED_THEME_INDEX
             }
+            listTheme.adapter = themeAdapter
+            listTheme.setItemChecked(themeSelection, true)
+
+            val overrideAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, dayNightModes.keys.toTypedArray())
+            spinnerDayNightOverride.adapter = overrideAdapter
+            spinnerDayNightOverride.setSelection(dayNightModeIndexes[preferences.forceDayNight] ?: 0)
+
+            builder.setView(dialogBinding.root)
+
+            builder.setPositiveButton(R.string.apply) { dialog, _ ->
+                preferences.theme = themeSelection
+                val mode = dayNightModes[(spinnerDayNightOverride.selectedItem as String)] ?: AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                preferences.forceDayNight = mode
+                dialog.dismiss()
+                reloadActivity(context)
+            }
+
+            builder.setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
         }
 
-        val dialog = builder.create()
-        dialog.show()
-    }
-
-    private fun reloadActivity() {
-        (context as Activity).finish()
-        startActivity(context, context.intent, null)
-    }
-
-    fun checkTheme() {
-        when (MyPreferences(context).darkMode) {
-            -1 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            }
-            0 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-            1 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-            3 -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            }
+        private fun reloadActivity(context: Context) {
+            (context as Activity).finish()
+            startActivity(context, context.intent, null)
         }
     }
 
-    fun getTheme(): Int = themeMap[MyPreferences(context).darkMode]
-        ?: if (checkIfDarkModeIsEnabledByDefault()) R.style.darkTheme else R.style.AppTheme
+    fun applyDayNightOverride() {
+        val preferences = MyPreferences(context)
+        if (preferences.forceDayNight != AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
+                && preferences.theme != AMOLED_THEME_INDEX) {
+            AppCompatDelegate.setDefaultNightMode(preferences.forceDayNight)
+        }
+    }
 
+    fun getTheme(): Int = themeMap[MyPreferences(context).theme] ?: R.style.AppTheme
 
-    private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
+    /*private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             context.resources.configuration.isNightModeActive
         } else {
@@ -106,5 +111,5 @@ class Themes(private val context: Context) {
                 Configuration.UI_MODE_NIGHT_UNDEFINED -> true
                 else -> true
             }
-        }
+        }*/
 }

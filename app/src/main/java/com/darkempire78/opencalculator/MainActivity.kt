@@ -41,16 +41,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        //delegate.localNightMode = MODE_NIGHT_NO
+        //delegate.localNightMode = MODE_NIGHT_YES
+
         // Themes
         val themes = Themes(this)
+        themes.applyDayNightOverride()
         setTheme(themes.getTheme())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        // check the current selected theme
-        Themes(this).checkTheme()
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
@@ -138,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
-        Themes(this).openDialogThemeSelector()
+        Themes.openDialogThemeSelector(this, layoutInflater)
     }
 
     fun openAppMenu(view: View) {
