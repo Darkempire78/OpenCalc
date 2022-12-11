@@ -60,16 +60,4 @@ class AboutActivity : AppCompatActivity() {
             startActivity(browserIntent)
         }
     }
-
-    private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            resources.configuration.isNightModeActive
-        } else {
-            when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
-                Configuration.UI_MODE_NIGHT_YES -> true
-                Configuration.UI_MODE_NIGHT_NO -> false
-                Configuration.UI_MODE_NIGHT_UNDEFINED -> true
-                else -> true
-            }
-        }
 }

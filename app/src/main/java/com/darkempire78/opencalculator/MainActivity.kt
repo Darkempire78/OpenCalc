@@ -13,7 +13,6 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
@@ -41,10 +40,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-        //delegate.localNightMode = MODE_NIGHT_NO
-        //delegate.localNightMode = MODE_NIGHT_YES
-
         // Themes
         val themes = Themes(this)
         themes.applyDayNightOverride()
@@ -71,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        (binding.pointButton as ImageButton).setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.comma else R.drawable.dot)
+        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.comma else R.drawable.dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(
