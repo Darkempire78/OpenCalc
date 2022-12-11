@@ -2,7 +2,6 @@
 <resources>
     <declare-styleable name="ds">
         <attr name="foreground_color" format="color"/>
-        <attr name="background_color" format="color"/>
         <attr name="history_background_color" format="color"/>
         <attr name="text_color" format="color"/>
         <attr name="text_second_color" format="color"/>

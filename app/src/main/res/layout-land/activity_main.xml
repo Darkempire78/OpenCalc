@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="?attr/background_color"
     android:animateLayoutChanges="true">
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -25,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity"
-            android:background="?attr/background_color">
+            >
 
             <TableLayout
                 android:id="@+id/tableLayout"

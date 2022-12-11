@@ -4,11 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.startActivity
 import com.darkempire78.opencalculator.databinding.DialogThemeSelectionBinding
 import com.google.android.material.color.DynamicColors
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class Themes(private val context: Context) {
 
@@ -27,7 +27,7 @@ class Themes(private val context: Context) {
 
             val preferences = MyPreferences(context)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = MaterialAlertDialogBuilder(context)
 
             val themes = arrayListOf(
                 context.getString(R.string.theme_default),
