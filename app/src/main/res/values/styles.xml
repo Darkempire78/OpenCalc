@@ -11,26 +11,23 @@
 
         <item name="android:statusBarColor">@color/foreground_color</item>
         <item name="android:navigationBarColor">@color/background_color</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-        <!--<item name="android:windowBackground">@color/dark_background_color</item>-->
 
-        <!--<item name="android:itemBackground">@color/background_color</item>
         <item name="android:textColor">@color/text_color</item>
-        <item name="android:colorControlNormal">@color/text_color</item>
-        <item name="android:colorControlActivated">@color/text_color</item>-->
 
         <item name="foreground_color">@color/foreground_color</item>
         <item name="background_color">@color/background_color</item>
         <item name="history_background_color">@color/history_background_color</item>
+
         <item name="text_color">@color/text_color</item>
         <item name="text_second_color">@color/text_second_color</item>
         <item name="text_third_color">@color/text_third_color</item>
+
         <item name="button_color">@color/button_color</item>
         <item name="button_symbol_color">@color/button_symbol_color</item>
         <item name="button_clear_color">@color/button_clear_color</item>
         <item name="button_equals_color">@color/button_equals_color</item>
         <item name="button_ripple_color">@color/button_ripple_color</item>
+
         <item name="separator_color">@color/background_color</item>
         <item name="about_button_color">@color/button_color</item>
     </style>
@@ -39,42 +36,40 @@
         <item name="android:windowActionBarOverlay">true</item>
 
         <item name="android:statusBarColor">@color/amoled_foreground_color</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
 
-        <!--<item name="android:itemBackground">@color/dark_background_color</item>
         <item name="android:textColor">@color/amoled_text_color</item>
-        <item name="android:colorControlNormal">@color/amoled_text_color</item>
-        <item name="android:colorControlActivated">@color/amoled_text_color</item>-->
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
         <item name="background_color">@color/amoled_background_color</item>
         <item name="history_background_color">@color/amoled_history_background_color</item>
+
         <item name="text_color">@color/amoled_text_color</item>
         <item name="text_second_color">@color/amoled_text_second_color</item>
         <item name="text_third_color">@color/amoled_text_third_color</item>
+
         <item name="button_color">@color/amoled_button_color</item>
         <item name="button_symbol_color">@color/amoled_button_symbol_color</item>
         <item name="button_clear_color">@color/amoled_button_clear_color</item>
         <item name="button_equals_color">@color/amoled_button_equals_color</item>
         <item name="button_ripple_color">@color/amoled_button_ripple_color</item>
+
         <item name="separator_color">@color/amoled_separator_color</item>
         <item name="about_button_color">@color/amoled_text_third_color</item>
     </style>
 
     <style name="MaterialYouTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@color/material_dynamic_secondary90</item>
+
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
         <item name="history_background_color">@color/material_dynamic_secondary95</item>
-        <item name="about_button_color">@color/material_dynamic_tertiary90</item>
 
         <item name="button_color">@color/material_dynamic_neutral95</item>
         <item name="button_symbol_color">@color/material_dynamic_secondary90</item>
         <item name="button_clear_color">@color/material_dynamic_tertiary90</item>
         <item name="button_equals_color">@color/material_dynamic_primary90</item>
-        <!--<item name="button_ripple_color">@color/dark_button_ripple_color</item>-->
 
-        <item name="android:statusBarColor">@color/material_dynamic_secondary90</item>
+        <item name="about_button_color">@color/material_dynamic_tertiary90</item>
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
