@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
-        Themes.openDialogThemeSelector(this, layoutInflater)
+        Themes.openDialogThemeSelector(this)
     }
 
     fun openAppMenu(view: View) {

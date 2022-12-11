@@ -2,20 +2,26 @@ package com.darkempire78.opencalculator
 
 import android.app.Activity
 import android.content.Context
-import android.view.LayoutInflater
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.startActivity
-import com.darkempire78.opencalculator.databinding.DialogThemeSelectionBinding
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class Themes(private val context: Context) {
 
     companion object {
+
+        // Themes
         private const val DEFAULT_THEME_INDEX = 0
         const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
+
+        // Styles - Combinations of theme + day/night mode
+        private const val SYSTEM_STYLE_INDEX = 0
+        private const val LIGHT_STYLE_INDEX = 1
+        private const val DARK_STYLE_INDEX = 2
+        private const val AMOLED_STYLE_INDEX = 3
+        private const val MATERIAL_YOU_STYLE_INDEX = 4
 
         private val themeMap = mapOf(
             DEFAULT_THEME_INDEX to R.style.AppTheme,
@@ -23,64 +29,58 @@ class Themes(private val context: Context) {
             MATERIAL_YOU_THEME_INDEX to R.style.MaterialYouTheme
         )
 
-        fun openDialogThemeSelector(context: Context, layoutInflater: LayoutInflater) {
+        fun openDialogThemeSelector(context: Context) {
 
             val preferences = MyPreferences(context)
 
             val builder = MaterialAlertDialogBuilder(context)
 
-            val themes = arrayListOf(
-                context.getString(R.string.theme_default),
-                context.getString(R.string.theme_amoled),
+            val styles =  hashMapOf(
+                SYSTEM_STYLE_INDEX to context.getString(R.string.theme_system),
+                LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
+                DARK_STYLE_INDEX to context.getString(R.string.theme_dark),
+                AMOLED_STYLE_INDEX to context.getString(R.string.theme_amoled)
             )
             if (DynamicColors.isDynamicColorAvailable())
-                themes.add(context.getString(R.string.theme_material_you))
+                styles[MATERIAL_YOU_STYLE_INDEX] = context.getString(R.string.theme_material_you)
 
-            val dayNightModes = mapOf(
-                context.getString(R.string.theme_follow_system) to AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM,
-                context.getString(R.string.theme_dark) to AppCompatDelegate.MODE_NIGHT_YES,
-                context.getString(R.string.theme_light) to AppCompatDelegate.MODE_NIGHT_NO,
-            )
-            val dayNightModeIndexes = mapOf(
-                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM to 0,
-                AppCompatDelegate.MODE_NIGHT_YES to 1,
-                AppCompatDelegate.MODE_NIGHT_NO to 2
-            )
-
-            builder.setTitle(R.string.theme_dialog_title)
-
-            var themeSelection = preferences.theme
-
-            val dialogBinding = DialogThemeSelectionBinding.inflate(layoutInflater)
-            val listTheme = dialogBinding.listTheme
-            val spinnerDayNightOverride = dialogBinding.spinnerDayNightOverride
-
-            val themeAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_single_choice, themes)
-            listTheme.setOnItemClickListener { _, _, position, _ ->
-                themeSelection = position
-                spinnerDayNightOverride.isEnabled = position != AMOLED_THEME_INDEX
+            val checkedItem = when (preferences.theme) {
+                AMOLED_THEME_INDEX -> AMOLED_STYLE_INDEX
+                MATERIAL_YOU_THEME_INDEX -> MATERIAL_YOU_STYLE_INDEX
+                else -> {
+                    when (preferences.forceDayNight) {
+                        AppCompatDelegate.MODE_NIGHT_NO -> LIGHT_STYLE_INDEX
+                        AppCompatDelegate.MODE_NIGHT_YES -> DARK_STYLE_INDEX
+                        else -> SYSTEM_STYLE_INDEX
+                    }
+                }
             }
-            listTheme.adapter = themeAdapter
-            listTheme.setItemChecked(themeSelection, true)
 
-            val overrideAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, dayNightModes.keys.toTypedArray())
-            spinnerDayNightOverride.adapter = overrideAdapter
-            spinnerDayNightOverride.setSelection(dayNightModeIndexes[preferences.forceDayNight] ?: 0)
-
-            builder.setView(dialogBinding.root)
-
-            builder.setPositiveButton(R.string.apply) { dialog, _ ->
-                preferences.theme = themeSelection
-                val mode = dayNightModes[(spinnerDayNightOverride.selectedItem as String)] ?: AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                preferences.forceDayNight = mode
+            builder.setSingleChoiceItems(styles.values.toTypedArray(), checkedItem) { dialog, which ->
+                when (which) {
+                    0 -> {
+                        preferences.theme = DEFAULT_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                    }
+                    1 -> {
+                        preferences.theme = DEFAULT_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_NO
+                    }
+                    2 -> {
+                        preferences.theme = DEFAULT_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
+                    }
+                    3 -> {
+                        preferences.theme = AMOLED_THEME_INDEX
+                    }
+                    4 -> {
+                        preferences.theme = MATERIAL_YOU_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                    }
+                }
                 dialog.dismiss()
                 reloadActivity(context)
             }
-
-            builder.setNegativeButton("Cancel") { dialog, _ ->
-                dialog.dismiss()
-            }
-
             val dialog = builder.create()
             dialog.show()
         }
@@ -100,16 +100,4 @@ class Themes(private val context: Context) {
     }
 
     fun getTheme(): Int = themeMap[MyPreferences(context).theme] ?: R.style.AppTheme
-
-    /*private fun checkIfDarkModeIsEnabledByDefault(): Boolean =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            context.resources.configuration.isNightModeActive
-        } else {
-            when (context.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
-                Configuration.UI_MODE_NIGHT_YES -> true
-                Configuration.UI_MODE_NIGHT_NO -> false
-                Configuration.UI_MODE_NIGHT_UNDEFINED -> true
-                else -> true
-            }
-        }*/
 }

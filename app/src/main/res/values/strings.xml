@@ -57,7 +57,7 @@
     <string name="app_menu_about">About</string>
 
     <!-- Theme choices -->
-    <string name="theme_default">Default</string>
+    <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
     <string name="theme_material_you">Material You</string>
 
