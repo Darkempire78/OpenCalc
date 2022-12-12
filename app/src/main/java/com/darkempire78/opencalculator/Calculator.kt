@@ -93,7 +93,10 @@ class Calculator {
                 val startPos = pos
                 if (eat('('.code)) { // parentheses
                     x = parseExpression()
-                    if (!eat(')'.code)) throw RuntimeException("Missing ')'")
+                    if (!eat(')'.code)) {
+                        println("Missing ')'")
+                        x = Double.NaN
+                    }
                 } else if (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) { // numbers
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
                     val string = equation.substring(startPos, pos)
