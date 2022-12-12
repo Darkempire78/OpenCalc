@@ -16,18 +16,18 @@ class Themes(private val context: Context) {
         const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
 
-        // Styles - Combinations of theme + day/night mode
-        private const val SYSTEM_STYLE_INDEX = 0
-        private const val LIGHT_STYLE_INDEX = 1
-        private const val DARK_STYLE_INDEX = 2
-        private const val AMOLED_STYLE_INDEX = 3
-        private const val MATERIAL_YOU_STYLE_INDEX = 4
-
+        // used to go from Preference int value to actual theme
         private val themeMap = mapOf(
             DEFAULT_THEME_INDEX to R.style.AppTheme,
             AMOLED_THEME_INDEX to R.style.AmoledTheme,
             MATERIAL_YOU_THEME_INDEX to R.style.MaterialYouTheme
         )
+
+        // Styles - Combinations of theme + day/night mode
+        private const val SYSTEM_STYLE_INDEX = 0
+        private const val LIGHT_STYLE_INDEX = 1
+        private const val DARK_STYLE_INDEX = 2
+        private const val AMOLED_STYLE_INDEX = 3
 
         fun openDialogThemeSelector(context: Context) {
 
@@ -62,24 +62,21 @@ class Themes(private val context: Context) {
 
             builder.setSingleChoiceItems(styles.values.toTypedArray(), checkedItem) { dialog, which ->
                 when (which) {
-                    0 -> {
+                    SYSTEM_STYLE_INDEX -> {
+                        // system style uses the Material You theme if supported
                         preferences.theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                     }
-                    1 -> {
+                    LIGHT_STYLE_INDEX -> {
                         preferences.theme = DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_NO
                     }
-                    2 -> {
+                    DARK_STYLE_INDEX -> {
                         preferences.theme = DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
                     }
-                    3 -> {
+                    AMOLED_STYLE_INDEX -> {
                         preferences.theme = AMOLED_THEME_INDEX
-                    }
-                    4 -> {
-                        preferences.theme = MATERIAL_YOU_THEME_INDEX
-                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                     }
                 }
                 dialog.dismiss()
