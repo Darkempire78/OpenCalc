@@ -42,6 +42,7 @@
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
 
         <item name="colorPrimary">@color/amoled_text_color</item>
+        <item name="colorSurface">@color/amoled_background_color</item>
         <item name="android:colorBackground">@color/amoled_background_color</item>
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
