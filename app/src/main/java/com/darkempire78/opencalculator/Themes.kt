@@ -35,18 +35,22 @@ class Themes(private val context: Context) {
 
             val builder = MaterialAlertDialogBuilder(context)
 
+            val systemName =
+                if (DynamicColors.isDynamicColorAvailable())
+                    "${context.getString(R.string.theme_system)} (${context.getString(R.string.theme_material_you)})"
+                else
+                    context.getString(R.string.theme_system)
+
             val styles =  hashMapOf(
-                SYSTEM_STYLE_INDEX to context.getString(R.string.theme_system),
+                SYSTEM_STYLE_INDEX to systemName,
                 LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
                 DARK_STYLE_INDEX to context.getString(R.string.theme_dark),
                 AMOLED_STYLE_INDEX to context.getString(R.string.theme_amoled)
             )
-            if (DynamicColors.isDynamicColorAvailable())
-                styles[MATERIAL_YOU_STYLE_INDEX] = context.getString(R.string.theme_material_you)
 
             val checkedItem = when (preferences.theme) {
                 AMOLED_THEME_INDEX -> AMOLED_STYLE_INDEX
-                MATERIAL_YOU_THEME_INDEX -> MATERIAL_YOU_STYLE_INDEX
+                MATERIAL_YOU_THEME_INDEX -> SYSTEM_STYLE_INDEX
                 else -> {
                     when (preferences.forceDayNight) {
                         AppCompatDelegate.MODE_NIGHT_NO -> LIGHT_STYLE_INDEX
@@ -59,7 +63,7 @@ class Themes(private val context: Context) {
             builder.setSingleChoiceItems(styles.values.toTypedArray(), checkedItem) { dialog, which ->
                 when (which) {
                     0 -> {
-                        preferences.theme = DEFAULT_THEME_INDEX
+                        preferences.theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                     }
                     1 -> {
