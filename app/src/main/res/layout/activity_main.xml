@@ -206,14 +206,12 @@
                         android:onClick="tangentButton"
                         android:text="@string/tangent" />
 
-                    <Button
+                    <Space
                         android:id="@+id/emptyScientistMode1"
-                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
-                        android:layout_weight="0.6"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:layout_weight="0.6" />
 
                 </TableRow>
 
@@ -265,14 +263,12 @@
                         android:onClick="logarithmButton"
                         android:text="@string/logarithm" />
 
-                    <Button
+                    <Space
                         android:id="@+id/emptyScientistMode2"
-                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
-                        android:layout_weight="0.6"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:layout_weight="0.6" />
 
                 </TableRow>
 

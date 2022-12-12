@@ -105,8 +105,8 @@
 
     <style name="CalculatorButton.Function">
         <item name="android:textSize">@dimen/calculator_button_function_text_size</item>
-        <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/circle_ripple_only</item>
         <!-- PI breaks without this -->
         <item name="android:textAllCaps">false</item>
     </style>
