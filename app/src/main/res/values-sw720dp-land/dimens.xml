@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="icon_scale" type="dimen" format="float">1</item>
+    <item name="icon_translate" type="dimen" format="float">0</item>
+</resources>

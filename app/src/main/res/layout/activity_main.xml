@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="?attr/background_color"
+
     android:animateLayoutChanges="true">
 
     <HorizontalScrollView
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity"
-            android:background="?attr/background_color">
+            >
 
             <TableLayout
                 android:id="@+id/tableLayout"
@@ -97,66 +97,46 @@
 
                     <Button
                         android:id="@+id/squareButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="squareButton"
                         android:text="@string/square"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/piButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="piButton"
                         android:text="@string/pi"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/devideBy100Button"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="devideBy100"
                         android:text="@string/devideBy100"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <Button
                         android:id="@+id/factorialButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="factorialButton"
                         android:text="@string/factorial"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
                         android:textSize="26sp" />
 
                     <ImageButton
@@ -166,7 +146,6 @@
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="0.6"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
                         android:background="@drawable/circle"
                         android:backgroundTint="?attr/foreground_color"
                         android:onClick="scientistModeSwitchButton"
@@ -181,82 +160,58 @@
                     android:id="@+id/scientistModeRow2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:visibility="gone"
+                    tools:visibility="visible"
                     >
 
                     <Button
                         android:id="@+id/degreeButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="degreeButton"
-                        android:text="@string/degree"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:textSize="22sp"
+                        android:text="@string/degree"/>
 
                     <Button
                         android:id="@+id/sinusButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="sinusButton"
-                        android:text="@string/sinus"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/sinus" />
 
                     <Button
                         android:id="@+id/cosinusButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="cosinusButton"
-                        android:text="@string/cosinus"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/cosinus" />
 
                     <Button
                         android:id="@+id/tangentButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="tangentButton"
-                        android:text="@string/tangent"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/tangent" />
 
-                    <Button
+                    <Space
                         android:id="@+id/emptyScientistMode1"
-                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
-                        android:layout_weight="0.6"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:layout_weight="0.6" />
 
                 </TableRow>
 
@@ -264,81 +219,56 @@
                     android:id="@+id/scientistModeRow3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:visibility="gone">
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/invButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="invButton"
-                        android:text="@string/inv"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/inv" />
 
                     <Button
                         android:id="@+id/eButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="eButton"
-                        android:text="@string/e"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/e" />
 
                     <Button
                         android:id="@+id/naturalLogarithmButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="naturalLogarithmButton"
-                        android:text="@string/naturalLogarithm"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/naturalLogarithm" />
 
                     <Button
                         android:id="@+id/logarithmButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
+                        style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
-                        android:background="@drawable/circle"
-                        android:backgroundTint="?attr/background_color"
                         android:onClick="logarithmButton"
-                        android:text="@string/logarithm"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/text_color"
-                        android:textSize="26sp" />
+                        android:text="@string/logarithm" />
 
-                    <Button
+                    <Space
                         android:id="@+id/emptyScientistMode2"
-                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
-                        android:layout_weight="0.6"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:layout_weight="0.6" />
 
                 </TableRow>
 
@@ -349,67 +279,44 @@
 
                     <Button
                         android:id="@+id/clearButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
-                        android:text="@string/clear"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:textSize="24sp"
+                        android:text="@string/clear" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/parenthesesButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        android:text="@string/parentheses"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/parentheses" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/exponentButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="exponentButton"
-                        android:text="@string/exponent"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/exponent" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/devideButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="devideButton"
-                        android:text="@string/devide"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/divide" />
                 </TableRow>
 
                 <TableRow
@@ -419,64 +326,40 @@
 
                     <Button
                         android:id="@+id/sevenButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/seven"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/seven" />
 
                     <Button
                         android:id="@+id/eightButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/eight"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/eight" />
 
                     <Button
                         android:id="@+id/nineButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/nine"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/nine" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/multiplyButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="multiplyButton"
-                        android:text="@string/multiply"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/multiply" />
                 </TableRow>
 
                 <TableRow
@@ -486,64 +369,40 @@
 
                     <Button
                         android:id="@+id/fourButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/four"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/four" />
 
                     <Button
                         android:id="@+id/fiveButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/five"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/five" />
 
                     <Button
                         android:id="@+id/sixButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/six"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/six" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/substractButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="substractButton"
-                        android:text="@string/substract"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/subtract" />
                 </TableRow>
 
                 <TableRow
@@ -553,64 +412,40 @@
 
                     <Button
                         android:id="@+id/oneButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/one"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/one" />
 
                     <Button
                         android:id="@+id/twoButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/two"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/two" />
 
                     <Button
                         android:id="@+id/threeButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/three"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/three" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/addButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="addButton"
-                        android:text="@string/add"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/add" />
                 </TableRow>
 
                 <TableRow
@@ -620,63 +455,42 @@
 
                     <Button
                         android:id="@+id/zeroButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/zero"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        android:text="@string/zero" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/pointButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:onClick="pointButton"
-                        android:text="@string/point"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/dot" />
 
                     <ImageButton
                         android:id="@+id/backspaceButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
+                        android:paddingEnd="5dp"
                         app:srcCompat="@drawable/backspace" />
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/equalsButton"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:fontFamily="@style/RobotoFontCondensedLight"
+                        style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="7dp"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
                         android:backgroundTint="?attr/button_equals_color"
                         android:onClick="equalsButton"
-                        android:text="@string/equals"
-                        android:textColor="?attr/text_color"
-                        android:textSize="32sp" />
+                        app:srcCompat="@drawable/equals" />
                 </TableRow>
             </TableLayout>
 
@@ -744,7 +558,6 @@
     <ImageButton
         android:id="@+id/settingsButton"
         style="@style/RobotoFontCondensedLight"
-        android:fontFamily="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

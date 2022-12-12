@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Normal Theme -->
+    <color name="foreground_color">#535353</color>
+    <color name="background_color">#121212</color>
+    <color name="history_background_color">#404040</color>
+    <color name="text_color">#EFEFEF</color>
+    <color name="text_second_color">#BDBDBD</color>
+    <color name="text_third_color">#B1B1B1</color>
+    <color name="button_color">#333333</color>
+    <color name="button_symbol_color">#0070BC</color>
+    <color name="button_clear_color">#00BA20</color>
+    <color name="button_equals_color">#B3004D</color>
+    <color name="button_ripple_color">#9E9E9E</color>
+
+
+</resources>

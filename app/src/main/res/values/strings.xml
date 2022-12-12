@@ -58,10 +58,12 @@
 
     <!-- Theme choices -->
     <string name="theme_system">System</string>
-    <string name="theme_light">Light</string>
-    <string name="theme_dark">Dark</string>
     <string name="theme_amoled">Amoled</string>
     <string name="theme_material_you">Material You</string>
+
+    <string name="theme_follow_system">Match System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
 
     <!-- Others -->
     <string name="value_copied">Copied</string>

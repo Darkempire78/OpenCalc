@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+    </style>
+
+    <style name="MaterialYouTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@color/material_dynamic_secondary20</item>
+
+        <item name="foreground_color">@color/material_dynamic_secondary20</item>
+        <item name="history_background_color">@color/material_dynamic_secondary10</item>
+
+        <item name="button_color">@color/material_dynamic_neutral20</item>
+        <item name="button_symbol_color">@color/material_dynamic_secondary30</item>
+        <item name="button_clear_color">@color/material_dynamic_tertiary30</item>
+        <item name="button_equals_color">@color/material_dynamic_primary30</item>
+        <item name="button_ripple_color">@color/button_ripple_color</item>
+
+        <item name="about_button_color">@color/text_color</item>
+    </style>
+
+</resources>

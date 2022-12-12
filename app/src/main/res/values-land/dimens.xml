@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_horizontal_margin">4dp</dimen>
+    <dimen name="button_vertical_margin">4dp</dimen>
+
+    <dimen name="calculator_button_text_size">26sp</dimen>
+    <dimen name="calculator_button_function_text_size">22sp</dimen>
+
+    <item name="icon_scale" type="dimen" format="float">0.6</item>
+    <item name="icon_translate" type="dimen" format="float">4.5</item>
+</resources>

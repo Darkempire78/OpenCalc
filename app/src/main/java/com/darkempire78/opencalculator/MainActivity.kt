@@ -13,9 +13,9 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
@@ -42,14 +42,12 @@ class MainActivity : AppCompatActivity() {
 
         // Themes
         val themes = Themes(this)
+        themes.applyDayNightOverride()
         setTheme(themes.getTheme())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        // check the current selected theme
-        Themes(this).checkTheme()
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
@@ -68,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        binding.pointButton.text = decimalSeparatorSymbol
+        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.comma else R.drawable.dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(
@@ -137,7 +135,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
-        Themes(this).openDialogThemeSelector()
+        Themes.openDialogThemeSelector(this)
     }
 
     fun openAppMenu(view: View) {

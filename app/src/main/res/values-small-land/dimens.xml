@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_horizontal_margin">2dp</dimen>
+    <dimen name="button_vertical_margin">2dp</dimen>
+
+    <dimen name="calculator_button_text_size">20sp</dimen>
+    <dimen name="calculator_button_function_text_size">18sp</dimen>
+</resources>
