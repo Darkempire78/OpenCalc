@@ -24,7 +24,10 @@ import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -238,7 +241,6 @@ class MainActivity : AppCompatActivity() {
                             if (numberBefore.last() !in "()*-/+^!√πe") {
                                 numberBefore = NumberFormatter.extractNumbers(numberBefore).last()
                             }
-                            //NumberFormatter.extractNumbers().last()
                             var numberAfter = ""
                             if (cursorPosition < binding.input.text.length - 1) {
                                 numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
@@ -278,8 +280,14 @@ class MainActivity : AppCompatActivity() {
             if (calculation != "") {
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+
+                // Round at 10^-12
+                result = BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
+                //print(tresult)
+                formattedResult = NumberFormatter.format(result.toString())
 
                 if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
                     // If result = -0, change it to 0
