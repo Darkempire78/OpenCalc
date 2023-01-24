@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.darkempire78.opencalculator"
-        resConfigs("ar", "az", "bn", "de", "el", "fa" , "fr" , "hi" , "in" , "it" , "ja" , "pt-rBR" , "ru" , "tr" , "zh-rHK" , "zh-rTW" )
+        resConfigs("ar", "az", "bn", "de", "el", "es", "fa" , "fr" , "hi" , "in" , "it" , "ja" , "pt-rBR" , "ru" , "tr" , "zh-rHK" , "zh-rTW" )
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 24
