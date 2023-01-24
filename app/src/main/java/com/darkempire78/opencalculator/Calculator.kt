@@ -7,6 +7,9 @@ import kotlin.math.*
 class Calculator {
 
     fun factorial(number: Double): Double {
+        if (number >= 171) {
+            return Double.POSITIVE_INFINITY
+        }
         val decimalPartOfNumber = number - number.toInt()
         return if (decimalPartOfNumber == 0.0) {
             var factorial = BigInteger("1")
