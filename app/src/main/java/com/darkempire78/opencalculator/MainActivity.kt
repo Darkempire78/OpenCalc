@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
         binding.historyRecylcleView.layoutManager = historyLayoutMgr
         historyAdapter = HistoryAdapter(mutableListOf()) {
             value -> run {
-                val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
-                updateDisplay(window.decorView, valueUpdated)
+                //val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
+                updateDisplay(window.decorView, value)
             }
         }
         binding.historyRecylcleView.adapter = historyAdapter
