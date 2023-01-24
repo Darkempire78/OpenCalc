@@ -284,12 +284,11 @@ class MainActivity : AppCompatActivity() {
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                // Round at 10^-12
-                result = BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
-                //print(tresult)
-                formattedResult = NumberFormatter.format(result.toString())
-
                 if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
+                    // Round at 10^-12
+                    result = BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
+                    formattedResult = NumberFormatter.format(result.toString())
+
                     // If result = -0, change it to 0
                     if (result == -0.0) {
                         result = 0.0
