@@ -49,6 +49,13 @@ Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪, 🇦🇿, 🇷�
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="15%" />
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="15%" />
 
+## ☕ Support
+Support OpenCalc development by donating money. Thank you very much for your help! ❤️
+
+[<img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png"
+alt="Donate with PayPal"
+height="100">](https://paypal.me/ImDarkempire)
+
 ## 💬 Discord
 
 Join the Discord server!
