@@ -1,0 +1,8 @@
+New:
+- Spanish translation
+
+Fixed:
+- Keyboard becomes unresponsive when interacting with big factorials
+- Incorrect loading of values from history
+- Loading results with decimal point from history removes operators or crashes app
+- Precision
