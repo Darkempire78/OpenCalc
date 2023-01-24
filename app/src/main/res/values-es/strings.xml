@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_display">Calculadora</string>
+    <string name="select_theme_title">Seleccione el tema</string>
+    <string name="infinity">Infinito</string>
+    <string name="app_menu_theme">Tema</string>
+    <string name="app_menu_vibration">Vibración</string>
+    <string name="app_menu_clear_history">Borrar historial</string>
+    <string name="app_menu_about">Quiénes somos</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="value_copied">Copiado</string>
+    <string name="theme_follow_system">Siguiendo el sistema</string>
+</resources>

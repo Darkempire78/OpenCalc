@@ -13,4 +13,5 @@
     <string name="theme_dark">Sombre</string>
     <string name="theme_amoled">Amoled</string>
     <string name="theme_material_you">Material You</string>
+    <string name="theme_follow_system">Suivre le système</string>
 </resources>
