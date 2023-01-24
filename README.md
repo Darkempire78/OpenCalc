@@ -49,6 +49,13 @@ Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪, 🇦🇿, 🇷�
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="15%" />
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="15%" />
 
+## ☕ Support
+Support OpenCalc development by donating money. Thank you very much for your help! ❤️
+
+[<img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png"
+alt="Donate with PayPal"
+height="100">](https://paypal.me/ImDarkempire)
+
 ## 💬 Discord
 
 Join the Discord server!
@@ -64,3 +71,9 @@ Please make sure to update tests as appropriate.
 ## :scroll: License
 
 This project is licensed under [GPLv3](/LICENSE)
+
+## 🫶 Contributors
+
+<a href="https://github.com/Darkempire78/OpenCalc/graphs/contributors">
+  <img alt="List of contributors to this repository" src="https://contrib.rocks/image?repo=Darkempire78/OpenCalc" />
+</a>
