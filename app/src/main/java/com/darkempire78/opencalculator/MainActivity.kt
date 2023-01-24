@@ -234,7 +234,11 @@ class MainActivity : AppCompatActivity() {
                         val lastValueNumber = NumberFormatter.extractNumbers(value).last()
                         var tmpNewValue = newValue
                         if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
-                            var numberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                            var numberBefore = binding.input.text.toString().substring(0, cursorPosition)
+                            if (numberBefore.last() !in "()*-/+^!√πe") {
+                                numberBefore = NumberFormatter.extractNumbers(numberBefore).last()
+                            }
+                            //NumberFormatter.extractNumbers().last()
                             var numberAfter = ""
                             if (cursorPosition < binding.input.text.length - 1) {
                                 numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
