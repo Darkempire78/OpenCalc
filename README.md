@@ -71,3 +71,9 @@ Please make sure to update tests as appropriate.
 ## :scroll: License
 
 This project is licensed under [GPLv3](/LICENSE)
+
+## 🫶 Contributors
+
+<a href="https://github.com/Darkempire78/OpenCalc/graphs/contributors">
+  <img alt="List of contributors to this repository" src="https://contrib.rocks/image?repo=Darkempire78/OpenCalc" />
+</a>
