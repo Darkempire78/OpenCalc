@@ -287,7 +287,7 @@ class MainActivity : AppCompatActivity() {
                 if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
                     // Round at 10^-12
                     result = BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
-                    formattedResult = NumberFormatter.format(result.toString())
+                    formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                     // If result = -0, change it to 0
                     if (result == -0.0) {
