@@ -322,6 +322,8 @@ class MainActivity : AppCompatActivity() {
                 } else withContext(Dispatchers.Main) {
                     if (resultString == "Infinity") {
                         binding.resultDisplay.setText(getString(R.string.infinity))
+                    } else if (resultString == "-Infinity") {
+                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -532,6 +534,8 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     if (resultString == "Infinity") {
                         binding.resultDisplay.setText(getString(R.string.infinity))
+                    } else if (resultString == "-Infinity") {
+                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
                     } else {
                         withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                     }
