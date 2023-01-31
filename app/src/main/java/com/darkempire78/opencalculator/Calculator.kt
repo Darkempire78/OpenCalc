@@ -10,6 +10,9 @@ class Calculator {
         if (number >= 171) {
             return Double.POSITIVE_INFINITY
         }
+        if (number <= 0) {
+            return Double.NaN
+        }
         val decimalPartOfNumber = number - number.toInt()
         return if (decimalPartOfNumber == 0.0) {
             var factorial = BigInteger("1")

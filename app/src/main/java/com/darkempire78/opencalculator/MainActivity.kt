@@ -273,6 +273,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun roundResult(result : Double): Double {
+        if (result.isNaN() || result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY) {
+            return result
+        }
+        return BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
+    }
+
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             val calculation = binding.input.text.toString()
@@ -284,9 +291,9 @@ class MainActivity : AppCompatActivity() {
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
+                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
                     // Round at 10^-12
-                    result = BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
+                    result = roundResult(result)
                     formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                     // If result = -0, change it to 0
@@ -478,7 +485,7 @@ class MainActivity : AppCompatActivity() {
 
             if (calculation != "") {
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
-                val result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+                val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
@@ -505,7 +512,7 @@ class MainActivity : AppCompatActivity() {
                     binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                 }
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != getString(R.string.infinity)) {
+                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
