@@ -536,6 +536,8 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText(getString(R.string.infinity))
                     } else if (resultString == "-Infinity") {
                         binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                    } else if (resultString == "NaN") {
+                        binding.resultDisplay.setText(getString(R.string.nan))
                     } else {
                         withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                     }

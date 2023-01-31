@@ -48,6 +48,7 @@
     <string name="squareInv" translatable="false">x²</string>
 
     <string name="infinity">Infinity</string>
+    <string name="nan">Not a number</string>
 
     <!-- App Menu -->
     <string name="app_menu_theme">Theme</string>
