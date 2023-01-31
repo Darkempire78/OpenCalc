@@ -27,7 +27,6 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
-import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -537,7 +536,7 @@ class MainActivity : AppCompatActivity() {
                     } else if (resultString == "-Infinity") {
                         binding.resultDisplay.setText("-"+getString(R.string.infinity))
                     } else if (resultString == "NaN") {
-                        binding.resultDisplay.setText(getString(R.string.nan))
+                        binding.resultDisplay.setText(getString(R.string.math_error))
                     } else {
                         withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                     }
