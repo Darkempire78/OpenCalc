@@ -31,6 +31,7 @@ import java.text.DecimalFormatSymbols
 class MainActivity : AppCompatActivity() {
 
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+    private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
@@ -610,9 +611,9 @@ class MainActivity : AppCompatActivity() {
             }
             // Else
             if (!isFunction) {
-                // remove the spaces
+                // remove the grouping separator
                 val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
-                val leftPartWithoutSpaces = leftPart.filter { !it.isWhitespace() }
+                val leftPartWithoutSpaces = leftPart.replace(groupingSeparatorSymbol, "")
                 functionLength = leftPart.length - leftPartWithoutSpaces.length
 
                 newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1).toString() +
