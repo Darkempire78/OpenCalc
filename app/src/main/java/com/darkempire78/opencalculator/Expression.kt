@@ -15,6 +15,7 @@ class Expression {
             cleanCalculation = getPercentString(cleanCalculation)
             cleanCalculation = cleanCalculation.replace("%", "/100")
         }
+
         cleanCalculation = addParenthesis(cleanCalculation)
 
         return cleanCalculation
@@ -25,6 +26,10 @@ class Expression {
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("log", "logten")
         calculation2 = calculation2.replace("E", "*10^")
+        // To avoid missmatch with cos, sin, tan -> arcc, arcs, arct
+        calculation2 = calculation2.replace("arccos", "arcco")
+        calculation2 = calculation2.replace("arcsin", "arcsi")
+        calculation2 = calculation2.replace("arctan", "arcta")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
         return calculation2
@@ -40,6 +45,9 @@ class Expression {
         }
         // find the last operator before the last %
         val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '('))
+        if (calculation[operatorBeforePercentPos] == '*') {
+            return calculation
+        }
         if (operatorBeforePercentPos < 1) {
             return calculation
         }
@@ -131,7 +139,7 @@ class Expression {
                 }
             } else {
                 if (i+1<cleanCalculation.length) {
-                    val functionsList = listOf("arcos", "arcsin", "arctan", "cos", "sin", "tan", "ln", "log", "exp")
+                    val functionsList = listOf("arcco", "arcsi", "arcta", "cos", "sin", "tan", "ln", "log", "exp")
                     for (function in functionsList) {
                         val text = cleanCalculation.subSequence(0, i+1).toString()
                         if (text.endsWith(function) && text.length != function.length) {

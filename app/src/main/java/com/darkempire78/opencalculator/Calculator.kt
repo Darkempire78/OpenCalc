@@ -70,7 +70,7 @@ class Calculator {
             fun parse(): Double {
                 nextChar()
                 val x = parseExpression()
-                if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expressoion: " + equation)
+                if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expression: " + equation)
                 return x
             }
 
@@ -168,7 +168,7 @@ class Calculator {
                                 x = round(x)
                             }
                         }
-                        "arcsin" -> if (isDegreeModeActivated) {
+                        "arcsi" -> if (isDegreeModeActivated) {
                             x = asin(Math.toRadians(x))
                             if (x < 1.0E-14) {
                                 x = round(x)
@@ -179,7 +179,7 @@ class Calculator {
                                 x = round(x)
                             }
                         }
-                        "arccos" -> if (isDegreeModeActivated) {
+                        "arcco" -> if (isDegreeModeActivated) {
                             x = acos(Math.toRadians(x))
                             if (x < 1.0E-14) {
                                 x = round(x)
@@ -190,7 +190,7 @@ class Calculator {
                                 x = round(x)
                             }
                         }
-                        "arctan" -> if (isDegreeModeActivated) {
+                        "arcta" -> if (isDegreeModeActivated) {
                             x = atan(Math.toRadians(x))
                             if (x < 1.0E-14) {
                                 x = round(x)
