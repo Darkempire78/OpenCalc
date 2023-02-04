@@ -610,7 +610,12 @@ class MainActivity : AppCompatActivity() {
             }
             // Else
             if (!isFunction) {
-                newValue = binding.input.text.subSequence(0, cursorPosition - 1).toString() +
+                // remove the spaces
+                val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
+                val leftPartWithoutSpaces = leftPart.filter { !it.isWhitespace() }
+                functionLength = leftPart.length - leftPartWithoutSpaces.length
+
+                newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1).toString() +
                         binding.input.text.subSequence(cursorPosition, textLength).toString()
             }
 
