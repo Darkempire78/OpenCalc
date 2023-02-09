@@ -355,7 +355,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, decimalSeparator)
     }
 
-    fun devideButton(view: View) {
+    fun divideButton(view: View) {
         updateDisplay(view, "÷")
     }
 
@@ -427,7 +427,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun devideBy100(view: View) {
+    fun divideBy100(view: View) {
         updateDisplay(view, "%")
     }
 
