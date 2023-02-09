@@ -49,13 +49,13 @@
                         android:text="@string/square" />
 
                     <Button
-                        android:id="@+id/devideBy100Button"
+                        android:id="@+id/divideBy100Button"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="divideBy100"
-                        android:text="@string/devideBy100" />
+                        android:text="@string/divideBy100" />
 
                     <Button
                         android:id="@+id/factorialButton"
@@ -94,7 +94,7 @@
                         android:text="@string/nine" />
 
                     <ImageButton
-                        android:id="@+id/devideButton"
+                        android:id="@+id/divideButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
