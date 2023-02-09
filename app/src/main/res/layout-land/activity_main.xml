@@ -54,7 +54,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:onClick="devideBy100"
+                        android:onClick="divideBy100"
                         android:text="@string/devideBy100" />
 
                     <Button
@@ -100,7 +100,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
-                        android:onClick="devideButton"
+                        android:onClick="divideButton"
                         app:srcCompat="@drawable/divide" />
 
                     <Button
