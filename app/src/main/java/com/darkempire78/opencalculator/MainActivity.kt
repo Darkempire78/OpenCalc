@@ -29,14 +29,13 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
-
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
-    private lateinit var binding: ActivityMainBinding
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
@@ -274,7 +273,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun roundResult(result : Double): Double {
-        if (result.isNaN() || result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY) {
+        if (result.isNaN() || result.isInfinite()) {
             return result
         }
         return BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
