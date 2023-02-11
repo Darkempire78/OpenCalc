@@ -28,10 +28,10 @@
 
     <string name="divideBy100" translatable="false">%</string>
     <string name="degree" translatable="false">DEG</string>
-    <string name="sinus" translatable="false">sin</string>
-    <string name="sinusInv" translatable="false">sin⁻¹</string>
-    <string name="cosinus" translatable="false">cos</string>
-    <string name="cosinusInv" translatable="false">cos⁻¹</string>
+    <string name="sine" translatable="false">sin</string>
+    <string name="sineInv" translatable="false">sin⁻¹</string>
+    <string name="cosine" translatable="false">cos</string>
+    <string name="cosineInv" translatable="false">cos⁻¹</string>
 
     <string name="tangent" translatable="false">tan</string>
     <string name="tangentInv" translatable="false">tan⁻¹</string>

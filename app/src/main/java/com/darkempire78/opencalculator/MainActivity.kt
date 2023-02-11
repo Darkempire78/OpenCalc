@@ -367,7 +367,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, "^")
     }
 
-    fun sinusButton(view: View) {
+    fun sineButton(view: View) {
         if (!isInvButtonClicked) {
             updateDisplay(view, "sin(")
         } else {
@@ -375,7 +375,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun cosinusButton(view: View) {
+    fun cosineButton(view: View) {
         if (!isInvButtonClicked) {
             updateDisplay(view, "cos(")
         } else {
@@ -454,8 +454,8 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = true
 
             // change buttons
-            binding.sinusButton.setText(R.string.sinusInv)
-            binding.cosinusButton.setText(R.string.cosinusInv)
+            binding.sineButton.setText(R.string.sineInv)
+            binding.cosineButton.setText(R.string.cosineInv)
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
@@ -464,8 +464,8 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = false
 
             // change buttons
-            binding.sinusButton.setText(R.string.sinus)
-            binding.cosinusButton.setText(R.string.cosinus)
+            binding.sineButton.setText(R.string.sine)
+            binding.cosineButton.setText(R.string.cosine)
             binding.tangentButton.setText(R.string.tangent)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
             binding.logarithmButton.setText(R.string.logarithm)
