@@ -169,7 +169,7 @@ class Calculator {
                             }
                         }
                         "arcsi" -> if (isDegreeModeActivated) {
-                            x = asin(Math.toRadians(x))
+                            x = asin(x)*180/Math.PI
                             if (x < 1.0E-14) {
                                 x = round(x)
                             }
@@ -180,7 +180,7 @@ class Calculator {
                             }
                         }
                         "arcco" -> if (isDegreeModeActivated) {
-                            x = acos(Math.toRadians(x))
+                            x = acos(x)*180/Math.PI
                             if (x < 1.0E-14) {
                                 x = round(x)
                             }
@@ -191,7 +191,7 @@ class Calculator {
                             }
                         }
                         "arcta" -> if (isDegreeModeActivated) {
-                            x = atan(Math.toRadians(x))
+                            x = atan(x)*180/Math.PI
                             if (x < 1.0E-14) {
                                 x = round(x)
                             }
