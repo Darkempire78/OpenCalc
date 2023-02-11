@@ -54,7 +54,9 @@ Support OpenCalc development by donating money. Thank you very much for your hel
 
 [<img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png"
 alt="Donate with PayPal"
-height="100">](https://paypal.me/ImDarkempire)
+height="100">](https://paypal.me/ImDarkempire) [<img src="https://raw.githubusercontent.com/WSTxda/QP-Gallery-Releases/master/Images/BMC.svg"
+alt="Donate with buymeacoffee"
+height="100">](https://www.buymeacoffee.com/darkempire78)
 
 ## 💬 Discord
 
