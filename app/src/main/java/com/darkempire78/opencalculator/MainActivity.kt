@@ -287,10 +287,14 @@ class MainActivity : AppCompatActivity() {
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
-                var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                // If result is a number and it is finite
+                if (!result.isNaN() && result.isFinite()) {
+                    var resultString = result.toString()
+                    var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
+                    divBy0 = false
+                    ln0 = false
+
                     // Round at 10^-12
                     result = roundResult(result)
                     formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
@@ -319,10 +323,9 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else withContext(Dispatchers.Main) {
-                    if (resultString == "Infinity") {
-                        binding.resultDisplay.setText(getString(R.string.infinity))
-                    } else if (resultString == "-Infinity") {
-                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                    if (result.isInfinite() && !divBy0 && !ln0) {
+                        if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.infinity))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -490,30 +493,31 @@ class MainActivity : AppCompatActivity() {
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                // Save to history
-                if ((result * 10) % 10 == 0.0) {
-                    resultString = String.format("%.0f", result)
-                    formattedResult = NumberFormatter.format(resultString)
-                }
-                val history = MyPreferences(this@MainActivity).getHistory()
-                history.add(
-                    History(
-                        calculation = calculation,
-                        result = formattedResult,
+                // If result is a number and it is finite
+                if (!result.isNaN() && result.isFinite()) {
+                    // Save to history
+                    if ((result * 10) % 10 == 0.0) {
+                        resultString = String.format("%.0f", result)
+                        formattedResult = NumberFormatter.format(resultString)
+                    }
+                    val history = MyPreferences(this@MainActivity).getHistory()
+                    history.add(
+                        History(
+                            calculation = calculation,
+                            result = formattedResult,
+                        )
                     )
-                )
-                MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
-                // Update history variables
-                withContext(Dispatchers.Main) {
-                    historyAdapter.appendOneHistoryElement(History(
-                        calculation = calculation,
-                        result = formattedResult,
-                    ))
-                    // Scroll to the bottom of the recycle view
-                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
-                }
+                    MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                    // Update history variables
+                    withContext(Dispatchers.Main) {
+                        historyAdapter.appendOneHistoryElement(History(
+                            calculation = calculation,
+                            result = formattedResult,
+                        ))
+                        // Scroll to the bottom of the recycle view
+                        binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                    }
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
@@ -531,12 +535,12 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText("")
                     }
                 } else {
-                    if (resultString == "Infinity") {
-                        binding.resultDisplay.setText(getString(R.string.infinity))
-                    } else if (resultString == "-Infinity") {
-                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
-                    } else if (resultString == "NaN") {
+                    if (result.isNaN() || ln0) {
                         binding.resultDisplay.setText(getString(R.string.math_error))
+                    } else if (result.isInfinite()) {
+                        if (divBy0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                        else if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.infinity))
                     } else {
                         withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                     }

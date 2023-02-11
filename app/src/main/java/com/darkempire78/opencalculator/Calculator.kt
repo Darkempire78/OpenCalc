@@ -4,6 +4,9 @@ import java.math.BigDecimal
 import java.math.BigInteger
 import kotlin.math.*
 
+var divBy0 = false
+var ln0 = false
+
 class Calculator {
 
     fun factorial(number: Double): Double {
@@ -87,7 +90,10 @@ class Calculator {
                 var x = parseFactor()
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor() // multiplication
-                    else if (eat('/'.code)) x /= parseFactor() // division
+                    else if (eat('/'.code)) {
+                        x /= parseFactor()
+                        if (equation.split("/").get(1).equals("0")) divBy0 = true
+                    } // division
                     else return x
                 }
             }
@@ -130,7 +136,10 @@ class Calculator {
                     }
                     when (func) {
                         "sqrt" -> x = sqrt(x)
-                        "ln" -> x = ln(x)
+                        "ln" -> {
+                            if (x.toInt() == 0) ln0 = true
+                            x = ln(x)
+                        }
                         "logten" -> x = log10(x)
                         "exp" -> x = exp(x)
                         "factorial" -> x = factorial(x)

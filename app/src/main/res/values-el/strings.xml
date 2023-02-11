@@ -4,9 +4,6 @@
 
     <string name="select_theme_title">Επιλέξτε θέμα</string>
 
-    <string name="infinity">Άπειρο</string>
-    <string name="math_error">Μαθηματικό σφάλμα</string>
-
     <!-- App Menu -->
     <string name="app_menu_theme">Θέμα</string>
     <string name="app_menu_vibration">Δόνηση</string>
@@ -20,4 +17,7 @@
 
     <!-- Others -->
     <string name="value_copied">Αντιγράφηκε στο πρόχειρο</string>
+    <string name="infinity">Άπειρο</string>
+    <string name="math_error">Μαθηματικό σφάλμα</string>
+    <string name="division_by_0">Αδύνατη η διαίρεση με το 0</string>
 </resources>
