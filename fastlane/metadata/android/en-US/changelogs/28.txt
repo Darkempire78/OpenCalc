@@ -1,0 +1,18 @@
+New:
+- Internal calculation system
+- Decimal factorials
+- Prevent the presence of two decimal separators in the same number
+- Brazilian translation (@Bardock88)
+- Taiwanese and Hong Kongese translation (@alecchangod)
+- Spanish translation
+
+Fixed:
+- History scroll (@MahmoudRH)
+- Result accuracy
+- Backspace with grouping separators
+- Display "Math Error" instead of "NaN" (@lefterisgar)
+- Landscape mode for 10 inch tablet
+- Backspace after equal button
+- Crash when tapping on history result
+- Some formating expression issues
+- Several other fixes
