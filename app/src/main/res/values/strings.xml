@@ -21,12 +21,12 @@
     <string name="substract" translatable="false">−</string>
     <string name="point" translatable="false">.</string>
     <string name="equals" translatable="false">=</string>
-    <string name="devide" translatable="false">÷</string>
+    <string name="divide" translatable="false">÷</string>
     <string name="multiply" translatable="false">×</string>
     <string name="exponent" translatable="false">^</string>
     <string name="backspace" translatable="false"> </string>
 
-    <string name="devideBy100" translatable="false">%</string>
+    <string name="divideBy100" translatable="false">%</string>
     <string name="degree" translatable="false">DEG</string>
     <string name="sinus" translatable="false">sin</string>
     <string name="sinusInv" translatable="false">sin⁻¹</string>
