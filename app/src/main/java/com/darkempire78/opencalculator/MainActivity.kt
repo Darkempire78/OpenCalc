@@ -483,6 +483,7 @@ class MainActivity : AppCompatActivity() {
         binding.resultDisplay.setText("")
     }
 
+    @SuppressLint("SetTextI18n")
     fun equalsButton(view: View) {
         lifecycleScope.launch(Dispatchers.Default) {
             keyVibration(view)
@@ -547,18 +548,20 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText("")
                     }
                 } else {
-                    if (domain_error) {
-                        binding.resultDisplay.setText(getString(R.string.domain_error))
-                    } else if (format_error) {
-                        binding.resultDisplay.setText(getString(R.string.format_error))
-                    } else if (result.isInfinite()) {
-                        if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
-                        else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                        else binding.resultDisplay.setText(getString(R.string.infinity))
-                    } else if (result.isNaN()) {
-                        binding.resultDisplay.setText(getString(R.string.math_error))
-                    } else {
-                        withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
+                    withContext(Dispatchers.Main) {
+                        if (domain_error) {
+                            binding.resultDisplay.setText(getString(R.string.domain_error))
+                        } else if (format_error) {
+                            binding.resultDisplay.setText(getString(R.string.format_error))
+                        } else if (result.isInfinite()) {
+                            if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.infinity))
+                        } else if (result.isNaN()) {
+                            binding.resultDisplay.setText(getString(R.string.math_error))
+                        } else {
+                            binding.resultDisplay.setText(formattedResult)
+                        }
                     }
                 }
                 isEqualLastAction = true
