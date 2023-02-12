@@ -66,4 +66,6 @@
     <string name="infinity">Infinity</string>
     <string name="math_error">Math error</string>
     <string name="division_by_0">Can\'t divide by 0</string>
+    <string name="domain_error">Domain error</string>
+    <string name="format_error">Format error</string>
 </resources>

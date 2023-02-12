@@ -284,6 +284,11 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
+
+                division_by_0 = false
+                domain_error = false
+                format_error = false
+
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
@@ -291,9 +296,6 @@ class MainActivity : AppCompatActivity() {
                 if (!result.isNaN() && result.isFinite()) {
                     var resultString = result.toString()
                     var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
-                    divBy0 = false
-                    ln0 = false
 
                     // Round at 10^-12
                     result = roundResult(result)
@@ -323,7 +325,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else withContext(Dispatchers.Main) {
-                    if (result.isInfinite() && !divBy0 && !ln0) {
+                    if (result.isInfinite() && !division_by_0 && !domain_error) {
                         if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.infinity))
                     } else {
@@ -488,6 +490,11 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
+
+                division_by_0 = false
+                domain_error = false
+                format_error = false
+
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
@@ -518,6 +525,11 @@ class MainActivity : AppCompatActivity() {
                         binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                     }
 
+                    // Hide the cursor before updating binding.input to avoid weird cursor movement
+                    withContext(Dispatchers.Main) {
+                        binding.input.isCursorVisible = false
+                    }
+
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
@@ -527,7 +539,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     // Set cursor
                     withContext(Dispatchers.Main) {
-                        // Hide the cursor
+                        // Hide the cursor (do not remove this, it's not a duplicate)
                         binding.input.isCursorVisible = false
                         // Scroll to the beginning
                         binding.input.setSelection(0)
@@ -535,12 +547,16 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText("")
                     }
                 } else {
-                    if (result.isNaN() || ln0) {
-                        binding.resultDisplay.setText(getString(R.string.math_error))
+                    if (domain_error) {
+                        binding.resultDisplay.setText(getString(R.string.domain_error))
+                    } else if (format_error) {
+                        binding.resultDisplay.setText(getString(R.string.format_error))
                     } else if (result.isInfinite()) {
-                        if (divBy0) binding.resultDisplay.setText(getString(R.string.division_by_0))
-                        else if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                        else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.infinity))
+                    } else if (result.isNaN()) {
+                        binding.resultDisplay.setText(getString(R.string.math_error))
                     } else {
                         withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
                     }
