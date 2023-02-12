@@ -64,8 +64,8 @@
     <!-- Others -->
     <string name="value_copied">Copied</string>
     <string name="infinity">Infinity</string>
-    <string name="math_error">Math error</string>
     <string name="division_by_0">Can\'t divide by 0</string>
     <string name="domain_error">Domain error</string>
+    <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
 </resources>
