@@ -552,7 +552,7 @@ class MainActivity : AppCompatActivity() {
                         if (domain_error) {
                             binding.resultDisplay.setText(getString(R.string.domain_error))
                         } else if (format_error) {
-                            binding.resultDisplay.setText(getString(R.string.format_error))
+                            binding.resultDisplay.setText(getString(R.string.syntax_error))
                         } else if (result.isInfinite()) {
                             if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))

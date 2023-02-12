@@ -16,5 +16,5 @@
     <string name="theme_follow_system">Suivre le système</string>
     <string name="math_error">Erreur mathématique</string>
     <string name="domain_error">Erreur de domaine</string>
-    <string name="format_error">Erreur de format</string>
+    <string name="syntax_error">Erreur de syntaxe</string>
 </resources>
