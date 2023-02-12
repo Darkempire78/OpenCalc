@@ -196,7 +196,7 @@ class Expression {
 
         // If the calculation is "!"
         if (i == 0) {
-            format_error = true
+            syntax_error = true
             return ""
         }
 

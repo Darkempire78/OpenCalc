@@ -287,7 +287,7 @@ class MainActivity : AppCompatActivity() {
 
                 division_by_0 = false
                 domain_error = false
-                format_error = false
+                syntax_error = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
@@ -494,7 +494,7 @@ class MainActivity : AppCompatActivity() {
 
                 division_by_0 = false
                 domain_error = false
-                format_error = false
+                syntax_error = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
@@ -551,7 +551,7 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (domain_error) {
                             binding.resultDisplay.setText(getString(R.string.domain_error))
-                        } else if (format_error) {
+                        } else if (syntax_error) {
                             binding.resultDisplay.setText(getString(R.string.syntax_error))
                         } else if (result.isInfinite()) {
                             if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
