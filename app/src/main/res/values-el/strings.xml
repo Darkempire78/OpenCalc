@@ -18,6 +18,8 @@
     <!-- Others -->
     <string name="value_copied">Αντιγράφηκε στο πρόχειρο</string>
     <string name="infinity">Άπειρο</string>
-    <string name="math_error">Μαθηματικό σφάλμα</string>
     <string name="division_by_0">Αδύνατη η διαίρεση με το 0</string>
+    <string name="domain_error">Σφάλμα τομέα</string>
+    <string name="math_error">Μαθηματικό σφάλμα</string>
+    <string name="syntax_error">Συντακτικό λάθος</string>
 </resources>
