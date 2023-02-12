@@ -52,11 +52,14 @@ Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪, 🇦🇿, 🇷�
 ## ☕ Support
 Support OpenCalc development by donating money. Thank you very much for your help! ❤️
 
-[<img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png"
+
+[<img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA"
+alt="Sponsor the project on GitHub"
+height="40">](https://github.com/sponsors/Darkempire78) [<img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white"
 alt="Donate with PayPal"
-height="100">](https://paypal.me/ImDarkempire) [<img src="https://raw.githubusercontent.com/WSTxda/QP-Gallery-Releases/master/Images/BMC.svg"
+height="40">](https://paypal.me/ImDarkempire) [<img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black"
 alt="Donate with buymeacoffee"
-height="100">](https://www.buymeacoffee.com/darkempire78)
+height="40">](https://www.buymeacoffee.com/darkempire78)
 
 ## 💬 Discord
 
