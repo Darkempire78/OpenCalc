@@ -29,14 +29,13 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
-
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
-    private lateinit var binding: ActivityMainBinding
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
@@ -274,7 +273,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun roundResult(result : Double): Double {
-        if (result.isNaN() || result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY) {
+        if (result.isNaN() || result.isInfinite()) {
             return result
         }
         return BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
@@ -285,13 +284,19 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
+
+                division_by_0 = false
+                domain_error = false
+                syntax_error = false
+
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
-                var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                // If result is a number and it is finite
+                if (!result.isNaN() && result.isFinite()) {
+                    var resultString = result.toString()
+                    var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
                     // Round at 10^-12
                     result = roundResult(result)
                     formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
@@ -320,10 +325,9 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else withContext(Dispatchers.Main) {
-                    if (resultString == "Infinity") {
-                        binding.resultDisplay.setText(getString(R.string.infinity))
-                    } else if (resultString == "-Infinity") {
-                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                    if (result.isInfinite() && !division_by_0 && !domain_error) {
+                        if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.infinity))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -367,7 +371,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, "^")
     }
 
-    fun sinusButton(view: View) {
+    fun sineButton(view: View) {
         if (!isInvButtonClicked) {
             updateDisplay(view, "sin(")
         } else {
@@ -375,7 +379,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun cosinusButton(view: View) {
+    fun cosineButton(view: View) {
         if (!isInvButtonClicked) {
             updateDisplay(view, "cos(")
         } else {
@@ -454,8 +458,8 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = true
 
             // change buttons
-            binding.sinusButton.setText(R.string.sinusInv)
-            binding.cosinusButton.setText(R.string.cosinusInv)
+            binding.sineButton.setText(R.string.sineInv)
+            binding.cosineButton.setText(R.string.cosineInv)
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
@@ -464,8 +468,8 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = false
 
             // change buttons
-            binding.sinusButton.setText(R.string.sinus)
-            binding.cosinusButton.setText(R.string.cosinus)
+            binding.sineButton.setText(R.string.sine)
+            binding.cosineButton.setText(R.string.cosine)
             binding.tangentButton.setText(R.string.tangent)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
             binding.logarithmButton.setText(R.string.logarithm)
@@ -479,6 +483,7 @@ class MainActivity : AppCompatActivity() {
         binding.resultDisplay.setText("")
     }
 
+    @SuppressLint("SetTextI18n")
     fun equalsButton(view: View) {
         lifecycleScope.launch(Dispatchers.Default) {
             keyVibration(view)
@@ -486,35 +491,46 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
+
+                division_by_0 = false
+                domain_error = false
+                syntax_error = false
+
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
 
-                // Save to history
-                if ((result * 10) % 10 == 0.0) {
-                    resultString = String.format("%.0f", result)
-                    formattedResult = NumberFormatter.format(resultString)
-                }
-                val history = MyPreferences(this@MainActivity).getHistory()
-                history.add(
-                    History(
-                        calculation = calculation,
-                        result = formattedResult,
+                // If result is a number and it is finite
+                if (!result.isNaN() && result.isFinite()) {
+                    // Save to history
+                    if ((result * 10) % 10 == 0.0) {
+                        resultString = String.format("%.0f", result)
+                        formattedResult = NumberFormatter.format(resultString)
+                    }
+                    val history = MyPreferences(this@MainActivity).getHistory()
+                    history.add(
+                        History(
+                            calculation = calculation,
+                            result = formattedResult,
+                        )
                     )
-                )
-                MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
-                // Update history variables
-                withContext(Dispatchers.Main) {
-                    historyAdapter.appendOneHistoryElement(History(
-                        calculation = calculation,
-                        result = formattedResult,
-                    ))
-                    // Scroll to the bottom of the recycle view
-                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
-                }
+                    MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                    // Update history variables
+                    withContext(Dispatchers.Main) {
+                        historyAdapter.appendOneHistoryElement(History(
+                            calculation = calculation,
+                            result = formattedResult,
+                        ))
+                        // Scroll to the bottom of the recycle view
+                        binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                    }
 
-                if (resultString != "NaN" && resultString != "Infinity" && resultString != "-Infinity" && resultString != getString(R.string.infinity)) {
+                    // Hide the cursor before updating binding.input to avoid weird cursor movement
+                    withContext(Dispatchers.Main) {
+                        binding.input.isCursorVisible = false
+                    }
+
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
@@ -524,7 +540,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     // Set cursor
                     withContext(Dispatchers.Main) {
-                        // Hide the cursor
+                        // Hide the cursor (do not remove this, it's not a duplicate)
                         binding.input.isCursorVisible = false
                         // Scroll to the beginning
                         binding.input.setSelection(0)
@@ -532,14 +548,20 @@ class MainActivity : AppCompatActivity() {
                         binding.resultDisplay.setText("")
                     }
                 } else {
-                    if (resultString == "Infinity") {
-                        binding.resultDisplay.setText(getString(R.string.infinity))
-                    } else if (resultString == "-Infinity") {
-                        binding.resultDisplay.setText("-"+getString(R.string.infinity))
-                    } else if (resultString == "NaN") {
-                        binding.resultDisplay.setText(getString(R.string.math_error))
-                    } else {
-                        withContext(Dispatchers.Main) { binding.resultDisplay.setText(formattedResult) }
+                    withContext(Dispatchers.Main) {
+                        if (syntax_error) {
+                            binding.resultDisplay.setText(getString(R.string.syntax_error))
+                        } else if (domain_error) {
+                            binding.resultDisplay.setText(getString(R.string.domain_error))
+                        } else if (result.isInfinite()) {
+                            if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.infinity))
+                        } else if (result.isNaN()) {
+                            binding.resultDisplay.setText(getString(R.string.math_error))
+                        } else {
+                            binding.resultDisplay.setText(formattedResult)
+                        }
                     }
                 }
                 isEqualLastAction = true

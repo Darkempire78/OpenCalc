@@ -28,10 +28,10 @@
 
     <string name="divideBy100" translatable="false">%</string>
     <string name="degree" translatable="false">DEG</string>
-    <string name="sinus" translatable="false">sin</string>
-    <string name="sinusInv" translatable="false">sin⁻¹</string>
-    <string name="cosinus" translatable="false">cos</string>
-    <string name="cosinusInv" translatable="false">cos⁻¹</string>
+    <string name="sine" translatable="false">sin</string>
+    <string name="sineInv" translatable="false">sin⁻¹</string>
+    <string name="cosine" translatable="false">cos</string>
+    <string name="cosineInv" translatable="false">cos⁻¹</string>
 
     <string name="tangent" translatable="false">tan</string>
     <string name="tangentInv" translatable="false">tan⁻¹</string>
@@ -47,9 +47,6 @@
     <string name="square" translatable="false">√</string>
     <string name="squareInv" translatable="false">x²</string>
 
-    <string name="infinity">Infinity</string>
-    <string name="math_error">Math error</string>
-
     <!-- App Menu -->
     <string name="app_menu_theme">Theme</string>
     <string name="app_menu_vibration">Vibration</string>
@@ -61,11 +58,14 @@
     <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
     <string name="theme_material_you">Material You</string>
-
-    <string name="theme_follow_system">Match System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
 
     <!-- Others -->
     <string name="value_copied">Copied</string>
+    <string name="infinity">Infinity</string>
+    <string name="division_by_0">Can\'t divide by 0</string>
+    <string name="domain_error">Domain error</string>
+    <string name="math_error">Math error</string>
+    <string name="syntax_error">Syntax error</string>
 </resources>

@@ -26,7 +26,9 @@ class Expression {
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("log", "logten")
         calculation2 = calculation2.replace("E", "*10^")
-        // To avoid missmatch with cos, sin, tan -> arcc, arcs, arct
+        // To avoid that "exp" is interpreted as "e", exp -> xp
+        calculation2 = calculation2.replace("exp", "xp")
+        // To avoid missmatch with cos, sin, tan -> arcco, arcsi, arcta
         calculation2 = calculation2.replace("arccos", "arcco")
         calculation2 = calculation2.replace("arcsin", "arcsi")
         calculation2 = calculation2.replace("arctan", "arcta")
@@ -139,7 +141,7 @@ class Expression {
                 }
             } else {
                 if (i+1<cleanCalculation.length) {
-                    val functionsList = listOf("arcco", "arcsi", "arcta", "cos", "sin", "tan", "ln", "log", "exp")
+                    val functionsList = listOf("arcco", "arcsi", "arcta", "cos", "sin", "tan", "ln", "log", "xp")
                     for (function in functionsList) {
                         val text = cleanCalculation.subSequence(0, i+1).toString()
                         if (text.endsWith(function) && text.length != function.length) {
@@ -191,6 +193,13 @@ class Expression {
 
         var cleanCalculationLength = cleanCalculation.length
         var i = cleanCalculationLength - 1
+
+        // If the calculation is "!"
+        if (i == 0) {
+            syntax_error = true
+            return ""
+        }
+
         while (i > 0) {
             if (parenthesisOpened > 0) {
                 if (cleanCalculation[i-1] in ")*-/+^") {

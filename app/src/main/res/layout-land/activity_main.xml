@@ -288,22 +288,22 @@
                     android:layout_weight="1">
 
                     <Button
-                        android:id="@+id/sinusButton"
+                        android:id="@+id/sineButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:onClick="sinusButton"
-                        android:text="@string/sinus" />
+                        android:onClick="sineButton"
+                        android:text="@string/sine" />
 
                     <Button
-                        android:id="@+id/cosinusButton"
+                        android:id="@+id/cosineButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:onClick="cosinusButton"
-                        android:text="@string/cosinus" />
+                        android:onClick="cosineButton"
+                        android:text="@string/cosine" />
 
                     <Button
                         android:id="@+id/tangentButton"

@@ -1,8 +1,11 @@
 package com.darkempire78.opencalculator
 
-import java.math.BigDecimal
 import java.math.BigInteger
 import kotlin.math.*
+
+var division_by_0 = false
+var domain_error = false
+var syntax_error = false
 
 class Calculator {
 
@@ -87,7 +90,10 @@ class Calculator {
                 var x = parseFactor()
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor() // multiplication
-                    else if (eat('/'.code)) x /= parseFactor() // division
+                    else if (eat('/'.code)) {
+                        x /= parseFactor()
+                        if (equation.split("/")[1] == "0") division_by_0 = true
+                    } // division
                     else return x
                 }
             }
@@ -128,77 +134,102 @@ class Calculator {
                     } else {
                         x = parseFactor()
                     }
+                    if (x.isNaN()) syntax_error = true
                     when (func) {
-                        "sqrt" -> x = sqrt(x)
-                        "ln" -> x = ln(x)
-                        "logten" -> x = log10(x)
-                        "exp" -> x = exp(x)
-                        "factorial" -> x = factorial(x)
-                        "sin" -> if (isDegreeModeActivated) {
-                            x = sin(Math.toRadians(x))
-                            // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        } else {
-                            x = sin(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
+                        "sqrt" -> {
+                            x = sqrt(x)
+                        }
+                        "ln" -> {
+                            if (x.toInt() == 0) domain_error = true
+                            x = ln(x)
+                        }
+                        "logten" -> {
+                            if (x.toInt() == 0) domain_error = true
+                            x = log10(x)
+                        }
+                        "xp" -> {
+                            x = exp(x)
+                        }
+                        "factorial" -> {
+                            x = factorial(x)
+                        }
+                        "sin" -> {
+                            if (isDegreeModeActivated) {
+                                x = sin(Math.toRadians(x))
+                                // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = sin(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
                             }
                         }
-                        "cos" -> if (isDegreeModeActivated) {
-                            x = cos(Math.toRadians(x))
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        } else {
-                            x = cos(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        }
-                        "tan" -> if (isDegreeModeActivated) {
-                            x = tan(Math.toRadians(x))
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        } else {
-                            x = tan(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
+                        "cos" -> {
+                            if (isDegreeModeActivated) {
+                                x = cos(Math.toRadians(x))
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = cos(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
                             }
                         }
-                        "arcsi" -> if (isDegreeModeActivated) {
-                            x = asin(x)*180/Math.PI
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        } else {
-                            x = asin(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        }
-                        "arcco" -> if (isDegreeModeActivated) {
-                            x = acos(x)*180/Math.PI
-                            if (x < 1.0E-14) {
-                                x = round(x)
-                            }
-                        } else {
-                            x = acos(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
+                        "tan" -> {
+                            if (isDegreeModeActivated) {
+                                x = tan(Math.toRadians(x))
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = tan(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
                             }
                         }
-                        "arcta" -> if (isDegreeModeActivated) {
-                            x = atan(x)*180/Math.PI
-                            if (x < 1.0E-14) {
-                                x = round(x)
+                        "arcsi" -> {
+                            if (isDegreeModeActivated) {
+                                x = asin(x)*180/Math.PI
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = asin(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
                             }
-                        } else {
-                            x = atan(x)
-                            if (x < 1.0E-14) {
-                                x = round(x)
+                        }
+                        "arcco" -> {
+                            if (isDegreeModeActivated) {
+                                x = acos(x)*180/Math.PI
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = acos(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            }
+                        }
+                        "arcta" -> {
+                            if (isDegreeModeActivated) {
+                                x = atan(x)*180/Math.PI
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
+                            } else {
+                                x = atan(x)
+                                if (x < 1.0E-14) {
+                                    x = round(x)
+                                }
                             }
                         }
                         else -> x = Double.NaN
