@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,12 +51,19 @@ class HistoryAdapter(
 
             private val calculation: TextView = itemView.findViewById(R.id.history_item_calculation)
             private val result: TextView = itemView.findViewById(R.id.history_item_result)
+            private val time: TextView = itemView.findViewById(R.id.history_time)
 
             fun bind(history: History) {
 
                 // Set calculation & result
                 calculation.text = history.calculation
                 result.text = history.result
+                time.text = DateUtils.getRelativeTimeSpanString(
+                    history.time.toLong(),
+                    System.currentTimeMillis(),
+                    DateUtils.SECOND_IN_MILLIS,
+                    DateUtils.FORMAT_ABBREV_RELATIVE,
+                )
 
                 // On click
                 calculation.setOnClickListener {

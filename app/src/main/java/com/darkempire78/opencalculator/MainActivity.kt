@@ -500,6 +500,7 @@ class MainActivity : AppCompatActivity() {
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                var currentTime = System.currentTimeMillis().toString()
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
@@ -513,6 +514,7 @@ class MainActivity : AppCompatActivity() {
                         History(
                             calculation = calculation,
                             result = formattedResult,
+                            time = currentTime,
                         )
                     )
                     MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
@@ -521,6 +523,7 @@ class MainActivity : AppCompatActivity() {
                         historyAdapter.appendOneHistoryElement(History(
                             calculation = calculation,
                             result = formattedResult,
+                            time = currentTime,
                         ))
                         // Scroll to the bottom of the recycle view
                         binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)

@@ -14,11 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:paddingVertical="4dp"
+            android:paddingVertical="2dp"
             android:paddingHorizontal="10dp"
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_color"
             android:textSize="35sp"
+            app:layout_constraintTop_toBottomOf="@+id/history_time"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -32,6 +33,19 @@
             android:textColor="?attr/text_second_color"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/history_time"
+            style="@style/RobotoFontCondensedMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:background="?attr/history_background_color"
+            android:textColor="?attr/text_color"
+            android:textSize="14sp"
             tools:ignore="MissingConstraints" />
 
         <View
