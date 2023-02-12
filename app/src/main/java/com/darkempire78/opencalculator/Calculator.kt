@@ -134,31 +134,26 @@ class Calculator {
                     } else {
                         x = parseFactor()
                     }
+                    if (x.isNaN()) syntax_error = true
                     when (func) {
                         "sqrt" -> {
-                            if (x.isNaN()) syntax_error = true
                             x = sqrt(x)
                         }
                         "ln" -> {
-                            if (x.isNaN()) syntax_error = true
-                            else if (x.toInt() == 0) domain_error = true
+                            if (x.toInt() == 0) domain_error = true
                             x = ln(x)
                         }
                         "logten" -> {
-                            if (x.isNaN()) syntax_error = true
-                            else if (x.toInt() == 0) domain_error = true
+                            if (x.toInt() == 0) domain_error = true
                             x = log10(x)
                         }
                         "xp" -> {
-                            if (x.isNaN()) syntax_error = true
                             x = exp(x)
                         }
                         "factorial" -> {
-                            if (x.isNaN()) syntax_error = true
                             x = factorial(x)
                         }
                         "sin" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = sin(Math.toRadians(x))
                                 // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
@@ -173,7 +168,6 @@ class Calculator {
                             }
                         }
                         "cos" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = cos(Math.toRadians(x))
                                 if (x < 1.0E-14) {
@@ -187,7 +181,6 @@ class Calculator {
                             }
                         }
                         "tan" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = tan(Math.toRadians(x))
                                 if (x < 1.0E-14) {
@@ -201,7 +194,6 @@ class Calculator {
                             }
                         }
                         "arcsi" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = asin(x)*180/Math.PI
                                 if (x < 1.0E-14) {
@@ -215,7 +207,6 @@ class Calculator {
                             }
                         }
                         "arcco" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = acos(x)*180/Math.PI
                                 if (x < 1.0E-14) {
@@ -229,7 +220,6 @@ class Calculator {
                             }
                         }
                         "arcta" -> {
-                            if (x.isNaN()) syntax_error = true
                             if (isDegreeModeActivated) {
                                 x = atan(x)*180/Math.PI
                                 if (x < 1.0E-14) {

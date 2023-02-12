@@ -549,10 +549,10 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else {
                     withContext(Dispatchers.Main) {
-                        if (domain_error) {
-                            binding.resultDisplay.setText(getString(R.string.domain_error))
-                        } else if (syntax_error) {
+                        if (syntax_error) {
                             binding.resultDisplay.setText(getString(R.string.syntax_error))
+                        } else if (domain_error) {
+                            binding.resultDisplay.setText(getString(R.string.domain_error))
                         } else if (result.isInfinite()) {
                             if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
