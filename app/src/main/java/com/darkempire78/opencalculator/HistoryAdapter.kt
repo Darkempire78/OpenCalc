@@ -58,12 +58,17 @@ class HistoryAdapter(
                 // Set calculation & result
                 calculation.text = history.calculation
                 result.text = history.result
-                time.text = DateUtils.getRelativeTimeSpanString(
-                    history.time.toLong(),
-                    System.currentTimeMillis(),
-                    DateUtils.MINUTE_IN_MILLIS,
-                    DateUtils.FORMAT_ABBREV_RELATIVE,
-                )
+                if (history.time.isNullOrEmpty()) {
+                    time.visibility = View.GONE
+                } else {
+                    time.visibility = View.VISIBLE
+                    time.text = DateUtils.getRelativeTimeSpanString(
+                        history.time.toLong(),
+                        System.currentTimeMillis(),
+                        DateUtils.MINUTE_IN_MILLIS,
+                        DateUtils.FORMAT_ABBREV_RELATIVE,
+                    )
+                }
 
                 // On click
                 calculation.setOnClickListener {
