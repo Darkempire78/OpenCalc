@@ -99,14 +99,14 @@ class HistoryAdapter(
                         {
                             separator.visibility = View.GONE
                             // Add more space when it's the same date than the next history element
-                            sameDateSeparator.visibility  = View.VISIBLE
+                            sameDateSeparator.visibility = View.VISIBLE
                         } else {
                             separator.visibility = View.VISIBLE
-                            sameDateSeparator.visibility  = View.GONE
+                            sameDateSeparator.visibility = View.GONE
                         }
                     } else {
                         separator.visibility = View.VISIBLE
-                        sameDateSeparator.visibility  = View.GONE
+                        sameDateSeparator.visibility = View.GONE
                     }
                 }
 
