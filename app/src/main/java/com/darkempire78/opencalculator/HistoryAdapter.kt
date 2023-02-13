@@ -83,6 +83,8 @@ class HistoryAdapter(
                         } else {
                             time.visibility = View.VISIBLE
                         }
+                    } else {
+                        time.visibility = View.VISIBLE
                     }
                     // Check if the next result has the same date -> hide the separator
                     if (position+1 < history.size) {
@@ -98,6 +100,8 @@ class HistoryAdapter(
                         } else {
                             separator.visibility = View.VISIBLE
                         }
+                    } else {
+                        separator.visibility = View.VISIBLE
                     }
                 }
 
