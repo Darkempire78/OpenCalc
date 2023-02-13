@@ -61,7 +61,7 @@ class HistoryAdapter(
                 time.text = DateUtils.getRelativeTimeSpanString(
                     history.time.toLong(),
                     System.currentTimeMillis(),
-                    DateUtils.SECOND_IN_MILLIS,
+                    DateUtils.MINUTE_IN_MILLIS,
                     DateUtils.FORMAT_ABBREV_RELATIVE,
                 )
 
