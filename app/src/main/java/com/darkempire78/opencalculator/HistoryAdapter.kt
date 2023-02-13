@@ -26,7 +26,7 @@ class HistoryAdapter(
         override fun getItemCount(): Int = history.size
 
         override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-            holder.bind(history[position])
+            holder.bind(history[position], position)
         }
 
         fun appendHistory(historyList: List<History>) {
@@ -52,41 +52,72 @@ class HistoryAdapter(
             private val calculation: TextView = itemView.findViewById(R.id.history_item_calculation)
             private val result: TextView = itemView.findViewById(R.id.history_item_result)
             private val time: TextView = itemView.findViewById(R.id.history_time)
+            private val separator: View = itemView.findViewById(R.id.history_separator)
 
-            fun bind(history: History) {
+            fun bind(historyElement: History, position : Int) {
 
-                // Set calculation & result
-                calculation.text = history.calculation
-                result.text = history.result
-                if (history.time.isNullOrEmpty()) {
+                // Set calculation, result and time
+                calculation.text = historyElement.calculation
+                result.text = historyElement.result
+                // To avoid crashes with former histories that do not have stored dates
+                if (historyElement.time.isNullOrEmpty()) {
                     time.visibility = View.GONE
                 } else {
-                    time.visibility = View.VISIBLE
                     time.text = DateUtils.getRelativeTimeSpanString(
-                        history.time.toLong(),
+                        historyElement.time.toLong(),
                         System.currentTimeMillis(),
                         DateUtils.DAY_IN_MILLIS,
                         DateUtils.FORMAT_ABBREV_RELATIVE,
                     )
+                    // Check if the former result has the same date -> hide the date
+                    if (position > 0) {
+                        if (
+                            DateUtils.getRelativeTimeSpanString(
+                                history[position-1].time.toLong(),
+                                System.currentTimeMillis(),
+                                DateUtils.DAY_IN_MILLIS,
+                                DateUtils.FORMAT_ABBREV_RELATIVE,
+                            ) == time.text)
+                        {
+                            time.visibility = View.GONE
+                        } else {
+                            time.visibility = View.VISIBLE
+                        }
+                    }
+                    // Check if the next result has the same date -> hide the separator
+                    if (position+1 < history.size) {
+                        if (
+                            DateUtils.getRelativeTimeSpanString(
+                                history[position+1].time.toLong(),
+                                System.currentTimeMillis(),
+                                DateUtils.DAY_IN_MILLIS,
+                                DateUtils.FORMAT_ABBREV_RELATIVE,
+                            ) == time.text)
+                        {
+                            separator.visibility = View.GONE
+                        } else {
+                            separator.visibility = View.VISIBLE
+                        }
+                    }
                 }
 
                 // On click
                 calculation.setOnClickListener {
-                    onElementClick.invoke(history.calculation)
+                    onElementClick.invoke(historyElement.calculation)
                 }
                 result.setOnClickListener {
-                    onElementClick.invoke(history.result)
+                    onElementClick.invoke(historyElement.result)
                 }
                 calculation.setOnLongClickListener {
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied history calculation", history.calculation)
+                    val clip = ClipData.newPlainText("Copied history calculation", historyElement.calculation)
                     clipboardManager.setPrimaryClip(clip)
                     Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true // Or false if not consumed
                 }
                 result.setOnLongClickListener {
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied history result", history.result)
+                    val clip = ClipData.newPlainText("Copied history result", historyElement.result)
                     clipboardManager.setPrimaryClip(clip)
                     Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true // Or false if not consumed

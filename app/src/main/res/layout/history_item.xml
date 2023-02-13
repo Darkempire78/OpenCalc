@@ -49,6 +49,7 @@
             tools:ignore="MissingConstraints" />
 
         <View
+            android:id="@+id/history_separator"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?attr/foreground_color"
