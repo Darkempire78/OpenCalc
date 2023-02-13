@@ -53,6 +53,7 @@ class HistoryAdapter(
             private val result: TextView = itemView.findViewById(R.id.history_item_result)
             private val time: TextView = itemView.findViewById(R.id.history_time)
             private val separator: View = itemView.findViewById(R.id.history_separator)
+            private val sameDateSeparator: View = itemView.findViewById(R.id.history_same_date_separator)
 
             fun bind(historyElement: History, position : Int) {
 
@@ -97,11 +98,15 @@ class HistoryAdapter(
                             ) == time.text)
                         {
                             separator.visibility = View.GONE
+                            // Add more space when it's the same date than the next history element
+                            sameDateSeparator.visibility  = View.VISIBLE
                         } else {
                             separator.visibility = View.VISIBLE
+                            sameDateSeparator.visibility  = View.GONE
                         }
                     } else {
                         separator.visibility = View.VISIBLE
+                        sameDateSeparator.visibility  = View.GONE
                     }
                 }
 

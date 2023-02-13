@@ -48,6 +48,15 @@
             android:textSize="22sp"
             tools:ignore="MissingConstraints" />
 
+        <!-- Add more space when it's the same date than the next history element -->
+        <View
+            android:id="@+id/history_same_date_separator"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:background="?attr/history_background_color"
+            app:layout_constraintTop_toBottomOf="@+id/history_item_result"
+            tools:ignore="MissingConstraints" />
+
         <View
             android:id="@+id/history_separator"
             android:layout_width="match_parent"
