@@ -100,5 +100,11 @@ class Themes(private val context: Context) {
         }
     }
 
-    fun getTheme(): Int = themeMap[MyPreferences(context).theme] ?: R.style.AppTheme
+    fun getTheme(): Int {
+        var theme = MyPreferences(context).theme
+        if (theme == -1) {
+            theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
+        }
+        return themeMap[theme] ?: DEFAULT_THEME_INDEX
+    }
 }
