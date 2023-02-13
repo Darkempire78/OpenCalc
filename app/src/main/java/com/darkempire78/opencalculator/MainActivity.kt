@@ -346,29 +346,94 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, (view as Button).text as String)
     }
 
+    private fun addSymbol(view: View, currentSymbol: String) {
+        // Get input text length
+        val textLength = binding.input.text.length
+
+        // If the input is not empty
+        if (textLength > 0) {
+            // Get cursor's current position
+            var cursorPosition = binding.input.selectionStart
+
+            // Get next / previous characters relative to the cursor
+            var nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
+            val previousChar = if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
+
+            if (currentSymbol != previousChar // Ignore multiple presses of the same button
+                && currentSymbol != nextChar
+                && previousChar != "√" // No symbol can be added on an empty square root
+                && previousChar != decimalSeparatorSymbol // Ensure that the previous character is not a comma
+                && nextChar != decimalSeparatorSymbol // Ensure that the next character is not a comma
+                && (previousChar != "(" // Ensure that we are not at the beginning of a parenthesis
+                || currentSymbol == "-")) { // Minus symbol is an override
+                // If previous character is a symbol, replace it
+                if (previousChar.matches("[+\\-÷×^]".toRegex())) {
+                    keyVibration(view)
+
+                    val leftString = binding.input.text.subSequence(0, cursorPosition-1).toString()
+                    val rightString = binding.input.text.subSequence(cursorPosition, textLength).toString()
+
+                    if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
+                        binding.input.setText(leftString + currentSymbol + rightString)
+                        binding.input.setSelection(cursorPosition)
+                    }
+                    else if (currentSymbol == "+") {
+                        binding.input.setText(leftString + rightString)
+                        binding.input.setSelection(cursorPosition-1)
+                    }
+                }
+                // If next character is a symbol, replace it
+                else if (nextChar.matches("[+\\-÷×^%!]".toRegex())
+                    && currentSymbol != "%") { // Make sure that percent symbol doesn't replace succeeding symbols
+                    keyVibration(view)
+
+                    val leftString = binding.input.text.subSequence(0, cursorPosition).toString()
+                    val rightString = binding.input.text.subSequence(cursorPosition+1, textLength).toString()
+
+                    if (cursorPosition > 0 && previousChar != "(") {
+                        binding.input.setText(leftString + currentSymbol + rightString)
+                        binding.input.setSelection(cursorPosition+1)
+                    }
+                    else if (currentSymbol == "+") binding.input.setText(leftString + rightString)
+                }
+                // Otherwise just update the display
+                else if (cursorPosition > 0 || nextChar != "0" && currentSymbol == "-") {
+                    updateDisplay(view, currentSymbol)
+                }
+                else keyVibration(view)
+            }
+            else keyVibration(view)
+
+            // Update resultDisplay so changes are reflected
+            updateResultDisplay()
+        } else { // Allow minus symbol, even if the input is empty
+            if (currentSymbol == "-") updateDisplay(view, currentSymbol)
+            else keyVibration(view)
+        }
+    }
+
     fun addButton(view: View) {
-        updateDisplay(view, "+")
+        addSymbol(view, "+")
     }
 
-    fun substractButton(view: View) {
-        updateDisplay(view, "-")
-    }
-
-    fun pointButton(view: View) {
-        val decimalSeparator = decimalSeparatorSymbol
-        updateDisplay(view, decimalSeparator)
+    fun subtractButton(view: View) {
+        addSymbol(view, "-")
     }
 
     fun divideButton(view: View) {
-        updateDisplay(view, "÷")
+        addSymbol(view, "÷")
     }
 
     fun multiplyButton(view: View) {
-        updateDisplay(view, "×")
+        addSymbol(view, "×")
     }
 
     fun exponentButton(view: View) {
-        updateDisplay(view, "^")
+        addSymbol(view, "^")
+    }
+
+    fun pointButton(view: View) {
+        updateDisplay(view, decimalSeparatorSymbol)
     }
 
     fun sineButton(view: View) {
@@ -420,7 +485,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun factorialButton(view: View) {
-        updateDisplay(view, "!")
+        addSymbol(view, "!")
     }
 
     fun squareButton(view: View) {
@@ -432,7 +497,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun divideBy100(view: View) {
-        updateDisplay(view, "%")
+        addSymbol(view, "%")
     }
 
     @SuppressLint("SetTextI18n")
