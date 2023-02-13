@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingVertical="4dp"
             android:background="?attr/history_background_color"
-            android:textColor="?attr/text_color"
-            android:textSize="14sp"
+            android:textColor="?attr/text_second_color"
+            android:textSize="22sp"
             tools:ignore="MissingConstraints" />
 
         <View
