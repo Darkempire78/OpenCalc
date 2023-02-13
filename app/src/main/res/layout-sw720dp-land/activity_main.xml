@@ -395,13 +395,13 @@
                         android:text="@string/six" />
 
                     <ImageButton
-                        android:id="@+id/substractButton"
+                        android:id="@+id/subtractButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
-                        android:onClick="substractButton"
+                        android:onClick="subtractButton"
                         app:srcCompat="@drawable/subtract" />
                 </TableRow>
 
