@@ -18,7 +18,7 @@ class MyPreferences(context: Context) {
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-    var theme = preferences.getInt(THEME, 0)
+    var theme = preferences.getInt(THEME, -1)
         set(value) = preferences.edit().putInt(THEME, value).apply()
     var forceDayNight = preferences.getInt(FORCE_DAY_NIGHT, MODE_NIGHT_UNSPECIFIED)
         set(value) = preferences.edit().putInt(FORCE_DAY_NIGHT, value).apply()
