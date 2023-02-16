@@ -2,6 +2,8 @@
 <resources>
     <color name="app_icon_background_color">#4684E3</color>
 
+    <color name="calculation_error_color">#F44B3F</color>
+
     <!-- Normal Theme -->
     <color name="foreground_color">#EFEFEF</color>
     <color name="background_color">#fff</color>

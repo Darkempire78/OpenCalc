@@ -16,6 +16,7 @@ import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
+    private var hasColorBeenSet = false
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -173,6 +175,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setErrorColor(error_status: Boolean) {
+        // Only run if the color needs to be updated
+        if (error_status != hasColorBeenSet) {
+            // Set error color
+            if (error_status) {
+                binding.input.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
+                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
+            }
+            // Clear error color
+            else {
+                binding.input.setTextColor(ContextCompat.getColor(this,R.color.text_color))
+                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.text_second_color))
+            }
+            hasColorBeenSet = error_status
+        }
+    }
+
     private fun updateDisplay(view: View, value: String) {
         // Reset input with current number if following "equal"
         if (isEqualLastAction) {
@@ -281,10 +300,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
+            // Reset text color
+            setErrorColor(false)
+
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
@@ -313,7 +334,9 @@ class MainActivity : AppCompatActivity() {
                         withContext(Dispatchers.Main) {
                             if (formattedResult != calculation) {
                                 binding.resultDisplay.setText(formattedResult)
-                            } else binding.resultDisplay.setText("")
+                            } else {
+                                binding.resultDisplay.setText("")
+                            }
                         }
                     } else {
                         withContext(Dispatchers.Main) {
@@ -556,7 +579,6 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
@@ -618,14 +640,20 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.syntax_error))
                         } else if (domain_error) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.domain_error))
                         } else if (result.isInfinite()) {
-                            if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            if (division_by_0) {
+                                setErrorColor(true)
+                                binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            }
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.infinity))
                         } else if (result.isNaN()) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
