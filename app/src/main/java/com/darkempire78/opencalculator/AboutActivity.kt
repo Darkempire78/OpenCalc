@@ -1,10 +1,7 @@
 package com.darkempire78.opencalculator
 
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.res.Configuration
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
@@ -25,7 +22,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(view)
 
         // Set app version
-        val versionName =  "v" + this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES).versionName
+        val versionName =  "v" + BuildConfig.VERSION_NAME
         binding.aboutAppVersion.text = versionName
 
         // back button
