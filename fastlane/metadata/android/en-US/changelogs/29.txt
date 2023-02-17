@@ -1,0 +1,8 @@
+New:
+- Explicit errors
+- Redesign of the history
+- Add timestamps to history results
+- Do not allow duplicate math symbols on input
+
+Updated:
+- arccos, arcsin and arctan are now displayed as cos⁻¹, sin⁻¹ and tan⁻¹
