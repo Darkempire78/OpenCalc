@@ -16,6 +16,7 @@ import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
+    private var error_status_old = false
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -173,6 +175,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setErrorColor(error_status: Boolean) {
+        // Only run if the color needs to be updated
+        if (error_status != error_status_old) {
+            // Set error color
+            if (error_status) {
+                binding.input.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
+                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
+            }
+            // Clear error color
+            else {
+                binding.input.setTextColor(ContextCompat.getColor(this,R.color.text_color))
+                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.text_second_color))
+            }
+            error_status_old = error_status
+        }
+    }
+
     private fun updateDisplay(view: View, value: String) {
         // Reset input with current number if following "equal"
         if (isEqualLastAction) {
@@ -234,7 +253,6 @@ class MainActivity : AppCompatActivity() {
                     if (NumberFormatter.extractNumbers(value).isNotEmpty()) {
                         val firstValueNumber = NumberFormatter.extractNumbers(value).first()
                         val lastValueNumber = NumberFormatter.extractNumbers(value).last()
-                        var tmpNewValue = newValue
                         if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
                             var numberBefore = binding.input.text.toString().substring(0, cursorPosition)
                             if (numberBefore.last() !in "()*-/+^!√πe") {
@@ -253,7 +271,7 @@ class MainActivity : AppCompatActivity() {
                             if (decimalSeparatorSymbol in  numberAfter) {
                                 tmpValue = "($value)"
                             }
-                            tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
+                            val tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
                             newValueFormatted = NumberFormatter.format(tmpNewValue)
                         }
                     }
@@ -281,10 +299,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
+            // Reset text color
+            setErrorColor(false)
+
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
@@ -294,12 +314,9 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
-                    var resultString = result.toString()
-                    var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
                     // Round at 10^-12
                     result = roundResult(result)
-                    formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
+                    var formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                     // If result = -0, change it to 0
                     if (result == -0.0) {
@@ -307,13 +324,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
-                        resultString = String.format("%.0f", result)
+                        val resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
 
                         withContext(Dispatchers.Main) {
                             if (formattedResult != calculation) {
                                 binding.resultDisplay.setText(formattedResult)
-                            } else binding.resultDisplay.setText("")
+                            } else {
+                                binding.resultDisplay.setText("")
+                            }
                         }
                     } else {
                         withContext(Dispatchers.Main) {
@@ -353,10 +372,10 @@ class MainActivity : AppCompatActivity() {
         // If the input is not empty
         if (textLength > 0) {
             // Get cursor's current position
-            var cursorPosition = binding.input.selectionStart
+            val cursorPosition = binding.input.selectionStart
 
             // Get next / previous characters relative to the cursor
-            var nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
+            val nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
             val previousChar = if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
 
             if (currentSymbol != previousChar // Ignore multiple presses of the same button
@@ -512,7 +531,7 @@ class MainActivity : AppCompatActivity() {
             isDegreeModeActivated = true
         }
 
-        binding.degreeTextView?.text = binding.degreeButton.text.toString()
+        binding.degreeTextView.text = binding.degreeButton.text.toString()
         updateResultDisplay()
     }
 
@@ -556,7 +575,6 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
@@ -565,7 +583,7 @@ class MainActivity : AppCompatActivity() {
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-                var currentTime = System.currentTimeMillis().toString()
+                val currentTime = System.currentTimeMillis().toString()
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
@@ -618,14 +636,20 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.syntax_error))
                         } else if (domain_error) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.domain_error))
                         } else if (result.isInfinite()) {
-                            if (division_by_0) binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            if (division_by_0) {
+                                setErrorColor(true)
+                                binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            }
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.infinity))
                         } else if (result.isNaN()) {
+                            setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
@@ -720,19 +744,19 @@ class MainActivity : AppCompatActivity() {
         updateResultDisplay()
     }
 
-    fun scientistModeSwitchButton(view: View) {
+    fun scientistModeSwitchButton() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            binding.degreeTextView?.visibility = View.VISIBLE
-            binding.degreeTextView?.text = binding.degreeButton.text.toString()
+            binding.degreeTextView.visibility = View.VISIBLE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            binding.degreeTextView?.visibility = View.GONE
-            binding.degreeTextView?.text = binding.degreeButton.text.toString()
+            binding.degreeTextView.visibility = View.GONE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
     }
 

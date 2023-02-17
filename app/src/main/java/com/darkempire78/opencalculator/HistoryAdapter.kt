@@ -48,7 +48,6 @@ class HistoryAdapter(
         }
 
         inner class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
             private val calculation: TextView = itemView.findViewById(R.id.history_item_calculation)
             private val result: TextView = itemView.findViewById(R.id.history_item_result)
             private val time: TextView = itemView.findViewById(R.id.history_time)
@@ -56,7 +55,6 @@ class HistoryAdapter(
             private val sameDateSeparator: View = itemView.findViewById(R.id.history_same_date_separator)
 
             fun bind(historyElement: History, position : Int) {
-
                 // Set calculation, result and time
                 calculation.text = historyElement.calculation
                 result.text = historyElement.result
