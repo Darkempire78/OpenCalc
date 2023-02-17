@@ -253,7 +253,6 @@ class MainActivity : AppCompatActivity() {
                     if (NumberFormatter.extractNumbers(value).isNotEmpty()) {
                         val firstValueNumber = NumberFormatter.extractNumbers(value).first()
                         val lastValueNumber = NumberFormatter.extractNumbers(value).last()
-                        var tmpNewValue = newValue
                         if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
                             var numberBefore = binding.input.text.toString().substring(0, cursorPosition)
                             if (numberBefore.last() !in "()*-/+^!√πe") {
@@ -272,7 +271,7 @@ class MainActivity : AppCompatActivity() {
                             if (decimalSeparatorSymbol in  numberAfter) {
                                 tmpValue = "($value)"
                             }
-                            tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
+                            val tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
                             newValueFormatted = NumberFormatter.format(tmpNewValue)
                         }
                     }
@@ -315,12 +314,9 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
-                    var resultString = result.toString()
-                    var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-
                     // Round at 10^-12
                     result = roundResult(result)
-                    formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
+                    var formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
 
                     // If result = -0, change it to 0
                     if (result == -0.0) {
@@ -328,7 +324,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
-                        resultString = String.format("%.0f", result)
+                        val resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
 
                         withContext(Dispatchers.Main) {
@@ -376,10 +372,10 @@ class MainActivity : AppCompatActivity() {
         // If the input is not empty
         if (textLength > 0) {
             // Get cursor's current position
-            var cursorPosition = binding.input.selectionStart
+            val cursorPosition = binding.input.selectionStart
 
             // Get next / previous characters relative to the cursor
-            var nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
+            val nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
             val previousChar = if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
 
             if (currentSymbol != previousChar // Ignore multiple presses of the same button
@@ -535,7 +531,7 @@ class MainActivity : AppCompatActivity() {
             isDegreeModeActivated = true
         }
 
-        binding.degreeTextView?.text = binding.degreeButton.text.toString()
+        binding.degreeTextView.text = binding.degreeButton.text.toString()
         updateResultDisplay()
     }
 
@@ -587,7 +583,7 @@ class MainActivity : AppCompatActivity() {
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-                var currentTime = System.currentTimeMillis().toString()
+                val currentTime = System.currentTimeMillis().toString()
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
@@ -748,19 +744,19 @@ class MainActivity : AppCompatActivity() {
         updateResultDisplay()
     }
 
-    fun scientistModeSwitchButton(view: View) {
+    fun scientistModeSwitchButton() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-            binding.degreeTextView?.visibility = View.VISIBLE
-            binding.degreeTextView?.text = binding.degreeButton.text.toString()
+            binding.degreeTextView.visibility = View.VISIBLE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
-            binding.degreeTextView?.visibility = View.GONE
-            binding.degreeTextView?.text = binding.degreeButton.text.toString()
+            binding.degreeTextView.visibility = View.GONE
+            binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
     }
 
