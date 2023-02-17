@@ -72,8 +72,8 @@ class HistoryAdapter(
                     )
                     // Check if the former result has the same date -> hide the date
                     if (position > 0) {
-                        if (
-                            DateUtils.getRelativeTimeSpanString(
+                        if (history[position-1].time.isNullOrEmpty()
+                            && DateUtils.getRelativeTimeSpanString(
                                 history[position-1].time.toLong(),
                                 System.currentTimeMillis(),
                                 DateUtils.DAY_IN_MILLIS,
