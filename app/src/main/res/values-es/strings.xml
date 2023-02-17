@@ -13,5 +13,4 @@
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Oscuro</string>
     <string name="value_copied">Copiado</string>
-    <string name="theme_follow_system">Siguiendo el sistema</string>
 </resources>
