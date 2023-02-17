@@ -744,7 +744,7 @@ class MainActivity : AppCompatActivity() {
         updateResultDisplay()
     }
 
-    fun scientistModeSwitchButton() {
+    fun scientistModeSwitchButton(view: View) {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
