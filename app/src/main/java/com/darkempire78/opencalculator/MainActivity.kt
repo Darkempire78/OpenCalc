@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
-    private var hasColorBeenSet = false
+    private var error_status_old = false
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setErrorColor(error_status: Boolean) {
         // Only run if the color needs to be updated
-        if (error_status != hasColorBeenSet) {
+        if (error_status != error_status_old) {
             // Set error color
             if (error_status) {
                 binding.input.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
@@ -188,7 +188,7 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setTextColor(ContextCompat.getColor(this,R.color.text_color))
                 binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.text_second_color))
             }
-            hasColorBeenSet = error_status
+            error_status_old = error_status
         }
     }
 
