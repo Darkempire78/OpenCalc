@@ -29,9 +29,9 @@ class Expression {
         // To avoid that "exp" is interpreted as "e", exp -> xp
         calculation2 = calculation2.replace("exp", "xp")
         // To avoid missmatch with cos, sin, tan -> arcco, arcsi, arcta
-        calculation2 = calculation2.replace("arccos", "arcco")
-        calculation2 = calculation2.replace("arcsin", "arcsi")
-        calculation2 = calculation2.replace("arctan", "arcta")
+        calculation2 = calculation2.replace("cos⁻¹", "arcco")
+        calculation2 = calculation2.replace("sin⁻¹", "arcsi")
+        calculation2 = calculation2.replace("tan⁻¹(", "arcta")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
         return calculation2

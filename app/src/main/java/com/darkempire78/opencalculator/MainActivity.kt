@@ -375,7 +375,7 @@ class MainActivity : AppCompatActivity() {
         if (!isInvButtonClicked) {
             updateDisplay(view, "sin(")
         } else {
-            updateDisplay(view, "arcsin(")
+            updateDisplay(view, "sin⁻¹(")
         }
     }
 
@@ -383,7 +383,7 @@ class MainActivity : AppCompatActivity() {
         if (!isInvButtonClicked) {
             updateDisplay(view, "cos(")
         } else {
-            updateDisplay(view, "arccos(")
+            updateDisplay(view, "cos⁻¹(")
         }
     }
 
@@ -391,7 +391,7 @@ class MainActivity : AppCompatActivity() {
         if (!isInvButtonClicked) {
             updateDisplay(view, "tan(")
         } else {
-            updateDisplay(view, "arctan(")
+            updateDisplay(view, "tan⁻¹(")
         }
     }
 
@@ -623,7 +623,7 @@ class MainActivity : AppCompatActivity() {
 
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete
-            val functionsList = listOf("arccos(", "arcsin(", "arctan(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
+            val functionsList = listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
             for (function in functionsList) {
                 val text = binding.input.text.subSequence(0, cursorPosition).toString()
                 if (text.endsWith(function)) {
