@@ -47,12 +47,15 @@ class Expression {
         }
         // find the last operator before the last %
         val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '('))
-        if (calculation[operatorBeforePercentPos] == '*') {
-            return calculation
-        }
+
         if (operatorBeforePercentPos < 1) {
             return calculation
         }
+
+        if (calculation[operatorBeforePercentPos] == '*') {
+            return calculation
+        }
+
         // extract the first part of the calculation
         var calculationStringFirst = calculation.subSequence(0, operatorBeforePercentPos).toString()
 
