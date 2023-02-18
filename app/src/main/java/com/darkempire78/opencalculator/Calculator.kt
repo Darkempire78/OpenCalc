@@ -8,7 +8,6 @@ var domain_error = false
 var syntax_error = false
 
 class Calculator {
-
     fun factorial(number: Double): Double {
         return if (number >= 171) {
             Double.POSITIVE_INFINITY
