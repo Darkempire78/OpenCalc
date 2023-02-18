@@ -175,11 +175,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setErrorColor(error_status: Boolean) {
+    private fun setErrorColor(errorStatus: Boolean) {
         // Only run if the color needs to be updated
-        if (error_status != errorStatusOld) {
+        if (errorStatus != errorStatusOld) {
             // Set error color
-            if (error_status) {
+            if (errorStatus) {
                 binding.input.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
                 binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
             }
@@ -188,7 +188,7 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setTextColor(ContextCompat.getColor(this,R.color.text_color))
                 binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.text_second_color))
             }
-            errorStatusOld = error_status
+            errorStatusOld = errorStatus
         }
     }
 

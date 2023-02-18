@@ -8,23 +8,20 @@ var domain_error = false
 var syntax_error = false
 
 class Calculator {
-
     fun factorial(number: Double): Double {
-        if (number >= 171) {
-            return Double.POSITIVE_INFINITY
-        }
-        if (number < 0) {
-            return Double.NaN
-        }
-        val decimalPartOfNumber = number - number.toInt()
-        return if (decimalPartOfNumber == 0.0) {
-            var factorial = BigInteger("1")
-            for (i in 1..number.toInt()) {
-                factorial *= i.toBigInteger()
-            }
-            factorial.toDouble()
+        return if (number >= 171) {
+            Double.POSITIVE_INFINITY
+        } else if (number < 0) {
+            Double.NaN
         } else {
-            gammaLanczos(number+1)
+            val decimalPartOfNumber = number - number.toInt()
+            if (decimalPartOfNumber == 0.0) {
+                var factorial = BigInteger("1")
+                for (i in 1..number.toInt()) {
+                    factorial *= i.toBigInteger()
+                }
+                factorial.toDouble()
+            } else gammaLanczos(number+1)
         }
     }
 

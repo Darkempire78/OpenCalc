@@ -1,7 +1,6 @@
 package com.darkempire78.opencalculator
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.*
 
 class OpenCalcApp : Application() {
