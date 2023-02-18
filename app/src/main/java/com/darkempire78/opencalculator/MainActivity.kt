@@ -595,47 +595,51 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number && it is finite && calculation != result
                 if (!result.isNaN() && result.isFinite() && calculation != formattedResult) {
-                    // Save to history
                     val history = MyPreferences(this@MainActivity).getHistory()
-                    history.add(
-                        History(
-                            calculation = calculation,
-                            result = formattedResult,
-                            time = currentTime,
+                    
+                    // If the current calculation is different from the former calculation in the history
+                    if (history[history.size -1].calculation != calculation) {
+                        // Save to history
+                        history.add(
+                            History(
+                                calculation = calculation,
+                                result = formattedResult,
+                                time = currentTime,
+                            )
                         )
-                    )
-                    MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
-                    // Update history variables
-                    withContext(Dispatchers.Main) {
-                        historyAdapter.appendOneHistoryElement(History(
-                            calculation = calculation,
-                            result = formattedResult,
-                            time = currentTime,
-                        ))
-                        // Scroll to the bottom of the recycle view
-                        binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
-                    }
+                        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                        // Update history variables
+                        withContext(Dispatchers.Main) {
+                            historyAdapter.appendOneHistoryElement(History(
+                                calculation = calculation,
+                                result = formattedResult,
+                                time = currentTime,
+                            ))
+                            // Scroll to the bottom of the recycle view
+                            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                        }
 
-                    // Hide the cursor before updating binding.input to avoid weird cursor movement
-                    withContext(Dispatchers.Main) {
-                        binding.input.isCursorVisible = false
-                    }
+                        // Hide the cursor before updating binding.input to avoid weird cursor movement
+                        withContext(Dispatchers.Main) {
+                            binding.input.isCursorVisible = false
+                        }
 
-                    if ((result * 10) % 10 == 0.0) {
-                        resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString)
-                        withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
-                    } else {
-                        withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
-                    }
-                    // Set cursor
-                    withContext(Dispatchers.Main) {
-                        // Hide the cursor (do not remove this, it's not a duplicate)
-                        binding.input.isCursorVisible = false
-                        // Scroll to the beginning
-                        binding.input.setSelection(0)
-                        // Clear resultDisplay
-                        binding.resultDisplay.setText("")
+                        if ((result * 10) % 10 == 0.0) {
+                            resultString = String.format("%.0f", result)
+                            formattedResult = NumberFormatter.format(resultString)
+                            withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
+                        } else {
+                            withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
+                        }
+                        // Set cursor
+                        withContext(Dispatchers.Main) {
+                            // Hide the cursor (do not remove this, it's not a duplicate)
+                            binding.input.isCursorVisible = false
+                            // Scroll to the beginning
+                            binding.input.setSelection(0)
+                            // Clear resultDisplay
+                            binding.resultDisplay.setText("")
+                        }
                     }
                 } else {
                     withContext(Dispatchers.Main) {
