@@ -583,62 +583,64 @@ class MainActivity : AppCompatActivity() {
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
-                val currentTime = System.currentTimeMillis().toString()
 
-                // If there is an unused 0 at the end, remove it : 2.0 -> 2
+                // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
+                    // If there is an unused 0 at the end, remove it : 2.0 -> 2
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
                     }
-                }
 
-                // If result is a number && it is finite && calculation != result
-                if (!result.isNaN() && result.isFinite() && calculation != formattedResult) {
-                    val history = MyPreferences(this@MainActivity).getHistory()
-                    
-                    // If the current calculation is different from the former calculation in the history
-                    if (history[history.size -1].calculation != calculation) {
-                        // Save to history
-                        history.add(
-                            History(
-                                calculation = calculation,
-                                result = formattedResult,
-                                time = currentTime,
+                    // Hide the cursor before updating binding.input to avoid weird cursor movement
+                    withContext(Dispatchers.Main) {
+                        binding.input.isCursorVisible = false
+                    }
+
+                    // Display result
+                    withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
+
+                    // Set cursor
+                    withContext(Dispatchers.Main) {
+                        // Hide the cursor (do not remove this, it's not a duplicate)
+                        binding.input.isCursorVisible = false
+                        // Scroll to the beginning
+                        binding.input.setSelection(0)
+                        // Clear resultDisplay
+                        binding.resultDisplay.setText("")
+                    }
+
+                    if (calculation != formattedResult) {
+                        val history = MyPreferences(this@MainActivity).getHistory()
+
+                        // Do not save to history if the previous entry is the same as the current one
+                        if (history.isEmpty() || history[history.size - 1].calculation != calculation) {
+                            // Store time
+                            val currentTime = System.currentTimeMillis().toString()
+
+                            // Save to history
+                            history.add(
+                                History(
+                                    calculation = calculation,
+                                    result = formattedResult,
+                                    time = currentTime,
+                                )
                             )
-                        )
-                        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
-                        // Update history variables
-                        withContext(Dispatchers.Main) {
-                            historyAdapter.appendOneHistoryElement(History(
-                                calculation = calculation,
-                                result = formattedResult,
-                                time = currentTime,
-                            ))
-                            // Scroll to the bottom of the recycle view
-                            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
-                        }
 
-                        // Hide the cursor before updating binding.input to avoid weird cursor movement
-                        withContext(Dispatchers.Main) {
-                            binding.input.isCursorVisible = false
-                        }
+                            MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
 
-                        if ((result * 10) % 10 == 0.0) {
-                            resultString = String.format("%.0f", result)
-                            formattedResult = NumberFormatter.format(resultString)
-                            withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
-                        } else {
-                            withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
-                        }
-                        // Set cursor
-                        withContext(Dispatchers.Main) {
-                            // Hide the cursor (do not remove this, it's not a duplicate)
-                            binding.input.isCursorVisible = false
-                            // Scroll to the beginning
-                            binding.input.setSelection(0)
-                            // Clear resultDisplay
-                            binding.resultDisplay.setText("")
+                            // Update history variables
+                            withContext(Dispatchers.Main) {
+                                historyAdapter.appendOneHistoryElement(
+                                    History(
+                                        calculation = calculation,
+                                        result = formattedResult,
+                                        time = currentTime,
+                                    )
+                                )
+                                // Scroll to the bottom of the recycle view
+                                binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                            }
                         }
                     }
                 } else {
