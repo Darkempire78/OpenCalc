@@ -585,13 +585,17 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
                 val currentTime = System.currentTimeMillis().toString()
 
-                // If result is a number and it is finite
+                // If there is an unused 0 at the end, remove it : 2.0 -> 2
                 if (!result.isNaN() && result.isFinite()) {
-                    // Save to history
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString)
                     }
+                }
+
+                // If result is a number && it is finite && calculation != result
+                if (!result.isNaN() && result.isFinite() && calculation != formattedResult) {
+                    // Save to history
                     val history = MyPreferences(this@MainActivity).getHistory()
                     history.add(
                         History(
