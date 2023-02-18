@@ -43,6 +43,30 @@ class ExpressionUnitTest {
         assertEquals(-1.0, result, 0.0)
     }
 
+    @Test
+    fun factorial_isCorrect() {
+        var result = calculate("0!")
+        assertEquals(1.0, result, 0.0)
+
+        result = calculate("5!")
+        assertEquals(120.0, result, 0.0)
+    }
+
+    @Test
+    fun sqrt_isCorrect() {
+        var result = calculate("√2^2")
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("√9")
+        assertEquals(3.0, result, 0.0)
+    }
+
+    @Test
+    fun cos_isCorrect() {
+        var result = calculate("cos(0)")
+        assertEquals(1.0, result, 0.0)
+    }
+
     private fun calculate(input: String) = calculator.evaluate(expression.getCleanExpression(input), false)
 
     companion object {
