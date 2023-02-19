@@ -602,10 +602,12 @@ class MainActivity : AppCompatActivity() {
 
                     // Set cursor
                     withContext(Dispatchers.Main) {
+                        // Scroll to the end
+                        binding.input.setSelection(binding.input.length())
+
                         // Hide the cursor (do not remove this, it's not a duplicate)
                         binding.input.isCursorVisible = false
-                        // Scroll to the beginning
-                        binding.input.setSelection(0)
+
                         // Clear resultDisplay
                         binding.resultDisplay.setText("")
                     }
