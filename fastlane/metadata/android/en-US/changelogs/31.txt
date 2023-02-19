@@ -1,0 +1,9 @@
+Updated:
+- Change text color on error
+- Reduce release size
+- Do not save a result in the history if it is equal to the calculation
+- Do not save the calculation in the history if it is the same than the latest
+
+Fixed:
+- Factoriel 0 returns 1
+- Add math symbol after then equal was pressed
