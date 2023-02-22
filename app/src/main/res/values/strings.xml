@@ -74,14 +74,12 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
+    <string name="preferences_title">Settings</string>
     <string name="preferences_general_category">GENERAL</string>
 
     <!-- Messages Preferences -->
     <string name="preferences_prevent_phone_from_sleeping">Prevent phone from sleeping while the app is in foreground</string>
     <string name="preferences_vibration">Emit vibration when a button is pressed</string>
-<<<<<<< Updated upstream
-=======
-    <string name="preferences_title">Settings</string>
 
->>>>>>> Stashed changes
+
 </resources>
