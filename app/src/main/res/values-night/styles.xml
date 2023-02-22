@@ -20,5 +20,4 @@
 
         <item name="about_button_color">@color/text_color</item>
     </style>
-
 </resources>
