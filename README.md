@@ -30,6 +30,8 @@ height="100">](https://f-droid.org/en/packages/com.darkempire78.opencalculator)
 
 ## :book: Features
 
+* Lightweight (~2mo),
+* No permission,
 * Dark, Light, Amoled and Material You theme,
 * Scientific mode,
 * History,
