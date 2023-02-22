@@ -14,6 +14,7 @@ class MyPreferences(context: Context) {
 
         private const val KEY_VIBRATION_STATUS = "darkempire78.opencalculator.KEY_VIBRATION_STATUS"
         private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY"
+        private const val KEY_PREVENT_PHONE_FROM_SLEEPING = "darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -27,6 +28,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_VIBRATION_STATUS, value).apply()
     private var history = preferences.getString(KEY_HISTORY, null)
         set(value) = preferences.edit().putString(KEY_HISTORY, value).apply()
+    var preventPhoneFromSleepingMode = preferences.getBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, false)
+        set(value) = preferences.edit().putBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, value).apply()
 
     fun getHistory(): MutableList<History> {
         val gson = Gson()

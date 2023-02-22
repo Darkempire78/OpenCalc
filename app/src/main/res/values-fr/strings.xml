@@ -17,4 +17,8 @@
     <string name="division_by_0">Division par 0 impossible</string>
     <string name="domain_error">Erreur de domaine</string>
     <string name="syntax_error">Erreur de syntaxe</string>
+    <string name="app_menu_settings">Paramètres</string>
+    <string name="preferences_general_category">GÉNÉRAL</string>
+    <string name="preferences_prevent_phone_from_sleeping">Empêcher le telephone de se mettre en veille pendant l\'utilisation de l\'application</string>
+    <string name="preferences_vibration">Émettre des vibrations lorsqu\'un bouton est pressé</string>
 </resources>

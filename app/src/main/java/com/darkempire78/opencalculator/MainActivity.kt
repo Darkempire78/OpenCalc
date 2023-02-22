@@ -30,6 +30,8 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var view: View
+
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private var isInvButtonClicked = false
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(themes.getTheme())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        view = binding.root
         setContentView(view)
 
         // Disable the keyboard on display EditText
@@ -107,6 +109,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        // Prevent the phone from sleeping if enabled
+        if (MyPreferences(this).preventPhoneFromSleepingMode) {
+            view.keepScreenOn = true
+        }
+
         // Focus by default
         binding.input.requestFocus()
 
@@ -146,17 +153,16 @@ class MainActivity : AppCompatActivity() {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
         inflater.inflate(R.menu.app_menu, popup.menu)
-        popup.menu.findItem(R.id.app_menu_vibration_button).isChecked =
-            MyPreferences(this).vibrationMode
         popup.show()
-    }
-
-    fun checkVibration(menuItem: MenuItem) {
-        MyPreferences(this).vibrationMode = !menuItem.isChecked
     }
 
     fun openAbout(menuItem: MenuItem) {
         val intent = Intent(this, AboutActivity::class.java)
+        startActivity(intent, null)
+    }
+
+    fun openSettings(menuItem: MenuItem) {
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent, null)
     }
 
@@ -774,6 +780,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        // Update settings
+        // Prevent phone from sleeping while the app is in foreground
+        view.keepScreenOn = MyPreferences(this).preventPhoneFromSleepingMode
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false

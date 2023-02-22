@@ -1,0 +1,54 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="@string/preferences_general_category"
+        app:color="?attr/text_color">
+        <!--app:iconSpaceReserved="false"-->
+
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
+            app:title="@string/preferences_vibration"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/vibrate"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
+            app:title="@string/preferences_prevent_phone_from_sleeping"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/bedtime"
+            app:singleLineTitle="false"
+            app:defaultValue="false"
+            />
+
+
+        <!-- <ListPreference
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:defaultValue="reply"
+            app:useSimpleSummaryProvider="true"/> -->
+
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory
+        app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title"/>
+
+        <SwitchPreferenceCompat
+            app:key="attachment"
+            app:title="@string/attachment_title"
+            app:summaryOn="@string/attachment_summary_on"
+            app:summaryOff="@string/attachment_summary_off"
+            app:dependency="sync"/>
+
+    </PreferenceCategory> -->
+
+</PreferenceScreen>
