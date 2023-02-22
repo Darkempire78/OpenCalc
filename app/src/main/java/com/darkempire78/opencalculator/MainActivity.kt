@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity() {
     private fun keyVibration(view: View) {
         if (MyPreferences(this).vibrationMode) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-                view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_PRESS)
+                view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             }
         }
     }
