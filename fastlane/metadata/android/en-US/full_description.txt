@@ -1,6 +1,8 @@
 A simple and beautiful calculator for Android
 
 📖 Features
+	* Lightweight (~2mo),
+	* No permission,
 	* Dark, Light, Amoled and Material You theme,
 	* Scientific mode,
 	* History,
