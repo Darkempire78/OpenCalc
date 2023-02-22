@@ -50,6 +50,18 @@ class ExpressionUnitTest {
 
         result = calculate("5!")
         assertEquals(120.0, result, 0.0)
+
+        result = calculate("10!")
+        assertEquals(3628800.0, result, 0.0)
+
+        result = calculate("5!+5!")
+        assertEquals(240.0, result, 0.0)
+
+        result = calculate("(3!)!+(3!)!")
+        assertEquals(1440.0, result, 0.0)
+
+        result = calculate("(3!)!/(3!)!")
+        assertEquals(1.0, result, 0.0)
     }
 
     @Test

@@ -197,37 +197,54 @@ class Expression {
         val cleanCalculationLength = cleanCalculation.length
         var i = cleanCalculationLength - 1
 
-        // If the calculation is "!"
+        // Return error if the calculation is "!"
         if (i == 0) {
             syntax_error = true
             return ""
         }
-
+        println("calc: "+cleanCalculation)
         while (i > 0) {
-            if (parenthesisOpened > 0) {
-                if (cleanCalculation[i-1] in ")*-/+^") {
-                    cleanCalculation = cleanCalculation.addCharAtIndex('(', i)
-                    cleanCalculation = cleanCalculation.addCharAtIndex('F', i)
-                    parenthesisOpened -= 1
-                    i += 2
+            parenthesisOpened = 0
+            if (cleanCalculation[i] == '!') {
+                println("Calculation: "+cleanCalculation)
+                if (cleanCalculation[i-1] == ')') {
+                    cleanCalculation = cleanCalculation.substring(0, i) + cleanCalculation.substring(i+1)
+                    i--
+                    val tmp = i
+                    while (i > 0 && cleanCalculation[i-1] !in "*/+^") {
+                        if (cleanCalculation[i-1] !in ")*-/+^") {
+                            if (cleanCalculation[i] == ')') parenthesisOpened +=1
+                            else if (cleanCalculation[i-1] == '(') parenthesisOpened -= 1
+                            if (parenthesisOpened == 0) cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                        }
+                        i--
+                    }
+                    i = tmp+1
+                } else {
+                    parenthesisOpened = 0
+                    cleanCalculation = cleanCalculation.substring(0, i) + ')' + cleanCalculation.substring(i + 1)
+                    var tmp = i
+                    while (i > 0 && cleanCalculation[i-1] !in "()*-/+^") {
+                        println("Current: "+cleanCalculation[i]+" Previous: "+cleanCalculation[i-1])
+                        if (cleanCalculation[i] == ')') parenthesisOpened +=1
+                        else if (cleanCalculation[i] == '(') parenthesisOpened -= 1
+                        while (i > 1 && cleanCalculation[i-1].isDigit() && cleanCalculation[i-2] !in "()*-/+^") i--
+                        if (parenthesisOpened == 1) {
+                            println("Bef: "+cleanCalculation)
+                            cleanCalculation = cleanCalculation.addCharAtIndex('(', i-1)
+                            cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                            println("Aft: "+cleanCalculation)
+                        }
+                        i--
+                    }
+                    i = tmp+1
                 }
             }
-            if (cleanCalculation[i] == '!' && cleanCalculation[i-1] != ')') {
-                cleanCalculation = cleanCalculation.addCharAtIndex(')', i)
-                parenthesisOpened += 1
-                i += 1
-            }
-            i --
+            i--
         }
-
-        while (parenthesisOpened > 0) {
-            cleanCalculation = cleanCalculation.addCharAtIndex('(', 0)
-            cleanCalculation = cleanCalculation.addCharAtIndex('F', 0)
-            parenthesisOpened -= 1
-        }
-
-        cleanCalculation = cleanCalculation.replace("!", "")
+        println("Calculation: "+cleanCalculation)
         cleanCalculation = cleanCalculation.replace("F", "factorial")
+
         return cleanCalculation
     }
 
