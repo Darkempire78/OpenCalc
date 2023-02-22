@@ -57,7 +57,7 @@
     <!-- Theme choices -->
     <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="theme_material_you">Material You</string>
+    <string name="theme_material_you" translatable="false">Material You</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
 
