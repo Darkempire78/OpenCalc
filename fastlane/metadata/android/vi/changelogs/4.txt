@@ -1,0 +1,2 @@
+Sửa chữa:
+- Thêm rung động cho các nút không có chúng

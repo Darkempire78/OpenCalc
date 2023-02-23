@@ -1,0 +1,5 @@
+Thay đổi:
+- Có sẵn cho SDK 21+ (Android 5.0)
+
+Sửa chữa:
+- Sửa lỗi rung
