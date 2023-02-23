@@ -1,0 +1,7 @@
+Thay đổi:
+- trang Về ứng dụng mới
+- thêm dấu phân cách cho chủ đề amoled
+
+Sửa chữa:
+- màu hộp kiểm
+- tên ứng dụng (được dịch bằng tiếng Anh & Pháp)
