@@ -1,0 +1,8 @@
+Nuevo:
+- Brindis al copiar un valor
+
+Corregido:
+- El tema del sistema es compatible con Material You
+- Mejora de la compatibilidad con tabletas
+- Mejorar el soporte para pantallas pequeñas
+- Icono no se muestra para Android inferior a 8

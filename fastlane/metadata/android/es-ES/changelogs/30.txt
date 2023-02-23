@@ -1,0 +1,8 @@
+Novedad
+- Errores explícitos
+- Rediseño del historial
+- Añadir marcas de tiempo a los resultados del historial
+- No permitir símbolos matemáticos duplicados en la entrada
+
+Actualizado:
+- arccos, arcsin y arctan se muestran ahora como cos-¹, sin-¹ y tan-¹

@@ -1,0 +1,8 @@
+Novedad 
+- Sistema de vibración
+
+Modificación:
+- Mejora del código
+
+Corrección:
+- Sigue el tema del sistema en el primer lanzamiento

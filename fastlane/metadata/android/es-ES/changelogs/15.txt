@@ -1,0 +1,6 @@
+Cambiado 
+- La pantalla de bienvenida está oscura ahora 
+
+Arreglado: 
+- problema con el teclado 
+- el teclado sigue desplazándose
