@@ -1,0 +1,10 @@
+Una calculadora simple y hermosa para Android
+
+📖 Características
+	* Ligero (~2MB),
+	* No hay permisos innecesarios,
+	* Oscuro, Luz, Amoled y Material Usted tema,
+	* Modo científico,
+	* Historial,
+	* Orientación vertical y horizontal,
+	* Más...

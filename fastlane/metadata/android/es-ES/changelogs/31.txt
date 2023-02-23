@@ -1,0 +1,9 @@
+Actualizado:
+- Cambiar el color del texto en caso de error
+- Reducir el tamaño de lanzamiento
+- No guardar un resultado en el historial si es igual al cálculo
+- No guarde el cálculo en el historial si es el mismo que el último
+
+Fijado:
+- Factorial 0 devuelve 1
+- Agregue el símbolo matemático después de que se presionó igual

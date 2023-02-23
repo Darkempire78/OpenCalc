@@ -1,0 +1,8 @@
+Mới:
+- Bật thông báo nhanh khi bạn sao chép một giá trị
+
+Đã sửa:
+- Theo chủ đề hệ thống hỗ trợ Material You
+- Cải thiện hỗ trợ cho máy tính bảng
+- Cải thiện hỗ trợ cho kích thước màn hình nhỏ
+- Biểu tượng không hiển thị cho Android thấp hơn 8

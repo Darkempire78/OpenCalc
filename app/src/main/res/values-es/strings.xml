@@ -13,4 +13,8 @@
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Oscuro</string>
     <string name="value_copied">Copiado</string>
+    <string name="math_error">Error de cálculo</string>
+    <string name="syntax_error">Sintaxis errónea</string>
+    <string name="domain_error">Error en el dominio</string>
+    <string name="division_by_0">No se puede dividir por 0</string>
 </resources>

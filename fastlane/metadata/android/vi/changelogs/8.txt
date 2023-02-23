@@ -1,0 +1,2 @@
+Sửa chữa:
+- Khắc phục sự cố số lớn

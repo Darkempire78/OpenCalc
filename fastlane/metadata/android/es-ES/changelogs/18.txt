@@ -1,0 +1,7 @@
+Nuevo:
+- Clic largo para copiar un valor
+- Traducción al indonesio
+
+Corregido:
+- Desplazamiento en modo horizontal
+- problema de enfoque

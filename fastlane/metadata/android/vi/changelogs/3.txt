@@ -1,0 +1,8 @@
+Mới:
+- Hệ thống rung
+
+Thay đổi:
+- Cải thiện mã
+
+Sửa chữa:
+- Theo chủ đề hệ thống trong lần khởi chạy đầu tiên

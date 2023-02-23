@@ -1,0 +1,6 @@
+Novedad
+- Icono temático
+
+Cambios:
+- Actualizar traducciones
+- Borrar entrada si se pulsa un número después de igual

@@ -1,0 +1,9 @@
+Đã cập nhật:
+- Đổi màu chữ khi bị lỗi
+- Giảm kích thước phát hành
+- Không lưu kết quả vào lịch sử nếu bằng phép tính
+- Không lưu phép tính trong lịch sử nếu nó giống với lần gần nhất
+
+Đã sửa:
+- Thừa số 0 trả về 1
+- Thêm biểu tượng toán học sau khi nhấn dấu bằng
