@@ -15,4 +15,6 @@
     <string name="infinity">Vô cực</string>
     <string name="value_copied">Đã sao chép</string>
     <string name="theme_light">Sáng</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_amoled">Amoled</string>
 </resources>
