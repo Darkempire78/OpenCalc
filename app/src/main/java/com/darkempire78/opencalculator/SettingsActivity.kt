@@ -19,9 +19,6 @@ class SettingsActivity : AppCompatActivity() {
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
 
-        // Change the status bar color
-        window.statusBarColor = R.attr.background_color
-
         setContentView(R.layout.settings_activity)
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -31,9 +28,11 @@ class SettingsActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // Change the status bar color
+        window.statusBarColor = resources.getColor(R.color.background_color)
+
         // back button
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
-            println("testtttt")
             finish()
         }
     }
