@@ -791,6 +791,19 @@ class MainActivity : AppCompatActivity() {
         // Prevent phone from sleeping while the app is in foreground
         view.keepScreenOn = MyPreferences(this).preventPhoneFromSleepingMode
 
+        // Remove former results if > historySize preference
+        // Remove from the RecycleView
+        val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
+        while (historyAdapter.itemCount >= historySize) {
+            historyAdapter.removeFirstHistoryElement()
+        }
+        // Remove from the preference store data
+        val history = MyPreferences(this@MainActivity).getHistory()
+        while (history.size > historySize) {
+            history.removeAt(0)
+        }
+        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
     }
