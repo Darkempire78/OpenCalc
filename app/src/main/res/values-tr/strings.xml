@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="select_theme_title">Temayı seçin</string>
-    <string name="app_name_display">Hesaplayıcı</string>
+    <string name="app_name_display">Hesap makinesi</string>
     <string name="app_menu_theme">Tema</string>
     <string name="app_menu_vibration">Titreşim</string>
     <string name="app_menu_about">Hakkında</string>
-    <string name="infinity">Infinity</string>
+    <string name="infinity">Sonsuz</string>
+    <string name="theme_light">Açık</string>
+    <string name="app_menu_clear_history">Geçmişi Temizle</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="theme_dark">Koyu</string>
+    <string name="theme_system">Sistem</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="value_copied">Kopyalandı</string>
+    <string name="division_by_0">0\'a bölünemez</string>
+    <string name="domain_error">Etki alanı hatası</string>
+    <string name="syntax_error">Söz dizimi hatası</string>
+    <string name="math_error">Matematik hatası</string>
 </resources>
