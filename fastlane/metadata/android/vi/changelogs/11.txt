@@ -1,0 +1,9 @@
+Thay đổi:
+- Bản dịch tiếng Đức
+- Bản dịch tiếng Nga
+- Bản dịch tiếng Hy Lạp
+- Bản dịch tiếng Hindi
+- Bản dịch tiếng Azerbaijan
+
+Sửa lỗi:
+- Phần trăm phi toán học

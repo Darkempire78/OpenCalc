@@ -1,0 +1,5 @@
+Thay đổi:
+- thêm dấu phân cách cho các con số lớn
+- thêm bản dịch tiếng Ý
+- thêm bản dịch tiếng Ả Rập
+- thêm bản dịch tiếng Thổ Nhĩ Kỳ
