@@ -1,0 +1,18 @@
+Mới:
+- Hệ tính toán nội bộ
+- Giai thừa thập phân
+- Ngăn chặn hai dấu phân cách thập phân cùng số
+- Dịch tiếng Brazil (@Bardock88)
+- Dịch tiếng Đài Loan và Hồng Kông (@alecchangod)
+- Dịch tiếng Tây Ban Nha
+
+Đã sửa:
+- Cuộn lịch sử (@MahmoudRH)
+- Kết quả chính xác
+- Dấu cách với dấu tách nhóm
+- Hiển thị "Lỗi toán học" thay vì "NaN" (@lefterisgar)
+- Chế độ ngang cho tablet 10 inch
+- Dấu cách sau nút bằng
+- Sự cố khi nhấn vào kết quả lịch sử
+- Một số vấn đề về hình thức biểu đạt
+- Sửa một số lỗi khác

@@ -1,0 +1,8 @@
+Mới:
+- Lỗi rõ ràng
+- Thiết kế lại lịch sử
+- Thêm dấu thời gian vào kết quả lịch sử
+- Không cho phép trùng các ký hiệu toán học khi nhập liệu
+
+Đã cập nhật:
+- arccos, arcsin và arctan hiện được hiển thị dưới dạng cos⁻¹, sin⁻¹ và tan⁻¹

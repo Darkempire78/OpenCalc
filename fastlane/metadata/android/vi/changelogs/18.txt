@@ -1,0 +1,7 @@
+Mới:
+- Bấm lâu để sao chép một giá trị
+- Bản dịch tiếng Indonesia
+
+Đã sửa:
+- cuộn ở chế độ nằm ngang
+- lỗi tập trung

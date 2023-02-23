@@ -1,0 +1,4 @@
+Đã sửa:
+- Tự động đóng ngoặc đơn
+- Nhân giai thừa không có *
+- Tự động thêm 0 khi số bắt đầu bằng dấu phân cách thập phân

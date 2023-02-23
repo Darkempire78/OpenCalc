@@ -1,0 +1,8 @@
+Mới:
+- Bản dịch tiếng Tây Ban Nha
+
+Đã sửa:
+- Bàn phím không phản hồi khi tương tác với các giai thừa lớn
+- Tải không chính xác các giá trị từ lịch sử
+- Đang tải kết quả có dấu thập phân từ lịch sử sẽ xóa toán tử hoặc ứng dụng bị treo
+- Độ chính xác
