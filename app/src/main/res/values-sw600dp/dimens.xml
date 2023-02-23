@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="minWidthInput">350dp</dimen>
+
     <dimen name="calculator_button_text_size">40sp</dimen>
     <dimen name="calculator_button_function_text_size">32sp</dimen>
 </resources>

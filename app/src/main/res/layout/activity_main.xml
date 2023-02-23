@@ -24,6 +24,7 @@
             style="@style/RobotoFontCondensedMedium"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:minWidth="@dimen/minWidthInput"
             android:layout_gravity="right"
             android:autofillHints="false"
             android:inputType="textNoSuggestions"
@@ -503,7 +504,7 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity"
             android:background="@drawable/display_background">
-            
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_recylcle_view"
                 android:layout_width="match_parent"
