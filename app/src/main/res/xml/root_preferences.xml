@@ -14,6 +14,7 @@
             app:icon="@drawable/vibrate"
             app:singleLineTitle="false"
             app:defaultValue="true"
+            app:widgetLayout="@drawable/material_switch"
             />
 
         <SwitchPreferenceCompat
@@ -23,6 +24,7 @@
             app:icon="@drawable/bedtime"
             app:singleLineTitle="false"
             app:defaultValue="false"
+            app:widgetLayout="@drawable/material_switch"
             />
 
 
