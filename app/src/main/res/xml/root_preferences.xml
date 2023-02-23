@@ -47,6 +47,7 @@
             app:entryValues="@array/history_size_values"
             app:defaultValue="100"
             app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/history"
             />
 
     </PreferenceCategory>
