@@ -1,0 +1,6 @@
+Thay đổi
+- Màn hình Splash bây giờ có chế độ tối
+
+Sửa lỗi:
+- vấn đề về bàn phím
+- bàn phím vẫn cuộn

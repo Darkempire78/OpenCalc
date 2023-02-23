@@ -1,0 +1,2 @@
+Novedad
+- Borrar historial

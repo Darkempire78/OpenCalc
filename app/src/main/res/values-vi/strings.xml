@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_theme_title">Chọn chủ đề</string>
+    <string name="app_name_display">Máy tính</string>
+    <string name="app_menu_vibration">Rung</string>
+    <string name="app_menu_clear_history">Xóa lịch sử</string>
+    <string name="theme_system">Hệ thống</string>
+    <string name="theme_dark">Tối</string>
+    <string name="division_by_0">Không thể chia cho 0</string>
+    <string name="domain_error">Lỗi tên miền</string>
+    <string name="math_error">Lỗi toán học</string>
+    <string name="syntax_error">Lỗi cú pháp</string>
+    <string name="app_menu_about">Về ứng dụng</string>
+    <string name="app_menu_theme">Chủ đề</string>
+    <string name="infinity">Vô cực</string>
+    <string name="value_copied">Đã sao chép</string>
+    <string name="theme_light">Sáng</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_amoled">Amoled</string>
+</resources>

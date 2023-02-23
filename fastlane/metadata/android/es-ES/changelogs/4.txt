@@ -1,0 +1,2 @@
+Arreglado:
+- Añade vibraciones a los botones que no las tienen

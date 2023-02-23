@@ -1,0 +1,15 @@
+Nuevo:
+- Sistema de cálculo interno
+- Evitar la presencia de dos separadores decimales
+- Traducción brasileña (@Bardock88)
+- Traducción al taiwanés y al hongkonés (@alecchangod)
+- Traducción Española
+
+Fijado:
+- Desplazamiento en el historial (@MahmoudRH)
+- Precisión del resultado
+- Retroceso con separadores de agrupación
+- Mostrar "Error matemático" en lugar de "NaN" (@lefterisgar)
+- Modo horizontal para tablet
+- Retroceso después del botón igual
+- Otras correcciones
