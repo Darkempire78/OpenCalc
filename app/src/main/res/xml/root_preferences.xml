@@ -4,8 +4,7 @@
 
     <PreferenceCategory
         app:title="@string/preferences_general_category"
-        app:color="?attr/text_color"
-        >
+        app:color="?attr/text_color">
         <!--app:iconSpaceReserved="false"-->
 
         <SwitchPreferenceCompat
@@ -34,6 +33,21 @@
             app:entryValues="@array/reply_values"
             app:defaultValue="reply"
             app:useSimpleSummaryProvider="true"/> -->
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/preferences_history_category"
+        app:color="?attr/text_color">
+
+        <ListPreference
+            app:key="darkempire78.opencalculator.HISTORY_SIZE"
+            app:title="@string/preferences_history_size"
+            app:entries="@array/history_size_entries"
+            app:entryValues="@array/history_size_values"
+            app:defaultValue="100"
+            app:useSimpleSummaryProvider="true"
+            />
 
     </PreferenceCategory>
 

@@ -646,6 +646,12 @@ class MainActivity : AppCompatActivity() {
                                         time = currentTime,
                                     )
                                 )
+
+                                // Remove former results if > historySize preference
+                                while (historyAdapter.itemCount >= MyPreferences(this@MainActivity).historySize!!.toInt()) {
+                                    historyAdapter.removeFirstHistoryElement()
+                                }
+
                                 // Scroll to the bottom of the recycle view
                                 binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                             }
