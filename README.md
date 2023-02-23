@@ -43,10 +43,6 @@
 * Portrait and landscape orientation,
 * More...
 
-## 🇺🇸 Translation
-
-Available in : 🇺🇸, 🇫🇷, 🇮🇹, 🇹🇷, 🇦🇪, 🇦🇿, 🇷🇺, 🇬🇷, 🇩🇪, 🇮🇳, 🇯🇵, 🇮🇩, 🇧🇷, 🇹🇼, 🇭🇰, 🇧🇩, 🇪🇸
-
 ## 📷 Screenshots
 
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="15%"/>
@@ -79,6 +75,16 @@ Join the Discord server!
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## 🌎 Translations
+
+You can help translate OpenCalc on [Hosted Weblate](https://hosted.weblate.org/engage/opencalc/).
+
+<h3 align="center">Translation status</h3>
+
+<a href="https://hosted.weblate.org/engage/opencalc/">
+      <img src="https://hosted.weblate.org/widgets/opencalc/-/multi-auto.svg" alt="Translation status"/>
+</a>
 
 ## 📜 License
 
