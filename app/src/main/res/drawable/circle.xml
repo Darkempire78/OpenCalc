@@ -7,7 +7,6 @@
         <shape android:shape="rectangle">
             <corners android:radius="1000dp"/>
             <solid android:color="?attr/button_color"/>
-
         </shape>
     </item>
 </ripple>
