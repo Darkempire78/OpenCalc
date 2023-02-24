@@ -76,12 +76,10 @@
     <!-- Preference Titles -->
     <string name="preferences_title">Settings</string>
     <string name="preferences_general_category">GENERAL</string>
+    <string name="preferences_history_category">HISTORY</string>
 
     <!-- Messages Preferences -->
     <string name="preferences_prevent_phone_from_sleeping">Prevent phone from sleeping while the app is in foreground</string>
     <string name="preferences_vibration">Emit vibration when a button is pressed</string>
-    <string name="preferences_history_category">HISTORY</string>
     <string name="preferences_history_size">Number of results saved in the history</string>
-
-
 </resources>

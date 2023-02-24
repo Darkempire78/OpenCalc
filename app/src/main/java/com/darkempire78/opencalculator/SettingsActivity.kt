@@ -1,13 +1,10 @@
 package com.darkempire78.opencalculator
 
 import android.os.Bundle
-import android.view.WindowManager
-import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceFragmentCompat
-import com.darkempire78.opencalculator.databinding.SettingsActivityBinding
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -29,7 +26,7 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Change the status bar color
-        window.statusBarColor = resources.getColor(R.color.background_color)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
 
         // back button
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
