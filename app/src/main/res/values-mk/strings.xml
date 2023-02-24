@@ -9,4 +9,7 @@
     <string name="app_menu_theme">Тема</string>
     <string name="app_menu_clear_history">Исчисти историја</string>
     <string name="theme_system">Системска</string>
+    <string name="value_copied">Копирано</string>
+    <string name="theme_light">Светла</string>
+    <string name="theme_dark">Темна</string>
 </resources>
