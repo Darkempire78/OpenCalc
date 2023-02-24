@@ -190,62 +190,85 @@ class Expression {
     }
 
     private fun formatFactorial(calculation: String): String {
-        // Replace 5! by factorial(5)
-        var cleanCalculation = calculation
-        var parenthesisOpened = 0
-
-        val cleanCalculationLength = cleanCalculation.length
-        var i = cleanCalculationLength - 1
+        var i = calculation.length - 1
 
         // Return error if the calculation is "!"
         if (i == 0) {
             syntax_error = true
             return ""
-        }
-        println("calc: "+cleanCalculation)
-        while (i > 0) {
-            parenthesisOpened = 0
-            if (cleanCalculation[i] == '!') {
-                println("Calculation: "+cleanCalculation)
-                if (cleanCalculation[i-1] == ')') {
-                    cleanCalculation = cleanCalculation.substring(0, i) + cleanCalculation.substring(i+1)
-                    i--
-                    val tmp = i
-                    while (i > 0 && cleanCalculation[i-1] !in "*/+^") {
-                        if (cleanCalculation[i-1] !in ")*-/+^") {
-                            if (cleanCalculation[i] == ')') parenthesisOpened +=1
-                            else if (cleanCalculation[i-1] == '(') parenthesisOpened -= 1
-                            if (parenthesisOpened == 0) cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
-                        }
-                        i--
-                    }
-                    i = tmp+1
-                } else {
-                    parenthesisOpened = 0
-                    cleanCalculation = cleanCalculation.substring(0, i) + ')' + cleanCalculation.substring(i + 1)
-                    var tmp = i
-                    while (i > 0 && cleanCalculation[i-1] !in "()*-/+^") {
-                        println("Current: "+cleanCalculation[i]+" Previous: "+cleanCalculation[i-1])
-                        if (cleanCalculation[i] == ')') parenthesisOpened +=1
-                        else if (cleanCalculation[i] == '(') parenthesisOpened -= 1
-                        while (i > 1 && cleanCalculation[i-1].isDigit() && cleanCalculation[i-2] !in "()*-/+^") i--
-                        if (parenthesisOpened == 1) {
-                            println("Bef: "+cleanCalculation)
-                            cleanCalculation = cleanCalculation.addCharAtIndex('(', i-1)
-                            cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
-                            println("Aft: "+cleanCalculation)
-                        }
-                        i--
-                    }
-                    i = tmp+1
-                }
-            }
-            i--
-        }
-        println("Calculation: "+cleanCalculation)
-        cleanCalculation = cleanCalculation.replace("F", "factorial")
+        } else {
+            var cleanCalculation = calculation
 
-        return cleanCalculation
+            // Replace 5! by factorial(5)
+            while (i > 0) {
+                var parenthesisOpened = 0
+                // If the current character is "!"
+                if (cleanCalculation[i] == '!') {
+                    // If the previous character is a parenthesis
+                    if (cleanCalculation[i-1] == ')') {
+                        // Remove the "!"
+                        cleanCalculation = cleanCalculation.substring(0, i) + cleanCalculation.substring(i+1)
+
+                        // Store i in a temporary variable
+                        val tmp = i
+
+                        // Run until the previous character is a symbol
+                        while (i > 0 && cleanCalculation[i-1] !in "*/+^") {
+                            // If the previous character isn't a parenthesis
+                            if (cleanCalculation[i-1] != ')') {
+                                // Count open parentheses
+                                if (cleanCalculation[i] == ')') parenthesisOpened +=1
+                                else if (cleanCalculation[i-1] == '(') parenthesisOpened -= 1
+
+                                // If there are no open parentheses, add an F in front of the 1st parenthesis
+                                if (parenthesisOpened == 0) cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                            }
+
+                            // Decrement i on each run
+                            i--
+                        }
+
+                        // Restore i from the temporary variable
+                        i = tmp
+                    } else {
+                        // If the previous character is not a parenthesis, add one
+                        cleanCalculation = cleanCalculation.substring(0, i) + ')' + cleanCalculation.substring(i + 1)
+
+                        // Store i in a temporary variable
+                        var tmp = i
+
+                        // Run until the previous character is a symbol or parenthesis
+                        while (i > 0 && cleanCalculation[i-1] !in "()*-/+^") {
+                            // Count open parentheses
+                            if (cleanCalculation[i] == ')') parenthesisOpened +=1
+                            else if (cleanCalculation[i] == '(') parenthesisOpened -= 1
+
+                            while (i > 1 && cleanCalculation[i-1].isDigit() && cleanCalculation[i-2] !in "()*-/+^") i--
+
+                            // If there is only one parenthesis open, close it and add an F in front of it
+                            if (parenthesisOpened == 1) {
+                                cleanCalculation = cleanCalculation.addCharAtIndex('(', i-1)
+                                cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                            }
+
+                            // Decrement i on each run
+                            i--
+                        }
+
+                        // Restore i from the temporary variable
+                        i = tmp
+                    }
+                }
+                // Decrement i on each run
+                i--
+            }
+
+            // Replace "F" with "factorial"
+            cleanCalculation = cleanCalculation.replace("F", "factorial")
+
+            // Return the final result, so it can be calculated
+            return cleanCalculation
+        }
     }
 
     private fun String.addCharAtIndex(char: Char, index: Int) =
