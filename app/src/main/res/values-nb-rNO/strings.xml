@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name_display">Kalkulator</string>
+    <string name="select_theme_title">Velg drakt</string>
+    <string name="theme_material_you">Materiell Deig</string>
+    <string name="theme_light">Lys</string>
+    <string name="theme_dark">Mørk</string>
+    <string name="value_copied">Kopiert</string>
+    <string name="app_menu_theme">Drakt</string>
+    <string name="app_menu_vibration">Vibrasjon</string>
+    <string name="app_menu_clear_history">Tøm historikk</string>
+    <string name="app_menu_about">Om</string>
+    <string name="theme_system">System</string>
+    <string name="infinity">Uendelig</string>
+    <string name="division_by_0">Kan ikke dele på 0</string>
+    <string name="domain_error">Domenefeil</string>
+    <string name="math_error">Mattefeil</string>
+    <string name="syntax_error">Syntaksfeil</string>
+    <string name="theme_amoled">Svart</string>
+</resources>
