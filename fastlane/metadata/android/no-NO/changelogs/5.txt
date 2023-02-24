@@ -1,0 +1,5 @@
+Endret:
+- Tilgjengelig for SDK 21 + (Android 5.0)
+
+Fikset:
+- Vibrasjon

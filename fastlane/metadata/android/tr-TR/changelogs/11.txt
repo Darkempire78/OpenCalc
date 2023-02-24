@@ -1,0 +1,9 @@
+Değişiklikler:
+- Almanca çeviri
+- Rusça çeviri
+- Yunanca çeviri
+- Hintçe çeviri
+- Azerice çeviri
+
+Düzeltmeler:
+- Matematiksel olmayan yüzde

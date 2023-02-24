@@ -1,0 +1,18 @@
+Ny:
+- Internt beregningssystem
+- Desimalfaktorielle
+- Forhindre tilstedeværelsen av to desimalseparatorer i samme tall
+- Brasiliansk oversettelse (@Bardock88)
+- Taiwansk og hongkongsk oversettelse (@alecchangod)
+- Spansk oversettelse
+
+Fikset:
+- Historikkrulling (@MahmoudRH)
+- Resultatnøyaktighet
+- Backspace med skilletegn for gruppering
+- Vis "Math Error" i stedet for "NaN" (@lefterisgar)
+- Liggende modus for 10 tommers nettbrett
+- Backspace etter lik knapp
+- Krasj når du trykker på historikkresultat
+- Noen problemer med formatering av uttrykk
+- Flere andre rettelser

@@ -1,0 +1,9 @@
+Endret:
+- Tysk oversettelse
+- Russisk oversettelse
+- Gresk oversettelse
+- Hindi-oversettelse
+- Aserbajdsjansk oversettelse
+
+Rettet:
+- Ikke-matematisk prosent

@@ -1,0 +1,8 @@
+Nytt:
+- Spansk oversettelse
+
+Fikset:
+- Tastaturet reagerer ikke når du interagerer med store faktorielle verdier.
+- Feil lasting av verdier fra historikk
+- Lasting av resultater med desimaltegn fra historikk fjerner operatører eller krasjer programmet
+- Presisjon

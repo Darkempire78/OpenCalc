@@ -1,0 +1,8 @@
+Nytt:
+- Eksplisitte feil
+- Redesign av historikken
+- Legg til tidsstempler i historikkresultater
+- Ikke tillat dupliserte matematiske symboler ved inndata
+
+Oppdatert:
+- arccos, arcsin og arctan vises nå som cos-¹, sin-¹ og tan-¹.
