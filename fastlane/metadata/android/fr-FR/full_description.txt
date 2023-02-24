@@ -1,0 +1,10 @@
+Une calculatrice simple et élégante pour Android
+
+📖 Fonctionnalités
+	* Légère (~2MB),
+	* Pas de permission inutile,
+	* Thème Sombre, Clair, Amoled et Material You,
+	* Mode scientifique,
+	* Historique,
+	* Mode portrait et paysage,
+	* Et plus encore...

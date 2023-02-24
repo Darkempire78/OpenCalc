@@ -1,0 +1,2 @@
+Nytt:
+- Fjern historikk

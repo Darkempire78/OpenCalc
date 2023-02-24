@@ -1,15 +1,18 @@
 Nuevo:
 - Sistema de cálculo interno
-- Evitar la presencia de dos separadores decimales
+- Factoriales decimales
+- Evitar la presencia de dos separadores decimales en el mismo número
 - Traducción brasileña (@Bardock88)
 - Traducción al taiwanés y al hongkonés (@alecchangod)
-- Traducción Española
+- Traducción al Español
 
 Fijado:
-- Desplazamiento en el historial (@MahmoudRH)
+- Desplazamiento de la historia (@MahmoudRH)
 - Precisión del resultado
 - Retroceso con separadores de agrupación
 - Mostrar "Error matemático" en lugar de "NaN" (@lefterisgar)
-- Modo horizontal para tablet
+- Modo horizontal para tableta de 10 pulgadas
 - Retroceso después del botón igual
-- Otras correcciones
+- Bloqueo al tocar el resultado del historial
+- Algunos problemas de expresión de formato
+- Varias otras correcciones

@@ -1,0 +1,6 @@
+Nytt:
+- Draktspesifikt ikon
+
+Endring:
+- Oppdaterte oversettelser
+- Tøm inndata hvis nummer trykkes etter «er lik»

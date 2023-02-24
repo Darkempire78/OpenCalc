@@ -1,0 +1,9 @@
+Oppdatert:
+- Endre tekstfarge ved feil
+- Reduser utgivelsesstørrelse
+- Ikke lagre et resultat i historikken hvis det er lik beregningen.
+- Ikke lagre beregningen i historikken hvis den er den samme som den siste beregningen.
+
+Fikset:
+- Faktoriell 0 returnerer 1
+- Legg til matematisk symbol etter at «er lik» ble trykket

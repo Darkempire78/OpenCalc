@@ -1,0 +1,4 @@
+Fikset:
+- Automatisk lukking av parentes
+- Multipliser faktorielle tall uten *
+- Legg til 0 automatisk når tallet starter med desimalseparator

@@ -1,0 +1,5 @@
+Değişiklikler:
+- büyük sayılar için ayırıcı eklendi
+- İtalyanca çeviri eklendi
+- Arapça çeviri eklendi
+- Türkçe çeviri eklendi
