@@ -12,4 +12,9 @@
     <string name="value_copied">Копирано</string>
     <string name="theme_light">Светла</string>
     <string name="theme_dark">Темна</string>
+    <string name="infinity">Безброј</string>
+    <string name="math_error">Математичка грешка</string>
+    <string name="division_by_0">Не може да се подели со 0</string>
+    <string name="domain_error">Грешка во доменот</string>
+    <string name="syntax_error">Грешка во синтаксата</string>
 </resources>
