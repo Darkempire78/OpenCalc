@@ -1,11 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Rechner</string>
-
     <string name="select_theme_title">Wähle Aussehen</string>
-
     <!-- App Menu -->
     <string name="app_menu_theme">Aussehen</string>
     <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_about">Über</string>
     <string name="infinity">Infinity</string>a
+<string name="theme_light">Licht</string>
+    <string name="value_copied">Kopiert</string>
+    <string name="math_error">Mathematische Fehler</string>
+    <string name="app_menu_clear_history">Verlauf löschen</string>
+    <string name="theme_dark">Dunkles</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="domain_error">Domänenfehler</string>
+    <string name="theme_system">System</string>
+    <string name="theme_amoled">Schwarz</string>
+    <string name="division_by_0">Kann nicht durch 0 dividieren</string>
+    <string name="syntax_error">Syntaxfehler</string>
 </resources>
