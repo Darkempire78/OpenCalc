@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_menu_theme">Тема</string>
+    <string name="app_menu_vibration">Вібрація</string>
+    <string name="app_menu_clear_history">Очистити історію</string>
+    <string name="app_menu_about">Про застосунок</string>
+    <string name="theme_system">Система</string>
+    <string name="theme_amoled">Амолед</string>
+    <string name="app_name_display">Калькулятор</string>
+    <string name="select_theme_title">Виберіть тему</string>
+    <string name="infinity">Нескінченність</string>
+    <string name="math_error">Математична помилка</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_dark">Темна</string>
+    <string name="value_copied">Скопійовано</string>
+    <string name="theme_light">Світла</string>
+    <string name="division_by_0">Не можна ділити на 0</string>
+    <string name="domain_error">Помилка домену</string>
+    <string name="syntax_error">Синтаксична помилка</string>
+</resources>
