@@ -7,7 +7,7 @@
     <string name="select_theme_title">Избери тема</string>
     <string name="app_menu_vibration">Вибрација</string>
     <string name="app_menu_theme">Тема</string>
-    <string name="app_menu_clear_history">Исчисти историја</string>
+    <string name="app_menu_clear_history">Избриши историја</string>
     <string name="theme_system">Системска</string>
     <string name="value_copied">Копирано</string>
     <string name="theme_light">Светла</string>
