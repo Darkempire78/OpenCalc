@@ -6,4 +6,5 @@
     <string name="app_name_display">الحاسبة</string>
     <string name="select_theme_title">اختيار السمة</string>
     <string name="infinity">Infinity</string>
+    <string name="app_menu_clear_history">مسح التاريخ</string>
 </resources>
