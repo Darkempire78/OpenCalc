@@ -16,5 +16,5 @@
     <string name="math_error">Математичка грешка</string>
     <string name="division_by_0">Не може да се подели со 0</string>
     <string name="domain_error">Грешка во доменот</string>
-    <string name="syntax_error">Грешка во синтаксата</string>
+    <string name="syntax_error">Синтаксна грешка</string>
 </resources>
