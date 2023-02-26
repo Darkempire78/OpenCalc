@@ -1,0 +1,10 @@
+Jednostavan i lijep kalkulator za Android
+
+📖 Značajke
+	* Lagan (~2MB),
+	* Nema nepotrebnih dopuštenja,
+	* Tamna, Svijetla, Potpuno crna i Material You tema,
+	* Znanstveni način rada,
+	* Povijest,
+	* Portretna i pejzažna orijentacija,
+	* I više...

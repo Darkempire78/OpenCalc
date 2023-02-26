@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="syntax_error">Синтаксна грешка</string>
+    <string name="select_theme_title">Изабери тему</string>
+    <string name="app_menu_vibration">Вибрација</string>
+    <string name="app_menu_clear_history">Обриши историју</string>
+    <string name="app_menu_about">О апликацији</string>
+    <string name="app_menu_theme">Тема</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_light">Светла</string>
+    <string name="theme_dark">Тамна</string>
+    <string name="infinity">Безброј</string>
+    <string name="division_by_0">Не може се поделити са 0</string>
+    <string name="domain_error">Грешка домена</string>
+    <string name="math_error">Математичка грешка</string>
+    <string name="app_name_display">Калкулатор</string>
+    <string name="theme_system">Систем</string>
+    <string name="theme_amoled">Црна</string>
+    <string name="value_copied">Копирано</string>
+</resources>

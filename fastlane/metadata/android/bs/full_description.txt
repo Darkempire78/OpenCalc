@@ -1,0 +1,10 @@
+A simple and beautiful calculator for Android
+
+📖 Karakteristike
+	* Lagan (~2MB),
+	* Nema nepotrebnih dozvola,
+	* Tamna, Svijetla, Potpuno crna i Material You tema,
+	* Napredni način rada,
+	* Historija,
+	* Portretna i pejzažna orijentacija,
+	* I više...
