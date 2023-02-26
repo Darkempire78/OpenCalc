@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <!--<item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
     </style>
 
     <!-- Base application theme. Colors are overridden depending on dark/light -->
@@ -32,6 +33,10 @@
         <item name="about_button_color">@color/button_color</item>
 
         <item name="popupMenuStyle">@style/Widget.Material3.PopupMenu</item>
+
+        <item name="colorSecondary">@color/text_third_color</item>
+
+        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>
     </style>
 
     <!-- Amoled theme. Based on Theme.Material3.Dark. Therefore its always dark -->
@@ -60,6 +65,11 @@
 
         <item name="separator_color">@color/amoled_separator_color</item>
         <item name="about_button_color">@color/amoled_text_third_color</item>
+
+        <item name="colorSecondary">@color/amoled_text_third_color</item>
+
+        <item name="colorPrimary">@color/amoled_switch_primary_color</item> <!-- Switch On Color -->
+        <item name="colorOnPrimary">@color/amoled_switch_on_primary_color</item>
     </style>
 
     <!-- Material You theme. Overrides some colors of the Default theme -->
@@ -76,6 +86,21 @@
         <item name="button_equals_color">@color/material_dynamic_primary90</item>
 
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
+
+        <item name="colorSecondary">@color/material_dynamic_primary70</item>
+        <item name="colorPrimary">@color/material_dynamic_primary80</item> <!-- Switch On Color -->
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorPrimary">@color/switch_primary_color</item>--> <!-- Switch On Color -->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorOnPrimary">@color/switch_on_primary_color</item>
+        <item name="colorOutline">@color/switch_on_primary_color</item>
+
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">

@@ -26,7 +26,12 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Change the status bar color
-        window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
+        if (MyPreferences(this).theme == 1) { // Amoled theme
+            window.statusBarColor = ContextCompat.getColor(this, R.color.amoled_background_color)
+        } else {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
+        }
+
 
         // back button
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {

@@ -12,4 +12,7 @@
     <color name="button_clear_color">#00BA20</color>
     <color name="button_equals_color">#B3004D</color>
     <color name="button_ripple_color">#9E9E9E</color>
+    <color name="switch_primary_color">#085387</color>
+    <color name="switch_on_primary_color">#393939</color>
+    <color name="switch_surface_variant_color">#636363</color>
 </resources>

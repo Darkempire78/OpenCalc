@@ -16,6 +16,9 @@
     <color name="button_clear_color">#B7DABD</color>
     <color name="button_equals_color">#DCB5C5</color>
     <color name="button_ripple_color">#C3C3C3</color>
+    <color name="switch_primary_color">#9BCAE6</color>
+    <color name="switch_on_primary_color">#FFFFFF</color>
+    <color name="switch_surface_variant_color">#636363</color>
 
     <!-- AMOLED Theme -->
     <color name="amoled_foreground_color">#000</color>
@@ -30,4 +33,6 @@
     <color name="amoled_button_equals_color">#000</color>
     <color name="amoled_button_ripple_color">#9E9E9E</color>
     <color name="amoled_separator_color">#EFEFEF</color>
+    <color name="amoled_switch_primary_color">#fff</color>
+    <color name="amoled_switch_on_primary_color">#D3D3D3</color>
 </resources>
