@@ -88,8 +88,11 @@ class Calculator {
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor() // multiplication
                     else if (eat('/'.code)) {
-                        x /= parseFactor()
-                        if (equation.split("/")[1] == "0") division_by_0 = true
+                        val fractionDenominator = parseFactor()
+                        x /= fractionDenominator
+                        if (fractionDenominator == 0.0) {
+                            division_by_0 = true
+                        }
                     } // division
                     else return x
                 }

@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
                         val newValue = s.subSequence(start, start + count).toString()
                         if (
                             (afterTextLength - beforeTextLength > 1)
-                            || (afterTextLength - beforeTextLength >= 1 && clipText == newValue)
+                            || (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
                         ) {
                             // Handle paste event here
                             updateResultDisplay()
