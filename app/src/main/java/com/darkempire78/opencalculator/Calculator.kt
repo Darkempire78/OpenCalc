@@ -178,15 +178,22 @@ class Calculator {
                             }
                         }
                         "tan" -> {
-                            if (isDegreeModeActivated) {
-                                x = tan(Math.toRadians(x))
-                                if (x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                            x = Math.toDegrees(x)
+                            if (x == 90.0) {
+                                // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
+                                domain_error = true
+                                x = Double.NaN
                             } else {
-                                x = tan(x)
-                                if (x < 1.0E-14) {
-                                    x = round(x)
+                                if (isDegreeModeActivated) {
+                                    x = tan(Math.toRadians(x))
+                                    if (x < 1.0E-14) {
+                                        x = round(x)
+                                    }
+                                } else {
+                                    x = tan(x)
+                                    if (x < 1.0E-14) {
+                                        x = round(x)
+                                    }
                                 }
                             }
                         }
