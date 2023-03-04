@@ -91,7 +91,18 @@
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
 
         <item name="colorSecondary">@color/material_dynamic_primary70</item>
+        <item name="materialSwitchStyle">@style/Widget.App.Switch.Light_Material</item>
+    </style>
+
+    <style name="Widget.App.Switch.Light_Material" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch.Light_Material</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch.Light_Material" parent="">
         <item name="colorPrimary">@color/material_dynamic_primary80</item> <!-- Switch On Color -->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorOnPrimary">@color/switch_on_primary_color</item>
+        <item name="colorOutline">@color/switch_on_primary_color</item>
     </style>
 
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
@@ -103,7 +114,6 @@
         <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
         <item name="colorOnPrimary">@color/switch_on_primary_color</item>
         <item name="colorOutline">@color/switch_on_primary_color</item>
-
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
@@ -141,7 +151,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <!-- Popup Menu -->
     <style name="Widget.Material3.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
         <item name="android:popupBackground">@drawable/rounded</item>
     </style>
+
+
+
 </resources>
