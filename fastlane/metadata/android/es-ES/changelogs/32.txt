@@ -1,0 +1,2 @@
+Corregido:
+- Bloqueo en pantallas pequeñas y tabletas
