@@ -128,9 +128,10 @@ class MainActivity : AppCompatActivity() {
             when {
                 binding.resultDisplay.text.toString() != "" -> {
                     val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied result", binding.resultDisplay.text)
-                    clipboardManager.setPrimaryClip(clip)
-                    Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
+                    // Only show a toast for Android 12 and lower.
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                        Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
