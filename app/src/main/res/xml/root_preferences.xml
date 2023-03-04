@@ -64,7 +64,7 @@
             app:singleLineTitle="false"
             app:icon="@drawable/history"
             />
-
+        
     </PreferenceCategory>
 
     <PreferenceCategory
