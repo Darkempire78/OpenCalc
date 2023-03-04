@@ -18,11 +18,22 @@
             app:widgetLayout="@drawable/material_switch" />
 
         <SwitchPreferenceCompat
-            app:key="darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
-            app:title="@string/preferences_prevent_phone_from_sleeping_title"
-            app:summary="@string/preferences_prevent_phone_from_sleeping_summary"
+            app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
+            app:title="@string/preferences_scientif_mode_enabled_by_default_title"
+            app:summary="@string/preferences_scientif_mode_enabled_by_default_summary"
             app:useSimpleSummaryProvider="true"
-            app:icon="@drawable/bedtime"
+            app:icon="@drawable/science"
+            app:singleLineTitle="false"
+            app:defaultValue="false"
+            app:widgetLayout="@drawable/material_switch"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
+            app:title="@string/preferences_radians_instead_of_degrees_by_default_title"
+            app:summary="@string/preferences_radians_instead_of_degrees_by_default_summary"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/thermostat"
             app:singleLineTitle="false"
             app:defaultValue="false"
             app:widgetLayout="@drawable/material_switch"
@@ -61,11 +72,11 @@
         app:color="?attr/text_color">
 
         <SwitchPreferenceCompat
-            app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
-            app:title="@string/preferences_scientif_mode_enabled_by_default_title"
-            app:summary="@string/preferences_scientif_mode_enabled_by_default_summary"
+            app:key="darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
+            app:title="@string/preferences_prevent_phone_from_sleeping_title"
+            app:summary="@string/preferences_prevent_phone_from_sleeping_summary"
             app:useSimpleSummaryProvider="true"
-            app:icon="@drawable/science"
+            app:icon="@drawable/bedtime"
             app:singleLineTitle="false"
             app:defaultValue="false"
             app:widgetLayout="@drawable/material_switch"

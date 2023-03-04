@@ -109,15 +109,19 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // Prevent the phone from sleeping if enabled
+        // Prevent the phone from sleeping (if option enabled)
         if (MyPreferences(this).preventPhoneFromSleepingMode) {
             view.keepScreenOn = true
         }
 
-        // scientific mode enabled by default (option)
-        val scientificMode = MyPreferences(this).scientificMode
-        if (scientificMode) {
+        // scientific mode enabled by default (if option enabled)
+        if (MyPreferences(this).scientificMode) {
             enableOrDisableScientistMode()
+        }
+
+        // use radians instead of degrees by default (if option enabled)
+        if (MyPreferences(this).useRadiansByDefault) {
+            enableOrDisableDegreeMode()
         }
 
         // Focus by default
@@ -323,6 +327,18 @@ class MainActivity : AppCompatActivity() {
             binding.degreeTextView.visibility = View.GONE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
+    }
+
+    private fun enableOrDisableDegreeMode() {
+        if (binding.degreeButton.text.toString() == "DEG") {
+            binding.degreeButton.text = "RAD"
+            isDegreeModeActivated = false
+        } else {
+            binding.degreeButton.text = "DEG"
+            isDegreeModeActivated = true
+        }
+
+        binding.degreeTextView.text = binding.degreeButton.text.toString()
     }
 
     private fun updateResultDisplay() {
@@ -550,16 +566,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun degreeButton(view: View) {
         keyVibration(view)
-
-        if (binding.degreeButton.text.toString() == "DEG") {
-            binding.degreeButton.text = "RAD"
-            isDegreeModeActivated = false
-        } else {
-            binding.degreeButton.text = "DEG"
-            isDegreeModeActivated = true
-        }
-
-        binding.degreeTextView.text = binding.degreeButton.text.toString()
+        enableOrDisableDegreeMode()
         updateResultDisplay()
     }
 
