@@ -56,6 +56,23 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        app:title="@string/preferences_advanced_category"
+        app:color="?attr/text_color">
+
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
+            app:title="@string/preferences_scientif_mode_enabled_by_default_title"
+            app:summary="@string/preferences_scientif_mode_enabled_by_default_summary"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/science"
+            app:singleLineTitle="false"
+            app:defaultValue="false"
+            app:widgetLayout="@drawable/material_switch"
+            />
+
+    </PreferenceCategory>
+
     <!--<PreferenceCategory
         app:title="@string/sync_header">
 
