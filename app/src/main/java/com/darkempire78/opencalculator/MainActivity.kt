@@ -7,6 +7,8 @@ import android.content.ClipboardManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -137,6 +139,19 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        
+        // Handle paste events to update the result
+        binding.input.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // check if you paste something
+                if (count > before) {
+                    updateResultDisplay()
+                }
+            }
+        })
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
