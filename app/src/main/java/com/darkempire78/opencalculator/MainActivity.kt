@@ -4,6 +4,7 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -140,16 +141,45 @@ class MainActivity : AppCompatActivity() {
             }
         }
         
-        // Handle paste events to update the result
+        // Handle cut & paste events to update resultDisplay
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
         binding.input.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            private var beforeTextLength = 0
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                beforeTextLength = s?.length ?: 0
+            }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // check if you paste something
-                if (count > before) {
-                    updateResultDisplay()
+                val afterTextLength = s?.length ?: 0
+                // If the afterTextLength is equals to 0 we have to clear resultDisplay
+                if (afterTextLength == 0) {
+                    binding.resultDisplay.setText("")
                 }
+
+                /* we check if the length of the text entered into the EditText
+                is greater than the length of the text before the change (beforeTextLength)
+                by more than 1 character. If it is, we assume that this is a paste event. */
+                val clipData = clipboardManager.primaryClip
+                if (clipData != null && clipData.itemCount > 0) {
+                    val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
+
+                    if (s != null) {
+                        val newValue = s.subSequence(start, start + count).toString()
+                        if (
+                            (afterTextLength - beforeTextLength > 1)
+                            || (afterTextLength - beforeTextLength >= 1 && clipText == newValue)
+                        ) {
+                            // Handle paste event here
+                            updateResultDisplay()
+                        }
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do nothing
             }
         })
     }
