@@ -16,6 +16,7 @@
 
         <item name="foreground_color">@color/foreground_color</item>
         <item name="background_color">@color/background_color</item>
+        <item name="popup_background_color">@color/popup_background_color</item>
         <item name="android:colorBackground">@color/background_color</item>
         <item name="history_background_color">@color/history_background_color</item>
 
@@ -51,6 +52,7 @@
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
         <item name="background_color">@color/amoled_background_color</item>
+        <item name="popup_background_color">@color/amoled_popup_background_color</item>
         <item name="history_background_color">@color/amoled_history_background_color</item>
 
         <item name="text_color">@color/amoled_text_color</item>
@@ -78,6 +80,7 @@
 
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
         <item name="background_color">@color/background_color</item>
+        <item name="popup_background_color">@color/material_dynamic_secondary95</item>
         <item name="history_background_color">@color/material_dynamic_secondary95</item>
 
         <item name="button_color">@color/material_dynamic_neutral95</item>

@@ -7,6 +7,7 @@
     <!-- Normal Theme -->
     <color name="foreground_color">#EFEFEF</color>
     <color name="background_color">#fff</color>
+    <color name="popup_background_color">#fff</color>
     <color name="history_background_color">#fff</color>
     <color name="text_color">#000</color>
     <color name="text_second_color">#595959</color>
@@ -23,6 +24,7 @@
     <!-- AMOLED Theme -->
     <color name="amoled_foreground_color">#000</color>
     <color name="amoled_background_color">#000</color>
+    <color name="amoled_popup_background_color">#323232</color>
     <color name="amoled_history_background_color">#000</color>
     <color name="amoled_text_color">#EFEFEF</color>
     <color name="amoled_text_second_color">#BDBDBD</color>

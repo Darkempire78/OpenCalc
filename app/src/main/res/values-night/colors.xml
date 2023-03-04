@@ -3,6 +3,7 @@
     <!-- Normal Theme -->
     <color name="foreground_color">#535353</color>
     <color name="background_color">#121212</color>
+    <color name="popup_background_color">#323232</color>
     <color name="history_background_color">#404040</color>
     <color name="text_color">#EFEFEF</color>
     <color name="text_second_color">#BDBDBD</color>

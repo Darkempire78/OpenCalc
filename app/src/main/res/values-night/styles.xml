@@ -10,6 +10,7 @@
         <item name="android:statusBarColor">@color/material_dynamic_secondary20</item>
 
         <item name="foreground_color">@color/material_dynamic_secondary20</item>
+        <item name="popup_background_color">@color/material_dynamic_secondary30</item>
         <item name="history_background_color">@color/material_dynamic_secondary10</item>
 
         <item name="button_color">@color/material_dynamic_neutral20</item>
