@@ -157,12 +157,12 @@ class Calculator {
                             if (isDegreeModeActivated) {
                                 x = sin(Math.toRadians(x))
                                 // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = sin(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -170,12 +170,12 @@ class Calculator {
                         "cos" -> {
                             if (isDegreeModeActivated) {
                                 x = cos(Math.toRadians(x))
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = cos(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -189,12 +189,12 @@ class Calculator {
                             } else {
                                 if (isDegreeModeActivated) {
                                     x = tan(Math.toRadians(x))
-                                    if (x < 1.0E-14) {
+                                    if (x > 0 && x < 1.0E-14) {
                                         x = round(x)
                                     }
                                 } else {
                                     x = tan(x)
-                                    if (x < 1.0E-14) {
+                                    if (x > 0 && x < 1.0E-14) {
                                         x = round(x)
                                     }
                                 }
@@ -203,12 +203,12 @@ class Calculator {
                         "arcsi" -> {
                             if (isDegreeModeActivated) {
                                 x = asin(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = asin(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -216,12 +216,12 @@ class Calculator {
                         "arcco" -> {
                             if (isDegreeModeActivated) {
                                 x = acos(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = acos(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -229,12 +229,12 @@ class Calculator {
                         "arcta" -> {
                             if (isDegreeModeActivated) {
                                 x = atan(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = atan(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
