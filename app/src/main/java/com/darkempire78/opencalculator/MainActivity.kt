@@ -691,6 +691,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
+                    isEqualLastAction = true
                 } else {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
@@ -711,10 +712,11 @@ class MainActivity : AppCompatActivity() {
                             binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
+                            isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
                         }
                     }
                 }
-                isEqualLastAction = true
+
             } else {
                 withContext(Dispatchers.Main) { binding.resultDisplay.setText("") }
             }
