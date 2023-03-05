@@ -749,15 +749,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (openParentheses == closeParentheses
-            || binding.input.text.toString().subSequence(textLength - 1, textLength) == "("
-            || binding.input.text.toString().subSequence(textLength - 1, textLength) in "×÷+-^"
+            || binding.input.text.toString().subSequence(cursorPosition - 1, cursorPosition) == "("
+            || binding.input.text.toString().subSequence(cursorPosition - 1, cursorPosition) in "×÷+-^"
         ) {
             updateDisplay(view, "(")
-        } else if (closeParentheses < openParentheses && binding.input.text.toString().subSequence(
-                textLength - 1,
-                textLength
-            ) != "("
-        ) {
+        } else {
             updateDisplay(view, ")")
         }
 
