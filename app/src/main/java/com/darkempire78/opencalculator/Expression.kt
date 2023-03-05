@@ -31,7 +31,7 @@ class Expression {
         // To avoid missmatch with cos, sin, tan -> arcco, arcsi, arcta
         calculation2 = calculation2.replace("cos⁻¹", "arcco")
         calculation2 = calculation2.replace("sin⁻¹", "arcsi")
-        calculation2 = calculation2.replace("tan⁻¹(", "arcta")
+        calculation2 = calculation2.replace("tan⁻¹", "arcta")
         calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
         calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
         return calculation2
