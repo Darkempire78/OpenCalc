@@ -88,11 +88,22 @@ class ExpressionUnitTest {
         result = calculate("(cos(0))", false)
         assertEquals(1.0, result, 0.0)
 
+        result = calculate("cos(2)", false)
+        assertEquals(-0.4161468365471424, result, 0.0)
+
         result = calculate("tan(pi/2)", false)
         assertEquals(Double.NaN, result, 0.0)
 
         result = calculate("sin(220)", true)
         assertEquals(-0.6427876096865393, result, 0.0)
+
+        //result = calculate("sin(5!)", true)
+        //assertEquals(0.866025403784, result, 0.0)
+
+        result = calculate("sin(1+1)", true)
+        assertEquals(0.03489949670250097, result, 0.0)
+
+
     }
 
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input), isDegreeModeActivated)
