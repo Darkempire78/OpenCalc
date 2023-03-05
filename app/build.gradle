@@ -9,8 +9,8 @@ android {
         resConfigs 'ar', 'az', 'bn', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'in', 'it', 'ja', 'pt-rBR', 'ru', 'tr', 'zh-rHK', 'zh-rTW'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 32
-        versionName "2.1.3"
+        versionCode 33
+        versionName "2.1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
