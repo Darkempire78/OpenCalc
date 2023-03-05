@@ -23,6 +23,12 @@ class ExpressionUnitTest {
 
         result = calculate("100*100/100*100%")
         assertEquals(100.0, result, 0.0)
+
+        result = calculate("100%10")
+        assertEquals(10.0, result, 0.0)
+
+        result = calculate("10%10%")
+        assertEquals(0.01, result, 0.0)
     }
 
     @Test

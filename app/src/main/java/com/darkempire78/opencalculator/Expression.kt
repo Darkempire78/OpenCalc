@@ -119,6 +119,11 @@ class Expression {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
+            } else if (cleanCalculation[i] == '%') {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789π(")) {
+                    cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
+                    cleanCalculationLength ++
+                }
             } else if (i-1 >= 0 && cleanCalculation[i] == '√') {
                 if (cleanCalculation[i-1] !in "+-/*(") {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i)
