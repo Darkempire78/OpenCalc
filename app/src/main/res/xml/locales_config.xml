@@ -3,18 +3,25 @@
     <locale android:name="ar"/>
     <locale android:name="az"/>
     <locale android:name="bn"/>
+    <locale android:name="bs"/>
     <locale android:name="de"/>
     <locale android:name="el"/>
     <locale android:name="es"/>
     <locale android:name="fa"/>
     <locale android:name="fr"/>
     <locale android:name="hi"/>
+    <locale android:name="hr"/>
     <locale android:name="in"/>
     <locale android:name="it"/>
     <locale android:name="ja"/>
+    <locale android:name="mk"/>
+    <locale android:name="nb-rNO"/>
     <locale android:name="pt-rBR"/>
     <locale android:name="ru"/>
+    <locale android:name="sr"/>
     <locale android:name="tr"/>
+    <locale android:name="uk"/>
+    <locale android:name="vi"/>
     <locale android:name="zh-rHK"/>
     <locale android:name="zh-rTW"/>
 </locale-config>
