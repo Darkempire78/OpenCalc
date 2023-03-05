@@ -62,9 +62,28 @@ class ExpressionUnitTest {
     }
 
     @Test
-    fun cos_isCorrect() {
+    fun trigonometric_functions_isCorrect() {
+        // In radians
         var result = calculate("cos(0)")
         assertEquals(1.0, result, 0.0)
+
+        result = calculate("1*cos(0)")
+        assertEquals(1.0, result, 0.0)
+
+        result = calculate("1+cos(0)")
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("1-cos(0)")
+        assertEquals(0.0, result, 0.0)
+
+        result = calculate("2^cos(0)")
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("(cos(0))")
+        assertEquals(1.0, result, 0.0)
+
+        result = calculate("tan(pi/2)")
+        assertEquals(Double.NaN, result, 0.0)
     }
 
     private fun calculate(input: String) = calculator.evaluate(expression.getCleanExpression(input), false)
