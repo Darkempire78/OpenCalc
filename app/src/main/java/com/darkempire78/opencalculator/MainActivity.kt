@@ -6,10 +6,12 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.DisplayMetrics
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -31,6 +33,7 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
+
 
 class MainActivity : AppCompatActivity() {
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
@@ -112,6 +115,10 @@ class MainActivity : AppCompatActivity() {
 
         // Focus by default
         binding.input.requestFocus()
+
+        // Makes the input take the whole width of the screen by default
+        val screenWidthPX = resources.displayMetrics.widthPixels
+        binding.input.minWidth = screenWidthPX - (binding.input.paddingRight + binding.input.paddingLeft) // remove the paddingHorizontal
 
         // Do not clear after equal button if you move the cursor
         binding.input.accessibilityDelegate = object : View.AccessibilityDelegate() {
