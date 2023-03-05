@@ -148,7 +148,7 @@ class Expression {
                     for (function in functionsList) {
                         val text = cleanCalculation.subSequence(0, i+1).toString()
                         if (text.endsWith(function) && text.length != function.length) {
-                            if (text[text.length - function.length - 1] !in "+-/*(") {
+                            if (text[text.length - function.length - 1] !in "+-/*(^") {
                                 cleanCalculation = cleanCalculation.subSequence(0, i - function.length + 1).toString() +
                                         "*" + function + cleanCalculation.subSequence(i+1, cleanCalculation.length).toString()
                                 cleanCalculationLength ++
