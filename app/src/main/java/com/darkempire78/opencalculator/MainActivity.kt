@@ -399,7 +399,7 @@ class MainActivity : AppCompatActivity() {
                 } else withContext(Dispatchers.Main) {
                     if (result.isInfinite() && !division_by_0 && !domain_error) {
                         if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
-                        else binding.resultDisplay.setText(getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -723,7 +723,7 @@ class MainActivity : AppCompatActivity() {
                                 binding.resultDisplay.setText(getString(R.string.division_by_0))
                             }
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                            else binding.resultDisplay.setText(getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         } else if (result.isNaN()) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.math_error))

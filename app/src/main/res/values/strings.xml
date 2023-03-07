@@ -68,4 +68,5 @@
     <string name="domain_error">Domain error</string>
     <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
+    <string name="value_too_large">Value too large</string>
 </resources>
