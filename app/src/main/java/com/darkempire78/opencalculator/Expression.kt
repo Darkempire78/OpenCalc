@@ -221,7 +221,10 @@ class Expression {
                                 else if (cleanCalculation[i-1] == '(') parenthesisOpened -= 1
 
                                 // If there are no open parentheses, add an F in front of the 1st parenthesis
-                                if (parenthesisOpened == 0) cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                                if (parenthesisOpened == 0) {
+                                    cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                                    break
+                                }
                             }
 
                             // Decrement i on each run
