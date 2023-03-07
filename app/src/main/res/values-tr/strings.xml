@@ -17,4 +17,5 @@
     <string name="domain_error">Etki alanı hatası</string>
     <string name="syntax_error">Söz dizimi hatası</string>
     <string name="math_error">Matematik hatası</string>
+    <string name="value_too_large">Değer çok büyük</string>
 </resources>
