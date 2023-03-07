@@ -445,7 +445,17 @@ class MainActivity : AppCompatActivity() {
                     val leftString = binding.input.text.subSequence(0, cursorPosition-1).toString()
                     val rightString = binding.input.text.subSequence(cursorPosition, textLength).toString()
 
-                    if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
+                    // Add a parenthesis if there is another symbol before minus
+                    if (currentSymbol == "-") {
+                        if (previousChar in "+-") {
+                            binding.input.setText(leftString + currentSymbol + rightString)
+                            binding.input.setSelection(cursorPosition)
+                        } else {
+                            binding.input.setText(leftString + previousChar + currentSymbol + rightString)
+                            binding.input.setSelection(cursorPosition+1)
+                        }
+                    }
+                    else if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
                         binding.input.setText(leftString + currentSymbol + rightString)
                         binding.input.setSelection(cursorPosition)
                     }
