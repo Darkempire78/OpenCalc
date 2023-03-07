@@ -17,6 +17,6 @@
     <string name="math_error">Математическая ошибка</string>
     <string name="syntax_error">Синтаксическая ошибка</string>
     <string name="theme_system">Система</string>
-    <string name="theme_amoled">Черный</string>
+    <string name="theme_amoled">Черная</string>
     <string name="domain_error">Ошибка домена</string>
 </resources>
