@@ -57,16 +57,16 @@ class ExpressionUnitTest {
         result = calculate("5!", false)
         assertEquals(120.0, result, 0.0)
 
-        result = calculate("10!")
+        result = calculate("10!", false)
         assertEquals(3628800.0, result, 0.0)
 
-        result = calculate("5!+5!")
+        result = calculate("5!+5!", false)
         assertEquals(240.0, result, 0.0)
 
-        result = calculate("(3!)!+(3!)!")
+        result = calculate("(3!)!+(3!)!", false)
         assertEquals(1440.0, result, 0.0)
 
-        result = calculate("(3!)!/(3!)!")
+        result = calculate("(3!)!/(3!)!", false)
         assertEquals(1.0, result, 0.0)
     }
 
