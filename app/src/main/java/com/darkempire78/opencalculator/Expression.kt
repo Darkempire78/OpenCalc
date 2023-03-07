@@ -210,7 +210,6 @@ class Expression {
                         cleanCalculation = cleanCalculation.substring(0, i) + cleanCalculation.substring(i+1)
 
                         var j = i
-                        // Run until the previous character is a symbol
                         while (j > 0) {
                             if (cleanCalculation[j-1] in "*/+^" && parenthesisOpened == 0) {
                                 break
