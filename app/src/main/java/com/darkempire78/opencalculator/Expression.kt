@@ -209,30 +209,28 @@ class Expression {
                         // Remove the "!"
                         cleanCalculation = cleanCalculation.substring(0, i) + cleanCalculation.substring(i+1)
 
-                        // Store i in a temporary variable
-                        val tmp = i
-
+                        var j = i
                         // Run until the previous character is a symbol
-                        while (i > 0 && cleanCalculation[i-1] !in "*/+^") {
+                        while (j > 0) {
+                            if (cleanCalculation[j-1] in "*/+^" && parenthesisOpened == 0) {
+                                break
+                            }
                             // If the previous character isn't a parenthesis
-                            if (cleanCalculation[i-1] != ')') {
+                            if (cleanCalculation[j-1] != ')') {
                                 // Count open parentheses
-                                if (cleanCalculation[i] == ')') parenthesisOpened +=1
-                                else if (cleanCalculation[i-1] == '(') parenthesisOpened -= 1
+                                if (cleanCalculation[j] == ')') parenthesisOpened +=1
+                                else if (cleanCalculation[j-1] == '(') parenthesisOpened -= 1
 
                                 // If there are no open parentheses, add an F in front of the 1st parenthesis
                                 if (parenthesisOpened == 0) {
-                                    cleanCalculation = cleanCalculation.addCharAtIndex('F', i-1)
+                                    cleanCalculation = cleanCalculation.addCharAtIndex('F', j-1)
                                     break
                                 }
                             }
 
                             // Decrement i on each run
-                            i--
+                            j--
                         }
-
-                        // Restore i from the temporary variable
-                        i = tmp
                     } else {
                         // If the previous character is not a parenthesis, add one
                         cleanCalculation = cleanCalculation.substring(0, i) + ')' + cleanCalculation.substring(i + 1)
