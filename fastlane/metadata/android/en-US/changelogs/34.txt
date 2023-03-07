@@ -1,0 +1,7 @@
+Updated:
+- Display "value too large" instead of "infinity"
+
+Fixed:
+- Division by negative numbers
+- Problem with factorial function
+- sin(x!) & cos(x!) give wrong results
