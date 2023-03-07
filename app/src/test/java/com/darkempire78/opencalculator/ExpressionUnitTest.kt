@@ -109,8 +109,8 @@ class ExpressionUnitTest {
         result = calculate("sin(220)", true)
         assertEquals(-0.6427876096865393, result, 0.0)
 
-        //result = calculate("sin(5!)", true)
-        //assertEquals(0.866025403784, result, 0.0)
+        result = calculate("sin(5!)", true)
+        assertEquals(0.8660254037844387, result, 0.0)
 
         result = calculate("sin(1+1)", true)
         assertEquals(0.03489949670250097, result, 0.0)
