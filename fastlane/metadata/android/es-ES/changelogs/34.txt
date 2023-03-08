@@ -1,0 +1,7 @@
+Actualizado:
+- Mostrar "valor demasiado grande" en lugar de "infinito"
+
+Corregido:
+- División por números negativos
+- Problema con la función factorial
+- sin(x!) & cos(x!) dan resultados erróneos
