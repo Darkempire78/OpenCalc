@@ -17,4 +17,5 @@
     <string name="division_by_0">Не можна ділити на 0</string>
     <string name="domain_error">Помилка домену</string>
     <string name="syntax_error">Синтаксична помилка</string>
+    <string name="value_too_large">Значення занадто велике</string>
 </resources>
