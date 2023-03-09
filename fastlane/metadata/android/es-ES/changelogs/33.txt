@@ -1,0 +1,15 @@
+Actualizado:
+- Traducciones
+- El área de entrada toma el tamaño de pantalla completa
+- Sistema de paréntesis
+
+Fijado:
+- Doble toast cuando se copia el valor en Android 13
+- Dominio de definición de tangente
+- Resultado al pegar un cálculo
+- División indirecta por cero no está definida
+- División por funciones
+- Problemas de porcentaje
+- Funciones trigonométricas dan resultados incorrectos si el resultado es negativo
+- Error matemático borra todo al poner un nuevo número
+- Paréntesis con tangente
