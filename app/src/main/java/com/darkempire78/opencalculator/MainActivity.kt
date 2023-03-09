@@ -758,9 +758,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (openParentheses == closeParentheses
-            || binding.input.text.toString().subSequence(cursorPosition - 1, cursorPosition) == "("
-            || binding.input.text.toString().subSequence(cursorPosition - 1, cursorPosition) in "×÷+-^"
+        if (
+            !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
+            && (
+                openParentheses == closeParentheses
+                || binding.input.text.toString()[cursorPosition - 1] == '('
+                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
+            )
         ) {
             updateDisplay(view, "(")
         } else {
