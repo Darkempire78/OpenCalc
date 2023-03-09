@@ -17,4 +17,5 @@
     <string name="syntax_error">Sintaxis errónea</string>
     <string name="domain_error">Error en el dominio</string>
     <string name="division_by_0">No se puede dividir por 0</string>
+    <string name="value_too_large">Valor demasiado grande</string>
 </resources>
