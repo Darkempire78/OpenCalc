@@ -6,12 +6,10 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.DisplayMetrics
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -791,8 +789,8 @@ class MainActivity : AppCompatActivity() {
             // Check if it is a function to delete
             val functionsList = listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
             for (function in functionsList) {
-                val text = binding.input.text.subSequence(0, cursorPosition).toString()
-                if (text.endsWith(function)) {
+                val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
+                if (leftPart.endsWith(function)) {
                     newValue = binding.input.text.subSequence(0, cursorPosition - function.length).toString() +
                             binding.input.text.subSequence(cursorPosition, textLength).toString()
                     isFunction = true
@@ -812,7 +810,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             val newValueFormatted = NumberFormatter.format(newValue)
-            val cursorOffset = newValueFormatted.length - newValue.length
+            var cursorOffset = newValueFormatted.length - newValue.length
+            if (cursorOffset < 0) cursorOffset = 0
 
             binding.input.setText(newValueFormatted)
             binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 } ?: 0)
