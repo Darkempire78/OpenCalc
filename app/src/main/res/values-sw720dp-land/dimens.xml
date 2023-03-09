@@ -2,4 +2,5 @@
 <resources>
     <item name="icon_scale" type="dimen" format="float">1</item>
     <item name="icon_translate" type="dimen" format="float">0</item>
+    <item name="button_text_size" type="dimen">44sp</item>
 </resources>
