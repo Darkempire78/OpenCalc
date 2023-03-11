@@ -249,7 +249,7 @@ class Calculator {
                     // To fix sqrt(2)^2 = 2
                     val decimal = x.toInt()
                     val fractional = x - decimal
-                    if (fractional < 1.0E-14) {
+                    if (fractional > 0 && fractional < 1.0E-14) {
                         x = decimal.toDouble()
                     }
                 } // exponentiation
