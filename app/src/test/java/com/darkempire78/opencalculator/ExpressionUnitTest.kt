@@ -106,6 +106,9 @@ class ExpressionUnitTest {
         result = calculate("tan(pi/2)", false)
         assertEquals(Double.NaN, result, 0.0)
 
+        result = calculate("tan(45)", true)
+        assertEquals(0.9999999999999999, result, 0.0)
+
         result = calculate("sin(220)", true)
         assertEquals(-0.6427876096865393, result, 0.0)
 
@@ -114,8 +117,6 @@ class ExpressionUnitTest {
 
         result = calculate("sin(1+1)", true)
         assertEquals(0.03489949670250097, result, 0.0)
-
-
     }
 
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input), isDegreeModeActivated)

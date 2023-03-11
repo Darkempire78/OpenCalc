@@ -181,8 +181,7 @@ class Calculator {
                             }
                         }
                         "tan" -> {
-                            x = Math.toDegrees(x)
-                            if (x == 90.0) {
+                            if (Math.toDegrees(x) == 90.0) {
                                 // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
                                 domain_error = true
                                 x = Double.NaN
