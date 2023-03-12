@@ -17,4 +17,5 @@
     <string name="division_by_0">Divisione per 0 impossibile</string>
     <string name="domain_error">Errore di dominio</string>
     <string name="syntax_error">Errore di sintassi</string>
+    <string name="value_too_large">Valore troppo grande</string>
 </resources>
