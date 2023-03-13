@@ -17,4 +17,5 @@
     <string name="math_error">Matematička greška</string>
     <string name="syntax_error">Sintaksna greška</string>
     <string name="domain_error">Greška domene</string>
+    <string name="value_too_large">Prevelika vrijednost</string>
 </resources>

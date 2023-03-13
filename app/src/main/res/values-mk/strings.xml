@@ -17,4 +17,5 @@
     <string name="division_by_0">Не може да се подели со 0</string>
     <string name="domain_error">Грешка во доменот</string>
     <string name="syntax_error">Синтаксна грешка</string>
+    <string name="value_too_large">Преголема вредност</string>
 </resources>

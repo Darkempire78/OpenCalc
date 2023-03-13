@@ -17,4 +17,5 @@
     <string name="theme_system">Систем</string>
     <string name="theme_amoled">Црна</string>
     <string name="value_copied">Копирано</string>
+    <string name="value_too_large">Превелика вредност</string>
 </resources>

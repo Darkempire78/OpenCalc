@@ -1,0 +1,5 @@
+Corregido:
+- tan() no funciona correctamente
+- Al eliminar un separador de miles, el cursor salta
+- Colocación de paréntesis dentro de los cálculos existentes
+- Problema gráfico en modo apaisado para tabletas de más de 10 pulgadas
