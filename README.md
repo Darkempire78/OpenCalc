@@ -19,6 +19,8 @@
       <img alt="Discord" src="https://img.shields.io/discord/831524351311609907?color=%237289DA&label=DISCORD&style=for-the-badge">
 </a>
 
+<br>
+
 <a href="https://play.google.com/store/apps/details?id=com.darkempire78.opencalculator">
       <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="100">
 </a>
