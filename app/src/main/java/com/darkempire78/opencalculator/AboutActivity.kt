@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {
@@ -16,6 +17,13 @@ class AboutActivity : AppCompatActivity() {
         val themes = Themes(this)
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
+
+        // Change the status bar color
+        if (MyPreferences(this).theme == 1) { // Amoled theme
+            window.statusBarColor = ContextCompat.getColor(this, R.color.amoled_background_color)
+        } else {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
+        }
 
         binding = ActivityAboutBinding.inflate(layoutInflater)
         val view = binding.root
@@ -30,8 +38,26 @@ class AboutActivity : AppCompatActivity() {
             finish()
         }
 
+        // Translate
+        binding.aboutTranslate.setOnClickListener {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://hosted.weblate.org/engage/opencalc/")
+            )
+            startActivity(browserIntent)
+        }
+
+        // Rate
+        binding.aboutRate.setOnClickListener {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=com.darkempire78.opencalculator")
+            )
+            startActivity(browserIntent)
+        }
+
         // Tip
-        binding.aboutTipButton.setOnClickListener {
+        binding.aboutDonate.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://www.paypal.me/ImDarkempire")
@@ -40,7 +66,7 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Github
-        binding.aboutGithubButton.setOnClickListener {
+        binding.aboutGithub.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://github.com/Darkempire78/OpenCalc")
@@ -49,7 +75,7 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Discord
-        binding.aboutDiscordButton.setOnClickListener {
+        binding.aboutDiscord.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://discord.com/invite/sPvJmY7mcV")

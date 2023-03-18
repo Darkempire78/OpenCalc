@@ -90,4 +90,13 @@
     <string name="preferences_scientif_mode_enabled_by_default_title">Scientific mode</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Use radians instead of degrees by default</string>
+    <string name="about_help_us_category">HELP US</string>
+    <string name="about_donate">Donate</string>
+    <string name="about_discord" translatable="false">Discord</string>
+    <string name="about_github" translatable="false">GitHub</string>
+    <string name="about_social_category">SOCIAL</string>
+    <string name="app_version" translatable="false">APP VERSION</string>
+    <string name="about_other_category">OTHER</string>
+    <string name="about_translate">Translate</string>
+    <string name="about_rate">Rate this app</string>
 </resources>

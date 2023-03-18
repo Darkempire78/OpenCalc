@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/about_app_version"
+            android:id="@+id/settings_back_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/background_color"
-            app:layout_constraintTop_toBottomOf="@+id/about_app_version" />
+            app:layout_constraintTop_toBottomOf="@+id/settings_back_button_text" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
