@@ -17,7 +17,7 @@
     <string name="syntax_error">Söz dizimi hatası</string>
     <string name="math_error">Matematik hatası</string>
     <string name="value_too_large">Değer çok büyük</string>
-    <string name="preferences_vibration_summary">Bir düğmeye basıldığında titre</string>
+    <string name="preferences_vibration_summary">Bir düğmeye basıldığında titreşim yay</string>
     <string name="about_donate">Bağış yapın</string>
     <string name="about_translate">Çevirin</string>
     <string name="preferences_vibration_title">Titreşimler</string>
@@ -28,7 +28,7 @@
     <string name="preferences_title">Ayarlar</string>
     <string name="preferences_history_category">GEÇMİŞ</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">Uygulama ön plandayken telefonun uykuya geçmesini önle</string>
-    <string name="preferences_history_size">Geçmişe kaydedilen sonuç sayısı</string>
+    <string name="preferences_history_size">Geçmişe kaydedilen sonuçlar</string>
     <string name="preferences_advanced_category">GELİŞMİŞ</string>
     <string name="preferences_scientif_mode_enabled_by_default_title">Bilimsel mod</string>
     <string name="preferences_prevent_phone_from_sleeping_title">Telefonun uykuya geçmesini önle</string>
@@ -43,4 +43,5 @@
     <string name="made_in_france">❤️ ile Fransa\'da yapıldı</string>
     <string name="privacy_policy">Gizlilik ilkesi</string>
     <string name="preferences_number_precision">Ondalık basamak sayısı</string>
+    <string name="about_title">Hakkında</string>
 </resources>
