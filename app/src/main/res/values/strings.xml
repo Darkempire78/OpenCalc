@@ -99,4 +99,6 @@
     <string name="about_other_category">OTHER</string>
     <string name="about_translate">Translate</string>
     <string name="about_rate">Rate this app</string>
+    <string name="app_version_title">Version</string>
+    <string name="thanks_for_using_opencalc">Thanks for using OpenCalc ❤️</string>
 </resources>

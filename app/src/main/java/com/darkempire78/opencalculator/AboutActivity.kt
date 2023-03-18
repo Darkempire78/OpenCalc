@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
@@ -30,7 +31,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(view)
 
         // Set app version
-        val versionName =  "v" + BuildConfig.VERSION_NAME
+        val versionName =  this.getString(R.string.app_version_title) + " "+ BuildConfig.VERSION_NAME
         binding.aboutAppVersion.text = versionName
 
         // back button
@@ -81,6 +82,14 @@ class AboutActivity : AppCompatActivity() {
                 Uri.parse("https://discord.com/invite/sPvJmY7mcV")
             )
             startActivity(browserIntent)
+        }
+
+        var clickAppVersionCount = 0
+        binding.aboutAppVersion.setOnClickListener {
+            clickAppVersionCount++
+            if (clickAppVersionCount > 3) {
+                Toast.makeText(this, this.getString(R.string.thanks_for_using_opencalc), Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
