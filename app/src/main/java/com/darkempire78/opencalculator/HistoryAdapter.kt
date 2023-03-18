@@ -43,6 +43,11 @@ class HistoryAdapter(
             notifyDataSetChanged()
         }
 
+        fun removeFirstHistoryElement() {
+            this.history.removeAt(0)
+            notifyDataSetChanged()
+        }
+
         fun clearHistory() {
             this.history.clear()
             notifyDataSetChanged()

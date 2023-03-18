@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <!--<item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
     </style>
 
     <!-- Base application theme. Colors are overridden depending on dark/light -->
@@ -13,9 +14,10 @@
         <item name="android:statusBarColor">@color/foreground_color</item>
         <item name="android:navigationBarColor">@color/background_color</item>
 
-        <item name="colorPrimary">@color/text_color</item>
-
         <item name="foreground_color">@color/foreground_color</item>
+        <item name="background_color">@color/background_color</item>
+        <item name="popup_background_color">@color/popup_background_color</item>
+        <item name="android:colorBackground">@color/background_color</item>
         <item name="history_background_color">@color/history_background_color</item>
 
         <item name="text_color">@color/text_color</item>
@@ -32,6 +34,10 @@
         <item name="about_button_color">@color/button_color</item>
 
         <item name="popupMenuStyle">@style/Widget.Material3.PopupMenu</item>
+
+        <item name="colorSecondary">@color/text_third_color</item>
+
+        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>
     </style>
 
     <!-- Amoled theme. Based on Theme.Material3.Dark. Therefore its always dark -->
@@ -41,11 +47,12 @@
         <item name="android:statusBarColor">@color/amoled_foreground_color</item>
         <item name="android:navigationBarColor">@color/amoled_background_color</item>
 
-        <item name="colorPrimary">@color/amoled_text_color</item>
         <item name="colorSurface">@color/amoled_background_color</item>
         <item name="android:colorBackground">@color/amoled_background_color</item>
 
         <item name="foreground_color">@color/amoled_foreground_color</item>
+        <item name="background_color">@color/amoled_background_color</item>
+        <item name="popup_background_color">@color/amoled_popup_background_color</item>
         <item name="history_background_color">@color/amoled_history_background_color</item>
 
         <item name="text_color">@color/amoled_text_color</item>
@@ -60,6 +67,11 @@
 
         <item name="separator_color">@color/amoled_separator_color</item>
         <item name="about_button_color">@color/amoled_text_third_color</item>
+
+        <item name="colorSecondary">@color/amoled_text_third_color</item>
+
+        <item name="colorPrimary">@color/amoled_switch_primary_color</item> <!-- Switch On Color -->
+        <item name="colorOnPrimary">@color/amoled_switch_on_primary_color</item>
     </style>
 
     <!-- Material You theme. Overrides some colors of the Default theme -->
@@ -67,6 +79,8 @@
         <item name="android:statusBarColor">@color/material_dynamic_secondary90</item>
 
         <item name="foreground_color">@color/material_dynamic_secondary90</item>
+        <item name="background_color">@color/background_color</item>
+        <item name="popup_background_color">@color/material_dynamic_secondary95</item>
         <item name="history_background_color">@color/material_dynamic_secondary95</item>
 
         <item name="button_color">@color/material_dynamic_neutral95</item>
@@ -75,6 +89,31 @@
         <item name="button_equals_color">@color/material_dynamic_primary90</item>
 
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
+
+        <item name="colorSecondary">@color/material_dynamic_primary70</item>
+        <item name="materialSwitchStyle">@style/Widget.App.Switch.Light_Material</item>
+    </style>
+
+    <style name="Widget.App.Switch.Light_Material" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch.Light_Material</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch.Light_Material" parent="">
+        <item name="colorPrimary">@color/material_dynamic_primary80</item> <!-- Switch On Color -->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorOnPrimary">@color/switch_on_primary_color</item>
+        <item name="colorOutline">@color/switch_on_primary_color</item>
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorPrimary">@color/switch_primary_color</item>--> <!-- Switch On Color -->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorOnPrimary">@color/switch_on_primary_color</item>
+        <item name="colorOutline">@color/switch_on_primary_color</item>
     </style>
 
     <style name="RobotoFontCondensedLight" parent="android:Widget.TextView">
@@ -112,8 +151,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <!-- Popup Menu -->
     <style name="Widget.Material3.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
         <item name="android:popupBackground">@drawable/rounded</item>
     </style>
+
+
 
 </resources>

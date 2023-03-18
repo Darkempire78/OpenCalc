@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -34,6 +35,7 @@ class Themes(private val context: Context) {
             val preferences = MyPreferences(context)
 
             val builder = MaterialAlertDialogBuilder(context)
+            builder.background = ContextCompat.getDrawable(context, R.drawable.rounded)
 
             val systemName =
                 if (DynamicColors.isDynamicColorAvailable())

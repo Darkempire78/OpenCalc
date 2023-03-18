@@ -14,6 +14,10 @@ class MyPreferences(context: Context) {
 
         private const val KEY_VIBRATION_STATUS = "darkempire78.opencalculator.KEY_VIBRATION_STATUS"
         private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY"
+        private const val KEY_PREVENT_PHONE_FROM_SLEEPING = "darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
+        private const val KEY_HISTORY_SIZE = "darkempire78.opencalculator.HISTORY_SIZE"
+        private const val KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT = "darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
+        private const val KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT = "darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -25,8 +29,16 @@ class MyPreferences(context: Context) {
 
     var vibrationMode = preferences.getBoolean(KEY_VIBRATION_STATUS, true)
         set(value) = preferences.edit().putBoolean(KEY_VIBRATION_STATUS, value).apply()
+    var scientificMode = preferences.getBoolean(KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT, false)
+        set(value) = preferences.edit().putBoolean(KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT, value).apply()
+    var useRadiansByDefault = preferences.getBoolean(KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT, false)
+        set(value) = preferences.edit().putBoolean(KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT, value).apply()
     private var history = preferences.getString(KEY_HISTORY, null)
         set(value) = preferences.edit().putString(KEY_HISTORY, value).apply()
+    var preventPhoneFromSleepingMode = preferences.getBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, false)
+        set(value) = preferences.edit().putBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, value).apply()
+    var historySize = preferences.getString(KEY_HISTORY_SIZE, "100")
+        set(value) = preferences.edit().putString(KEY_HISTORY_SIZE, value).apply()
 
     fun getHistory(): MutableList<History> {
         val gson = Gson()
@@ -40,7 +52,8 @@ class MyPreferences(context: Context) {
     fun saveHistory(context: Context, history: List<History>){
         val gson = Gson()
         val history2 = history.toMutableList()
-        if (history2.size > 50) {
+        println(history2.size >= historySize!!.toInt())
+        while (history2.size > historySize!!.toInt()) {
             history2.removeAt(0)
         }
         MyPreferences(context).history = gson.toJson(history2) // Convert to json

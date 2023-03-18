@@ -6,19 +6,19 @@
         android:onClick="selectThemeDialog" />
 
     <item
-        android:id="@+id/app_menu_vibration_button"
-        android:title="@string/app_menu_vibration"
-        android:checkable="true"
-        android:onClick="checkVibration"/>
-
-    <item
-        android:id="@+id/app_menu_clear_history"
+        android:id="@+id/app_menu_clear_history_button"
         android:title="@string/app_menu_clear_history"
         android:onClick="clearHistory"
         />
 
     <item
-        android:id="@+id/app_menu_github_button"
+        android:id="@+id/app_menu_settings_button"
+        android:title="@string/app_menu_settings"
+        android:onClick="openSettings"
+        />
+
+    <item
+        android:id="@+id/app_menu_about_button"
         android:title="@string/app_menu_about"
         android:onClick="openAbout"
         />

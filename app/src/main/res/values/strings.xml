@@ -57,7 +57,7 @@
     <!-- Theme choices -->
     <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="theme_material_you">Material You</string>
+    <string name="theme_material_you" translatable="false">Material You</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
 
@@ -68,5 +68,26 @@
     <string name="domain_error">Domain error</string>
     <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
+    <string name="app_menu_settings">Settings</string>
     <string name="value_too_large">Value too large</string>
+
+    <!-- Settings Activity Title -->
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="preferences_title">Settings</string>
+    <string name="preferences_general_category">GENERAL</string>
+    <string name="preferences_history_category">HISTORY</string>
+
+    <!-- Messages Preferences -->
+    <string name="preferences_prevent_phone_from_sleeping_summary">Prevent phone from sleeping while the app is in foreground</string>
+    <string name="preferences_vibration_summary">Emit vibration when a button is pressed</string>
+    <string name="preferences_history_size">Number of results saved in the history</string>
+    <string name="preferences_vibration_title">Vibrations</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Prevent phone from sleeping</string>
+    <string name="preferences_advanced_category">ADVANCED</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Activate the scientific mode by default</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Scientific mode</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Use radians instead of degrees by default</string>
 </resources>

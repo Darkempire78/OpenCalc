@@ -10,6 +10,7 @@
         <item name="android:statusBarColor">@color/material_dynamic_secondary20</item>
 
         <item name="foreground_color">@color/material_dynamic_secondary20</item>
+        <item name="popup_background_color">@color/material_dynamic_secondary30</item>
         <item name="history_background_color">@color/material_dynamic_secondary10</item>
 
         <item name="button_color">@color/material_dynamic_neutral20</item>
@@ -19,6 +20,20 @@
         <item name="button_ripple_color">@color/button_ripple_color</item>
 
         <item name="about_button_color">@color/text_color</item>
+
+        <item name="colorSecondary">@color/material_dynamic_primary40</item>
+
+        <item name="materialSwitchStyle">@style/Widget.App.Switch.Dark</item>
     </style>
 
+    <style name="Widget.App.Switch.Dark" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch.Dark</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch.Dark" parent="">
+        <item name="colorPrimary">@color/material_dynamic_primary60</item> <!-- Switch On Color -->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorOnPrimary">@color/switch_on_primary_color</item>
+        <item name="colorOutline">@color/switch_on_primary_color</item>
+    </style>
 </resources>
