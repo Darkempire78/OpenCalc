@@ -8,6 +8,7 @@
     <color name="text_color">#EFEFEF</color>
     <color name="text_second_color">#BDBDBD</color>
     <color name="text_third_color">#B1B1B1</color>
+    <color name="text_category_color">#B1B1B1</color>
     <color name="button_color">#333333</color>
     <color name="button_symbol_color">#0070BC</color>
     <color name="button_clear_color">#00BA20</color>

@@ -8,6 +8,7 @@
         <attr name="text_color" format="color"/>
         <attr name="text_second_color" format="color"/>
         <attr name="text_third_color" format="color"/>
+        <attr name="text_category_color" format="color"/>
         <attr name="button_color" format="color"/>
         <attr name="button_symbol_color" format="color"/>
         <attr name="button_clear_color" format="color"/>

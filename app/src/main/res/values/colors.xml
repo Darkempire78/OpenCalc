@@ -12,6 +12,7 @@
     <color name="text_color">#000</color>
     <color name="text_second_color">#595959</color>
     <color name="text_third_color">#7E7E7E</color>
+    <color name="text_category_color">#595959</color>
     <color name="button_color">#EFEFEF</color>
     <color name="button_symbol_color">#B4D2E4</color>
     <color name="button_clear_color">#B7DABD</color>
@@ -29,6 +30,7 @@
     <color name="amoled_text_color">#EFEFEF</color>
     <color name="amoled_text_second_color">#BDBDBD</color>
     <color name="amoled_text_third_color">#B1B1B1</color>
+    <color name="amoled_text_category_color">#BDBDBD</color>
     <color name="amoled_button_color">#000</color>
     <color name="amoled_button_symbol_color">#000</color>
     <color name="amoled_button_clear_color">#000</color>

@@ -23,6 +23,7 @@
         <item name="text_color">@color/text_color</item>
         <item name="text_second_color">@color/text_second_color</item>
         <item name="text_third_color">@color/text_third_color</item>
+        <item name="text_category_color">@color/text_category_color</item>
 
         <item name="button_color">@color/button_color</item>
         <item name="button_symbol_color">@color/button_symbol_color</item>
@@ -58,6 +59,7 @@
         <item name="text_color">@color/amoled_text_color</item>
         <item name="text_second_color">@color/amoled_text_second_color</item>
         <item name="text_third_color">@color/amoled_text_third_color</item>
+        <item name="text_category_color">@color/amoled_text_category_color</item>
 
         <item name="button_color">@color/amoled_button_color</item>
         <item name="button_symbol_color">@color/amoled_button_symbol_color</item>
@@ -87,6 +89,8 @@
         <item name="button_symbol_color">@color/material_dynamic_secondary90</item>
         <item name="button_clear_color">@color/material_dynamic_tertiary90</item>
         <item name="button_equals_color">@color/material_dynamic_primary90</item>
+
+        <item name="text_category_color">@color/material_dynamic_primary70</item>
 
         <item name="about_button_color">@color/material_dynamic_tertiary90</item>
 
