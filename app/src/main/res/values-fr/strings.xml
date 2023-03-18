@@ -12,7 +12,6 @@
     <string name="theme_light">Clair</string>
     <string name="theme_dark">Sombre</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="theme_material_you">Material You</string>
     <string name="math_error">Erreur mathématique</string>
     <string name="division_by_0">Division par 0 impossible</string>
     <string name="domain_error">Erreur de domaine</string>
@@ -25,4 +24,23 @@
     <string name="preferences_title">Paramètres</string>
     <string name="preferences_history_category">HISTORIQUE</string>
     <string name="preferences_history_size">Nombre de résultats sauvegardés dans l\'historique</string>
+    <string name="preferences_vibration_title">Vibrations</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Empêcher le téléphone de se mettre en veille</string>
+    <string name="preferences_advanced_category">AVANCÉ</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Activer le mode scientifique par défaut</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Mode scientifique</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Utiliser les radians à la place des degrés par défaut</string>
+    <string name="about_help_us_category">AIDE NOUS</string>
+    <string name="about_donate">Doner</string>
+    <string name="about_social_category">SOCIAL</string>
+    <string name="about_other_category">AUTRE</string>
+    <string name="about_translate">Traduire</string>
+    <string name="about_rate">Évaluer cette application</string>
+    <string name="app_version_title">Version</string>
+    <string name="thanks_for_using_opencalc">Merci d\'utiliser OpenCalc ❤️</string>
+    <string name="thanks_for_using_opencalc">M</string>
+    <string name="made_in_france">Fait avec ❤ ️en France</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="preferences_number_precision">Nombre de chiffres après la virgule</string>
 </resources>

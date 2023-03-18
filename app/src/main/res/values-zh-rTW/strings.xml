@@ -13,7 +13,6 @@
     <string name="theme_light">燈光</string>
     <string name="theme_dark">黑暗</string>
     <string name="theme_amoled">Amoled黑</string>
-    <string name="theme_material_you">Material You</string>
     <!-- Others -->
     <string name="value_copied">已複製</string>
 </resources>

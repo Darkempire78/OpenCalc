@@ -72,7 +72,7 @@
     <string name="value_too_large">Value too large</string>
 
     <!-- Settings Activity Title -->
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
 
     <!-- Preference Titles -->
     <string name="preferences_title">Settings</string>
@@ -104,4 +104,5 @@
     <string name="made_in_france">Made with ❤️ in France</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="preferences_number_precision">Number of decimal places</string>
+    <string name="privacy_policy">Privacy policy</string>
 </resources>

@@ -12,7 +12,6 @@
     <string name="theme_light">Chiaro</string>
     <string name="theme_dark">Scuro</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="theme_material_you">Material You</string>
     <string name="math_error">Errore matematico</string>
     <string name="division_by_0">Divisione per 0 impossibile</string>
     <string name="domain_error">Errore di dominio</string>

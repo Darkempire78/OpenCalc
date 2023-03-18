@@ -10,7 +10,6 @@
     <string name="app_menu_about">О приложении</string>
     <!-- Другое -->
     <string name="value_copied">Скопировано</string>
-    <string name="theme_material_you">Material You</string>
     <string name="theme_light">Светлая</string>
     <string name="theme_dark">Темная</string>
     <string name="division_by_0">Не могу разделить на 0</string>
