@@ -98,6 +98,7 @@ class AboutActivity : AppCompatActivity() {
             clickAppVersionCount++
             if (clickAppVersionCount > 3) {
                 Toast.makeText(this, this.getString(R.string.thanks_for_using_opencalc), Toast.LENGTH_SHORT).show()
+                clickAppVersionCount = 0
             }
         }
     }
