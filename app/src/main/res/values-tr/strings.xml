@@ -40,4 +40,7 @@
     <string name="about_rate">Bu uygulamayı değerlendirin</string>
     <string name="thanks_for_using_opencalc">OpenCalc kullandığınız için teşekkürler ❤️</string>
     <string name="app_version_title">Sürüm</string>
+    <string name="made_in_france">❤️ ile Fransa\'da yapıldı</string>
+    <string name="privacy_policy">Gizlilik ilkesi</string>
+    <string name="preferences_number_precision">Ondalık basamak sayısı</string>
 </resources>
