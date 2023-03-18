@@ -17,6 +17,7 @@
     <string name="division_by_0">Division par 0 impossible</string>
     <string name="domain_error">Erreur de domaine</string>
     <string name="syntax_error">Erreur de syntaxe</string>
+    <string name="value_too_large">valeur trop grande</string>
     <string name="app_menu_settings">Paramètres</string>
     <string name="preferences_general_category">GÉNÉRAL</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">Empêcher le telephone de se mettre en veille pendant l\'utilisation de l\'application</string>

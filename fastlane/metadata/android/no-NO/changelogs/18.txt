@@ -1,0 +1,7 @@
+Nytt:
+- Lang-klikk for å kopiere en verdi
+- Indonesisk oversettelse
+
+Fikset:
+- Bla i liggende modus
+- Problem med fokus

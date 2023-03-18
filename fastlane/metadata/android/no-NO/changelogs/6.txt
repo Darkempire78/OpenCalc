@@ -1,0 +1,2 @@
+Endret:
+- Tillagt støtte for Materiell Deig (takk til @MahmoudRH)

@@ -1,0 +1,8 @@
+Nytt:
+- Oppsprettsmelding når du kopierer en verdi
+
+Fikset:
+- Følg systemtema støtter Materiell Deig
+- Forbedret støtte for nettbrett
+- Forbedret støtte for små skjermstørrelser
+- Ikonet vises ikke for Android lavere enn 8

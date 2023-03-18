@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name_display">Калькулятор</string>
+    <string name="app_name_display">Калькулятор</string>
     <string name="select_theme_title">Выберите тему</string>
-    
     <string name="infinity">Бесконечность</string>
-
     <!-- Меню приложения -->
     <string name="app_menu_theme">Тема</string>
     <string name="app_menu_vibration">Вибрация</string>
     <string name="app_menu_clear_history">Очистить Историю</string>
     <string name="app_menu_about">О приложении</string>
-    
     <!-- Другое -->
     <string name="value_copied">Скопировано</string>
+    <string name="theme_material_you">Material You</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Темная</string>
+    <string name="division_by_0">Не могу разделить на 0</string>
+    <string name="math_error">Математическая ошибка</string>
+    <string name="syntax_error">Синтаксическая ошибка</string>
+    <string name="theme_system">Система</string>
+    <string name="theme_amoled">Черная</string>
+    <string name="domain_error">Ошибка домена</string>
 </resources>

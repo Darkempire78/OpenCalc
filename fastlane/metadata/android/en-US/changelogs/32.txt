@@ -1,0 +1,2 @@
+Fixed:
+- Crash on small screens and tablets

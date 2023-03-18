@@ -88,8 +88,11 @@ class Calculator {
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor() // multiplication
                     else if (eat('/'.code)) {
-                        x /= parseFactor()
-                        if (equation.split("/")[1] == "0") division_by_0 = true
+                        val fractionDenominator = parseFactor()
+                        x /= fractionDenominator
+                        if (fractionDenominator == 0.0) {
+                            division_by_0 = true
+                        }
                     } // division
                     else return x
                 }
@@ -154,12 +157,12 @@ class Calculator {
                             if (isDegreeModeActivated) {
                                 x = sin(Math.toRadians(x))
                                 // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = sin(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -167,38 +170,44 @@ class Calculator {
                         "cos" -> {
                             if (isDegreeModeActivated) {
                                 x = cos(Math.toRadians(x))
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = cos(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
                         }
                         "tan" -> {
-                            if (isDegreeModeActivated) {
-                                x = tan(Math.toRadians(x))
-                                if (x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                            if (Math.toDegrees(x) == 90.0) {
+                                // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
+                                domain_error = true
+                                x = Double.NaN
                             } else {
-                                x = tan(x)
-                                if (x < 1.0E-14) {
-                                    x = round(x)
+                                if (isDegreeModeActivated) {
+                                    x = tan(Math.toRadians(x))
+                                    if (x > 0 && x < 1.0E-14) {
+                                        x = round(x)
+                                    }
+                                } else {
+                                    x = tan(x)
+                                    if (x > 0 && x < 1.0E-14) {
+                                        x = round(x)
+                                    }
                                 }
                             }
                         }
                         "arcsi" -> {
                             if (isDegreeModeActivated) {
                                 x = asin(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = asin(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -206,12 +215,12 @@ class Calculator {
                         "arcco" -> {
                             if (isDegreeModeActivated) {
                                 x = acos(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = acos(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -219,12 +228,12 @@ class Calculator {
                         "arcta" -> {
                             if (isDegreeModeActivated) {
                                 x = atan(x)*180/Math.PI
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             } else {
                                 x = atan(x)
-                                if (x < 1.0E-14) {
+                                if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
                             }
@@ -239,7 +248,7 @@ class Calculator {
                     // To fix sqrt(2)^2 = 2
                     val decimal = x.toInt()
                     val fractional = x - decimal
-                    if (fractional < 1.0E-14) {
+                    if (fractional > 0 && fractional < 1.0E-14) {
                         x = decimal.toDouble()
                     }
                 } // exponentiation

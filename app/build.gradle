@@ -6,11 +6,11 @@ android {
 
     defaultConfig {
         applicationId "com.darkempire78.opencalculator"
-        resConfigs 'ar', 'az', 'bn', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'in', 'it', 'ja', 'pt-rBR', 'ru', 'tr', 'zh-rHK', 'zh-rTW'
+        resConfigs 'ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 31
-        versionName "2.1.2"
+        versionCode 35
+        versionName "2.1.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

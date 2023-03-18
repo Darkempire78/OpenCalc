@@ -1,0 +1,15 @@
+Updated:
+- Many translations
+- Input area takes the full screen size
+- Parenthesis system
+
+Fixed:
+- Double toast when value copied for android 13
+- Definition domain of tangent
+- Display result when you paste a calculation
+- Indirect division by zero is undefined
+- Division by functions
+- Percent issues
+- Trigonometric functions return wrong results if the result is negative
+- Math error clears entire calculation when new number is entered
+- Parenthesis problem with tangent

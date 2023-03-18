@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="minWidthInput">250dp</dimen>
-
     <dimen name="button_horizontal_margin">2dp</dimen>
     <dimen name="button_vertical_margin">2dp</dimen>
 

@@ -19,6 +19,7 @@
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_color"
             android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@+id/history_time"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -34,7 +35,30 @@
             app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
             tools:ignore="MissingConstraints" />
 
+        <TextView
+            android:id="@+id/history_time"
+            style="@style/RobotoFontCondensedMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:background="?attr/history_background_color"
+            android:textColor="?attr/text_second_color"
+            android:textSize="14sp"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Add more space when it's the same date than the next history element -->
         <View
+            android:id="@+id/history_same_date_separator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="?attr/history_background_color"
+            app:layout_constraintTop_toBottomOf="@+id/history_item_result"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/history_separator"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?attr/foreground_color"

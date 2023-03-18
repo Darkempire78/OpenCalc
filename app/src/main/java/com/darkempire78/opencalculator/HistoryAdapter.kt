@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
+import android.os.Build
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -123,16 +124,18 @@ class HistoryAdapter(
                 }
                 calculation.setOnLongClickListener {
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied history calculation", historyElement.calculation)
-                    clipboardManager.setPrimaryClip(clip)
-                    Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied history calculation", historyElement.calculation))
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                        Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
+
+
                     true // Or false if not consumed
                 }
                 result.setOnLongClickListener {
                     val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied history result", historyElement.result)
-                    clipboardManager.setPrimaryClip(clip)
-                    Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied history result", historyElement.result))
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                        Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true // Or false if not consumed
                 }
             }

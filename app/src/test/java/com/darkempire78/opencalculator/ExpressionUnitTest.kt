@@ -12,62 +12,114 @@ import org.junit.Test
 class ExpressionUnitTest {
     @Test
     fun percentage_isCorrect() {
-        var result = calculate("100*95%")
+        var result = calculate("100*95%", false)
         assertEquals(95.0, result, 0.0)
 
-        result = calculate("(10*10)*95%")
+        result = calculate("(10*10)*95%", false)
         assertEquals(95.0, result, 0.0)
 
-        result = calculate("100*100%")
+        result = calculate("100*100%", false)
         assertEquals(100.0, result, 0.0)
 
-        result = calculate("100*100/100*100%")
+        result = calculate("100*100/100*100%", false)
         assertEquals(100.0, result, 0.0)
+
+        result = calculate("100%10", false)
+        assertEquals(10.0, result, 0.0)
+
+        result = calculate("10%10%", false)
+        assertEquals(0.01, result, 0.0)
     }
 
     @Test
     fun addition_isCorrect() {
-        var result = calculate("1+1")
+        var result = calculate("1+1", false)
         assertEquals(2.0, result, 0.0)
 
-        result = calculate("(1+1)+1")
+        result = calculate("(1+1)+1", false)
         assertEquals(3.0, result, 0.0)
     }
 
     @Test
     fun subtraction_isCorrect() {
-        var result = calculate("1-1")
+        var result = calculate("1-1", false)
         assertEquals(0.0, result, 0.0)
 
-        result = calculate("1-1-1")
+        result = calculate("1-1-1", false)
         assertEquals(-1.0, result, 0.0)
     }
 
     @Test
     fun factorial_isCorrect() {
-        var result = calculate("0!")
+        var result = calculate("0!", false)
         assertEquals(1.0, result, 0.0)
 
-        result = calculate("5!")
+        result = calculate("5!", false)
         assertEquals(120.0, result, 0.0)
+
+        result = calculate("10!", false)
+        assertEquals(3628800.0, result, 0.0)
+
+        result = calculate("5!+5!", false)
+        assertEquals(240.0, result, 0.0)
+
+        result = calculate("(3!)!+(3!)!", false)
+        assertEquals(1440.0, result, 0.0)
+
+        result = calculate("(3!)!/(3!)!", false)
+        assertEquals(1.0, result, 0.0)
     }
 
     @Test
     fun sqrt_isCorrect() {
-        var result = calculate("√2^2")
+        var result = calculate("√2^2", false)
         assertEquals(2.0, result, 0.0)
 
-        result = calculate("√9")
+        result = calculate("√9", false)
         assertEquals(3.0, result, 0.0)
     }
 
     @Test
-    fun cos_isCorrect() {
-        var result = calculate("cos(0)")
+    fun trigonometric_functions_isCorrect() {
+        // In radians
+        var result = calculate("cos(0)", false)
         assertEquals(1.0, result, 0.0)
+
+        result = calculate("1*cos(0)", false)
+        assertEquals(1.0, result, 0.0)
+
+        result = calculate("1+cos(0)", false)
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("1-cos(0)", false)
+        assertEquals(0.0, result, 0.0)
+
+        result = calculate("2^cos(0)", false)
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("(cos(0))", false)
+        assertEquals(1.0, result, 0.0)
+
+        result = calculate("cos(2)", false)
+        assertEquals(-0.4161468365471424, result, 0.0)
+
+        result = calculate("tan(pi/2)", false)
+        assertEquals(Double.NaN, result, 0.0)
+
+        result = calculate("tan(45)", true)
+        assertEquals(0.9999999999999999, result, 0.0)
+
+        result = calculate("sin(220)", true)
+        assertEquals(-0.6427876096865393, result, 0.0)
+
+        result = calculate("sin(5!)", true)
+        assertEquals(0.8660254037844387, result, 0.0)
+
+        result = calculate("sin(1+1)", true)
+        assertEquals(0.03489949670250097, result, 0.0)
     }
 
-    private fun calculate(input: String) = calculator.evaluate(expression.getCleanExpression(input), false)
+    private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input), isDegreeModeActivated)
 
     companion object {
         private lateinit var expression: Expression

@@ -1,0 +1,5 @@
+Fixed:
+- tan() does not work properly
+- Deleting a thousand separator causes the cursor to jump
+- Placement of parentheses inside existing calculations
+- Graphics problem in landscape mode for tablets over 10 inches

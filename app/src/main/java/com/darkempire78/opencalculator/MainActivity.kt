@@ -4,9 +4,12 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -28,6 +31,7 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -127,6 +131,10 @@ class MainActivity : AppCompatActivity() {
         // Focus by default
         binding.input.requestFocus()
 
+        // Makes the input take the whole width of the screen by default
+        val screenWidthPX = resources.displayMetrics.widthPixels
+        binding.input.minWidth = screenWidthPX - (binding.input.paddingRight + binding.input.paddingLeft) // remove the paddingHorizontal
+
         // Do not clear after equal button if you move the cursor
         binding.input.accessibilityDelegate = object : View.AccessibilityDelegate() {
             override fun sendAccessibilityEvent(host: View, eventType: Int) {
@@ -145,14 +153,57 @@ class MainActivity : AppCompatActivity() {
             when {
                 binding.resultDisplay.text.toString() != "" -> {
                     val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("Copied result", binding.resultDisplay.text)
-                    clipboardManager.setPrimaryClip(clip)
-                    Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
+                    // Only show a toast for Android 12 and lower.
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                        Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
             }
         }
+        
+        // Handle cut & paste events to update resultDisplay
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+        binding.input.addTextChangedListener(object : TextWatcher {
+            private var beforeTextLength = 0
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                beforeTextLength = s?.length ?: 0
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val afterTextLength = s?.length ?: 0
+                // If the afterTextLength is equals to 0 we have to clear resultDisplay
+                if (afterTextLength == 0) {
+                    binding.resultDisplay.setText("")
+                }
+
+                /* we check if the length of the text entered into the EditText
+                is greater than the length of the text before the change (beforeTextLength)
+                by more than 1 character. If it is, we assume that this is a paste event. */
+                val clipData = clipboardManager.primaryClip
+                if (clipData != null && clipData.itemCount > 0) {
+                    val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
+
+                    if (s != null) {
+                        val newValue = s.subSequence(start, start + count).toString()
+                        if (
+                            (afterTextLength - beforeTextLength > 1)
+                            || (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
+                        ) {
+                            // Handle paste event here
+                            updateResultDisplay()
+                        }
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do nothing
+            }
+        })
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
@@ -390,7 +441,7 @@ class MainActivity : AppCompatActivity() {
                 } else withContext(Dispatchers.Main) {
                     if (result.isInfinite() && !division_by_0 && !domain_error) {
                         if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
-                        else binding.resultDisplay.setText(getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -436,7 +487,17 @@ class MainActivity : AppCompatActivity() {
                     val leftString = binding.input.text.subSequence(0, cursorPosition-1).toString()
                     val rightString = binding.input.text.subSequence(cursorPosition, textLength).toString()
 
-                    if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
+                    // Add a parenthesis if there is another symbol before minus
+                    if (currentSymbol == "-") {
+                        if (previousChar in "+-") {
+                            binding.input.setText(leftString + currentSymbol + rightString)
+                            binding.input.setSelection(cursorPosition)
+                        } else {
+                            binding.input.setText(leftString + previousChar + currentSymbol + rightString)
+                            binding.input.setSelection(cursorPosition+1)
+                        }
+                    }
+                    else if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
                         binding.input.setText(leftString + currentSymbol + rightString)
                         binding.input.setSelection(cursorPosition)
                     }
@@ -686,6 +747,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
+                    isEqualLastAction = true
                 } else {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
@@ -700,16 +762,17 @@ class MainActivity : AppCompatActivity() {
                                 binding.resultDisplay.setText(getString(R.string.division_by_0))
                             }
                             else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                            else binding.resultDisplay.setText(getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         } else if (result.isNaN()) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
+                            isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
                         }
                     }
                 }
-                isEqualLastAction = true
+
             } else {
                 withContext(Dispatchers.Main) { binding.resultDisplay.setText("") }
             }
@@ -734,16 +797,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (openParentheses == closeParentheses
-            || binding.input.text.toString().subSequence(textLength - 1, textLength) == "("
-            || binding.input.text.toString().subSequence(textLength - 1, textLength) in "×÷+-^"
+        if (
+            !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
+            && (
+                openParentheses == closeParentheses
+                || binding.input.text.toString()[cursorPosition - 1] == '('
+                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
+            )
         ) {
             updateDisplay(view, "(")
-        } else if (closeParentheses < openParentheses && binding.input.text.toString().subSequence(
-                textLength - 1,
-                textLength
-            ) != "("
-        ) {
+        } else {
             updateDisplay(view, ")")
         }
 
@@ -767,8 +830,8 @@ class MainActivity : AppCompatActivity() {
             // Check if it is a function to delete
             val functionsList = listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
             for (function in functionsList) {
-                val text = binding.input.text.subSequence(0, cursorPosition).toString()
-                if (text.endsWith(function)) {
+                val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
+                if (leftPart.endsWith(function)) {
                     newValue = binding.input.text.subSequence(0, cursorPosition - function.length).toString() +
                             binding.input.text.subSequence(cursorPosition, textLength).toString()
                     isFunction = true
@@ -788,7 +851,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             val newValueFormatted = NumberFormatter.format(newValue)
-            val cursorOffset = newValueFormatted.length - newValue.length
+            var cursorOffset = newValueFormatted.length - newValue.length
+            if (cursorOffset < 0) cursorOffset = 0
 
             binding.input.setText(newValueFormatted)
             binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 } ?: 0)
