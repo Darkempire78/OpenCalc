@@ -362,7 +362,7 @@ class MainActivity : AppCompatActivity() {
         if (result.isNaN() || result.isInfinite()) {
             return result
         }
-        return BigDecimal(result).setScale(12, RoundingMode.HALF_EVEN).toDouble()
+        return BigDecimal(result).setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN).toDouble()
     }
 
     private fun enableOrDisableScientistMode() {

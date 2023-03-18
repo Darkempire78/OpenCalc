@@ -39,6 +39,17 @@
             app:widgetLayout="@drawable/material_switch"
             />
 
+        <ListPreference
+            app:key="darkempire78.opencalculator.NUMBER_PRECISION"
+            app:title="@string/preferences_number_precision"
+            app:entries="@array/number_precision_entries"
+            app:entryValues="@array/number_precision_values"
+            app:defaultValue="10"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:icon="@drawable/precision"
+            />
+
 
         <!-- <ListPreference
             app:key="reply"

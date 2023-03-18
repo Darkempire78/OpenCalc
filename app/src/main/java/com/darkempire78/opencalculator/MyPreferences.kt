@@ -18,6 +18,7 @@ class MyPreferences(context: Context) {
         private const val KEY_HISTORY_SIZE = "darkempire78.opencalculator.HISTORY_SIZE"
         private const val KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT = "darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
         private const val KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT = "darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
+        private const val KEY_NUMBER_PRECISION = "darkempire78.opencalculator.NUMBER_PRECISION"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -39,6 +40,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, value).apply()
     var historySize = preferences.getString(KEY_HISTORY_SIZE, "100")
         set(value) = preferences.edit().putString(KEY_HISTORY_SIZE, value).apply()
+    var numberPrecision = preferences.getString(KEY_NUMBER_PRECISION, "10")
+        set(value) = preferences.edit().putString(KEY_NUMBER_PRECISION, value).apply()
 
     fun getHistory(): MutableList<History> {
         val gson = Gson()

@@ -103,4 +103,5 @@
     <string name="thanks_for_using_opencalc">Thanks for using OpenCalc ❤️</string>
     <string name="made_in_france">Made with ❤️ in France</string>
     <string name="privacy_policy">Privacy policy</string>
+    <string name="preferences_number_precision">Number of decimal places</string>
 </resources>
