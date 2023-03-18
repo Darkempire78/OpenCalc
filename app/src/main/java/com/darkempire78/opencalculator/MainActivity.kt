@@ -185,13 +185,14 @@ class MainActivity : AppCompatActivity() {
                 by more than 1 character. If it is, we assume that this is a paste event. */
                 val clipData = clipboardManager.primaryClip
                 if (clipData != null && clipData.itemCount > 0) {
-                    val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
+                    //val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
 
                     if (s != null) {
-                        val newValue = s.subSequence(start, start + count).toString()
+                        //val newValue = s.subSequence(start, start + count).toString()
                         if (
                             (afterTextLength - beforeTextLength > 1)
-                            || (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
+                            // Removed to avoid anoying notification (https://developer.android.com/develop/ui/views/touch-and-input/copy-paste#PastingSystemNotifications)
+                            //|| (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
                         ) {
                             // Handle paste event here
                             updateResultDisplay()
