@@ -79,6 +79,7 @@ class Themes(private val context: Context) {
                     }
                     AMOLED_STYLE_INDEX -> {
                         preferences.theme = AMOLED_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
                     }
                 }
                 dialog.dismiss()
@@ -96,8 +97,7 @@ class Themes(private val context: Context) {
 
     fun applyDayNightOverride() {
         val preferences = MyPreferences(context)
-        if (preferences.forceDayNight != AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
-                && preferences.theme != AMOLED_THEME_INDEX) {
+        if (preferences.forceDayNight != AppCompatDelegate.MODE_NIGHT_UNSPECIFIED) {
             AppCompatDelegate.setDefaultNightMode(preferences.forceDayNight)
         }
     }
