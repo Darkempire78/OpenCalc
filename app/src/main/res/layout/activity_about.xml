@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:paddingVertical="18dp"
-            android:text="@string/preferences_title"
+            android:text="@string/about_title"
             android:textColor="?attr/text_color"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/about_back_button"
@@ -167,7 +167,6 @@
             android:textSize="@dimen/about_text"
             app:drawableLeftCompat="@drawable/privacy"
             app:layout_constraintTop_toBottomOf="@+id/about_other_category" />
-
 
         <TextView
             android:id="@+id/about_app_version"

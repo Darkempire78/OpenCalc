@@ -31,16 +31,16 @@
     <string name="preferences_scientif_mode_enabled_by_default_title">Mode scientifique</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Utiliser les radians à la place des degrés par défaut</string>
-    <string name="about_help_us_category">AIDE NOUS</string>
-    <string name="about_donate">Doner</string>
+    <string name="about_help_us_category">NOUS AIDER</string>
+    <string name="about_donate">Donner</string>
     <string name="about_social_category">SOCIAL</string>
     <string name="about_other_category">AUTRE</string>
     <string name="about_translate">Traduire</string>
     <string name="about_rate">Évaluer cette application</string>
     <string name="app_version_title">Version</string>
     <string name="thanks_for_using_opencalc">Merci d\'utiliser OpenCalc ❤️</string>
-    <string name="thanks_for_using_opencalc">M</string>
     <string name="made_in_france">Fait avec ❤ ️en France</string>
     <string name="privacy_policy">Politique de confidentialité</string>
     <string name="preferences_number_precision">Nombre de chiffres après la virgule</string>
+    <string name="about_title">À propos</string>
 </resources>
