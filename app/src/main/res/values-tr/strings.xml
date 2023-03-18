@@ -18,8 +18,8 @@
     <string name="math_error">Matematik hatası</string>
     <string name="value_too_large">Değer çok büyük</string>
     <string name="preferences_vibration_summary">Bir düğmeye basıldığında titre</string>
-    <string name="about_donate">Bağış yap</string>
-    <string name="about_translate">Çevir</string>
+    <string name="about_donate">Bağış yapın</string>
+    <string name="about_translate">Çevirin</string>
     <string name="preferences_vibration_title">Titreşimler</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radyan</string>
     <string name="preferences_general_category">GENEL</string>
@@ -37,4 +37,7 @@
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Öntanımlı olarak derece yerine radyan kullan</string>
     <string name="about_help_us_category">BİZE YARDIM EDİN</string>
     <string name="about_other_category">DİĞER</string>
+    <string name="about_rate">Bu uygulamayı değerlendirin</string>
+    <string name="thanks_for_using_opencalc">OpenCalc kullandığınız için teşekkürler ❤️</string>
+    <string name="app_version_title">Sürüm</string>
 </resources>
