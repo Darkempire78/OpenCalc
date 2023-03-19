@@ -17,4 +17,6 @@
     <string name="theme_light">Sáng</string>
     <string name="theme_amoled">Amoled</string>
     <string name="value_too_large">Giá trị quá lớn</string>
+    <string name="app_menu_settings">Cài đặt</string>
+    <string name="preferences_title">Cài đặt</string>
 </resources>
