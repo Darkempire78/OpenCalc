@@ -1,4 +1,5 @@
 <PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
@@ -6,6 +7,15 @@
         app:title="@string/preferences_general_category"
         app:color="?attr/text_color">
         <!--app:iconSpaceReserved="false"-->
+
+        <Preference
+            android:id="@+id/settings_select_app_language"
+            app:key="darkempire78.opencalculator.APP_LANGUAGE"
+            app:selectable="true"
+            app:enabled="true"
+            app:title="@string/preferences_language_title"
+            app:summary="APP LANGUAGE"
+            />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
@@ -75,7 +85,7 @@
             app:singleLineTitle="false"
             app:icon="@drawable/history"
             />
-        
+
     </PreferenceCategory>
 
     <PreferenceCategory

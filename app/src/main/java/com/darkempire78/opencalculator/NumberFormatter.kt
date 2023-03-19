@@ -4,14 +4,10 @@ import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 
 object NumberFormatter {
-    val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
-    val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
-    private val numberRegex = "(\\d+\\$decimalSeparatorSymbol\\d+)|(\\d+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol\\d+)|(\\$decimalSeparatorSymbol)|(\\d+)".toRegex()
-
-    fun format(text: String): String {
-        val textNoSeparator = removeSeparators(text)
-        val numbersList = extractNumbers(textNoSeparator)
-        val numbersWithSeparators = addSeparators(numbersList)
+    fun format(text: String, decimalSeparatorSymbol : String, groupingSeparatorSymbol : String): String {
+        val textNoSeparator = removeSeparators(text, groupingSeparatorSymbol)
+        val numbersList = extractNumbers(textNoSeparator, decimalSeparatorSymbol)
+        val numbersWithSeparators = addSeparators(numbersList, decimalSeparatorSymbol)
         var textWithSeparators = textNoSeparator
         numbersList.forEachIndexed { index, number ->
             textWithSeparators = textWithSeparators.replace(number, numbersWithSeparators[index])
@@ -19,12 +15,14 @@ object NumberFormatter {
         return textWithSeparators
     }
 
-    fun extractNumbers(text: String): List<String> {
+    fun extractNumbers(text: String, decimalSeparatorSymbol : String): List<String> {
+        val numberRegex = "(\\d+\\$decimalSeparatorSymbol\\d+)|(\\d+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol\\d+)|(\\$decimalSeparatorSymbol)|(\\d+)".toRegex()
+
         val results = numberRegex.findAll(text)
         return results.map { it.value }.toList()
     }
 
-    private fun addSeparators(numbersList: List<String>): List<String> {
+    private fun addSeparators(numbersList: List<String>, decimalSeparatorSymbol : String): List<String> {
         return numbersList.map {
             if (it.contains(decimalSeparatorSymbol)) {
                 if (it.first() == decimalSeparatorSymbol[0]) {
@@ -41,7 +39,7 @@ object NumberFormatter {
         }
     }
 
-    private fun removeSeparators(text: String): String {
+    private fun removeSeparators(text: String, groupingSeparatorSymbol: String): String {
         return text.replace(groupingSeparatorSymbol, "")
     }
 }

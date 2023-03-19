@@ -2,8 +2,8 @@ package com.darkempire78.opencalculator
 
 class Expression {
 
-    fun getCleanExpression(calculation: String): String {
-        var cleanCalculation = replaceSymbolsFromCalculation(calculation)
+    fun getCleanExpression(calculation: String, decimalSeparatorSymbol: String, groupingSeparatorSymbol: String): String {
+        var cleanCalculation = replaceSymbolsFromCalculation(calculation, decimalSeparatorSymbol, groupingSeparatorSymbol)
         cleanCalculation = addMultiply(cleanCalculation)
         if (cleanCalculation.contains('√')) {
             cleanCalculation = formatSquare(cleanCalculation)
@@ -21,7 +21,7 @@ class Expression {
         return cleanCalculation
     }
 
-    private fun replaceSymbolsFromCalculation(calculation: String): String {
+    private fun replaceSymbolsFromCalculation(calculation: String, decimalSeparatorSymbol: String, groupingSeparatorSymbol: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("log", "logten")
@@ -32,8 +32,8 @@ class Expression {
         calculation2 = calculation2.replace("cos⁻¹", "arcco")
         calculation2 = calculation2.replace("sin⁻¹", "arcsi")
         calculation2 = calculation2.replace("tan⁻¹", "arcta")
-        calculation2 = calculation2.replace(NumberFormatter.groupingSeparatorSymbol, "")
-        calculation2 = calculation2.replace(NumberFormatter.decimalSeparatorSymbol, ".")
+        calculation2 = calculation2.replace(groupingSeparatorSymbol, "")
+        calculation2 = calculation2.replace(decimalSeparatorSymbol, ".")
         return calculation2
     }
 

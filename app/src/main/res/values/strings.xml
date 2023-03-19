@@ -105,4 +105,5 @@
     <string name="preferences_number_precision">Number of decimal places</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="about_title">About</string>
+    <string name="preferences_language_title">Language</string>
 </resources>

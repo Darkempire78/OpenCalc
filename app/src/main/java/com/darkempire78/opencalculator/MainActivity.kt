@@ -31,7 +31,9 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
+import java.util.*
 
+val appLanguage = Locale.getDefault()
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -292,7 +294,7 @@ class MainActivity : AppCompatActivity() {
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted = NumberFormatter.format(newValue)
+            var newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
@@ -301,11 +303,11 @@ class MainActivity : AppCompatActivity() {
                     if (binding.input.text.toString().isNotEmpty())  {
                         var lastNumberBefore = ""
                         if (cursorPosition > 0  && binding.input.text.toString().substring(0, cursorPosition).last() in "0123456789\\$decimalSeparatorSymbol") {
-                            lastNumberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition)).last()
+                            lastNumberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition), decimalSeparatorSymbol).last()
                         }
                         var firstNumberAfter = ""
                         if (cursorPosition < binding.input.text.length-1) {
-                            firstNumberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
+                            firstNumberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length), decimalSeparatorSymbol).first()
                         }
                         if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
@@ -318,17 +320,17 @@ class MainActivity : AppCompatActivity() {
                     && decimalSeparatorSymbol in value
                     && value != decimalSeparatorSymbol // The value should not be *only* the decimal separator
                 ) {
-                    if (NumberFormatter.extractNumbers(value).isNotEmpty()) {
-                        val firstValueNumber = NumberFormatter.extractNumbers(value).first()
-                        val lastValueNumber = NumberFormatter.extractNumbers(value).last()
+                    if (NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).isNotEmpty()) {
+                        val firstValueNumber = NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).first()
+                        val lastValueNumber = NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).last()
                         if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
                             var numberBefore = binding.input.text.toString().substring(0, cursorPosition)
                             if (numberBefore.last() !in "()*-/+^!√πe") {
-                                numberBefore = NumberFormatter.extractNumbers(numberBefore).last()
+                                numberBefore = NumberFormatter.extractNumbers(numberBefore, decimalSeparatorSymbol).last()
                             }
                             var numberAfter = ""
                             if (cursorPosition < binding.input.text.length - 1) {
-                                numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length)).first()
+                                numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length), decimalSeparatorSymbol).first()
                             }
                             var tmpValue = value
                             var numberBeforeParenthesisLength = 0
@@ -340,7 +342,7 @@ class MainActivity : AppCompatActivity() {
                                 tmpValue = "($value)"
                             }
                             val tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
-                            newValueFormatted = NumberFormatter.format(tmpNewValue)
+                            newValueFormatted = NumberFormatter.format(tmpNewValue,  decimalSeparatorSymbol, groupingSeparatorSymbol)
                         }
                     }
                 }
@@ -405,14 +407,14 @@ class MainActivity : AppCompatActivity() {
                 domain_error = false
                 syntax_error = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
+                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
                     // Round at 10^-12
                     result = roundResult(result)
-                    var formattedResult = NumberFormatter.format(result.toString().replace(".", NumberFormatter.decimalSeparatorSymbol))
+                    var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                     // If result = -0, change it to 0
                     if (result == -0.0) {
@@ -421,7 +423,7 @@ class MainActivity : AppCompatActivity() {
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
                         val resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString)
+                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                         withContext(Dispatchers.Main) {
                             if (formattedResult != calculation) {
@@ -676,17 +678,17 @@ class MainActivity : AppCompatActivity() {
                 domain_error = false
                 syntax_error = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString())
+                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", NumberFormatter.decimalSeparatorSymbol))
+                var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString)
+                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
 
                     // Hide the cursor before updating binding.input to avoid weird cursor movement
@@ -851,7 +853,7 @@ class MainActivity : AppCompatActivity() {
                         binding.input.text.subSequence(cursorPosition, textLength).toString()
             }
 
-            val newValueFormatted = NumberFormatter.format(newValue)
+            val newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             var cursorOffset = newValueFormatted.length - newValue.length
             if (cursorOffset < 0) cursorOffset = 0
 
@@ -868,6 +870,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        if (appLanguage != Locale.getDefault()) {
+            appLanguage != Locale.getDefault()
+            binding.input.setText("")
+            binding.resultDisplay.setText("")
+        }
 
         // Update settings
         // Prevent phone from sleeping while the app is in foreground
