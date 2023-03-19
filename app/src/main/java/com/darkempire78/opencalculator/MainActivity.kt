@@ -33,7 +33,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 import java.util.*
 
-val appLanguage = Locale.getDefault()
+var appLanguage: Locale = Locale.getDefault()
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -872,7 +872,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         if (appLanguage != Locale.getDefault()) {
-            appLanguage != Locale.getDefault()
+            appLanguage = Locale.getDefault()
             binding.input.setText("")
             binding.resultDisplay.setText("")
         }
