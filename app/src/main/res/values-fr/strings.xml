@@ -43,4 +43,5 @@
     <string name="privacy_policy">Politique de confidentialité</string>
     <string name="preferences_number_precision">Nombre de chiffres après la virgule</string>
     <string name="about_title">À propos</string>
+    <string name="preferences_language_title">Langue</string>
 </resources>
