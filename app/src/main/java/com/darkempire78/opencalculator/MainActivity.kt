@@ -741,7 +741,8 @@ class MainActivity : AppCompatActivity() {
                                 )
 
                                 // Remove former results if > historySize preference
-                                while (historyAdapter.itemCount >= MyPreferences(this@MainActivity).historySize!!.toInt()) {
+                                val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
+                                while (historySize > 0 && historyAdapter.itemCount >= historySize) {
                                     historyAdapter.removeFirstHistoryElement()
                                 }
 
@@ -873,6 +874,7 @@ class MainActivity : AppCompatActivity() {
 
         if (appLanguage != Locale.getDefault()) {
             appLanguage = Locale.getDefault()
+            // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
             binding.resultDisplay.setText("")
         }
@@ -884,12 +886,12 @@ class MainActivity : AppCompatActivity() {
         // Remove former results if > historySize preference
         // Remove from the RecycleView
         val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
-        while (historyAdapter.itemCount >= historySize) {
+        while (historySize > 0 && historyAdapter.itemCount >= historySize) {
             historyAdapter.removeFirstHistoryElement()
         }
         // Remove from the preference store data
         val history = MyPreferences(this@MainActivity).getHistory()
-        while (history.size > historySize) {
+        while (historySize > 0 && history.size > historySize) {
             history.removeAt(0)
         }
         MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)

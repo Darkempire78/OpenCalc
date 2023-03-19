@@ -8,6 +8,7 @@
         <item>200</item>
         <item>500</item>
         <item>1000</item>
+        <item>∞</item>
     </string-array>
 
     <string-array name="history_size_values">
@@ -18,6 +19,7 @@
         <item>200</item>
         <item>500</item>
         <item>1000</item>
+        <item>-1</item>
     </string-array>
 
     <string-array name="number_precision_entries">
