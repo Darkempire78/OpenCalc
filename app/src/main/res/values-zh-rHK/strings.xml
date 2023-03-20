@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name_display">計算機</string>
     <string name="select_theme_title">選擇主題</string>
-    <string name="infinity">無限</string>
     <!-- App Menu -->
     <string name="app_menu_theme">主題</string>
     <string name="app_menu_vibration">震動</string>
@@ -10,9 +9,46 @@
     <string name="app_menu_about">關於</string>
     <!-- Theme choices -->
     <string name="theme_system">預設</string>
+    <string name="theme_amoled">Amoled黑</string>
     <string name="theme_light">燈光</string>
     <string name="theme_dark">黑暗</string>
-    <string name="theme_amoled">Amoled黑</string>
     <!-- Others -->
     <string name="value_copied">已複製</string>
+    <string name="infinity">無限</string>
+    <string name="division_by_0">無法除以 0</string>
+    <string name="domain_error">無法顯示</string>
+    <string name="math_error">無法計算</string>
+    <string name="syntax_error">格式錯誤</string>
+    <string name="app_menu_settings">設定</string>
+    <string name="value_too_large">數值太大</string>
+
+    <!-- Preference Titles -->
+    <string name="preferences_title">設定</string>
+    <string name="preferences_general_category">一般</string>
+    <string name="preferences_history_category">歷史</string>
+
+    <!-- Messages Preferences -->
+    <string name="preferences_prevent_phone_from_sleeping_summary">當正在使用此程式時, 永不關掉屏幕</string>
+    <string name="preferences_vibration_summary">按下按鈕時發出震動</string>
+    <string name="preferences_history_size">儲存在歷史記錄的數目</string>
+    <string name="preferences_vibration_title">震動</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">防止休眠</string>
+    <string name="preferences_advanced_category">進階</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">預設啓用科學模式</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">科學模式</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">弧度</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">預設使用弧度代替度數</string>
+    <string name="about_help_us_category">幫助我們</string>
+    <string name="about_donate">贊助</string>
+    <string name="about_social_category">聯係我們</string>
+    <string name="about_other_category">其他</string>
+    <string name="about_translate">翻譯</string>
+    <string name="about_rate">爲此APP評分</string>
+    <string name="app_version_title">版本</string>
+    <string name="thanks_for_using_opencalc">感謝使用 OpenCalc ❤️</string>
+    <string name="made_in_france">在法國用 ❤️ 製造</string>
+    <string name="preferences_number_precision">小數位準確性</string>
+    <string name="privacy_policy">隱私政策</string>
+    <string name="about_title">關於</string>
+    <string name="preferences_language_title">語言</string>
 </resources>
