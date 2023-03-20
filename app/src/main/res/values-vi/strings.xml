@@ -19,4 +19,5 @@
     <string name="value_too_large">Giá trị quá lớn</string>
     <string name="app_menu_settings">Cài đặt</string>
     <string name="preferences_title">Cài đặt</string>
+    <string name="app_version_title">Phiên bản</string>
 </resources>

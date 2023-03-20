@@ -44,4 +44,5 @@
     <string name="privacy_policy">Gizlilik ilkesi</string>
     <string name="preferences_number_precision">Ondalık basamak sayısı</string>
     <string name="about_title">Hakkında</string>
+    <string name="preferences_language_title">Dil</string>
 </resources>
