@@ -165,9 +165,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         
-        // Handle cut & paste events to update resultDisplay
-        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-
+        // Handle changes into input to update resultDisplay
         binding.input.addTextChangedListener(object : TextWatcher {
             private var beforeTextLength = 0
 
