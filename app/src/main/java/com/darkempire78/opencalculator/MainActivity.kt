@@ -176,7 +176,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val afterTextLength = s?.length ?: 0
+                updateResultDisplay()
+                /*val afterTextLength = s?.length ?: 0
                 // If the afterTextLength is equals to 0 we have to clear resultDisplay
                 if (afterTextLength == 0) {
                     binding.resultDisplay.setText("")
@@ -200,7 +201,7 @@ class MainActivity : AppCompatActivity() {
                             updateResultDisplay()
                         }
                     }
-                }
+                }*/
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -353,9 +354,6 @@ class MainActivity : AppCompatActivity() {
                 // Increase cursor position
                 val cursorOffset = newValueFormatted.length - newValue.length
                 binding.input.setSelection(cursorPosition + value.length + cursorOffset)
-
-                // Update resultDisplay
-                updateResultDisplay()
             }
         }
     }
@@ -530,9 +528,6 @@ class MainActivity : AppCompatActivity() {
                 else keyVibration(view)
             }
             else keyVibration(view)
-
-            // Update resultDisplay so changes are reflected
-            updateResultDisplay()
         } else { // Allow minus symbol, even if the input is empty
             if (currentSymbol == "-") updateDisplay(view, currentSymbol)
             else keyVibration(view)
@@ -813,8 +808,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             updateDisplay(view, ")")
         }
-
-        updateResultDisplay()
     }
 
     fun backspaceButton(view: View) {
@@ -861,8 +854,6 @@ class MainActivity : AppCompatActivity() {
             binding.input.setText(newValueFormatted)
             binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 } ?: 0)
         }
-
-        updateResultDisplay()
     }
 
     fun scientistModeSwitchButton(view: View) {
