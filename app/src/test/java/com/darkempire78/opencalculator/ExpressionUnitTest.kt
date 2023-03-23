@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import org.junit.Assert.assertEquals
 import org.junit.BeforeClass
 import org.junit.Test
+import java.text.DecimalFormatSymbols
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,6 +11,9 @@ import org.junit.Test
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExpressionUnitTest {
+
+    private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+    private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     @Test
     fun percentage_isCorrect() {
         var result = calculate("100*95%", false)
@@ -119,7 +123,7 @@ class ExpressionUnitTest {
         assertEquals(0.03489949670250097, result, 0.0)
     }
 
-    private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input), isDegreeModeActivated)
+    private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input, decimalSeparatorSymbol, groupingSeparatorSymbol), isDegreeModeActivated)
 
     companion object {
         private lateinit var expression: Expression
