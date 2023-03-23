@@ -55,6 +55,15 @@ class Expression {
         if (calculation[operatorBeforePercentPos] == '*') {
             return calculation
         }
+        
+        if(calculation[operatorBeforePercentPos] == '/') {
+            // insert brackets into percentage. Fixes 900/10% -> 900/(10/100), not 900/10/100 which evals differently.
+            // also prevents it from doing the rest of this function, which screws the calculation up
+            var stringFirst = calculation.substring(0, operatorBeforePercentPos+1)
+            var stringMiddle = calculation.substring(operatorBeforePercentPos+1, percentPos+1)
+            var stringLast = calculation.substring(percentPos+1, calculation.length)
+            return "$stringFirst($stringMiddle)$stringLast"
+        }
 
         // extract the first part of the calculation
         var calculationStringFirst = calculation.subSequence(0, operatorBeforePercentPos).toString()
