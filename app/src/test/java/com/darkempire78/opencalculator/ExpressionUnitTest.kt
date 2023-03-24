@@ -33,6 +33,9 @@ class ExpressionUnitTest {
 
         result = calculate("10%10%", false)
         assertEquals(0.01, result, 0.0)
+
+        result = calculate("900/10%", false)
+        assertEquals(9000.0, result, 0.0)
     }
 
     @Test
