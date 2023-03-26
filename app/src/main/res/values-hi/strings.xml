@@ -5,7 +5,7 @@
     <string name="app_menu_theme">थीम</string>
     <string name="app_menu_vibration">वाइब्रेशन</string>
     <string name="app_menu_about">ऐप के बारे में</string>
-    <string name="infinity">इंफिनिटी</string>
+    <string name="infinity">अनंत</string>
     <string name="preferences_general_category">आम</string>
     <string name="preferences_history_category">इतिहास</string>
     <string name="app_menu_clear_history">इतिहास मिटा दें</string>
@@ -14,4 +14,21 @@
     <string name="theme_amoled">एमोलेड</string>
     <string name="theme_dark">अँधेरा</string>
     <string name="division_by_0">0 से विभाजित नहीं किया जा सकता</string>
+    <string name="preferences_advanced_category">विकसित</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">रेडियन</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">डिफ़ॉल्ट रूप से डिग्री के बजाय रेडियन का प्रयोग करें</string>
+    <string name="about_help_us_category">हमारे मदद करें</string>
+    <string name="about_social_category">सामाजिक</string>
+    <string name="about_translate">अनुवाद</string>
+    <string name="about_donate">दान देना</string>
+    <string name="about_other_category">अन्य</string>
+    <string name="app_version_title">संस्करण</string>
+    <string name="thanks_for_using_opencalc">OpenCalc का उपयोग करने के लिए धन्यवाद ❤️</string>
+    <string name="made_in_france">फ्रांस में ❤️ से बनाया गया</string>
+    <string name="about_title">के बारे में</string>
+    <string name="privacy_policy">तख़लिया नीति</string>
+    <string name="preferences_number_precision">दशमलव स्थानों की संख्या</string>
+    <string name="preferences_language_title">भाषा</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">वैज्ञानिक विधि</string>
+    <string name="theme_light">प्रकाश</string>
 </resources>
