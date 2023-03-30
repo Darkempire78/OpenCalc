@@ -15,6 +15,7 @@
             app:enabled="true"
             app:title="@string/preferences_language_title"
             app:summary="APP LANGUAGE"
+            app:icon="@drawable/language"
             />
 
         <SwitchPreferenceCompat
