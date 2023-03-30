@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="math_error">ഗണിത പിശക്</string>
+    <string name="app_menu_clear_history">ചരിത്രം മായ്ക്കുക</string>
+    <string name="theme_light">വെളിച്ചം</string>
+    <string name="value_copied">പകർത്തി</string>
+    <string name="infinity">അനന്തത</string>
+    <string name="division_by_0">0 കൊണ്ട് ഹരിക്കാനാവില്ല</string>
+    <string name="app_menu_about">കുറിച്ച്</string>
+    <string name="theme_system">സംവിധാനം</string>
+    <string name="syntax_error">വാക്യഘടന പിശക്</string>
+    <string name="value_too_large">മൂല്യം വളരെ വലുതാണ്</string>
+    <string name="preferences_title">ക്രമീകരണങ്ങൾ</string>
+    <string name="preferences_general_category">പൊതുവായ</string>
+    <string name="preferences_history_category">ചരിത്രം</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">ഫോൺ ഉറങ്ങുന്നത് തടയുക</string>
+    <string name="domain_error">ഡൊമെയ്ൻ പിശക്</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">റേഡിയൻസ്</string>
+    <string name="preferences_advanced_category">ഉയര്‍ന്ന</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">സ്ഥിരസ്ഥിതിയായി ശാസ്ത്രീയ സമ്പ്രദായം സജീവമാക്കുക</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">ശാസ്ത്രീയ സമ്പ്രദായം</string>
+    <string name="theme_amoled">ആമോലെഡ്</string>
+    <string name="app_menu_theme">പ്രതിപാദ്യം</string>
+    <string name="preferences_vibration_summary">ഒരു ബട്ടൺ അമർത്തുമ്പോൾ വിറയ്‌ക്കുക</string>
+    <string name="about_social_category">സാമൂഹിക</string>
+    <string name="about_donate">സംഭാവനചെയ്യുക</string>
+    <string name="about_rate">ഈ പ്രയോഗത്തെ വിലയിരുത്തുക</string>
+    <string name="preferences_language_title">ഭാഷ</string>
+    <string name="about_title">കുറിച്ച്</string>
+    <string name="privacy_policy">സ്വകാര്യതാ നയം</string>
+    <string name="preferences_number_precision">ദശാംശ സ്ഥാനങ്ങളുടെ എണ്ണം</string>
+    <string name="thanks_for_using_opencalc">OpenCalc ഉപയോഗിച്ചതിന് നന്ദി❤️</string>
+    <string name="app_version_title">പതിപ്പ്</string>
+    <string name="made_in_france">ഫ്രാൻസിൽ ❤️ ത്തോടെ നിർമ്മിച്ചത്</string>
+    <string name="app_name_display">കണക്കുക്കൂട്ടല്‍ യന്ത്രം</string>
+    <string name="about_help_us_category">ഞങ്ങളെ സഹായിക്കൂ</string>
+    <string name="about_translate">വിവർത്തനം ചെയ്യുക</string>
+    <string name="about_other_category">മറ്റുള്ളവ</string>
+    <string name="theme_dark">ഇരുണ്ട</string>
+    <string name="app_menu_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="preferences_vibration_title">വിറയലുകൾ</string>
+    <string name="preferences_history_size">ഫലങ്ങൾ ചരിത്രത്തിൽ സംരക്ഷിച്ചു</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">സ്ഥിരസ്ഥിതിയായി ഡിഗ്രിക്ക് പകരം റേഡിയൻസ് ഉപയോഗിക്കുക</string>
+    <string name="select_theme_title">പ്രതിപാദ്യം തിരഞ്ഞെടുക്കുക</string>
+    <string name="preferences_prevent_phone_from_sleeping_summary">പ്രയോഗം മുൻവശത്തായിരിക്കുമ്പോൾ ഫോൺ ഉറങ്ങുന്നത് തടയുക</string>
+    <string name="app_menu_vibration">വിറയല്‍</string>
+</resources>

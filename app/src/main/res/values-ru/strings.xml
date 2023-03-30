@@ -22,7 +22,7 @@
     <string name="value_too_large">Значение очень большое</string>
     <string name="preferences_title">Настройки</string>
     <string name="preferences_general_category">ОСНОВНЫЕ</string>
-    <string name="preferences_vibration_title">Вибрации</string>
+    <string name="preferences_vibration_title">Вибрация</string>
     <string name="preferences_prevent_phone_from_sleeping_title">Предотвращать телефон от сна</string>
     <string name="preferences_scientif_mode_enabled_by_default_title">Научный режим</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Радианы</string>
@@ -38,9 +38,9 @@
     <string name="thanks_for_using_opencalc">Спасибо за использование OpenCalc ❤️</string>
     <string name="made_in_france">Сделано с ❤️ во Франции</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
-    <string name="about_title">О нас</string>
+    <string name="about_title">О приложении</string>
     <string name="preferences_vibration_summary">Вибрация при нажатии кнопок</string>
-    <string name="preferences_history_size">Результаты сохраняются в истории</string>
+    <string name="preferences_history_size">Количество результатов, сохраняемых в истории</string>
     <string name="preferences_scientif_mode_enabled_by_default_summary">Активировать научный режим по умолчанию</string>
     <string name="preferences_language_title">Язык</string>
     <string name="preferences_number_precision">Количество десятичных разрядов</string>
