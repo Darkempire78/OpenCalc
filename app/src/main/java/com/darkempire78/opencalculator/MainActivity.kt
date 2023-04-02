@@ -405,6 +405,8 @@ class MainActivity : AppCompatActivity() {
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+                var result2 = Calculator2().evaluate(calculationTmp, isDegreeModeActivated)
+                println("Result BigDecimal : $result2")
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {

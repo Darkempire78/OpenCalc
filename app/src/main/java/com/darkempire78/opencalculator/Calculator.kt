@@ -3,6 +3,143 @@ package com.darkempire78.opencalculator
 import java.math.BigInteger
 import kotlin.math.*
 
+import java.math.BigDecimal
+import kotlin.math.ln
+import kotlin.math.pow
+
+var division_by_02 = false
+var domain_error2 = false
+var syntax_error2 = false
+
+class Calculator2 {
+    fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
+        println("Equation BigDecimal : $equation")
+        return object : Any() {
+            var pos = -1
+            var ch = 0
+            fun nextChar() {
+                ch = if (++pos < equation.length) equation[pos].code else -1
+            }
+
+            fun eat(charToEat: Int): Boolean {
+                while (ch == ' '.code) nextChar()
+                if (ch == charToEat) {
+                    nextChar()
+                    return true
+                }
+                return false
+            }
+
+            fun parse(): BigDecimal {
+                nextChar()
+                val x = parseExpression()
+                if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expression: " + equation)
+                return x
+            }
+
+            fun parseExpression(): BigDecimal {
+                var x = parseTerm()
+                while (true) {
+                    if (eat('+'.code)) x = x.add(parseTerm()) // addition
+                    else if (eat('-'.code)) x = x.subtract(parseTerm()) // subtraction
+                    else return x
+                }
+            }
+
+            fun parseTerm(): BigDecimal {
+                var x = parseFactor()
+                while (true) {
+                    if (eat('*'.code)) x = x.multiply(parseFactor()) // multiplication
+                    else if (eat('/'.code)) {
+                        val fractionDenominator = parseFactor()
+                        if (fractionDenominator.compareTo(BigDecimal.ZERO) == 0) {
+                            division_by_02 = true
+                            x = BigDecimal.ZERO
+                        } else {
+                            x = x.divide(fractionDenominator)
+                        }
+                    } // division
+                    else return x
+                }
+            }
+
+            fun parseFactor(): BigDecimal {
+                if (eat('+'.code)) return parseFactor().plus() // unary plus
+                if (eat('-'.code)) return parseFactor().unaryMinus() // unary minus
+                var x: BigDecimal
+                val startPos = pos
+                if (eat('('.code)) { // parentheses
+                    x = parseExpression()
+                    if (!eat(')'.code)) {
+                        println("Missing ')'")
+                        x = BigDecimal.ZERO
+                    }
+                } else if (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) { // numbers
+                    while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
+                    val string = equation.substring(startPos, pos)
+                    x = if (string.count { it == '.' } > 1) {
+                        BigDecimal.ZERO
+                    } else {
+                        if ((string.length == 1) && (string[0] == '.')) {
+                            BigDecimal.ZERO
+                        } else {
+                            BigDecimal(string)
+                        }
+                    }
+                } else if (eat('e'.code)) {
+                    x = BigDecimal(Math.E)
+                } else if (eat('π'.code)) {
+                    x = BigDecimal(Math.PI)
+                } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
+                    while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
+                    val func: String = equation.substring(startPos, pos)
+                    if (eat('('.code)) {
+                        x = parseExpression()
+                        if (!eat(')'.code)) x = parseFactor()
+                    } else {
+                        x = parseFactor()
+                    }
+                    println(x)
+                    when (func) {
+                        "sqrt" -> {
+                            x = BigDecimal(sqrt(x.toDouble()))
+                        }
+                        "ln" -> {
+                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                                domain_error = true
+                            }
+                            x = BigDecimal(ln(x.toDouble()))
+                        }
+                        "logten" -> {
+                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                                domain_error = true
+                            }
+                            x = BigDecimal(log10(x.toDouble()))
+                        }
+                        "xp" -> {
+                            x = BigDecimal(exp(x.toDouble()))
+                        }
+                        else -> x = BigDecimal(Double.NaN)
+                    }
+                } else {
+                    x = BigDecimal.ZERO
+                    syntax_error2 = true
+                }
+                if (eat('^'.code)) {
+                    x = x.pow(parseFactor().toInt())
+                    // To fix sqrt(2)^2 = 2
+                    /*val decimal = x.toInt()
+                    val fractional = x.toInt() - decimal
+                    if (fractional > 0 && fractional < 1.0E-14) {
+                        x = decimal.toDouble()
+                    }*/
+                }
+                return x
+            }
+        }.parse()
+    }
+}
+
 var division_by_0 = false
 var domain_error = false
 var syntax_error = false
