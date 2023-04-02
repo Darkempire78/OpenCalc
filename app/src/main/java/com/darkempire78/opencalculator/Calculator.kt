@@ -132,11 +132,11 @@ class Calculator2 {
                 if (eat('^'.code)) {
                     x = x.pow(parseFactor().toInt())
                     // To fix sqrt(2)^2 = 2
-                    /*val decimal = x.toInt()
-                    val fractional = x.toInt() - decimal
+                    val decimal = x.toInt()
+                    val fractional = x.toDouble() - decimal
                     if (fractional > 0 && fractional < 1.0E-14) {
-                        x = decimal.toDouble()
-                    }*/
+                        x = decimal.toBigDecimal()
+                    }
                 }
                 return x
             }
