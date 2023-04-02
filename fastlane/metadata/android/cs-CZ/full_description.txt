@@ -1,0 +1,10 @@
+Jednoduchá a krásná kalkulačka pro Android
+
+📖 Funkce
+	* Úsporná (~2 MB),
+	* Žádné nepotřebné oprávnění,
+	* Tmavý, Světlý, Amoled a Material You motiv,
+	* Vědecký režim,
+	* Historie,
+	* Orientace na výšku i šířku,
+	* Více...

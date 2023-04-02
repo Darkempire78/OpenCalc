@@ -1,0 +1,9 @@
+Změny:
+- Německý překlad
+- Ruský překlad
+- Řecký překlad
+- Hindský překlad
+- Ázerbájdžánský překlad
+
+Opravy:
+- Nematematické procento
