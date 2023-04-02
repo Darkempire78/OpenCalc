@@ -107,19 +107,23 @@ class Calculator2 {
                         "ln" -> {
                             if (x.compareTo(BigDecimal.ZERO) == 0) {
                                 domain_error = true
+                            } else {
+                                x = BigDecimal(ln(x.toDouble()))
                             }
-                            x = BigDecimal(ln(x.toDouble()))
                         }
                         "logten" -> {
                             if (x.compareTo(BigDecimal.ZERO) == 0) {
                                 domain_error = true
+                            } else {
+                                x = BigDecimal(log10(x.toDouble()))
                             }
-                            x = BigDecimal(log10(x.toDouble()))
                         }
                         "xp" -> {
                             x = BigDecimal(exp(x.toDouble()))
                         }
-                        else -> x = BigDecimal(Double.NaN)
+                        else -> {
+                            syntax_error2 = true
+                        }
                     }
                 } else {
                     x = BigDecimal.ZERO
