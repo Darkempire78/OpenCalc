@@ -1,1 +1,1 @@
-Einfacher und schöner Taschenrechner für Android
+Ein unkomplizierter und schöner Taschenrechner für Android
