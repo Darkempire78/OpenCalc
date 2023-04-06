@@ -1,0 +1,2 @@
+Fikset:
+- Prosentdeling
