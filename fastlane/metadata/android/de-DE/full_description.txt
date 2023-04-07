@@ -1,0 +1,10 @@
+Ein unkomplizierter und schöner Taschenrechner für Android
+
+📖 Features:
+	* Leichtgewichtig (~2MB),
+	* Keine unnötigen Berechtigungen,
+	* Material You Design (u.a.)
+	* Wissenschaftlicher Modus,
+	* Verlauf,
+	* Hoch- und Querformat,
+	* Und mehr...

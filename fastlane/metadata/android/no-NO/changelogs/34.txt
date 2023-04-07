@@ -1,0 +1,7 @@
+Oppdatert:
+Visning av «Verdien er for stor» istedenfor «Uendelig»
+
+Fikset:
+- Deling med negative tall
+- Problem med faktoriseringsfunksjon
+- sin (xl) & cos(x!) gir feil resultater

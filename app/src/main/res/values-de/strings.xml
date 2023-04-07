@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Rechner</string>
-    <string name="select_theme_title">Wähle Aussehen</string>
+    <string name="select_theme_title">Design wählen</string>
     <!-- App Menu -->
-    <string name="app_menu_theme">Aussehen</string>
+    <string name="app_menu_theme">Design</string>
     <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_about">Über</string>
-    <string name="infinity">Infinity</string>a
-<string name="theme_light">Licht</string>
+    <string name="infinity">Unendlich</string>a
+<string name="theme_light">Hell</string>
     <string name="value_copied">Kopiert</string>
-    <string name="math_error">Mathematische Fehler</string>
+    <string name="math_error">Mathematischer Fehler</string>
     <string name="app_menu_clear_history">Verlauf löschen</string>
-    <string name="theme_dark">Dunkles</string>
-    <string name="domain_error">Domänenfehler</string>
+    <string name="theme_dark">Dunkel</string>
     <string name="theme_system">System</string>
     <string name="theme_amoled">Schwarz</string>
-    <string name="division_by_0">Kann nicht durch 0 dividieren</string>
+    <string name="division_by_0">Dividieren durch 0 nicht möglich</string>
     <string name="syntax_error">Syntaxfehler</string>
+    <string name="app_menu_settings">Einstellungen</string>
+    <string name="value_too_large">Wert zu groß</string>
+    <string name="preferences_title">Einstellungen</string>
+    <string name="preferences_general_category">ALLGEMEIN</string>
+    <string name="preferences_history_category">VERLAUF</string>
+    <string name="preferences_vibration_summary">Vibrieren, wenn eine Taste gedrückt wird</string>
+    <string name="preferences_history_size">Anzahl Ergebnisse, die im Verlauf gespeichert werden sollen</string>
+    <string name="preferences_vibration_title">Vibration</string>
+    <string name="preferences_prevent_phone_from_sleeping_summary">Ausschalten des Bildschirms verhindern, während die App im Vordergrund ist</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Bildschirm ausschalten verhindern</string>
+    <string name="preferences_advanced_category">ERWEITERT</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Wissenschaftlicher Modus standardmäßig aktivieren</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Wissenschaftlicher Modus</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Radiant</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Radiant (RAD) statt Grad (DEG) standardmäßig verwenden</string>
+    <string name="about_help_us_category">UNTERSTÜTZE UNS</string>
+    <string name="about_donate">Spenden</string>
+    <string name="about_translate">Übersetzen</string>
+    <string name="about_rate">App bewerten</string>
+    <string name="app_version_title">Version</string>
+    <string name="thanks_for_using_opencalc">Danke, dass du OpenCalc nutzt ❤️</string>
+    <string name="made_in_france">Made with ❤️ in France</string>
+    <string name="about_other_category">SONSTIGES</string>
+    <string name="about_title">Über</string>
+    <string name="preferences_number_precision">Anzahl Nachkommastellen</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
+    <string name="preferences_language_title">Sprache</string>
 </resources>

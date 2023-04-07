@@ -1,0 +1,5 @@
+Fikset:
+- tan() fungerer
+- Sletting tusendedelsinndeler får pekeren til å hoppe
+- Plassering av parentes i eksisterende utregninger
+- Grafikkproblem i liggende modus på nettbrett over 10 tommer

@@ -1,0 +1,15 @@
+Oppdatert:
+- Mange oversettelser
+- Inndataområdet tar hele skjermen
+- Parentessystem
+
+Fikset:
+- Dobbelt oppsprett når verdi kopiert fra Android 13
+- Definisjonsområde for tangent
+- Resultat vist ved innlimt utregning
+- Indirekte deling med null er udefinert
+- Deling med funksjoner
+- Parentesproblemer
+- Trigonometrifunksjoner gir feil resultater hvis resultatet er negativt
+- Matteproblemer tømmer hele kalkulasjonen når et nytt nummer innskrives
+- Parentesproblem med tangent
