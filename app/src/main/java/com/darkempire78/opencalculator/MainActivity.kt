@@ -404,14 +404,14 @@ class MainActivity : AppCompatActivity() {
             if (calculation != "") {
                 division_by_0 = false
                 domain_error = false
-                domain_error = false
+                syntax_error = false
                 is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
-                if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
 
                     // Round
                     result = roundResult(result)
@@ -677,7 +677,7 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
-                if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
 
                     // Remove zeros at the end of the results (after point)
                     val resultSplited = resultString.split('.')
