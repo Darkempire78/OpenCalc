@@ -406,7 +406,7 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
-                    // Round at 10^-12
+                    // Round
                     result = roundResult(result)
                     var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
