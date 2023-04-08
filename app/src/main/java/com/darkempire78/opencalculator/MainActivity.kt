@@ -415,7 +415,8 @@ class MainActivity : AppCompatActivity() {
                         result = 0.0
                     }*/
                     // If the double ends with .0 we remove the .0
-                    if ((result * BigDecimal(10)).rem(BigDecimal(10)) == BigDecimal(0.0)) {
+                    val numberPrecision = MyPreferences(this@MainActivity).numberPrecision!!.toInt()
+                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal("0E-$numberPrecision")) {
                         val resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
@@ -678,7 +679,8 @@ class MainActivity : AppCompatActivity() {
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
-                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal(0.0)) {
+                    val numberPrecision = MyPreferences(this@MainActivity).numberPrecision!!.toInt()
+                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal("0E-$numberPrecision")) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
