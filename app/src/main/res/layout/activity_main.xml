@@ -34,6 +34,7 @@
             android:textColor="?attr/text_color"
             android:textSize="55sp"
             android:background="?attr/foreground_color"
+            android:maxLength="10000"
             tools:ignore="RtlCompat" />
 
     </HorizontalScrollView>
