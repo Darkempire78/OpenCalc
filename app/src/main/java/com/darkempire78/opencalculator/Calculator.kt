@@ -12,6 +12,48 @@ var domain_error2 = false
 var syntax_error2 = false
 
 class Calculator2 {
+
+    fun factorial(number: BigDecimal): BigDecimal {
+        //return if (number >= 171) {
+        //    Double.POSITIVE_INFINITY
+        return if (number < BigDecimal.ZERO) {
+            domain_error2 = true
+            BigDecimal.ZERO
+        } else {
+            val decimalPartOfNumber = number.toDouble() - number.toInt()
+            if (decimalPartOfNumber == 0.0) {
+                var factorial = BigInteger("1")
+                for (i in 1..number.toInt()) {
+                    factorial *= i.toBigInteger()
+                }
+                factorial.toBigDecimal()
+            } else gammaLanczos(number + BigDecimal.ONE)
+        }
+    }
+
+    private fun gammaLanczos(x: BigDecimal): BigDecimal {
+        // https://rosettacode.org/wiki/Gamma_function
+        var xx = x
+        val p = doubleArrayOf(
+            0.9999999999998099,
+            676.5203681218851,
+            -1259.1392167224028,
+            771.3234287776531,
+            -176.6150291621406,
+            12.507343278686905,
+            -0.13857109526572012,
+            9.984369578019572E-6,
+            1.5056327351493116e-7
+        )
+        val g = BigDecimal(7)
+        if (xx < BigDecimal(0.5)) return (Math.PI / (sin(Math.PI * xx.toDouble()) * gammaLanczos(BigDecimal(1.0 - xx.toDouble())).toDouble())).toBigDecimal()
+        xx--
+        var a = p[0]
+        val t = xx + g + BigDecimal(0.5)
+        for (i in 1 until p.size) a += p[i] / (xx.toDouble() + i)
+        return (sqrt(2.0 * Math.PI) * t.toDouble().pow(xx.toInt() + 0.5) * exp(-t.toDouble()) * a).toBigDecimal()
+    }
+
     fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
         println("Equation BigDecimal : $equation")
         return object : Any() {
@@ -73,15 +115,18 @@ class Calculator2 {
                     if (!eat(')'.code)) {
                         println("Missing ')'")
                         x = BigDecimal.ZERO
+                        syntax_error2 = true
                     }
                 } else if (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) { // numbers
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
                     val string = equation.substring(startPos, pos)
-                    x = if (string.count { it == '.' } > 1) {
-                        BigDecimal.ZERO
+                    if (string.count { it == '.' } > 1) {
+                        x = BigDecimal.ZERO
+                        syntax_error2 = true
                     } else {
                         if ((string.length == 1) && (string[0] == '.')) {
                             BigDecimal.ZERO
+                            syntax_error2 = true
                         } else {
                             BigDecimal(string)
                         }
@@ -103,6 +148,9 @@ class Calculator2 {
                     when (func) {
                         "sqrt" -> {
                             x = BigDecimal(sqrt(x.toDouble()))
+                        }
+                        "factorial" -> {
+                            x = factorial(x)
                         }
                         "ln" -> {
                             if (x.compareTo(BigDecimal.ZERO) == 0) {
