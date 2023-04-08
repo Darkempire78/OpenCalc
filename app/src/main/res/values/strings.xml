@@ -106,4 +106,6 @@
     <string name="privacy_policy">Privacy policy</string>
     <string name="about_title">About</string>
     <string name="preferences_language_title">Language</string>
+    <string name="preferences_write_number_into_scientific_notation_title">Number into scientific notation</string>
+    <string name="preferences_write_number_into_scientific_notation_summary">Convert all results to scientific notation</string>
 </resources>

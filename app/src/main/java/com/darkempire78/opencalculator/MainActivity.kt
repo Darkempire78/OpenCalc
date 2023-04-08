@@ -357,7 +357,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun roundResult(result : BigDecimal): BigDecimal {
-        return result.setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN)
+        val numberPrecision = MyPreferences(this).numberPrecision!!.toInt()
+        var newResult = result.setScale(numberPrecision, RoundingMode.HALF_EVEN)
+        if (MyPreferences(this).numberIntoScientificNotation) {
+            val scientificString = String.format(Locale.US, "%.4g", result)
+            newResult = BigDecimal(scientificString)
+        }
+        return newResult
     }
 
     private fun enableOrDisableScientistMode() {
