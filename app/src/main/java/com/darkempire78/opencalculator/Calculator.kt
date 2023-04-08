@@ -125,10 +125,10 @@ class Calculator2 {
                         syntax_error2 = true
                     } else {
                         if ((string.length == 1) && (string[0] == '.')) {
-                            BigDecimal.ZERO
+                            x = BigDecimal.ZERO
                             syntax_error2 = true
                         } else {
-                            BigDecimal(string)
+                            x = BigDecimal(string)
                         }
                     }
                 } else if (eat('e'.code)) {
@@ -168,6 +168,90 @@ class Calculator2 {
                         }
                         "xp" -> {
                             x = BigDecimal(exp(x.toDouble()))
+                        }
+                        "sin" -> {
+                            if (isDegreeModeActivated) {
+                                x = sin(Math.toRadians(x.toDouble())).toBigDecimal()
+                                // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
+                            } else {
+                                x = sin(x.toDouble()).toBigDecimal()
+                            }
+                            if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                x = round(x.toDouble()).toBigDecimal()
+                            }
+                        }
+                        "cos" -> {
+                            if (isDegreeModeActivated) {
+                                x = cos(Math.toRadians(x.toDouble())).toBigDecimal()
+                            } else {
+                                x = cos(x.toDouble()).toBigDecimal()
+                            }
+                            if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                x = round(x.toDouble()).toBigDecimal()
+                            }
+                        }
+                        "tan" -> {
+                            if (Math.toDegrees(x.toDouble()) == 90.0) {
+                                // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
+                                domain_error = true
+                                x = BigDecimal.ZERO
+                            } else {
+                                x = if (isDegreeModeActivated) {
+                                    tan(Math.toRadians(x.toDouble())).toBigDecimal()
+                                } else {
+                                    tan(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
+                                }
+                            }
+                        }
+                        "arcsi" -> {
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error2 = true
+                            } else {
+                                x = if (isDegreeModeActivated) {
+                                    (asin(x.toDouble()) * 180 / Math.PI).toBigDecimal()
+                                } else {
+                                    asin(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
+                                }
+                            }
+                        }
+                        "arcco" -> {
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error2 = true
+                            } else {
+                                x = if (isDegreeModeActivated) {
+                                    (acos(x.toDouble())*180/Math.PI).toBigDecimal()
+                                } else {
+                                    acos(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
+                                }
+                            }
+
+                        }
+                        "arcta" -> {
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error2 = true
+                            } else {
+                                x = if (isDegreeModeActivated) {
+                                    (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
+
+                                } else {
+                                    atan(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
+                                }
+                            }
                         }
                         else -> {
                             syntax_error2 = true
