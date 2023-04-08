@@ -356,11 +356,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun roundResult(result : Double): Double {
-        if (result.isNaN() || result.isInfinite()) {
-            return result
-        }
-        return BigDecimal(result).setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN).toDouble()
+    private fun roundResult(result : BigDecimal): BigDecimal {
+        return result.setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN)
     }
 
     private fun enableOrDisableScientistMode() {
@@ -401,25 +398,24 @@ class MainActivity : AppCompatActivity() {
             if (calculation != "") {
                 division_by_0 = false
                 domain_error = false
-                syntax_error = false
+                domain_error = false
+                is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
-                var result2 = Calculator2().evaluate(calculationTmp, isDegreeModeActivated)
-                println("Result BigDecimal : $result2")
 
                 // If result is a number and it is finite
-                if (!result.isNaN() && result.isFinite()) {
+                if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
                     // Round at 10^-12
                     result = roundResult(result)
                     var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                     // If result = -0, change it to 0
-                    if (result == -0.0) {
+                    /*if (result == -0.0) {
                         result = 0.0
-                    }
+                    }*/
                     // If the double ends with .0 we remove the .0
-                    if ((result * 10) % 10 == 0.0) {
+                    if ((result * BigDecimal(10)).rem(BigDecimal(10)) == BigDecimal(0.0)) {
                         val resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
@@ -440,8 +436,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else withContext(Dispatchers.Main) {
-                    if (result.isInfinite() && !division_by_0 && !domain_error) {
-                        if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                    if (is_infinity && !division_by_0 && !domain_error) {
+                        if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-"+getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
@@ -672,6 +668,7 @@ class MainActivity : AppCompatActivity() {
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
+                is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
                 val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
@@ -679,9 +676,9 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
-                if (!result.isNaN() && result.isFinite()) {
+                if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
-                    if ((result * 10) % 10 == 0.0) {
+                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal(0.0)) {
                         resultString = String.format("%.0f", result)
                         formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
@@ -755,16 +752,16 @@ class MainActivity : AppCompatActivity() {
                         } else if (domain_error) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.domain_error))
-                        } else if (result.isInfinite()) {
+                        } else if (is_infinity) {
                             if (division_by_0) {
                                 setErrorColor(true)
                                 binding.resultDisplay.setText(getString(R.string.division_by_0))
                             }
-                            else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            else if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.value_too_large))
-                        } else if (result.isNaN()) {
-                            setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.math_error))
+                        //} else if (result.isNaN()) {
+                        //    setErrorColor(true)
+                        //    binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
                             isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
