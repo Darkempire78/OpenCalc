@@ -406,36 +406,30 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
+
                     // Round
                     result = roundResult(result)
                     var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
-                    // If result = -0, change it to 0
-                    /*if (result == -0.0) {
-                        result = 0.0
-                    }*/
-                    // If the double ends with .0 we remove the .0
-                    val numberPrecision = MyPreferences(this@MainActivity).numberPrecision!!.toInt()
-                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal("0E-$numberPrecision")) {
-                        val resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
-
-                        withContext(Dispatchers.Main) {
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.setText(formattedResult)
-                            } else {
-                                binding.resultDisplay.setText("")
-                            }
+                    // Remove zeros at the end of the results (after point)
+                    val resultSplited = result.toString().split('.')
+                    if (resultSplited.size > 1) {
+                        val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
+                        var resultWithoutZeros = resultSplited[0]
+                        if (resultPartAfterDecimalSeparator != "") {
+                            resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
                         }
-                    } else {
-                        withContext(Dispatchers.Main) {
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.setText(formattedResult)
-                            } else {
-                                binding.resultDisplay.setText("")
-                            }
+                        formattedResult = NumberFormatter.format(resultWithoutZeros, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                    }
+
+                    withContext(Dispatchers.Main) {
+                        if (formattedResult != calculation) {
+                            binding.resultDisplay.setText(formattedResult)
+                        } else {
+                            binding.resultDisplay.setText("")
                         }
                     }
+
                 } else withContext(Dispatchers.Main) {
                     if (is_infinity && !division_by_0 && !domain_error) {
                         if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-"+getString(R.string.infinity))
@@ -678,6 +672,18 @@ class MainActivity : AppCompatActivity() {
 
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || domain_error || is_infinity)) {
+
+                    // Remove zeros at the end of the results (after point)
+                    val resultSplited = resultString.split('.')
+                    if (resultSplited.size > 1) {
+                        val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
+                        var resultWithoutZeros = resultSplited[0]
+                        if (resultPartAfterDecimalSeparator != "") {
+                            resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
+                        }
+                        formattedResult = NumberFormatter.format(resultWithoutZeros, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                    }
+
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
                     val numberPrecision = MyPreferences(this@MainActivity).numberPrecision!!.toInt()
                     if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal("0E-$numberPrecision")) {
