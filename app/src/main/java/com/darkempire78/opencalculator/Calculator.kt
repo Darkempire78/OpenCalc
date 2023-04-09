@@ -4,6 +4,7 @@ import java.math.BigInteger
 import kotlin.math.*
 
 import java.math.BigDecimal
+import java.math.RoundingMode
 import kotlin.math.ln
 import kotlin.math.pow
 
@@ -12,7 +13,9 @@ var domain_error = false
 var syntax_error = false
 var is_infinity = false
 
-class Calculator {
+class Calculator(numberPrecision: Int) {
+
+    private val numberPrecision = numberPrecision
 
     fun factorial(number: BigDecimal): BigDecimal {
         if (number >= BigDecimal(3000)) {
@@ -97,11 +100,16 @@ class Calculator {
                     if (eat('*'.code)) x = x.multiply(parseFactor()) // multiplication
                     else if (eat('/'.code)) {
                         val fractionDenominator = parseFactor()
-                        if (fractionDenominator.compareTo(BigDecimal.ZERO) == 0) {
+                        if (fractionDenominator == BigDecimal.ZERO) {
                             division_by_0 = true
                             x = BigDecimal.ZERO
                         } else {
-                            x = x.divide(fractionDenominator)
+                            try {
+                                x = x.divide(fractionDenominator)
+                            } catch (e: ArithmeticException) { // if the result is a non-terminating decimal expansion
+                                x = x.divide(fractionDenominator, numberPrecision, RoundingMode.HALF_DOWN)
+                                println(x)
+                            }
                         }
                     } // division
                     else return x

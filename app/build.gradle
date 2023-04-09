@@ -9,8 +9,8 @@ android {
         resConfigs 'ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 38
-        versionName "2.3.1"
+        versionCode 39
+        versionName "3.0.0-beta1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

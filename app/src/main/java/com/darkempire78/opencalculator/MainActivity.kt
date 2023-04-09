@@ -359,7 +359,7 @@ class MainActivity : AppCompatActivity() {
     private fun roundResult(result : BigDecimal): BigDecimal {
         val numberPrecision = MyPreferences(this).numberPrecision!!.toInt()
         var newResult = result.setScale(numberPrecision, RoundingMode.HALF_EVEN)
-        if (MyPreferences(this).numberIntoScientificNotation) {
+        if (MyPreferences(this).numberIntoScientificNotation && (newResult >= BigDecimal(9999) || newResult <= BigDecimal(0.1) )) {
             val scientificString = String.format(Locale.US, "%.4g", result)
             newResult = BigDecimal(scientificString)
         }
@@ -408,7 +408,7 @@ class MainActivity : AppCompatActivity() {
                 is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+                var result = Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
@@ -672,7 +672,7 @@ class MainActivity : AppCompatActivity() {
                 is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
+                val result = roundResult((Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
@@ -766,12 +766,11 @@ class MainActivity : AppCompatActivity() {
                         } else if (domain_error) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.domain_error))
+                        } else if (division_by_0) {
+                            setErrorColor(true)
+                            binding.resultDisplay.setText(getString(R.string.division_by_0))
                         } else if (is_infinity) {
-                            if (division_by_0) {
-                                setErrorColor(true)
-                                binding.resultDisplay.setText(getString(R.string.division_by_0))
-                            }
-                            else if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         //} else if (result.isNaN()) {
                         //    setErrorColor(true)
