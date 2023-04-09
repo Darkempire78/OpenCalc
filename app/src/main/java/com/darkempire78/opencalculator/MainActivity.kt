@@ -425,7 +425,7 @@ class MainActivity : AppCompatActivity() {
                         if (resultPartAfterDecimalSeparator != "") {
                             resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
                         }
-                        formattedResult = NumberFormatter.format(resultWithoutZeros, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                        formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
 
                     withContext(Dispatchers.Main) {
@@ -687,7 +687,7 @@ class MainActivity : AppCompatActivity() {
                         if (resultPartAfterDecimalSeparator != "") {
                             resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
                         }
-                        formattedResult = NumberFormatter.format(resultWithoutZeros, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                        formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
 
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
