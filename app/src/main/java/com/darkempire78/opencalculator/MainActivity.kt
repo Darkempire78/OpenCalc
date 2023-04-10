@@ -420,15 +420,18 @@ class MainActivity : AppCompatActivity() {
                     var formattedResult = NumberFormatter.format(calculationResult.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                     // Remove zeros at the end of the results (after point)
-                    val resultSplited = calculationResult.toString().split('.')
-                    if (resultSplited.size > 1) {
-                        val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
-                        var resultWithoutZeros = resultSplited[0]
-                        if (resultPartAfterDecimalSeparator != "") {
-                            resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
+                    if (!MyPreferences(this@MainActivity).numberIntoScientificNotation || !(calculationResult >= BigDecimal(9999) || calculationResult <= BigDecimal(0.1) )) {
+                        val resultSplited = calculationResult.toString().split('.')
+                        if (resultSplited.size > 1) {
+                            val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
+                            var resultWithoutZeros = resultSplited[0]
+                            if (resultPartAfterDecimalSeparator != "") {
+                                resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
+                            }
+                            formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                         }
-                        formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
+
 
                     withContext(Dispatchers.Main) {
                         if (formattedResult != calculation) {
@@ -669,7 +672,7 @@ class MainActivity : AppCompatActivity() {
 
             if (calculation != "") {
 
-                var resultString = calculationResult.toString()
+                val resultString = calculationResult.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
