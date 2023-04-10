@@ -4,7 +4,6 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -40,10 +39,13 @@ class MainActivity : AppCompatActivity() {
 
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
+
+    private var calculationResult = BigDecimal.ZERO
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -408,17 +410,17 @@ class MainActivity : AppCompatActivity() {
                 is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                var result = Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)
+                calculationResult = Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
                 if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
 
                     // Round
-                    result = roundResult(result)
-                    var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
+                    calculationResult = roundResult(calculationResult)
+                    var formattedResult = NumberFormatter.format(calculationResult.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                     // Remove zeros at the end of the results (after point)
-                    val resultSplited = result.toString().split('.')
+                    val resultSplited = calculationResult.toString().split('.')
                     if (resultSplited.size > 1) {
                         val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
                         var resultWithoutZeros = resultSplited[0]
@@ -438,7 +440,7 @@ class MainActivity : AppCompatActivity() {
 
                 } else withContext(Dispatchers.Main) {
                     if (is_infinity && !division_by_0 && !domain_error) {
-                        if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText("-"+getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
@@ -666,14 +668,8 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-                division_by_0 = false
-                domain_error = false
-                syntax_error = false
-                is_infinity = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                val result = roundResult((Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)))
-                var resultString = result.toString()
+                var resultString = calculationResult.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
@@ -688,13 +684,6 @@ class MainActivity : AppCompatActivity() {
                             resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
                         }
                         formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                    }
-
-                    // If there is an unused 0 at the end, remove it : 2.0 -> 2
-                    val numberPrecision = MyPreferences(this@MainActivity).numberPrecision!!.toInt()
-                    if ((result * BigDecimal.TEN).rem(BigDecimal.TEN) == BigDecimal("0E-$numberPrecision")) {
-                        resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
 
                     // Hide the cursor before updating binding.input to avoid weird cursor movement
@@ -770,7 +759,7 @@ class MainActivity : AppCompatActivity() {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.division_by_0))
                         } else if (is_infinity) {
-                            if (result < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         //} else if (result.isNaN()) {
                         //    setErrorColor(true)
