@@ -17,4 +17,25 @@
     <string name="domain_error">Errore di dominio</string>
     <string name="syntax_error">Errore di sintassi</string>
     <string name="value_too_large">Valore troppo grande</string>
+    <string name="app_menu_settings">Impostazioni</string>
+    <string name="preferences_title">Impostazioni</string>
+    <string name="preferences_general_category">GENERALI</string>
+    <string name="preferences_vibration_title">Vibrazione</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Modalità scientifica</string>
+    <string name="about_help_us_category">AIUTACI</string>
+    <string name="about_donate">Dona</string>
+    <string name="about_other_category">ALTRO</string>
+    <string name="about_translate">Traduci</string>
+    <string name="about_rate">Valuta questa app</string>
+    <string name="about_title">Informazioni</string>
+    <string name="preferences_language_title">Lingua</string>
+    <string name="preferences_vibration_summary">Emette vibrazioni quando viene premuto un pulsante</string>
+    <string name="preferences_advanced_category">AVANZATE</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Radianti</string>
+    <string name="about_social_category">SOCIAL</string>
+    <string name="app_version_title">Versione</string>
+    <string name="preferences_number_precision">Numero di cifre decimali</string>
+    <string name="thanks_for_using_opencalc">Grazie per aver scelto OpenCalc ❤️</string>
+    <string name="made_in_france">Creata con ❤️ in Francia</string>
+    <string name="privacy_policy">Informativa sulla Privacy</string>
 </resources>
