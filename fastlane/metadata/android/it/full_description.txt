@@ -1,7 +1,10 @@
 Una calcolatrice semplice e bella per Android
 
 📖 Caratteristiche
-	- Tema scuro, chiaro e amoled
-	- Modalità scientifica
-	- Orientamento verticale o orizzontale
-	- E altro...
+	* Leggera ( ~2MB),
+	* Nessuna autorizzazione non necessaria,
+	* Tema Scuro, Chiaro, Amoled e Material You,
+	* Modalità scientifica,
+	* Cronologia,
+	* Orientamento verticale e orizzontale,
+	* E altro...
