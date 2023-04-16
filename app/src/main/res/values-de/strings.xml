@@ -14,7 +14,7 @@
     <string name="theme_dark">Dunkel</string>
     <string name="theme_system">System</string>
     <string name="theme_amoled">Schwarz</string>
-    <string name="division_by_0">Dividieren durch 0 nicht möglich</string>
+    <string name="division_by_0">Teilen durch 0 nicht möglich</string>
     <string name="syntax_error">Syntaxfehler</string>
     <string name="app_menu_settings">Einstellungen</string>
     <string name="value_too_large">Wert zu groß</string>
@@ -22,12 +22,12 @@
     <string name="preferences_general_category">ALLGEMEIN</string>
     <string name="preferences_history_category">VERLAUF</string>
     <string name="preferences_vibration_summary">Vibrieren, wenn eine Taste gedrückt wird</string>
-    <string name="preferences_history_size">Anzahl Ergebnisse, die im Verlauf gespeichert werden sollen</string>
+    <string name="preferences_history_size">Anzahl Ergebnisse, die im Verlauf gespeichert werden</string>
     <string name="preferences_vibration_title">Vibration</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">Ausschalten des Bildschirms verhindern, während die App im Vordergrund ist</string>
     <string name="preferences_prevent_phone_from_sleeping_title">Bildschirm ausschalten verhindern</string>
     <string name="preferences_advanced_category">ERWEITERT</string>
-    <string name="preferences_scientif_mode_enabled_by_default_summary">Wissenschaftlicher Modus standardmäßig aktivieren</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Wissenschaftlichen Modus standardmäßig aktivieren</string>
     <string name="preferences_scientif_mode_enabled_by_default_title">Wissenschaftlicher Modus</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radiant</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Radiant (RAD) statt Grad (DEG) standardmäßig verwenden</string>
@@ -44,5 +44,5 @@
     <string name="privacy_policy">Datenschutzerklärung</string>
     <string name="preferences_language_title">Sprache</string>
     <string name="about_social_category">SOCIAL</string>
-    <string name="domain_error">Domain-Fehler</string>
+    <string name="domain_error">Domainfehler</string>
 </resources>
