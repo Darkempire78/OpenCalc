@@ -1,0 +1,2 @@
+Neu:
+- Verlauf löschen

@@ -1,0 +1,5 @@
+Neu:
+- Kachel für Schnelleinstellungen
+
+Fehlerbehebung:
+- Störende Toast-Nachrichten

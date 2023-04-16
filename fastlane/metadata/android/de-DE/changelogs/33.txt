@@ -1,0 +1,15 @@
+Aktualisiert:
+- Viele Übersetzungen
+- Eingabebereich nutzt volle Displaygröße
+- Klammerungssystem
+
+Behoben:
+- Doppelte Toast-Nachricht beim Kopieren eines Wertes mit Android 13
+- Definitionsbereich des Tangens
+- Zeige Ergebnis, wenn Berechnung eingefügt wird
+- Indirekte Teilung durch Null ist nicht definiert
+- Teilung durch Funktionen
+- Prozent Probleme
+- Trigonometrische Funktionen geben falsches Ergebnis zurück, falls das Ergebnis negativ ist
+- Mathematische Fehler entfernen ganze Berechnung, wenn eine neue Zahl eingegeben wird
+- Klammerproblem beim Tangens

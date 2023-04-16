@@ -1,0 +1,9 @@
+Änderung:
+- Deutsch-Übersetzung
+- Russisch-Übersetzung
+- Griechisch-Übersetzung
+- Hindi-Übersetzung
+- Aserbaidschan-Übersetzung
+
+Fehlerbehebung:
+- Nicht mathematisches Prozent

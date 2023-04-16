@@ -1,0 +1,7 @@
+Aktualisiert:
+- Zeige "value too large" an anstelle von "infinity"
+
+Fehlerbehebung:
+- Teilung durch negative Zahlen
+- Problem mit Fakultätsfunktion
+- sin(x!) & cos(x!) geben falsche Ergebnisse
