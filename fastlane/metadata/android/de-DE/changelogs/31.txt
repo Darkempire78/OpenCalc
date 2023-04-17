@@ -1,0 +1,9 @@
+Aktualisiert:
+- Textfarbe bei Fehlermeldung geändert
+- Appgröße reduziert
+- Speicher ein Ergebnis nicht im Verlauf, falls es gleich der Berechnung ist
+- Speichere die Berechnung nicht im Verlauf, falls sie gleich der neuesten Berechnung ist
+
+Fehlerbehebung:
+- 0 Fakultät ergibt 1
+- Hinzufügen eines mathematischen Symbols nachdem Ist-gleich gedrückt wurde

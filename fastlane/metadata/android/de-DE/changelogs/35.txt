@@ -1,0 +1,5 @@
+Fehlerbehebung:
+- tan() funktioniert nicht richtig
+- Löschen eines Tausendertrennzeichens verursacht Cursorsprung
+- Platzierung von Klammern in bereits bestehenden Berechnungen
+- Grafik Problem im Querformat bei Tablets größer als 10 Zoll

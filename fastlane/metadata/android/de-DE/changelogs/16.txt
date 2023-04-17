@@ -1,0 +1,4 @@
+Fehlerbehebung:
+- Eingabe-Scrollbalken
+- Nötiges Scrollen um Ergebnis zu sehen
+- Freies Eingabefeld, falls eine Ziffer nach dem Ist-gleich-Zeichen angetippt wird

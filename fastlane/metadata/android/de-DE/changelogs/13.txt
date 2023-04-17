@@ -1,0 +1,6 @@
+Neu:
+- Symboldesign (Themed icon)
+
+Änderung:
+- Übersetzungen aktualisiert
+- Freies Eingabefeld, falls eine Ziffer nach dem Ist-gleich-Zeichen angetippt wird

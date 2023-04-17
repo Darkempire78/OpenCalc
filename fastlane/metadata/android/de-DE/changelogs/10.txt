@@ -1,0 +1,5 @@
+Änderung:
+- Trennzeichen für große Zahlen hinzugefügt
+- Italienisch-Übersetzung hinzugefügt
+- Arabisch-Übersetzung hinzugefügt
+- Türkisch-Übersetzung hinzugefügt

@@ -1,0 +1,8 @@
+Neu:
+- Explizite Fehlermeldungen
+- Überarbeitung des Verlauf-Designs
+- Zeitstempel zu den Verlauf Ergebnissen hinzugefügt
+- Erlaube bei Eingabe keine doppelten Operatoren
+
+Aktualisiert:
+- arccos, arcsin und arctan werden nun als cos⁻¹, sin⁻¹ und tan⁻¹ dargestellt

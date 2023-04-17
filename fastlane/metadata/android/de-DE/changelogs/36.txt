@@ -1,0 +1,5 @@
+Neu:
+- Einstellungsseite
+
+Aktualisiert:
+- Über-Seite
