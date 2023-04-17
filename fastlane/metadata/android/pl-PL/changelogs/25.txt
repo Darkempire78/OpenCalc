@@ -1,0 +1,8 @@
+Dodano:
+- Hiszpańskie tłumaczenie
+
+Naprawiono:
+- Klawiatura przestaje odpowiadać pracując z silniami dużych liczb
+- Niepoprawne ładowanie wartości z historii
+- Ładowanie wyników niecałkowitych z historii usuwa znaki lub powoduje błąd aplikacji
+- Precyzję

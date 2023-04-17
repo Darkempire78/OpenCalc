@@ -1,0 +1,8 @@
+Dodano
+- Konkretne błędy
+- Zmieniono design historii
+- Dodano daty i godziny do historii
+- Blokada przed zduplikowanymi wynikami w historii
+
+Zaktualizowano:
+- arccos, arcsin i arctan teraz są wyświetlane jako cos⁻¹, sin⁻¹ and tan⁻¹

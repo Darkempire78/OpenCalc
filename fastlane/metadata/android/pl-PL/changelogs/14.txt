@@ -1,0 +1,6 @@
+Dodano:
+- Przycisk darowizny
+
+Zmiany:
+- Poprawiono format historii
+- Zaktualizowano znak minus

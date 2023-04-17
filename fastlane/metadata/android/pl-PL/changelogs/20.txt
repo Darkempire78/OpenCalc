@@ -1,0 +1,4 @@
+Naprawiono:
+- Automatyczne zamykanie nawiasów
+- Mnożenie silni bez *
+- Automatyczne dodawanie 0 kiedy liczba zaczyna się przecinkiem

@@ -1,0 +1,7 @@
+Zmieniono:
+- Wyświetlanie "wartość zbyt duża" zamiast "nieskończoność"
+
+Naprawiono:
+- Dzielenie przez liczby ujemne
+- Problemy z funkcją silniową
+- sin(x!) oraz cos(x!) dające złe wyniki

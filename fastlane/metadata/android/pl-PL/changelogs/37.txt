@@ -1,0 +1,5 @@
+Dodano:
+- Ikonkę szybkich ustawień
+
+Naprawiono:
+- Irytujące pop-up'y

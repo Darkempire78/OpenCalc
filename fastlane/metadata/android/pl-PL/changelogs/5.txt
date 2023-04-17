@@ -1,0 +1,5 @@
+Zmieniono:
+- Współpraca z SDK 21+ (Android 5.0)
+
+Naprawiono:
+- Wibracje

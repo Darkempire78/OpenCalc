@@ -1,0 +1,6 @@
+Zmieniono:
+- Ekran ładowania jest teraz ciemny
+
+Naprawiono:
+- problemy z klawiaturą
+- przewijanie klawiatury

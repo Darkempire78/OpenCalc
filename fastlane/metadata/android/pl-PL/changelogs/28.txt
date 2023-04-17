@@ -1,0 +1,18 @@
+Dodano:
+- Wewnętrzny system obliczeniowy
+- Silnie liczb niecałkowitych
+- Powstrzymywanie obecności dwóch przecinków w liczbie
+- Brazylijskie tłumaczenie (@Bardock88)
+- Tajwańskie i Hong Końskie tłumaczenia (@alecchangod)
+- Hiszpańskie tłumaczenie
+
+Naprawiono:
+- Przewijanie historii (@MahmoudRH)
+- Dokładność wyników
+- Backspace po nawiasach
+- Wyświetlanie "Błąd matematyczny" zamiast "NaN" (@lefterisgar)
+- Tryb panoramiczny dla 10-calowych tabletów
+- Backspace po znaku równa się
+- Błąd aplikacji po kliknięciu wyniku w historii
+- Kilka problemów z formatowaniem wyrażeń
+- Inne drobne problemy

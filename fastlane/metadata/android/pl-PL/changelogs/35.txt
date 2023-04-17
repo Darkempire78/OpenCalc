@@ -1,0 +1,5 @@
+Naprawiono:
+- tan() nie działający poprawnie
+- Usuwanie separatora tysięcy powodujące skakanie kursora
+- Ułożenie nawiasów w zapisanych już obliczeniach
+- Problemy graficzne w trybie panoramicznym na tabletach powyżej 10 cali
