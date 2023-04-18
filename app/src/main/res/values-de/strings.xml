@@ -44,5 +44,5 @@
     <string name="privacy_policy">Datenschutzerklärung</string>
     <string name="preferences_language_title">Sprache</string>
     <string name="about_social_category">SOCIAL</string>
-    <string name="domain_error">Domainfehler</string>
+    <string name="domain_error">Falscher Definitionsbereich</string>
 </resources>
