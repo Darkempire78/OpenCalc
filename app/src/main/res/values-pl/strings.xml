@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_menu_vibration">Wibracje</string>
+    <string name="app_menu_clear_history">Wyczyść Historię</string>
+    <string name="theme_system">System</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="theme_light">Jasny</string>
+    <string name="theme_dark">Ciemny</string>
+    <string name="value_copied">Skopiowano</string>
+    <string name="infinity">Nieskończoność</string>
+    <string name="division_by_0">Nie można dzielić przez 0</string>
+    <string name="domain_error">Błąd domeny</string>
+    <string name="math_error">Błąd matematyczny</string>
+    <string name="syntax_error">Błąd składniowy</string>
+    <string name="app_menu_settings">Ustawienia</string>
+    <string name="value_too_large">Wartość zbyt duża</string>
+    <string name="preferences_general_category">OGÓLNE</string>
+    <string name="preferences_history_category">HISTORIA</string>
+    <string name="preferences_prevent_phone_from_sleeping_summary">Powstrzymaj telefon przed uśpieniem kiedy aplikacja jest otwarta</string>
+    <string name="preferences_vibration_summary">Odpowiadaj wibracjami na naciśnięcie klawisza</string>
+    <string name="preferences_history_size">Wyniki zapisane w historii</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Powstrzymaj telefon przed uśpieniem</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Uruchamiaj domyślnie tryb naukowy</string>
+    <string name="about_other_category">INNE</string>
+    <string name="about_translate">Tłumacz</string>
+    <string name="about_rate">Oceń tę aplikację</string>
+    <string name="app_version_title">Wersja</string>
+    <string name="thanks_for_using_opencalc">Dziękujemy za używanie OpenCalc ❤️</string>
+    <string name="made_in_france">Wyprodukowano z ❤️ we Francji</string>
+    <string name="preferences_number_precision">Liczba cyfr po przecinku</string>
+    <string name="privacy_policy">Polityka prywatności</string>
+    <string name="about_title">O aplikacji</string>
+    <string name="preferences_language_title">Język</string>
+    <string name="app_name_display">Kalkulator</string>
+    <string name="select_theme_title">Wybierz motyw</string>
+    <string name="app_menu_theme">Motyw</string>
+    <string name="app_menu_about">O aplikacji</string>
+    <string name="preferences_title">Ustawienia</string>
+    <string name="preferences_vibration_title">Wibracje</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Domyślnie używaj radianów zamiast stopni</string>
+    <string name="preferences_advanced_category">ZAAWANSOWANE</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Tryb naukowy</string>
+    <string name="about_social_category">MEDIA SPOŁECZNOŚCIOWE</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Radiany</string>
+    <string name="about_help_us_category">WSPOMÓŻ NAS</string>
+    <string name="about_donate">Wesprzyj nas</string>
+</resources>

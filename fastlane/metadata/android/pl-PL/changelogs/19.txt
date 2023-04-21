@@ -1,0 +1,8 @@
+Dodano:
+- Toast when you copy a value
+
+Naprawiono:
+- Wyświetlanie w motywie Material You dla systemu
+- Poprawiono wsparcie dla tabletów
+- Poprawiono wsparcie dla małych rozmiarów ekranów
+- Ikona nie wyświetlała się na Androidzie wersji 8 i starszych

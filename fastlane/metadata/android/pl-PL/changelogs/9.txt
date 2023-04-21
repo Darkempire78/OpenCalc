@@ -1,0 +1,7 @@
+Zmieniono:
+- nową stronę "o aplikacji"
+- dodano przecinek dla motywu amoled
+
+Naprawiono:
+- kolor pola wyboru
+- nazwę aplikacji (przetłumaczoną po angielsku i francusku)

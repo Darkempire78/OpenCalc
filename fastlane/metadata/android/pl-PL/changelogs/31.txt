@@ -1,0 +1,9 @@
+Zmieniono:
+- Zmiana koloru tekstu w przypadku błędu
+- Zmniejszony rozmiar aplikacji
+- Wyniki równe kalkulacji nie są zapisywane do historii
+- Wyniki które są ostatnie w historii nie są ponownie zapisywane
+
+Naprawiono:
+- Silnia 0 zwraca 1
+- Dodawanie symbolu matematycznego po wciśnięciu przycisku równa się

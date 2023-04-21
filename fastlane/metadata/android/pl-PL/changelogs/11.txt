@@ -1,0 +1,9 @@
+Zmiany:
+- Niemieckie tłumaczenie
+- Rosyjskie tłumaczenie
+- Greckie tłumaczenie
+- Hinduskie tłumaczenie
+- Azerbejdżańskie tłumaczenie
+
+Naprawiono:
+- Niematematyczny procent

@@ -1,0 +1,4 @@
+Naprawiono:
+- Przewijanie wejścia
+- Przewinięcie potrzebne aby zobaczyć wynik
+- Oczyszczanie wejścia kiedy cyfra zostaje wprowadzona po znaku równa się

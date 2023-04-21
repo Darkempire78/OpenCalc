@@ -1,0 +1,5 @@
+Dodano:
+- Stronę ustawień
+
+Zaktualizowano:
+- Stronę "O aplikacji"

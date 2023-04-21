@@ -1,0 +1,8 @@
+Dodano:
+- System wibracji
+
+Zmieniono:
+- Poprawiono kod
+
+Naprawiono:
+- Używanie motywu systemowego przy pierwszym uruchomieniu

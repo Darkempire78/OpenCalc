@@ -1,0 +1,8 @@
+Dodano:
+- Historia
+
+Zmiany:
+- Optymalizacja
+
+Naprawiono:
+- Problemy z wyświetlaniem wyniku
