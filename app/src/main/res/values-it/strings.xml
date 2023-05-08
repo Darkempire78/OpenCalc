@@ -38,4 +38,10 @@
     <string name="thanks_for_using_opencalc">Grazie per aver scelto OpenCalc ❤️</string>
     <string name="made_in_france">Creata con ❤️ in Francia</string>
     <string name="privacy_policy">Informativa sulla Privacy</string>
+    <string name="preferences_history_size">Numero di risultati salvati nella cronologia</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Attiva la modalità scientifica per impostazione predefinita</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Evitare che lo schermo si spenga</string>
+    <string name="preferences_history_category">STORIA</string>
+    <string name="preferences_prevent_phone_from_sleeping_summary">Evitare che lo schermo si spenga mentre l\'applicazione è in primo piano</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Utilizzare radianti invece di gradi per impostazione predefinita</string>
 </resources>
