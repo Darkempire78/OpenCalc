@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_menu_about">Аб праграме</string>
+    <string name="theme_amoled">Чорная (Amoled)</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Цёмная</string>
+    <string name="value_copied">Скапіравана</string>
+    <string name="app_menu_vibration">Вібрацыя</string>
+    <string name="theme_system">Сістэмная</string>
+    <string name="select_theme_title">Выберыце Тэма</string>
+    <string name="infinity">Бясконцасць</string>
+    <string name="division_by_0">Немагчыма падзяліць на 0</string>
+    <string name="domain_error">Памылка дамена</string>
+    <string name="math_error">Матэматычная памылка</string>
+    <string name="syntax_error">Сінтаксічная памылка</string>
+    <string name="app_menu_settings">Налады</string>
+    <string name="value_too_large">Занадта вялікае значэнне</string>
+    <string name="preferences_title">Налады</string>
+    <string name="preferences_general_category">АСНОЎНЫЯ</string>
+    <string name="preferences_history_category">ГІСТОРЫЯ</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_summary">Па змаўчанні выкарыстоўвайце радыяны замест градусаў</string>
+    <string name="about_help_us_category">ДАПАМАЖЫЦЕ НАМ</string>
+    <string name="about_donate">Ахвяраваць</string>
+    <string name="about_social_category">САЦЫЯЛЬНАЯ</string>
+    <string name="about_other_category">ІНШЫЯ</string>
+    <string name="about_translate">Пераклад</string>
+    <string name="about_rate">Ацэніце гэтую праграму</string>
+    <string name="app_version_title">Версія</string>
+    <string name="thanks_for_using_opencalc">Дзякуй за выкарыстанне OpenCalc ❤️</string>
+    <string name="made_in_france">Зроблена з ❤️ у Францыі</string>
+    <string name="preferences_number_precision">Колькасць знакаў пасля коскі</string>
+    <string name="privacy_policy">Палітыка прыватнасці</string>
+    <string name="about_title">Даведка</string>
+    <string name="preferences_language_title">Мова</string>
+    <string name="app_name_display">Калькулятар</string>
+    <string name="app_menu_theme">Тэма</string>
+    <string name="app_menu_clear_history">Ачысціць гісторыю</string>
+    <string name="preferences_scientif_mode_enabled_by_default_summary">Выкарыстоўваць інжынерны рэжым па змаўчанні</string>
+    <string name="preferences_prevent_phone_from_sleeping_summary">Не дазваляйце тэлефону пераходзіць у рэжым сну, калі праграма працуе на пярэднім плане</string>
+    <string name="preferences_scientif_mode_enabled_by_default_title">Інжынерны рэжым</string>
+    <string name="preferences_vibration_summary">Выдаваць вібрацыю пры націску кнопкі</string>
+    <string name="preferences_vibration_title">Вібрацыі</string>
+    <string name="preferences_history_size">Вынікі захоўваюцца ў гісторыі</string>
+    <string name="preferences_radians_instead_of_degrees_by_default_title">Радыяны</string>
+    <string name="preferences_prevent_phone_from_sleeping_title">Забараніць тэлефону пераходзіць у рэжым сну</string>
+    <string name="preferences_advanced_category">ДАДАТКОВЫЯ</string>
+</resources>
