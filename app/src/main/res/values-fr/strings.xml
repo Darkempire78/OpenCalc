@@ -20,7 +20,7 @@
     <string name="app_menu_settings">Paramètres</string>
     <string name="preferences_general_category">GÉNÉRAL</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">Empêcher le telephone de se mettre en veille pendant l\'utilisation de l\'application</string>
-    <string name="preferences_vibration_summary">Émettre des vibrations lorsqu\'un bouton est pressé</string>
+    <string name="preferences_vibration_summary">Émet des vibrations lorsqu\'un bouton est enfoncé</string>
     <string name="preferences_title">Paramètres</string>
     <string name="preferences_history_category">HISTORIQUE</string>
     <string name="preferences_history_size">Résultats sauvegardés dans l\'historique</string>
