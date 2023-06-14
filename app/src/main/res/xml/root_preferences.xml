@@ -104,7 +104,7 @@
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
             app:defaultValue="true"
-            app:icon="@drawable/scientific_notation"
+            app:icon="@drawable/click"
             app:widgetLayout="@drawable/material_switch" />
 
     </PreferenceCategory>
