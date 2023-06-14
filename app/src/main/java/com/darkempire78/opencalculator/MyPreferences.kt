@@ -20,6 +20,7 @@ class MyPreferences(context: Context) {
         private const val KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT = "darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
         private const val KEY_NUMBER_PRECISION = "darkempire78.opencalculator.NUMBER_PRECISION"
         private const val KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION = "darkempire78.opencalculator.WRITE_NUMBER_INTO_SCIENTIC_NOTATION"
+        private const val KEY_HISTORY_LONG_CLICK_TO_COPY = "darkempire78.opencalculator.HISTORY_LONG_CLICK_TO_COPY"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -45,6 +46,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putString(KEY_NUMBER_PRECISION, value).apply()
     var numberIntoScientificNotation = preferences.getBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, false)
         set(value) = preferences.edit().putBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, value).apply()
+    var historyLongClickToCopy = preferences.getBoolean(KEY_HISTORY_LONG_CLICK_TO_COPY, true)
+        set(value) = preferences.edit().putBoolean(KEY_HISTORY_LONG_CLICK_TO_COPY, value).apply()
 
 
     fun getHistory(): MutableList<History> {

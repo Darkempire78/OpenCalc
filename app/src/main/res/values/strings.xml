@@ -108,4 +108,6 @@
     <string name="preferences_language_title">Language</string>
     <string name="preferences_write_number_into_scientific_notation_title">Number into scientific notation</string>
     <string name="preferences_write_number_into_scientific_notation_summary">Convert all results to scientific notation</string>
+    <string name="preferences_long_click_to_copy_history_value_title">Long click to copy value</string>
+    <string name="preferences_long_click_to_copy_history_value_summary">Long press copies the text of the history item instead of selecting it</string>
 </resources>

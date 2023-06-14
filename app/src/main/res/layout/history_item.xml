@@ -19,6 +19,7 @@
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_color"
             android:textSize="35sp"
+            android:textIsSelectable="true"
             app:layout_constraintTop_toBottomOf="@+id/history_time"
             tools:ignore="MissingConstraints" />
 
@@ -32,6 +33,7 @@
             android:background="?attr/history_background_color"
             android:textColor="?attr/text_second_color"
             android:textSize="20sp"
+            android:textIsSelectable="true"
             app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
             tools:ignore="MissingConstraints" />
 

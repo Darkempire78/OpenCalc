@@ -97,6 +97,16 @@
             app:icon="@drawable/history"
             />
 
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.HISTORY_LONG_CLICK_TO_COPY"
+            app:title="@string/preferences_long_click_to_copy_history_value_title"
+            app:summary="@string/preferences_long_click_to_copy_history_value_summary"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:icon="@drawable/scientific_notation"
+            app:widgetLayout="@drawable/material_switch" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
