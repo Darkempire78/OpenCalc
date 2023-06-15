@@ -367,7 +367,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Fix how is displayed 0 with BigDecimal
-        if (newResult.toString() == "0E-10" || newResult.toString() == "0.000") {
+        if (
+            "0E-" in newResult.toString()
+            || (newResult.toString().startsWith("0.000") && newResult.toString().endsWith("000"))
+        ) {
             return BigDecimal.ZERO
         }
 
