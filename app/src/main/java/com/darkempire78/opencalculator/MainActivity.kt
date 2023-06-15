@@ -365,6 +365,12 @@ class MainActivity : AppCompatActivity() {
             val scientificString = String.format(Locale.US, "%.4g", result)
             newResult = BigDecimal(scientificString)
         }
+
+        // Fix how is displayed 0 with BigDecimal
+        if (newResult.toString() == "0E-10" || newResult.toString() == "0.000") {
+            return BigDecimal.ZERO
+        }
+
         return newResult
     }
 
