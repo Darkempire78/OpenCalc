@@ -97,8 +97,17 @@ class Calculator(numberPrecision: Int) {
             fun parseTerm(): BigDecimal {
                 var x = parseFactor()
                 while (true) {
-                    if (eat('*'.code)) x = x.multiply(parseFactor()) // multiplication
-                    else if (eat('/'.code)) {
+                    if (eat('*'.code)) x = x.multiply(parseFactor()) // Multiplication
+                    else if (eat('#'.code)) { // Modulo
+                        val fractionDenominator = parseFactor()
+                        if (fractionDenominator == BigDecimal.ZERO) {
+                            division_by_0 = true
+                            x = BigDecimal.ZERO
+                        } else {
+                            x = x.rem(fractionDenominator)
+                        }
+                    }
+                    else if (eat('/'.code)) { // Division
                         val fractionDenominator = parseFactor()
                         if (fractionDenominator == BigDecimal.ZERO) {
                             division_by_0 = true
