@@ -50,6 +50,34 @@
             app:widgetLayout="@drawable/material_switch"
             />
 
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.ADD_MODULO_BUTTON"
+            app:title="@string/preferences_replace_x2_by_modulo_title"
+            app:summary="@string/preferences_replace_x2_by_modulo_summary"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/hashtag"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:widgetLayout="@drawable/material_switch"
+            />
+
+
+
+
+        <!-- <ListPreference
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:defaultValue="reply"
+            app:useSimpleSummaryProvider="true"/> -->
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/preferences_formatting_category"
+        app:color="?attr/text_color">
+
         <ListPreference
             app:key="darkempire78.opencalculator.NUMBER_PRECISION"
             app:title="@string/preferences_number_precision"
@@ -70,15 +98,6 @@
             app:defaultValue="false"
             app:icon="@drawable/scientific_notation"
             app:widgetLayout="@drawable/material_switch" />
-
-
-        <!-- <ListPreference
-            app:key="reply"
-            app:title="@string/reply_title"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:defaultValue="reply"
-            app:useSimpleSummaryProvider="true"/> -->
 
     </PreferenceCategory>
 

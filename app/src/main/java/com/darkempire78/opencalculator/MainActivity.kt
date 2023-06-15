@@ -616,7 +616,12 @@ class MainActivity : AppCompatActivity() {
         if (!isInvButtonClicked) {
             updateDisplay(view, "√")
         } else {
-            updateDisplay(view, "^2")
+            if(MyPreferences(this).addModuloButton) {
+                updateDisplay(view, "#")
+            } else {
+                updateDisplay(view, "^2")
+            }
+
         }
     }
 
@@ -643,7 +648,12 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
-            binding.squareButton.setText(R.string.squareInv)
+            if(MyPreferences(this).addModuloButton) {
+                binding.squareButton.setText(R.string.squareInvModuloVersion)
+            } else {
+                binding.squareButton.setText(R.string.squareInv)
+            }
+
         } else {
             isInvButtonClicked = false
 
