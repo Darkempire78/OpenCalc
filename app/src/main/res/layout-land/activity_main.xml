@@ -187,7 +187,7 @@
                         android:onClick="multiplyButton"
                         app:srcCompat="@drawable/multiply" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/parenthesesButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -195,7 +195,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses" />
+                        android:text= "@string/parentheses" />
 
                 </TableRow>
 

@@ -32,6 +32,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 import java.util.*
 
+
 var appLanguage: Locale = Locale.getDefault()
 
 class MainActivity : AppCompatActivity() {
@@ -130,6 +131,15 @@ class MainActivity : AppCompatActivity() {
         // use radians instead of degrees by default (if option enabled)
         if (MyPreferences(this).useRadiansByDefault) {
             enableOrDisableDegreeMode()
+        }
+
+        // splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
+            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+        } else {
+            binding.clearButton.setText(R.string.clear)
+            binding.parenthesesButton.setText(R.string.parentheses)
         }
 
         // Focus by default
@@ -677,9 +687,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clearButton(view: View) {
-        keyVibration(view)
-        binding.input.setText("")
-        binding.resultDisplay.setText("")
+        // If splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            updateDisplay(view, "(")
+        } else {
+            keyVibration(view)
+            binding.input.setText("")
+            binding.resultDisplay.setText("")
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -800,34 +815,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun parenthesesButton(view: View) {
-        val cursorPosition = binding.input.selectionStart
-        val textLength = binding.input.text.length
 
-        var openParentheses = 0
-        var closeParentheses = 0
-
-        val text = binding.input.text.toString()
-
-        for (i in 0 until cursorPosition) {
-            if (text[i] == '(') {
-                openParentheses += 1
-            }
-            if (text[i] == ')') {
-                closeParentheses += 1
-            }
-        }
-
-        if (
-            !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
-            && (
-                openParentheses == closeParentheses
-                || binding.input.text.toString()[cursorPosition - 1] == '('
-                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
-            )
-        ) {
-            updateDisplay(view, "(")
-        } else {
+        // If splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
             updateDisplay(view, ")")
+        } else {
+            val cursorPosition = binding.input.selectionStart
+            val textLength = binding.input.text.length
+
+            var openParentheses = 0
+            var closeParentheses = 0
+
+            val text = binding.input.text.toString()
+
+            for (i in 0 until cursorPosition) {
+                if (text[i] == '(') {
+                    openParentheses += 1
+                }
+                if (text[i] == ')') {
+                    closeParentheses += 1
+                }
+            }
+
+            if (
+                !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
+                && (
+                        openParentheses == closeParentheses
+                                || binding.input.text.toString()[cursorPosition - 1] == '('
+                                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
+                        )
+            ) {
+                updateDisplay(view, "(")
+            } else {
+                updateDisplay(view, ")")
+            }
         }
     }
 
@@ -889,6 +910,15 @@ class MainActivity : AppCompatActivity() {
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
             binding.resultDisplay.setText("")
+        }
+
+        // splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
+            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+        } else {
+            binding.clearButton.setText(R.string.clear)
+            binding.parenthesesButton.setText(R.string.parentheses)
         }
 
         // Update settings

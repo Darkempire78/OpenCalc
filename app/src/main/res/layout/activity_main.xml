@@ -289,7 +289,7 @@
                         android:textSize="24sp"
                         android:text="@string/clear" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/parenthesesButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -297,7 +297,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses" />
+                        android:text= "@string/parentheses" />
 
                     <ImageButton
                         android:id="@+id/exponentButton"

@@ -22,6 +22,8 @@ class MyPreferences(context: Context) {
         private const val KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION = "darkempire78.opencalculator.WRITE_NUMBER_INTO_SCIENTIC_NOTATION"
         private const val KEY_HISTORY_LONG_CLICK_TO_COPY = "darkempire78.opencalculator.HISTORY_LONG_CLICK_TO_COPY"
         private const val KEY_ADD_MODULO_BUTTON = "darkempire78.opencalculator.ADD_MODULO_BUTTON"
+        private const val KEY_SPLIT_PARENTHESIS_BUTTON = "darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
+
 
     }
 
@@ -52,6 +54,9 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_HISTORY_LONG_CLICK_TO_COPY, value).apply()
     var addModuloButton = preferences.getBoolean(KEY_ADD_MODULO_BUTTON, true)
         set(value) = preferences.edit().putBoolean(KEY_ADD_MODULO_BUTTON, value).apply()
+    var splitParenthesisButton = preferences.getBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, false)
+        set(value) = preferences.edit().putBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, value).apply()
+
 
 
     fun getHistory(): MutableList<History> {

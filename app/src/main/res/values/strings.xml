@@ -114,4 +114,8 @@
     <string name="preferences_replace_x2_by_modulo_title">Add a modulo button</string>
     <string name="preferences_replace_x2_by_modulo_summary">Replace the \"X²\" button with a modulo button (available when the \"INV\" button is clicked)</string>
     <string name="squareInvModuloVersion">#</string>
+    <string name="preferences_split_parenthesis_button_into_two_buttons_title">Split the parenthesis button into two buttons</string>
+    <string name="preferences_split_parenthesis_button_into_two_buttons_summary">Remove the \"AC\" button to split the parenthesis button into two buttons</string>
+    <string name="clearParenthesisVersionLeft">(</string>
+    <string name="clearParenthesisVersionRight">)</string>
 </resources>

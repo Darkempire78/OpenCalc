@@ -51,6 +51,17 @@
             />
 
         <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
+            app:title="@string/preferences_split_parenthesis_button_into_two_buttons_title"
+            app:summary="@string/preferences_split_parenthesis_button_into_two_buttons_summary"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/swap"
+            app:singleLineTitle="false"
+            app:defaultValue="false"
+            app:widgetLayout="@drawable/material_switch"
+            />
+
+        <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.ADD_MODULO_BUTTON"
             app:title="@string/preferences_replace_x2_by_modulo_title"
             app:summary="@string/preferences_replace_x2_by_modulo_summary"
