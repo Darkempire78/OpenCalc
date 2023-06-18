@@ -13,9 +13,9 @@ var domain_error = false
 var syntax_error = false
 var is_infinity = false
 
-class Calculator(numberPrecision: Int) {
-
-    private val numberPrecision = numberPrecision
+class Calculator(
+        private val numberPrecision: Int
+    ) {
 
     fun factorial(number: BigDecimal): BigDecimal {
         if (number >= BigDecimal(3000)) {
