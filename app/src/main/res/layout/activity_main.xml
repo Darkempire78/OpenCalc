@@ -39,7 +39,7 @@
 
     </HorizontalScrollView>
 
-    <EditText
+    <!-- <EditText
         android:id="@+id/resultDisplay"
         style="@style/RobotoFontCondensedMedium"
         android:layout_width="match_parent"
@@ -59,7 +59,46 @@
         android:paddingHorizontal="10dp"
         android:paddingBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1" /> -->
+
+    <HorizontalScrollView
+        android:id="@+id/resultDisplayHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        android:background="?attr/foreground_color"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/resultDisplay"
+                style="@style/RobotoFontCondensedMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollHorizontally="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:singleLine="true"
+                android:background="?attr/foreground_color"
+                android:text=""
+                android:textColor="?attr/text_second_color"
+                android:textAlignment="textEnd"
+                android:textSize="35sp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="4dp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         android:id="@+id/sliding_layout"
@@ -67,7 +106,7 @@
         android:layout_height="0dp"
         android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/resultDisplayHorizontalScrollView"
         app:umanoPanelHeight="41dp"
         app:umanoShadowHeight="0dp"
         app:umanoScrollableView="@id/history_recylcle_view"
