@@ -108,8 +108,8 @@
     <string name="preferences_language_title">Language</string>
     <string name="preferences_write_number_into_scientific_notation_title">Number into scientific notation</string>
     <string name="preferences_write_number_into_scientific_notation_summary">Convert all results to scientific notation</string>
-    <string name="preferences_long_click_to_copy_history_value_title">Long click to copy value</string>
-    <string name="preferences_long_click_to_copy_history_value_summary">Long press copies the text of the history item instead of selecting it</string>
+    <string name="preferences_long_click_to_copy_value_title">Long click to copy value</string>
+    <string name="preferences_long_click_to_copy_value_summary">Long press copies the text of the item instead of selecting it</string>
     <string name="preferences_formatting_category">Formatting</string>
     <string name="preferences_replace_x2_by_modulo_title">Add a modulo button</string>
     <string name="preferences_replace_x2_by_modulo_summary">Replace the \"X²\" button with a modulo button (available when the \"INV\" button is clicked)</string>

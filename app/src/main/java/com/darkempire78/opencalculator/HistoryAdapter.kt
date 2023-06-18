@@ -124,7 +124,7 @@ class HistoryAdapter(
                 }
 
                 calculation.setOnLongClickListener {
-                    if (MyPreferences(itemView.context).historyLongClickToCopy) {
+                    if (MyPreferences(itemView.context).longClickToCopyValue) {
                         val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                         clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied history calculation", historyElement.calculation))
                         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
@@ -136,7 +136,7 @@ class HistoryAdapter(
 
                 }
                 result.setOnLongClickListener {
-                    if (MyPreferences(itemView.context).historyLongClickToCopy) {
+                    if (MyPreferences(itemView.context).longClickToCopyValue) {
                         val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                         clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied history result", historyElement.result))
                         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)

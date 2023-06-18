@@ -166,12 +166,17 @@ class MainActivity : AppCompatActivity() {
         binding.resultDisplay.setOnLongClickListener {
             when {
                 binding.resultDisplay.text.toString() != "" -> {
-                    val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
-                    // Only show a toast for Android 12 and lower.
-                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
-                        Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
-                    true
+                    if (MyPreferences(this).longClickToCopyValue) {
+                        val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                        clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
+                        // Only show a toast for Android 12 and lower.
+                        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                            Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else {
+                        false
+                    }
                 }
                 else -> false
             }
