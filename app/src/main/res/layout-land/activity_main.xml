@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/resultDisplayHorizontalScrollView"
         app:umanoPanelHeight="31dp"
         app:umanoShadowHeight="0dp"
         tools:ignore="MissingConstraints">
@@ -187,7 +187,7 @@
                         android:onClick="multiplyButton"
                         app:srcCompat="@drawable/multiply" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/parenthesesButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -195,7 +195,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses" />
+                        android:text= "@string/parentheses" />
 
                 </TableRow>
 
@@ -432,7 +432,7 @@
 
     </HorizontalScrollView>
 
-    <EditText
+    <!-- <EditText
         android:id="@+id/resultDisplay"
         style="@style/RobotoFontCondensedMedium"
         android:layout_width="match_parent"
@@ -452,7 +452,44 @@
         android:paddingStart="18dp"
         android:paddingEnd="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1" />-->
+
+    <HorizontalScrollView
+        android:id="@+id/resultDisplayHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        android:background="?attr/foreground_color"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/resultDisplay"
+                style="@style/RobotoFontCondensedMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollHorizontally="true"
+                android:textIsSelectable="true"
+                android:singleLine="true"
+                android:background="?attr/foreground_color"
+                android:text=""
+                android:textColor="?attr/text_second_color"
+                android:textAlignment="textEnd"
+                android:textSize="30sp"
+                android:paddingStart="18dp"
+                android:paddingEnd="30sp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

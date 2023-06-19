@@ -44,7 +44,7 @@
             android:textStyle="bold"
             android:text="@string/about_help_us_category"
             android:textColor="?attr/text_category_color"
-            android:layout_marginHorizontal="69dp"
+            android:layout_marginHorizontal="65dp"
             app:layout_constraintTop_toBottomOf="@+id/about_back_button_text" />
 
         <TextView
@@ -101,7 +101,7 @@
             android:id="@+id/about_social_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="69dp"
+            android:layout_marginHorizontal="65dp"
             android:textStyle="bold"
             android:text="@string/about_social_category"
             android:textColor="?attr/text_category_color"
@@ -148,7 +148,7 @@
             android:id="@+id/about_other_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="69dp"
+            android:layout_marginHorizontal="65dp"
             android:text="@string/about_other_category"
             android:textColor="?attr/text_category_color"
             android:textStyle="bold"
@@ -193,7 +193,7 @@
             android:id="@+id/about_made_in_france"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="69dp"
+            android:layout_marginHorizontal="65dp"
             android:gravity="center_vertical"
             android:paddingVertical="12dp"
             android:layout_marginTop="15dp"

@@ -44,7 +44,6 @@ class SettingsActivity : AppCompatActivity() {
             finish()
         }
 
-
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {

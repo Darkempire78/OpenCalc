@@ -4,7 +4,6 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -33,6 +32,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 import java.util.*
 
+
 var appLanguage: Locale = Locale.getDefault()
 
 class MainActivity : AppCompatActivity() {
@@ -40,10 +40,13 @@ class MainActivity : AppCompatActivity() {
 
     private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
+
+    private var calculationResult = BigDecimal.ZERO
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -130,6 +133,15 @@ class MainActivity : AppCompatActivity() {
             enableOrDisableDegreeMode()
         }
 
+        // splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
+            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+        } else {
+            binding.clearButton.setText(R.string.clear)
+            binding.parenthesesButton.setText(R.string.parentheses)
+        }
+
         // Focus by default
         binding.input.requestFocus()
 
@@ -154,12 +166,17 @@ class MainActivity : AppCompatActivity() {
         binding.resultDisplay.setOnLongClickListener {
             when {
                 binding.resultDisplay.text.toString() != "" -> {
-                    val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
-                    // Only show a toast for Android 12 and lower.
-                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
-                        Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
-                    true
+                    if (MyPreferences(this).longClickToCopyValue) {
+                        val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                        clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
+                        // Only show a toast for Android 12 and lower.
+                        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                            Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else {
+                        false
+                    }
                 }
                 else -> false
             }
@@ -356,11 +373,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun roundResult(result : Double): Double {
-        if (result.isNaN() || result.isInfinite()) {
-            return result
+    private fun roundResult(result : BigDecimal): BigDecimal {
+        val numberPrecision = MyPreferences(this).numberPrecision!!.toInt()
+        var newResult = result.setScale(numberPrecision, RoundingMode.HALF_EVEN)
+        if (MyPreferences(this).numberIntoScientificNotation && (newResult >= BigDecimal(9999) || newResult <= BigDecimal(0.1) )) {
+            val scientificString = String.format(Locale.US, "%.4g", result)
+            newResult = BigDecimal(scientificString)
         }
-        return BigDecimal(result).setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN).toDouble()
+
+        // Fix how is displayed 0 with BigDecimal
+        if (
+            "0E-" in newResult.toString()
+            || (newResult.toString().startsWith("0.000") && newResult.toString().endsWith("000"))
+        ) {
+            return BigDecimal.ZERO
+        }
+
+        return newResult
     }
 
     private fun enableOrDisableScientistMode() {
@@ -402,44 +431,43 @@ class MainActivity : AppCompatActivity() {
                 division_by_0 = false
                 domain_error = false
                 syntax_error = false
+                is_infinity = false
 
                 val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
+                calculationResult = Calculator(MyPreferences(this@MainActivity).numberPrecision!!.toInt()).evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
-                if (!result.isNaN() && result.isFinite()) {
-                    // Round at 10^-12
-                    result = roundResult(result)
-                    var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
 
-                    // If result = -0, change it to 0
-                    if (result == -0.0) {
-                        result = 0.0
-                    }
-                    // If the double ends with .0 we remove the .0
-                    if ((result * 10) % 10 == 0.0) {
-                        val resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                    // Round
+                    calculationResult = roundResult(calculationResult)
+                    var formattedResult = NumberFormatter.format(calculationResult.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
-                        withContext(Dispatchers.Main) {
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.setText(formattedResult)
-                            } else {
-                                binding.resultDisplay.setText("")
+                    // Remove zeros at the end of the results (after point)
+                    if (!MyPreferences(this@MainActivity).numberIntoScientificNotation || !(calculationResult >= BigDecimal(9999) || calculationResult <= BigDecimal(0.1) )) {
+                        val resultSplited = calculationResult.toString().split('.')
+                        if (resultSplited.size > 1) {
+                            val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
+                            var resultWithoutZeros = resultSplited[0]
+                            if (resultPartAfterDecimalSeparator != "") {
+                                resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
                             }
-                        }
-                    } else {
-                        withContext(Dispatchers.Main) {
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.setText(formattedResult)
-                            } else {
-                                binding.resultDisplay.setText("")
-                            }
+                            formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                         }
                     }
+
+
+                    withContext(Dispatchers.Main) {
+                        if (formattedResult != calculation) {
+                            binding.resultDisplay.setText(formattedResult)
+                        } else {
+                            binding.resultDisplay.setText("")
+                        }
+                    }
+
                 } else withContext(Dispatchers.Main) {
-                    if (result.isInfinite() && !division_by_0 && !domain_error) {
-                        if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                    if (is_infinity && !division_by_0 && !domain_error) {
+                        if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText("-"+getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
@@ -612,7 +640,12 @@ class MainActivity : AppCompatActivity() {
         if (!isInvButtonClicked) {
             updateDisplay(view, "√")
         } else {
-            updateDisplay(view, "^2")
+            if(MyPreferences(this).addModuloButton) {
+                updateDisplay(view, "#")
+            } else {
+                updateDisplay(view, "^2")
+            }
+
         }
     }
 
@@ -639,7 +672,12 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
-            binding.squareButton.setText(R.string.squareInv)
+            if(MyPreferences(this).addModuloButton) {
+                binding.squareButton.setText(R.string.squareInvModuloVersion)
+            } else {
+                binding.squareButton.setText(R.string.squareInv)
+            }
+
         } else {
             isInvButtonClicked = false
 
@@ -654,9 +692,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clearButton(view: View) {
-        keyVibration(view)
-        binding.input.setText("")
-        binding.resultDisplay.setText("")
+        // If splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            updateDisplay(view, "(")
+        } else {
+            keyVibration(view)
+            binding.input.setText("")
+            binding.resultDisplay.setText("")
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -667,21 +710,22 @@ class MainActivity : AppCompatActivity() {
             val calculation = binding.input.text.toString()
 
             if (calculation != "") {
-                division_by_0 = false
-                domain_error = false
-                syntax_error = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
-                var resultString = result.toString()
+                val resultString = calculationResult.toString()
                 var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
 
                 // If result is a number and it is finite
-                if (!result.isNaN() && result.isFinite()) {
-                    // If there is an unused 0 at the end, remove it : 2.0 -> 2
-                    if ((result * 10) % 10 == 0.0) {
-                        resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
+
+                    // Remove zeros at the end of the results (after point)
+                    val resultSplited = resultString.split('.')
+                    if (resultSplited.size > 1) {
+                        val resultPartAfterDecimalSeparator = resultSplited[1].trimEnd('0')
+                        var resultWithoutZeros = resultSplited[0]
+                        if (resultPartAfterDecimalSeparator != "") {
+                            resultWithoutZeros = resultSplited[0] + "." + resultPartAfterDecimalSeparator
+                        }
+                        formattedResult = NumberFormatter.format(resultWithoutZeros.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
                     }
 
                     // Hide the cursor before updating binding.input to avoid weird cursor movement
@@ -753,16 +797,15 @@ class MainActivity : AppCompatActivity() {
                         } else if (domain_error) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.domain_error))
-                        } else if (result.isInfinite()) {
-                            if (division_by_0) {
-                                setErrorColor(true)
-                                binding.resultDisplay.setText(getString(R.string.division_by_0))
-                            }
-                            else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
-                        } else if (result.isNaN()) {
+                        } else if (division_by_0) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.math_error))
+                            binding.resultDisplay.setText(getString(R.string.division_by_0))
+                        } else if (is_infinity) {
+                            if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
+                        //} else if (result.isNaN()) {
+                        //    setErrorColor(true)
+                        //    binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
                             isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
@@ -777,34 +820,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun parenthesesButton(view: View) {
-        val cursorPosition = binding.input.selectionStart
-        val textLength = binding.input.text.length
 
-        var openParentheses = 0
-        var closeParentheses = 0
-
-        val text = binding.input.text.toString()
-
-        for (i in 0 until cursorPosition) {
-            if (text[i] == '(') {
-                openParentheses += 1
-            }
-            if (text[i] == ')') {
-                closeParentheses += 1
-            }
-        }
-
-        if (
-            !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
-            && (
-                openParentheses == closeParentheses
-                || binding.input.text.toString()[cursorPosition - 1] == '('
-                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
-            )
-        ) {
-            updateDisplay(view, "(")
-        } else {
+        // If splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
             updateDisplay(view, ")")
+        } else {
+            val cursorPosition = binding.input.selectionStart
+            val textLength = binding.input.text.length
+
+            var openParentheses = 0
+            var closeParentheses = 0
+
+            val text = binding.input.text.toString()
+
+            for (i in 0 until cursorPosition) {
+                if (text[i] == '(') {
+                    openParentheses += 1
+                }
+                if (text[i] == ')') {
+                    closeParentheses += 1
+                }
+            }
+
+            if (
+                !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
+                && (
+                        openParentheses == closeParentheses
+                                || binding.input.text.toString()[cursorPosition - 1] == '('
+                                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
+                        )
+            ) {
+                updateDisplay(view, "(")
+            } else {
+                updateDisplay(view, ")")
+            }
         }
     }
 
@@ -866,6 +915,15 @@ class MainActivity : AppCompatActivity() {
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
             binding.resultDisplay.setText("")
+        }
+
+        // splitParenthesis_button setting
+        if (MyPreferences(this).splitParenthesisButton) {
+            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
+            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+        } else {
+            binding.clearButton.setText(R.string.clear)
+            binding.parenthesesButton.setText(R.string.parentheses)
         }
 
         // Update settings

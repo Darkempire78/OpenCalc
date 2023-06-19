@@ -19,6 +19,12 @@ class MyPreferences(context: Context) {
         private const val KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT = "darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
         private const val KEY_RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT = "darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
         private const val KEY_NUMBER_PRECISION = "darkempire78.opencalculator.NUMBER_PRECISION"
+        private const val KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION = "darkempire78.opencalculator.WRITE_NUMBER_INTO_SCIENTIC_NOTATION"
+        private const val KEY_LONG_CLICK_TO_COPY_VALUE = "darkempire78.opencalculator.LONG_CLICK_TO_COPY_VALUE"
+        private const val KEY_ADD_MODULO_BUTTON = "darkempire78.opencalculator.ADD_MODULO_BUTTON"
+        private const val KEY_SPLIT_PARENTHESIS_BUTTON = "darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
+
+
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -42,6 +48,16 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putString(KEY_HISTORY_SIZE, value).apply()
     var numberPrecision = preferences.getString(KEY_NUMBER_PRECISION, "10")
         set(value) = preferences.edit().putString(KEY_NUMBER_PRECISION, value).apply()
+    var numberIntoScientificNotation = preferences.getBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, false)
+        set(value) = preferences.edit().putBoolean(KEY_WRITE_NUMBER_INTO_SCIENTIC_NOTATION, value).apply()
+    var longClickToCopyValue = preferences.getBoolean(KEY_LONG_CLICK_TO_COPY_VALUE, true)
+        set(value) = preferences.edit().putBoolean(KEY_LONG_CLICK_TO_COPY_VALUE, value).apply()
+    var addModuloButton = preferences.getBoolean(KEY_ADD_MODULO_BUTTON, true)
+        set(value) = preferences.edit().putBoolean(KEY_ADD_MODULO_BUTTON, value).apply()
+    var splitParenthesisButton = preferences.getBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, false)
+        set(value) = preferences.edit().putBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, value).apply()
+
+
 
     fun getHistory(): MutableList<History> {
         val gson = Gson()

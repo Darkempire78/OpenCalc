@@ -3,29 +3,41 @@ package com.darkempire78.opencalculator
 import java.math.BigInteger
 import kotlin.math.*
 
+import java.math.BigDecimal
+import java.math.RoundingMode
+import kotlin.math.ln
+import kotlin.math.pow
+
 var division_by_0 = false
 var domain_error = false
 var syntax_error = false
+var is_infinity = false
 
-class Calculator {
-    fun factorial(number: Double): Double {
-        return if (number >= 171) {
-            Double.POSITIVE_INFINITY
-        } else if (number < 0) {
-            Double.NaN
+class Calculator(
+        private val numberPrecision: Int
+    ) {
+
+    fun factorial(number: BigDecimal): BigDecimal {
+        if (number >= BigDecimal(3000)) {
+            is_infinity = true
+            return BigDecimal.ZERO
+        }
+        return if (number < BigDecimal.ZERO) {
+            domain_error = true
+            BigDecimal.ZERO
         } else {
-            val decimalPartOfNumber = number - number.toInt()
+            val decimalPartOfNumber = number.toDouble() - number.toInt()
             if (decimalPartOfNumber == 0.0) {
                 var factorial = BigInteger("1")
                 for (i in 1..number.toInt()) {
                     factorial *= i.toBigInteger()
                 }
-                factorial.toDouble()
-            } else gammaLanczos(number+1)
+                factorial.toBigDecimal()
+            } else gammaLanczos(number + BigDecimal.ONE)
         }
     }
 
-    private fun gammaLanczos(x: Double): Double {
+    private fun gammaLanczos(x: BigDecimal): BigDecimal {
         // https://rosettacode.org/wiki/Gamma_function
         var xx = x
         val p = doubleArrayOf(
@@ -39,18 +51,17 @@ class Calculator {
             9.984369578019572E-6,
             1.5056327351493116e-7
         )
-        val g = 7
-        if (xx < 0.5) return Math.PI / (sin(Math.PI * xx) * gammaLanczos(1.0 - xx))
+        val g = BigDecimal(7)
+        if (xx < BigDecimal(0.5)) return (Math.PI / (sin(Math.PI * xx.toDouble()) * gammaLanczos(BigDecimal(1.0 - xx.toDouble())).toDouble())).toBigDecimal()
         xx--
         var a = p[0]
-        val t = xx + g + 0.5
-        for (i in 1 until p.size) a += p[i] / (xx + i)
-        return sqrt(2.0 * Math.PI) * t.pow(xx + 0.5) * exp(-t) * a
+        val t = xx + g + BigDecimal(0.5)
+        for (i in 1 until p.size) a += p[i] / (xx.toDouble() + i)
+        return (sqrt(2.0 * Math.PI) * t.toDouble().pow(xx.toInt() + 0.5) * exp(-t.toDouble()) * a).toBigDecimal()
     }
 
-    fun evaluate(equation: String, isDegreeModeActivated: Boolean): Double {
-        println("\n\n$equation")
-        // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
+    fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
+        println("Equation BigDecimal : $equation")
         return object : Any() {
             var pos = -1
             var ch = 0
@@ -67,64 +78,83 @@ class Calculator {
                 return false
             }
 
-            fun parse(): Double {
+            fun parse(): BigDecimal {
                 nextChar()
                 val x = parseExpression()
                 if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expression: " + equation)
                 return x
             }
 
-            fun parseExpression(): Double {
+            fun parseExpression(): BigDecimal {
                 var x = parseTerm()
                 while (true) {
-                    if (eat('+'.code)) x += parseTerm() // addition
-                    else if (eat('-'.code)) x -= parseTerm() // subtraction
+                    if (eat('+'.code)) x = x.add(parseTerm()) // addition
+                    else if (eat('-'.code)) x = x.subtract(parseTerm()) // subtraction
                     else return x
                 }
             }
 
-            fun parseTerm(): Double {
+            fun parseTerm(): BigDecimal {
                 var x = parseFactor()
                 while (true) {
-                    if (eat('*'.code)) x *= parseFactor() // multiplication
-                    else if (eat('/'.code)) {
+                    if (eat('*'.code)) x = x.multiply(parseFactor()) // Multiplication
+                    else if (eat('#'.code)) { // Modulo
                         val fractionDenominator = parseFactor()
-                        x /= fractionDenominator
-                        if (fractionDenominator == 0.0) {
+                        if (fractionDenominator == BigDecimal.ZERO) {
                             division_by_0 = true
+                            x = BigDecimal.ZERO
+                        } else {
+                            x = x.rem(fractionDenominator)
+                        }
+                    }
+                    else if (eat('/'.code)) { // Division
+                        val fractionDenominator = parseFactor()
+                        if (fractionDenominator == BigDecimal.ZERO) {
+                            division_by_0 = true
+                            x = BigDecimal.ZERO
+                        } else {
+                            try {
+                                x = x.divide(fractionDenominator)
+                            } catch (e: ArithmeticException) { // if the result is a non-terminating decimal expansion
+                                x = x.divide(fractionDenominator, numberPrecision, RoundingMode.HALF_DOWN)
+                                println(x)
+                            }
                         }
                     } // division
                     else return x
                 }
             }
 
-            fun parseFactor(): Double {
-                if (eat('+'.code)) return +parseFactor() // unary plus
-                if (eat('-'.code)) return -parseFactor() // unary minus
-                var x: Double
+            fun parseFactor(): BigDecimal {
+                if (eat('+'.code)) return parseFactor().plus() // unary plus
+                if (eat('-'.code)) return parseFactor().unaryMinus() // unary minus
+                var x: BigDecimal
                 val startPos = pos
                 if (eat('('.code)) { // parentheses
                     x = parseExpression()
                     if (!eat(')'.code)) {
                         println("Missing ')'")
-                        x = Double.NaN
+                        x = BigDecimal.ZERO
+                        syntax_error = true
                     }
                 } else if (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) { // numbers
                     while (ch >= '0'.code && ch <= '9'.code || ch == '.'.code) nextChar()
                     val string = equation.substring(startPos, pos)
-                    x = if (string.count { it == '.' } > 1) {
-                        Double.NaN
+                    if (string.count { it == '.' } > 1) {
+                        x = BigDecimal.ZERO
+                        syntax_error = true
                     } else {
                         if ((string.length == 1) && (string[0] == '.')) {
-                            Double.NaN
+                            x = BigDecimal.ZERO
+                            syntax_error = true
                         } else {
-                            string.toDouble()
+                            x = BigDecimal(string)
                         }
                     }
                 } else if (eat('e'.code)) {
-                    x = exp(1.0)
+                    x = BigDecimal(Math.E)
                 } else if (eat('π'.code)) {
-                        x = Math.PI
+                    x = BigDecimal(Math.PI)
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -134,124 +164,139 @@ class Calculator {
                     } else {
                         x = parseFactor()
                     }
-                    if (x.isNaN()) syntax_error = true
+                    println(x)
                     when (func) {
                         "sqrt" -> {
-                            x = sqrt(x)
-                        }
-                        "ln" -> {
-                            if (x.toInt() == 0) domain_error = true
-                            x = ln(x)
-                        }
-                        "logten" -> {
-                            if (x.toInt() == 0) domain_error = true
-                            x = log10(x)
-                        }
-                        "xp" -> {
-                            x = exp(x)
+                            x = BigDecimal(sqrt(x.toDouble()))
                         }
                         "factorial" -> {
                             x = factorial(x)
                         }
+                        "ln" -> {
+                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                                domain_error = true
+                            } else {
+                                x = BigDecimal(ln(x.toDouble()))
+                            }
+                        }
+                        "logten" -> {
+                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                                domain_error = true
+                            } else {
+                                x = BigDecimal(log10(x.toDouble()))
+                            }
+                        }
+                        "xp" -> {
+                            x = BigDecimal(exp(x.toDouble()))
+                        }
                         "sin" -> {
                             if (isDegreeModeActivated) {
-                                x = sin(Math.toRadians(x))
+                                x = sin(Math.toRadians(x.toDouble())).toBigDecimal()
                                 // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
                             } else {
-                                x = sin(x)
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                                x = sin(x.toDouble()).toBigDecimal()
+                            }
+                            if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                x = round(x.toDouble()).toBigDecimal()
                             }
                         }
                         "cos" -> {
                             if (isDegreeModeActivated) {
-                                x = cos(Math.toRadians(x))
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                                x = cos(Math.toRadians(x.toDouble())).toBigDecimal()
                             } else {
-                                x = cos(x)
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                                x = cos(x.toDouble()).toBigDecimal()
+                            }
+                            if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                x = round(x.toDouble()).toBigDecimal()
                             }
                         }
                         "tan" -> {
-                            if (Math.toDegrees(x) == 90.0) {
+                            if (Math.toDegrees(x.toDouble()) == 90.0) {
                                 // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
                                 domain_error = true
-                                x = Double.NaN
+                                x = BigDecimal.ZERO
                             } else {
-                                if (isDegreeModeActivated) {
-                                    x = tan(Math.toRadians(x))
-                                    if (x > 0 && x < 1.0E-14) {
-                                        x = round(x)
-                                    }
+                                x = if (isDegreeModeActivated) {
+                                    tan(Math.toRadians(x.toDouble())).toBigDecimal()
                                 } else {
-                                    x = tan(x)
-                                    if (x > 0 && x < 1.0E-14) {
-                                        x = round(x)
-                                    }
+                                    tan(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
                                 }
                             }
                         }
                         "arcsi" -> {
-                            if (isDegreeModeActivated) {
-                                x = asin(x)*180/Math.PI
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error = true
                             } else {
-                                x = asin(x)
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
+                                x = if (isDegreeModeActivated) {
+                                    (asin(x.toDouble()) * 180 / Math.PI).toBigDecimal()
+                                } else {
+                                    asin(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
                                 }
                             }
                         }
                         "arcco" -> {
-                            if (isDegreeModeActivated) {
-                                x = acos(x)*180/Math.PI
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error = true
                             } else {
-                                x = acos(x)
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
+                                x = if (isDegreeModeActivated) {
+                                    (acos(x.toDouble())*180/Math.PI).toBigDecimal()
+                                } else {
+                                    acos(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
                                 }
                             }
+
                         }
                         "arcta" -> {
-                            if (isDegreeModeActivated) {
-                                x = atan(x)*180/Math.PI
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
-                                }
+                            if (abs(x.toDouble()) > 1) {
+                                x = BigDecimal.ZERO
+                                domain_error = true
                             } else {
-                                x = atan(x)
-                                if (x > 0 && x < 1.0E-14) {
-                                    x = round(x)
+                                x = if (isDegreeModeActivated) {
+                                    (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
+
+                                } else {
+                                    atan(x.toDouble()).toBigDecimal()
+                                }
+                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                    x = round(x.toDouble()).toBigDecimal()
                                 }
                             }
                         }
-                        else -> x = Double.NaN
+                        else -> {
+                            syntax_error = true
+                        }
                     }
                 } else {
-                    x = Double.NaN
+                    x = BigDecimal.ZERO
+                    syntax_error = true
                 }
                 if (eat('^'.code)) {
-                    x = x.pow(parseFactor())
-                    // To fix sqrt(2)^2 = 2
-                    val decimal = x.toInt()
-                    val fractional = x - decimal
-                    if (fractional > 0 && fractional < 1.0E-14) {
-                        x = decimal.toDouble()
+                    val powNumber = parseFactor().toInt()
+                    if (powNumber >= 10000) {
+                        is_infinity = true
+                        x = BigDecimal.ZERO
+                    } else {
+                        x = x.pow(powNumber)
+                        // To fix sqrt(2)^2 = 2
+                        val decimal = x.toInt()
+                        val fractional = x.toDouble() - decimal
+                        if (fractional > 0 && fractional < 1.0E-14) {
+                            x = decimal.toBigDecimal()
+                        }
                     }
-                } // exponentiation
+
+                }
                 return x
             }
         }.parse()
