@@ -44,4 +44,9 @@
     <string name="select_theme_title">പ്രതിപാദ്യം തിരഞ്ഞെടുക്കുക</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">പ്രയോഗം മുൻവശത്തായിരിക്കുമ്പോൾ ഫോൺ ഉറങ്ങുന്നത് തടയുക</string>
     <string name="app_menu_vibration">വിറയല്‍</string>
+    <string name="clearParenthesisVersionRight">)</string>
+    <string name="preferences_long_click_to_copy_value_title">മൂല്യം പകർത്താൻ ദീർഘ ക്ലിക്ക് ചെയ്യുക</string>
+    <string name="clearParenthesisVersionLeft">(</string>
+    <string name="preferences_long_click_to_copy_value_summary">ദീർഘനേരം അമർത്തിയാൽ അത് തിരഞ്ഞെടുക്കുന്നതിനുപകരം ഇനത്തിന്റെ വാചകം പകർത്തുന്നു</string>
+    <string name="squareInvModuloVersion">#</string>
 </resources>
