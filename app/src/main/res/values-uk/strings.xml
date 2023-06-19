@@ -44,4 +44,16 @@
     <string name="about_help_us_category">ДОПОМОЖІТЬ НАМ</string>
     <string name="preferences_number_precision">Кількість знаків після коми</string>
     <string name="about_title">Про застосунок</string>
+    <string name="preferences_long_click_to_copy_value_title">Довгий клік для копіювання значення</string>
+    <string name="preferences_long_click_to_copy_value_summary">Тривале натискання копіює текст елемента замість його виділення</string>
+    <string name="preferences_replace_x2_by_modulo_title">Додати кнопку модуля</string>
+    <string name="preferences_replace_x2_by_modulo_summary">Замінити кнопку \"X²\" на кнопку модуля (доступна при натисканні кнопки \"INV\")</string>
+    <string name="preferences_split_parenthesis_button_into_two_buttons_summary">Видалити кнопку \"AC\", щоб розділити кнопку дужок на дві кнопки</string>
+    <string name="clearParenthesisVersionLeft">(</string>
+    <string name="clearParenthesisVersionRight">)</string>
+    <string name="squareInvModuloVersion">#</string>
+    <string name="preferences_split_parenthesis_button_into_two_buttons_title">Розділити кнопку дужок на дві кнопки</string>
+    <string name="preferences_write_number_into_scientific_notation_title">Число в науковому позначення</string>
+    <string name="preferences_formatting_category">Форматування</string>
+    <string name="preferences_write_number_into_scientific_notation_summary">Перетворити всі результати в наукову нотацію</string>
 </resources>
