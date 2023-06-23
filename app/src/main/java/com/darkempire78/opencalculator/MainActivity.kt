@@ -2,6 +2,7 @@ package com.darkempire78.opencalculator
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
@@ -34,6 +35,7 @@ import java.util.*
 
 
 var appLanguage: Locale = Locale.getDefault()
+var currentTheme : Int = 0
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -59,6 +61,8 @@ class MainActivity : AppCompatActivity() {
         val themes = Themes(this)
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
+
+        currentTheme = themes.getTheme()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         view = binding.root
@@ -912,8 +916,10 @@ class MainActivity : AppCompatActivity() {
 
         // Update the theme
         val themes = Themes(this)
-        themes.applyDayNightOverride()
-        setTheme(themes.getTheme())
+        if (currentTheme != themes.getTheme()) {
+            (this as Activity).finish()
+            ContextCompat.startActivity(this, this.intent, null)
+        }
 
         if (appLanguage != Locale.getDefault()) {
             appLanguage = Locale.getDefault()
