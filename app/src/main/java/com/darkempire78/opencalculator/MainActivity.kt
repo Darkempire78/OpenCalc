@@ -910,6 +910,11 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        // Update the theme
+        val themes = Themes(this)
+        themes.applyDayNightOverride()
+        setTheme(themes.getTheme())
+
         if (appLanguage != Locale.getDefault()) {
             appLanguage = Locale.getDefault()
             // Clear inputs to avoid conflicts with decimal & grouping separators

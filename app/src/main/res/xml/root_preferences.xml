@@ -18,6 +18,16 @@
             app:icon="@drawable/language"
             />
 
+        <Preference
+            android:id="@+id/settings_select_app_theme"
+            app:key="darkempire78.opencalculator.APP_THEME_SELECTOR"
+            app:selectable="true"
+            app:enabled="true"
+            app:title="@string/app_menu_theme"
+            app:summary="APP THEME"
+            app:icon="@drawable/theme"
+            />
+
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
             app:title="@string/preferences_vibration_title"

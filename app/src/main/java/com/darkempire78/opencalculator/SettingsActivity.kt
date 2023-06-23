@@ -1,6 +1,7 @@
 package com.darkempire78.opencalculator
 
 import android.content.Intent
+import android.content.res.Resources.Theme
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -64,6 +65,16 @@ class SettingsActivity : AppCompatActivity() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     launchChangeAppLanguageIntent()
                 }
+                true
+            }
+
+            // Theme button
+            val appThemePreference = findPreference<Preference>("darkempire78.opencalculator.APP_THEME_SELECTOR")
+
+            appThemePreference?.summary = Themes(this.requireContext()).getThemeNameFromId(MyPreferences(this.requireContext()).theme)
+
+            appThemePreference?.setOnPreferenceClickListener {
+                Themes.openDialogThemeSelector(this.requireContext())
                 true
             }
         }

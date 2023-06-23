@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
+    <!--<item
         android:id="@+id/app_menu_theme_button"
         android:title="@string/app_menu_theme"
-        android:onClick="selectThemeDialog" />
+        android:onClick="selectThemeDialog" />-->
 
     <item
         android:id="@+id/app_menu_clear_history_button"

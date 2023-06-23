@@ -109,4 +109,24 @@ class Themes(private val context: Context) {
         }
         return themeMap[theme] ?: DEFAULT_THEME_INDEX
     }
+
+    fun getThemeNameFromId(themeID: Int) : String {
+        var theme = "THEME"
+        when (themeID) {
+            DEFAULT_THEME_INDEX -> {
+                if (MyPreferences(this.context).forceDayNight == AppCompatDelegate.MODE_NIGHT_YES) {
+                    theme = context.getString(R.string.theme_dark)
+                } else {
+                    theme = context.getString(R.string.theme_light)
+                }
+            }
+            MATERIAL_YOU_THEME_INDEX -> {
+                theme = "${context.getString(R.string.theme_system)} (${context.getString(R.string.theme_material_you)})"
+            }
+            AMOLED_THEME_INDEX -> {
+                theme = context.getString(R.string.theme_amoled)
+            }
+        }
+        return theme
+    }
 }
