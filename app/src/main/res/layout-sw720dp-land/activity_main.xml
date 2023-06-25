@@ -271,7 +271,7 @@
                         android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="invButton"
-                        android:text="@string/inv"
+                        android:text="@string/invert"
                         android:textSize="@dimen/button_text_size"/>
 
                     <Button
@@ -536,7 +536,6 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
                         app:srcCompat="@drawable/backspace_720dp"
                         tools:ignore="SpeakableTextPresentCheck" />

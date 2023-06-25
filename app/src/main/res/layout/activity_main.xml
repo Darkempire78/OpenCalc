@@ -269,7 +269,7 @@
                         android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="invButton"
-                        android:text="@string/inv" />
+                        android:text="@string/invert" />
 
                     <Button
                         android:id="@+id/eButton"
@@ -537,7 +537,6 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
                         android:paddingEnd="5dp"
                         app:srcCompat="@drawable/backspace" />

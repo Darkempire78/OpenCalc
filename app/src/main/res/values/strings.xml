@@ -19,37 +19,37 @@
     <string name="leftParenthesis" translatable="false">(</string>
     <string name="rightParenthesis" translatable="false">)</string>
     <string name="parentheses" translatable="false">(‎ ‎ )</string>
-    <string name="add" translatable="false">+</string>
-    <string name="subtract" translatable="false">−</string>
-    <string name="point" translatable="false">.</string>
-    <string name="equals" translatable="false">=</string>
+
+    <string name="exponent" translatable="false">^</string>
     <string name="divide" translatable="false">÷</string>
     <string name="multiply" translatable="false">×</string>
-    <string name="exponent" translatable="false">^</string>
-    <string name="backspace" translatable="false"> </string>
+    <string name="add" translatable="false">+</string>
+    <string name="subtract" translatable="false">−</string>
+    <string name="equals" translatable="false">=</string>
+    <string name="point" translatable="false">.</string>
 
+    <string name="square" translatable="false">√</string>
+    <string name="squareInv" translatable="false">x²</string>
+    <string name="squareInvModuloVersion" translatable="false">#</string>
+    <string name="pi" translatable="false">π</string>
     <string name="divideBy100" translatable="false">%</string>
+    <string name="factorial" translatable="false">!</string>
+
     <string name="degree" translatable="false">DEG</string>
     <string name="radian" translatable="false">RAD</string>
+    <string name="invert" translatable="false">INV</string>
+
     <string name="sine" translatable="false">sin</string>
     <string name="sineInv" translatable="false">sin⁻¹</string>
     <string name="cosine" translatable="false">cos</string>
     <string name="cosineInv" translatable="false">cos⁻¹</string>
-
     <string name="tangent" translatable="false">tan</string>
     <string name="tangentInv" translatable="false">tan⁻¹</string>
-    <string name="inv" translatable="false">INV</string>
     <string name="e" translatable="false">e</string>
     <string name="naturalLogarithm" translatable="false">ln</string>
     <string name="naturalLogarithmInv" translatable="false">e^</string>
-
     <string name="logarithm" translatable="false">log</string>
     <string name="logarithmInv" translatable="false">10^</string>
-    <string name="pi" translatable="false">π</string>
-    <string name="factorial" translatable="false">!</string>
-    <string name="square" translatable="false">√</string>
-    <string name="squareInvModuloVersion" translatable="false">#</string>
-    <string name="squareInv" translatable="false">x²</string>
 
     <!-- App menu -->
     <string name="menu_clear_history">Clear History</string>
