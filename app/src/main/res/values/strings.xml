@@ -16,9 +16,9 @@
 
     <!-- Symbols -->
     <string name="clear" translatable="false">AC</string>
-    <string name="parentheses" translatable="false">(  )</string>
     <string name="leftParenthesis" translatable="false">(</string>
     <string name="rightParenthesis" translatable="false">)</string>
+    <string name="parentheses" translatable="false">(‎ ‎ )</string>
     <string name="add" translatable="false">+</string>
     <string name="subtract" translatable="false">−</string>
     <string name="point" translatable="false">.</string>

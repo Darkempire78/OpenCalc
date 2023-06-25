@@ -98,7 +98,6 @@
 
     </HorizontalScrollView>
 
-
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
@@ -326,6 +325,28 @@
                         android:onClick="clearButton"
                         android:textSize="24sp"
                         android:text="@string/clear" />
+
+                    <Button
+                        android:id="@+id/leftParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="leftParenthesisButton"
+                        android:visibility="gone"
+                        android:text= "@string/leftParenthesis" />
+
+                    <Button
+                        android:id="@+id/rightParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="rightParenthesisButton"
+                        android:visibility="gone"
+                        android:text= "@string/rightParenthesis" />
 
                     <Button
                         android:id="@+id/parenthesesButton"
