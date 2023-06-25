@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
         // use radians instead of degrees by default (if option enabled)
         if (MyPreferences(this).useRadiansByDefault) {
-            enableOrDisableDegreeMode()
+            toggleDegreeMode()
         }
 
         // Focus by default
@@ -461,16 +461,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun enableOrDisableDegreeMode() {
-        if (binding.degreeButton.text.toString() == "DEG") {
-            binding.degreeButton.text = "RAD"
-            isDegreeModeActivated = false
-        } else {
-            binding.degreeButton.text = "DEG"
-            isDegreeModeActivated = true
-        }
+    // Switch between degree and radian mode
+    private fun toggleDegreeMode() {
+        if (isDegreeModeActivated) binding.degreeButton.text = getString(R.string.radian)
+        else binding.degreeButton.text = getString(R.string.degree)
 
-        binding.degreeTextView.text = binding.degreeButton.text.toString()
+        binding.degreeTextView.text = binding.degreeButton.text
+
+        // Flip the variable afterwards
+        isDegreeModeActivated = !isDegreeModeActivated
     }
 
     private fun updateResultDisplay() {
@@ -736,7 +735,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun degreeButton(view: View) {
         keyVibration(view)
-        enableOrDisableDegreeMode()
+        toggleDegreeMode()
         updateResultDisplay()
     }
 

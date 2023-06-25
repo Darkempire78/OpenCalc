@@ -30,6 +30,7 @@
 
     <string name="divideBy100" translatable="false">%</string>
     <string name="degree" translatable="false">DEG</string>
+    <string name="radian" translatable="false">RAD</string>
     <string name="sine" translatable="false">sin</string>
     <string name="sineInv" translatable="false">sin⁻¹</string>
     <string name="cosine" translatable="false">cos</string>
