@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         binding.backspaceButton.setOnLongClickListener {
             binding.input.setText("")
-            binding.resultDisplay.setText("")
+            binding.resultDisplay.text = ""
             true
         }
 
@@ -532,29 +532,27 @@ class MainActivity : AppCompatActivity() {
 
                     withContext(Dispatchers.Main) {
                         if (formattedResult != calculation) {
-                            binding.resultDisplay.setText(formattedResult)
+                            binding.resultDisplay.text = formattedResult
                         } else {
-                            binding.resultDisplay.setText("")
+                            binding.resultDisplay.text = ""
                         }
                     }
 
                 } else withContext(Dispatchers.Main) {
                     if (is_infinity && !division_by_0 && !domain_error) {
-                        if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText(
-                            "-" + getString(
-                                R.string.infinity
-                            )
+                        if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.text = "-" + getString(
+                            R.string.infinity
                         )
-                        else binding.resultDisplay.setText(getString(R.string.value_too_large))
+                        else binding.resultDisplay.text = getString(R.string.value_too_large)
                     } else {
                         withContext(Dispatchers.Main) {
-                            binding.resultDisplay.setText("")
+                            binding.resultDisplay.text = ""
                         }
                     }
                 }
             } else {
                 withContext(Dispatchers.Main) {
-                    binding.resultDisplay.setText("")
+                    binding.resultDisplay.text = ""
                 }
             }
         }
@@ -773,7 +771,7 @@ class MainActivity : AppCompatActivity() {
     fun clearButton(view: View) {
         keyVibration(view)
         binding.input.setText("")
-        binding.resultDisplay.setText("")
+        binding.resultDisplay.text = ""
     }
 
     @SuppressLint("SetTextI18n")
@@ -829,7 +827,7 @@ class MainActivity : AppCompatActivity() {
                         binding.input.isCursorVisible = false
 
                         // Clear resultDisplay
-                        binding.resultDisplay.setText("")
+                        binding.resultDisplay.text = ""
                     }
 
                     if (calculation != formattedResult) {
@@ -878,25 +876,23 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.syntax_error))
+                            binding.resultDisplay.text = getString(R.string.syntax_error)
                         } else if (domain_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.domain_error))
+                            binding.resultDisplay.text = getString(R.string.domain_error)
                         } else if (division_by_0) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            binding.resultDisplay.text = getString(R.string.division_by_0)
                         } else if (is_infinity) {
-                            if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.setText(
-                                "-" + getString(
-                                    R.string.infinity
-                                )
+                            if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.text = "-" + getString(
+                                R.string.infinity
                             )
-                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
+                            else binding.resultDisplay.text = getString(R.string.value_too_large)
                             //} else if (result.isNaN()) {
                             //    setErrorColor(true)
                             //    binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
-                            binding.resultDisplay.setText(formattedResult)
+                            binding.resultDisplay.text = formattedResult
                             isEqualLastAction =
                                 true // Do not clear the calculation (if you click into a number) if there is an error
                         }
@@ -904,7 +900,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             } else {
-                withContext(Dispatchers.Main) { binding.resultDisplay.setText("") }
+                withContext(Dispatchers.Main) { binding.resultDisplay.text = "" }
             }
         }
     }
@@ -1019,7 +1015,7 @@ class MainActivity : AppCompatActivity() {
             appLanguage = Locale.getDefault()
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
-            binding.resultDisplay.setText("")
+            binding.resultDisplay.text = ""
         }
 
         // Split the parentheses button (if option is enabled)
