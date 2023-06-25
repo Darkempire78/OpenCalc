@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">कैलकुलेटर</string>
-    <string name="select_theme_title">थीम चयन</string>
     <string name="settings_general_theme">थीम</string>
-    <string name="app_menu_vibration">वाइब्रेशन</string>
     <string name="menu_about">ऐप के बारे में</string>
     <string name="infinity">अनंत</string>
     <string name="settings_category_general">आम</string>
     <string name="settings_category_history">इतिहास</string>
     <string name="menu_clear_history">इतिहास मिटा दें</string>
-    <string name="math_error">गणित त्रुटि</string>
     <string name="syntax_error">वाक्य विन्यास त्रुटि</string>
     <string name="theme_amoled">एमोलेड</string>
     <string name="theme_dark">अँधेरा</string>
@@ -25,7 +22,6 @@
     <string name="about_other_version">संस्करण</string>
     <string name="about_easter_egg">OpenCalc का उपयोग करने के लिए धन्यवाद ❤️</string>
     <string name="about_made_in_france">फ्रांस में ❤️ से बनाया गया</string>
-    <string name="about_title">के बारे में</string>
     <string name="about_other_privacy_policy">तख़लिया नीति</string>
     <string name="settings_formatting_precision">दशमलव स्थानों की संख्या</string>
     <string name="settings_general_language">भाषा</string>

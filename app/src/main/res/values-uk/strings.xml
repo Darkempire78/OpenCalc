@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_general_theme">Тема</string>
-    <string name="app_menu_vibration">Вібрація</string>
     <string name="menu_clear_history">Очистити історію</string>
     <string name="menu_about">Про застосунок</string>
     <string name="theme_system">Система</string>
     <string name="theme_amoled">Амолед</string>
     <string name="app_name_display">Калькулятор</string>
-    <string name="select_theme_title">Виберіть тему</string>
     <string name="infinity">Нескінченність</string>
-    <string name="math_error">Математична помилка</string>
     <string name="theme_dark">Темна</string>
     <string name="value_copied">Скопійовано</string>
     <string name="theme_light">Світла</string>
@@ -18,7 +15,6 @@
     <string name="syntax_error">Синтаксична помилка</string>
     <string name="value_too_large">Значення занадто велике</string>
     <string name="menu_settings">Налаштування</string>
-    <string name="preferences_title">Налаштування</string>
     <string name="settings_category_general">ЗАГАЛЬНІ</string>
     <string name="settings_category_history">ІСТОРІЯ</string>
     <string name="settings_general_vibration">Вібрації</string>
@@ -43,14 +39,11 @@
     <string name="settings_category_advanced">РОЗШИРЕНИЙ</string>
     <string name="about_category_help">ДОПОМОЖІТЬ НАМ</string>
     <string name="settings_formatting_precision">Кількість знаків після коми</string>
-    <string name="about_title">Про застосунок</string>
     <string name="settings_advanced_long_click_copy">Довгий клік для копіювання значення</string>
     <string name="settings_advanced_long_click_copy_desc">Тривале натискання копіює текст елемента замість його виділення</string>
     <string name="settings_general_add_modulo">Додати кнопку модуля</string>
     <string name="settings_general_add_modulo_desc">Замінити кнопку \"X²\" на кнопку модуля (доступна при натисканні кнопки \"INV\")</string>
     <string name="settings_general_split_parenthesis_button_desc">Видалити кнопку \"AC\", щоб розділити кнопку дужок на дві кнопки</string>
-    <string name="clearParenthesisVersionLeft">(</string>
-    <string name="clearParenthesisVersionRight">)</string>
     <string name="squareInvModuloVersion">#</string>
     <string name="settings_general_split_parenthesis_button">Розділити кнопку дужок на дві кнопки</string>
     <string name="settings_formatting_scientific_notation">Число в науковому позначення</string>

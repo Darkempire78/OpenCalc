@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="math_error">ഗണിത പിശക്</string>
     <string name="menu_clear_history">ചരിത്രം മായ്ക്കുക</string>
     <string name="theme_light">വെളിച്ചം</string>
     <string name="value_copied">പകർത്തി</string>
@@ -10,7 +9,6 @@
     <string name="theme_system">സംവിധാനം</string>
     <string name="syntax_error">വാക്യഘടന പിശക്</string>
     <string name="value_too_large">മൂല്യം വളരെ വലുതാണ്</string>
-    <string name="preferences_title">ക്രമീകരണങ്ങൾ</string>
     <string name="settings_category_general">പൊതുവായ</string>
     <string name="settings_category_history">ചരിത്രം</string>
     <string name="settings_advanced_prevent_sleep">ഫോൺ ഉറങ്ങുന്നത് തടയുക</string>
@@ -26,7 +24,6 @@
     <string name="about_help_donate">സംഭാവനചെയ്യുക</string>
     <string name="about_help_rate">ഈ പ്രയോഗത്തെ വിലയിരുത്തുക</string>
     <string name="settings_general_language">ഭാഷ</string>
-    <string name="about_title">കുറിച്ച്</string>
     <string name="about_other_privacy_policy">സ്വകാര്യതാ നയം</string>
     <string name="settings_formatting_precision">ദശാംശ സ്ഥാനങ്ങളുടെ എണ്ണം</string>
     <string name="about_easter_egg">OpenCalc ഉപയോഗിച്ചതിന് നന്ദി❤️</string>
@@ -41,12 +38,8 @@
     <string name="settings_general_vibration">വിറയലുകൾ</string>
     <string name="settings_history_size">ഫലങ്ങൾ ചരിത്രത്തിൽ സംരക്ഷിച്ചു</string>
     <string name="settings_general_radians_desc">സ്ഥിരസ്ഥിതിയായി ഡിഗ്രിക്ക് പകരം റേഡിയൻസ് ഉപയോഗിക്കുക</string>
-    <string name="select_theme_title">പ്രതിപാദ്യം തിരഞ്ഞെടുക്കുക</string>
     <string name="settings_advanced_prevent_sleep_desc">പ്രയോഗം മുൻവശത്തായിരിക്കുമ്പോൾ ഫോൺ ഉറങ്ങുന്നത് തടയുക</string>
-    <string name="app_menu_vibration">വിറയല്‍</string>
-    <string name="clearParenthesisVersionRight">)</string>
     <string name="settings_advanced_long_click_copy">മൂല്യം പകർത്താൻ ദീർഘ ക്ലിക്ക് ചെയ്യുക</string>
-    <string name="clearParenthesisVersionLeft">(</string>
     <string name="settings_advanced_long_click_copy_desc">ദീർഘനേരം അമർത്തിയാൽ അത് തിരഞ്ഞെടുക്കുന്നതിനുപകരം ഇനത്തിന്റെ വാചകം പകർത്തുന്നു</string>
     <string name="squareInvModuloVersion">#</string>
 </resources>

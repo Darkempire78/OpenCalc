@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Αριθμομηχανή</string>
-    <string name="select_theme_title">Επιλέξτε θέμα</string>
     <!-- App Menu -->
     <string name="settings_general_theme">Θέμα</string>
-    <string name="app_menu_vibration">Δόνηση</string>
     <string name="menu_clear_history">Απαλοιφή ιστορικού</string>
     <string name="menu_about">Σχετικά</string>
     <!-- Theme choices -->
@@ -16,7 +14,6 @@
     <string name="infinity">Άπειρο</string>
     <string name="division_by_0">Αδύνατη η διαίρεση με το 0</string>
     <string name="domain_error">Σφάλμα τομέα</string>
-    <string name="math_error">Μαθηματικό σφάλμα</string>
     <string name="syntax_error">Συντακτικό λάθος</string>
     <string name="value_too_large">Πολύ μεγάλη τιμή</string>
 </resources>

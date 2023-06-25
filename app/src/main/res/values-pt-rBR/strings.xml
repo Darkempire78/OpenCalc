@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Calculadora</string>
-    <string name="select_theme_title">Selecionar Tema</string>
     <string name="infinity">Infinidade</string>
     <string name="settings_general_theme">Tema</string>
-    <string name="app_menu_vibration">Vibração</string>
     <string name="menu_clear_history">Limpar Histórico</string>
     <string name="menu_about">Sobre</string>
 </resources>

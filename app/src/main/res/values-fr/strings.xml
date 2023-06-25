@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Calculatrice</string>
-    <string name="select_theme_title">Choisissez le thème</string>
     <string name="settings_general_theme">Thème</string>
-    <string name="app_menu_vibration">Vibration</string>
     <string name="menu_about">À propos</string>
     <string name="infinity">Infini</string>
     <string name="menu_clear_history">Supprimer l\'historique</string>
@@ -12,7 +10,6 @@
     <string name="theme_light">Clair</string>
     <string name="theme_dark">Sombre</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="math_error">Erreur mathématique</string>
     <string name="division_by_0">Division par 0 impossible</string>
     <string name="domain_error">Erreur de domaine</string>
     <string name="syntax_error">Erreur de syntaxe</string>
@@ -21,7 +18,6 @@
     <string name="settings_category_general">GÉNÉRAL</string>
     <string name="settings_advanced_prevent_sleep_desc">Empêcher le telephone de se mettre en veille pendant l\'utilisation de l\'application</string>
     <string name="settings_general_vibration_desc">Émet des vibrations lorsqu\'un bouton est enfoncé</string>
-    <string name="preferences_title">Paramètres</string>
     <string name="settings_category_history">HISTORIQUE</string>
     <string name="settings_history_size">Résultats sauvegardés dans l\'historique</string>
     <string name="settings_general_vibration">Vibrations</string>
@@ -42,6 +38,5 @@
     <string name="about_made_in_france">Fait avec ❤ ️en France</string>
     <string name="about_other_privacy_policy">Politique de confidentialité</string>
     <string name="settings_formatting_precision">Nombre de chiffres après la virgule</string>
-    <string name="about_title">À propos</string>
     <string name="settings_general_language">Langue</string>
 </resources>

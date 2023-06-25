@@ -2,7 +2,6 @@
 <resources>
     <string name="division_by_0">不能除以0</string>
     <string name="domain_error">域错误</string>
-    <string name="math_error">无法计算</string>
     <string name="settings_category_advanced">高级</string>
     <string name="settings_general_scientific_mode_desc">默认启动科学计算器</string>
     <string name="settings_general_scientific_mode">科学计算器模式</string>
@@ -10,8 +9,6 @@
     <string name="about_help_donate">赞助</string>
     <string name="about_category_social">联系我们</string>
     <string name="app_name_display">计算器</string>
-    <string name="select_theme_title">选择主题</string>
-    <string name="app_menu_vibration">震动</string>
     <string name="settings_general_theme">主题</string>
     <string name="menu_clear_history">清除历史记录</string>
     <string name="menu_about">关于</string>
@@ -21,7 +18,6 @@
     <string name="syntax_error">语法错误</string>
     <string name="menu_settings">设置</string>
     <string name="value_too_large">数值过大</string>
-    <string name="preferences_title">设置</string>
     <string name="settings_category_general">通用</string>
     <string name="settings_category_history">历史记录</string>
     <string name="settings_advanced_prevent_sleep_desc">应用使用时，阻止屏幕关闭</string>
@@ -38,7 +34,6 @@
     <string name="about_easter_egg">感谢使用OpenCalc ❤️</string>
     <string name="about_made_in_france">在法国用 ❤️制造</string>
     <string name="about_other_privacy_policy">隐私政策</string>
-    <string name="about_title">关于</string>
     <string name="settings_general_language">语言</string>
     <string name="settings_formatting_precision">小数位数</string>
     <string name="theme_amoled">纯黑</string>

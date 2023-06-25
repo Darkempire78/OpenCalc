@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">計算機</string>
-    <string name="select_theme_title">選擇主題</string>
     <!-- App Menu -->
     <string name="settings_general_theme">主題</string>
-    <string name="app_menu_vibration">震動</string>
     <string name="menu_clear_history">清除計算記錄</string>
     <string name="menu_about">關於</string>
     <!-- Theme choices -->
@@ -17,13 +15,11 @@
     <string name="infinity">無限</string>
     <string name="division_by_0">無法除以 0</string>
     <string name="domain_error">無法顯示</string>
-    <string name="math_error">無法計算</string>
     <string name="syntax_error">格式錯誤</string>
     <string name="menu_settings">設定</string>
     <string name="value_too_large">數值太大</string>
 
     <!-- Preference Titles -->
-    <string name="preferences_title">設定</string>
     <string name="settings_category_general">一般</string>
     <string name="settings_category_history">歷史</string>
 
@@ -49,6 +45,5 @@
     <string name="about_made_in_france">在法國用 ❤️ 製造</string>
     <string name="settings_formatting_precision">小數位準確性</string>
     <string name="about_other_privacy_policy">隱私政策</string>
-    <string name="about_title">關於</string>
     <string name="settings_general_language">語言</string>
 </resources>

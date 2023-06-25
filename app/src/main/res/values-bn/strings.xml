@@ -2,13 +2,10 @@
 <resources>
     <string name="app_name_display">ক্যালকুলেটর</string>
 
-    <string name="select_theme_title">থিম বাছুন</string>
-
     <string name="infinity">অসীম</string>
 
     <!-- App Menu -->
     <string name="settings_general_theme">থিম</string>
-    <string name="app_menu_vibration">ভাইব্রেশন</string>
     <string name="menu_clear_history">ইতিহাস মুছুন</string>
     <string name="menu_about">সম্পর্কে</string>
 

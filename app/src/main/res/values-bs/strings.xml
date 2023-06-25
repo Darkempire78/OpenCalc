@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_menu_vibration">Vibracije</string>
     <string name="settings_general_theme">Tema</string>
     <string name="app_name_display">Kalkulator</string>
     <string name="theme_dark">Tamna</string>
-    <string name="select_theme_title">Odaberi temu</string>
     <string name="menu_clear_history">Obriši historiju</string>
     <string name="menu_about">O aplikaciji</string>
     <string name="theme_amoled">Crna</string>
@@ -13,7 +11,6 @@
     <string name="theme_light">Svjetla</string>
     <string name="infinity">Bezbroj</string>
     <string name="division_by_0">Ne može se podijeliti sa 0</string>
-    <string name="math_error">Matematička greška</string>
     <string name="syntax_error">Sintaksna greška</string>
     <string name="domain_error">Greška domene</string>
     <string name="value_too_large">Prevelika vrijednost</string>
@@ -34,7 +31,6 @@
     <string name="about_made_in_france">Napravljeno sa ❤️ u Francuskoj</string>
     <string name="settings_category_advanced">NAPREDNO</string>
     <string name="menu_settings">Postavke</string>
-    <string name="preferences_title">Postavke</string>
     <string name="settings_advanced_prevent_sleep">Spriječi isključivanje ekrana</string>
     <string name="settings_general_vibration_desc">Vibrira kada se pritisne dugme</string>
     <string name="settings_general_vibration">Vibracije</string>
@@ -43,5 +39,4 @@
     <string name="settings_formatting_precision">Broj decimalnih mjesta</string>
     <string name="settings_general_language">Jezik</string>
     <string name="about_other_privacy_policy">Politika privatnosti</string>
-    <string name="about_title">O aplikaciji</string>
 </resources>

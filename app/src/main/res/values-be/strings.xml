@@ -5,17 +5,13 @@
     <string name="theme_light">Светлая</string>
     <string name="theme_dark">Цёмная</string>
     <string name="value_copied">Скапіравана</string>
-    <string name="app_menu_vibration">Вібрацыя</string>
     <string name="theme_system">Сістэмная</string>
-    <string name="select_theme_title">Выберыце Тэма</string>
     <string name="infinity">Бясконцасць</string>
     <string name="division_by_0">Немагчыма падзяліць на 0</string>
     <string name="domain_error">Памылка дамена</string>
-    <string name="math_error">Матэматычная памылка</string>
     <string name="syntax_error">Сінтаксічная памылка</string>
     <string name="menu_settings">Налады</string>
     <string name="value_too_large">Занадта вялікае значэнне</string>
-    <string name="preferences_title">Налады</string>
     <string name="settings_category_general">АСНОЎНЫЯ</string>
     <string name="settings_category_history">ГІСТОРЫЯ</string>
     <string name="settings_general_radians_desc">Па змаўчанні выкарыстоўвайце радыяны замест градусаў</string>
@@ -30,7 +26,6 @@
     <string name="about_made_in_france">Зроблена з ❤️ у Францыі</string>
     <string name="settings_formatting_precision">Колькасць знакаў пасля коскі</string>
     <string name="about_other_privacy_policy">Палітыка прыватнасці</string>
-    <string name="about_title">Даведка</string>
     <string name="settings_general_language">Мова</string>
     <string name="app_name_display">Калькулятар</string>
     <string name="settings_general_theme">Тэма</string>

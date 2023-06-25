@@ -4,10 +4,8 @@
     <string name="theme_light">ହାଲୁକା</string>
     <string name="value_too_large">ମୂଲ୍ୟ ଅତ୍ୟଧିକ ବଡ଼</string>
     <string name="settings_general_theme">ଥିମ୍</string>
-    <string name="app_menu_vibration">କମ୍ପନ</string>
     <string name="menu_about">ଵିଷୟରେ</string>
     <string name="theme_system">ସିଷ୍ଟମ୍</string>
     <string name="theme_dark">ଗାଢ଼</string>
-    <string name="preferences_title">ସେଟିଂ</string>
     <string name="settings_category_general">ସାଧାରଣ</string>
 </resources>

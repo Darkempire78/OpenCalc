@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Kalkulator</string>
-    <string name="select_theme_title">Velg drakt</string>
     <string name="theme_light">Lys</string>
     <string name="theme_dark">Mørk</string>
     <string name="value_copied">Kopiert</string>
     <string name="settings_general_theme">Drakt</string>
-    <string name="app_menu_vibration">Vibrasjon</string>
     <string name="menu_clear_history">Tøm historikk</string>
     <string name="menu_about">Om</string>
     <string name="theme_system">System</string>
     <string name="infinity">Uendelig</string>
     <string name="division_by_0">Kan ikke dele på 0</string>
     <string name="domain_error">Domenefeil</string>
-    <string name="math_error">Mattefeil</string>
     <string name="syntax_error">Syntaksfeil</string>
     <string name="theme_amoled">Svart</string>
     <string name="menu_settings">Innstillinger</string>
-    <string name="preferences_title">Innstillinger</string>
     <string name="settings_category_history">Historikk</string>
     <string name="settings_general_scientific_mode">Vitenskapelig modus</string>
     <string name="settings_general_vibration_desc">Vibrasjon ved knappetrykk</string>
@@ -36,7 +32,6 @@
     <string name="about_help_donate">Doner</string>
     <string name="about_other_version">Versjon</string>
     <string name="about_category_social">Sosialt</string>
-    <string name="about_title">Om</string>
     <string name="about_help_translate">Oversett</string>
     <string name="about_made_in_france">Laget med ❤️ in Frankrike</string>
     <string name="about_easter_egg">Takk for at du bruker OpenCalc ❤️</string>

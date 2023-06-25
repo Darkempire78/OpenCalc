@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_menu_vibration">Wibracje</string>
     <string name="menu_clear_history">Wyczyść Historię</string>
     <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
@@ -10,7 +9,6 @@
     <string name="infinity">Nieskończoność</string>
     <string name="division_by_0">Nie można dzielić przez 0</string>
     <string name="domain_error">Błąd domeny</string>
-    <string name="math_error">Błąd matematyczny</string>
     <string name="syntax_error">Błąd składniowy</string>
     <string name="menu_settings">Ustawienia</string>
     <string name="value_too_large">Wartość zbyt duża</string>
@@ -29,13 +27,10 @@
     <string name="about_made_in_france">Wyprodukowano z ❤️ we Francji</string>
     <string name="settings_formatting_precision">Liczba cyfr po przecinku</string>
     <string name="about_other_privacy_policy">Polityka prywatności</string>
-    <string name="about_title">O aplikacji</string>
     <string name="settings_general_language">Język</string>
     <string name="app_name_display">Kalkulator</string>
-    <string name="select_theme_title">Wybierz motyw</string>
     <string name="settings_general_theme">Motyw</string>
     <string name="menu_about">O aplikacji</string>
-    <string name="preferences_title">Ustawienia</string>
     <string name="settings_general_vibration">Wibracje</string>
     <string name="settings_general_radians_desc">Domyślnie używaj radianów zamiast stopni</string>
     <string name="settings_category_advanced">ZAAWANSOWANE</string>

@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
     <!-- Numbers -->
@@ -31,7 +30,6 @@
     <string name="squareInv" translatable="false">x²</string>
     <string name="squareInvModuloVersion" translatable="false">#</string>
     <string name="pi" translatable="false">π</string>
-    <string name="exponent" translatable="false">^</string>
     <string name="factorial" translatable="false">!</string>
 
     <string name="degree" translatable="false">DEG</string>
@@ -121,7 +119,6 @@
     <!-- Error messages -->
     <string name="division_by_0">Can\'t divide by 0</string>
     <string name="domain_error">Domain error</string>
-    <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
     <string name="value_too_large">Value too large</string>
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="syntax_error">Синтаксна грешка</string>
-    <string name="select_theme_title">Изабери тему</string>
-    <string name="app_menu_vibration">Вибрација</string>
     <string name="menu_clear_history">Обриши историју</string>
     <string name="menu_about">О апликацији</string>
     <string name="settings_general_theme">Тема</string>
@@ -11,7 +9,6 @@
     <string name="infinity">Безброј</string>
     <string name="division_by_0">Не може се поделити са 0</string>
     <string name="domain_error">Грешка домена</string>
-    <string name="math_error">Математичка грешка</string>
     <string name="app_name_display">Калкулатор</string>
     <string name="theme_system">Систем</string>
     <string name="theme_amoled">Црна</string>
@@ -32,8 +29,6 @@
     <string name="settings_history_size">Број сачуваних резултата у историји</string>
     <string name="settings_general_language">Језик</string>
     <string name="settings_general_vibration_desc">Вибрира када се притисне дугме</string>
-    <string name="about_title">О апликацији</string>
-    <string name="preferences_title">Подешавања</string>
     <string name="menu_settings">Подешавања</string>
     <string name="settings_advanced_prevent_sleep_desc">Спречи да се екран искључи док је апликација у првом плану</string>
     <string name="settings_general_vibration">Вибрације</string>

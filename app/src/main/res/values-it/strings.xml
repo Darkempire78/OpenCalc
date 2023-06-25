@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Calcolatrice</string>
-    <string name="select_theme_title">Seleziona un tema</string>
     <string name="settings_general_theme">Tema</string>
-    <string name="app_menu_vibration">Vibrazione</string>
     <string name="menu_about">Info</string>
     <string name="infinity">Infinito</string>
     <string name="menu_clear_history">Cancella la cronologia</string>
@@ -12,13 +10,11 @@
     <string name="theme_light">Chiaro</string>
     <string name="theme_dark">Scuro</string>
     <string name="theme_amoled">Amoled</string>
-    <string name="math_error">Errore matematico</string>
     <string name="division_by_0">Divisione per 0 impossibile</string>
     <string name="domain_error">Errore di dominio</string>
     <string name="syntax_error">Errore di sintassi</string>
     <string name="value_too_large">Valore troppo grande</string>
     <string name="menu_settings">Impostazioni</string>
-    <string name="preferences_title">Impostazioni</string>
     <string name="settings_category_general">GENERALI</string>
     <string name="settings_general_vibration">Vibrazione</string>
     <string name="settings_general_scientific_mode">Modalità scientifica</string>
@@ -27,7 +23,6 @@
     <string name="about_category_other">ALTRO</string>
     <string name="about_help_translate">Traduci</string>
     <string name="about_help_rate">Valuta questa app</string>
-    <string name="about_title">Informazioni</string>
     <string name="settings_general_language">Lingua</string>
     <string name="settings_general_vibration_desc">Emette vibrazioni quando viene premuto un pulsante</string>
     <string name="settings_category_advanced">AVANZATE</string>

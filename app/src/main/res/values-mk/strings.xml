@@ -3,8 +3,6 @@
     <string name="app_name_display">Калкулатор</string>
     <string name="theme_amoled">Црна</string>
     <string name="menu_about">За апликацијата</string>
-    <string name="select_theme_title">Избери тема</string>
-    <string name="app_menu_vibration">Вибрација</string>
     <string name="settings_general_theme">Тема</string>
     <string name="menu_clear_history">Избриши историја</string>
     <string name="theme_system">Системска</string>
@@ -12,7 +10,6 @@
     <string name="theme_light">Светла</string>
     <string name="theme_dark">Темна</string>
     <string name="infinity">Безброј</string>
-    <string name="math_error">Математичка грешка</string>
     <string name="division_by_0">Не може да се подели со 0</string>
     <string name="domain_error">Грешка во доменот</string>
     <string name="syntax_error">Синтаксна грешка</string>
@@ -26,12 +23,10 @@
     <string name="about_help_rate">Оцени ја оваа апликација</string>
     <string name="about_other_version">Верзија</string>
     <string name="about_made_in_france">Изработено со ❤️ во Франција</string>
-    <string name="about_title">За апликацијата</string>
     <string name="settings_general_vibration_desc">Вибрира кога ќе се притисне копче</string>
     <string name="settings_history_size">Број на зачувани резултати во историјата</string>
     <string name="menu_settings">Подесувања</string>
     <string name="settings_category_general">ОПШТО</string>
-    <string name="preferences_title">Подесувања</string>
     <string name="settings_category_history">ИСТОРИЈА</string>
     <string name="settings_category_advanced">НАПРЕДНО</string>
     <string name="settings_general_vibration">Вибрации</string>

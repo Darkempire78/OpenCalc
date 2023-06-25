@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Калькулятор</string>
-    <string name="select_theme_title">Выберите тему</string>
     <string name="infinity">Бесконечность</string>
     <!-- Меню приложения -->
     <string name="settings_general_theme">Тема</string>
-    <string name="app_menu_vibration">Вибрация</string>
     <string name="menu_clear_history">Очистить Историю</string>
     <string name="menu_about">О приложении</string>
     <!-- Другое -->
@@ -13,14 +11,12 @@
     <string name="theme_light">Светлая</string>
     <string name="theme_dark">Тёмная</string>
     <string name="division_by_0">Нельзя разделить на 0</string>
-    <string name="math_error">Математическая ошибка</string>
     <string name="syntax_error">Синтаксическая ошибка</string>
     <string name="theme_system">Системная</string>
     <string name="theme_amoled">Чёрная</string>
     <string name="domain_error">Ошибка домена</string>
     <string name="menu_settings">Настройки</string>
     <string name="value_too_large">Значение очень большое</string>
-    <string name="preferences_title">Настройки</string>
     <string name="settings_category_general">ОСНОВНЫЕ</string>
     <string name="settings_general_vibration">Вибрация</string>
     <string name="settings_advanced_prevent_sleep">Предотвращать телефон от сна</string>
@@ -38,7 +34,6 @@
     <string name="about_easter_egg">Спасибо за использование OpenCalc ❤️</string>
     <string name="about_made_in_france">Сделано с ❤️ во Франции</string>
     <string name="about_other_privacy_policy">Политика конфиденциальности</string>
-    <string name="about_title">О приложении</string>
     <string name="settings_general_vibration_desc">Вибрация при нажатии кнопок</string>
     <string name="settings_history_size">Количество результатов, сохраняемых в истории</string>
     <string name="settings_general_scientific_mode_desc">Активировать научный режим по умолчанию</string>

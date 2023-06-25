@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="select_theme_title">Temayı seçin</string>
     <string name="app_name_display">Hesaplayıcı</string>
     <string name="settings_general_theme">Tema</string>
-    <string name="app_menu_vibration">Titreşim</string>
     <string name="menu_about">Hakkında</string>
     <string name="infinity">Sonsuz</string>
     <string name="theme_light">Açık</string>
@@ -15,7 +13,6 @@
     <string name="division_by_0">0\'a bölünemez</string>
     <string name="domain_error">Etki alanı hatası</string>
     <string name="syntax_error">Söz dizimi hatası</string>
-    <string name="math_error">Matematik hatası</string>
     <string name="value_too_large">Değer çok büyük</string>
     <string name="settings_general_vibration_desc">Bir düğmeye basıldığında titreşim yay</string>
     <string name="about_help_donate">Bağış yapın</string>
@@ -25,7 +22,6 @@
     <string name="settings_category_general">GENEL</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="title_activity_settings">Etkinlik Ayarları</string>
-    <string name="preferences_title">Ayarlar</string>
     <string name="settings_category_history">GEÇMİŞ</string>
     <string name="settings_advanced_prevent_sleep_desc">Uygulama ön plandayken telefonun uykuya geçmesini önle</string>
     <string name="settings_history_size">Geçmişe kaydedilen sonuçlar</string>
@@ -43,6 +39,5 @@
     <string name="about_made_in_france">❤️ ile Fransa\'da yapıldı</string>
     <string name="about_other_privacy_policy">Gizlilik ilkesi</string>
     <string name="settings_formatting_precision">Ondalık basamak sayısı</string>
-    <string name="about_title">Hakkında</string>
     <string name="settings_general_language">Dil</string>
 </resources>
