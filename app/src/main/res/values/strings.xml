@@ -2,8 +2,7 @@
     <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
-    <string name="select_theme_title">Select Theme</string>
-
+    <!-- Numbers -->
     <string name="zero" translatable="false">0</string>
     <string name="one" translatable="false">1</string>
     <string name="two" translatable="false">2</string>
@@ -15,8 +14,11 @@
     <string name="eight" translatable="false">8</string>
     <string name="nine" translatable="false">9</string>
 
+    <!-- Symbols -->
     <string name="clear" translatable="false">AC</string>
     <string name="parentheses" translatable="false">(  )</string>
+    <string name="leftParenthesis" translatable="false">(</string>
+    <string name="rightParenthesis" translatable="false">)</string>
     <string name="add" translatable="false">+</string>
     <string name="subtract" translatable="false">−</string>
     <string name="point" translatable="false">.</string>
@@ -45,77 +47,86 @@
     <string name="pi" translatable="false">π</string>
     <string name="factorial" translatable="false">!</string>
     <string name="square" translatable="false">√</string>
+    <string name="squareInvModuloVersion" translatable="false">#</string>
     <string name="squareInv" translatable="false">x²</string>
 
-    <!-- App Menu -->
-    <string name="app_menu_theme">Theme</string>
-    <string name="app_menu_vibration">Vibration</string>
-    <string name="app_menu_clear_history">Clear History</string>
-    <string name="app_menu_github" translatable="false">GitHub</string>
-    <string name="app_menu_about">About</string>
+    <!-- App menu -->
+    <string name="menu_clear_history">Clear History</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+
+    <!-- Settings menu -->
+    <string name="settings_category_general">GENERAL</string>
+    <string name="settings_category_formatting">FORMATTING</string>
+    <string name="settings_category_history">HISTORY</string>
+    <string name="settings_category_advanced">ADVANCED</string>
+
+    <string name="settings_general_language">Language</string>
+
+    <string name="settings_general_theme">Theme</string>
+
+    <string name="settings_general_vibration">Vibration</string>
+    <string name="settings_general_vibration_desc">Vibrate when a button is pressed</string>
+
+    <string name="settings_general_radians">Radians</string>
+    <string name="settings_general_radians_desc">Use radians instead of degrees by default</string>
+
+    <string name="settings_general_scientific_mode">Scientific mode</string>
+    <string name="settings_general_scientific_mode_desc">Activate scientific mode by default</string>
+
+    <string name="settings_general_split_parenthesis_button">Split the parenthesis button into two buttons</string>
+    <string name="settings_general_split_parenthesis_button_desc">Remove the \"AC\" button to split the parenthesis button into two buttons</string>
+
+    <string name="settings_general_add_modulo">Add a modulo button</string>
+    <string name="settings_general_add_modulo_desc">Replace the \"X²\" button with a modulo button (available when the \"INV\" button is clicked)</string>
+
+    <string name="settings_formatting_precision">Number of decimal places</string>
+
+    <string name="settings_formatting_scientific_notation">Number into scientific notation</string>
+    <string name="settings_formatting_scientific_notation_desc">Convert all results to scientific notation</string>
+
+    <string name="settings_history_size">Results saved in history</string>
+
+    <string name="settings_advanced_long_click_copy">Long click to copy value</string>
+    <string name="settings_advanced_long_click_copy_desc">Long press copies the text of the item instead of selecting it</string>
+
+    <string name="settings_advanced_prevent_sleep">Keep device awake</string>
+    <string name="settings_advanced_prevent_sleep_desc">Prevent device from sleeping while the app is in the foreground</string>
+
+    <!-- About page -->
+    <string name="about_category_help">HELP US</string>
+    <string name="about_category_social">SOCIAL</string>
+    <string name="about_category_other">OTHER</string>
+
+    <string name="about_help_donate">Donate</string>
+    <string name="about_help_translate">Translate</string>
+    <string name="about_help_rate">Rate this app</string>
+
+    <string name="about_social_discord" translatable="false">Discord</string>
+    <string name="about_social_github" translatable="false">GitHub</string>
+
+    <string name="about_other_privacy_policy">Privacy policy</string>
+    <string name="about_other_version">Version</string>
+
+    <string name="about_easter_egg">Thanks for using OpenCalc ❤️</string>
+    <string name="about_made_in_france">Made with ❤️ in France</string>
 
     <!-- Theme choices -->
-    <string name="theme_system">System</string>
-    <string name="theme_amoled">Amoled</string>
     <string name="theme_material_you" translatable="false">Material You</string>
+    <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
+    <string name="theme_amoled">Amoled</string>
 
-    <!-- Others -->
-    <string name="value_copied">Copied</string>
-    <string name="infinity">Infinity</string>
+    <!-- Error messages -->
     <string name="division_by_0">Can\'t divide by 0</string>
     <string name="domain_error">Domain error</string>
     <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
-    <string name="app_menu_settings">Settings</string>
     <string name="value_too_large">Value too large</string>
 
-    <!-- Settings Activity Title -->
+    <!-- Others -->
+    <string name="value_copied">Copied</string>
+    <string name="infinity">Infinity</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="preferences_title">Settings</string>
-    <string name="preferences_general_category">GENERAL</string>
-    <string name="preferences_history_category">HISTORY</string>
-
-    <!-- Messages Preferences -->
-    <string name="preferences_prevent_phone_from_sleeping_summary">Prevent phone from sleeping while the app is in foreground</string>
-    <string name="preferences_vibration_summary">Emit vibrations when a button is pressed</string>
-    <string name="preferences_history_size">Results saved in history</string>
-    <string name="preferences_vibration_title">Vibrations</string>
-    <string name="preferences_prevent_phone_from_sleeping_title">Prevent phone from sleeping</string>
-    <string name="preferences_advanced_category">ADVANCED</string>
-    <string name="preferences_scientif_mode_enabled_by_default_summary">Activate scientific mode by default</string>
-    <string name="preferences_scientif_mode_enabled_by_default_title">Scientific mode</string>
-    <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
-    <string name="preferences_radians_instead_of_degrees_by_default_summary">Use radians instead of degrees by default</string>
-    <string name="about_help_us_category">HELP US</string>
-    <string name="about_donate">Donate</string>
-    <string name="about_discord" translatable="false">Discord</string>
-    <string name="about_github" translatable="false">GitHub</string>
-    <string name="about_social_category">SOCIAL</string>
-    <string name="app_version" translatable="false">APP VERSION</string>
-    <string name="about_other_category">OTHER</string>
-    <string name="about_translate">Translate</string>
-    <string name="about_rate">Rate this app</string>
-    <string name="app_version_title">Version</string>
-    <string name="thanks_for_using_opencalc">Thanks for using OpenCalc ❤️</string>
-    <string name="made_in_france">Made with ❤️ in France</string>
-    <string name="preferences_number_precision">Number of decimal places</string>
-    <string name="privacy_policy">Privacy policy</string>
-    <string name="about_title">About</string>
-    <string name="preferences_language_title">Language</string>
-    <string name="preferences_write_number_into_scientific_notation_title">Number into scientific notation</string>
-    <string name="preferences_write_number_into_scientific_notation_summary">Convert all results to scientific notation</string>
-    <string name="preferences_long_click_to_copy_value_title">Long click to copy value</string>
-    <string name="preferences_long_click_to_copy_value_summary">Long press copies the text of the item instead of selecting it</string>
-    <string name="preferences_formatting_category">Formatting</string>
-    <string name="preferences_replace_x2_by_modulo_title">Add a modulo button</string>
-    <string name="preferences_replace_x2_by_modulo_summary">Replace the \"X²\" button with a modulo button (available when the \"INV\" button is clicked)</string>
-    <string name="squareInvModuloVersion">#</string>
-    <string name="preferences_split_parenthesis_button_into_two_buttons_title">Split the parenthesis button into two buttons</string>
-    <string name="preferences_split_parenthesis_button_into_two_buttons_summary">Remove the \"AC\" button to split the parenthesis button into two buttons</string>
-    <string name="clearParenthesisVersionLeft">(</string>
-    <string name="clearParenthesisVersionRight">)</string>
 </resources>

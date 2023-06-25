@@ -2,24 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <!--<item
         android:id="@+id/app_menu_theme_button"
-        android:title="@string/app_menu_theme"
+        android:title="@string/settings_general_theme"
         android:onClick="selectThemeDialog" />-->
 
     <item
         android:id="@+id/app_menu_clear_history_button"
-        android:title="@string/app_menu_clear_history"
+        android:title="@string/menu_clear_history"
         android:onClick="clearHistory"
         />
 
     <item
         android:id="@+id/app_menu_settings_button"
-        android:title="@string/app_menu_settings"
+        android:title="@string/menu_settings"
         android:onClick="openSettings"
         />
 
     <item
         android:id="@+id/app_menu_about_button"
-        android:title="@string/app_menu_about"
+        android:title="@string/menu_about"
         android:onClick="openAbout"
         />
 </menu>

@@ -4,7 +4,7 @@
     >
 
     <PreferenceCategory
-        app:title="@string/preferences_general_category"
+        app:title="@string/settings_category_general"
         app:color="?attr/text_color">
         <!--app:iconSpaceReserved="false"-->
 
@@ -13,7 +13,7 @@
             app:key="darkempire78.opencalculator.APP_LANGUAGE"
             app:selectable="true"
             app:enabled="true"
-            app:title="@string/preferences_language_title"
+            app:title="@string/settings_general_language"
             app:summary="APP LANGUAGE"
             app:icon="@drawable/language"
             />
@@ -23,15 +23,15 @@
             app:key="darkempire78.opencalculator.APP_THEME_SELECTOR"
             app:selectable="true"
             app:enabled="true"
-            app:title="@string/app_menu_theme"
+            app:title="@string/settings_general_theme"
             app:summary="APP THEME"
             app:icon="@drawable/theme"
             />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
-            app:title="@string/preferences_vibration_title"
-            app:summary="@string/preferences_vibration_summary"
+            app:title="@string/settings_general_vibration"
+            app:summary="@string/settings_general_vibration_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/vibrate"
             app:singleLineTitle="false"
@@ -40,8 +40,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
-            app:title="@string/preferences_radians_instead_of_degrees_by_default_title"
-            app:summary="@string/preferences_radians_instead_of_degrees_by_default_summary"
+            app:title="@string/settings_general_radians"
+            app:summary="@string/settings_general_radians_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/thermostat"
             app:singleLineTitle="false"
@@ -51,8 +51,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
-            app:title="@string/preferences_scientif_mode_enabled_by_default_title"
-            app:summary="@string/preferences_scientif_mode_enabled_by_default_summary"
+            app:title="@string/settings_general_scientific_mode"
+            app:summary="@string/settings_general_scientific_mode_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/science"
             app:singleLineTitle="false"
@@ -62,8 +62,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
-            app:title="@string/preferences_split_parenthesis_button_into_two_buttons_title"
-            app:summary="@string/preferences_split_parenthesis_button_into_two_buttons_summary"
+            app:title="@string/settings_general_split_parenthesis_button"
+            app:summary="@string/settings_general_split_parenthesis_button_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/swap"
             app:singleLineTitle="false"
@@ -73,8 +73,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.ADD_MODULO_BUTTON"
-            app:title="@string/preferences_replace_x2_by_modulo_title"
-            app:summary="@string/preferences_replace_x2_by_modulo_summary"
+            app:title="@string/settings_general_add_modulo"
+            app:summary="@string/settings_general_add_modulo_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/hashtag"
             app:singleLineTitle="false"
@@ -96,12 +96,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="@string/preferences_formatting_category"
+        app:title="@string/settings_category_formatting"
         app:color="?attr/text_color">
 
         <ListPreference
             app:key="darkempire78.opencalculator.NUMBER_PRECISION"
-            app:title="@string/preferences_number_precision"
+            app:title="@string/settings_formatting_precision"
             app:entries="@array/number_precision_entries"
             app:entryValues="@array/number_precision_values"
             app:defaultValue="10"
@@ -112,8 +112,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.WRITE_NUMBER_INTO_SCIENTIC_NOTATION"
-            app:title="@string/preferences_write_number_into_scientific_notation_title"
-            app:summary="@string/preferences_write_number_into_scientific_notation_summary"
+            app:title="@string/settings_formatting_scientific_notation"
+            app:summary="@string/settings_formatting_scientific_notation_desc"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
             app:defaultValue="false"
@@ -123,12 +123,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="@string/preferences_history_category"
+        app:title="@string/settings_category_history"
         app:color="?attr/text_color">
 
         <ListPreference
             app:key="darkempire78.opencalculator.HISTORY_SIZE"
-            app:title="@string/preferences_history_size"
+            app:title="@string/settings_history_size"
             app:entries="@array/history_size_entries"
             app:entryValues="@array/history_size_values"
             app:defaultValue="100"
@@ -140,13 +140,13 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="@string/preferences_advanced_category"
+        app:title="@string/settings_category_advanced"
         app:color="?attr/text_color">
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.LONG_CLICK_TO_COPY_VALUE"
-            app:title="@string/preferences_long_click_to_copy_value_title"
-            app:summary="@string/preferences_long_click_to_copy_value_summary"
+            app:title="@string/settings_advanced_long_click_copy"
+            app:summary="@string/settings_advanced_long_click_copy_desc"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
             app:defaultValue="true"
@@ -155,8 +155,8 @@
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
-            app:title="@string/preferences_prevent_phone_from_sleeping_title"
-            app:summary="@string/preferences_prevent_phone_from_sleeping_summary"
+            app:title="@string/settings_advanced_prevent_sleep"
+            app:summary="@string/settings_advanced_prevent_sleep_desc"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/bedtime"
             app:singleLineTitle="false"

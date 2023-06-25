@@ -139,8 +139,8 @@ class MainActivity : AppCompatActivity() {
 
         // splitParenthesis_button setting
         if (MyPreferences(this).splitParenthesisButton) {
-            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
-            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+            binding.clearButton.setText(R.string.leftParenthesis)
+            binding.parenthesesButton.setText(R.string.rightParenthesis)
         } else {
             binding.clearButton.setText(R.string.clear)
             binding.parenthesesButton.setText(R.string.parentheses)
@@ -227,10 +227,6 @@ class MainActivity : AppCompatActivity() {
                 // Do nothing
             }
         })
-    }
-
-    fun selectThemeDialog(menuItem: MenuItem) {
-        Themes.openDialogThemeSelector(this)
     }
 
     fun openAppMenu(view: View) {
@@ -930,8 +926,8 @@ class MainActivity : AppCompatActivity() {
 
         // splitParenthesis_button setting
         if (MyPreferences(this).splitParenthesisButton) {
-            binding.clearButton.setText(R.string.clearParenthesisVersionLeft)
-            binding.parenthesesButton.setText(R.string.clearParenthesisVersionRight)
+            binding.clearButton.setText(R.string.leftParenthesis)
+            binding.parenthesesButton.setText(R.string.rightParenthesis)
         } else {
             binding.clearButton.setText(R.string.clear)
             binding.parenthesesButton.setText(R.string.parentheses)

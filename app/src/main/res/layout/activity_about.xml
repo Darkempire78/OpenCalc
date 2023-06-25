@@ -21,7 +21,8 @@
             android:layout_marginVertical="18dp"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAccessibility="no" />
 
         <TextView
             android:id="@+id/about_back_button_text"
@@ -29,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:paddingVertical="18dp"
-            android:text="@string/about_title"
+            android:text="@string/menu_about"
             android:textColor="?attr/text_color"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/about_back_button"
@@ -37,12 +38,12 @@
             app:layout_constraintTop_toTopOf="@+id/about_back_button" />
 
         <TextView
-            android:id="@+id/about_help_us_category"
+            android:id="@+id/about_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="@string/about_help_us_category"
+            android:text="@string/about_category_help"
             android:textColor="?attr/text_category_color"
             android:layout_marginHorizontal="65dp"
             app:layout_constraintTop_toBottomOf="@+id/about_back_button_text" />
@@ -52,8 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:color="?attr/text_color"
-            android:text="@string/about_donate"
-            app:layout_constraintTop_toBottomOf="@+id/about_help_us_category"
+            android:text="@string/about_help_donate"
+            app:layout_constraintTop_toBottomOf="@+id/about_help"
             app:drawableLeftCompat="@drawable/donate"
             android:drawablePadding="20dp"
             android:paddingVertical="12dp"
@@ -66,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:color="?attr/text_color"
-            android:text="@string/about_translate"
+            android:text="@string/about_help_translate"
             app:layout_constraintTop_toBottomOf="@+id/about_donate"
             app:drawableLeftCompat="@drawable/translate"
             android:drawablePadding="20dp"
@@ -80,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:color="?attr/text_color"
-            android:text="@string/about_rate"
+            android:text="@string/about_help_rate"
             app:layout_constraintTop_toBottomOf="@+id/about_translate"
             app:drawableLeftCompat="@drawable/rate"
             android:drawablePadding="20dp"
@@ -98,12 +99,12 @@
             app:layout_constraintTop_toBottomOf="@+id/about_rate" />
 
         <TextView
-            android:id="@+id/about_social_category"
+            android:id="@+id/about_social"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="65dp"
             android:textStyle="bold"
-            android:text="@string/about_social_category"
+            android:text="@string/about_category_social"
             android:textColor="?attr/text_category_color"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/category_help_us_separator" />
@@ -116,11 +117,11 @@
             android:paddingVertical="12dp"
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
-            android:text="@string/about_github"
+            android:text="@string/about_social_github"
             android:textSize="@dimen/about_text"
             app:color="?attr/text_color"
             app:drawableLeftCompat="@drawable/github"
-            app:layout_constraintTop_toBottomOf="@+id/about_social_category" />
+            app:layout_constraintTop_toBottomOf="@+id/about_social" />
 
         <TextView
             android:id="@+id/about_discord"
@@ -130,7 +131,7 @@
             android:drawablePadding="20dp"
             android:paddingVertical="12dp"
             android:gravity="center_vertical"
-            android:text="@string/about_discord"
+            android:text="@string/about_social_discord"
             android:textSize="@dimen/about_text"
             app:color="?attr/text_color"
             app:drawableLeftCompat="@drawable/discord"
@@ -145,11 +146,11 @@
             app:layout_constraintTop_toBottomOf="@+id/about_discord" />
 
         <TextView
-            android:id="@+id/about_other_category"
+            android:id="@+id/about_category_other"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="65dp"
-            android:text="@string/about_other_category"
+            android:text="@string/about_category_other"
             android:textColor="?attr/text_category_color"
             android:textStyle="bold"
             android:layout_marginTop="15dp"
@@ -163,10 +164,10 @@
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingVertical="12dp"
-            android:text="@string/privacy_policy"
+            android:text="@string/about_other_privacy_policy"
             android:textSize="@dimen/about_text"
             app:drawableLeftCompat="@drawable/privacy"
-            app:layout_constraintTop_toBottomOf="@+id/about_other_category" />
+            app:layout_constraintTop_toBottomOf="@+id/about_category_other" />
 
         <TextView
             android:id="@+id/about_app_version"
@@ -176,7 +177,6 @@
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingVertical="12dp"
-            android:text="@string/app_version"
             android:textSize="@dimen/about_text"
             app:drawableLeftCompat="@drawable/info"
             app:layout_constraintTop_toBottomOf="@+id/about_privacy_policy" />
@@ -190,18 +190,16 @@
             app:layout_constraintTop_toBottomOf="@+id/about_app_version" />
 
         <TextView
-            android:id="@+id/about_made_in_france"
+            android:id="@+id/about_about_made_in_france"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="65dp"
             android:gravity="center_vertical"
             android:paddingVertical="12dp"
             android:layout_marginTop="15dp"
-            android:text="@string/made_in_france"
+            android:text="@string/about_made_in_france"
             android:textSize="@dimen/about_text"
             app:layout_constraintTop_toBottomOf="@+id/category_end_separator" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

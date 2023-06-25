@@ -6,10 +6,10 @@
     <string name="infinity">Tak terhingga</string>
 
     <!-- App Menu -->
-    <string name="app_menu_theme">Tema</string>
+    <string name="settings_general_theme">Tema</string>
     <string name="app_menu_vibration">Vibrasi</string>
-    <string name="app_menu_clear_history">Hapus Riwayat</string>
-    <string name="app_menu_about">Tentang</string>
+    <string name="menu_clear_history">Hapus Riwayat</string>
+    <string name="menu_about">Tentang</string>
 
     <!-- Theme choices -->
     <string name="theme_system">Sistem</string>

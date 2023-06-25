@@ -31,7 +31,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(view)
 
         // Set app version
-        val versionName =  this.getString(R.string.app_version_title) + " "+ BuildConfig.VERSION_NAME
+        val versionName =  this.getString(R.string.about_other_version) + " "+ BuildConfig.VERSION_NAME
         binding.aboutAppVersion.text = versionName
 
         // back button
@@ -97,7 +97,7 @@ class AboutActivity : AppCompatActivity() {
         binding.aboutAppVersion.setOnClickListener {
             clickAppVersionCount++
             if (clickAppVersionCount > 3) {
-                Toast.makeText(this, this.getString(R.string.thanks_for_using_opencalc), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.about_easter_egg), Toast.LENGTH_SHORT).show()
                 clickAppVersionCount = 0
             }
         }

@@ -7,10 +7,10 @@
     <string name="infinity">অসীম</string>
 
     <!-- App Menu -->
-    <string name="app_menu_theme">থিম</string>
+    <string name="settings_general_theme">থিম</string>
     <string name="app_menu_vibration">ভাইব্রেশন</string>
-    <string name="app_menu_clear_history">ইতিহাস মুছুন</string>
-    <string name="app_menu_about">সম্পর্কে</string>
+    <string name="menu_clear_history">ইতিহাস মুছুন</string>
+    <string name="menu_about">সম্পর্কে</string>
 
     <!-- Theme choices -->
     <string name="theme_system">সিস্টেম</string>

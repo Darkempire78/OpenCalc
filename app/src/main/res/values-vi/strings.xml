@@ -3,21 +3,21 @@
     <string name="select_theme_title">Chọn chủ đề</string>
     <string name="app_name_display">Máy tính</string>
     <string name="app_menu_vibration">Rung</string>
-    <string name="app_menu_clear_history">Xóa lịch sử</string>
+    <string name="menu_clear_history">Xóa lịch sử</string>
     <string name="theme_system">Hệ thống</string>
     <string name="theme_dark">Tối</string>
     <string name="division_by_0">Không thể chia cho 0</string>
     <string name="domain_error">Lỗi tên miền</string>
     <string name="math_error">Lỗi toán học</string>
     <string name="syntax_error">Lỗi cú pháp</string>
-    <string name="app_menu_about">Về ứng dụng</string>
-    <string name="app_menu_theme">Chủ đề</string>
+    <string name="menu_about">Về ứng dụng</string>
+    <string name="settings_general_theme">Chủ đề</string>
     <string name="infinity">Vô cực</string>
     <string name="value_copied">Đã sao chép</string>
     <string name="theme_light">Sáng</string>
     <string name="theme_amoled">Amoled</string>
     <string name="value_too_large">Giá trị quá lớn</string>
-    <string name="app_menu_settings">Cài đặt</string>
+    <string name="menu_settings">Cài đặt</string>
     <string name="preferences_title">Cài đặt</string>
-    <string name="app_version_title">Phiên bản</string>
+    <string name="about_other_version">Phiên bản</string>
 </resources>

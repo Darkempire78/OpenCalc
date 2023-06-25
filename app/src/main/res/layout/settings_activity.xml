@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:paddingVertical="18dp"
-            android:text="@string/preferences_title"
+            android:text="@string/menu_settings"
             android:textColor="?attr/text_color"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/settings_back_button"
