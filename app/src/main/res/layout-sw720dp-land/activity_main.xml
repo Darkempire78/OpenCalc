@@ -160,8 +160,8 @@
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:onClick="divideBy100"
-                        android:text="@string/divideBy100"
+                        android:onClick="percent"
+                        android:text="@string/percent"
                         android:textSize="@dimen/button_text_size"/>
 
                     <Button

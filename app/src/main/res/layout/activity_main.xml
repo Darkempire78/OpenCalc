@@ -5,19 +5,19 @@
     android:id="@+id/mainConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:animateLayoutChanges="true"
 
-    android:animateLayoutChanges="true">
+    tools:context=".MainActivity">
 
     <HorizontalScrollView
         android:id="@+id/inputHorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="?attr/foreground_color"
+        android:overScrollMode="never"
         android:scrollbars="none"
-        android:overScrollMode="never">
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/input"
@@ -26,15 +26,15 @@
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:autofillHints="false"
+            android:background="?attr/foreground_color"
             android:inputType="textNoSuggestions"
+            android:maxLength="10000"
             android:paddingHorizontal="10dp"
             android:singleLine="true"
             android:text=""
             android:textAlignment="textEnd"
             android:textColor="?attr/text_color"
             android:textSize="55sp"
-            android:background="?attr/foreground_color"
-            android:maxLength="10000"
             tools:ignore="RtlCompat" />
 
     </HorizontalScrollView>
@@ -65,34 +65,34 @@
         android:id="@+id/resultDisplayHorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
         android:background="?attr/foreground_color"
-        android:scrollbars="none"
+        android:fillViewport="true"
         android:overScrollMode="never"
-        android:fillViewport="true">
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="end">
+            android:gravity="end"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/resultDisplay"
                 style="@style/RobotoFontCondensedMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:scrollHorizontally="true"
-                android:textIsSelectable="true"
-                android:singleLine="true"
                 android:background="?attr/foreground_color"
-                android:text=""
-                android:textColor="?attr/text_second_color"
-                android:textAlignment="textEnd"
-                android:textSize="35sp"
                 android:paddingHorizontal="10dp"
-                android:paddingBottom="4dp"/>
+                android:paddingBottom="4dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_second_color"
+                android:textIsSelectable="true"
+                android:textSize="35sp" />
 
         </LinearLayout>
 
@@ -106,32 +106,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultDisplayHorizontalScrollView"
         app:umanoPanelHeight="41dp"
-        app:umanoShadowHeight="0dp"
         app:umanoScrollableView="@id/history_recylcle_view"
+        app:umanoShadowHeight="0dp"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity"
-            >
+            tools:context=".MainActivity">
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:paddingHorizontal="8dp"
                 android:paddingTop="12dp"
-                android:paddingBottom="0dp">
+                android:paddingBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:layout_marginBottom="1dp">
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0">
 
                     <Button
                         android:id="@+id/squareButton"
@@ -155,16 +154,15 @@
                         android:text="@string/pi"
                         android:textSize="26sp" />
 
-                    <Button
-                        android:id="@+id/divideBy100Button"
+                    <ImageButton
+                        android:id="@+id/exponentButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="1"
-                        android:onClick="divideBy100"
-                        android:text="@string/divideBy100"
-                        android:textSize="26sp" />
+                        android:onClick="exponentButton"
+                        app:srcCompat="@drawable/exponent" />
 
                     <Button
                         android:id="@+id/factorialButton"
@@ -190,7 +188,7 @@
                         android:textAllCaps="false"
                         android:textColor="?attr/text_color"
                         android:textSize="26sp"
-                        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"/>
+                        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
                 </TableRow>
 
@@ -200,8 +198,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:visibility="gone"
-                    tools:visibility="visible"
-                    >
+                    tools:visibility="visible">
 
                     <Button
                         android:id="@+id/degreeButton"
@@ -211,8 +208,8 @@
                         android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="degreeButton"
-                        android:textSize="22sp"
-                        android:text="@string/degree"/>
+                        android:text="@string/degree"
+                        android:textSize="22sp" />
 
                     <Button
                         android:id="@+id/sineButton"
@@ -323,8 +320,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
-                        android:textSize="24sp"
-                        android:text="@string/clear" />
+                        android:text="@string/clear"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/leftParenthesisButton"
@@ -334,8 +331,9 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="leftParenthesisButton"
-                        android:visibility="gone"
-                        android:text= "@string/leftParenthesis" />
+                        android:text="@string/leftParenthesis"
+                        android:textSize="28sp"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/rightParenthesisButton"
@@ -345,8 +343,9 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="rightParenthesisButton"
-                        android:visibility="gone"
-                        android:text= "@string/rightParenthesis" />
+                        android:text="@string/rightParenthesis"
+                        android:textSize="28sp"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/parenthesesButton"
@@ -356,19 +355,21 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        android:text= "@string/parentheses" />
+                        android:text="@string/parentheses"
+                        android:textSize="28sp" />
 
-                    <ImageButton
-                        android:id="@+id/exponentButton"
+                    <Button
+                        android:id="@+id/divideBy100Button"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
-                        android:onClick="exponentButton"
-                        app:srcCompat="@drawable/exponent" />
+                        android:onClick="percent"
+                        android:text="@string/percent"
+                        android:textSize="28sp" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/divideButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -376,7 +377,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
-                        app:srcCompat="@drawable/divide" />
+                        android:text="@string/divide"
+                        android:textSize="32sp" />
                 </TableRow>
 
                 <TableRow
@@ -391,7 +393,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/seven" />
+                        android:text="@string/seven"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/eightButton"
@@ -400,7 +403,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/eight" />
+                        android:text="@string/eight"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/nineButton"
@@ -409,9 +413,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/nine" />
+                        android:text="@string/nine"
+                        android:textSize="28sp" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/multiplyButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -419,7 +424,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="multiplyButton"
-                        app:srcCompat="@drawable/multiply" />
+                        android:text="@string/multiply"
+                        android:textSize="32sp" />
                 </TableRow>
 
                 <TableRow
@@ -434,7 +440,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/four" />
+                        android:text="@string/four"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/fiveButton"
@@ -443,7 +450,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/five" />
+                        android:text="@string/five"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/sixButton"
@@ -452,9 +460,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/six" />
+                        android:text="@string/six"
+                        android:textSize="28sp" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/subtractButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -462,7 +471,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="subtractButton"
-                        app:srcCompat="@drawable/subtract" />
+                        android:text="@string/subtract"
+                        android:textSize="32sp" />
                 </TableRow>
 
                 <TableRow
@@ -477,7 +487,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/one" />
+                        android:text="@string/one"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/twoButton"
@@ -486,7 +497,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/two" />
+                        android:text="@string/two"
+                        android:textSize="28sp" />
 
                     <Button
                         android:id="@+id/threeButton"
@@ -495,9 +507,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/three" />
+                        android:text="@string/three"
+                        android:textSize="28sp" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/addButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -505,7 +518,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="addButton"
-                        app:srcCompat="@drawable/add" />
+                        android:text="@string/add"
+                        android:textSize="32sp" />
                 </TableRow>
 
                 <TableRow
@@ -520,7 +534,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
-                        android:text="@string/zero" />
+                        android:text="@string/zero"
+                        android:textSize="28sp" />
 
                     <ImageButton
                         android:id="@+id/pointButton"
@@ -528,8 +543,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:onClick="pointButton"
-                        app:srcCompat="@drawable/dot" />
+                        android:onClick="pointButton" />
 
                     <ImageButton
                         android:id="@+id/backspaceButton"
@@ -541,7 +555,7 @@
                         android:paddingEnd="5dp"
                         app:srcCompat="@drawable/backspace" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/equalsButton"
                         style="@style/CalculatorButton"
                         android:layout_width="0dp"
@@ -549,7 +563,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_equals_color"
                         android:onClick="equalsButton"
-                        app:srcCompat="@drawable/equals" />
+                        android:text="@string/equals"
+                        android:textSize="32sp" />
                 </TableRow>
             </TableLayout>
 
@@ -560,26 +575,26 @@
             android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity"
-            android:background="@drawable/display_background">
+            android:background="@drawable/display_background"
+            tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_recylcle_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="?attr/history_background_color"
                 android:layout_marginBottom="32dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:background="?attr/history_background_color"
+                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/sliding_layout_button"
                 android:layout_width="30dp"
                 android:layout_height="4dp"
-                android:layout_marginBottom="15dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="15dp"
                 android:background="?attr/text_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -587,7 +602,6 @@
                 tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
@@ -628,15 +642,15 @@
 
     <TextView
         android:id="@+id/degreeTextView"
+        style="@style/RobotoFontCondensedMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        style="@style/RobotoFontCondensedMedium"
-        android:textSize="25sp"
         android:text=""
         android:textColor="?attr/text_third_color"
+        android:textSize="25sp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

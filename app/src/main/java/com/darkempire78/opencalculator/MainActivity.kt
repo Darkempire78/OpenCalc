@@ -728,7 +728,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun divideBy100(view: View) {
+    fun percent(view: View) {
         addSymbol(view, "%")
     }
 

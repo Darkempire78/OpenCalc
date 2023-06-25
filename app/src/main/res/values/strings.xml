@@ -20,19 +20,18 @@
     <string name="rightParenthesis" translatable="false">)</string>
     <string name="parentheses" translatable="false">(‎ ‎ )</string>
 
-    <string name="exponent" translatable="false">^</string>
+    <string name="percent" translatable="false">%</string>
     <string name="divide" translatable="false">÷</string>
     <string name="multiply" translatable="false">×</string>
-    <string name="add" translatable="false">+</string>
     <string name="subtract" translatable="false">−</string>
+    <string name="add" translatable="false">+</string>
     <string name="equals" translatable="false">=</string>
-    <string name="point" translatable="false">.</string>
 
     <string name="square" translatable="false">√</string>
     <string name="squareInv" translatable="false">x²</string>
     <string name="squareInvModuloVersion" translatable="false">#</string>
     <string name="pi" translatable="false">π</string>
-    <string name="divideBy100" translatable="false">%</string>
+    <string name="exponent" translatable="false">^</string>
     <string name="factorial" translatable="false">!</string>
 
     <string name="degree" translatable="false">DEG</string>
