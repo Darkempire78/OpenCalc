@@ -282,27 +282,35 @@ class Calculator(
                     syntax_error = true
                 }
                 if (eat('^'.code)) {
+
                     val powNumber = parseFactor().toInt()
-                    if (powNumber >= 10000) {
-                        is_infinity = true
+
+                    // if the number is null
+                    if (x == BigDecimal.ZERO) {
+                        syntax_error = true
                         x = BigDecimal.ZERO
-                    } else {
-                        if (powNumber > 0) {
-                            x = x.pow(powNumber)
-
-                            // To fix sqrt(2)^2 = 2
-                            val decimal = x.toInt()
-                            val fractional = x.toDouble() - decimal
-                            if (fractional > 0 && fractional < 1.0E-14) {
-                                x = decimal.toBigDecimal()
-                            }
-                        }
-                        else {
-                            x = BigDecimal.ONE.divide(x.pow(-powNumber)) // To support negative factor
-                        }
-
                     }
+                    else {
+                        if (powNumber >= 10000) {
+                            is_infinity = true
+                            x = BigDecimal.ZERO
+                        } else {
+                            if (powNumber > 0) {
+                                x = x.pow(powNumber)
 
+                                // To fix sqrt(2)^2 = 2
+                                val decimal = x.toInt()
+                                val fractional = x.toDouble() - decimal
+                                if (fractional > 0 && fractional < 1.0E-14) {
+                                    x = decimal.toBigDecimal()
+                                }
+                            }
+                            else {
+                                x = BigDecimal.ONE.divide(x.pow(-powNumber)) // To support negative factor
+                            }
+
+                        }
+                    }
                 }
                 return x
             }
