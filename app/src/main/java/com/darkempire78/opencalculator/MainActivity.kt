@@ -435,9 +435,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Fix how is displayed 0 with BigDecimal
+        val tempResult = newResult.toString().replace("E-", "").replace("E", "")
+        val allCharsEqualToZero = tempResult.all { it == '0' }
         if (
-            "0E-" in newResult.toString()
-            || (newResult.toString().startsWith("0.000") && newResult.toString().endsWith("000"))
+            allCharsEqualToZero
+            || newResult.toString().startsWith("0E")
         ) {
             return BigDecimal.ZERO
         }
