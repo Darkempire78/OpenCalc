@@ -109,7 +109,7 @@ class Calculator(
                     }
                     else if (eat('/'.code)) { // Division
                         val fractionDenominator = parseFactor()
-                        if (fractionDenominator == BigDecimal.ZERO) {
+                        if (fractionDenominator.toFloat() == 0f) {
                             division_by_0 = true
                             x = BigDecimal.ZERO
                         } else {
