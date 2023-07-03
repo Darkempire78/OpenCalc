@@ -4,6 +4,7 @@ import java.math.BigInteger
 import kotlin.math.*
 
 import java.math.BigDecimal
+import java.math.MathContext
 import java.math.RoundingMode
 import kotlin.math.ln
 import kotlin.math.pow
@@ -283,7 +284,9 @@ class Calculator(
                 }
                 if (eat('^'.code)) {
 
-                    val powNumber = parseFactor().toInt()
+                    val exponent = parseFactor()
+                    val intPart = exponent.toInt()
+                    val decimalPart = exponent.subtract(BigDecimal(intPart))
 
                     // if the number is null
                     if (x == BigDecimal.ZERO) {
@@ -291,12 +294,18 @@ class Calculator(
                         x = BigDecimal.ZERO
                     }
                     else {
-                        if (powNumber >= 10000) {
+                        if (exponent >= BigDecimal(10000)) {
                             is_infinity = true
                             x = BigDecimal.ZERO
                         } else {
-                            if (powNumber > 0) {
-                                x = x.pow(powNumber)
+                            if (exponent > BigDecimal.ZERO) {
+
+                                // To support bigdecimal exponent (e.g: 3.5)
+                                x = x.pow(intPart, MathContext.DECIMAL64)
+                                    .multiply(BigDecimal.valueOf(
+                                        x.toDouble().pow(decimalPart.toDouble())
+                                    ))
+
 
                                 // To fix sqrt(2)^2 = 2
                                 val decimal = x.toInt()
@@ -306,7 +315,18 @@ class Calculator(
                                 }
                             }
                             else {
-                                x = BigDecimal.ONE.divide(x.pow(-powNumber)) // To support negative factor
+                                // To support negative factor
+                                x = x.pow(-intPart, MathContext.DECIMAL64)
+                                    .multiply(BigDecimal.valueOf(
+                                        x.toDouble().pow(decimalPart.toDouble())
+                                    ))
+
+                                x = try {
+                                    BigDecimal.ONE.divide(x)
+                                } catch (e: ArithmeticException) {
+                                    // if the result is a non-terminating decimal expansion
+                                    x.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
+                                }
                             }
 
                         }
