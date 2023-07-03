@@ -342,7 +342,33 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
-                        android:text= "@string/parentheses" />
+                        android:text= "@string/parentheses"
+                        android:textSize="@dimen/button_text_size"/>
+
+                    <Button
+                        android:id="@+id/leftParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="leftParenthesisButton"
+                        android:text="@string/leftParenthesis"
+                        android:textSize="@dimen/button_text_size"
+                        android:visibility="gone"
+                        />
+
+                    <Button
+                        android:id="@+id/rightParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="rightParenthesisButton"
+                        android:text="@string/rightParenthesis"
+                        android:textSize="@dimen/button_text_size"
+                        android:visibility="gone" />
 
                     <ImageButton
                         android:id="@+id/exponentButton"

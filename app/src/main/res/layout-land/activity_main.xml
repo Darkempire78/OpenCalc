@@ -115,6 +115,20 @@
                         android:text="@string/clear"
                          />
 
+                    <Button
+                        android:id="@+id/leftParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="leftParenthesisButton"
+                        android:text="@string/leftParenthesis"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+
+
                 </TableRow>
 
                 <TableRow
@@ -196,6 +210,18 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="parenthesesButton"
                         android:text= "@string/parentheses" />
+
+                    <Button
+                        android:id="@+id/rightParenthesisButton"
+                        style="@style/CalculatorButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="?attr/button_symbol_color"
+                        android:onClick="rightParenthesisButton"
+                        android:text="@string/rightParenthesis"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
 
                 </TableRow>
 

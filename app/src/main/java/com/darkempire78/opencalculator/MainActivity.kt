@@ -1027,16 +1027,16 @@ class MainActivity : AppCompatActivity() {
             binding.parenthesesButton.visibility = View.GONE
 
             // Unhide the left & right parenthesis buttons
-            binding.leftParenthesisButton!!.visibility = View.VISIBLE
-            binding.rightParenthesisButton!!.visibility = View.VISIBLE
+            binding.leftParenthesisButton?.visibility = View.VISIBLE
+            binding.rightParenthesisButton?.visibility = View.VISIBLE
         } else {
             // Unhide the AC button
             binding.clearButton.visibility = View.VISIBLE
             binding.parenthesesButton.visibility = View.VISIBLE
 
             // Hide the left & right parenthesis buttons
-            binding.leftParenthesisButton!!.visibility = View.GONE
-            binding.rightParenthesisButton!!.visibility = View.GONE
+            binding.leftParenthesisButton?.visibility = View.GONE
+            binding.rightParenthesisButton?.visibility = View.GONE
         }
 
         // Prevent phone from sleeping while the app is in foreground
