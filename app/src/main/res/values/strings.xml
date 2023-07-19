@@ -72,8 +72,8 @@
     <string name="settings_general_scientific_mode">Scientific mode</string>
     <string name="settings_general_scientific_mode_desc">Activate scientific mode by default</string>
 
-    <string name="settings_general_split_parenthesis_button">Split the parenthesis button into two buttons</string>
-    <string name="settings_general_split_parenthesis_button_desc">Remove the \"AC\" button to split the parenthesis button into two buttons</string>
+    <string name="settings_general_split_parenthesis_button">Split the parentheses button into two buttons</string>
+    <string name="settings_general_split_parenthesis_button_desc">Remove the \"AC\" button to split the parentheses button into two buttons</string>
 
     <string name="settings_general_add_modulo">Add a modulo button</string>
     <string name="settings_general_add_modulo_desc">Replace the \"X²\" button with a modulo button (available when the \"INV\" button is clicked)</string>
@@ -85,7 +85,7 @@
 
     <string name="settings_history_size">Results saved in history</string>
 
-    <string name="settings_advanced_long_click_copy">Long click to copy value</string>
+    <string name="settings_advanced_long_click_copy">Long press to copy value</string>
     <string name="settings_advanced_long_click_copy_desc">Long press copies the text of the item instead of selecting it</string>
 
     <string name="settings_advanced_prevent_sleep">Keep device awake</string>
