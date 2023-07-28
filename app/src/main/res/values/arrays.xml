@@ -1,6 +1,7 @@
 <resources>
     <!-- Reply Preference -->
     <string-array name="history_size_entries">
+        <item>0</item>
         <item>10</item>
         <item>20</item>
         <item>50</item>
@@ -12,6 +13,7 @@
     </string-array>
 
     <string-array name="history_size_values">
+        <item>0</item>
         <item>10</item>
         <item>20</item>
         <item>50</item>

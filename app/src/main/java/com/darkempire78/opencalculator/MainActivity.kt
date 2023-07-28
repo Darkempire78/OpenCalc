@@ -111,6 +111,18 @@ class MainActivity : AppCompatActivity() {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
 
+        // Disable history if setting enabled
+        val historySize = MyPreferences(this).historySize!!.toInt()
+        if (historySize == 0) {
+            binding.historyRecylcleView.visibility = View.GONE
+            binding.slidingLayoutButton.visibility = View.GONE
+            binding.slidingLayout.isEnabled = false
+        } else {
+            binding.historyRecylcleView.visibility = View.VISIBLE
+            binding.slidingLayoutButton.visibility = View.VISIBLE
+            binding.slidingLayout.isEnabled = true
+        }
+
         binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
             override fun onPanelSlide(panel: View, slideOffset: Float) {
                 if (slideOffset == 0f) { // If the panel got collapsed
@@ -865,7 +877,7 @@ class MainActivity : AppCompatActivity() {
                                 // Remove former results if > historySize preference
                                 val historySize =
                                     MyPreferences(this@MainActivity).historySize!!.toInt()
-                                while (historySize > 0 && historyAdapter.itemCount >= historySize) {
+                                while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
                                     historyAdapter.removeFirstHistoryElement()
                                 }
 
@@ -1049,7 +1061,7 @@ class MainActivity : AppCompatActivity() {
         // Remove former results if > historySize preference
         // Remove from the RecycleView
         val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
-        while (historySize > 0 && historyAdapter.itemCount >= historySize) {
+        while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
             historyAdapter.removeFirstHistoryElement()
         }
         // Remove from the preference store data
@@ -1058,6 +1070,17 @@ class MainActivity : AppCompatActivity() {
             history.removeAt(0)
         }
         MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+
+        // Disable history if setting enabled
+        if (historySize == 0) {
+            binding.historyRecylcleView.visibility = View.GONE
+            binding.slidingLayoutButton.visibility = View.GONE
+            binding.slidingLayout.isEnabled = false
+        } else {
+            binding.historyRecylcleView.visibility = View.VISIBLE
+            binding.slidingLayoutButton.visibility = View.VISIBLE
+            binding.slidingLayout.isEnabled = true
+        }
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
