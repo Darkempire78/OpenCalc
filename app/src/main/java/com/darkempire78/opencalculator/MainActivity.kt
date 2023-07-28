@@ -486,6 +486,7 @@ class MainActivity : AppCompatActivity() {
                 domain_error = false
                 syntax_error = false
                 is_infinity = false
+                require_real_number = false
 
                 val calculationTmp = Expression().getCleanExpression(
                     binding.input.text.toString(),
@@ -499,7 +500,7 @@ class MainActivity : AppCompatActivity() {
                     )
 
                 // If result is a number and it is finite
-                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity || require_real_number)) {
 
                     // Round
                     calculationResult = roundResult(calculationResult)
@@ -541,7 +542,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 } else withContext(Dispatchers.Main) {
-                    if (is_infinity && !division_by_0 && !domain_error) {
+                    if (is_infinity && !division_by_0 && !domain_error && !require_real_number) {
                         if (calculationResult < BigDecimal.ZERO) binding.resultDisplay.text = "-" + getString(
                             R.string.infinity
                         )
@@ -793,7 +794,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 // If result is a number and it is finite
-                if (!(division_by_0 || domain_error || syntax_error || is_infinity)) {
+                if (!(division_by_0 || domain_error || syntax_error || is_infinity || require_real_number)) {
 
                     // Remove zeros at the end of the results (after point)
                     val resultSplited = resultString.split('.')
@@ -882,6 +883,9 @@ class MainActivity : AppCompatActivity() {
                         } else if (domain_error) {
                             setErrorColor(true)
                             binding.resultDisplay.text = getString(R.string.domain_error)
+                        } else if (require_real_number) {
+                            setErrorColor(true)
+                            binding.resultDisplay.text = getString(R.string.require_real_number)
                         } else if (division_by_0) {
                             setErrorColor(true)
                             binding.resultDisplay.text = getString(R.string.division_by_0)

@@ -13,6 +13,7 @@ var division_by_0 = false
 var domain_error = false
 var syntax_error = false
 var is_infinity = false
+var require_real_number = false
 
 class Calculator(
         private val numberPrecision: Int
@@ -168,7 +169,12 @@ class Calculator(
                     println(x)
                     when (func) {
                         "sqrt" -> {
-                            x = BigDecimal(sqrt(x.toDouble()))
+                            if (x >= BigDecimal.ZERO) {
+                                x = BigDecimal(sqrt(x.toDouble()))
+                            } else {
+                                require_real_number = true
+                            }
+
                         }
                         "factorial" -> {
                             x = factorial(x)
