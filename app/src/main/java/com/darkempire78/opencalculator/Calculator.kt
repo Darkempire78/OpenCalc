@@ -306,7 +306,6 @@ class Calculator(
                                         x.toDouble().pow(decimalPart.toDouble())
                                     ))
 
-
                                 // To fix sqrt(2)^2 = 2
                                 val decimal = x.toInt()
                                 val fractional = x.toDouble() - decimal
@@ -318,14 +317,14 @@ class Calculator(
                                 // To support negative factor
                                 x = x.pow(-intPart, MathContext.DECIMAL64)
                                     .multiply(BigDecimal.valueOf(
-                                        x.toDouble().pow(decimalPart.toDouble())
+                                        x.toDouble().pow(-decimalPart.toDouble())
                                     ))
 
                                 x = try {
                                     BigDecimal.ONE.divide(x)
                                 } catch (e: ArithmeticException) {
                                     // if the result is a non-terminating decimal expansion
-                                    x.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
+                                    BigDecimal.ONE.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
                                 }
                             }
 
