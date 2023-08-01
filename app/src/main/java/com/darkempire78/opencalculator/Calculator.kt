@@ -304,7 +304,11 @@ class Calculator(
                             is_infinity = true
                             x = BigDecimal.ZERO
                         } else {
-                            if (exponent > BigDecimal.ZERO) {
+                            // If the number is negative and the factor is smaller than 1 ( e.g : (-5)^0.5 )
+                            if (x < BigDecimal.ZERO && exponent < BigDecimal.ONE) {
+                                require_real_number = true
+                            }
+                            else if (exponent > BigDecimal.ZERO) {
 
                                 // To support bigdecimal exponent (e.g: 3.5)
                                 x = x.pow(intPart, MathContext.DECIMAL64)
