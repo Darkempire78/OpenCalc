@@ -1,0 +1,2 @@
+Corrigido:
+- Adicionando vibrações aos botões que não os têm

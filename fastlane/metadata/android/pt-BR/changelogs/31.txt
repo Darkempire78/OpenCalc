@@ -1,0 +1,9 @@
+Atualizado:
+- Alterar a cor do texto do erro
+- Reduzir o tamanho da versão
+- Não salve um resultado na história se for igual ao cálculo
+- Não salve o cálculo na história se for o mesmo que o mais recente
+
+Corrigido:
+- Factoriel 0 retorna 1
+- Adicionar símbolo de matemática após então igual foi pressionado

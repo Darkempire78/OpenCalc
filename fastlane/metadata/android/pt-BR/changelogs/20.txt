@@ -1,0 +1,4 @@
+Corrigido:
+- Auto close parenthesis
+- Multiplicar fatores sem *
+- Auto adicionar 0 quando o número começa com separador decimal

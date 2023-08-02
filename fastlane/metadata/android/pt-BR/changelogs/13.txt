@@ -1,0 +1,6 @@
+Novo:
+- Ícone temático
+
+Mudanças:
+- Atualizado traduções
+- Entrada clara se o número pressionado após igual

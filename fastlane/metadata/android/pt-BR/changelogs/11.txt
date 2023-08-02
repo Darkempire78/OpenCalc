@@ -1,0 +1,9 @@
+Mudanças:
+- Tradução alemã
+- Tradução russa
+- Tradução grega
+- Tradução de Hindi
+- Tradução de Azerbajian
+
+Fix:
+- Porcento não matemático

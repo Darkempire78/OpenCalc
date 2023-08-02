@@ -1,0 +1,2 @@
+Correção:
+- Corrigido crash em números grandes

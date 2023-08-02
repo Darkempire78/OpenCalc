@@ -1,0 +1,4 @@
+Correção:
+- Barra de rolo de entrada
+- Rolo necessário para ver o resultado
+- Entrada clara se o número pressionado após igual

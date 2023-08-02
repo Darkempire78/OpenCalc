@@ -1,0 +1,18 @@
+Novo:
+- Sistema de cálculo interno
+- Fatores decimais
+- Impedir a presença de dois separadores decimais no mesmo número
+- Tradução Brasileira (@Bardock88)
+- tradução de Taiwan e Hong Kongese (@alecchangod)
+- Tradução Espanhola
+
+Corrigido:
+- Rolo histórico (@MahmoudRH)
+- Exatidão do resultado
+- Backspace com separadores de agrupamento
+- Exibir "Erro de massa" em vez de "NaN" (@lefterisgar)
+- Modo de paisagem para tablet de 10 polegadas
+- Backspace após o botão igual
+- Crash ao tocar no resultado da história
+- Alguns problemas de expressão de formação
+- Várias outras correções
