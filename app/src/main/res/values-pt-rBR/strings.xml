@@ -13,7 +13,7 @@
     <string name="value_too_large">Valor é muito alto</string>
     <string name="value_copied">Copiado</string>
     <string name="syntax_error">Erro de sintaxe</string>
-    <string name="theme_amoled">Amoled</string>
+    <string name="theme_amoled"></string>
     <string name="about_easter_egg">Obrigado por usar o OpenCalc ❤️</string>
     <string name="settings_general_radians">Radianos</string>
     <string name="settings_general_radians_desc">Use radianos em vez de graus por padrão</string>
