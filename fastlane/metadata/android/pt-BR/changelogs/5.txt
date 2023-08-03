@@ -1,0 +1,5 @@
+Mudança:
+- Disponível para SDK 21+ (Android 5.0)
+
+Fix:
+- Corrigido vibração

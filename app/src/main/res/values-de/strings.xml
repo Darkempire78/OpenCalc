@@ -50,4 +50,5 @@
     <string name="settings_general_add_modulo_desc">Die „X²“-Taste durch eine Modulo-Taste ersetzen (verfügbar, wenn die „INV“-Taste gedrückt wird)</string>
     <string name="settings_general_split_parenthesis_button">Klammern-Taste in zwei Tasten aufteilen</string>
     <string name="settings_general_split_parenthesis_button_desc">Die „AC“-Taste entfernen, um die Klammern-Taste in zwei Tasten aufzuteilen</string>
+    <string name="require_real_number">Reelle Zahl erforderlich</string>
 </resources>

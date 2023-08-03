@@ -1,0 +1,6 @@
+Novo:
+- Botão de dica
+
+Mudanças:
+- Formato de história impotente
+- Actualização de caracteres menos

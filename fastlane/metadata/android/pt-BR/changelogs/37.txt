@@ -1,0 +1,5 @@
+Novo:
+- Telha de configurações rápidas
+
+Corrigido:
+- Annoying toasts

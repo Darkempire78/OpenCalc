@@ -1,0 +1,7 @@
+Novo:
+- Clique longo para copiar um valor
+- Tradução indonésia
+
+Corrigido:
+- rolar no modo paisagem
+- questão de foco
