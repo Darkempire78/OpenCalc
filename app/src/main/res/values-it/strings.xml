@@ -39,4 +39,14 @@
     <string name="settings_category_history">STORIA</string>
     <string name="settings_advanced_prevent_sleep_desc">Evita che lo schermo si spenga mentre l\'app è in primo piano</string>
     <string name="settings_general_radians_desc">Usa i radianti invece dei gradi per impostazione predefinita</string>
+    <string name="settings_general_split_parenthesis_button">Dividi il pulsante delle parentesi in due pulsanti</string>
+    <string name="settings_general_split_parenthesis_button_desc">Rimuove il pulsante \"AC\" per dividere il pulsante delle parentesi in due pulsanti</string>
+    <string name="settings_general_add_modulo_desc">Sostituisce il pulsante \"X²\" con un pulsante modulo (disponibile quando è premuto il pulsante \"INV\")</string>
+    <string name="settings_category_formatting">FORMATTAZIONE</string>
+    <string name="settings_general_add_modulo">Aggiungi un pulsante modulo</string>
+    <string name="settings_formatting_scientific_notation">Numero in notazione scientifica</string>
+    <string name="require_real_number">Numero reale richiesto</string>
+    <string name="settings_advanced_long_click_copy_desc">Premendo a lungo, si copia il testo dell\'elemento invece di selezionarlo</string>
+    <string name="settings_formatting_scientific_notation_desc">Converte tutti i risultati in notazione scientifica</string>
+    <string name="settings_advanced_long_click_copy">Premi a lungo per copiare il valore</string>
 </resources>

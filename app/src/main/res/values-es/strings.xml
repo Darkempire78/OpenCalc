@@ -39,4 +39,14 @@
     <string name="about_help_donate">Donar</string>
     <string name="about_help_rate">Valora esta aplicación</string>
     <string name="settings_general_language">Idioma</string>
+    <string name="settings_general_split_parenthesis_button_desc">Elimine el botón \"AC\" para dividir el botón de los paréntesis en dos botones</string>
+    <string name="settings_general_add_modulo">Añadir un botón al módulo</string>
+    <string name="settings_formatting_scientific_notation">Número en notación científica</string>
+    <string name="settings_formatting_scientific_notation_desc">Convertir todos los resultados a notación científica</string>
+    <string name="settings_advanced_long_click_copy">Pulsación larga para copiar el valor</string>
+    <string name="settings_advanced_long_click_copy_desc">La pulsación larga copia el texto del elemento en lugar de seleccionarlo</string>
+    <string name="settings_category_formatting">FORMATO</string>
+    <string name="settings_general_split_parenthesis_button">Dividir el botón de los paréntesis en dos botones</string>
+    <string name="settings_general_add_modulo_desc">Sustituir el botón \"X²\" por un botón de módulo (disponible cuando se pulsa el botón \"INV\")</string>
+    <string name="require_real_number">Número real requerido</string>
 </resources>
