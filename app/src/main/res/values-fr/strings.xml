@@ -13,7 +13,7 @@
     <string name="division_by_0">Division par 0 impossible</string>
     <string name="domain_error">Erreur de domaine</string>
     <string name="syntax_error">Erreur de syntaxe</string>
-    <string name="value_too_large">valeur trop grande</string>
+    <string name="value_too_large">Valeur trop grande</string>
     <string name="menu_settings">Paramètres</string>
     <string name="settings_category_general">GÉNÉRAL</string>
     <string name="settings_advanced_prevent_sleep_desc">Empêcher le telephone de se mettre en veille pendant l\'utilisation de l\'application</string>
@@ -28,15 +28,25 @@
     <string name="settings_general_radians">Radians</string>
     <string name="settings_general_radians_desc">Utiliser les radians à la place des degrés par défaut</string>
     <string name="about_category_help">NOUS AIDER</string>
-    <string name="about_help_donate">Donner</string>
+    <string name="about_help_donate">Soutenir</string>
     <string name="about_category_social">SOCIAL</string>
     <string name="about_category_other">AUTRE</string>
     <string name="about_help_translate">Traduire</string>
     <string name="about_help_rate">Évaluer cette application</string>
     <string name="about_other_version">Version</string>
     <string name="about_easter_egg">Merci d\'utiliser OpenCalc ❤️</string>
-    <string name="about_made_in_france">Fait avec ❤ ️en France</string>
+    <string name="about_made_in_france">Fait avec ❤️ en France</string>
     <string name="about_other_privacy_policy">Politique de confidentialité</string>
     <string name="settings_formatting_precision">Nombre de chiffres après la virgule</string>
     <string name="settings_general_language">Langue</string>
+    <string name="settings_general_split_parenthesis_button">Sépare le bouton des parenthèses en deux boutons</string>
+    <string name="settings_general_add_modulo_desc">Remplace le bouton \"X²\" par un bouton modulo (disponible lorsque le bouton \"INV\" est enfoncé)</string>
+    <string name="settings_category_formatting">FORMATTAGE</string>
+    <string name="settings_general_split_parenthesis_button_desc">Supprime le bouton \"AC\" pour séparer le bouton des parenthèses en deux boutons</string>
+    <string name="settings_general_add_modulo">Ajoute un bouton modulo</string>
+    <string name="settings_formatting_scientific_notation">Chiffre en notation scientifique</string>
+    <string name="settings_formatting_scientific_notation_desc">Convertis tous les résultats vers la notation scientifique</string>
+    <string name="settings_advanced_long_click_copy">Appuyer longuement pour copier la valeur</string>
+    <string name="settings_advanced_long_click_copy_desc">Appuyer longtemps copie la valeur de l\'objet au lieu de le sélectionner</string>
+    <string name="require_real_number">Nombre réel requis</string>
 </resources>
