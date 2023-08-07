@@ -16,4 +16,18 @@
     <string name="value_too_large">Giá trị quá lớn</string>
     <string name="menu_settings">Cài đặt</string>
     <string name="about_other_version">Phiên bản</string>
+    <string name="about_made_in_france">Được làm bằng ❤️ từ Pháp</string>
+    <string name="about_easter_egg">Cảm ơn bạn đã sử dụng OpenCalc ❤️</string>
+    <string name="about_category_social">MẠNG XÃ HỘI</string>
+    <string name="settings_category_history">LỊCH SỬ</string>
+    <string name="settings_category_advanced">NÂNG CAO</string>
+    <string name="settings_general_language">Ngôn ngữ</string>
+    <string name="settings_category_general">CÀI ĐẶT CHUNG</string>
+    <string name="settings_general_vibration">Rung động</string>
+    <string name="about_other_privacy_policy">Chính sách quyền riêng tư</string>
+    <string name="about_category_other">KHÁC</string>
+    <string name="about_help_donate">Quyên góp</string>
+    <string name="about_help_translate">Phiên dịch</string>
+    <string name="about_help_rate">Nhận xét ứng dụng này</string>
+    <string name="settings_history_size">Số lượng kết quả được lưu trong lịch sử</string>
 </resources>
