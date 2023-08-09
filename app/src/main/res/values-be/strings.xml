@@ -39,4 +39,14 @@
     <string name="settings_general_radians">Радыяны</string>
     <string name="settings_advanced_prevent_sleep">Забараніць тэлефону пераходзіць у рэжым сну</string>
     <string name="settings_category_advanced">ДАДАТКОВЫЯ</string>
+    <string name="settings_general_split_parenthesis_button">Раздзяліць кнопку ў дужках на дзве кнопкі</string>
+    <string name="settings_category_formatting">ФАРМАТАВАННЕ</string>
+    <string name="settings_general_split_parenthesis_button_desc">Выдаліце кнопку \"AC\", каб разбіць кнопку ў дужках на дзве кнопкі</string>
+    <string name="settings_formatting_scientific_notation_desc">Пераўтварэнне ўсіх вынікаў у экспанентнае ўяўленне</string>
+    <string name="settings_general_add_modulo">Дадайце кнопку модуля</string>
+    <string name="settings_general_add_modulo_desc">Замяніце кнопку \"X²\" кнопкай модуляцыі (даступная, калі націснута кнопка \"INV\")</string>
+    <string name="require_real_number">Патрабуецца сапраўдны лік</string>
+    <string name="settings_formatting_scientific_notation">Лік у экспанентным уяўленні</string>
+    <string name="settings_advanced_long_click_copy">Доўгі націск, каб скапіяваць значэнне</string>
+    <string name="settings_advanced_long_click_copy_desc">Доўгі націск капіруе тэкст элемента замест яго выбару</string>
 </resources>
