@@ -50,4 +50,5 @@
     <string name="settings_formatting_scientific_notation_desc">Преобразование всех результатов в экспоненциальное представление</string>
     <string name="settings_advanced_long_click_copy">Нажмите и удерживайте, чтобы скопировать значение</string>
     <string name="settings_advanced_long_click_copy_desc">Длительное нажатие копирует текст элемента вместо его выбора</string>
+    <string name="require_real_number">Требуется действительное число</string>
 </resources>
