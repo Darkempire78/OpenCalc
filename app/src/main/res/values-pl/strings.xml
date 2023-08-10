@@ -39,4 +39,11 @@
     <string name="settings_general_radians">Radiany</string>
     <string name="about_category_help">WSPOMÓŻ NAS</string>
     <string name="about_help_donate">Wesprzyj nas</string>
+    <string name="settings_category_formatting">FORMATOWANIE</string>
+    <string name="settings_general_split_parenthesis_button">Rozdziel przycisk z nawiasami na dwa</string>
+    <string name="settings_formatting_scientific_notation">Liczba w postaci wykładniczej</string>
+    <string name="settings_formatting_scientific_notation_desc">Zamień wszystkie wyniki na postać wykładniczą</string>
+    <string name="settings_general_add_modulo">Dodaj przycisk modulo</string>
+    <string name="settings_general_add_modulo_desc">Zastąp przycisk \"X²\" przyciskiem modulo (dostępne po wciśnięciu przycisku \"INV\")</string>
+    <string name="require_real_number">Wymagana liczba rzeczywista</string>
 </resources>
