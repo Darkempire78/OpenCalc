@@ -48,4 +48,5 @@
     <string name="about_help_translate">Traduzir</string>
     <string name="settings_advanced_prevent_sleep_desc">Impedir que o dispositivo entre em suspensão enquanto o aplicativo estiver em primeiro plano</string>
     <string name="about_category_other">OUTROS</string>
+    <string name="theme_amoled">Amoled</string>
 </resources>
