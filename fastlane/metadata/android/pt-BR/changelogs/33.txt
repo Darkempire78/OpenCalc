@@ -1,14 +1,15 @@
 Atualizado:
-- Muitas traduções
-- A área de entrada usa a tela cheia
-- Sistema de Parenthesis
+ Muitas traduções
+    A área de entrada ocupa a tela inteira
+ Sistema de parênteses
 
 Corrigido:
-- Mensagem duplicada quando o valor copiado no android 13
-- Domínio de definição do tangente
-- Exibindo o resultado quando colar um cálculo
-- A divisão indireta por zero é indefinida
-- Divisão por funções
-- Problemas de porcentagem
-- Funções trigonométricas retornam resultados errados se o resultado for negativo
-- O erro de matemática limpa todo o cálculo quando o novo número é introduzido
+    Duplo aviso ao copiar valor
+    Domínio da definição da tangente
+    Mostrar resultado ao colar um cálculo
+    Divisão indireta por zero é indefinida
+    Divisão por funções
+    Problemas com porcentagem
+    Funções trigonométricas retornam resultados incorretos se forem negativos
+    Erro matemático limpa todo o cálculo ao inserir novo número
+    Problema de parênteses com tangente
