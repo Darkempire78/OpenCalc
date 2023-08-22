@@ -1,0 +1,6 @@
+Wijzigingen
+- Spatscherm is nu donker
+
+Opgelost:
+- probleem met toetsenbord
+- toetsenbord scrollt nog steeds

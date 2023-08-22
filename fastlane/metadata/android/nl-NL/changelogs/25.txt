@@ -1,0 +1,8 @@
+Nieuw:
+- Spaanse vertaling
+
+Vast:
+- Toetsenbord reageert niet meer bij interactie met grote factorialen
+- Verkeerd laden van waarden uit geschiedenis
+- Resultaten met decimale komma laden uit geschiedenis verwijdert operatoren of crasht app
+- Precisie
