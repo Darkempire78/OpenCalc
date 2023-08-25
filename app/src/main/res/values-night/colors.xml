@@ -10,9 +10,9 @@
     <color name="text_third_color">#B1B1B1</color>
     <color name="text_category_color">#B1B1B1</color>
     <color name="button_color">#333333</color>
-    <color name="button_symbol_color">#0070BC</color>
-    <color name="button_clear_color">#00BA20</color>
-    <color name="button_equals_color">#B3004D</color>
+    <color name="button_symbol_color">#f18d05</color>
+    <color name="button_clear_color">#9f9f9f</color>
+    <color name="button_equals_color">#00BA20</color>
     <color name="button_ripple_color">#9E9E9E</color>
     <color name="switch_primary_color">#0070BC</color>
     <color name="switch_on_primary_color">#393939</color>
