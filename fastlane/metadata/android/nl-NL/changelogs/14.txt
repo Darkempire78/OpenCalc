@@ -1,0 +1,6 @@
+Nieuw:
+- Tipknop
+
+Wijzigen:
+- Geschiedenis-indeling impove
+- Bijwerken minteken

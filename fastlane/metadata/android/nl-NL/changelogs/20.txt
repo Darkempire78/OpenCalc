@@ -1,0 +1,4 @@
+Opgelost:
+- Haakjes automatisch sluiten
+- Factori vermenigvuldigen zonder *
+- Automatisch 0 toevoegen als getal begint met decimaalteken

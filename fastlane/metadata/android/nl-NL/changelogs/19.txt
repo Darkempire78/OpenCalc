@@ -1,0 +1,8 @@
+Nieuw:
+- Toast wanneer je een waarde kopieert
+
+Opgelost:
+- Volg systeemthema ondersteunt Material You
+- Verbeterde ondersteuning voor tablet
+- Verbeterde ondersteuning voor klein scherm
+- Pictogram niet weergegeven voor Android lager dan 8
