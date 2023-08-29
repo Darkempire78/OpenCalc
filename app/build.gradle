@@ -9,7 +9,7 @@ android {
         resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
         minSdkVersion 24
         targetSdkVersion 33
-        versionCode 45
+        versionCode 46
         versionName "3.0.0-beta3-mobile"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,6 +25,23 @@ android {
         debug {
             applicationIdSuffix ".debug"
             debuggable true
+        }
+    }
+    flavorDimensions += "platform"
+    productFlavors {
+        create("mobile") {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // If you are using only one dimension, this property is optional,
+            // and the plugin automatically assigns all the module's flavors to
+            // that dimension.
+            dimension = "platform"
+//            applicationIdSuffix = ".mobile"
+//            versionNameSuffix = "-demo"
+        }
+        create("automotive") {
+            dimension = "platform"
+//            applicationIdSuffix = ".automotive"
+//            versionNameSuffix = "-automotive"
         }
     }
 
