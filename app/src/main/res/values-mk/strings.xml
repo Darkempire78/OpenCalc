@@ -22,7 +22,7 @@
     <string name="about_help_translate">Преведи</string>
     <string name="about_help_rate">Оцени ја оваа апликација</string>
     <string name="about_other_version">Верзија</string>
-    <string name="about_made_in_france">Изработено со ❤️ во Франција</string>
+    <string name="about_made_in_france">Изработено со ❤️</string>
     <string name="settings_general_vibration_desc">Вибрира кога ќе се притисне копче</string>
     <string name="settings_history_size">Број на зачувани резултати во историјата</string>
     <string name="menu_settings">Подесувања</string>
@@ -34,7 +34,7 @@
     <string name="about_category_help">ПОМОГНИ НИ</string>
     <string name="settings_general_language">Јазик</string>
     <string name="settings_formatting_precision">Број на децимални места</string>
-    <string name="about_easter_egg">Ви благодариме што користите OpenCalc ❤️</string>
+    <string name="about_easter_egg">Ви благодариме што користите  ❤️</string>
     <string name="about_other_privacy_policy">Политика за приватност</string>
     <string name="settings_general_radians_desc">Стандардно користи радијани наместо степени</string>
     <string name="settings_advanced_prevent_sleep">Спречи го исклучувањето на екранот</string>

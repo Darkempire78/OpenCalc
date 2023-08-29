@@ -106,8 +106,8 @@
     <string name="about_other_privacy_policy">Privacy policy</string>
     <string name="about_other_version">Version</string>
 
-    <string name="about_easter_egg">Thanks for using OpenCalc ❤️</string>
-    <string name="about_made_in_france">Made with ❤️ in France</string>
+    <string name="about_easter_egg">Thanks for using this app ❤️</string>
+    <string name="about_made_in_france">Made with ❤️</string>
 
     <!-- Theme choices -->
     <string name="theme_material_you" translatable="false">Material You</string>

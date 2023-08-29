@@ -33,8 +33,8 @@
     <string name="about_other_version">Versjon</string>
     <string name="about_category_social">Sosialt</string>
     <string name="about_help_translate">Oversett</string>
-    <string name="about_made_in_france">Laget med ❤️ in Frankrike</string>
-    <string name="about_easter_egg">Takk for at du bruker OpenCalc ❤️</string>
+    <string name="about_made_in_france">Laget med ❤️ </string>
+    <string name="about_easter_egg">Takk for at du bruker  ❤️</string>
     <string name="settings_formatting_precision">Antall siffer etter komma</string>
     <string name="settings_advanced_prevent_sleep_desc">Forhindre enheten i søvn når programmet er i forgrunnen</string>
     <string name="settings_general_language">Språk</string>

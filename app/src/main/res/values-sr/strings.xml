@@ -24,7 +24,7 @@
     <string name="about_category_other">ДРУГО</string>
     <string name="about_help_translate">Преведи</string>
     <string name="about_help_rate">Оцени ову апликацију</string>
-    <string name="about_made_in_france">Направљено са ❤️ у Француској</string>
+    <string name="about_made_in_france">Направљено са ❤️ </string>
     <string name="about_other_privacy_policy">Политика приватности</string>
     <string name="settings_history_size">Број сачуваних резултата у историји</string>
     <string name="settings_general_language">Језик</string>
@@ -38,5 +38,5 @@
     <string name="settings_general_scientific_mode_desc">Подразумевано активирај напредни режим</string>
     <string name="about_other_version">Верзија</string>
     <string name="settings_formatting_precision">Број децималних места</string>
-    <string name="about_easter_egg">Хвала што користите OpenCalc ❤️</string>
+    <string name="about_easter_egg">Хвала што користите  ❤️</string>
 </resources>

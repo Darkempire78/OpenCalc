@@ -27,8 +27,8 @@
     <string name="about_help_translate">Prevedi</string>
     <string name="about_help_rate">Ocijeni ovu aplikaciju</string>
     <string name="about_other_version">Verzija</string>
-    <string name="about_easter_egg">Hvala što koristite OpenCalc ❤️</string>
-    <string name="about_made_in_france">Napravljeno sa ❤️ u Francuskoj</string>
+    <string name="about_easter_egg">Hvala što koristite ❤️</string>
+    <string name="about_made_in_france">Napravljeno sa ❤️</string>
     <string name="settings_category_advanced">NAPREDNO</string>
     <string name="menu_settings">Postavke</string>
     <string name="settings_advanced_prevent_sleep">Spriječi isključivanje ekrana</string>

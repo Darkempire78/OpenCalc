@@ -31,8 +31,8 @@
     <string name="about_help_translate">翻译</string>
     <string name="about_help_rate">为APP打分</string>
     <string name="about_other_version">版本</string>
-    <string name="about_easter_egg">感谢使用OpenCalc ❤️</string>
-    <string name="about_made_in_france">在法国用 ❤️制造</string>
+    <string name="about_easter_egg">感谢使用 ❤️</string>
+    <string name="about_made_in_france">在法国用 ❤️</string>
     <string name="about_other_privacy_policy">隐私政策</string>
     <string name="settings_general_language">语言</string>
     <string name="settings_formatting_precision">小数位数</string>

@@ -30,8 +30,8 @@
     <string name="about_category_other">OTROS</string>
     <string name="about_help_translate">Traducir</string>
     <string name="about_other_version">Versión</string>
-    <string name="about_easter_egg">Gracias por utilizar OpenCalc ❤️</string>
-    <string name="about_made_in_france">Hecho con ❤️ en Francia</string>
+    <string name="about_easter_egg">Gracias por utilizar  ❤️</string>
+    <string name="about_made_in_france">Hecho con ❤️ </string>
     <string name="about_other_privacy_policy">Política de privacidad</string>
     <string name="settings_formatting_precision">Cantidad de decimales</string>
     <string name="settings_history_size">Resultados guardados en el historial</string>

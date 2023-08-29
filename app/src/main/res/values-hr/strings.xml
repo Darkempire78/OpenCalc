@@ -26,8 +26,8 @@
     <string name="about_category_social">DRUŠTVENI MEDIJI</string>
     <string name="about_category_other">OSTALO</string>
     <string name="about_help_translate">Prevedi</string>
-    <string name="about_help_rate">Ocijeni ovu aplikaciju</string>
-    <string name="about_made_in_france">Napravljeno s ❤️ u Francuskoj</string>
+    <string name="about_help_rate">Ocijeni ovu </string>
+    <string name="about_made_in_france">Napravljeno s ❤️ </string>
     <string name="settings_formatting_precision">Broj decimalnih mjesta</string>
     <string name="about_other_privacy_policy">Politika privatnosti</string>
     <string name="settings_general_language">Jezik</string>
