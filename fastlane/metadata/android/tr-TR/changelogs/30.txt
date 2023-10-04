@@ -1,0 +1,8 @@
+Yeni:
+- Açık hatalar
+- Geçmişin yeniden tasarımı
+- Geçmiş sonuçlarına zaman ekleme
+- Do not allow duplicate math symbols on input
+
+Güncellendi:
+- arccos, arcsin ve arctan artık cos⁻¹, sin⁻¹ ve tan⁻¹ olarak gösteriliyor
