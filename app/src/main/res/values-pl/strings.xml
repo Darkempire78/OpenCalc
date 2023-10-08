@@ -48,4 +48,5 @@
     <string name="require_real_number">Wymagana liczba rzeczywista</string>
     <string name="settings_general_split_parenthesis_button_desc">Usuń przycisk \"AC\", by rozdzielić przycisk z nawiasami na dwa</string>
     <string name="settings_advanced_long_click_copy">Długie naciśnięcie, by skopiować wartość</string>
+    <string name="settings_advanced_long_click_copy_desc">Długie naciśnięcie kopiuje tekst zamiast go zaznaczać</string>
 </resources>
