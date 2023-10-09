@@ -15,10 +15,10 @@
     <string name="syntax_error">Sintaksna pogreška</string>
     <string name="value_too_large">Prevelika vrijednost</string>
     <string name="settings_general_vibration_desc">Vibrira kada se pritisne tipka</string>
-    <string name="settings_history_size">Broj pohranjenih rezultata u povijesti</string>
+    <string name="settings_history_size">Broj spremljenih rezultata u povijesti</string>
     <string name="settings_general_vibration">Vibracije</string>
     <string name="settings_advanced_prevent_sleep">Spriječi isključivanje zaslona</string>
-    <string name="settings_category_advanced">NAPREDNA</string>
+    <string name="settings_category_advanced">NAPREDNO</string>
     <string name="settings_general_scientific_mode">Napredni način rada</string>
     <string name="settings_general_radians">Radijani</string>
     <string name="about_category_help">POMOZI NAM</string>
@@ -39,4 +39,7 @@
     <string name="settings_general_radians_desc">Koristi radijane umjesto stupnjeva prema zadanim postavkama</string>
     <string name="about_other_version">Verzija</string>
     <string name="about_easter_egg">Hvala što koristite OpenCalc ❤️</string>
+    <string name="settings_category_formatting">FORMATIRANJE</string>
+    <string name="settings_formatting_scientific_notation_desc">Pretvori sve rezultate u znanstveni način pisanja</string>
+    <string name="settings_formatting_scientific_notation">Broj u znanstveni način pisanja</string>
 </resources>

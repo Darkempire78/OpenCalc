@@ -1,0 +1,8 @@
+Yeni:
+- İspanyolca çeviri
+
+Düzeltildi:
+- Büyük faktöriyellerle etkileşimde klavye tepkisiz hale gelmesi
+- Geçmişten değerlerin yanlış yüklenmesi
+- Geçmişten ondalık noktalı sonuçları yüklerken operatörleri kaldırması veya uygulamanin çökmesi
+- Hassasiyet
