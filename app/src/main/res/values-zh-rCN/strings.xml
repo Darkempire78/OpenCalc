@@ -39,4 +39,14 @@
     <string name="theme_amoled">纯黑</string>
     <string name="theme_dark">深色</string>
     <string name="theme_light">浅色</string>
+    <string name="settings_general_add_modulo_desc">用数模计算按钮替换“X²”按钮（按下“INV”按钮时可用）</string>
+    <string name="settings_category_formatting">格式化</string>
+    <string name="settings_general_split_parenthesis_button_desc">去掉“AC\"按钮将圆括号按钮分割为两个按钮</string>
+    <string name="settings_formatting_scientific_notation_desc">将所有结果转换成科学计数</string>
+    <string name="settings_advanced_long_click_copy_desc">长按复制项目文本而不是选中它</string>
+    <string name="settings_advanced_long_click_copy">长按复制值</string>
+    <string name="settings_general_add_modulo">添加数模计算按钮</string>
+    <string name="settings_formatting_scientific_notation">以科学计数法显示值</string>
+    <string name="require_real_number">需要实数</string>
+    <string name="settings_general_split_parenthesis_button">将圆括号按钮分割成两个按钮</string>
 </resources>

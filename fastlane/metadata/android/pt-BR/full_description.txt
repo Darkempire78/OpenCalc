@@ -1,0 +1,10 @@
+Uma calculadora simples e bonita para Android
+
+📖 Recursos
+	* Leve (~2MB),
+	* Sem permissões necessárias,
+	* Tema Escuro, Clato, Amoled e Material You
+	* Modo científico,
+	* Histórico,
+	* Orientação eem modo retrato e paisagem,
+	* Mais...

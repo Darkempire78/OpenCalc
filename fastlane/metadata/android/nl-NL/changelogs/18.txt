@@ -1,0 +1,7 @@
+Nieuw:
+- Lang klikken om een waarde te kopiëren
+- Indonesische vertaling
+
+Opgelost:
+- scrollen in liggende modus
+- focusprobleem

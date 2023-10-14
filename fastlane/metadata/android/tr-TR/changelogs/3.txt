@@ -1,0 +1,8 @@
+Yeni: 
+- Titreşim sistemi
+
+Değişiklik:
+- Kod geliştirmesi
+
+Düzeltme:
+- İlk açılışta sistem temasını kullan

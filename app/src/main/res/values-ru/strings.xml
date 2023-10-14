@@ -41,4 +41,14 @@
     <string name="settings_formatting_precision">Количество десятичных разрядов</string>
     <string name="settings_category_history">ИСТОРИЯ</string>
     <string name="settings_advanced_prevent_sleep_desc">Предотвратить телефон от спящего режима, пока открыто приложение</string>
+    <string name="settings_category_formatting">ФОРМАТИРОВАНИЕ</string>
+    <string name="settings_general_split_parenthesis_button">Разделить кнопку со скобками на две кнопки</string>
+    <string name="settings_general_split_parenthesis_button_desc">Удалите кнопку «AC», чтобы разделить кнопку со скобками на две кнопки</string>
+    <string name="settings_general_add_modulo">Добавить кнопку по модулю</string>
+    <string name="settings_general_add_modulo_desc">Замените кнопку «X²» на кнопку по модулю (доступна при нажатии кнопки «INV»)</string>
+    <string name="settings_formatting_scientific_notation">Число в экспоненциальном представлении</string>
+    <string name="settings_formatting_scientific_notation_desc">Преобразование всех результатов в экспоненциальное представление</string>
+    <string name="settings_advanced_long_click_copy">Нажмите и удерживайте, чтобы скопировать значение</string>
+    <string name="settings_advanced_long_click_copy_desc">Длительное нажатие копирует текст элемента вместо его выбора</string>
+    <string name="require_real_number">Требуется действительное число</string>
 </resources>

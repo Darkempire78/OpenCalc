@@ -1,0 +1,8 @@
+Novo:
+- Toast quando você copiar um valor
+
+Corrigido:
+- Siga o tema do sistema suporta o Material You
+- Melhorar o suporte para tablet
+- Melhora o suporte para o tamanho da tela pequena
+- Ícone não exibido para Android inferior a 8

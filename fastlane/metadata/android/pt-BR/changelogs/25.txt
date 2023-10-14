@@ -1,0 +1,8 @@
+Novo:
+- Tradução Espanhola
+
+Corrigido:
+- Teclado torna-se inresponsável ao interagir com grandes fatores
+- Carregamento incorreto de valores da história
+- Carregando resultados com ponto decimal da história remove operadores ou quebra aplicativo
+- Precisão

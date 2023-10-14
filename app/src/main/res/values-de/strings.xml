@@ -3,14 +3,14 @@
     <string name="app_name_display">Rechner</string>
     <!-- App Menu -->
     <string name="settings_general_theme">Design</string>
-    <string name="menu_about">Über</string>
+    <string name="menu_about">Über OpenCalc</string>
     <string name="infinity">Unendlich</string>a
 <string name="theme_light">Hell</string>
     <string name="value_copied">Kopiert</string>
     <string name="menu_clear_history">Verlauf löschen</string>
     <string name="theme_dark">Dunkel</string>
     <string name="theme_system">System</string>
-    <string name="theme_amoled">Schwarz</string>
+    <string name="theme_amoled">Monochrom</string>
     <string name="division_by_0">Teilen durch 0 nicht möglich</string>
     <string name="syntax_error">Syntaxfehler</string>
     <string name="menu_settings">Einstellungen</string>
@@ -35,7 +35,7 @@
     <string name="about_easter_egg">Danke, dass du OpenCalc nutzt ❤️</string>
     <string name="about_made_in_france">Made with ❤️ in France</string>
     <string name="about_category_other">SONSTIGES</string>
-    <string name="settings_formatting_precision">Anzahl Nachkommastellen</string>
+    <string name="settings_formatting_precision">Anzahl der Nachkommastellen</string>
     <string name="about_other_privacy_policy">Datenschutzerklärung</string>
     <string name="settings_general_language">Sprache</string>
     <string name="about_category_social">SOCIAL</string>
@@ -50,4 +50,5 @@
     <string name="settings_general_add_modulo_desc">Die „X²“-Taste durch eine Modulo-Taste ersetzen (verfügbar, wenn die „INV“-Taste gedrückt wird)</string>
     <string name="settings_general_split_parenthesis_button">Klammern-Taste in zwei Tasten aufteilen</string>
     <string name="settings_general_split_parenthesis_button_desc">Die „AC“-Taste entfernen, um die Klammern-Taste in zwei Tasten aufzuteilen</string>
+    <string name="require_real_number">Reelle Zahl erforderlich</string>
 </resources>

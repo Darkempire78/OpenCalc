@@ -1,0 +1,5 @@
+Veranderingen:
+- scheidingsteken bij grote getallen toegevoegd
+- Italiaanse vertaling toegevoegd
+- Arabische vertaling toegevoegd
+- Turkse vertaling toegevoegd

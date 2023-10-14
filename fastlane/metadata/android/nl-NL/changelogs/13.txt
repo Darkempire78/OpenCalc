@@ -1,0 +1,6 @@
+Nieuw:
+- Thema-pictogram
+
+Veranderen:
+- Vertalingen bijwerken
+- Invoer wissen als nummer wordt ingedrukt na gelijk

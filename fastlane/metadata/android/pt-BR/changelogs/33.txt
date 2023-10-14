@@ -1,0 +1,15 @@
+Atualizado:
+ Muitas traduções
+    A área de entrada ocupa a tela inteira
+ Sistema de parênteses
+
+Corrigido:
+    Duplo aviso ao copiar valor
+    Domínio da definição da tangente
+    Mostrar resultado ao colar um cálculo
+    Divisão indireta por zero é indefinida
+    Divisão por funções
+    Problemas com porcentagem
+    Funções trigonométricas retornam resultados incorretos se forem negativos
+    Erro matemático limpa todo o cálculo ao inserir novo número
+    Problema de parênteses com tangente

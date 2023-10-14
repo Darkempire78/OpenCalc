@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_about">Despre</string>
+    <string name="settings_category_general">GENERAL</string>
+    <string name="settings_category_history">ISTORIE</string>
+    <string name="settings_general_language">Limbă</string>
+    <string name="app_name_display">Calculator</string>
+    <string name="menu_clear_history">Șterge istoricul</string>
+    <string name="menu_settings">Setări</string>
+    <string name="settings_general_theme">Tema</string>
+</resources>

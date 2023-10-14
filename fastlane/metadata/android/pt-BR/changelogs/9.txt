@@ -1,0 +1,7 @@
+Mudanças:
+- nova página de sobre
+- Adicionado separador para o tema amoled
+
+Corrigido:
+- cor da caixa de seleção
+- nome do aplicativo (traduzido em EN & FR)

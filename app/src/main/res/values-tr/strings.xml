@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name_display">Hesaplayıcı</string>
+    <string name="app_name_display">Hesap makinesi</string>
     <string name="settings_general_theme">Tema</string>
     <string name="menu_about">Hakkında</string>
     <string name="infinity">Sonsuz</string>
@@ -40,4 +40,12 @@
     <string name="about_other_privacy_policy">Gizlilik ilkesi</string>
     <string name="settings_formatting_precision">Ondalık basamak sayısı</string>
     <string name="settings_general_language">Dil</string>
+    <string name="settings_category_formatting">BİÇİMLENDİRME</string>
+    <string name="settings_general_split_parenthesis_button_desc">Parantez düğmesini iki düğmeye ayırmak için \"AC\" düğmesini kaldırır</string>
+    <string name="settings_formatting_scientific_notation">Sayıları bilimsel gösterime dönüştürme</string>
+    <string name="settings_formatting_scientific_notation_desc">Tüm sonuçları bilimsel gösterime dönüştürür</string>
+    <string name="settings_advanced_long_click_copy">Değeri kopyalamak için uzun basın</string>
+    <string name="settings_advanced_long_click_copy_desc">Öğeyi seçmek yerine öğenin metine uzun basarak kopyalar</string>
+    <string name="require_real_number">Reel sayı gerekli</string>
+    <string name="settings_general_split_parenthesis_button">Parantez düğmesini iki düğmeye ayır</string>
 </resources>

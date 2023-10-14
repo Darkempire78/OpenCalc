@@ -1,0 +1,4 @@
+Opgelost:
+- Scrollbalk invoer
+- Noodzakelijk scrollen om resultaat te zien
+- Invoer wissen als nummer wordt ingedrukt na gelijk
