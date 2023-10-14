@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.darkempire78.opencalculator"
         resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
         minSdkVersion 24
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 42
-        versionName "3.0.0-beta3"
+        versionName "3.0.0-beta4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

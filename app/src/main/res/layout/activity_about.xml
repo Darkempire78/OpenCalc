@@ -181,13 +181,27 @@
             app:drawableLeftCompat="@drawable/info"
             app:layout_constraintTop_toBottomOf="@+id/about_privacy_policy" />
 
+        <TextView
+            android:id="@+id/about_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:textSize="@dimen/about_text"
+            android:text="@string/about_other_license"
+            app:drawableLeftCompat="@drawable/license"
+            app:layout_constraintTop_toBottomOf="@+id/about_app_version" />
+
+
         <View
             android:id="@+id/category_end_separator"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="15dp"
             android:background="?attr/foreground_color"
-            app:layout_constraintTop_toBottomOf="@+id/about_app_version" />
+            app:layout_constraintTop_toBottomOf="@+id/about_license" />
 
         <TextView
             android:id="@+id/about_about_made_in_france"

@@ -84,6 +84,7 @@ class AboutActivity : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
+        // Privacy policy
         binding.aboutPrivacyPolicy.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
@@ -92,7 +93,16 @@ class AboutActivity : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
+        // License
+        binding.aboutLicense.setOnClickListener {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/Darkempire78/OpenCalc/blob/main/LICENSE")
+            )
+            startActivity(browserIntent)
+        }
 
+        // Easter egg
         var clickAppVersionCount = 0
         binding.aboutAppVersion.setOnClickListener {
             clickAppVersionCount++
