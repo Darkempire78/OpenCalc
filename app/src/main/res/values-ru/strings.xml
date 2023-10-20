@@ -28,7 +28,7 @@
     <string name="about_help_donate">Донат</string>
     <string name="about_category_social">СОЦСЕТИ</string>
     <string name="about_help_translate">Перевести</string>
-    <string name="about_category_other">ПРОЧЕЕ</string>
+    <string name="about_category_other">ИНФОРМАЦИЯ О ПРИЛОЖЕНИИ</string>
     <string name="about_help_rate">Оценить приложение</string>
     <string name="about_other_version">Версия</string>
     <string name="about_easter_egg">Спасибо за использование OpenCalc ❤️</string>
@@ -51,4 +51,5 @@
     <string name="settings_advanced_long_click_copy">Нажмите и удерживайте, чтобы скопировать значение</string>
     <string name="settings_advanced_long_click_copy_desc">Длительное нажатие копирует текст элемента вместо его выбора</string>
     <string name="require_real_number">Требуется действительное число</string>
+    <string name="about_other_license">Лицензия</string>
 </resources>
