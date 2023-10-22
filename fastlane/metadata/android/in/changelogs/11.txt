@@ -1,0 +1,9 @@
+Ubah: 
+- Terjemahan bahasa Jerman 
+- Terjemahan bahasa Rusia 
+- Terjemahan bahasa Yunani 
+- Terjemahan bahasa Hindi 
+- Terjemahan bahasa Azerbaijan
+
+Perbaikan: 
+- Persen yang tidak matematis
