@@ -1,0 +1,6 @@
+Baru: 
+- Tombol tip
+
+Perubahan: 
+- Format riwayat yang ditingkatkan 
+- Perbarui karakter minus

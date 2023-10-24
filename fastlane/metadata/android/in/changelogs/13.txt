@@ -1,0 +1,6 @@
+Baru: 
+- Ikon bertema
+
+Perubahan: 
+- Memperbarui terjemahan 
+- Menghapus input jika angka ditekan setelah sama dengan

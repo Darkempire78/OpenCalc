@@ -18,7 +18,7 @@
     <string name="about_category_help">ДАПАМАЖЫЦЕ НАМ</string>
     <string name="about_help_donate">Ахвяраваць</string>
     <string name="about_category_social">САЦЫЯЛЬНАЯ</string>
-    <string name="about_category_other">ІНШЫЯ</string>
+    <string name="about_category_other">ІНФАРМАЦЫЯ ПРА ПРАГРАМУ</string>
     <string name="about_help_translate">Пераклад</string>
     <string name="about_help_rate">Ацэніце гэтую праграму</string>
     <string name="about_other_version">Версія</string>
@@ -49,4 +49,5 @@
     <string name="settings_formatting_scientific_notation">Лік у экспанентным уяўленні</string>
     <string name="settings_advanced_long_click_copy">Доўгі націск, каб скапіяваць значэнне</string>
     <string name="settings_advanced_long_click_copy_desc">Доўгі націск капіруе тэкст элемента замест яго выбару</string>
+    <string name="about_other_license">Ліцэнзія</string>
 </resources>

@@ -27,7 +27,7 @@
     <string name="settings_advanced_prevent_sleep">阻止系统休眠</string>
     <string name="settings_general_radians">弧度</string>
     <string name="settings_general_radians_desc">默认使用弧度而不是角度</string>
-    <string name="about_category_other">其他</string>
+    <string name="about_category_other">应用信息</string>
     <string name="about_help_translate">翻译</string>
     <string name="about_help_rate">为APP打分</string>
     <string name="about_other_version">版本</string>
@@ -49,4 +49,5 @@
     <string name="settings_formatting_scientific_notation">以科学计数法显示值</string>
     <string name="require_real_number">需要实数</string>
     <string name="settings_general_split_parenthesis_button">将圆括号按钮分割成两个按钮</string>
+    <string name="about_other_license">许可证</string>
 </resources>

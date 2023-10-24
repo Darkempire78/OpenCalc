@@ -27,7 +27,7 @@
     <string name="settings_general_radians_desc">Usar radianes en vez de grados por defecto</string>
     <string name="about_category_help">AYUDANOS</string>
     <string name="about_category_social">SOCIAL</string>
-    <string name="about_category_other">OTROS</string>
+    <string name="about_category_other">INFORMACION DE LA APPLICACION</string>
     <string name="about_help_translate">Traducir</string>
     <string name="about_other_version">Versión</string>
     <string name="about_easter_egg">Gracias por utilizar OpenCalc ❤️</string>
@@ -49,4 +49,5 @@
     <string name="settings_general_split_parenthesis_button">Dividir el botón de los paréntesis en dos botones</string>
     <string name="settings_general_add_modulo_desc">Sustituir el botón \"X²\" por un botón de módulo (disponible cuando se pulsa el botón \"INV\")</string>
     <string name="require_real_number">Número real requerido</string>
+    <string name="about_other_license">Licencia</string>
 </resources>

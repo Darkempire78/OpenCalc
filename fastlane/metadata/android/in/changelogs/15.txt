@@ -1,0 +1,6 @@
+Perubahan 
+- Layar pembuka sekarang menjadi gelap
+
+Perbaikan: 
+- masalah keyboard 
+- keyboard masih bergulir

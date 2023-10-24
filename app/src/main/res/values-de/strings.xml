@@ -34,7 +34,7 @@
     <string name="about_other_version">Version</string>
     <string name="about_easter_egg">Danke, dass du OpenCalc nutzt ❤️</string>
     <string name="about_made_in_france">Made with ❤️ in France</string>
-    <string name="about_category_other">SONSTIGES</string>
+    <string name="about_category_other">APP-INFOS</string>
     <string name="settings_formatting_precision">Anzahl der Nachkommastellen</string>
     <string name="about_other_privacy_policy">Datenschutzerklärung</string>
     <string name="settings_general_language">Sprache</string>
@@ -51,4 +51,5 @@
     <string name="settings_general_split_parenthesis_button">Klammern-Taste in zwei Tasten aufteilen</string>
     <string name="settings_general_split_parenthesis_button_desc">Die „AC“-Taste entfernen, um die Klammern-Taste in zwei Tasten aufzuteilen</string>
     <string name="require_real_number">Reelle Zahl erforderlich</string>
+    <string name="about_other_license">Lizenz</string>
 </resources>

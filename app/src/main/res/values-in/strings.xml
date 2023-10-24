@@ -1,20 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Kalkulator</string>
-
     <string name="infinity">Tak terhingga</string>
-
     <!-- App Menu -->
     <string name="settings_general_theme">Tema</string>
     <string name="menu_clear_history">Hapus Riwayat</string>
     <string name="menu_about">Tentang</string>
-
     <!-- Theme choices -->
     <string name="theme_system">Sistem</string>
     <string name="theme_amoled">Amoled</string>
-
     <string name="theme_light">Terang</string>
     <string name="theme_dark">Gelap</string>
-
     <!-- Others -->
     <string name="value_copied">Disalin</string>
+    <string name="settings_general_radians_desc">Gunakan radian bukan derajat secara default</string>
+    <string name="settings_category_formatting">MEMFORMAT</string>
+    <string name="settings_general_scientific_mode">Mode ilmiah</string>
+    <string name="about_other_license">Lisensi</string>
+    <string name="settings_general_split_parenthesis_button_desc">Hapus tombol \"AC\" untuk membagi tombol parentheses ke dua tombol</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="settings_general_language">Bahasa</string>
+    <string name="settings_general_vibration">Vibrasi</string>
+    <string name="settings_general_scientific_mode_desc">Aktifkan mode ilmiah secara default</string>
+    <string name="settings_category_general">UMUM</string>
+    <string name="settings_general_add_modulo">Tambahkan tombol modulo</string>
+    <string name="settings_general_vibration_desc">Bergetar ketika tombol ditekan</string>
+    <string name="settings_category_advanced">LANJUTAN</string>
+    <string name="settings_category_history">RIWAYAT</string>
 </resources>

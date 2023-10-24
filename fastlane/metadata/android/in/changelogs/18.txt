@@ -1,0 +1,7 @@
+Baru: 
+- Klik lama untuk menyalin nilai 
+- Terjemahan bahasa Indonesia
+
+Diperbaiki: 
+- gulir pada mode lanskap 
+- masalah fokus
