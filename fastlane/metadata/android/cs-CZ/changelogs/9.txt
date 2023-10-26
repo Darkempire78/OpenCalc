@@ -1,0 +1,7 @@
+Změny:
+- nová stránka O aplikaci
+- přidán separátor pro amoled motiv
+
+Opravy:
+- barva zaškrtávacího políčka
+- jméno aplikace (přeloženo v EN & FR)

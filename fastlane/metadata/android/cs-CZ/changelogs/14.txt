@@ -1,0 +1,6 @@
+Novinky:
+- Tlačítko pro poslání darů
+
+Změny:
+- Zlepšení formátování historie
+- Aktualizovaný znak mínusu

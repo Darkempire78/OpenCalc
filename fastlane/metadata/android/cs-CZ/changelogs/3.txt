@@ -1,0 +1,8 @@
+Novinky: 
+- Vibrační systém
+
+Změny:
+- Zlepšení kódu
+
+Opravy:
+- Použít při prvním spuštění motiv systému

@@ -1,0 +1,4 @@
+Opravy:
+- Posuvní lišta pro vstupní data
+- Potřeba skrolování k vidění výsledků
+- Vyčistit vstup pokud je číslo zmáčknuto po rovná se

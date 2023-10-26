@@ -1,0 +1,6 @@
+Změny:
+- Úvodní obrazovka je teď tmavá
+
+Opravy:
+- chyba klávesnice
+- klávesnice se neustále posouvá

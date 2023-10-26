@@ -1,0 +1,2 @@
+Opravy:
+- Spadnutí aplikace na malých obrazovkách a tabletech
