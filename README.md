@@ -37,7 +37,7 @@
 
 ## 📖 Features
 
-* Lightweight (~2MB),
+* Lightweight (APK ~2MB),
 * No unnecessary permissions,
 * Dark, Light, Amoled and Material You theme,
 * Scientific mode,
