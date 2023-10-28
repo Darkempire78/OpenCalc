@@ -311,12 +311,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDisplay(view: View, value: String) {
+        val valueNoSeparators = value.replace(groupingSeparatorSymbol, "")
+        val isValueInt = valueNoSeparators.toIntOrNull() != null
+
         // Reset input with current number if following "equal"
         if (isEqualLastAction) {
-            val anyNumber = "0123456789$decimalSeparatorSymbol".toCharArray().map {
-                it.toString()
-            }
-            if (anyNumber.contains(value)) {
+            if (isValueInt || value == decimalSeparatorSymbol) {
                 binding.input.setText("")
             } else {
                 binding.input.setSelection(binding.input.text.length)
@@ -338,6 +338,8 @@ class MainActivity : AppCompatActivity() {
             val formerValue = binding.input.text.toString()
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
+            val leftValueFormatted =
+                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
@@ -428,9 +430,13 @@ class MainActivity : AppCompatActivity() {
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
-                // Increase cursor position
-                val cursorOffset = newValueFormatted.length - newValue.length
-                binding.input.setSelection(cursorPosition + value.length + cursorOffset)
+                // Set cursor position
+                if (isValueInt) {
+                    val cursorOffset = newValueFormatted.length - newValue.length
+                    binding.input.setSelection(cursorPosition + value.length + cursorOffset)
+                } else {
+                    binding.input.setSelection(leftValueFormatted.length + value.length)
+                }
             }
         }
     }
