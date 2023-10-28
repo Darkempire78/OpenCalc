@@ -1,0 +1,7 @@
+Cập nhật:
+- Hiển thị "giá trị quá lớn" thay vì "vô cực"
+
+Sửa lỗi:
+- Phép chia cho số âm
+- Bài toán về hàm giai thừa
+- sin(x!) & cos(x!) cho kết quả sai

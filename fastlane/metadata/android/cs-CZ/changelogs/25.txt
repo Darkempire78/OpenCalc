@@ -1,0 +1,8 @@
+Novinky:
+- Španělský překlad
+
+Opravy:
+- Klávesnice se stane neresponzivní při interakci s velkými faktoriály
+- Nesprávné načítání hodnot z historie
+- Načitání výsledků s desetinným místem z historie smaže operátory nebo díky tomu spadne aplikace
+- Přesnost

@@ -25,7 +25,7 @@
     <string name="settings_category_general">CÀI ĐẶT CHUNG</string>
     <string name="settings_general_vibration">Rung động</string>
     <string name="about_other_privacy_policy">Chính sách quyền riêng tư</string>
-    <string name="about_category_other">KHÁC</string>
+    <string name="about_category_other">THÔNG TIN ỨNG DỤNG</string>
     <string name="about_help_donate">Quyên góp</string>
     <string name="about_help_translate">Phiên dịch</string>
     <string name="about_help_rate">Nhận xét ứng dụng này</string>
@@ -35,4 +35,5 @@
     <string name="settings_advanced_prevent_sleep">Giữ cho màn hình không tự tắt</string>
     <string name="settings_advanced_prevent_sleep_desc">Ngăn màn hình tắt đi khi ứng dụng đang được mở</string>
     <string name="settings_general_split_parenthesis_button">Chia nút dấu ngoặc thành hai nút</string>
+    <string name="about_other_license">Giấy phép</string>
 </resources>

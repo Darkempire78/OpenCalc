@@ -1,0 +1,9 @@
+Aktualizace:
+- Změna barvy textu při chybě
+- Zmenšená release velikost
+- Neukládat výsledek v historii pokud je stejný jako výpočet
+- Neukládat výpočet v historii pokud je stejný jako poslední
+
+Opravy:
+- Faktoriál 0 vrací 1
+- Přidat matematický symbol po zmáčknut rovná se

@@ -1,0 +1,5 @@
+Opravy:
+- tan() nefunguje správně
+- Smazání oddělovače tisíců způsobuje skočení kurzoru
+- Umístění závorek uvnitř existujích výpočtů
+- Grafický problém v režimu na šířku pro tablety větších než 10 palců

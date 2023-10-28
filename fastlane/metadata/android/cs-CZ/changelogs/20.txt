@@ -1,0 +1,4 @@
+Opravy:
+- Automatické uzavírání závorek
+- Násobení faktoriálů bez *
+- Automatické přidávání 0 když číslo začíná s desetinnou značkou
