@@ -1,7 +1,7 @@
 En enkel og fin kalkulator for Android.
 
 📖 Funksjoner
-	* Lett (~2MB),
+	* Lett (APK ~2MB),
 	* Ingen unødvendige tilganger,
 	* Mørk, lys, svart og Materiell Deign-drakt,
 	* Vitenskapelig modus,

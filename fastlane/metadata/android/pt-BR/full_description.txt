@@ -1,7 +1,7 @@
 Uma calculadora simples e bonita para Android
 
 📖 Recursos
-	* Leve (~2MB),
+	* Leve (APK ~2MB),
 	* Sem permissões necessárias,
 	* Tema Escuro, Clato, Amoled e Material You
 	* Modo científico,

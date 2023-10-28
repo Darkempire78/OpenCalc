@@ -1,7 +1,7 @@
 Prosty i piękny kalkulator na androida
 
 📖 Plusy
-	* Lekki (~2MB),
+	* Lekki (APK ~2MB),
 	* Bez niepotrzebnych uprawnień,
 	* Tryb ciemny, jasny, AMOLED oraz Material You,
 	* Tryb naukowy,
