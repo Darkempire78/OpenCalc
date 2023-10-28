@@ -1,0 +1,8 @@
+Novinky:
+- Explicitní chyby
+- Redesign historie
+- Přidán časový údaj k výsledkům v historii
+- Nedovolit duplikáty matematických symbolů na vstupu
+
+Aktualizace:
+- arccos, arcsin a arctan jsou teď zobraovány jako cos⁻¹, sin⁻¹ a tan⁻¹

@@ -1,0 +1,2 @@
+Opravy:
+- Oprava spadnutí aplikace při velkých číslech

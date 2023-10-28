@@ -1,0 +1,5 @@
+Změny:
+- Dostupné pro SDK 21+ (Android 5.0)
+
+Opravy:
+- Opravena vibrace

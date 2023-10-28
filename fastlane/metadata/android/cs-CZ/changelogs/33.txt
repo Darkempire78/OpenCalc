@@ -1,0 +1,15 @@
+Aktualizace:
+- Hodně překladů
+- Místo pro vstupní data zabere celou obrazovku
+- Závorkový systém
+
+Opravy:
+- Dvojitý toast když je hodnota zkopírována v androidu 13
+- Definiční obor tangenu
+- Zobrazit výsledek když vložíš výpočet
+- Nepřímé dělení nulou je nedefinováno
+- Dělení pomocí funkcí
+- Procentuální problémy
+- Trigonometrická funkce vrací špatné výsledky pokud je výsledek záporný
+- Matematická chyba vyčistí celý výpočet když je vloženo nové číslo
+- Závorkový problém s tangentem

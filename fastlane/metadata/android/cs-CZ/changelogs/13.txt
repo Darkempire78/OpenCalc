@@ -1,0 +1,6 @@
+Novinky:
+- Tématická ikona
+
+Změny:
+- Aktualizované překlady
+- Vyčistit vstup pokud je číslo zmáčknuto po rovná se

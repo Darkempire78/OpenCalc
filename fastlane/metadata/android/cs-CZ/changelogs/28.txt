@@ -1,0 +1,18 @@
+Novinky:
+- Interní systém kalkulačky
+- Faktoriály s desetinnými místy
+- Zabránit přítomnosti dvou desetinných značek ve stejném čísle
+- Brazilský překlad (@Bardock88)
+- Tchajwanský a Hongkongský překlad (@alecchangod)
+- Španělský překlad
+
+Opravy:
+- Skrolování v historii (@MahmoudRH)
+- Přesnost výsledku
+- Backspace s oddělovači tisíců
+- Zobrazit "Matematická chyba" místo "NaN" (@lefterisgar)
+- Režim na šířku pro 10 palcové tablety
+- Backspace po rovná se tlačítku
+- Spadnutí aplikace při klikání na historii výsledků
+- Nějaké problémy s formátováním výrazů
+- Několik dalších oprav

@@ -1,0 +1,8 @@
+Novinky:
+- Toast když zkopíruješ hodnotu
+
+Opravy:
+- Nastavení motivu podle systému podporuje Material You
+- Zlepšení podpory pro tablety
+- Zlepšení podpory pro malé obrazovky
+- Ikona se nezobrazovala pro nižší verzi Androidu než 8

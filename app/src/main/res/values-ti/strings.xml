@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_made_in_france">ኣብ ፈረንሳ ምስ ❤️ ዝተሰርሐ</string>
+    <string name="settings_general_add_modulo_desc">ነታ \"X²\" ጠውቕ ብሞዱሎ ተክኣያ (እቲ \"INV\" እትብል ጠውቕ ክትጽቀጥ ከላ ኽትረኽቦ ትኽእል ኢኻ)</string>
+    <string name="menu_clear_history">ታሪኽ ኣጽርዮ</string>
+    <string name="value_copied">ተቐዲሑ</string>
+    <string name="theme_light">ብርሃን</string>
+    <string name="settings_general_radians_desc">ኣብ ክንዲ ዲግሪ ብነባሪ ራድያን ተጠቐም</string>
+    <string name="settings_category_formatting">ቅርጽታት</string>
+    <string name="settings_general_scientific_mode">ስነ-ፍልጠትሳዊ ቅዲ</string>
+    <string name="about_other_license">ፍቓድ</string>
+    <string name="settings_general_split_parenthesis_button_desc">ነቲ ናይ ሓጹር መጠወቒ ኣብ ክልተ መጠወቒ ንምምቃል ነቲ \"AC\" ዝብል መጠወቒ ኣውጽእዎ</string>
+    <string name="menu_settings">ቅጥዕታት</string>
+    <string name="theme_dark">ጸልማት</string>
+    <string name="settings_general_language">ቋንቋ</string>
+    <string name="settings_general_vibration">ምንግብጋብ</string>
+    <string name="app_name_display">ቀመር</string>
+    <string name="theme_system">ስርዓት</string>
+    <string name="settings_general_scientific_mode_desc">ስነ-ፍልጠትሳዊ ቅዲ ብነባሪ ግባር</string>
+    <string name="about_easter_egg">OpenCalc ❤️ ስለ ዝተጠቐምኩም የቐንየልና</string>
+    <string name="menu_about">ብዝዕባ</string>
+    <string name="infinity">ደረት - ዘይብሉ</string>
+    <string name="value_too_large">ዋጋ ኣዝዩ ዓብዪ</string>
+    <string name="settings_category_general">ሓፈሻዊ</string>
+    <string name="settings_general_add_modulo">ሞዱሎ መጠወቒ ወስኸሉ</string>
+    <string name="division_by_0">ብ 0 ክምቀል ኣይክእልን እዩ</string>
+    <string name="theme_amoled">ኣሞሌድ</string>
+    <string name="domain_error">ግዝኣት ጌጋ</string>
+    <string name="require_real_number">ሓቀኛ ቁጽሪ የድሊ</string>
+    <string name="about_other_version">ሕታም</string>
+    <string name="settings_category_history">ታሪኽ</string>
+    <string name="settings_general_radians">ራድያናውያን</string>
+    <string name="settings_general_split_parenthesis_button">ነቲ ኣብ ሓጹር ዘሎ መጠወቒ ኣብ ክልተ መጠወቒታት ምቕማጥ</string>
+</resources>
