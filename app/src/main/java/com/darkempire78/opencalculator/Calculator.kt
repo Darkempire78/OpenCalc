@@ -265,19 +265,13 @@ class Calculator(
 
                         }
                         "arcta" -> {
-                            if (abs(x.toDouble()) > 1) {
-                                x = BigDecimal.ZERO
-                                domain_error = true
+                            x = if (isDegreeModeActivated) {
+                                (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
                             } else {
-                                x = if (isDegreeModeActivated) {
-                                    (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
-
-                                } else {
-                                    atan(x.toDouble()).toBigDecimal()
-                                }
-                                if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
-                                    x = round(x.toDouble()).toBigDecimal()
-                                }
+                                atan(x.toDouble()).toBigDecimal()
+                            }
+                            if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
+                                x = round(x.toDouble()).toBigDecimal()
                             }
                         }
                         else -> {
