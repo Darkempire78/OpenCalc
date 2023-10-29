@@ -1,7 +1,7 @@
 Une calculatrice simple et élégante pour Android
 
 📖 Fonctionnalités
-	* Légère (~2MB),
+	* Légère (APK ~2MB),
 	* Pas de permission inutile,
 	* Thème Sombre, Clair, Amoled et Material You,
 	* Mode scientifique,

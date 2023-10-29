@@ -1,7 +1,7 @@
 Một máy tính đơn giản và đẹp dành cho Android
 
 📖 Các tính năng
-	* Nhẹ (~2 MB),
+	* Nhẹ (APK ~2 MB),
 	* Không có quyền không cần thiết,
 	* Chủ đề tối, sáng, Amoled và Material You,
 	* Chế độ khoa học,

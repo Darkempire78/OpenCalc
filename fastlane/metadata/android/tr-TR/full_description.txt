@@ -1,7 +1,7 @@
 Android için basit ve güzel bir hesap makinesi
 
 📖 Özellikler
-	* Hafif (~2MB),
+	* Hafif (APK ~2MB),
 	* Gereksiz izinler yok,
 	* Koyu, Açık, Amoled ve Material You tema,
 	* Bilimsel mod,

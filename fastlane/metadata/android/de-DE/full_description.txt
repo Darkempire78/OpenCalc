@@ -1,7 +1,7 @@
 Ein unkomplizierter und schöner Taschenrechner für Android
 
 📖 Features:
-	* Schlank (~2MB),
+	* Schlank (APK ~2MB),
 	* Keine unnötigen Berechtigungen,
 	* Dunkles, Helles, Amoled und Material You Design,
 	* Wissenschaftlicher Modus,
