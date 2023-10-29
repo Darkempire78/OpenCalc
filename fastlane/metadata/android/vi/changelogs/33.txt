@@ -1,0 +1,15 @@
+Đã cập nhật:
+- Nhiều bản dịch
+- Vùng nhập liệu lấy kích thước toàn màn hình
+- Hệ thống dấu ngoặc đơn
+
+Đã sửa:
+- Thông báo 2 lần khi sao chép giá trị trên Android 13
+- Definition domain of tangent (mình không biết dịch sang tiếng Việt là gì 😥)
+- Hiển thị kết quả khi dán phép tính
+- Phép chia gián tiếp cho 0 không được xác định
+- Chia cho hàm số
+- Lỗi phần trăm
+- Hàm lượng giác trả về kết quả sai nếu kết quả âm
+- Lỗi toán xóa toàn bộ phép tính khi nhập số mới
+- Vấn đề dấu ngoặc đơn với tiếp tuyến
