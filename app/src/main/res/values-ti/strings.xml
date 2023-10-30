@@ -29,6 +29,25 @@
     <string name="require_real_number">ሓቀኛ ቁጽሪ የድሊ</string>
     <string name="about_other_version">ሕታም</string>
     <string name="settings_category_history">ታሪኽ</string>
-    <string name="settings_general_radians">ራድያናውያን</string>
+    <string name="settings_general_radians">ራድያን</string>
     <string name="settings_general_split_parenthesis_button">ነቲ ኣብ ሓጹር ዘሎ መጠወቒ ኣብ ክልተ መጠወቒታት ምቕማጥ</string>
+    <string name="about_help_translate">ተርጉም</string>
+    <string name="settings_history_size">ውጽኢት ኣብ ታሪኽ ድሒኑ</string>
+    <string name="settings_formatting_precision">ቍጽሪ ናይ ዲሲማል ቦታታት</string>
+    <string name="settings_formatting_scientific_notation_desc">ን\'ዅሉ ውጽኢት ናብ ስነ-ፍልጠታዊ መዘኻኸሪታት ቀይሮ</string>
+    <string name="settings_advanced_long_click_copy_desc">ነዊሕ ጽቃጥ ነቲ ጽሑፍ ናይቲ ኣቕሓ ኣብ ክንዲ ምምራጽ ይቕድሖ</string>
+    <string name="about_category_other">ኣፕሊኬሽን ሓበሬታ</string>
+    <string name="syntax_error">ጌጋ ሲንታክስ</string>
+    <string name="about_other_privacy_policy">ናይ ስቱርነት ፖሊሲ</string>
+    <string name="settings_advanced_long_click_copy">ነዊሕ ተውቕ ንምቕዳሕ</string>
+    <string name="about_category_help">ሓግዘና</string>
+    <string name="settings_formatting_scientific_notation">ቍጽሪ ናብ ስነ-ፍልጠታዊ መዘኻኸሪታት</string>
+    <string name="settings_general_theme">ጭብጢ</string>
+    <string name="settings_general_vibration_desc">ሓደ መጠወቒ ምስ ዝጽቀጥ ኣንቅጥቃጥ</string>
+    <string name="settings_advanced_prevent_sleep">ተሌፎን ንቑሕ ይኹን</string>
+    <string name="about_help_rate">ነዛ ኣፕሊኬሽን ገምግማ</string>
+    <string name="about_help_donate">ወፈያ</string>
+    <string name="settings_category_advanced">ዝተመሓየሸ</string>
+    <string name="settings_advanced_prevent_sleep_desc">እቲ መተግበሪ ኣብ ቅድመ-መቕድም እንከሎ፡ ስልኪ ካብ ምድቃስ ይከላኸል</string>
+    <string name="about_category_social">ማሕበራዊ</string>
 </resources>
