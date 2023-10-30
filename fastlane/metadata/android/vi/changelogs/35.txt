@@ -1,0 +1,5 @@
+Đã sửa:
+- tan() không hoạt động đúng cách
+- Xóa dấu phân cách hàng nghìn (thousand separator) khiến con trỏ nhảy
+- Vị trí của dấu ngoặc đơn bên trong các phép tính hiện có
+- Sự cố đồ họa ở chế độ nằm ngang (landscape) cho máy tính bảng trên 10 inch

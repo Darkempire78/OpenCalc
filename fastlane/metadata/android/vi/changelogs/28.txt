@@ -11,7 +11,7 @@ Mới:
 - Kết quả chính xác
 - Dấu cách với dấu tách nhóm
 - Hiển thị "Lỗi toán học" thay vì "NaN" (@lefterisgar)
-- Chế độ ngang cho tablet 10 inch
+- Chế độ nằm ngang (landscape) cho tablet 10 inch
 - Dấu cách sau nút bằng
 - Sự cố khi nhấn vào kết quả lịch sử
 - Một số vấn đề về hình thức biểu đạt
