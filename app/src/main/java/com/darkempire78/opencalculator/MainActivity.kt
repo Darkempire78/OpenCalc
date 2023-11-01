@@ -349,7 +349,7 @@ class MainActivity : AppCompatActivity() {
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
-                // 1. When you click on the decimalSeparator button
+                // when you click on the decimalSeparator button
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
                     if (binding.input.text.toString().isNotEmpty()) {
                         var lastNumberBefore = ""
@@ -372,57 +372,6 @@ class MainActivity : AppCompatActivity() {
                         }
                         if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
-                        }
-                    }
-                }
-                // 2. When you click on a former calculation from the history
-                if (binding.input.text.isNotEmpty()
-                    && cursorPosition > 0
-                    && decimalSeparatorSymbol in value
-                    && value != decimalSeparatorSymbol // The value should not be *only* the decimal separator
-                ) {
-                    if (NumberFormatter.extractNumbers(value, decimalSeparatorSymbol)
-                            .isNotEmpty()
-                    ) {
-                        val firstValueNumber =
-                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).first()
-                        val lastValueNumber =
-                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).last()
-                        if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
-                            var numberBefore =
-                                binding.input.text.toString().substring(0, cursorPosition)
-                            if (numberBefore.last() !in "()*-/+^!√πe") {
-                                numberBefore = NumberFormatter.extractNumbers(
-                                    numberBefore,
-                                    decimalSeparatorSymbol
-                                ).last()
-                            }
-                            var numberAfter = ""
-                            if (cursorPosition < binding.input.text.length - 1) {
-                                numberAfter = NumberFormatter.extractNumbers(
-                                    binding.input.text.toString()
-                                        .substring(cursorPosition, binding.input.text.length),
-                                    decimalSeparatorSymbol
-                                ).first()
-                            }
-                            var tmpValue = value
-                            var numberBeforeParenthesisLength = 0
-                            if (decimalSeparatorSymbol in numberBefore) {
-                                numberBefore = "($numberBefore)"
-                                numberBeforeParenthesisLength += 2
-                            }
-                            if (decimalSeparatorSymbol in numberAfter) {
-                                tmpValue = "($value)"
-                            }
-                            val tmpNewValue = binding.input.text.toString().substring(
-                                0,
-                                (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)
-                            ) + numberBefore + tmpValue + rightValue
-                            newValueFormatted = NumberFormatter.format(
-                                tmpNewValue,
-                                decimalSeparatorSymbol,
-                                groupingSeparatorSymbol
-                            )
                         }
                     }
                 }
