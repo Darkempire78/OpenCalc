@@ -298,10 +298,10 @@ class Calculator(
                             is_infinity = true
                             x = BigDecimal.ZERO
                         } else {
-                            // If the number is negative and the factor is smaller than 1 ( e.g : (-5)^0.5 )
-                            if (x < BigDecimal.ZERO && exponent < BigDecimal.ONE) {
+                            // If the number is negative and the factor is a float ( e.g : (-5)^0.5 )
+                            if (x < BigDecimal.ZERO && decimalPart != BigDecimal.ZERO) {
                                 require_real_number = true
-                            }
+                            } // the factor is NOT a float
                             else if (exponent > BigDecimal.ZERO) {
 
                                 // To support bigdecimal exponent (e.g: 3.5)
