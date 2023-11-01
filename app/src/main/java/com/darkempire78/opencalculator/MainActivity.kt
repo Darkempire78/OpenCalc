@@ -925,6 +925,7 @@ class MainActivity : AppCompatActivity() {
         val textLength = binding.input.text.length
         var newValue = ""
         var isFunction = false
+        var isDecimal = false
         var functionLength = 0
 
         if (isEqualLastAction) {
@@ -956,11 +957,29 @@ class MainActivity : AppCompatActivity() {
                 newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1)
                     .toString() +
                         binding.input.text.subSequence(cursorPosition, textLength).toString()
+
+                isDecimal = binding.input.text[cursorPosition - 1] == decimalSeparatorSymbol[0]
+            }
+
+            // Handle decimal deletion as a special case when finding cursor position
+            var rightSideCommas = 0
+            if (isDecimal) {
+                val oldString = binding.input.text
+                var immediateRightDigits = 0
+                var index = cursorPosition
+                // Find number of digits that were previously to the right of the decimal
+                while (index < textLength && oldString[index].isDigit()) {
+                    index++
+                    immediateRightDigits++
+                }
+                // Determine how many thousands separators that gives us to our right
+                if (immediateRightDigits > 3)
+                    rightSideCommas = immediateRightDigits / 3
             }
 
             val newValueFormatted =
                 NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
-            var cursorOffset = newValueFormatted.length - newValue.length
+            var cursorOffset = newValueFormatted.length - newValue.length - rightSideCommas
             if (cursorOffset < 0) cursorOffset = 0
 
             binding.input.setText(newValueFormatted)
