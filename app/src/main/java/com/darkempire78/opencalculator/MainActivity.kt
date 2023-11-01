@@ -311,12 +311,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDisplay(view: View, value: String) {
+        val valueNoSeparators = value.replace(groupingSeparatorSymbol, "")
+        val isValueInt = valueNoSeparators.toIntOrNull() != null
+
         // Reset input with current number if following "equal"
         if (isEqualLastAction) {
-            val anyNumber = "0123456789$decimalSeparatorSymbol".toCharArray().map {
-                it.toString()
-            }
-            if (anyNumber.contains(value)) {
+            if (isValueInt || value == decimalSeparatorSymbol) {
                 binding.input.setText("")
             } else {
                 binding.input.setSelection(binding.input.text.length)
@@ -338,6 +338,8 @@ class MainActivity : AppCompatActivity() {
             val formerValue = binding.input.text.toString()
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
+            val leftValueFormatted =
+                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
@@ -347,7 +349,7 @@ class MainActivity : AppCompatActivity() {
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
-                // 1. When you click on the decimalSeparator button
+                // when you click on the decimalSeparator button
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
                     if (binding.input.text.toString().isNotEmpty()) {
                         var lastNumberBefore = ""
@@ -373,64 +375,17 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
-                // 2. When you click on a former calculation from the history
-                if (binding.input.text.isNotEmpty()
-                    && cursorPosition > 0
-                    && decimalSeparatorSymbol in value
-                    && value != decimalSeparatorSymbol // The value should not be *only* the decimal separator
-                ) {
-                    if (NumberFormatter.extractNumbers(value, decimalSeparatorSymbol)
-                            .isNotEmpty()
-                    ) {
-                        val firstValueNumber =
-                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).first()
-                        val lastValueNumber =
-                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).last()
-                        if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
-                            var numberBefore =
-                                binding.input.text.toString().substring(0, cursorPosition)
-                            if (numberBefore.last() !in "()*-/+^!√πe") {
-                                numberBefore = NumberFormatter.extractNumbers(
-                                    numberBefore,
-                                    decimalSeparatorSymbol
-                                ).last()
-                            }
-                            var numberAfter = ""
-                            if (cursorPosition < binding.input.text.length - 1) {
-                                numberAfter = NumberFormatter.extractNumbers(
-                                    binding.input.text.toString()
-                                        .substring(cursorPosition, binding.input.text.length),
-                                    decimalSeparatorSymbol
-                                ).first()
-                            }
-                            var tmpValue = value
-                            var numberBeforeParenthesisLength = 0
-                            if (decimalSeparatorSymbol in numberBefore) {
-                                numberBefore = "($numberBefore)"
-                                numberBeforeParenthesisLength += 2
-                            }
-                            if (decimalSeparatorSymbol in numberAfter) {
-                                tmpValue = "($value)"
-                            }
-                            val tmpNewValue = binding.input.text.toString().substring(
-                                0,
-                                (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)
-                            ) + numberBefore + tmpValue + rightValue
-                            newValueFormatted = NumberFormatter.format(
-                                tmpNewValue,
-                                decimalSeparatorSymbol,
-                                groupingSeparatorSymbol
-                            )
-                        }
-                    }
-                }
 
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
-                // Increase cursor position
-                val cursorOffset = newValueFormatted.length - newValue.length
-                binding.input.setSelection(cursorPosition + value.length + cursorOffset)
+                // Set cursor position
+                if (isValueInt) {
+                    val cursorOffset = newValueFormatted.length - newValue.length
+                    binding.input.setSelection(cursorPosition + value.length + cursorOffset)
+                } else {
+                    binding.input.setSelection(leftValueFormatted.length + value.length)
+                }
             }
         }
     }
@@ -969,6 +924,7 @@ class MainActivity : AppCompatActivity() {
         val textLength = binding.input.text.length
         var newValue = ""
         var isFunction = false
+        var isDecimal = false
         var functionLength = 0
 
         if (isEqualLastAction) {
@@ -1000,11 +956,29 @@ class MainActivity : AppCompatActivity() {
                 newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1)
                     .toString() +
                         binding.input.text.subSequence(cursorPosition, textLength).toString()
+
+                isDecimal = binding.input.text[cursorPosition - 1] == decimalSeparatorSymbol[0]
+            }
+
+            // Handle decimal deletion as a special case when finding cursor position
+            var rightSideCommas = 0
+            if (isDecimal) {
+                val oldString = binding.input.text
+                var immediateRightDigits = 0
+                var index = cursorPosition
+                // Find number of digits that were previously to the right of the decimal
+                while (index < textLength && oldString[index].isDigit()) {
+                    index++
+                    immediateRightDigits++
+                }
+                // Determine how many thousands separators that gives us to our right
+                if (immediateRightDigits > 3)
+                    rightSideCommas = immediateRightDigits / 3
             }
 
             val newValueFormatted =
                 NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
-            var cursorOffset = newValueFormatted.length - newValue.length
+            var cursorOffset = newValueFormatted.length - newValue.length - rightSideCommas
             if (cursorOffset < 0) cursorOffset = 0
 
             binding.input.setText(newValueFormatted)

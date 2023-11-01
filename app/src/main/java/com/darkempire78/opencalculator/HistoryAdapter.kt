@@ -60,6 +60,16 @@ class HistoryAdapter(
             private val separator: View = itemView.findViewById(R.id.history_separator)
             private val sameDateSeparator: View = itemView.findViewById(R.id.history_same_date_separator)
 
+            fun wrapInParenthesis(string: String): String {
+                val wrappedString : String
+                // Verify it is not already in parenthesis
+                if (string.first() != '(' || string.last() != ')') {
+                    return "($string)"
+                } else {
+                    return string
+                }
+            }
+
             fun bind(historyElement: History, position : Int) {
                 // Set calculation, result and time
                 calculation.text = historyElement.calculation
@@ -117,10 +127,12 @@ class HistoryAdapter(
 
                 // On click
                 calculation.setOnClickListener {
-                    onElementClick.invoke(historyElement.calculation)
+                    val formattedCalculation = wrapInParenthesis(historyElement.calculation)
+                    onElementClick.invoke(formattedCalculation)
                 }
                 result.setOnClickListener {
-                    onElementClick.invoke(historyElement.result)
+                    val formattedResult = wrapInParenthesis(historyElement.result)
+                    onElementClick.invoke(formattedResult)
                 }
 
                 calculation.setOnLongClickListener {
