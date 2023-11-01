@@ -106,6 +106,7 @@ class Themes(private val context: Context) {
         var theme = MyPreferences(context).theme
         if (theme == -1) {
             theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
+            MyPreferences(context).theme = theme
         }
         return themeMap[theme] ?: DEFAULT_THEME_INDEX
     }
