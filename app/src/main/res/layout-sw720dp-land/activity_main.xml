@@ -380,7 +380,7 @@
                         android:onClick="exponentButton"
                         app:srcCompat="@drawable/exponent" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/divideButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -426,7 +426,7 @@
                         android:text="@string/nine"
                         android:textSize="@dimen/button_text_size"/>
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/multiplyButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -473,7 +473,7 @@
                         android:text="@string/six"
                         android:textSize="@dimen/button_text_size"/>
 
-                    <ImageButton
+                    <android
                         android:id="@+id/subtractButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -519,7 +519,7 @@
                         android:text="@string/three"
                         android:textSize="@dimen/button_text_size"/>
 
-                    <ImageButton
+                    <android
                         android:id="@+id/addButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -566,7 +566,7 @@
                         app:srcCompat="@drawable/backspace_720dp"
                         tools:ignore="SpeakableTextPresentCheck" />
 
-                    <ImageButton
+                    <android
                         android:id="@+id/equalsButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
