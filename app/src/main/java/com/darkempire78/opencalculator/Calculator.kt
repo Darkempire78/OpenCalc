@@ -180,7 +180,7 @@ class Calculator(
                             x = factorial(x)
                         }
                         "ln" -> {
-                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                            if (x <= BigDecimal.ZERO) {
                                 domain_error = true
                             } else {
                                 x = BigDecimal(ln(x.toDouble()))
