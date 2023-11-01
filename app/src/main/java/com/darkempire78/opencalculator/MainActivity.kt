@@ -596,7 +596,6 @@ class MainActivity : AppCompatActivity() {
                 && currentSymbol != nextChar
                 && previousChar != "√" // No symbol can be added on an empty square root
                 && previousChar != decimalSeparatorSymbol // Ensure that the previous character is not a comma
-                && nextChar != decimalSeparatorSymbol // Ensure that the next character is not a comma
                 && (previousChar != "(" // Ensure that we are not at the beginning of a parenthesis
                         || currentSymbol == "-")
             ) { // Minus symbol is an override
