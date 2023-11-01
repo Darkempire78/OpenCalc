@@ -93,7 +93,7 @@
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/nine" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/divideButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -191,7 +191,7 @@
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/six" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/multiplyButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -286,7 +286,7 @@
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/three"/>
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/subtractButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -368,7 +368,7 @@
                         android:paddingEnd="5dp"
                         app:srcCompat="@drawable/backspace" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/addButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
@@ -378,7 +378,7 @@
                         android:onClick="addButton"
                         app:srcCompat="@drawable/add" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/equalsButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
