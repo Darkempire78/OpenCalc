@@ -48,6 +48,6 @@
     <string name="about_help_rate">ነዛ ኣፕሊኬሽን ገምግማ</string>
     <string name="about_help_donate">ወፈያ</string>
     <string name="settings_category_advanced">ዝተመሓየሸ</string>
-    <string name="settings_advanced_prevent_sleep_desc">እቲ መተግበሪ ኣብ ቅድመ-መቕድም እንከሎ፡ ስልኪ ካብ ምድቃስ ይከላኸል</string>
+    <string name="settings_advanced_prevent_sleep_desc">እቲ መተግበሪ ኣብ ቅድመ መቕድም እንከሎ ስልኪ ካብ ምድቃስ ይከላኸል</string>
     <string name="about_category_social">ማሕበራዊ</string>
 </resources>
