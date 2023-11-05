@@ -1,0 +1,13 @@
+New:
+- Add license to about section
+
+Improvements:
+- Update several translations
+- Enable symbol before decimal
+
+Fixes:
+- Cursor location
+- Crash when root of negative base
+- Crash when doing log or ln of a negative number
+- Crash when recreating landscape main activity
+- Everything after ').' in a calculation is ignored
