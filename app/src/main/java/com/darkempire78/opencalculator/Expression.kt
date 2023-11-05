@@ -119,7 +119,7 @@ class Expression {
                     cleanCalculationLength ++
                 }
             } else if (cleanCalculation[i] == ')') {
-                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(")) {
+                if (i+1 < cleanCalculation.length && (cleanCalculation[i+1] in "0123456789(.")) {
                     cleanCalculation = cleanCalculation.addCharAtIndex('*', i+1)
                     cleanCalculationLength ++
                 }
