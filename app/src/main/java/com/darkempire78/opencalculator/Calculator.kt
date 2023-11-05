@@ -83,7 +83,8 @@ class Calculator(
             fun parse(): BigDecimal {
                 nextChar()
                 val x = parseExpression()
-                if (pos < equation.length) println("Unexpected: " + ch.toChar() + "Expression: " + equation)
+                if (pos < equation.length) println("Unexpected: \"" + ch.toChar() + "\" in expression: " + equation)
+                syntax_error = true
                 return x
             }
 
