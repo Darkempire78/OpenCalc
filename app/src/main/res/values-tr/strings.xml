@@ -32,7 +32,7 @@
     <string name="about_category_social">SOSYAL MEDYA</string>
     <string name="settings_general_radians_desc">Öntanımlı olarak derece yerine radyan kullan</string>
     <string name="about_category_help">BİZE YARDIM EDİN</string>
-    <string name="about_category_other">DİĞER</string>
+    <string name="about_category_other">UYGULAMA BİLGİLERİ</string>
     <string name="about_help_rate">Bu uygulamayı değerlendirin</string>
     <string name="about_easter_egg">OpenCalc kullandığınız için teşekkürler ❤️</string>
     <string name="about_other_version">Sürüm</string>
@@ -48,4 +48,7 @@
     <string name="settings_advanced_long_click_copy_desc">Öğeyi seçmek yerine öğenin metine uzun basarak kopyalar</string>
     <string name="require_real_number">Reel sayı gerekli</string>
     <string name="settings_general_split_parenthesis_button">Parantez düğmesini iki düğmeye ayır</string>
+    <string name="settings_general_add_modulo_desc">\"X²\" düğmesini bir modulo düğmesi ile değiştir (\"INV\" düğmesine basıldığında kullanılabilir)</string>
+    <string name="about_other_license">Lisans</string>
+    <string name="settings_general_add_modulo">Modulo düğmesi ekle</string>
 </resources>
