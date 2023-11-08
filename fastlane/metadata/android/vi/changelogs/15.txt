@@ -1,4 +1,4 @@
-Thay đổi
+Thay đổi:
 - Màn hình Splash bây giờ có chế độ tối
 
 Sửa lỗi:

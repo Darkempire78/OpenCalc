@@ -1,4 +1,4 @@
-Perubahan 
+Perubahan:
 - Layar pembuka sekarang menjadi gelap
 
 Perbaikan: 

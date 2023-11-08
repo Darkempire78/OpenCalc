@@ -1,4 +1,4 @@
-変更
+変更:
 - Splash screen is dark now
 
 修正:

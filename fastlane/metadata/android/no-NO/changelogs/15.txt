@@ -1,4 +1,4 @@
-Endret
+Endret:
 - Startskjermen er mørk nå
 
 Fikset:
