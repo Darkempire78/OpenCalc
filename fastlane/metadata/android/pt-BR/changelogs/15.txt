@@ -1,4 +1,4 @@
-Mudança
+Mudança:
 - A tela do Splash está escura agora
 
 Correção:
