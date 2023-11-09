@@ -1,2 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="about_made_in_france">Készült ❤️-el Franciaországban</string>
+    <string name="settings_general_add_modulo_desc">Az \"X²\" gomb a moduló gombbal való lecserélése (az \"INV\" gomb megnyomásával elérhető)</string>
+    <string name="menu_clear_history">Előzmények törlése</string>
+    <string name="value_copied">Másolva</string>
+    <string name="theme_light">Világos</string>
+    <string name="settings_general_radians_desc">Radián használata fok helyett alapértelmezés szerint</string>
+    <string name="about_help_translate">Fordítás</string>
+    <string name="settings_category_formatting">FORMÁTUM</string>
+    <string name="settings_general_scientific_mode">Tudományos mód</string>
+    <string name="about_other_license">Licenc</string>
+    <string name="settings_history_size">Az előzményekben elmentett eredmények száma</string>
+    <string name="settings_formatting_precision">A tizedesjegyek száma</string>
+    <string name="settings_general_split_parenthesis_button_desc">Az \"AC\" gomb eltávolítása a zárójel gomb két gombra való osztásához</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="theme_dark">Sötét</string>
+    <string name="settings_general_language">Nyelv</string>
+    <string name="settings_general_vibration">Rezgés</string>
+    <string name="settings_formatting_scientific_notation_desc">Minden eredmény átalakítása tudományos írásmódba</string>
+    <string name="app_name_display">Számológép</string>
+    <string name="settings_advanced_long_click_copy_desc">Hosszú gombnyomás esetén a kijelölés helyett az elem szövegét másolja</string>
+    <string name="about_category_other">ALKALMAZÁSINFÓ</string>
+    <string name="syntax_error">Szintaxishiba</string>
+    <string name="theme_system">Rendszer</string>
+    <string name="settings_general_scientific_mode_desc">Tudományos mód használata alapértelmezés szerint</string>
+    <string name="about_easter_egg">Köszönjük, hogy az OpenCalc-ot használja ❤️</string>
+    <string name="menu_about">Névjegy</string>
+    <string name="infinity">Végtelen</string>
+    <string name="about_other_privacy_policy">Adatvédelmi irányelvek</string>
+    <string name="settings_advanced_long_click_copy">Hosszú gombnyomás az érték másolásához</string>
+    <string name="value_too_large">Érték túl nagy</string>
+    <string name="settings_category_general">ÁLTALÁNOS</string>
+    <string name="settings_general_add_modulo">Moduló gomb hozzáadása</string>
+    <string name="about_category_help">TÁMOGASS MINKET</string>
+    <string name="settings_formatting_scientific_notation">Számok tudományos írásmódban</string>
+    <string name="settings_general_theme">Téma</string>
+    <string name="settings_general_vibration_desc">Rezgés gombnyomáskor</string>
+    <string name="division_by_0">Nem osztható 0-val</string>
+    <string name="theme_amoled">Monokróm</string>
+    <string name="settings_advanced_prevent_sleep">Eszköz ébren tartása</string>
+    <string name="domain_error">Tartományhiba</string>
+    <string name="about_help_rate">Értékeld az alkalmazást</string>
+    <string name="require_real_number">Valós szám szükséges</string>
+    <string name="about_help_donate">Támogatás</string>
+    <string name="about_other_version">Verzió</string>
+    <string name="settings_category_advanced">HALADÓ</string>
+    <string name="settings_category_history">ELŐZMÉNYEK</string>
+    <string name="settings_general_radians">Radián</string>
+    <string name="settings_advanced_prevent_sleep_desc">A készülék elalvásának megakadályozása, amíg az alkalmazás aktív</string>
+    <string name="settings_general_split_parenthesis_button">A zárójel gomb két gombra való szétválasztása</string>
+    <string name="about_category_social">KÖZÖSSÉGI</string>
+</resources>
