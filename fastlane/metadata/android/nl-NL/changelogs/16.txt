@@ -1,4 +1,4 @@
 Opgelost:
-- Scrollbalk invoer
+- Schollen van invoerbalk
 - Noodzakelijk scrollen om resultaat te zien
-- Invoer wissen als nummer wordt ingedrukt na gelijk
+- Invoer wissen als getal wordt ingevoerd na gelijkteken

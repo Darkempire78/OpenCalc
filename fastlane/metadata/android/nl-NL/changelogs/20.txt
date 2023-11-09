@@ -1,4 +1,4 @@
 Opgelost:
 - Haakjes automatisch sluiten
-- Factori vermenigvuldigen zonder *
+- Vermenigvuldiging van faculteiten zonder *
 - Automatisch 0 toevoegen als getal begint met decimaalteken

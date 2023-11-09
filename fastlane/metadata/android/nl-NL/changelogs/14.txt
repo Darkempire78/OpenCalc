@@ -2,5 +2,5 @@ Nieuw:
 - Tipknop
 
 Wijzigen:
-- Geschiedenis-indeling impove
+- Geschiedenis-indeling verbeterd
 - Bijwerken minteken

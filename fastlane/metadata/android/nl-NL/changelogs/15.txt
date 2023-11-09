@@ -1,6 +1,6 @@
 Wijzigingen:
-- Spatscherm is nu donker
+- Startscherm is nu donker
 
 Opgelost:
 - probleem met toetsenbord
-- toetsenbord scrollt nog steeds
+- schollen van toetsenbord

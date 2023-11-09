@@ -1,0 +1,5 @@
+Nieuw:
+- Tegel Snelle instellingen
+
+Opgelost:
+- Vervelende toasts

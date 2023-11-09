@@ -1,0 +1,8 @@
+Nieuw:
+- Trillingssysteem
+
+Verandering:
+- Code verbetering
+
+Opgelost:
+- Volg het systeemthema bij de eerste lancering

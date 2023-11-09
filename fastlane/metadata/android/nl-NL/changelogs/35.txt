@@ -1,0 +1,5 @@
+Opgelost:
+- tan() werkt niet goed
+- Bij verwijdering van duizend scheidingsteken, verspringt de cursor
+- Plaatsing van haakjes in bestaande berekeningen
+- Grafisch probleem in landschapsmodus voor tablets van meer dan 10 inch
