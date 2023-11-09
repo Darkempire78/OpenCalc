@@ -1,0 +1,13 @@
+Novinky:
+- Přidána licence aplikace do stránky O aplikaci
+
+Zlepšení:
+- Aktualizováno několik překladů
+- Povolení symbolů před desetinnou značkou
+
+Opravy:
+- Lokace kurzoru
+- Spadnutí aplikace při odmocnění negativního čísla
+- Spadnutí aplikace při počítání log nebo ln záporného čísla
+- Spadnutí aplikace při znovu vytvoření hlavní stránky na šířku
+- Všechno po ').' je při výpoču ignorováno
