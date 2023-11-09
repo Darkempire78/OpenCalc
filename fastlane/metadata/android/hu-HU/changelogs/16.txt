@@ -1,0 +1,4 @@
+Javítás:
+- Bemeneti görgetősáv
+- Szükséges görgetés az eredmény megtekintéséhez
+- A bemenet törlése, ha egy számot az egyenlő után nyomnak meg

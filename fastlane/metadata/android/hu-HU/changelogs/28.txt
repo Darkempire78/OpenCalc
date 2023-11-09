@@ -1,0 +1,18 @@
+Új:
+- Belső számítási rendszer
+- Tizedes faktoriálisok
+- 2 tizedesvessző megakadályozása ugyanabban a számban
+- Brazil fordítás (@Bardock88)
+- Tajvani és hongkongi fordítás (@alecchangod)
+- Spanyol fordítás
+
+Javítás:
+- Előzmény görgetés (@MahmoudRH)
+- Eredmény pontosság
+- Törlés csoportosító elválasztókkal
+- "Matematikai hiba" megjelenítése "NaN" helyett (@lefterisgar)
+- Fekvő mód 10" táblagépekhez
+- Törlés az egyenlő gomb után
+- Összeomlás az előzményeredményre koppintáskor
+- Formázási kifejezéssel kapcsolatos probléma
+- Egyéb javítás

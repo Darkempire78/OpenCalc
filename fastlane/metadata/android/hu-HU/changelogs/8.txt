@@ -1,0 +1,2 @@
+Javítás:
+- Nagy számok összeomlásának javítása

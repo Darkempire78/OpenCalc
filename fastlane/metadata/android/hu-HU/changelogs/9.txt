@@ -1,0 +1,7 @@
+Változás:
+- új névjegy lap
+- elválasztó hozzáadása az monokróm témához
+
+Javítás:
+- jelölőnégyzet színe
+- alkalmazás neve (lefordítva EN és FR nyelven)

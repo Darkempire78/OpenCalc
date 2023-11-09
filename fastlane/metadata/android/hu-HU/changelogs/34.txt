@@ -1,0 +1,7 @@
+Frissítve:
+- A "végtelen" helyett a "túl nagy érték" megjelenítése
+
+Javítás:
+- Osztás negatív számokkal
+- Probléma a faktoriális függvénnyel
+- sin(x!) & cos(x!) rossz eredményt adnak

@@ -1,0 +1,7 @@
+Új:
+- Hosszú kattintás egy érték másolásához
+- Indonéz fordítás
+
+Javítás:
+- görgetés fekvő nézetben
+- fókuszprobléma

@@ -1,0 +1,9 @@
+Frissítve:
+- A szöveg színének módosítása hiba esetén
+- Az alkalmazás méretének csökkentése
+- Ne mentse az eredményt az előzmények közé, ha az megegyezik a számítással
+- Ne mentse a számítást az előzmények közé, ha az megegyezik a legutolsóval
+
+Javítás:
+- A Factoriel 0 visszaadja az 1-et
+- Matematikai szimbólum hozzáadása az egyenlő gomb megnyomása után

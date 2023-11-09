@@ -1,0 +1,15 @@
+Frissítve:
+- Számos fordítás
+- Beviteli terület a teljes képernyőn
+- Zárójeles rendszer
+
+Javítva:
+- Dupla toast, értékek másolásánál A13-ban
+- Tangens definíciós tartománya
+- Eredmény kiírása számítás beillesztésekor
+- 0-val közvetett osztás nem definiált
+- Osztás függvényekkel
+- Százalékos problémák
+- Trigonometrikus függvények rossz eredményt adnak vissza, ha az eredmény negatív
+- Matematikai hiba törli a számítást, ha új számot adunk meg
+- Zárójel probléma tangenssel

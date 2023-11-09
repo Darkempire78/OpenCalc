@@ -1,0 +1,6 @@
+Változás:
+- Splash képernyő most sötét
+
+Javítás:
+- billentyűzet probléma
+- billentyűzet még mindig görget
