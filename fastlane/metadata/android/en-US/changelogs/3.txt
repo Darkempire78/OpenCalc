@@ -1,7 +1,7 @@
 New: 
 - Vibration system
 
-Change:
+Changes:
 - Code improvement
 
 Fixes:

@@ -1,4 +1,4 @@
-Change:
+Changes:
 - add separators for large numbers
 - add Italian translation
 - add Arabic translation
