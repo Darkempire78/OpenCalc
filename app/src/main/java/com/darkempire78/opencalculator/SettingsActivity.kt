@@ -10,6 +10,8 @@ import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import java.util.*
@@ -96,6 +98,23 @@ class SettingsActivity : AppCompatActivity() {
                     println(e)
                 }
             }
+        }
+
+        override fun onDisplayPreferenceDialog(preference: Preference) {
+            if (preference is ListPreference) {
+                showListPreferenceDialog(preference)
+            } else {
+                super.onDisplayPreferenceDialog(preference)
+            }
+        }
+
+        private fun showListPreferenceDialog(preference : ListPreference) {
+            val dialogFragment = MaterialListPreference();
+            val bundle = Bundle(1);
+            bundle.putString("key", preference.key);
+            dialogFragment.arguments = bundle;
+            dialogFragment.setTargetFragment(this, 0);
+            dialogFragment.show(parentFragmentManager, "androidx.preference.PreferenceFragment.DIALOG");
         }
     }
 }
