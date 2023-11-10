@@ -17,6 +17,7 @@ import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
@@ -244,6 +245,17 @@ class MainActivity : AppCompatActivity() {
                 // Do nothing
             }
         })
+
+        // Close the history panel if the user use the back button else close the app
+        // https://developer.android.com/guide/navigation/navigation-custom-back#kotlin
+        val callback = this.onBackPressedDispatcher.addCallback(this) {
+            if (binding.slidingLayout.panelState == PanelState.EXPANDED) {
+                binding.slidingLayout.panelState = PanelState.COLLAPSED
+            } else {
+                finish()
+            }
+        }
+
     }
 
     fun openAppMenu(view: View) {
