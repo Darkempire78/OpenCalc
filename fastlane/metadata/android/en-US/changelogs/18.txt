@@ -2,6 +2,6 @@ New:
 - Long click to copy a value
 - Indonesian translation
 
-Fixed:
+Fixes:
 - scroll on landscape mode
 - focus issue

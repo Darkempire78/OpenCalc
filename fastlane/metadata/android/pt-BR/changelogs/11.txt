@@ -5,5 +5,5 @@ Mudanças:
 - Tradução de Hindi
 - Tradução de Azerbajian
 
-Fix:
+Fixes:
 - Porcento não matemático

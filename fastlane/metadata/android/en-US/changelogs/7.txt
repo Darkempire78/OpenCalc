@@ -1,2 +1,2 @@
-Fix:
+Fixes:
 - Fix Material You theme

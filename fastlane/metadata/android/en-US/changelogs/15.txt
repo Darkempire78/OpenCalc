@@ -1,6 +1,6 @@
 Change:
 - Splash screen is dark now
 
-Fix:
+Fixes:
 - keyboard issue
 - keyboard still scrolling

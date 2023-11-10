@@ -1,4 +1,4 @@
-Fixed:
+Fixes:
 - tan() does not work properly
 - Deleting a thousand separator causes the cursor to jump
 - Placement of parentheses inside existing calculations

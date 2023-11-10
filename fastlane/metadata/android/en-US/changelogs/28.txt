@@ -6,7 +6,7 @@ New:
 - Taiwanese and Hong Kongese translation (@alecchangod)
 - Spanish translation
 
-Fixed:
+Fixes:
 - History scroll (@MahmoudRH)
 - Result accuracy
 - Backspace with grouping separators

@@ -1,5 +1,5 @@
 Change:
 - Available for SDK 21+ (Android 5.0)
 
-Fix:
+Fixex:
 - Fix vibration

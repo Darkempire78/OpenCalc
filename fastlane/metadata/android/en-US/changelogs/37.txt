@@ -1,5 +1,5 @@
 New:
 - Quick Settings tile
 
-Fixed:
+Fixes:
 - Annoying toasts

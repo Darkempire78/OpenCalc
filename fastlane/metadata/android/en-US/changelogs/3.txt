@@ -4,5 +4,5 @@ New:
 Change:
 - Code improvement
 
-Fix:
+Fixes:
 - Follow the system theme at the first launch 

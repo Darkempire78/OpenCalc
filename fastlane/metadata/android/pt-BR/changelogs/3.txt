@@ -4,5 +4,5 @@ Novo:
 Mudança:
 - Melhoria do código
 
-Fix:
+Fixes:
 - Siga o tema do sistema no primeiro lançamento
