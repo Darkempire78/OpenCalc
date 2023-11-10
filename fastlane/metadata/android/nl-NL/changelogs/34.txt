@@ -1,0 +1,7 @@
+Bijgewerkt:
+- Geef "waarde te groot" weer in plaats van "oneindig"
+
+Opgelost:
+- Deling door negatieve getallen
+- Probleem met faculteitfunctie
+- sin(x!) & cos(x!) geven foutieve resultaten

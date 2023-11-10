@@ -1,0 +1,2 @@
+Opgelost:
+- Voegt trillingen toe aan knoppen die deze niet hebben

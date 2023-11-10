@@ -1,0 +1,15 @@
+Bijgewerkt:
+- Veel vertalingen
+- Invoergebied heeft de volledige schermgrootte
+- Haakjessysteem
+
+Opgelost:
+- Dubbele toast wanneer de waarde is gekopieerd voor Android 13
+- Definitiedomein van raaklijn
+- Geef het resultaat weer wanneer u een berekening plakt
+- Indirecte deling door nul is niet gedefinieerd
+- Deling door functies
+- Procentuele problemen
+- Goniometrische functies leveren verkeerde resultaten op als het resultaat negatief is
+- Wiskundige fout wist de volledige berekening wanneer een nieuw nummer wordt ingevoerd
+- Haakjesprobleem met raaklijn

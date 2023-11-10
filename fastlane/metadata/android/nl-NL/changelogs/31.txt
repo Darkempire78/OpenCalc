@@ -1,0 +1,9 @@
+Bijgewerkt:
+- Wijzig tekstkleur bij fout
+- Verminder de releasegrootte
+- Sla geen resultaat op in de geschiedenis als het gelijk is aan de berekening
+- Sla de berekening niet op in de geschiedenis als deze hetzelfde is als de laatste
+
+Opgelost:
+- 0! geeft 1 terug
+- Voeg een wiskundig symbool toe en daarna werd er gelijk gedrukt

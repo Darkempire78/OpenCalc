@@ -1,0 +1,8 @@
+Nieuw:
+- Expliciete fouten
+- Herontwerp van de geschiedenis
+- Voeg tijdstempels toe aan geschiedenisresultaten
+- Sta geen dubbele wiskundige symbolen toe bij invoer
+
+Bijgewerkt:
+- arccos, arcsin en arctan worden nu weergegeven als cos⁻¹, sin⁻¹ and tan⁻¹

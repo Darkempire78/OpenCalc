@@ -1,0 +1,5 @@
+Nieuw:
+- Pagina Instellingen
+
+Bijgewerkt:
+- Pagina Over

@@ -3,4 +3,4 @@ Nieuw:
 
 Veranderen:
 - Vertalingen bijwerken
-- Invoer wissen als nummer wordt ingedrukt na gelijk
+- Invoer wissen als getal wordt ingedrukt na gelijk

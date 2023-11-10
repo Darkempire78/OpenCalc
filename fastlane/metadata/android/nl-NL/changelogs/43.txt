@@ -1,0 +1,13 @@
+Nieuw:
+- Voeg licentie toe aan sectie Over
+
+Verbeteringen :
+- Update diverse vertalingen
+- Symbool voor decimaal mogelijk maken
+
+Opgelost:
+- Cursorkocatie
+- Crash bij wortel van negatieve basis
+- Crash bij log of ln van een negatief getal
+- Crash bij het opnieuw creëren van de hoofdactiviteit van het landschap
+- Alles na ').' in een berekening wordt genegeerd

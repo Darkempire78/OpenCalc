@@ -1,0 +1,13 @@
+Neu:
+- Lizenz zum Menü"Über" hinzugefügt
+
+Verbesserungen:
+- Aktualisierung mehrerer Übersetzungen
+- Symbol vor dem Dezimalzeichen
+
+Fehlerbehebungen:
+- Position des Cursors
+- Absturz bei Wurzel mit negativer Basis
+- Absturz bei log oder ln einer negativen Zahl
+- Absturz bei der Neuerstellung der Hauptaktivität Landschaft
+- Alles nach ').' in einer Berechnung wird ignoriert

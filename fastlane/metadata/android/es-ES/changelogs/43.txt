@@ -9,5 +9,5 @@ Correcciones:
 - Ubicación del cursor
 - Bloqueo al hacer raíz de base negativa
 - Bloqueo al hacer un log o ln de un número negativo
-- Bloqueo al recrear la actividad principal del paisaje
+- Bloqueo al recrear la actividad principal
 - Se ignora todo lo que sigue a ').' en un cálculo
