@@ -38,6 +38,9 @@ class AboutActivity : AppCompatActivity() {
         binding.aboutBackButton.setOnClickListener {
             finish()
         }
+        binding.aboutBackButtonHitbox.setOnClickListener {
+            finish()
+        }
 
         // Translate
         binding.aboutTranslate.setOnClickListener {

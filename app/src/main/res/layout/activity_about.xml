@@ -24,6 +24,14 @@
             app:layout_constraintTop_toTopOf="parent"
             android:importantForAccessibility="no" />
 
+        <View
+            android:id="@+id/about_back_button_hitbox"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="@+id/about_back_button"
+            app:layout_constraintStart_toStartOf="@+id/about_back_button"
+            tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/about_back_button_text"
             android:layout_width="wrap_content"
