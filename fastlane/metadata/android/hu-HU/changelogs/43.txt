@@ -1,0 +1,13 @@
+Új:
+- Licenc hozzáadása a kb.
+
+Frissítések:
+- Több fordítás frissítése
+- A tizedesjegy előtti szimbólum engedélyezése
+
+Javítások:
+- A kurzor helye
+- Összeomlás, ha a gyök negatív bázisú
+- Összeomlás negatív számok log vagy ln számolásakor
+- Összeomlás a fekvő nézet fő tevékenységének újbóli létrehozásakor
+- A számításban a ').' után minden figyelmen kívül hagyásra kerül

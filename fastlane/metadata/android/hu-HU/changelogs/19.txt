@@ -1,0 +1,8 @@
+Új:
+- Toast értesítás, amikor értéket másolsz
+
+Javítás:
+- A rendszer témájának követése, amely támogatja a Material You-t
+- A táblagépek támogatása javult
+- A kis képernyőméret támogatása javult
+- Az alkalmazásikonikon nem jelenik meg 8-nál alacsonyabb verziójú Android rendszernél

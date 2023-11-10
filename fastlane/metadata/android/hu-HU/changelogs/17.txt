@@ -1,0 +1,2 @@
+Új:
+- Előzmények törlése

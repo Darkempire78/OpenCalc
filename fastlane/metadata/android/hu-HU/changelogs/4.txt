@@ -1,0 +1,2 @@
+Javítás:
+- Rezgések hozzáadása olyan gombokhoz, amelyek nem rendelkeznek rezgésekkel

@@ -1,0 +1,8 @@
+Új:
+- Explicit hibák
+- Az előzmények újratervezése
+- Időbélyegzők hozzáadása az előzményekhez
+- Ne engedélyezze a matematikai szimbólumok duplikálását a bemeneten
+
+Frissítve:
+- arccos, arcsin és arctan mostantól cos-¹, sin-¹ és tan-¹ formában jelenik meg

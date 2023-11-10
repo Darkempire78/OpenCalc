@@ -1,0 +1,5 @@
+Javítás:
+- tan() nem működik megfelelően
+- Az ezres elválasztójel törlése a kurzor ugrását okozza
+- A zárójelek elhelyezése a meglévő számításokon belül
+- Grafikai probléma a 10"-nél nagyobb táblagépek esetében fekvő módban

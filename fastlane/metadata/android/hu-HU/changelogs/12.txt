@@ -1,0 +1,8 @@
+Új:
+- Előzmények
+
+Változás:
+- Optimalizálás
+
+Javítás:
+- Eredménymegjelenítési problémák

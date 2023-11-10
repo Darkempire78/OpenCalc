@@ -1,0 +1,6 @@
+Új:
+- Adományozás gomb
+
+Változás:
+- Előzmények bevitelének formátuma
+- Mínusz karakter frissítése
