@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.darkempire78.opencalculator"
-        resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
+        resourceConfigurations += ['ar', 'az', 'be', 'bn', 'bs', 'cs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'hu', 'in', 'it', 'ja', 'kn', 'mk', 'ml', 'nb-rNO', 'nl', 'or', 'pl', 'pt-rBR', 'ro', 'ru', 'sat', 'sr', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rHK', 'zh-rTW']
         minSdkVersion 24
         targetSdkVersion 34
         versionCode 44
