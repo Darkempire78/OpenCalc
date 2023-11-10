@@ -1,6 +1,6 @@
 New:
 - Themed icon
 
-Change:
+Changes:
 - Update translations
 - Clear input if number pressed after equal

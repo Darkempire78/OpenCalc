@@ -1,4 +1,4 @@
-Change:
+Changes:
 - Splash screen is dark now
 
 Fixes:

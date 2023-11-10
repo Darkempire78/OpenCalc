@@ -1,4 +1,4 @@
-Change:
+Changes:
 - German translation
 - Russian translation
 - Greek translation

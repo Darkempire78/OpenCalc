@@ -1,4 +1,4 @@
-Change:
+Changes:
 - new about page
 - add separator for the amoled theme
 
