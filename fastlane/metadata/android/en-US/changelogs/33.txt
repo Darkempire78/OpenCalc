@@ -3,7 +3,7 @@ Updated:
 - Input area takes the full screen size
 - Parenthesis system
 
-Fixed:
+Fixes:
 - Double toast when value copied for android 13
 - Definition domain of tangent
 - Display result when you paste a calculation

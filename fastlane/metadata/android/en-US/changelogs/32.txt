@@ -1,2 +1,2 @@
-Fixed:
+Fixes:
 - Crash on small screens and tablets

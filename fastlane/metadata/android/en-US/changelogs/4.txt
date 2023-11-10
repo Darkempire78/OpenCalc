@@ -1,2 +1,2 @@
-Fix:
+Fixes:
 - Adds vibrations to buttons that don't have them

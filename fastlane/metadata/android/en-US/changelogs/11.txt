@@ -5,5 +5,5 @@ Change:
 - Hindi translation
 - Azerbajian translation
 
-Fix:
+Fixes:
 - Unmathematical percent

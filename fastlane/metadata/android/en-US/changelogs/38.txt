@@ -1,2 +1,2 @@
-Fixed:
+Fixes:
 - Percentage division

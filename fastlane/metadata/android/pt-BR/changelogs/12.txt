@@ -4,5 +4,5 @@ Novo:
 Mudança:
 - Otimização
 
-Fix:
+Fixes:
 - Problemas de exibição de resultados

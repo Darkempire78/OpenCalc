@@ -4,5 +4,5 @@ New:
 Change:
 - Optimisation
 
-Fix:
+Fixes:
 - Result display issues
