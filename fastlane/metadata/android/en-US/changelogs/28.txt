@@ -2,9 +2,7 @@ New:
 - Internal calculation system
 - Decimal factorials
 - Prevent the presence of two decimal separators in the same number
-- Brazilian translation (@Bardock88)
-- Taiwanese and Hong Kongese translation (@alecchangod)
-- Spanish translation
+- Translations of new languages (@Bardock88, @alecchangod)
 
 Fixes:
 - History scroll (@MahmoudRH)
