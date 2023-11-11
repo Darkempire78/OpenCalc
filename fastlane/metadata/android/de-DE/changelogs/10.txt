@@ -1,4 +1,4 @@
-Änderung:
+Änderungen:
 - Trennzeichen für große Zahlen hinzugefügt
 - Italienisch-Übersetzung hinzugefügt
 - Arabisch-Übersetzung hinzugefügt

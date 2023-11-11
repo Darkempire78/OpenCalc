@@ -2,6 +2,6 @@ Neu:
 - Lange drücken um Wert zu kopieren
 - Indonesische Übersetzung
 
-Fehlerbehebung:
+Fehlerbehebungen:
 - Scrollen im Querformat
 - Fokus Fehler

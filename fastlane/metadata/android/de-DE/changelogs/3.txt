@@ -1,8 +1,8 @@
 Neu:
 - Vibrationssystem
 
-Änderung:
+Änderungen:
 - Codeverbesserung
 
-Fehlerbehebung:
+Fehlerbehebungen:
 - Folge dem System Design beim ersten Start der App

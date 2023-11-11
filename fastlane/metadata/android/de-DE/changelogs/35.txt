@@ -1,4 +1,4 @@
-Fehlerbehebung:
+Fehlerbehebungen:
 - tan() funktioniert nicht richtig
 - Löschen eines Tausendertrennzeichens verursacht Cursorsprung
 - Platzierung von Klammern in bereits bestehenden Berechnungen

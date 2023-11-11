@@ -1,2 +1,2 @@
-Fehlerbehebung:
+Fehlerbehebungen:
 - Vibrationen zu Tasten hinzugefügt, bei denen diese fehlt
