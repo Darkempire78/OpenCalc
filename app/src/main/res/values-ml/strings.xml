@@ -32,7 +32,7 @@
     <string name="app_name_display">കണക്കുക്കൂട്ടല്‍ യന്ത്രം</string>
     <string name="about_category_help">ഞങ്ങളെ സഹായിക്കൂ</string>
     <string name="about_help_translate">വിവർത്തനം ചെയ്യുക</string>
-    <string name="about_category_other">മറ്റുള്ളവ</string>
+    <string name="about_category_info">മറ്റുള്ളവ</string>
     <string name="theme_dark">ഇരുട്ട്</string>
     <string name="menu_settings">ക്രമീകരണങ്ങൾ</string>
     <string name="settings_general_vibration">വിറയലുകൾ</string>

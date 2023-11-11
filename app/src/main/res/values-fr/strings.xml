@@ -30,7 +30,7 @@
     <string name="about_category_help">NOUS AIDER</string>
     <string name="about_help_donate">Soutenir</string>
     <string name="about_category_social">SOCIAL</string>
-    <string name="about_category_other">AUTRE</string>
+    <string name="about_category_info">AUTRE</string>
     <string name="about_help_translate">Traduire</string>
     <string name="about_help_rate">Évaluer cette application</string>
     <string name="about_other_version">Version</string>
