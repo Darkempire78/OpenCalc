@@ -27,7 +27,7 @@
     <string name="settings_general_radians_desc">Usar radianes en vez de grados por defecto</string>
     <string name="about_category_help">AYUDANOS</string>
     <string name="about_category_social">SOCIAL</string>
-    <string name="about_category_other">INFORMACION DE LA APPLICACION</string>
+    <string name="about_category_info">INFORMACION DE LA APPLICACION</string>
     <string name="about_help_translate">Traducir</string>
     <string name="about_other_version">Versión</string>
     <string name="about_easter_egg">Gracias por utilizar OpenCalc ❤️</string>

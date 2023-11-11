@@ -20,7 +20,7 @@
     <string name="settings_formatting_scientific_notation_desc">Minden eredmény átalakítása tudományos írásmódba</string>
     <string name="app_name_display">Számológép</string>
     <string name="settings_advanced_long_click_copy_desc">Hosszú gombnyomás esetén a kijelölés helyett az elem szövegét másolja</string>
-    <string name="about_category_other">ALKALMAZÁSINFÓ</string>
+    <string name="about_category_info">ALKALMAZÁSINFÓ</string>
     <string name="syntax_error">Szintaxishiba</string>
     <string name="theme_system">Rendszer</string>
     <string name="settings_general_scientific_mode_desc">Tudományos mód használata alapértelmezés szerint</string>

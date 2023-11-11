@@ -34,7 +34,7 @@
     <string name="about_other_version">Version</string>
     <string name="about_easter_egg">Danke, dass du OpenCalc nutzt ❤️</string>
     <string name="about_made_in_france">Made with ❤️ in France</string>
-    <string name="about_category_other">APP-INFOS</string>
+    <string name="about_category_info">APP-INFOS</string>
     <string name="settings_formatting_precision">Anzahl der Nachkommastellen</string>
     <string name="about_other_privacy_policy">Datenschutzerklärung</string>
     <string name="settings_general_language">Sprache</string>

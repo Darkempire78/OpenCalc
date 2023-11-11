@@ -32,7 +32,7 @@
     <string name="about_category_social">SOSYAL MEDYA</string>
     <string name="settings_general_radians_desc">Öntanımlı olarak derece yerine radyan kullan</string>
     <string name="about_category_help">BİZE YARDIM EDİN</string>
-    <string name="about_category_other">UYGULAMA BİLGİLERİ</string>
+    <string name="about_category_info">UYGULAMA BİLGİLERİ</string>
     <string name="about_help_rate">Bu uygulamayı değerlendirin</string>
     <string name="about_easter_egg">OpenCalc kullandığınız için teşekkürler ❤️</string>
     <string name="about_other_version">Sürüm</string>

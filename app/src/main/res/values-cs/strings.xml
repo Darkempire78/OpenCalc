@@ -27,7 +27,7 @@
     <string name="about_category_social">SOCIÁLNÍ</string>
     <string name="domain_error">Chyba domény</string>
     <string name="syntax_error">Chyba syntaxe</string>
-    <string name="about_category_other">INFO O APLIKACI</string>
+    <string name="about_category_info">INFO O APLIKACI</string>
     <string name="about_help_translate">Překlad</string>
     <string name="about_help_rate">Ohodnotit aplikaci</string>
     <string name="about_easter_egg">Děkujeme za používání OpenCalc ❤️</string>
