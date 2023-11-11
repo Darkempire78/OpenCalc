@@ -36,7 +36,7 @@
     <string name="settings_formatting_precision">ቍጽሪ ናይ ዲሲማል ቦታታት</string>
     <string name="settings_formatting_scientific_notation_desc">ን\'ዅሉ ውጽኢት ናብ ስነ-ፍልጠታዊ መዘኻኸሪታት ቀይሮ</string>
     <string name="settings_advanced_long_click_copy_desc">ነዊሕ ጽቃጥ ነቲ ጽሑፍ ናይቲ ኣቕሓ ኣብ ክንዲ ምምራጽ ይቕድሖ</string>
-    <string name="about_category_other">ኣፕሊኬሽን ሓበሬታ</string>
+    <string name="about_category_info">ኣፕሊኬሽን ሓበሬታ</string>
     <string name="syntax_error">ጌጋ ሲንታክስ</string>
     <string name="about_other_privacy_policy">ናይ ስቱርነት ፖሊሲ</string>
     <string name="settings_advanced_long_click_copy">ነዊሕ ተውቕ ንምቕዳሕ</string>
