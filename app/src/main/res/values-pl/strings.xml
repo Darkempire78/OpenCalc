@@ -19,7 +19,7 @@
     <string name="settings_history_size">Wyniki zapisane w historii</string>
     <string name="settings_advanced_prevent_sleep">Powstrzymaj telefon przed uśpieniem</string>
     <string name="settings_general_scientific_mode_desc">Uruchamiaj domyślnie tryb naukowy</string>
-    <string name="about_category_info">INNE</string>
+    <string name="about_category_other">INNE</string>
     <string name="about_help_translate">Tłumacz</string>
     <string name="about_help_rate">Oceń tę aplikację</string>
     <string name="about_other_version">Wersja</string>

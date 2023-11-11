@@ -19,7 +19,7 @@
     <string name="settings_formatting_scientific_notation_desc">Konvertera alla resultat till vetenskaplig notation</string>
     <string name="app_name_display">Kalkylator</string>
     <string name="settings_advanced_long_click_copy_desc">Långtryckning kopierar objektets text i stället för att markera den</string>
-    <string name="about_category_info">ÖVRIGT</string>
+    <string name="about_category_other">ÖVRIGT</string>
     <string name="syntax_error">Syntaxfel</string>
     <string name="theme_system">System</string>
     <string name="settings_general_scientific_mode_desc">Aktivera vetenskapligt läge som standard</string>

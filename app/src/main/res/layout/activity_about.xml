@@ -154,11 +154,11 @@
             app:layout_constraintTop_toBottomOf="@+id/about_discord" />
 
         <TextView
-            android:id="@+id/about_category_info"
+            android:id="@+id/about_category_other"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="65dp"
-            android:text="@string/about_category_info"
+            android:text="@string/about_category_other"
             android:textColor="?attr/text_category_color"
             android:textStyle="bold"
             android:layout_marginTop="15dp"
@@ -175,7 +175,7 @@
             android:text="@string/about_other_license"
             android:textSize="@dimen/about_text"
             app:drawableLeftCompat="@drawable/license"
-            app:layout_constraintTop_toBottomOf="@+id/about_category_info" />
+            app:layout_constraintTop_toBottomOf="@+id/about_category_other" />
 
         <TextView
             android:id="@+id/about_privacy_policy"

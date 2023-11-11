@@ -28,7 +28,7 @@
     <string name="about_help_donate">Донат</string>
     <string name="about_category_social">СОЦСЕТИ</string>
     <string name="about_help_translate">Перевести</string>
-    <string name="about_category_info">ИНФОРМАЦИЯ О ПРИЛОЖЕНИИ</string>
+    <string name="about_category_other">ИНФОРМАЦИЯ О ПРИЛОЖЕНИИ</string>
     <string name="about_help_rate">Оценить приложение</string>
     <string name="about_other_version">Версия</string>
     <string name="about_easter_egg">Спасибо за использование OpenCalc ❤️</string>

@@ -94,7 +94,7 @@
     <!-- About page -->
     <string name="about_category_help">HELP US</string>
     <string name="about_category_social">SOCIAL</string>
-    <string name="about_category_info">APP INFO</string>
+    <string name="about_category_other">APP INFO</string>
 
     <string name="about_help_donate">Donate</string>
     <string name="about_help_translate">Translate</string>

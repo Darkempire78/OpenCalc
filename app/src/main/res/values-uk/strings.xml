@@ -24,7 +24,7 @@
     <string name="settings_general_radians_desc">Використовувати радіани замість градусів за замовчуванням</string>
     <string name="about_help_donate">Пожертвувати</string>
     <string name="about_category_social">СОЦІАЛЬНІ МЕРЕЖІ</string>
-    <string name="about_category_info">ІНФОРМАЦІЯ ПРО ЗАСТОСУНОК</string>
+    <string name="about_category_other">ІНФОРМАЦІЯ ПРО ЗАСТОСУНОК</string>
     <string name="about_help_translate">Перекласти</string>
     <string name="about_help_rate">Оцінити застосунок</string>
     <string name="about_other_version">Версія</string>

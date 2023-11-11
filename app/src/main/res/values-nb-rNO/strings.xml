@@ -27,7 +27,7 @@
     <string name="settings_general_scientific_mode_desc">Aktiver vitenskapelig modus som forvalg</string>
     <string name="settings_history_size">Resultater lagret i historikk</string>
     <string name="settings_category_general">Generelt</string>
-    <string name="about_category_info">Annet</string>
+    <string name="about_category_other">Annet</string>
     <string name="about_category_help">Hjelp oss</string>
     <string name="about_help_donate">Doner</string>
     <string name="about_other_version">Versjon</string>

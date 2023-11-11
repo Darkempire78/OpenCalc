@@ -12,7 +12,7 @@
     <string name="about_help_donate">寄付</string>
     <string name="about_category_social">問い合わせ</string>
     <string name="about_help_translate">翻訳</string>
-    <string name="about_category_info">その他</string>
+    <string name="about_category_other">その他</string>
     <string name="about_help_rate">このアプリを評価する</string>
     <string name="about_other_version">バージョン</string>
     <string name="about_easter_egg">OpenCalc をご利用いただきありがとうございます❤️</string>
