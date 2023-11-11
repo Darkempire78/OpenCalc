@@ -15,4 +15,4 @@ Opgelost:
 - Backspace na gelijke knop
 - Crash bij tikken op geschiedenisresultaat
 - Enkele problemen met opmaakuitdrukkingen
-- Verscheidene andere fixes
+- Verscheidene andere verbeteringen
