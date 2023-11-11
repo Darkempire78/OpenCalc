@@ -7,7 +7,6 @@ Fixes:
 - History scroll (@MahmoudRH)
 - Result accuracy
 - Backspace with grouping separators
-- Display "Math Error" instead of "NaN" (@lefterisgar)
 - Landscape mode for 10 inch tablet
 - Backspace after equal button
 - Crash when tapping on history result
