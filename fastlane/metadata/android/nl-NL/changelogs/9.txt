@@ -1,4 +1,4 @@
-Verandering:
+Veranderingen:
 - Nieuwe pagina Over
 - Voeg een scheidingsteken toe voor het Amoled thema
 

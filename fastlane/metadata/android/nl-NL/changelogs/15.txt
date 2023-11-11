@@ -1,4 +1,4 @@
-Wijzigingen:
+Veranderingen:
 - Startscherm is nu donker
 
 Opgelost:

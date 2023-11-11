@@ -1,7 +1,7 @@
 Novedad:
 - Historia
 
-Cambiado:
+Cambios:
 - Optimización
 
 Corrección:
