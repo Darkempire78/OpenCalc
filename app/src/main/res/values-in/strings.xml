@@ -16,7 +16,7 @@
     <string name="settings_general_radians_desc">Gunakan radian bukan derajat secara default</string>
     <string name="settings_category_formatting">MEMFORMAT</string>
     <string name="settings_general_scientific_mode">Mode ilmiah</string>
-    <string name="about_other_license">Lisensi</string>
+    <string name="about_other_license">Lisensi GPL 3.0</string>
     <string name="settings_general_split_parenthesis_button_desc">Hapus tombol \"AC\" untuk membagi tombol parentheses ke dua tombol</string>
     <string name="menu_settings">Pengaturan</string>
     <string name="settings_general_language">Bahasa</string>

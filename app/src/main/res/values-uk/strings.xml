@@ -50,5 +50,5 @@
     <string name="settings_category_formatting">ФОРМАТУВАННЯ</string>
     <string name="settings_formatting_scientific_notation_desc">Перетворювати всі результати в науковому позначенні</string>
     <string name="require_real_number">Потрібне дійсне число</string>
-    <string name="about_other_license">Ліцензія</string>
+    <string name="about_other_license">Ліцензія GPL 3.0</string>
 </resources>

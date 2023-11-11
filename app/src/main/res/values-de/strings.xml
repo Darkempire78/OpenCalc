@@ -51,5 +51,5 @@
     <string name="settings_general_split_parenthesis_button">Klammern-Taste in zwei Tasten aufteilen</string>
     <string name="settings_general_split_parenthesis_button_desc">Die „AC“-Taste entfernen, um die Klammern-Taste in zwei Tasten aufzuteilen</string>
     <string name="require_real_number">Reelle Zahl erforderlich</string>
-    <string name="about_other_license">Lizenz</string>
+    <string name="about_other_license">Lizenz GPL 3.0</string>
 </resources>

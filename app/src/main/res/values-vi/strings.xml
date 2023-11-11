@@ -35,7 +35,7 @@
     <string name="settings_advanced_prevent_sleep">Giữ cho màn hình không tự tắt</string>
     <string name="settings_advanced_prevent_sleep_desc">Ngăn màn hình tắt đi khi ứng dụng đang được mở</string>
     <string name="settings_general_split_parenthesis_button">Chia nút dấu ngoặc thành hai nút</string>
-    <string name="about_other_license">Giấy phép</string>
+    <string name="about_other_license">Giấy phép GPL 3.0</string>
     <string name="settings_general_radians_desc">Sử dụng radian thay vì độ theo mặc định</string>
     <string name="settings_advanced_long_click_copy_desc">Nhấn và giữ để sao chép văn bản thay vì chọn nó</string>
     <string name="settings_advanced_long_click_copy">Nhấn và giữ để sao chép giá trị</string>
