@@ -1,4 +1,4 @@
-New: 
+New:
 - Vibration system
 
 Changes:
