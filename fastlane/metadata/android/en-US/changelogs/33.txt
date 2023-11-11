@@ -1,5 +1,4 @@
 Updated:
-- Many translations
 - Input area takes the full screen size
 - Parenthesis system
 
@@ -11,5 +10,4 @@ Fixes:
 - Division by functions
 - Percent issues
 - Trigonometric functions return wrong results if the result is negative
-- Math error clears entire calculation when new number is entered
-- Parenthesis problem with tangent
+- Several other fixes
