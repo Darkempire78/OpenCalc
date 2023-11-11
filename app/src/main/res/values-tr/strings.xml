@@ -49,6 +49,6 @@
     <string name="require_real_number">Reel sayı gerekli</string>
     <string name="settings_general_split_parenthesis_button">Parantez düğmesini iki düğmeye ayır</string>
     <string name="settings_general_add_modulo_desc">\"X²\" düğmesini bir modulo düğmesi ile değiştir (\"INV\" düğmesine basıldığında kullanılabilir)</string>
-    <string name="about_other_license">Lisans</string>
+    <string name="about_other_license">Lisans GPL 3.0</string>
     <string name="settings_general_add_modulo">Modulo düğmesi ekle</string>
 </resources>

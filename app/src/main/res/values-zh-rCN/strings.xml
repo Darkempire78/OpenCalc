@@ -49,5 +49,5 @@
     <string name="settings_formatting_scientific_notation">以科学计数法显示值</string>
     <string name="require_real_number">需要实数</string>
     <string name="settings_general_split_parenthesis_button">将圆括号按钮分割成两个按钮</string>
-    <string name="about_other_license">许可证</string>
+    <string name="about_other_license">许可证 GPL 3.0</string>
 </resources>

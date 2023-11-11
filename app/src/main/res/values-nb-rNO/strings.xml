@@ -41,7 +41,7 @@
     <string name="value_too_large">Verdien er for stor</string>
     <string name="settings_general_add_modulo_desc">Erstatt «X²»-knappen med en modulo-knapp (tilgjengelig etter at «INV»-knappen trykkes)</string>
     <string name="settings_category_formatting">Formatering</string>
-    <string name="about_other_license">Lisens</string>
+    <string name="about_other_license">Lisens GPL 3.0</string>
     <string name="settings_general_split_parenthesis_button_desc">Fjern «AC»-knappen som deler parentes-knappen inn i to deler</string>
     <string name="settings_formatting_scientific_notation_desc">Konverter alle resultater til vitenskapelig notasjon</string>
     <string name="settings_advanced_long_click_copy_desc">Lang-trykk kopierer teksten til et element, istedenfor å velge det</string>
