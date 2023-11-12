@@ -3,7 +3,7 @@ Nieuw:
 - Decimale factoren
 - Voorkom de aanwezigheid van twee decimale scheidingstekens in hetzelfde getal
 - Braziliaanse vertaling (@Bardock88)
-- Taiwanese en Hongkongese vertaling (@alecchangod)
+- Taiwanese en Hongkongchinese vertaling (@alecchangod)
 - Spaanse vertaling
 
 Opgelost:
