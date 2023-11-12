@@ -1,5 +1,5 @@
-Cambio:
+Cambios:
 - Disponible para SDK 21+ (Android 5.0)
 
-Corregido:
+Correcciones:
 - Fijar la vibración

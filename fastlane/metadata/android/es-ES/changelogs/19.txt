@@ -1,7 +1,7 @@
 Nuevo:
 - Brindis al copiar un valor
 
-Corregido:
+Correcciones:
 - El tema del sistema es compatible con Material You
 - Mejora de la compatibilidad con tabletas
 - Mejorar el soporte para pantallas pequeñas

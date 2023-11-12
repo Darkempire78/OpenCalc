@@ -2,6 +2,6 @@ Nuevo:
 - Clic largo para copiar un valor
 - Traducción al indonesio
 
-Corregido:
+Correcciones:
 - Desplazamiento en modo horizontal
 - problema de enfoque

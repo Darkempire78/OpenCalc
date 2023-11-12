@@ -6,7 +6,7 @@ Nuevo:
 - Traducción Taiwanés y Hongkonés (@alecchangod)
 - Traducción Español
 
-Fijado:
+Correcciones:
 - Desplazo en el historial (@MahmoudRH)
 - Precisión del resultado
 - Retroceso con separadores
@@ -15,4 +15,4 @@ Fijado:
 - Retroceso después del igual
 - Bloqueo del resultado del historial
 - Problemas en el formato de expresiones
-- Otros arreglos
+- Otras

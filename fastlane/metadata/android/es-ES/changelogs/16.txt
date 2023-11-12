@@ -1,4 +1,4 @@
-Corregido:
+Correcciones:
 - Barra de desplazamiento de entrada
 - Desplazamiento necesario para ver el resultado
 - Borrar la entrada si se pulsa número después del igual
