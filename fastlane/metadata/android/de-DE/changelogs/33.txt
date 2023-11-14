@@ -1,9 +1,9 @@
-Aktualisiert:
+Änderungen:
 - Viele Übersetzungen
 - Eingabebereich nutzt volle Displaygröße
 - Klammerungssystem
 
-Behoben:
+Fehlerbehebungen:
 - Doppelte Toast-Nachricht beim Kopieren eines Wertes mit Android 13
 - Definitionsbereich des Tangens
 - Zeige Ergebnis, wenn Berechnung eingefügt wird

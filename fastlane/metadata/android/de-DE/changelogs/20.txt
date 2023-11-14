@@ -1,4 +1,4 @@
-Fehlerbehebung:
+Fehlerbehebungen:
 - Automatisches Schließen von Klammern
 - Multipliziere Fakultäten ohne *
 - Füge automatisch 0 hinzu, wenn Zahl mit Dezimaltrennzeichen beginnt

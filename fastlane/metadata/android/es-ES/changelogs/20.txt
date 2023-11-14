@@ -1,4 +1,4 @@
-Corregido:
+Correcciones:
 - Cierre automático de paréntesis
 - Multiplicar factoriales sin *
 - Auto añadir 0 cuando el número empieza con separador decimal

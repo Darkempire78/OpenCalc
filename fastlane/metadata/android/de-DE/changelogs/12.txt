@@ -1,8 +1,8 @@
 Neu:
 - Verlauf
 
-Änderung:
+Änderungen:
 - Optimierung
 
-Fehlerbehebung:
+Fehlerbehebungen:
 - Ergebnis zeigt Fehlermeldungen

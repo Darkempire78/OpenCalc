@@ -1,5 +1,5 @@
 Neu:
-- Lizenz zum Menü"Über" hinzugefügt
+- Lizenz zum Menü "Über" hinzugefügt
 
 Verbesserungen:
 - Aktualisierung mehrerer Übersetzungen

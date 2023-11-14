@@ -1,7 +1,7 @@
 Neu:
 - Toast-Nachricht, wenn ein Wert kopiert wird
 
-Fehlerbehebung:
+Fehlerbehebungen:
 - Material You Design folgt dem System Design
 - Unterstützung für Tablets verbessert
 - Unterstützung für kleine Bildschirmgrößen verbessert

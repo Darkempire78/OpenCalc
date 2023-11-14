@@ -1,7 +1,7 @@
 Novedad
 - Traducción al español
 
-Corregido:
+Correcciones:
 - El teclado deja de responder al interactuar con factoriales grandes
 - Carga incorrecta de valores del historial
 - La carga de resultados con decimales desde el historial elimina operadores o bloquea la aplicación.

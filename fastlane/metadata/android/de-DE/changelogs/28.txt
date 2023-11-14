@@ -6,7 +6,7 @@ Neu:
 - Taiwanesisch- und Hongkong-Übersetzung (@alecchangod)
 - Spanisch-Übersetzung
 
-Fehlerbehebung:
+Fehlerbehebungen:
 - Verlaufsscroll (@MahmoudRH)
 - Ergebnis Genauigkeit
 - Backspace bei Tausendertrennzeichen

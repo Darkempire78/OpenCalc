@@ -1,4 +1,4 @@
-Novinky: 
+Novinky:
 - Vibrační systém
 
 Změny:

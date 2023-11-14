@@ -1,4 +1,4 @@
-Cambiado:
+Cambios:
 - La pantalla de bienvenida está oscura ahora 
 
 Arreglado: 

@@ -1,2 +1,2 @@
-Corregido:
+Correcciones:
 - Bloqueo en pantallas pequeñas y tabletas

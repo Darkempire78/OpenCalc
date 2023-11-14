@@ -1,4 +1,4 @@
-Corregido:
+Correcciones:
 - tan() no funciona correctamente
 - Al eliminar un separador de miles, el cursor salta
 - Colocación de paréntesis dentro de los cálculos existentes
