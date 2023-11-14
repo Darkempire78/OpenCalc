@@ -103,6 +103,7 @@
     <string name="about_social_discord" translatable="false">Discord</string>
     <string name="about_social_github" translatable="false">GitHub</string>
 
+    <string name="about_other_license">License GPL 3.0</string>
     <string name="about_other_privacy_policy">Privacy policy</string>
     <string name="about_other_version">Version</string>
 
@@ -122,10 +123,14 @@
     <string name="syntax_error">Syntax error</string>
     <string name="value_too_large">Value too large</string>
 
+    <!-- Clipboard labels -->
+    <string name="copied_result">Copied result</string>
+    <string name="copied_history_calculation">Copied history calculation</string>
+    <string name="copied_history_result">Copied history result</string>
+
     <!-- Others -->
     <string name="value_copied">Copied</string>
     <string name="infinity">Infinity</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="require_real_number">Real number required</string>
-    <string name="about_other_license">License GPL 3.0</string>
 </resources>
