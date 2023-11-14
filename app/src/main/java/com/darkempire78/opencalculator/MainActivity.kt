@@ -187,7 +187,7 @@ class MainActivity : AppCompatActivity() {
                             getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                         clipboardManager.setPrimaryClip(
                             ClipData.newPlainText(
-                                "Copied result",
+                                R.string.copied_result,
                                 binding.resultDisplay.text
                             )
                         )
