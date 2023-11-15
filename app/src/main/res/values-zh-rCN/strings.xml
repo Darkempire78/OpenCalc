@@ -50,4 +50,7 @@
     <string name="require_real_number">需要实数</string>
     <string name="settings_general_split_parenthesis_button">将圆括号按钮分割成两个按钮</string>
     <string name="about_other_license">许可证 GPL 3.0</string>
+    <string name="copied_result">已复制结果</string>
+    <string name="copied_history_calculation">已复制历史计算</string>
+    <string name="copied_history_result">已复制历史结果</string>
 </resources>
