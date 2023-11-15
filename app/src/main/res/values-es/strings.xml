@@ -50,4 +50,7 @@
     <string name="settings_general_add_modulo_desc">Sustituir el botón \"X²\" por un botón de módulo (disponible cuando se pulsa el botón \"INV\")</string>
     <string name="require_real_number">Número real requerido</string>
     <string name="about_other_license">Licencia GPL 3.0</string>
+    <string name="copied_result">Resultado copiado</string>
+    <string name="copied_history_calculation">Cálculo del historial copiado</string>
+    <string name="copied_history_result">Resultado del historial copiado</string>
 </resources>
