@@ -1,4 +1,4 @@
-Mudança:
+Alteração:
 - Disponível para SDK 21+ (Android 5.0)
 
 Fixes:

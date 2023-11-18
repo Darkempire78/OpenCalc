@@ -1,4 +1,4 @@
-Uma calculadora simples e bonita para Android
+Uma calculadora simples e bonita para o Android
 
 📖 Recursos
 	* Leve (APK ~2MB),
