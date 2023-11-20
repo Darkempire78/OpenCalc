@@ -31,7 +31,7 @@
     <string name="menu_settings">Configurações</string>
     <string name="settings_category_formatting">FORMATANDO</string>
     <string name="settings_category_advanced">AVANÇADO</string>
-    <string name="settings_general_language">Língua</string>
+    <string name="settings_general_language">Idioma</string>
     <string name="settings_general_vibration_desc">Vibrar quando um botão é pressionado</string>
     <string name="settings_category_general">GERAL</string>
     <string name="settings_category_history">HISTÓRICO</string>
@@ -49,4 +49,8 @@
     <string name="settings_advanced_prevent_sleep_desc">Impedir que o dispositivo entre em suspensão enquanto o aplicativo estiver em primeiro plano</string>
     <string name="about_category_info">OUTROS</string>
     <string name="theme_amoled">Amoled</string>
+    <string name="copied_result">Resultado copiado</string>
+    <string name="about_other_license">Licença GPL 3.0</string>
+    <string name="copied_history_calculation">Histórico de cálculo copiado</string>
+    <string name="copied_history_result">Histórico de resultado copiado</string>
 </resources>

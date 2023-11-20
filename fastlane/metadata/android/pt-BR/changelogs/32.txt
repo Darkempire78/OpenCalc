@@ -1,2 +1,2 @@
 Corrigido:
-- Crash em pequenas telas e tablets
+- Travamento em pequenas telas e tablets

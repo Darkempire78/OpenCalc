@@ -23,7 +23,7 @@
     <string name="domain_error">Domeinfout</string>
     <string name="syntax_error">Syntaxfout</string>
     <string name="value_too_large">Te grote waarde</string>
-    <string name="value_copied">Gekopieërd</string>
+    <string name="value_copied">Gekopieerd</string>
     <string name="infinity">Oneindig</string>
     <string name="require_real_number">Reëel getal nodig</string>
     <string name="settings_category_history">GESCHIEDENIS</string>
@@ -50,4 +50,7 @@
     <string name="menu_settings">Instellingen</string>
     <string name="about_help_donate">Ondersteunen</string>
     <string name="about_other_license">Licentie GPL 3.0</string>
+    <string name="copied_result">Gekopieerd resultaat</string>
+    <string name="copied_history_calculation">Gekopieerde geschiedenisberekening</string>
+    <string name="copied_history_result">Gekopieerd geschiedenisresultaat</string>
 </resources>

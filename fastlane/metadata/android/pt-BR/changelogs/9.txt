@@ -1,4 +1,4 @@
-Mudanças:
+Alterações:
 - nova página de sobre
 - Adicionado separador para o tema amoled
 

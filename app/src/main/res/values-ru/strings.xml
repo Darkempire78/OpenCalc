@@ -52,4 +52,5 @@
     <string name="settings_advanced_long_click_copy_desc">Длительное нажатие копирует текст элемента вместо его выбора</string>
     <string name="require_real_number">Требуется действительное число</string>
     <string name="about_other_license">Лицензия GPL 3.0</string>
+    <string name="copied_result">Скопированный результат</string>
 </resources>

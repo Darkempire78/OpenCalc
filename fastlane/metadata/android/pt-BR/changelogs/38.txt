@@ -1,2 +1,2 @@
 Corrigido:
-- Divisão de percentagem
+- Divisão de porcentagem
