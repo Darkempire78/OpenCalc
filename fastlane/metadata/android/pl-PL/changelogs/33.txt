@@ -1,5 +1,4 @@
 Zmieniono:
-- Wiele tłumaczeń
 - Obszar wprowadzania danych zajmuje pełną szerokość ekranu
 - System nawiasów
 
@@ -11,5 +10,4 @@ Naprawiono:
 - Dzielenie przez funkcje
 - Problemy z procentami
 - Funkcje trygonometryczne zwracają błędne wyniki, jeśli wynik jest ujemny
-- Błąd matematyczny powoduje wyczyszczenie całego obliczenia po wprowadzeniu nowej liczby
-- Problem z nawiasem i tangensów
+- Inne drobne problemy
