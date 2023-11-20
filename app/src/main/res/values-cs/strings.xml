@@ -50,4 +50,7 @@
     <string name="settings_formatting_scientific_notation">Číslo do vědeckého zápisu</string>
     <string name="require_real_number">Je potřeba opravdové číslo</string>
     <string name="settings_general_split_parenthesis_button">Rozdvojit tlačítko se závorkami</string>
+    <string name="copied_result">Zkopírovaný výsledek</string>
+    <string name="copied_history_calculation">Zkopírovaný výpočet z historie</string>
+    <string name="copied_history_result">Zkopírovaný výsledek z historie</string>
 </resources>
