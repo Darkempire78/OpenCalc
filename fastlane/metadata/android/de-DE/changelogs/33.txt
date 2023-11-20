@@ -1,5 +1,4 @@
 Änderungen:
-- Viele Übersetzungen
 - Eingabebereich nutzt volle Displaygröße
 - Klammerungssystem
 
@@ -11,5 +10,4 @@ Fehlerbehebungen:
 - Teilung durch Funktionen
 - Prozent Probleme
 - Trigonometrische Funktionen geben falsches Ergebnis zurück, falls das Ergebnis negativ ist
-- Mathematische Fehler entfernen ganze Berechnung, wenn eine neue Zahl eingegeben wird
-- Klammerproblem beim Tangens
+- Weitere Fehlerbehebungen
