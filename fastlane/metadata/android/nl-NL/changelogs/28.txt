@@ -2,15 +2,11 @@ Nieuw:
 - Intern rekensysteem
 - Decimale factoren
 - Voorkom de aanwezigheid van twee decimale scheidingstekens in hetzelfde getal
-- Braziliaanse vertaling (@Bardock88)
-- Taiwanese en Hongkongchinese vertaling (@alecchangod)
-- Spaanse vertaling
 
 Opgelost:
 - Geschiedenis scrollen (@MahmoudRH)
 - Nauwkeurigheid resultaat
 - Backspace met groepscheidingstekens
-- Math Error" weergeven in plaats van "NaN" (@lefterisgar)
 - Liggende modus voor 10 inch tablet
 - Backspace na gelijke knop
 - Crash bij tikken op geschiedenisresultaat
