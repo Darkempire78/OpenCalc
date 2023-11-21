@@ -1,5 +1,4 @@
 Frissítve:
-- Számos fordítás
 - Beviteli terület a teljes képernyőn
 - Zárójeles rendszer
 
@@ -11,5 +10,4 @@ Javítva:
 - Osztás függvényekkel
 - Százalékos problémák
 - Trigonometrikus függvények rossz eredményt adnak vissza, ha az eredmény negatív
-- Matematikai hiba törli a számítást, ha új számot adunk meg
-- Zárójel probléma tangenssel
+- Egyéb javítás

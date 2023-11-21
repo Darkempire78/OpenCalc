@@ -1,5 +1,4 @@
 Đã cập nhật:
-- Nhiều bản dịch
 - Vùng nhập liệu lấy kích thước toàn màn hình
 - Hệ thống dấu ngoặc đơn
 
@@ -11,5 +10,4 @@
 - Chia cho hàm số
 - Lỗi phần trăm
 - Hàm lượng giác trả về kết quả sai nếu kết quả âm
-- Lỗi toán xóa toàn bộ phép tính khi nhập số mới
-- Vấn đề dấu ngoặc đơn với tiếp tuyến
+- Sửa một số lỗi khác

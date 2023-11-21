@@ -1,5 +1,4 @@
 Oppdatert:
-- Mange oversettelser
 - Inndataområdet tar hele skjermen
 - Parentessystem
 
@@ -11,5 +10,4 @@ Fikset:
 - Deling med funksjoner
 - Parentesproblemer
 - Trigonometrifunksjoner gir feil resultater hvis resultatet er negativt
-- Matteproblemer tømmer hele kalkulasjonen når et nytt nummer innskrives
-- Parentesproblem med tangent
+- Flere andre rettelser
