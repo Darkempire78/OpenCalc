@@ -44,4 +44,12 @@
     <string name="settings_category_history">CHRONOLOGIA</string>
     <string name="settings_general_radians">Radianos</string>
     <string name="about_category_social">SOCIAL</string>
+    <string name="settings_general_add_modulo_desc">Reimplaciar le button \"X²\" con un button modulo (disponibile quando le button \"INV\" es pulsate)</string>
+    <string name="settings_formatting_precision">Numero de decimales</string>
+    <string name="settings_general_split_parenthesis_button_desc">Remover le button \"AC\" pro divider le button de parenthese in duo buttones</string>
+    <string name="copied_history_calculation">Calculation del chronologia copiate</string>
+    <string name="settings_advanced_prevent_sleep">Mantener le apparato eveliate</string>
+    <string name="about_help_rate">Appreciar iste application</string>
+    <string name="copied_history_result">Resultato del chronologia copiate</string>
+    <string name="settings_general_split_parenthesis_button">Divider le button de parenthese in duo buttones</string>
 </resources>
