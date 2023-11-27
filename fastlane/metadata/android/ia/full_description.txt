@@ -1,0 +1,10 @@
+Un calculator simple e belle pro Android
+
+📖 Characteristicas
+	* Lightweight (APK ~2MB),
+	* Sin permissiones non necessari,
+	* Themas Obscur, Clar, Amoled e Material You,
+	* Modo scientific,
+	* Chronologia,
+	* Orientation horizontal e vertical,
+	* Plus...
