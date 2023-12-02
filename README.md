@@ -74,7 +74,7 @@ Join the Discord server!
 
 ## 🔨 Contributing
 
-Please read [Contributing guidelines](CONTRIBUTING.md)
+Please read [Contributing guidelines](CONTRIBUTING.md).
 
 ## 🌎 Translations
 
