@@ -66,15 +66,15 @@ height="40">](https://paypal.me/ImDarkempire) [<img src="https://img.shields.io/
 alt="Donate with buymeacoffee"
 height="40">](https://www.buymeacoffee.com/darkempire78)
 
+## 🔨 Contributing guidelines
+
+Please read [Contributing guidelines](CONTRIBUTING.md).
+
 ## 💬 Discord
 
 Join the Discord server!
 
 [![](https://i.imgur.com/UfyvtOL.png)](https://discord.gg/sPvJmY7mcV)
-
-## 🔨 Contributing
-
-Please read [Contributing guidelines](CONTRIBUTING.md).
 
 ## 🌎 Translations
 
