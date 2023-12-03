@@ -1,6 +1,6 @@
-# Contributing guidelines
+# 🔨 Contributing guidelines
 
-## How to contribute
+## 🤔 How to contribute
 
 1. Answer other people's questions and try to help them.
 2. Try to reproduce already posted bugs.
@@ -10,11 +10,11 @@
 6. Create pull request. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
 7. Donate [here](https://github.com/Darkempire78/OpenCalc#-support).
 
-## Rules
+## ❗ Rules
 
 ### 1. OpenCalc should stay fully offline - please don't add online functionality
 
-## Standardization
+## ❕ Standardization
 
 ### 1. Changelogs headings (sorted)
 
