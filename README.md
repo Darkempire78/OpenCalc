@@ -100,7 +100,7 @@ This project is licensed under [GPLv3](/LICENSE)
 
 ## Most Asked Questions
 
-### Why OpenCalc has it's own algebra system and doesnt use already existing algebra system like mXparser?
+### Why OpenCalc has it's own algebra system and doesn't use already existing algebra system like mXparser?
 
 OpenCalc doesn't use mXparser anymore since the v2.0.0 for two main reasons:
 
