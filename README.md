@@ -98,7 +98,7 @@ This project is licensed under [GPLv3](/LICENSE)
   <img alt="List of contributors to this repository" src="https://contrib.rocks/image?repo=Darkempire78/OpenCalc" />
 </a>
 
-## Most Asked Questions
+## :grey_question: Most Asked Questions
 
 ### Why OpenCalc has it's own algebra system and doesn't use already existing algebra system like mXparser?
 
