@@ -53,4 +53,6 @@
     <string name="require_real_number">Требуется действительное число</string>
     <string name="about_other_license">Лицензия GPL 3.0</string>
     <string name="copied_result">Скопированный результат</string>
+    <string name="copied_history_calculation">Скопирован расчёт из истории</string>
+    <string name="copied_history_result">Результат из истории скопирован</string>
 </resources>
