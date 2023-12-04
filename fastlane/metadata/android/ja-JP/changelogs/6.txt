@@ -1,2 +1,2 @@
-変更
-- Material Youのサポートを追加（@MahmoudRHさんに感謝）
+変更点:
+- Material You のサポートを追加 (@MahmoudRH に感謝)

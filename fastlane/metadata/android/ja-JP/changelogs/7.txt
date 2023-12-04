@@ -1,2 +1,2 @@
-修正:
-- Material You
+修正点:
+- Material You テーマの修正
