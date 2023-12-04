@@ -50,4 +50,7 @@
     <string name="settings_advanced_long_click_copy">Доўгі націск, каб скапіяваць значэнне</string>
     <string name="settings_advanced_long_click_copy_desc">Доўгі націск капіруе тэкст элемента замест яго выбару</string>
     <string name="about_other_license">Ліцэнзія GPL 3.0</string>
+    <string name="copied_result">Скапіяваны вынік</string>
+    <string name="copied_history_calculation">Разлік з гісторыі скапіяваны</string>
+    <string name="copied_history_result">Вынік з гісторыі капіюецца</string>
 </resources>
