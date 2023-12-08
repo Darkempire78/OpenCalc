@@ -27,4 +27,10 @@
     <string name="settings_general_vibration_desc">Bergetar ketika tombol ditekan</string>
     <string name="settings_category_advanced">LANJUTAN</string>
     <string name="settings_category_history">RIWAYAT</string>
+    <string name="settings_general_add_modulo_desc">Ganti tombol \"X²\" dengan tombol modulo (tersediakan ketika tombol \"INV\" ditekan)</string>
+    <string name="settings_formatting_precision">Jumlah tempat desimal</string>
+    <string name="settings_formatting_scientific_notation">Jumlah ke notasi ilmiah</string>
+    <string name="require_real_number">Nomor asli yang diperlukan</string>
+    <string name="settings_general_radians">Radian</string>
+    <string name="settings_general_split_parenthesis_button">Pisah tombol parentheses ke dalam dua tombol</string>
 </resources>
