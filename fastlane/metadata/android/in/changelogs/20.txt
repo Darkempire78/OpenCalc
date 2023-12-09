@@ -1,0 +1,4 @@
+Perbaikan:
+- Tutup otomatis parenthesis
+- Perkalian faktorial tanpa *
+- Otomatis tambahkan 0 ketika nomor dimulai dengan pemisah desimal

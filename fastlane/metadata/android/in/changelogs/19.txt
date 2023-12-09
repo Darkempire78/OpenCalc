@@ -1,7 +1,7 @@
 Baru: 
 - Toast saat Anda menyalin nilai
 
-Diperbaiki: 
+Perbaikan: 
 - Mengikuti tema sistem yang mendukung Material You 
 - Meningkatkan dukungan untuk tablet 
 - Meningkatkan dukungan untuk ukuran layar kecil 

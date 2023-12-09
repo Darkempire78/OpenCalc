@@ -51,4 +51,7 @@
     <string name="settings_general_add_modulo_desc">\"X²\" düğmesini bir modulo düğmesi ile değiştir (\"INV\" düğmesine basıldığında kullanılabilir)</string>
     <string name="about_other_license">Lisans GPL 3.0</string>
     <string name="settings_general_add_modulo">Modulo düğmesi ekle</string>
+    <string name="copied_result">Sonuç kopyalandı</string>
+    <string name="copied_history_calculation">Geçmiş hesaplama kopyalandı</string>
+    <string name="copied_history_result">Geçmiş sonucu kopyalandı</string>
 </resources>

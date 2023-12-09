@@ -1,4 +1,4 @@
-Ubah: 
+Perubahan: 
 - Terjemahan bahasa Jerman 
 - Terjemahan bahasa Rusia 
 - Terjemahan bahasa Yunani 
