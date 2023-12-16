@@ -37,12 +37,12 @@
 
 ## 📖 Features
 
-* Lightweight (APK ~2MB),
-* No unnecessary permissions,
-* Dark, Light, Amoled and Material You theme,
-* Scientific mode,
-* History,
-* Portrait and landscape orientation,
+* Lightweight (APK ~2MB)
+* No unnecessary permissions
+* Dark, Light, Amoled and Material You theme
+* Scientific mode
+* History
+* Portrait and landscape orientation
 * More...
 
 ## 📷 Screenshots
