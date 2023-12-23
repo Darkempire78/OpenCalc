@@ -187,7 +187,7 @@ class MainActivity : AppCompatActivity() {
                             getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                         clipboardManager.setPrimaryClip(
                             ClipData.newPlainText(
-                                R.string.copied_result,
+                                R.string.copied_result.toString(),
                                 binding.resultDisplay.text
                             )
                         )
@@ -350,14 +350,12 @@ class MainActivity : AppCompatActivity() {
             val formerValue = binding.input.text.toString()
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
-            val leftValueFormatted =
-                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            val leftValueFormatted = NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            val newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
@@ -377,8 +375,7 @@ class MainActivity : AppCompatActivity() {
                         var firstNumberAfter = ""
                         if (cursorPosition < binding.input.text.length - 1) {
                             firstNumberAfter = NumberFormatter.extractNumbers(
-                                binding.input.text.toString()
-                                    .substring(cursorPosition, binding.input.text.length),
+                                binding.input.text.toString().substring(cursorPosition, binding.input.text.length),
                                 decimalSeparatorSymbol
                             ).first()
                         }
@@ -533,8 +530,12 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                withContext(Dispatchers.Main) {
-                    binding.resultDisplay.text = ""
+                if (!isEqualLastAction) {
+                    withContext(Dispatchers.Main) {
+                        binding.resultDisplay.text = ""
+                    }
+                } else {
+                    isEqualLastAction = false
                 }
             }
         }
@@ -806,10 +807,15 @@ class MainActivity : AppCompatActivity() {
 
                         // Hide the cursor (do not remove this, it's not a duplicate)
                         binding.input.isCursorVisible = false
-
-                        // Clear resultDisplay
-                        binding.resultDisplay.text = ""
                     }
+
+                    // Display the result in fraction
+                    //println(DecimalToFraction().getFraction(calculationResult))
+                    val fractionResult = DecimalToFraction().getFraction(calculationResult)
+                    withContext(Dispatchers.Main) {
+                        binding.resultDisplay.text = fractionResult
+                    }
+
 
                     if (calculation != formattedResult) {
                         val history = MyPreferences(this@MainActivity).getHistory()
@@ -877,8 +883,7 @@ class MainActivity : AppCompatActivity() {
                             //    binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.text = formattedResult
-                            isEqualLastAction =
-                                true // Do not clear the calculation (if you click into a number) if there is an error
+                            isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
                         }
                     }
                 }
@@ -1018,7 +1023,11 @@ class MainActivity : AppCompatActivity() {
             appLanguage = Locale.getDefault()
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
-            binding.resultDisplay.text = ""
+            if (!isEqualLastAction) {
+                binding.resultDisplay.text = ""
+            } else {
+                isEqualLastAction = false
+            }
         }
 
         // Split the parentheses button (if option is enabled)
