@@ -1,0 +1,9 @@
+Cambiamentos:
+- traduction in germano
+- traduction in russe
+- traduction in greco
+- traduction in hindi
+- traduction in Azerbajiani
+
+Fixes:
+- percentage non mathematic
