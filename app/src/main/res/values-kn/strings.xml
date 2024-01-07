@@ -1,2 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="about_made_in_france">ಫ್ರಾನ್ಸ್‌ನಲ್ಲಿ ❤️ ನೊಂದಿಗೆ ಮಾಡಲ್ಪಟ್ಟಿದೆ</string>
+    <string name="settings_general_add_modulo_desc">\"X²\" ಬಟನ್ ಅನ್ನು ಮಾಡ್ಯುಲೋ ಬಟನ್‌ನೊಂದಿಗೆ ಬದಲಾಯಿಸಿ (\"INV\" ಬಟನ್ ಒತ್ತಿದಾಗ ಲಭ್ಯವಿರುತ್ತದೆ)</string>
+    <string name="menu_clear_history">ಇತಿಹಾಸವನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
+    <string name="value_copied">ನಕಲು ಮಾಡಲಾಗಿದೆ</string>
+    <string name="theme_light">ಲೈಟ್</string>
+    <string name="settings_general_radians_desc">ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ ಡಿಗ್ರಿಗಳ ಬದಲಿಗೆ ರೇಡಿಯನ್ಗಳನ್ನು ಬಳಸಿ</string>
+    <string name="copied_result">ಫಲಿತಾಂಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
+    <string name="about_help_translate">ಅನುವಾದಿಸಿ</string>
+    <string name="settings_category_formatting">ಫಾರ್ಮ್ಯಾಟಿಂಗ್</string>
+    <string name="settings_general_scientific_mode">ವೈಜ್ಞಾನಿಕ ಮೋಡ್</string>
+    <string name="about_other_license">ಪರವಾನಗಿ GPL 3.0</string>
+    <string name="settings_history_size">ಫಲಿತಾಂಶಗಳನ್ನು ಇತಿಹಾಸದಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ</string>
+    <string name="settings_formatting_precision">ದಶಮಾಂಶ ಸ್ಥಾನಗಳ ಸಂಖ್ಯೆ</string>
+    <string name="settings_general_split_parenthesis_button_desc">ಆವರಣ ಗುಂಡಿಯನ್ನು ಎರಡು ಗುಂಡಿಗಳಾಗಿ ವಿಭಜಿಸಲು \"AC\" ಬಟನ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ</string>
+    <string name="menu_settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="theme_dark">ಡಾರ್ಕ್</string>
+    <string name="settings_general_language">ಭಾಷೆ</string>
+    <string name="settings_general_vibration">ಕಂಪನ</string>
+    <string name="settings_formatting_scientific_notation_desc">ಎಲ್ಲಾ ಫಲಿತಾಂಶಗಳನ್ನು ವೈಜ್ಞಾನಿಕ ಸಂಕೇತಕ್ಕೆ ಪರಿವರ್ತಿಸಿ</string>
+    <string name="app_name_display">ಕ್ಯಾಲ್ಕುಲೇಟರ್</string>
+    <string name="settings_advanced_long_click_copy_desc">ದೀರ್ಘವಾಗಿ ಒತ್ತಿದರೆ ಐಟಂ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡುವ ಬದಲು ಅದರ ಪಠ್ಯವನ್ನು ನಕಲು ಮಾಡುತ್ತದೆ</string>
+    <string name="syntax_error">ಸಿಂಟ್ಯಾಕ್ಸ್ ದೋಷ</string>
+    <string name="theme_system">ಸಿಸ್ಟಮ್</string>
+    <string name="settings_general_scientific_mode_desc">ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ ವೈಜ್ಞಾನಿಕ ಮೋಡ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="about_easter_egg">OpenCalc ❤️ ಬಳಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು</string>
+    <string name="copied_history_calculation">ಇತಿಹಾಸದ ಲೆಕ್ಕಾಚಾರವನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
+    <string name="about_category_info">ಅಪ್ಲಿಕೇಶನ್ ಮಾಹಿತಿ</string>
+    <string name="menu_about">ಕುರಿತು</string>
+    <string name="infinity">ಅನಂತ</string>
+    <string name="about_other_privacy_policy">ಗೌಪ್ಯತೆ ನೀತಿ</string>
+    <string name="settings_advanced_long_click_copy">ಮೌಲ್ಯವನ್ನು ನಕಲಿಸಲು ದೀರ್ಘವಾಗಿ ಒತ್ತಿರಿ</string>
+    <string name="value_too_large">ಮೌಲ್ಯವು ತುಂಬಾ ದೊಡ್ಡದಾಗಿದೆ</string>
+    <string name="settings_category_general">ಸಾಮಾನ್ಯ</string>
+    <string name="settings_general_add_modulo">ಮಾಡ್ಯುಲೋ ಬಟನ್ ಅನ್ನು ಸೇರಿಸಿ</string>
+    <string name="about_category_help">ನಮಗೆ ಸಹಾಯ ಮಾಡಿ</string>
+    <string name="settings_formatting_scientific_notation">ಸಂಖ್ಯೆಯನ್ನು ವೈಜ್ಞಾನಿಕ ಸಂಕೇತವಾಗಿ</string>
+    <string name="settings_general_theme">ಥೀಮ್</string>
+    <string name="settings_general_vibration_desc">ಗುಂಡಿಯನ್ನು ಒತ್ತಿದಾಗ ಕಂಪಿಸುತ್ತದೆ</string>
+    <string name="division_by_0">0 ರಿಂದ ಭಾಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="theme_amoled">ಅಮೋಲೆಡ್</string>
+    <string name="settings_advanced_prevent_sleep">ಸಾಧನವನ್ನು ಆನ್‌ನಲ್ಲಿ ಇರಿಸಿ</string>
+    <string name="domain_error">ಡೊಮೇನ್ ದೋಷ</string>
+    <string name="about_help_rate">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ರೇಟ್ ಮಾಡಿ</string>
+    <string name="require_real_number">ನೈಜ ಸಂಖ್ಯೆಯ ಅಗತ್ಯವಿದೆ</string>
+    <string name="about_help_donate">ದಾನ ಮಾಡಿ</string>
+    <string name="about_other_version">ಆವೃತ್ತಿ</string>
+    <string name="settings_category_advanced">ಸುಧಾರಿತ</string>
+    <string name="settings_category_history">ಇತಿಹಾಸ</string>
+    <string name="copied_history_result">ಇತಿಹಾಸದ ಫಲಿತಾಂಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
+    <string name="settings_general_radians">ರೇಡಿಯನ್‌ಗಳು</string>
+    <string name="settings_advanced_prevent_sleep_desc">ಅಪ್ಲಿಕೇಶನ್ ಮುಂಚೂಣಿಯಲ್ಲಿರುವಾಗ ಸಾಧನವು ನಿದ್ರಿಸದಂತೆ ತಡೆಯಿರಿ</string>
+    <string name="settings_general_split_parenthesis_button">ಆವರಣ ಗುಂಡಿಯನ್ನು ಎರಡು ಗುಂಡಿಗಳಾಗಿ ವಿಭಜಿಸಿ</string>
+    <string name="about_category_social">ಸಾಮಾಜಿಕ</string>
+</resources>
