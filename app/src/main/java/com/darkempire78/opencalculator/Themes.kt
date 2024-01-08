@@ -14,14 +14,18 @@ class Themes(private val context: Context) {
 
         // Themes
         private const val DEFAULT_THEME_INDEX = 0
-        const val AMOLED_THEME_INDEX = 1
+        private const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
+        private const val NOTHING_LIGHT_THEME_INDEX = 3
+        private const val NOTHING_DARK_THEME_INDEX = 4
 
         // used to go from Preference int value to actual theme
         private val themeMap = mapOf(
             DEFAULT_THEME_INDEX to R.style.AppTheme,
             AMOLED_THEME_INDEX to R.style.AmoledTheme,
-            MATERIAL_YOU_THEME_INDEX to R.style.MaterialYouTheme
+            MATERIAL_YOU_THEME_INDEX to R.style.MaterialYouTheme,
+            NOTHING_LIGHT_THEME_INDEX to R.style.NothingLightTheme,
+            NOTHING_DARK_THEME_INDEX to R.style.NothingDarkTheme
         )
 
         // Styles - Combinations of theme + day/night mode
@@ -29,6 +33,8 @@ class Themes(private val context: Context) {
         private const val LIGHT_STYLE_INDEX = 1
         private const val DARK_STYLE_INDEX = 2
         private const val AMOLED_STYLE_INDEX = 3
+        private const val NOTHING_LIGHT_STYLE_INDEX = 4
+        private const val NOTHING_DARK_STYLE_INDEX = 5
 
         fun openDialogThemeSelector(context: Context) {
 
@@ -47,12 +53,16 @@ class Themes(private val context: Context) {
                 SYSTEM_STYLE_INDEX to systemName,
                 LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
                 DARK_STYLE_INDEX to context.getString(R.string.theme_dark),
-                AMOLED_STYLE_INDEX to context.getString(R.string.theme_amoled)
+                AMOLED_STYLE_INDEX to context.getString(R.string.theme_amoled),
+                NOTHING_LIGHT_STYLE_INDEX to context.getString(R.string.theme_nothing_light),
+                NOTHING_DARK_STYLE_INDEX to context.getString(R.string.theme_nothing_dark)
             )
 
             val checkedItem = when (preferences.theme) {
                 AMOLED_THEME_INDEX -> AMOLED_STYLE_INDEX
                 MATERIAL_YOU_THEME_INDEX -> SYSTEM_STYLE_INDEX
+                NOTHING_LIGHT_THEME_INDEX -> NOTHING_LIGHT_STYLE_INDEX
+                NOTHING_DARK_THEME_INDEX -> NOTHING_DARK_STYLE_INDEX
                 else -> {
                     when (preferences.forceDayNight) {
                         AppCompatDelegate.MODE_NIGHT_NO -> LIGHT_STYLE_INDEX
@@ -79,6 +89,14 @@ class Themes(private val context: Context) {
                     }
                     AMOLED_STYLE_INDEX -> {
                         preferences.theme = AMOLED_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
+                    }
+                    NOTHING_LIGHT_STYLE_INDEX -> {
+                        preferences.theme = NOTHING_LIGHT_THEME_INDEX
+                        preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_NO
+                    }
+                    NOTHING_DARK_STYLE_INDEX -> {
+                        preferences.theme = NOTHING_DARK_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
                     }
                 }
@@ -115,10 +133,10 @@ class Themes(private val context: Context) {
         var theme = "THEME"
         when (themeID) {
             DEFAULT_THEME_INDEX -> {
-                if (MyPreferences(this.context).forceDayNight == AppCompatDelegate.MODE_NIGHT_YES) {
-                    theme = context.getString(R.string.theme_dark)
+                theme = if (MyPreferences(this.context).forceDayNight == AppCompatDelegate.MODE_NIGHT_YES) {
+                    context.getString(R.string.theme_dark)
                 } else {
-                    theme = context.getString(R.string.theme_light)
+                    context.getString(R.string.theme_light)
                 }
             }
             MATERIAL_YOU_THEME_INDEX -> {
@@ -126,6 +144,12 @@ class Themes(private val context: Context) {
             }
             AMOLED_THEME_INDEX -> {
                 theme = context.getString(R.string.theme_amoled)
+            }
+            NOTHING_LIGHT_THEME_INDEX -> {
+                theme = context.getString(R.string.theme_nothing_light)
+            }
+            NOTHING_DARK_THEME_INDEX -> {
+                theme = context.getString(R.string.theme_nothing_dark)
             }
         }
         return theme

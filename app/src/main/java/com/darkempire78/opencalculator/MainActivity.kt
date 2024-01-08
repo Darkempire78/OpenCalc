@@ -16,6 +16,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,7 @@ import java.util.*
 
 var appLanguage: Locale = Locale.getDefault()
 var currentTheme: Int = 0
+var currentThemeName: String = ""
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(themes.getTheme())
 
         currentTheme = themes.getTheme()
+        currentThemeName = themes.getThemeNameFromId(currentTheme)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         view = binding.root
@@ -187,7 +190,7 @@ class MainActivity : AppCompatActivity() {
                             getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                         clipboardManager.setPrimaryClip(
                             ClipData.newPlainText(
-                                R.string.copied_result,
+                                R.string.copied_result.toString(),
                                 binding.resultDisplay.text
                             )
                         )
@@ -348,6 +351,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val formerValue = binding.input.text.toString()
+
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
             val leftValueFormatted =

@@ -133,4 +133,6 @@
     <string name="infinity">Infinity</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="require_real_number">Real number required</string>
+    <string name="theme_nothing_light">Nothing Light</string>
+    <string name="theme_nothing_dark">Nothing Dark</string>
 </resources>
