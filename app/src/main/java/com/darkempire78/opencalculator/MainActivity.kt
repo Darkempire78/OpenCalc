@@ -38,7 +38,6 @@ import java.util.*
 
 var appLanguage: Locale = Locale.getDefault()
 var currentTheme: Int = 0
-var currentThemeName: String = ""
 
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
@@ -59,6 +58,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
+    private var isNothingTheme: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -68,11 +69,19 @@ class MainActivity : AppCompatActivity() {
         setTheme(themes.getTheme())
 
         currentTheme = themes.getTheme()
-        currentThemeName = themes.getThemeNameFromId(currentTheme)
+        isNothingTheme = MyPreferences(this).theme == 3 || MyPreferences(this).theme == 4
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         view = binding.root
         setContentView(view)
+
+        // Set the backspace button depending on the theme
+        if(isNothingTheme){
+            binding.backspaceButton.setImageResource(R.drawable.nothing_backspace)
+        }
+        else{ // Any other theme
+            binding.backspaceButton.setImageResource(R.drawable.backspace)
+        }
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false

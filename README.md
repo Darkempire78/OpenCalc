@@ -39,7 +39,7 @@
 
 * Lightweight (APK ~2MB)
 * No unnecessary permissions
-* Dark, Light, Amoled and Material You theme
+* Dark, Light, Amoled, Material You and Nothing OS themes
 * Scientific mode
 * History
 * Portrait and landscape orientation
@@ -53,6 +53,13 @@
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="15%"/>
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="15%"/>
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/8.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/9.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/10.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/11.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/12.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/13.png" width="15%"/>
 
 ## ☕ Support
 
