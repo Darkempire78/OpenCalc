@@ -116,6 +116,8 @@
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
     <string name="theme_amoled">Amoled</string>
+    <string name="theme_nothing_dark">Nothing Dark</string>
+    <string name="theme_nothing_light">Nothing Light</string>
 
     <!-- Error messages -->
     <string name="division_by_0">Can\'t divide by 0</string>
@@ -133,6 +135,4 @@
     <string name="infinity">Infinity</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="require_real_number">Real number required</string>
-    <string name="theme_nothing_light">Nothing Light</string>
-    <string name="theme_nothing_dark">Nothing Dark</string>
 </resources>

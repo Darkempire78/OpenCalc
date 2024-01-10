@@ -110,8 +110,8 @@
         <item name="foreground_color">@color/nothing_light_foreground_color</item>
         <item name="background_color">@color/nothing_light_background_color</item>
 
-        <item name="fontFamily">@font/nothing</item>
-        <item name="function_button_font">monospace</item>
+        <item name="fontFamily">@font/ndot47</item>
+        <item name="function_button_font">@font/space_mono_italic</item>
 
         <item name="text_color">@color/nothing_light_button_text_color</item>
         <item name="text_second_color">@color/amoled_text_second_color</item>
@@ -142,8 +142,8 @@
         <item name="foreground_color">@color/nothing_dark_foreground_color</item>
         <item name="background_color">@color/nothing_dark_background_color</item>
 
-        <item name="fontFamily">@font/nothing</item>
-        <item name="function_button_font">monospace</item>
+        <item name="fontFamily">@font/ndot47</item>
+        <item name="function_button_font">@font/space_mono_italic</item>
 
         <item name="history_background_color">@color/nothing_dark_history_background_color</item>
 

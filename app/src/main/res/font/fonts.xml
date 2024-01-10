@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-    <font android:font="@font/nothing"></font>
+    <font android:font="@font/ndot47"></font>
+    <font android:font="@font/space_mono_italic"></font>
 </font-family>
