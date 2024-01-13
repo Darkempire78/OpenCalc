@@ -138,7 +138,7 @@ class HistoryAdapter(
                 calculation.setOnLongClickListener {
                     if (MyPreferences(itemView.context).longClickToCopyValue) {
                         val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                        clipboardManager.setPrimaryClip(ClipData.newPlainText(R.string.copied_history_calculation, historyElement.calculation))
+                        clipboardManager.setPrimaryClip(ClipData.newPlainText(R.string.copied_history_calculation.toString(), historyElement.calculation))
                         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
                             Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                         true // Or false if not consumed}
@@ -150,7 +150,7 @@ class HistoryAdapter(
                 result.setOnLongClickListener {
                     if (MyPreferences(itemView.context).longClickToCopyValue) {
                         val clipboardManager = itemView.context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                        clipboardManager.setPrimaryClip(ClipData.newPlainText(R.string.copied_history_result, historyElement.result))
+                        clipboardManager.setPrimaryClip(ClipData.newPlainText(R.string.copied_history_result.toString(), historyElement.result))
                         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
                             Toast.makeText(itemView.context, R.string.value_copied, Toast.LENGTH_SHORT).show()
                         true // Or false if not consumed

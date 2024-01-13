@@ -101,7 +101,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
-                        app:srcCompat="@drawable/divide" />
+                        android:text="@string/divide"
+                        />
 
                     <Button
                         android:id="@+id/clearButton"
@@ -199,7 +200,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="multiplyButton"
-                        app:srcCompat="@drawable/multiply" />
+                        app:srcCompat="@drawable/multiply"
+                        android:text="@string/multiply"/>
 
                     <Button
                         android:id="@+id/parenthesesButton"
@@ -294,7 +296,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="subtractButton"
-                        app:srcCompat="@drawable/subtract" />
+                        app:srcCompat="@drawable/subtract"
+                        android:text="@string/subtract"/>
 
                     <ImageButton
                         android:id="@+id/exponentButton"
@@ -376,7 +379,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="addButton"
-                        app:srcCompat="@drawable/add" />
+                        app:srcCompat="@drawable/add"
+                        android:text="@string/add"/>
 
                     <Button
                         android:id="@+id/equalsButton"
@@ -386,7 +390,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_equals_color"
                         android:onClick="equalsButton"
-                        app:srcCompat="@drawable/equals"/>
+                        app:srcCompat="@drawable/equals"
+                        android:text="@string/equals"/>
 
                 </TableRow>
 
