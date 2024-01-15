@@ -536,7 +536,7 @@
         app:layout_constraintGuide_percent="0.30" />
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

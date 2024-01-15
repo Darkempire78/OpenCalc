@@ -645,7 +645,7 @@
         tools:ignore="MissingConstraints" />-->
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
