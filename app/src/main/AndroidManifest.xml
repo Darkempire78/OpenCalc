@@ -11,10 +11,11 @@
         android:localeConfig="@xml/locales_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings" />        
         <activity
             android:name=".AboutActivity"
             android:exported="false" />
@@ -24,7 +25,6 @@
             android:windowSoftInputMode="stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,7 +40,6 @@
             </intent-filter>
         </service>
 
-
-</application>
+    </application>
 
 </manifest>
