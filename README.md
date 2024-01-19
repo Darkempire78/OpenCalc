@@ -43,6 +43,7 @@
 * Scientific mode
 * History
 * Portrait and landscape orientation
+* Quick Settings Tile
 * More...
 
 ## 📷 Screenshots
