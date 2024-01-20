@@ -43,6 +43,7 @@
 * Scientific mode
 * History
 * Portrait and landscape orientation
+* Quick Settings Tile
 * More...
 
 ## 📷 Screenshots
@@ -89,6 +90,16 @@ You can help translate OpenCalc on [Hosted Weblate](https://hosted.weblate.org/e
 ## 📜 License
 
 This project is licensed under [GPLv3](/LICENSE)
+
+## ❔ Most Asked Questions
+
+### Why OpenCalc has it's own algebra system and doesn't use already existing algebra system like mXparser?
+
+OpenCalc doesn't use mXparser anymore since the v2.0.0 for two main reasons:
+
+1. reason is that it allows much more freedom and flexibility. mXparser has many known problems, either with accuracy or with features not present. Creating your own implementation allows you to control everything.
+2. reason is that it's lighter to use your own implementation (mXparser has around 3 times bigger size than OpenCalc).
+
 
 ## 🫶 Contributors
 

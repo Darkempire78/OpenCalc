@@ -378,7 +378,8 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
                         android:text="@string/divide"
-                        android:textSize="32sp" />
+                        android:textSize="32sp"
+                        />
                 </TableRow>
 
                 <TableRow

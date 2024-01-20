@@ -1,0 +1,8 @@
+Nove:
+- Chronologia
+
+Cambiamentos:
+- Optimisation
+
+Correctiones:
+- defectos in le presentation de resultatos
