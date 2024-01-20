@@ -72,7 +72,7 @@ Join the Discord server!
 
 [![](https://i.imgur.com/UfyvtOL.png)](https://discord.gg/sPvJmY7mcV)
 
-## 🔨 Contributing guidelines
+## 🔨 Contributing
 
 Please read [Contributing guidelines](CONTRIBUTING.md).
 
