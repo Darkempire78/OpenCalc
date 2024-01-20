@@ -1,10 +1,11 @@
 Una calculadora simple y hermosa para Android
 
 📖 Características
-	* Ligero (APK ~2MB)
-	* No hay permisos innecesarios
-	* Oscuro, Luz, Amoled y Material Usted tema
+	* Ligera (APK ~2MB)
+	* Sin permisos innecesarios
+	* Tema oscuro, claro, Amoled y Material You
 	* Modo científico
 	* Historial
 	* Orientación vertical y horizontal
+	* Ajustes rápidos
 	* Más...
