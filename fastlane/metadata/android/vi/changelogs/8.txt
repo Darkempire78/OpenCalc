@@ -1,2 +1,2 @@
 Sửa chữa:
-- Khắc phục số lượng lớn sự cố
+- Khắc phục số quá lớn gây crash (bị văng)

@@ -6,5 +6,6 @@ Một máy tính đơn giản và đẹp dành cho Android
 	* Chủ đề tối, sáng, Amoled và Material You
 	* Chế độ khoa học
 	* Lịch sử
-	* Định hướng dọc và ngang
+	* Hướng nằm dọc và ngang
+        * Ô Cài đặt nhanh
 	* Nhiều hơn nữa...
