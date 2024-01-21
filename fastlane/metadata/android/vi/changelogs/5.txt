@@ -1,4 +1,4 @@
-Thay đổi:
+Các thay đổi:
 - Có sẵn cho SDK 21+ (Android 5.0)
 
 Sửa chữa:

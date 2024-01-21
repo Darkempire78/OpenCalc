@@ -4,6 +4,6 @@
 - Không lưu kết quả vào lịch sử nếu bằng phép tính
 - Không lưu phép tính trong lịch sử nếu nó giống với lần gần nhất
 
-Đã sửa:
+Sửa lỗi:
 - Thừa số 0 trả về 1
 - Thêm biểu tượng toán học sau khi nhấn dấu bằng
