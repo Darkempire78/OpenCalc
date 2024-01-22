@@ -27,7 +27,9 @@
 ### 2. Metadata maximum length
 
 Google Play + F-Droid - +-30% characters left for translations
-1. __Title/Name__ - 30-50 (Google Play vs F-Droid) - __max 20 characters__
-2. __Short Description/Summary__ - 80 - __max 55 characters__
-3. __Full Description/Description__ - 4000 - __max 2800 characters__
-4. __Changelog__ - 500 - __max 350 characters__
+1. __Title/Name__ - 30-50 (Google Play vs F-Droid) - __use max 20 characters__
+2. __Short Description/Summary__ - 80 - __use max 55 characters__
+3. __Full Description/Description__ - 4000 - __use max 2800 characters__
+4. __Changelog__ - 500 - __use max 350 characters__
+
+### 3. Blank line after and before "#", "##", "###"
