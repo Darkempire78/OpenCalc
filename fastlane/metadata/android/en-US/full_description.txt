@@ -7,4 +7,5 @@ A simple and beautiful calculator for Android
 	* Scientific mode
 	* History
 	* Portrait and landscape orientation
+	* Quick Settings Tile
 	* More...
