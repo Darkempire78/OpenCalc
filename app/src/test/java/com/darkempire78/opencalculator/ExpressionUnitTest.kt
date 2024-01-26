@@ -149,6 +149,30 @@ class ExpressionUnitTest {
         result = calculate("sin(1+1)", true).toDouble()
         assertEquals(0.03489949670250097, result, 0.0)
     }
+    @Test
+    fun number_Formatting_isCorrect() {
+
+        // Initialize NumberFormatter
+        val formatter = NumberFormatter
+
+        // Define the decimal and grouping separators
+        val decimalSeparator = "."
+        val groupingSeparator = ","
+
+        // Sample input 1
+        val text1 = "10000+100000"
+        val expected1 = "10,000+100,000"
+        val actual1 = formatter.format(text1, decimalSeparator, groupingSeparator)
+        assertEquals(expected1, actual1)
+
+        // Sample input 2
+        val text2 = "1000000+10000000"
+        val expected2 = "1,000,000+10,000,000"
+        val actual2 = formatter.format(text2, decimalSeparator, groupingSeparator)
+        assertEquals(expected2, actual2)
+
+    }
+
 
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input, decimalSeparatorSymbol, groupingSeparatorSymbol), isDegreeModeActivated)
 
