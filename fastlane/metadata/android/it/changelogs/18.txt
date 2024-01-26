@@ -1,0 +1,7 @@
+Novità:
+- Tenere premuto per copiare un valore
+- Traduzione in Indonesiano
+
+Correzioni:
+- Scorrimento in modalità orizzontale
+- Problemi di messa a fuoco

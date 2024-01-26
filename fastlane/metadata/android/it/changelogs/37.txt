@@ -1,0 +1,5 @@
+Novità:
+- Pannello Opzioni Rapide
+
+Correzioni:
+- Notifiche a comparsa fastidiose

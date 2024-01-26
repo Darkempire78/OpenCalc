@@ -1,0 +1,8 @@
+Novità:
+- Vibrazione
+
+Cambiamenti:
+- Miglioramenti del codice
+
+Correzioni:
+- Segui impostazioni di sistema al primo avvio

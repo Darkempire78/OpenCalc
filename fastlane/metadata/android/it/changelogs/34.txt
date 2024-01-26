@@ -1,0 +1,7 @@
+Aggiornamenti:
+- Visualizza "Valore troppo grande" invece di "Infinito"
+
+Correzioni:
+- Divisione di numeri negativi
+- Problemi con la funzione fattoriale
+- sin(x!) & cos(x!) danno risultati errati

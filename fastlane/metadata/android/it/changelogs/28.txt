@@ -1,0 +1,14 @@
+Novità:
+- Sistema di calcolo interno
+- Fattoriali decimali
+- Impedisce la presenza di due separatori decimali nello stesso numero
+
+Correzioni:
+- Scorrimento cronologia
+- Precisione risultato
+- Cancellazione raggruppando separatori
+- Modalità orizzontale per tablet da 10"
+- Cancellazione dopo tasto "Uguale"
+- Crash cliccando su un risultato dalla cronologia
+- Alcuni problemi di formattazione espressione
+- Diverse altre correzioni

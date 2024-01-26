@@ -1,0 +1,8 @@
+Novità:
+- Traduzione in Spagnolo
+
+Correzioni:
+- La tastiera si blocca utilizzando fattoriali grandi
+- Caricamento valori non corretto dalla cronologia
+- Caricare risultati con punto decimale dalla cronologia rimuove operatori o chiude l'app
+- Precisione

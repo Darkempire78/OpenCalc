@@ -1,0 +1,13 @@
+Aggiornamenti:
+- L'area di input prende tutta la larghezza dello schermo
+- Sistema delle parentesi
+
+Correzioni:
+- Doppia notifica a comparsa quando si copia un valore in Android 13
+- Dominio di definizione della tangente
+- Visualizza risultato quando si incolla un calcolo
+- Divisione indiretta per 0 non definita
+- Divisione per funzioni
+- Problemi con la percentuale
+- Le funzioni trigonometriche restituiscono valori sbagliati se il risultato è negativo
+- Diverse altre correzioni
