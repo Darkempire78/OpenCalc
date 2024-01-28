@@ -1,0 +1,4 @@
+Düzeltmeler:
+- Giriş kaydırma çubuğu
+- Sonucu görmek için gerekli kaydırma
+- Eşittirten sonra sayıya basılırsa girişi temizle
