@@ -6,4 +6,4 @@ Güncellendi:
 
 Düzeltmeler:
 - 0 faktöriyel 1 döndürür
-- Eşittir tuşuna basıldıktan sonra matematik sembolü ekle
+- Eşittire basıldıktan sonra matematik sembolü ekle
