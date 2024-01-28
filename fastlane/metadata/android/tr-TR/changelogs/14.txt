@@ -1,0 +1,6 @@
+Yeni:
+- İpucu düğmesi
+
+Değişiklikler:
+- Geçmiş biçimi iyileştirildi
+- Eksi karakteri güncellendi

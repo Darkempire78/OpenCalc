@@ -1,0 +1,13 @@
+Yeni:
+- Hakkında bölümüne lisans eklendi
+
+İyileştirmeler:
+- Birkaç çeviri güncellendi
+- Ondalıktan önce sembol etkinleştirildi
+
+Düzeltmeler:
+- İmleç konumu
+- Negatif tabanın kökü alındığında çökme
+- Negatif bir sayının ln veya logaritması alındığında çökme
+- Yatay ana etkinlik yeniden oluşturulurken çökme
+- Bir hesaplamada ').' den sonraki her şeyin yok sayılması

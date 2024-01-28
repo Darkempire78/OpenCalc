@@ -1,0 +1,5 @@
+Düzeltmeler:
+- tan() işlevinin düzgün çalışmaması
+- Binlik ayırıcının silinmesinin imlecin atlamasına neden olması
+- Parantezlerin var olan hesaplamaların içine yerleştirilmesi
+- Yatay modda 10 inç üzeri tabletler için görüntü sorunları

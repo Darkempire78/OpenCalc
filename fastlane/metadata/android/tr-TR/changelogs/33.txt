@@ -1,0 +1,13 @@
+Güncellendi:
+- Giriş alanı tam ekran boyutunu kaplar
+- Parantez sistemi
+
+Düzeltmeler:
+- Android 13 için değer kopyalandığında çift bildirim
+- Tanjantın tanım alanı
+- Bir hesaplamayı yapıştırdığınızda sonucun görüntülenmesi
+- Sıfır ile dolaylı bölme tanımsız
+- İşlevlere göre bölme
+- Yüzdelik sorunları
+- Sonuç negatifse trigonometrik işlevlerin yanlış sonuçlar döndürmesi
+- Diğer birkaç düzeltme

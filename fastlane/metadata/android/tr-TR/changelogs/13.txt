@@ -1,0 +1,6 @@
+Yeni:
+- Temalandırılan simge
+
+Değişiklikler:
+- Çeviriler güncellendi
+- Eşittirden sonra sayıya basılırsa girişi temizle
