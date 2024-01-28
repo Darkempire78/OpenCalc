@@ -8,18 +8,15 @@
     <item
         android:id="@+id/app_menu_clear_history_button"
         android:title="@string/menu_clear_history"
-        android:onClick="clearHistory"
-        />
+        android:onClick="clearHistory" />
 
     <item
         android:id="@+id/app_menu_settings_button"
         android:title="@string/menu_settings"
-        android:onClick="openSettings"
-        />
+        android:onClick="openSettings" />
 
     <item
         android:id="@+id/app_menu_about_button"
         android:title="@string/menu_about"
-        android:onClick="openAbout"
-        />
+        android:onClick="openAbout" />
 </menu>

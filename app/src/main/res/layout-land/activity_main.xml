@@ -101,8 +101,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
-                        android:text="@string/divide"
-                        />
+                        android:text="@string/divide" />
 
                     <Button
                         android:id="@+id/clearButton"
@@ -113,8 +112,7 @@
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
                         android:textSize="18sp"
-                        android:text="@string/clear"
-                         />
+                        android:text="@string/clear" />
 
                     <Button
                         android:id="@+id/leftParenthesisButton"
