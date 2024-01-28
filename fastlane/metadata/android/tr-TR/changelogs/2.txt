@@ -1,0 +1,3 @@
+Yeni:
+- Amoled teması
+- Sistem temasını kullan
