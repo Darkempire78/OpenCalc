@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="menu_settings">அமைப்புகள்</string>
+    <string name="menu_about">இந்த செயலியைப் பற்றிய தகவல்கள்</string>
+    <string name="app_name_display">கணிப்பான்</string>
+    <string name="settings_category_general">பொது</string>
+    <string name="menu_clear_history">வரலாற்றை அழி</string>
+</resources>
