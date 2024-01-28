@@ -15,4 +15,5 @@
     <string name="settings_general_radians">ரேடியன்கள்</string>
     <string name="settings_general_radians_desc">இயல்புநிலையாக டிகிரிகளுக்குப் பதிலாக ரேடியன்களைப் பயன்படுத்தவும்</string>
     <string name="settings_general_scientific_mode">அறிவியல் முறை</string>
+    <string name="settings_general_scientific_mode_desc">இயல்பாக அறிவியல் பயன்முறையை இயக்கவும்</string>
 </resources>
