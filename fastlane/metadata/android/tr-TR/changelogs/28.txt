@@ -1,18 +1,14 @@
 Yeni:
 - Dahili hesaplama sistemi
 - Ondalık faktöriyeller
-- Aynı sayıda iki ondalık ayraç bulunmasını önleme
-- Brezilya çevirisi (@Bardock88)
-- Tayvan ve Hong Kong çevirisi (@alecchangod)
-- İspanyolca çevirisi
+- Aynı sayıda iki ondalık ayraç bulunmasını önle
 
 Düzeltildi:
 - Geçmiş kaydırma çubuğu (@MahmoudRH)
 - Sonuç doğruluğu
 - Grup ayıracıyla geri alma
-- "NaN" yerine "Matematik Hatası" gösterme (@lefterisgar)
 - 10 inç tablet için yatay mod
-- Backspace after equal button
+- Eşittirden sonra geri alma
 - Geçmiş sonucuna dokunulduğunda çökme
 - Bazı biçimlendirme sorunları
 - Diğer birkaç düzeltme
