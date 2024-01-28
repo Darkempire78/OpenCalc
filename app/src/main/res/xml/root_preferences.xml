@@ -152,7 +152,7 @@
             app:icon="@drawable/bedtime"
             app:singleLineTitle="false"
             app:defaultValue="false"
-            app:widgetLayout="@drawable/material_switch" />    
+            app:widgetLayout="@drawable/material_switch" />
 
     </PreferenceCategory>
 

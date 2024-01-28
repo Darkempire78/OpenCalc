@@ -15,7 +15,7 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings" />        
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".AboutActivity"
             android:exported="false" />
