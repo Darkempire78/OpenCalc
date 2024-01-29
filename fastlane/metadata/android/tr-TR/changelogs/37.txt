@@ -1,0 +1,5 @@
+Yeni:
+- Hızlı ayarlar kutucuğu
+
+Düzeltmeler:
+- Can sıkan bildirimler

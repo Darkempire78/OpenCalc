@@ -1,0 +1,4 @@
+Düzeltmeler:
+- Parantezleri otomatik kapat
+- Faktöriyelleri * olmadan çarp
+- Sayı ondalık ayırıcı ile başladığında otomatik 0 ekle

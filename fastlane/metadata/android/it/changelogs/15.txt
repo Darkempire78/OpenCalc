@@ -1,0 +1,6 @@
+Cambiamenti:
+- La schermata d'avvio è scura adesso
+
+Correzioni:
+- Problemi con la tastiera
+- Tastiera che continua a scorrere

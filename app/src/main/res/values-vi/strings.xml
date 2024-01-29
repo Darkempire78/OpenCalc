@@ -44,7 +44,7 @@
     <string name="settings_general_radians">Radian</string>
     <string name="settings_general_add_modulo_desc">Thay thế nút \"X²\" bằng nút modulo (khả dụng khi nhấn nút \"INV\")</string>
     <string name="copied_result">Đã sao chép kết quả</string>
-    <string name="settings_category_formatting">ĐANG ĐỊNH DẠNG</string>
+    <string name="settings_category_formatting">ĐỊNH DẠNG</string>
     <string name="settings_general_scientific_mode">Chế độ khoa học</string>
     <string name="settings_formatting_precision">Số chữ số thập phân</string>
     <string name="settings_general_split_parenthesis_button_desc">Bỏ nút \"AC\" để chia nút ngoặc thành 2 nút</string>

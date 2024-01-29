@@ -1,2 +1,2 @@
-Thay đổi:
+Các thay đổi:
 - Thêm hỗ trợ cho chủ đề Material You (Cảm ơn @MahmoudRH)

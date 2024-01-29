@@ -1,0 +1,13 @@
+Novità:
+- Aggiunta licenza nella sezione informazioni
+
+Miglioramenti:
+- Aggiornate diverse traduzioni
+- Abilitazione simbolo prima del decimale
+
+Correzioni:
+- Posizione del cursore
+- Crash quando si usa la radice di una base negativa
+- Crash quando si usa il logaritmo di un numero negativo
+- Crash quando si ricrea l'attività principale in modalità orizzontale
+- Tutto ciò dopo ')' in un calcolo viene ignorato

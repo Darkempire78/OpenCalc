@@ -1,0 +1,6 @@
+Novità:
+- Tasto Suggerimenti
+
+Cambiamenti:
+- Migliorato il formato della cronologia
+- Carattere "Meno" aggiornato

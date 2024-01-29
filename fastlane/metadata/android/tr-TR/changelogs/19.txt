@@ -1,0 +1,8 @@
+Yeni:
+- Değer kopyalandığında bildirim
+
+Düzeltmeler:
+- Sistem temasının kullanılması Material You destekliyor
+- Tablet desteği iyileştirildi
+- Küçük ekran boyutu desteği iyileştirildi
+- Android 8'den önce simgenin gösterilmemesi

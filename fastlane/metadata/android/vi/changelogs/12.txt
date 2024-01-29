@@ -1,7 +1,7 @@
 Mới:
 - Lịch sử
 
-Thay đổi:
+Các thay đổi:
 - Tối ưu hóa
 
 Sửa lỗi:

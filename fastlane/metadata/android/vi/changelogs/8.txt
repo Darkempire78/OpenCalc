@@ -1,2 +1,2 @@
-Sửa chữa:
-- Khắc phục số quá lớn gây crash (bị văng)
+Sửa lỗi:
+- Sửa lỗi bị văng với các số lớn

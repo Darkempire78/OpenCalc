@@ -4,7 +4,7 @@
 
 Đã sửa:
 - Thông báo 2 lần khi sao chép giá trị trên Android 13
-- Definition domain of tangent (mình không biết dịch sang tiếng Việt là gì 😥)
+- Định nghĩa miền của tiếp tuyến
 - Hiển thị kết quả khi dán phép tính
 - Phép chia gián tiếp cho 0 không được xác định
 - Chia cho hàm số

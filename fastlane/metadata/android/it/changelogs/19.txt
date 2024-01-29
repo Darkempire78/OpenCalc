@@ -1,0 +1,8 @@
+Novità:
+- Notifica a comparsa quando si copia un valore
+
+Correzioni:
+- "Segui impostazioni di sistema" supporta Material You
+- Supporto migliorato per tablet
+- Supporto migliorato per schermi piccoli
+- Icona non visualizzata su Android 8 e precedenti

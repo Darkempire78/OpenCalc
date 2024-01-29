@@ -1,4 +1,4 @@
-Thay đổi:
+Các thay đổi:
 - Bản dịch tiếng Đức
 - Bản dịch tiếng Nga
 - Bản dịch tiếng Hy Lạp

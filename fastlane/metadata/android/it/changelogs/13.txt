@@ -1,0 +1,6 @@
+Novità:
+- Icona a tema
+
+Cambiamenti:
+- Traduzioni aggiornate
+- Input azzerato premendo un numero dopo l'uguale
