@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <!--<item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
     </style>
 
