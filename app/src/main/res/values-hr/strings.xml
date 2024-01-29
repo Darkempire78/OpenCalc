@@ -43,4 +43,5 @@
     <string name="settings_formatting_scientific_notation_desc">Pretvori sve rezultate u znanstveni način pisanja</string>
     <string name="settings_formatting_scientific_notation">Broj u znanstveni način pisanja</string>
     <string name="settings_general_split_parenthesis_button">Podijeli gumb zagrada u dva gumba</string>
+    <string name="about_other_license">GPL 3.0 licenca</string>
 </resources>
