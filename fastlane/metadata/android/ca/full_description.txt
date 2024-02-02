@@ -1,0 +1,11 @@
+Una calculadora simple i bonica per a Android
+
+📖 Característiques
+	* Lleugera (APK ~2 MB)
+	* Sense permisos innecessaris
+	* Tema fosc, clar, Amoled i Material You
+	* Mode científic
+	* Historial
+	* Orientació vertical i horitzontal
+	* Fitxa de configuració ràpida
+	* Més...
