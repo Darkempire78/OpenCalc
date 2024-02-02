@@ -1,0 +1,13 @@
+Mới:
+- Thêm giấy phép vào phần Về ứng dụng
+
+Cải tiến:
+- Cập nhật nhiều bản dịch
+- Bật ký hiệu trước số thập phân
+
+Sửa lỗi:
+- Vị trí con trỏ
+- Bị treo ứng dụng (crash) khi căn bậc cơ số âm (root of negative base)
+- Bị treo ứng dụng (crash) khi thực hiện log hoặc ln của số âm
+- Bị treo ứng dụng khi tạo lại Activity chính (màn hình giao diện chính) cho hướng nằm ngang (Crash when recreating landscape main activity)
+- Mọi thứ sau ').' trong một phép tính bị bỏ qua
