@@ -40,6 +40,12 @@
             </intent-filter>
         </service>
 
+        <receiver android:name=".MyTileReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="darkempire78.opencalculator.action.START_ACTIVITY" />
+            </intent-filter>
+        </receiver>
 
 </application>
 
