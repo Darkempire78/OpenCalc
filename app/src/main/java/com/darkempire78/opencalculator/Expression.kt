@@ -257,8 +257,7 @@ class Expression {
                             if (cleanCalculation[i] == ')') parenthesisOpened +=1
                             else if (cleanCalculation[i] == '(') parenthesisOpened -= 1
 
-                            while (i > 1 && cleanCalculation[i-1].isDigit() && cleanCalculation[i-2] !in "()*-/+^") i--
-
+                            while (i > 1 && (cleanCalculation[i-1].isDigit() || cleanCalculation[i-1] == '.') && cleanCalculation[i-2] !in "()*-/+^") i--
                             // If there is only one parenthesis open, close it and add an F in front of it
                             if (parenthesisOpened == 1) {
                                 cleanCalculation = cleanCalculation.addCharAtIndex('(', i-1)
