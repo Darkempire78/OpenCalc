@@ -47,6 +47,18 @@ class ExpressionUnitTest {
         assertEquals(3.0, result, 0.0)
     }
 
+
+    @Test
+    fun number_factorial_equal_decimal_factorial() {
+        val number1 = calculate("59!", false)
+        val decimalNumber1 = calculate("59.0!", false)
+        assertEquals(number1,decimalNumber1)
+
+        val number2 = calculate("100!", false)
+        val decimalNumber2 = calculate("100.0!", false)
+        assertEquals(number2,decimalNumber2)
+    }
+
     @Test
     fun pow_isCorrect() {
         var result = calculate("4^3", false).toDouble()
