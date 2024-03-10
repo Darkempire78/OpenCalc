@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_help_translate">అనువదించు</string>
+    <string name="about_help_donate">దానం చేయండి</string>
+    <string name="settings_advanced_prevent_sleep">పరికరాన్ని మేల్కొని ఉంచండి</string>
+    <string name="about_made_in_france">ఫ్రాన్స్‌లో ❤️తో తయారు చేయబడింది</string>
+    <string name="about_easter_egg">OpenCalc ని ఉపయోగించినందుకు ధన్యవాదాలు</string>
+    <string name="about_other_version">సంస్కరణ</string>
+    <string name="about_other_privacy_policy">గోప్యతా విధానం</string>
+    <string name="division_by_0">సున్నాతో భాగించలేరు</string>
+    <string name="value_too_large">విలువ చాలా పెద్దది</string>
+    <string name="copied_result">ఫలితం కాపీ చేయబడింది</string>
+    <string name="value_copied">కాపీ చేయబడింది</string>
+    <string name="infinity">అనంతం</string>
+    <string name="require_real_number">వాస్తవ సంఖ్య అవసరం</string>
+    <string name="app_name_display">కాలిక్యులేటర్</string>
+    <string name="about_help_rate">ఈ యాప్‌ను రేట్ చేయండి</string>
+    <string name="settings_advanced_prevent_sleep_desc">యాప్ ముందుభాగంలో ఉన్నప్పుడు పరికరం నిద్రపోకుండా నిరోధించండి</string>
+    <string name="settings_advanced_long_click_copy_desc">ఎక్కువసేపు నొక్కితే, దాన్ని ఎంచుకోవడానికి బదులుగా దాని వచనాన్ని కాపీ చేస్తుంది</string>
+</resources>
