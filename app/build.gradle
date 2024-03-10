@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 34
+
+    compileSdk = 34
 
     defaultConfig {
         applicationId "com.darkempire78.opencalculator"
