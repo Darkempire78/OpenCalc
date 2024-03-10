@@ -7,4 +7,5 @@ Android için basit ve güzel bir hesap makinesi
 	* Bilimsel mod
 	* Geçmiş
 	* Dikey ve yatay yönlendirme
+	* Hızlı ayarlar kutucuğu
 	* Ve daha fazlası...

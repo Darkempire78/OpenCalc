@@ -49,4 +49,8 @@
     <string name="settings_advanced_long_click_copy_desc">Premendo a lungo, si copia il testo dell\'elemento invece di selezionarlo</string>
     <string name="settings_formatting_scientific_notation_desc">Converte tutti i risultati in notazione scientifica</string>
     <string name="settings_advanced_long_click_copy">Premi a lungo per copiare il valore</string>
+    <string name="about_other_license">Licenza GPL 3.0</string>
+    <string name="copied_result">Risultato Copiato</string>
+    <string name="copied_history_calculation">Copiato calcolo dalla cronologia</string>
+    <string name="copied_history_result">Copiato risultato dalla cronologia</string>
 </resources>

@@ -1,0 +1,9 @@
+Güncellendi:
+- Hata durumunda metin rengini değiştir
+- Sürüm boyutunu küçült
+- Hesaplamaya eşitse bir sonucu geçmişe kaydetme
+- En son yapılan hesaplamayla aynıysa hesaplamayı geçmişe kaydetme
+
+Düzeltmeler:
+- 0 faktöriyel 1 döndürür
+- Eşittire basıldıktan sonra matematik sembolü ekle

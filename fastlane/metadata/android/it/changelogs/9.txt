@@ -1,0 +1,7 @@
+Cambiamenti:
+- Nuova sezione informazioni
+- Aggiunta separatore per tema Amoled
+
+Correzioni:
+- Colore casella di selezione
+- Nome dell'app (Tradotta in Inglese e Francese)

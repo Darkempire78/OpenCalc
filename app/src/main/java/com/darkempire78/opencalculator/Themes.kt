@@ -49,7 +49,7 @@ class Themes(private val context: Context) {
                 else
                     context.getString(R.string.theme_system)
 
-            val styles =  hashMapOf(
+            val styles = hashMapOf(
                 SYSTEM_STYLE_INDEX to systemName,
                 LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
                 DARK_STYLE_INDEX to context.getString(R.string.theme_dark),

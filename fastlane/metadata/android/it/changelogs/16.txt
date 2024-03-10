@@ -1,0 +1,4 @@
+Correzioni:
+- Barra di scorrimento input
+- Scorrimento necessario per vedere il risultato
+- Input azzerato dopo aver premuto "Uguale"

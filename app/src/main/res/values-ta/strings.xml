@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_settings">அமைப்புகள்</string>
+    <string name="menu_about">இந்த செயலியைப் பற்றிய தகவல்கள்</string>
+    <string name="app_name_display">கணிப்பான்</string>
+    <string name="settings_category_general">பொது</string>
+    <string name="menu_clear_history">வரலாற்றை அழி</string>
+    <string name="settings_category_formatting">வடிவமைத்தல்</string>
+    <string name="settings_category_history">வரலாறு</string>
+    <string name="settings_category_advanced">மேம்படுத்தபட்ட</string>
+    <string name="settings_general_language">மொழி</string>
+    <string name="settings_general_theme">நிறம்</string>
+    <string name="settings_general_vibration">அதிர்வு நிலைமை</string>
+    <string name="settings_general_vibration_desc">பொத்தானை அழுத்தும்போது அதிர்வுறும்</string>
+    <string name="settings_general_radians">ரேடியன்கள்</string>
+    <string name="settings_general_radians_desc">இயல்புநிலையாக டிகிரிகளுக்குப் பதிலாக ரேடியன்களைப் பயன்படுத்தவும்</string>
+    <string name="settings_general_scientific_mode">அறிவியல் முறை</string>
+    <string name="settings_general_scientific_mode_desc">இயல்பாக அறிவியல் பயன்முறையை இயக்கவும்</string>
+</resources>

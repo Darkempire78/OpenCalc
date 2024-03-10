@@ -1,0 +1,8 @@
+Novità:
+- Errori espliciti
+- Ridesign della cronologia
+- Aggiunta di data e ora ai risultati in cronologia
+- Non permette simboli matematici duplicati nell'input
+
+Aggiornamenti:
+- arccos, arcsin e arctan ora vengono visualizzati come cos⁻¹, sin⁻¹ e tan⁻¹

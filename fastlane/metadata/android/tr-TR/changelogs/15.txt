@@ -1,0 +1,6 @@
+Değişiklikler:
+- Açılış ekranı artık koyu
+
+Düzeltmeler:
+- Klavye sorunu
+- Klavye kaydırması

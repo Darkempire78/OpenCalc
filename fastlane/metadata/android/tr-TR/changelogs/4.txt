@@ -1,0 +1,2 @@
+Düzeltmeler:
+- Olmayan düğmelere titreşim eklendi

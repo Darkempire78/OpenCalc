@@ -46,6 +46,10 @@
 * Quick Settings Tile
 * More...
 
+## ⚠️ Requirements
+
+* Android 7.0+
+
 ## 📷 Screenshots
 
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="15%"/>

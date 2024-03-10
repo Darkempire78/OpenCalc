@@ -7,5 +7,5 @@ Một máy tính đơn giản và đẹp dành cho Android
 	* Chế độ khoa học
 	* Lịch sử
 	* Hướng nằm dọc và ngang
-        * Ô Cài đặt nhanh
+	* Ô Cài đặt nhanh
 	* Nhiều hơn nữa...
