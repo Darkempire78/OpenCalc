@@ -8,8 +8,8 @@
     <ImageView
         android:id="@+id/settings_back_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="22dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="22dp"
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintBottom_toBottomOf="@+id/settings_back_button_text"
         app:layout_constraintStart_toStartOf="parent"
