@@ -14,7 +14,7 @@ class Themes(private val context: Context) {
 
         // Themes
         private const val DEFAULT_THEME_INDEX = 0
-        const val AMOLED_THEME_INDEX = 1
+        private const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
 
         // used to go from Preference int value to actual theme
