@@ -109,6 +109,7 @@
         <item name="android:navigationBarColor">@color/nothing_light_status_colour</item>
 
         <item name="foreground_color">@color/nothing_light_foreground_color</item>
+        <item name="android:colorBackground">@color/nothing_light_background_color</item>
         <item name="background_color">@color/nothing_light_background_color</item>
 
         <item name="fontFamily">@font/ndot47</item>
@@ -141,6 +142,7 @@
         <item name="android:navigationBarColor">@color/nothing_dark_status_color</item>
 
         <item name="foreground_color">@color/nothing_dark_foreground_color</item>
+        <item name="android:colorBackground">@color/nothing_dark_background_color</item>
         <item name="background_color">@color/nothing_dark_background_color</item>
 
         <item name="fontFamily">@font/ndot47</item>
