@@ -14,8 +14,7 @@
             app:enabled="true"
             app:title="@string/settings_general_language"
             app:summary="APP LANGUAGE"
-            app:icon="@drawable/language"
-            />
+            app:icon="@drawable/language" />
 
         <Preference
             android:id="@+id/settings_select_app_theme"
@@ -24,8 +23,7 @@
             app:enabled="true"
             app:title="@string/settings_general_theme"
             app:summary="APP THEME"
-            app:icon="@drawable/theme"
-            />
+            app:icon="@drawable/theme" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
@@ -45,8 +43,7 @@
             app:icon="@drawable/thermostat"
             app:singleLineTitle="false"
             app:defaultValue="false"
-            app:widgetLayout="@drawable/material_switch"
-            />
+            app:widgetLayout="@drawable/material_switch" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
@@ -56,8 +53,7 @@
             app:icon="@drawable/science"
             app:singleLineTitle="false"
             app:defaultValue="false"
-            app:widgetLayout="@drawable/material_switch"
-            />
+            app:widgetLayout="@drawable/material_switch" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
@@ -67,8 +63,7 @@
             app:icon="@drawable/swap"
             app:singleLineTitle="false"
             app:defaultValue="false"
-            app:widgetLayout="@drawable/material_switch"
-            />
+            app:widgetLayout="@drawable/material_switch" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.ADD_MODULO_BUTTON"
@@ -78,8 +73,7 @@
             app:icon="@drawable/hashtag"
             app:singleLineTitle="false"
             app:defaultValue="true"
-            app:widgetLayout="@drawable/material_switch"
-            />
+            app:widgetLayout="@drawable/material_switch" />
 
 
 
@@ -106,8 +100,7 @@
             app:defaultValue="10"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
-            app:icon="@drawable/precision"
-            />
+            app:icon="@drawable/precision" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.WRITE_NUMBER_INTO_SCIENTIC_NOTATION"
@@ -133,8 +126,7 @@
             app:defaultValue="100"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
-            app:icon="@drawable/history"
-            />
+            app:icon="@drawable/history" />
 
     </PreferenceCategory>
 
@@ -160,8 +152,7 @@
             app:icon="@drawable/bedtime"
             app:singleLineTitle="false"
             app:defaultValue="false"
-            app:widgetLayout="@drawable/material_switch"
-            />
+            app:widgetLayout="@drawable/material_switch" />
 
     </PreferenceCategory>
 
