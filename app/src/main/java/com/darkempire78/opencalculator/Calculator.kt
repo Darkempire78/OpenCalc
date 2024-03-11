@@ -1,13 +1,23 @@
 package com.darkempire78.opencalculator
 
-import java.math.BigInteger
-import kotlin.math.*
-
 import java.math.BigDecimal
+import java.math.BigInteger
 import java.math.MathContext
 import java.math.RoundingMode
+import kotlin.math.PI
+import kotlin.math.abs
+import kotlin.math.acos
+import kotlin.math.asin
+import kotlin.math.atan
+import kotlin.math.cos
+import kotlin.math.exp
 import kotlin.math.ln
+import kotlin.math.log10
 import kotlin.math.pow
+import kotlin.math.round
+import kotlin.math.sin
+import kotlin.math.sqrt
+import kotlin.math.tan
 
 var division_by_0 = false
 var domain_error = false
@@ -40,26 +50,31 @@ class Calculator(
     }
 
     private fun gammaLanczos(x: BigDecimal): BigDecimal {
-        // https://rosettacode.org/wiki/Gamma_function
-        var xx = x
-        val p = doubleArrayOf(
-            0.9999999999998099,
+        // Lanczos approximation parameters
+        val p = arrayOf(
             676.5203681218851,
             -1259.1392167224028,
             771.3234287776531,
             -176.6150291621406,
             12.507343278686905,
             -0.13857109526572012,
-            9.984369578019572E-6,
+            9.984369578019572e-6,
             1.5056327351493116e-7
         )
-        val g = BigDecimal(7)
-        if (xx < BigDecimal(0.5)) return (Math.PI / (sin(Math.PI * xx.toDouble()) * gammaLanczos(BigDecimal(1.0 - xx.toDouble())).toDouble())).toBigDecimal()
-        xx--
-        var a = p[0]
-        val t = xx + g + BigDecimal(0.5)
-        for (i in 1 until p.size) a += p[i] / (xx.toDouble() + i)
-        return (sqrt(2.0 * Math.PI) * t.toDouble().pow(xx.toInt() + 0.5) * exp(-t.toDouble()) * a).toBigDecimal()
+        val g = 7.0
+        var z = x.toDouble() - 1.0
+
+        var a = 0.9999999999998099
+        for (i in p.indices) {
+            a += p[i] / (z + i + 1)
+        }
+
+        val t = z + g + 0.5
+        val sqrtTwoPi = sqrt(2.0 * PI)
+        val firstPart = sqrtTwoPi * t.pow(z + 0.5) * exp(-t)
+        val result = firstPart * a
+
+        return BigDecimal(result, MathContext.DECIMAL64)
     }
 
     fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
