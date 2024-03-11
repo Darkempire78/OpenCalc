@@ -1,4 +1,4 @@
-Thay đổi:
+Các thay đổi:
 - trang "Về ứng dụng" mới
 - thêm dấu phân cách cho chủ đề Amoled
 

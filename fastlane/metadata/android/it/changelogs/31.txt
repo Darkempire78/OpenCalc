@@ -1,0 +1,9 @@
+Aggiornamenti:
+- Cambiamento colore del testo sull'errore
+- Riduzione dimensioni del rilascio
+- Non salva un risultato nella cronologia se è uguale al calcolo attuale
+- Non salva il calcolo nella cronologia se è lo stesso dell'ultimo salvato
+
+Correzioni:
+- Fattoriale 0 restituisce 1
+- Aggiunta di simbolo matematico dopo aver premuto "Uguale"

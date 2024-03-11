@@ -1,0 +1,7 @@
+Güncellendi:
+- "Sonsuz" yerine "değer çok büyük" göster
+
+Düzeltmeler:
+- Negatif sayılarla bölme işlemi
+- Faktöriyel işlevi ile ilgili sorun
+- sin(x!) ve cos(x!) işlevlerinin yanlış sonuçlar vermesi

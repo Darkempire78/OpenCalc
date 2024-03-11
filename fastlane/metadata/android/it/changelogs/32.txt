@@ -1,0 +1,2 @@
+Correzioni:
+- Crash su schermi piccoli e su tablet

@@ -1,10 +1,11 @@
 Een eenvoudige en mooie rekenmachine voor Android
 
 📖 Eigenschappen
-	* Lightweight (APK ~2MB)
+	* Lichtgewicht (APK ~2MB)
 	* Geen onnodige toestemmingen
 	* Donker, Licht, Amoled and Material You thema
 	* Wetenschappelijke modus
 	* Geschiedenis
-	* Portret en landschap orientatie
+	* Portret en landschap oriëntatie
+	* Snelle instellingen-tegel
 	* Meer...

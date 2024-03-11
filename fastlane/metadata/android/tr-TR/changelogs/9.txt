@@ -1,0 +1,7 @@
+Değişiklikler:
+- yeni hakkında sayfası
+- amoled tema için ayırıcı eklendi
+
+Düzeltmeler:
+- işaret kutusu rengi
+- uygulama adı (EN ve FR dillerinde çevrildi)

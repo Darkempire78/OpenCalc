@@ -1,0 +1,8 @@
+Yeni:
+- Geçmiş
+
+Değişiklikler:
+- İyileştirme
+
+Düzeltmeler:
+- Sonuç gösterim sorunları

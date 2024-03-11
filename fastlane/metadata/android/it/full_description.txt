@@ -7,4 +7,5 @@ Una calcolatrice semplice e bella per Android
 	* Modalità scientifica
 	* Cronologia
 	* Orientamento verticale e orizzontale
+	* Pannello Opzioni Rapide
 	* E altro...

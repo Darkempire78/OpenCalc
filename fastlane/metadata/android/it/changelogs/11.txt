@@ -1,7 +1,7 @@
 Modifiche:
-- Traduzione in Tedesca
-- Traduzione in Russa
-- Traduzione in Greca
+- Traduzione in Tedesco
+- Traduzione in Russo
+- Traduzione in Greco
 - Traduzione in Hindi
 - Traduzione in Azerbajiano
 

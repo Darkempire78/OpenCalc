@@ -1,0 +1,7 @@
+Yeni:
+- Değeri kopyalamak için uzun tıkla
+- Endonezce çeviri
+
+Düzeltmeler:
+- Yatay modda kaydırma
+- Odak sorunu

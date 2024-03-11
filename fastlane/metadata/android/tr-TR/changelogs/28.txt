@@ -1,0 +1,14 @@
+Yeni:
+- Dahili hesaplama sistemi
+- Ondalık faktöriyeller
+- Aynı sayıda iki ondalık ayraç bulunmasını önle
+
+Düzeltildi:
+- Geçmiş kaydırma çubuğu (@MahmoudRH)
+- Sonuç doğruluğu
+- Grup ayıracıyla geri alma
+- 10 inç tablet için yatay mod
+- Eşittirden sonra geri alma
+- Geçmiş sonucuna dokunulduğunda çökme
+- Bazı biçimlendirme sorunları
+- Diğer birkaç düzeltme
