@@ -62,7 +62,7 @@ class Calculator(
             1.5056327351493116e-7
         )
         val g = 7.0
-        var z = x.toDouble() - 1.0
+        val z = x.toDouble() - 1.0
 
         var a = 0.9999999999998099
         for (i in p.indices) {
