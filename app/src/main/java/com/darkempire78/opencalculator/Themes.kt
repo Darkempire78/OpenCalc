@@ -14,7 +14,7 @@ class Themes(private val context: Context) {
 
         // Themes
         private const val DEFAULT_THEME_INDEX = 0
-        const val AMOLED_THEME_INDEX = 1
+        private const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
 
         // used to go from Preference int value to actual theme
@@ -43,7 +43,7 @@ class Themes(private val context: Context) {
                 else
                     context.getString(R.string.theme_system)
 
-            val styles =  hashMapOf(
+            val styles = hashMapOf(
                 SYSTEM_STYLE_INDEX to systemName,
                 LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
                 DARK_STYLE_INDEX to context.getString(R.string.theme_dark),
