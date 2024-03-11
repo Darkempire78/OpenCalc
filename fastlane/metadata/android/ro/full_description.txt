@@ -1,0 +1,11 @@
+Un calculator simplă și elegantă pentru Android
+
+📖 Caracteristici
+	* Lightweight (APK ~2MB)
+	* Fără permisiuni inutile
+	* Temă de Întuneric, Lumină, Amoled și Material You
+	* Modul științific
+	* Istoric
+	* Orientare portret și orizontală
+	* Tilă pentru setări rapide
+	* Mai multe...

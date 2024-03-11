@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -43,9 +44,6 @@ class SettingsActivity : AppCompatActivity() {
 
         // back button
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
-            finish()
-        }
-        findViewById<View>(R.id.settings_back_button_hitbox).setOnClickListener {
             finish()
         }
 

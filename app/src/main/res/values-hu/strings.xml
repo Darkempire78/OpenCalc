@@ -50,4 +50,7 @@
     <string name="settings_advanced_prevent_sleep_desc">A készülék elalvásának megakadályozása, amíg az alkalmazás aktív</string>
     <string name="settings_general_split_parenthesis_button">A zárójel gomb két gombra való szétválasztása</string>
     <string name="about_category_social">KÖZÖSSÉGI</string>
+    <string name="copied_result">Eredmény másolva</string>
+    <string name="copied_history_calculation">Számítás az előzményekből kimásolva</string>
+    <string name="copied_history_result">Eredmény az előzményekből kimásolva</string>
 </resources>

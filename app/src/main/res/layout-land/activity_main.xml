@@ -101,8 +101,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
-                        android:text="@string/divide"
-                        />
+                        android:text="@string/divide" />
 
                     <Button
                         android:id="@+id/clearButton"
@@ -113,8 +112,7 @@
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
                         android:textSize="18sp"
-                        android:text="@string/clear"
-                         />
+                        android:text="@string/clear" />
 
                     <Button
                         android:id="@+id/leftParenthesisButton"
@@ -536,7 +534,7 @@
         app:layout_constraintGuide_percent="0.30" />
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
