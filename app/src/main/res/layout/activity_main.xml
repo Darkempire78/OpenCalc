@@ -378,8 +378,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:onClick="divideButton"
                         android:text="@string/divide"
-                        android:textSize="32sp"
-                        />
+                        android:textSize="32sp" />
                 </TableRow>
 
                 <TableRow
@@ -630,7 +629,7 @@
         tools:ignore="MissingConstraints" />-->
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

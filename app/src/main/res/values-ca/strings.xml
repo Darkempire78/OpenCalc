@@ -1,2 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="settings_category_general">GENERAL</string>
+    <string name="settings_category_formatting">FORMAT</string>
+    <string name="settings_category_history">HISTORIAL</string>
+    <string name="settings_category_advanced">AVANÇAT</string>
+    <string name="settings_general_scientific_mode">Mode científic</string>
+    <string name="settings_general_split_parenthesis_button_desc">Elimina el botó \"AC\" per a dividir el botó dels parèntesis en dos botons</string>
+    <string name="settings_general_add_modulo">Afegeix un botó pel mòdul</string>
+    <string name="settings_general_add_modulo_desc">Substitueix el botó \"X²\" per un botó del mòdul (disponible quan es prem el botó \"INV\")</string>
+    <string name="settings_formatting_precision">Nombre de decimals</string>
+    <string name="settings_advanced_long_click_copy_desc">Prémer més estona copia el text de l\'element en lloc de seleccionar-lo</string>
+    <string name="settings_advanced_prevent_sleep">Manté el dispositiu despert</string>
+    <string name="about_category_help">AJUDEU-NOS</string>
+    <string name="about_other_license">Llicència GPL 3.0</string>
+    <string name="theme_dark">Fosc</string>
+    <string name="copied_history_result">S\'ha copiat el resultat de l\'historial</string>
+    <string name="value_copied">S\'ha copiat</string>
+    <string name="infinity">Infinit</string>
+    <string name="require_real_number">Cal un nombre real</string>
+    <string name="app_name_display">Calculadora</string>
+    <string name="menu_clear_history">Neteja l\'historial</string>
+    <string name="menu_about">Quant a</string>
+    <string name="menu_settings">Configuració</string>
+    <string name="settings_general_language">Idioma</string>
+    <string name="settings_general_theme">Tema</string>
+    <string name="settings_general_vibration">Vibració</string>
+    <string name="settings_general_vibration_desc">Vibra quan es prem un botó</string>
+    <string name="settings_general_radians">Radians</string>
+    <string name="settings_general_radians_desc">Usa radians en lloc de graus per defecte</string>
+    <string name="settings_general_scientific_mode_desc">Activa el mode científic per defecte</string>
+    <string name="settings_formatting_scientific_notation">Número en notació científica</string>
+    <string name="settings_formatting_scientific_notation_desc">Converteix tots els resultats en notació científica</string>
+    <string name="settings_general_split_parenthesis_button">Divideix el botó dels parèntesis en dos botons</string>
+    <string name="settings_history_size">Resultats desats a l\'historial</string>
+    <string name="settings_advanced_long_click_copy">Prémer més estona per a copiar el valor</string>
+    <string name="settings_advanced_prevent_sleep_desc">Evita que el dispositiu entri en suspensió mentre l\'aplicació està en primer pla</string>
+    <string name="about_other_privacy_policy">Política de confidencialitat</string>
+    <string name="about_category_social">SOCIAL</string>
+    <string name="about_category_info">INFORMACIÓ DE L\'APLICACIÓ</string>
+    <string name="about_help_rate">Valoreu aquesta aplicació</string>
+    <string name="about_other_version">Versió</string>
+    <string name="about_easter_egg">Gràcies per utilitzar l\'OpenCalc ❤️</string>
+    <string name="about_made_in_france">Fet amb ❤️ a França</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_light">Clar</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="division_by_0">No es pot dividir per 0</string>
+    <string name="domain_error">Error de domini</string>
+    <string name="syntax_error">Error de sintaxi</string>
+    <string name="value_too_large">Valor massa gran</string>
+    <string name="copied_result">S\'ha copiat el resultat</string>
+    <string name="copied_history_calculation">S\'ha copiat el càlcul de l\'historial</string>
+    <string name="about_help_donate">Feu un donatiu</string>
+    <string name="about_help_translate">Traduïu</string>
+</resources>

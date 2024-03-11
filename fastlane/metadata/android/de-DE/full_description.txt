@@ -7,4 +7,5 @@ Ein unkomplizierter und schöner Taschenrechner für Android
 	* Wissenschaftlicher Modus
 	* Verlauf
 	* Hoch- und Querformat
+	* Schnellzugriff-Kachel
 	* Und mehr...

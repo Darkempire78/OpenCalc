@@ -11,6 +11,7 @@
         android:localeConfig="@xml/locales_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
@@ -24,7 +25,6 @@
             android:windowSoftInputMode="stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,6 +40,7 @@
             </intent-filter>
         </service>
 
+
         <receiver android:name=".MyTileReceiver"
             android:exported="false">
             <intent-filter>
@@ -48,5 +49,6 @@
         </receiver>
 
 </application>
+
 
 </manifest>

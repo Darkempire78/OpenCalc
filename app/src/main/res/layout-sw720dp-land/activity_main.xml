@@ -250,8 +250,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
-                        android:layout_weight="0.6"
-                        />
+                        android:layout_weight="0.6" />
 
                 </TableRow>
 
@@ -355,8 +354,7 @@
                         android:onClick="leftParenthesisButton"
                         android:text="@string/leftParenthesis"
                         android:textSize="@dimen/button_text_size"
-                        android:visibility="gone"
-                        />
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/rightParenthesisButton"
@@ -645,7 +643,7 @@
         tools:ignore="MissingConstraints" />-->
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
