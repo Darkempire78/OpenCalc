@@ -39,4 +39,18 @@
     <string name="settings_formatting_precision">Broj decimalnih mjesta</string>
     <string name="settings_general_language">Jezik</string>
     <string name="about_other_privacy_policy">Politika privatnosti</string>
+    <string name="about_other_license">Licenca GPL 3.0</string>
+    <string name="copied_result">Kopiran rezultat</string>
+    <string name="copied_history_calculation">Kopirana kalkulacija historije</string>
+    <string name="copied_history_result">Kopiran rezultat historije</string>
+    <string name="require_real_number">Potreban pravi broj</string>
+    <string name="settings_advanced_long_click_copy_desc">Dug pritisak kopira tekst stavke umjesto da je izaberete</string>
+    <string name="settings_category_formatting">FORMATIRANJE</string>
+    <string name="settings_general_split_parenthesis_button">Podijeli dugme sa zagradama na dva dugmeta</string>
+    <string name="settings_general_add_modulo">Dodaj modulo dugme</string>
+    <string name="settings_general_add_modulo_desc">Zamijeni dugme \"X²\" sa modulo dugmetom (dostupno kada se pritisne dugme \"INV\")</string>
+    <string name="settings_formatting_scientific_notation">Broj u naprednu notaciju</string>
+    <string name="settings_formatting_scientific_notation_desc">Pretvori sve rezultate u naprednu notaciju</string>
+    <string name="settings_advanced_long_click_copy">Dugo pritisni za kopiranje vrijednosti</string>
+    <string name="settings_general_split_parenthesis_button_desc">Ukloni dugme \"AC\" da biste dugme sa zagradama podelili na dva dugmeta</string>
 </resources>
