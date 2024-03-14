@@ -39,4 +39,18 @@
     <string name="settings_general_radians_desc">Стандардно користи радијани наместо степени</string>
     <string name="settings_advanced_prevent_sleep">Спречи го исклучувањето на екранот</string>
     <string name="settings_advanced_prevent_sleep_desc">Спречи го исклучувањето на екранот додека апликацијата е во преден план</string>
+    <string name="about_other_license">Лиценца GPL 3.0</string>
+    <string name="copied_history_result">Копиран резултат од историјата</string>
+    <string name="require_real_number">Потребен е вистински број</string>
+    <string name="settings_general_split_parenthesis_button_desc">Отстрани го копчето \"AC\" за да го поделите копчето за загради на две копчиња</string>
+    <string name="settings_category_formatting">ФОРМАТИРАЊЕ</string>
+    <string name="settings_general_split_parenthesis_button">Подели го копчето за загради на две копчиња</string>
+    <string name="settings_general_add_modulo">Додадете модуло копче</string>
+    <string name="settings_general_add_modulo_desc">Замени го копчето \"X²\" со модуло копче (достапно кога ќе се притисне копчето \"INV\")</string>
+    <string name="settings_advanced_long_click_copy">Долго притиснете за да ја копирате вредноста</string>
+    <string name="settings_advanced_long_click_copy_desc">Долго притискање го копира текстот на ставката наместо да го изберете</string>
+    <string name="settings_formatting_scientific_notation">Број во напредна нотација</string>
+    <string name="settings_formatting_scientific_notation_desc">Претвори ги сите резултати во напредна нотација</string>
+    <string name="copied_result">Копиран резултат</string>
+    <string name="copied_history_calculation">Копирана пресметка од историјата</string>
 </resources>
