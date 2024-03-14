@@ -7,4 +7,5 @@ A simple and beautiful calculator for Android
 	* Napredni način rada
 	* Historija
 	* Portretna i pejzažna orijentacija
+	* Pločica za brza podešavanja
 	* I više...
