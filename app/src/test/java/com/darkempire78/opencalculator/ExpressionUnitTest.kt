@@ -49,6 +49,17 @@ class ExpressionUnitTest {
 
 
     @Test
+    fun nested_factorial_isCorrect() {
+        var result = calculate("(3!)!", false).toDouble()
+        assertEquals(720.0, result, 0.0)
+
+        result = calculate("(2!)!", false).toDouble()
+        assertEquals(2.0, result, 0.0)
+    }
+
+
+
+    @Test
     fun number_factorial_equal_decimal_factorial() {
         val number1 = calculate("factorial(59)", false)
         val decimalNumber1 = calculate("factorial(59.0)", false)
