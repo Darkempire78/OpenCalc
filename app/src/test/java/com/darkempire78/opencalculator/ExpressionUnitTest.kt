@@ -64,13 +64,13 @@ class ExpressionUnitTest {
 
     @Test
     fun number_factorial_equal_decimal_factorial() {
-        val number1 = calculate("factorial(59)", false)
-        val decimalNumber1 = calculate("factorial(59.0)", false)
-        assertEquals(number1,decimalNumber1)
+        val number1 = calculate("59!", false).toDouble()
+        val decimalNumber1 = calculate("59.0!", false).toDouble()
+        assertEquals(number1,decimalNumber1,0.0)
 
-        val number2 = calculate("factorial(100)", false)
-        val decimalNumber2 = calculate("factorial(100.0)", false)
-        assertEquals(number2,decimalNumber2)
+        val number2 = calculate("100!", false).toDouble()
+        val decimalNumber2 = calculate("100.0!", false).toDouble()
+        assertEquals(number2,decimalNumber2,0.0)
     }
 
     @Test
