@@ -49,23 +49,44 @@ class ExpressionUnitTest {
 
 
     @Test
-    fun number_factorial_equal_decimal_factorial() {
-        val number1 = calculate("factorial(59)", false)
-        val decimalNumber1 = calculate("factorial(59.0)", false)
-        assertEquals(number1,decimalNumber1)
+    fun nested_factorial_isCorrect() {
+        var result = calculate("(3!)!", false).toDouble()
+        assertEquals(720.0, result, 0.0)
 
-        val number2 = calculate("factorial(100)", false)
-        val decimalNumber2 = calculate("factorial(100.0)", false)
-        assertEquals(number2,decimalNumber2)
+        result = calculate("(2!)!", false).toDouble()
+        assertEquals(2.0, result, 0.0)
+
+        result = calculate("(1!)!", false).toDouble()
+        assertEquals(1.0, result, 0.0)
+    }
+
+
+
+    @Test
+    fun number_factorial_equal_decimal_factorial() {
+        val number1 = calculate("59!", false).toDouble()
+        val decimalNumber1 = calculate("59.0!", false).toDouble()
+        assertEquals(number1,decimalNumber1,0.0)
+
+        val number2 = calculate("100!", false).toDouble()
+        val decimalNumber2 = calculate("100.0!", false).toDouble()
+        assertEquals(number2,decimalNumber2,0.0)
+
+        val number3 = calculate("3004!", false).toDouble()
+        val decimalNumber3 = calculate("3004.0!", false).toDouble()
+        assertEquals(number3,decimalNumber3,0.0)
     }
 
     @Test
     fun decimal_factorial_shows_correct_result() {
-        val factorial1 = calculate("factorial(5.003)", false)
-        assertEquals(120.615875f,factorial1.toFloat())
+        val factorial1 = calculate("5.003!", false).toDouble()
+        assertEquals(120.6158752971739,factorial1,0.0)
 
-        val factorial2 = calculate("factorial(3.01)", false)
-        assertEquals(6.0759287f,factorial2.toFloat())
+        val factorial2 = calculate("3.01!", false).toDouble()
+        assertEquals(6.075928540616668,factorial2,0.0)
+
+        val factorial3 = calculate("7.08!", false).toDouble()
+        assertEquals(5924.414931297129,factorial3,0.0)
     }
 
 
