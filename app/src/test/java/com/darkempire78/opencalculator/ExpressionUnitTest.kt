@@ -79,14 +79,14 @@ class ExpressionUnitTest {
 
     @Test
     fun decimal_factorial_shows_correct_result() {
-        val factorial1 = calculate("5.003!", false)
-        assertEquals(120.615875f,factorial1.toFloat())
+        val factorial1 = calculate("5.003!", false).toDouble()
+        assertEquals(120.6158752971739,factorial1,0.0)
 
-        val factorial2 = calculate("3.01!", false)
-        assertEquals(6.0759287f,factorial2.toFloat())
+        val factorial2 = calculate("3.01!", false).toDouble()
+        assertEquals(6.075928540616668,factorial2,0.0)
 
-        val factorial3 = calculate("7.08!", false)
-        assertEquals(5924.4149313f,factorial3.toFloat())
+        val factorial3 = calculate("7.08!", false).toDouble()
+        assertEquals(5924.414931297129,factorial3,0.0)
     }
 
 
