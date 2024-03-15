@@ -55,6 +55,9 @@ class ExpressionUnitTest {
 
         result = calculate("(2!)!", false).toDouble()
         assertEquals(2.0, result, 0.0)
+
+        result = calculate("(1!)!", false).toDouble()
+        assertEquals(1.0, result, 0.0)
     }
 
 
