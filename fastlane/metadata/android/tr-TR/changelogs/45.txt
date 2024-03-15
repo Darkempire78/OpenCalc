@@ -1,0 +1,24 @@
+Yeni:
+- Double yerine BigDecimal kullan
+- Sonuçları bilimsel gösterime dönüştürme ayarı
+- Modulo kullanmak için seçenek ekle
+- Bir değeri kopyalamak yerine seçmek için seçenek ekle
+- Parantez düğmesini bölmek için seçenek ekle
+- Geçmişi devre dışı bırakmak için seçenek ekle
+- Hakkında bölümüne lisans ekle
+
+İyileştirmeler:
+- Hesap makinesini iyileştir
+- Gerekli olmayan EditText'i TextView ile değiştir
+- Ondalıktan önce simgeyi etkinleştir
+- Geri düğmesi vuruş kutusunu ölçeklendir
+- Birkaç çeviriyi güncelle
+
+Düzeltmeler:
+- İmleç konumu
+- Amoled modunda tema uygulama sorunu
+- Ondalık faktöriyel sonucu
+- Yatay modun bazı düğme simgelerini gizlemesi
+- Ayarlar'ın yanındaki gri dikdörtgen
+- Biçimlendirme sorunları
+- Diğer birçok düzeltme...
