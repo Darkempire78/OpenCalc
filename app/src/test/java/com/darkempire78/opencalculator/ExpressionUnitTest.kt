@@ -84,6 +84,9 @@ class ExpressionUnitTest {
 
         val factorial2 = calculate("3.01!", false)
         assertEquals(6.0759287f,factorial2.toFloat())
+
+        val factorial3 = calculate("7.08!", false)
+        assertEquals(5924.4149313f,factorial3.toFloat())
     }
 
 
