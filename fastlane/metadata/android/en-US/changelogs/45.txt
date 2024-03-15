@@ -1,0 +1,24 @@
+New:
+- Use BigDecimal instead of Double
+- Setting to convert results to scientific notation
+- Add an option to use modulo
+- Add an option to select a value instead of copying it
+- Add an option to split the parentheses button
+- Add an option to disable history
+- Add license to about section
+
+Improvements:
+- Optimize the calculator
+- Replace not essential EditText by TextView
+- Enable symbol before decimal 
+- Scale up the back button hitbox
+- Update several translations
+
+Fixes:
+- Cursor location
+- Theme apply issue with amoled mode
+- Decimal factorial result
+- Landscape mode hides some button icons
+- Gray rectangle next to Settings
+- Formating issues
+- Many other fixes...
