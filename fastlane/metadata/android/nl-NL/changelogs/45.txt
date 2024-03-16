@@ -1,0 +1,24 @@
+Nieuw:
+- Gebruik BigDecimal in plaats van Double
+- Instellen om resultaten om te zetten in wetenschappelijke notatie
+- Voeg een optie toe om modulo te gebruiken
+- Voeg een optie toe om een waarde te selecteren in plaats van deze te kopiëren
+- Voeg een optie toe om de haakjesknop te splitsen
+- Voeg een optie toe om de geschiedenis uit te schakelen
+- Voeg licentie toe aan sectie Over
+
+Verbeteringen:
+- Optimaliseer de rekenmachine
+- Vervang niet essentieel EditText door TextView
+- Schakel symbool in voor decimaal 
+- Schaal de sluitdoos op de achterknop
+- Update verschillende vertalingen
+
+Oplossingen:
+- Cursor locatie
+- Thema-toepassing probleem met geamoleerde modus
+- Decimaal faculteit resultaat
+- Landschapsmodus verbergt enkele knoppictogrammen
+- Grijze rechthoek naast instellingen
+- Problemen vormen
+- Veel andere oplossingen...
