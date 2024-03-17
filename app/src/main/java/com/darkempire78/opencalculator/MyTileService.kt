@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.TileService
 
-class MyTileService: TileService() {
+class MyTileService : TileService() {
 
     // Called when the user taps on your tile in an active or inactive state.
     override fun onClick() {
@@ -14,7 +14,12 @@ class MyTileService: TileService() {
         // Intent to launch MainActivity
         val intent = Intent(this, MainActivity::class.java)
         // Create a PendingIntent from the intent
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
 
         // Check the SDK version to determine which method to use
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
