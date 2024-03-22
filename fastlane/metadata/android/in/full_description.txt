@@ -1,8 +1,11 @@
-Kalkulator yang indah dan sederhana untuk Android
+A simple and beautiful calculator for Android
 
 📖 Fitur
+	* Ringan (APK ~2MB)
+	* Tanpa izin yang tidak diperlukan
 	* Tema Gelap, Terang, Amoled dan Material You
 	* Mode sains
 	* Riwayat
-	* Orientasi potret dan lanskap
-	* Lainnya...
+	* Mode orientasi potret dan bentang
+	* Bilah Pengaturan Cepat
+	* Lain-lain...
