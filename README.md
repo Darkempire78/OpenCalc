@@ -87,10 +87,10 @@ Please make sure to update tests as appropriate.
 
 You can help translate OpenCalc on [Hosted Weblate](https://hosted.weblate.org/engage/opencalc/).
 
-<h3 align="center">Translation status</h3>
-
+<h3>Translation status</h3>
+<br>
 <a href="https://hosted.weblate.org/engage/opencalc/">
-      <img src="https://hosted.weblate.org/widgets/opencalc/-/multi-auto.svg" alt="Translation status"/>
+      <img src="https://hosted.weblate.org/widget/opencalc/horizontal-auto.svg" alt="Translation status" />
 </a>
 
 ## 📜 License
