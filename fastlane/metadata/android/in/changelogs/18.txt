@@ -1,7 +1,7 @@
-Baru: 
+Apa yang baru: 
 - Klik lama untuk menyalin nilai 
 - Terjemahan bahasa Indonesia
 
-Diperbaiki: 
-- gulir pada mode lanskap 
+Apa yang diperbaiki: 
+- gulir pada mode bentang 
 - masalah fokus

@@ -1,0 +1,7 @@
+Apa yang diubah:
+- Halaman tentang kami yang baru
+- Menambahkan pemisah untuk tema AMOLED
+
+Apa yang diperbaiki:
+- Warna kotak centang
+- Nama aplikasi (diterjemahkan dalam bahasa Inggris dan Perancis)

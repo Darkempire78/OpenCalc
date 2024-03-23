@@ -1,8 +1,8 @@
-Baru: 
+Apa yang baru: 
 - Toast saat Anda menyalin nilai
 
-Perbaikan: 
+Apa yang diperbaiki: 
 - Mengikuti tema sistem yang mendukung Material You 
-- Meningkatkan dukungan untuk tablet 
-- Meningkatkan dukungan untuk ukuran layar kecil 
-- Ikon tidak ditampilkan untuk Android yang lebih rendah dari 8
+- Meningkatkan dukungan untuk perangkat tablet 
+- Meningkatkan dukungan untuk ukuran layar yang kecil 
+- Ikon tidak muncul untuk versi Android yang lebih rendah dari 8
