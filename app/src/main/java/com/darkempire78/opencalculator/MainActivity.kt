@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
@@ -16,11 +17,13 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
+import androidx.core.view.setPadding
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
@@ -57,6 +60,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
+    private var isNothingTheme: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -66,10 +71,31 @@ class MainActivity : AppCompatActivity() {
         setTheme(themes.getTheme())
 
         currentTheme = themes.getTheme()
+        isNothingTheme = MyPreferences(this).theme == 3 || MyPreferences(this).theme == 4
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         view = binding.root
         setContentView(view)
+
+        // Set the buttons depending on the theme
+        if(isNothingTheme){
+            binding.backspaceButton.setImageResource(R.drawable.nothing_backspace)
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.nothing_arrow_down)
+            binding.exponentButton.setImageResource(R.drawable.nothing_exponent)
+            //binding.piButton.text = "" // blank the text
+            //binding.piButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0,R.drawable.nothing_pi,0,0)
+            //binding.squareButton.text = "" // blank the text
+            //binding.squareButton.setCompoundDrawablesRelativeWithIntrinsicBounds(0,R.drawable.nothing_square,0,0)
+        }
+        else{ // Any other theme
+            binding.backspaceButton.setImageResource(R.drawable.backspace)
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            binding.exponentButton.setImageResource(R.drawable.exponent)
+            //binding.piButton.setBackgroundResource(0)
+            //binding.piButton.setText(R.string.pi)
+            //binding.squareButton.setBackgroundResource(0)
+            //binding.squareButton.setText(R.string.square)
+        }
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
@@ -348,6 +374,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val formerValue = binding.input.text.toString()
+
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
             val leftValueFormatted =
@@ -430,13 +457,21 @@ class MainActivity : AppCompatActivity() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            if (isNothingTheme){
+                binding.scientistModeSwitchButton?.setImageResource(R.drawable.nothing_arrow_up)
+            }else{
+                binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            }
             binding.degreeTextView.visibility = View.VISIBLE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            if (isNothingTheme){
+                binding.scientistModeSwitchButton?.setImageResource(R.drawable.nothing_arrow_down)
+            }else{
+                binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            }
             binding.degreeTextView.visibility = View.GONE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         }

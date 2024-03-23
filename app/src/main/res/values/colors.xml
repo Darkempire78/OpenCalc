@@ -39,4 +39,38 @@
     <color name="amoled_separator_color">#EFEFEF</color>
     <color name="amoled_switch_primary_color">#fff</color>
     <color name="amoled_switch_on_primary_color">#D3D3D3</color>
+
+    <!-- Nothing shared colors -->
+    <color name="nothing_switch_on_primary_color">#C5312D</color>
+    <color name="nothing_button_ripple_color">#C5312D</color>
+    <color name="nothing_text_third_color">#C5312D</color>
+    <color name="nothing_button_clear_color">#C5312D</color>
+
+    <!-- Nothing Light Theme -->
+    <color name="nothing_light_status_colour">#E5E2E3</color>
+    <color name="nothing_light_foreground_color">#FFF</color>
+    <color name="nothing_light_background_color">#E5E2E3</color>
+    <color name="nothing_light_button_text_color">#000</color>
+    <color name="nothing_light_text_second_color">#E5E2E3</color>
+    <color name="nothing_light_text_category_color">#E5E2E3</color>
+    <color name="nothing_light_button_color">#FFF</color>
+    <color name="nothing_light_button_symbol_color">#E5E2E3</color>
+    <color name="nothing_light_button_equals_color">#E5E2E3</color>
+    <color name="nothing_light_separator_color">#E5E2E3</color>
+    <color name="nothing_light_switch_primary_color">#fff</color>
+
+    <!-- Nothing Dark Theme -->
+    <color name="nothing_dark_foreground_color">#141414</color>
+    <color name="nothing_dark_background_color">#141414</color>
+    <color name="nothing_dark_status_color">#141414</color>
+    <color name="nothing_dark_button_text_color">#FFF</color>
+    <color name="nothing_dark_text_color">#DEE3F1</color>
+    <color name="nothing_dark_text_second_color">#BDBDBD</color>
+    <color name="nothing_dark_text_category_color">#BDBDBD</color>
+    <color name="nothing_dark_button_color">#000</color>
+    <color name="nothing_dark_button_symbol_color">#302F32</color>
+    <color name="nothing_dark_button_equals_color">#302F32</color>
+    <color name="nothing_dark_separator_color">#DEE3F1</color>
+    <color name="nothing_dark_switch_primary_color">#000</color>
+    <color name="nothing_dark_history_background_color">#000</color>
 </resources>
