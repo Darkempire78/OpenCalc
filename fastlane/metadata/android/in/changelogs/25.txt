@@ -1,0 +1,8 @@
+Baru:
+- Terjemahan bahasa Spanyol
+
+Hal-hal yang diperbaiki:
+- Keyboard menjadi tidak responsif saat berinteraksi dengan faktorial besar
+- Pemuatan nilai yang salah dari riwayat
+- Memuat hasil dengan titik desimal dari riwayat akan menghapus operator atau membuat aplikasi macet
+- Keakuratan
