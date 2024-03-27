@@ -1,0 +1,14 @@
+Apa yang baru:
+- Sistem perhitungan internal
+- Faktorial desimal
+- Mencegah adanya dua pemisah desimal dalam angka yang sama
+
+Apa yang diperbaiki:
+- Gulir riwayat (@MahmoudRH)
+- Keakuratan hasil
+- Tombol backspace dengan pemisah pengelompokan
+- Mode bentang untuk perangkat tablet 10 inci
+- Tombol backspace setelah tombol sama dengan
+- Aplikasi macet setelah mengetuk hasil riwayat
+- Beberapa masalah pemformatan ekspresi
+- Beberapa perbaikan lainnya

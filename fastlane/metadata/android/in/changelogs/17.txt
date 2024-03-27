@@ -1,2 +1,2 @@
-Baru: 
+Apa yang baru: 
 - Hapus riwayat

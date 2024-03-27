@@ -1,6 +1,6 @@
-Baru: 
+Apa yang baru: 
 - Tombol tip
 
-Perubahan: 
+Apa yang diperbaiki: 
 - Format riwayat yang ditingkatkan 
 - Perbarui karakter minus

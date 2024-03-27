@@ -1,4 +1,4 @@
-A simple and beautiful calculator for Android
+Kalkulator yang indah dan sederhana untuk Android
 
 📖 Fitur
 	* Ringan (APK ~2MB)

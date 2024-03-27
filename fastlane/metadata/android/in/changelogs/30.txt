@@ -1,0 +1,8 @@
+Apa yang baru:
+- Kesalahan eksplisit
+- Mendesain ulang riwayat
+- Menambahkan stempel waktu ke hasil riwayat
+- Tidak mengizinkan simbol matematika duplikat pada input
+
+Apa yang diubah:
+- arccos, arcsin dan arctan sekarang ditampilkan sebagai cos⁻¹, sin⁻¹ dan tan⁻¹

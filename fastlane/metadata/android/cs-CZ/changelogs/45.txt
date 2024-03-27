@@ -1,0 +1,24 @@
+Nové:
+- Používá BigDecimal místo Double
+- Nastavení pro převod do vědeckého zápisu
+- Přidání možnosti použít modulo
+- Přidání možnosti vybrat hodnotu místo kopírování
+- Přidání možnosti rozdělit tlačítko závorek
+- Přidání možnosti vypnout historii
+- Přidání licence do sekce O aplikaci
+
+Vylepšení:
+- Optimalizace kalkulačky
+- Nahrazení EditText pomocí TextView
+- Povolit symbol před desetinným číslem
+- Zvětšení oblast pro stisk tlačítka zpět
+- Aktualizace překladů
+
+Opravy:
+- Umístění kurzoru
+- Problém po použitím motivu Amoled
+- Výsledek desetinného faktoriálu
+- Režim na šířku skrýval některé ikony tlačítek
+- Šedý obdélník vedle položky Nastavení
+- Problémy s formátováním
+- A mnoho dalších oprav...
