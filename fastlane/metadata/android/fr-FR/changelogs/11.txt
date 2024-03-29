@@ -1,0 +1,9 @@
+Changements :
+- Traduction en allemand
+- Traduction en russe
+- Traduction en grecque
+- Traduction en indien
+- Traduction en azerbaïdjanais
+
+Corrections :
+- Pourcentage non mathématique
