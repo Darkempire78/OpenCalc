@@ -49,4 +49,8 @@
     <string name="settings_advanced_long_click_copy">Appuyer longuement pour copier la valeur</string>
     <string name="settings_advanced_long_click_copy_desc">Appuyer longtemps copie la valeur de l\'objet au lieu de le sélectionner</string>
     <string name="require_real_number">Nombre réel requis</string>
+    <string name="about_other_license">Licence GPL 3.0</string>
+    <string name="copied_result">Résultat copié</string>
+    <string name="copied_history_calculation">Historique de calculs copié</string>
+    <string name="copied_history_result">Historique de résultats copié</string>
 </resources>

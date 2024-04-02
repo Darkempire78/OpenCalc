@@ -1,4 +1,4 @@
-Perbaikan:
-- Tutup otomatis parenthesis
+Apa yang baru:
+- Tutup otomatis tanda kurung
 - Perkalian faktorial tanpa *
-- Otomatis tambahkan 0 ketika nomor dimulai dengan pemisah desimal
+- Otomatis tambahkan 0 ketika nomor dimulai dengan pemisah bernilai desimal

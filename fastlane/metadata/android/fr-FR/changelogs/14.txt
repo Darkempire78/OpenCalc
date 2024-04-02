@@ -1,0 +1,6 @@
+Nouveauté :
+- Bouton d'aide
+
+Changements :
+- Améliorarion du format de l'historique
+- Modification du caractère de signe négatif

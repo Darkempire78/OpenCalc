@@ -1,0 +1,6 @@
+Nouveauté :
+- Le thème contient des icones
+
+Changements :
+- Mise à jour des traductions
+- Effacer l'écran si un nombre est composé après avoir cliqué sur égal

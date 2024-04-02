@@ -1,0 +1,5 @@
+Apa yang diubah:
+- Tersedia untuk SDK 21+ (Android 5.0)
+
+Apa yang diperbaiki:
+- Memperbaiki getaran

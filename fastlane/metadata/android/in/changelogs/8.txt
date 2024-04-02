@@ -1,0 +1,2 @@
+Apa yang diperbaiki:
+- Perbaiki aplikasi macet ketika menggunakan angka besar saat melakukan perhitungan

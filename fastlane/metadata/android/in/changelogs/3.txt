@@ -1,0 +1,8 @@
+Apa yang baru:
+- Sistem getaran
+
+Apa yang diubah:
+- Peningkatan kode
+
+Apa yang diperbaiki:
+- Mengikuti tema sistem saat peluncuran pertama kali

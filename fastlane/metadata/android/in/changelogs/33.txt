@@ -1,0 +1,13 @@
+Apa yang diubah:
+- Area input menggunakan ukuran layar penuh
+- Sistem tanda kurung
+
+Apa yang diperbaiki:
+- Toast ganda saat nilai disalin (untuk versi Android 13)
+- Domain definisi garis singgung
+- Langsung menampilkan hasil setelah Anda melakukan salin tempel (copy-paste) sebuah perhitungan
+- Pembagian tidak langsung dengan nol tidak terdefinisi
+- Pembagian berdasarkan fungsi
+- Masalah persen
+- Fungsi trigonometri mengembalikan hasil yang salah jika hasilnya negatif
+- Beberapa perbaikan lainnya

@@ -1,0 +1,5 @@
+Apa yang diperbaiki:
+- tan() tidak berfungsi dengan baik
+- Menghapus pemisah seribu menyebabkan kursor melompat
+- Penempatan tanda kurung di dalam perhitungan yang ada
+- Masalah grafis dalam mode lanskap untuk perangkat tablet berukuran lebih dari 10 inci

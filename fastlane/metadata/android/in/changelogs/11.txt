@@ -1,9 +1,9 @@
-Perubahan: 
+Apa yang baru: 
 - Terjemahan bahasa Jerman 
 - Terjemahan bahasa Rusia 
 - Terjemahan bahasa Yunani 
 - Terjemahan bahasa Hindi 
 - Terjemahan bahasa Azerbaijan
 
-Perbaikan: 
-- Persen yang tidak matematis
+Apa yang diperbaiki: 
+- Nilai persen yang tidak matematis
