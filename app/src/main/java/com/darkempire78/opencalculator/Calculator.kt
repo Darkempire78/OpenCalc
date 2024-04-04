@@ -202,7 +202,7 @@ class Calculator(
                             }
                         }
                         "logten" -> {
-                            if (x.compareTo(BigDecimal.ZERO) == 0) {
+                            if (x <= BigDecimal.ZERO) {
                                 domain_error = true
                             } else {
                                 x = BigDecimal(log10(x.toDouble()))
