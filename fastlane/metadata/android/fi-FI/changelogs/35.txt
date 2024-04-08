@@ -1,0 +1,5 @@
+Korjaukset:
+- tan() ei toimi kunnolla
+- Tuhannen erottimen poistaminen saa kohdistimen hyppäämään
+- Sulkujen sijoittaminen olemassa oleviin laskelmiin
+- Grafiikkaongelma vaakatilassa yli 10 tuuman tableteissa

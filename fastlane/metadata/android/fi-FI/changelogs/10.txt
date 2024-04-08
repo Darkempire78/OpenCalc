@@ -1,0 +1,5 @@
+Muutokset:
+- lisää erottimet suurille luvuille
+- lisää italian käännös
+- lisää arabian käännös
+- lisää turkin käännös

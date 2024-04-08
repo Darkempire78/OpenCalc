@@ -1,0 +1,5 @@
+Uutta:
+- Pika-asetuspainike
+
+Korjaukset:
+- Ärsyttävät toastit

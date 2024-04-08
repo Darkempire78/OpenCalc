@@ -1,0 +1,6 @@
+Uutta:
+- Teemakuvake
+
+Muutokset:
+- Päivitä käännöset
+- Tyhjennä syöte, jos numeroa painetaan yhtä suuren jälkeen

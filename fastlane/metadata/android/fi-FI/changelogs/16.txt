@@ -1,0 +1,4 @@
+Korjaukset:
+- Syötteen vierityspalkki
+- Vaadittu vieritys nähdäksesi tuloksen
+- Tyhjennä syöte, jos numeroa on painettu yhtä kuin jälkeen

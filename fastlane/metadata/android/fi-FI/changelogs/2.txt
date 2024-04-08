@@ -1,0 +1,3 @@
+Uutta:
+- Amoled teema
+- Seuraa järjestelmän teemaa

@@ -1,0 +1,2 @@
+Korjaukset:
+- Kaatuminen pienillä näytöillä ja tableteilla

@@ -1,0 +1,14 @@
+Uutta:
+- Sisäinen laskinjärjestelmä
+- Desimaalitekijät
+- Estä kahden desimaalierottimen läsnäolo samassa luvussa
+
+Korjaukset:
+- Historian vieritys (@MahmoudRH)
+- Tuloksen tarkkuus
+- Askelpalautin ryhmittelyerottimella
+- Vaakataso 10-tuumaiselle tabletille
+- Askelpalautin yhtä suuren jälkeen
+- Kaatuminen, kun painaa tulosta historiassa
+- Joitakin muotoilun ilmaisuongelmia
+- Useita muita korjauksia
