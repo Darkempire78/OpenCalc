@@ -1,0 +1,13 @@
+Päivitetty:
+- Syöttöalue ottaa koko näytön koon
+- Sulkujärjestelmä
+
+Korjattu:
+- Tuplatoast, kun arvo on kopioitu Android 13
+- Tangentin määritelmäalue
+- Näytä tulos, kun liität laskutoimituksen
+- Epäsuora jako nollalla on määrittelemätön
+- Jako funktioiden mukaan
+- Prosentti ongelmat
+- Trigonometriset funktiot palauttavat vääriä tuloksia, jos tulos on negatiivinen
+- Useita muita korjauksia

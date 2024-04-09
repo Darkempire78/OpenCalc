@@ -1,0 +1,4 @@
+Korjaukset:
+- Sulje sulut automaattisesti
+- Kerro kertoimet ilman *
+- Lisää 0 automaattisesti, kun numero alkaa desimaalierottimella

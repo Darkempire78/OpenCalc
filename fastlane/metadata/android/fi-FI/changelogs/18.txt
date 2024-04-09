@@ -1,0 +1,7 @@
+Uutta:
+- Paina pohjassa kopioidaksesi arvo
+- Indonesian käännös
+
+Korjaukset:
+- Vieritä vaakasuunnassa
+- tarkennusongelma

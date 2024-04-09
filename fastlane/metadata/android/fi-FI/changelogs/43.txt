@@ -1,0 +1,13 @@
+Uutta:
+- Lisää lisenssi Tietoja -osioon
+
+Parannukset:
+- Päivitä useat käännökset
+- Salli symboli ennen desimaalia
+
+Korjaukset:
+- Kohdistimen sijainti
+- Kaatuminen negatiivisen kantakohdan juuressa
+- Kaatuminen, kun suoritat lokia tai negatiivisen luvun luonnollista logaritmia
+- Kaatuminen vaakatason päätoimintoa luodessa
+- Kaikki ').' jälkeen laskutoimituksessa jätetään huomioimatta

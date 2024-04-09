@@ -1,0 +1,9 @@
+Päivitetty:
+- Vaihda tekstin väri virheen yhteydessä
+- Vähennä julkaisun kokoa
+- Älä tallenna tulosta historiaan, jos se on yhtä suuri kuin laskelma
+- Älä tallenna laskelmaa historiaan, jos se on sama kuin viimeisin
+
+Fixes:
+- Tekijä 0 palauttaa 1
+- Lisää matemaattinen symboli sen jälkeen, kun yhtä suurta oli painettu

@@ -1,0 +1,11 @@
+Yksinkertainen ja kaunis laskin Androidille
+
+📖 Ominaisuudet
+	* Kevyt (APK ~2MB)
+	* Ei tarpeettomia lupia
+	* Tumma, Vaalea, Amoled ja Material You teema
+	* Tieteellinen tila
+	* Historia
+	* Pysty- ja vaakasuunta
+	* Pika-asetuspainike
+	* Ja lisää...

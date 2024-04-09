@@ -1,0 +1,7 @@
+Päivitetty:
+- Näytä "arvo liian suuri", "loputon" sijaan
+
+Korjaukset:
+- Jako negatiivisten lukujen mukaan
+- Ongelma kertomafunktion kanssa
+- sin(x!) & cos(x!) antavat väärän tuloksen

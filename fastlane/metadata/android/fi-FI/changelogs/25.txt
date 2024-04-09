@@ -1,0 +1,8 @@
+Uuutta:
+- Espanjan käännös
+
+Fixes:
+- Näppäimistö lakkaa reagoimasta, kun se on vuorovaikutuksessa suurten tekijöiden kanssa
+- Virheellinen arvojen lataus historiasta
+- Tulosten lataaminen desimaalipilkulla historiasta poistaa operaattorit tai kaataa sovelluksen
+- Tarkkuus
