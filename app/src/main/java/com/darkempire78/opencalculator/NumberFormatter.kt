@@ -7,7 +7,7 @@ object NumberFormatter {
         val numbersWithSeparators = addSeparators(numbersList, decimalSeparatorSymbol, groupingSeparatorSymbol)
         var textWithSeparators = textNoSeparator
         numbersList.forEachIndexed { index, number ->
-            textWithSeparators = textWithSeparators.replace(number, numbersWithSeparators[index])
+            textWithSeparators = textWithSeparators.replaceFirst(number, numbersWithSeparators[index])
         }
         return textWithSeparators
     }
