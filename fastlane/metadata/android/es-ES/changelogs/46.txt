@@ -1,0 +1,8 @@
+Mejoras:
+* Actualizaciones de traducciones
+* Implementar BroadcastReceiver para iniciar la actividad desde TileService
+
+Correcciones:
+* Problema de formato con ceros después de la coma.
+* Corregir el fallo del registro cuando x < 0
+* Fallo al presionar raíz cuadrada después de un error de sintaxis
