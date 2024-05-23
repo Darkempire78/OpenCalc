@@ -6,6 +6,20 @@ import org.junit.Test
 
 class NumberFormatterTest {
 
+    /** Issue #450: Four zeros after comma */
+    @Test
+    fun `given a decimal expression when formatting then format with grouping separator`() {
+        // Given
+        val expression = "5,000 + 5,00000"
+
+        // When
+        val result = formatter.format(expression, decimalSeparator, groupingSeparator)
+
+        // Then
+        val expected = "5,000 + 500,000"
+        assertEquals(expected, result)
+    }
+
     @Test
     fun `given a decimal number when formatting then format with grouping separator`() {
         // Given
