@@ -1,0 +1,9 @@
+Improvements:
+* Translations updates
+* Implement BroadcastReceiver to start activity from TileService
+
+Fixes:
+* Formatting issue with zeros after comma
+* fix log crash when x < 0
+* Crash when pressing square root after Syntax error
+
