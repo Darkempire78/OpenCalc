@@ -292,33 +292,35 @@ class MainActivity : AppCompatActivity() {
 
     private fun setErrorColor(errorStatus: Boolean) {
         // Only run if the color needs to be updated
-        if (errorStatus != errorStatusOld) {
-            // Set error color
-            if (errorStatus) {
-                binding.input.setTextColor(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.calculation_error_color
+        runOnUiThread {
+            if (errorStatus != errorStatusOld) {
+                // Set error color
+                if (errorStatus) {
+                    binding.input.setTextColor(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.calculation_error_color
+                        )
                     )
-                )
-                binding.resultDisplay.setTextColor(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.calculation_error_color
+                    binding.resultDisplay.setTextColor(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.calculation_error_color
+                        )
                     )
-                )
+                }
+                // Clear error color
+                else {
+                    binding.input.setTextColor(ContextCompat.getColor(this, R.color.text_color))
+                    binding.resultDisplay.setTextColor(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.text_second_color
+                        )
+                    )
+                }
+                errorStatusOld = errorStatus
             }
-            // Clear error color
-            else {
-                binding.input.setTextColor(ContextCompat.getColor(this, R.color.text_color))
-                binding.resultDisplay.setTextColor(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.text_second_color
-                    )
-                )
-            }
-            errorStatusOld = errorStatus
         }
     }
 
