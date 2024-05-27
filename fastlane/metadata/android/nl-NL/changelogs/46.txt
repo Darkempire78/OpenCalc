@@ -1,0 +1,8 @@
+Verbeteringen:
+* Updates van vertalingen
+* Implementeer BroadcastReceiver om de activiteit vanaf TileService te starten
+
+Oplossingen:
+* Probleem met opmaak met nullen na komma
+* Reparatie log crash bij x < 0
+* Crash bij het indrukken van vierkantswortel na Syntaxisfout
