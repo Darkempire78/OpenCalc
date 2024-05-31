@@ -43,6 +43,24 @@ class HistoryAdapter(
             notifyDataSetChanged()
         }
 
+        fun removeHistoryElement(position: Int){
+            val historyElement = history[position]
+            if (!historyElement.time.isNullOrEmpty()){
+                val nextHistoryElement = history.getOrNull(position + 1)
+                nextHistoryElement?.let {
+                    if (it.time.isNullOrEmpty()){
+                        this.history[position + 1] = History(
+                            calculation = nextHistoryElement.calculation,
+                            result = nextHistoryElement.result,
+                            time = historyElement.time
+                        )
+                    }
+                }
+            }
+            this.history.removeAt(position)
+            notifyDataSetChanged()
+        }
+
         fun removeFirstHistoryElement() {
             this.history.removeAt(0)
             notifyDataSetChanged()

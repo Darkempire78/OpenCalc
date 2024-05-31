@@ -22,7 +22,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
@@ -52,6 +54,8 @@ class MainActivity : AppCompatActivity() {
     private var errorStatusOld = false
 
     private var calculationResult = BigDecimal.ZERO
+
+    private lateinit var itemTouchHelper: ItemTouchHelper
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var historyAdapter: HistoryAdapter
@@ -111,6 +115,8 @@ class MainActivity : AppCompatActivity() {
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
+        setSwipeTouchHelperForRecyclerView()
+
 
         // Disable history if setting enabled
         val historySize = MyPreferences(this).historySize!!.toInt()
@@ -256,6 +262,39 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun setSwipeTouchHelperForRecyclerView() {
+        val callBack = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+            override fun isItemViewSwipeEnabled(): Boolean {
+                return MyPreferences(this@MainActivity).deleteHistoryOnSwipe
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.bindingAdapterPosition
+                historyAdapter.removeHistoryElement(position)
+                deleteElementFromHistory(position)
+            }
+        }
+
+        itemTouchHelper = ItemTouchHelper(callBack)
+        itemTouchHelper.attachToRecyclerView(binding.historyRecylcleView)
+    }
+
+    private fun deleteElementFromHistory(position: Int) {
+        lifecycleScope.launch(Dispatchers.Default) {
+            val history = MyPreferences(this@MainActivity).getHistory()
+            history.removeAt(position)
+            MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+        }
     }
 
     fun openAppMenu(view: View) {
