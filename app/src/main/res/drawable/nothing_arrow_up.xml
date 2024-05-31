@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:tint="?attr/text_color"
+    android:width="20dp"
+    android:height="15dp"
+    android:viewportWidth="400"
+    android:viewportHeight="300">
+    <group>
+            <path
+                android:pathData="M195.5 30Q215.3 30.3 224 41.5Q234.4 50.6 233 71.5Q230 85.5 220.5 93L207.5 100L193.5 101L180.5 97L168 85.5Q161.8 77.7 162 63.5Q164.5 62 163 56.5L167 47.5L176.5 37L185.5 32L195.5 30Z"
+                android:fillColor="#000000"
+                android:strokeColor="#000000"
+                android:strokeWidth="1" />
+            <path
+                android:pathData="M120.5 100Q134.2 98.3 142.5 102L156 112.5L163 126.5L163 143.5Q159.5 157 149.5 164L135.5 170L120.5 170Q109.6 166.9 103 161L97 152.5L94 144.5L93 129.5Q95.9 113.4 107.5 106L120.5 100Z"
+                android:fillColor="#000000"
+                android:strokeColor="#000000"
+                android:strokeWidth="1" />
+            <path
+                android:pathData="M259.5 100Q271 98.5 278.5 101Q288 104.5 294 111.5L301 123.5Q303.5 131 302 142.5Q299.1 156.1 289.5 163Q283.8 168.3 274.5 170L259.5 170Q247.1 166.9 240 158.5Q230.4 149.1 232 128.5Q235.4 113.4 246.5 106L259.5 100Z"
+                android:fillColor="#000000"
+                android:strokeColor="#000000"
+                android:strokeWidth="1" />
+            <path
+                android:pathData="M54.5 169L62.5 169L71.5 171Q81.2 174.8 87 182.5Q92.2 188.4 94 197.5L94 211.5Q91.1 225.1 81.5 232Q73.1 240.1 56.5 240Q55 237.5 49.5 239L40.5 235L30 225.5Q21.5 216.5 24 196.5Q27.9 182.4 38.5 175Q45 170.5 54.5 169Z"
+                android:fillColor="#000000"
+                android:strokeColor="#000000"
+                android:strokeWidth="1" />
+            <path
+                android:pathData="M332.5 169L340.5 169L349.5 171Q359.1 174.9 365 182.5Q373.1 191.4 372 209.5Q369.3 224.3 359.5 232L345.5 239L334.5 240Q333 237.5 327.5 239L316.5 234L307 224.5Q300.4 216.1 301 200.5L305 187.5L316.5 175L321.5 172L332.5 169Z"
+                android:fillColor="#000000"
+                android:strokeColor="#000000"
+                android:strokeWidth="1" />
+    </group>
+</vector>

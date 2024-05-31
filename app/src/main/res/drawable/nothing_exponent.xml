@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:tint="?attr/text_color"
+    android:width="20dp"
+    android:height="15dp"
+    android:viewportWidth="400"
+    android:viewportHeight="300">
+    <group>
+        <path
+            android:pathData="M203.5 38L216.5 40Q226.8 44.2 233 52.5Q241.5 61.5 239 81.5Q235.5 96 224.5 103Q215.8 109.8 199.5 109Q183.9 106.1 176 95.5Q167.7 86.3 169 67.5Q172 53.5 181.5 46L189.5 41L203.5 38Z"
+            android:fillColor="#000000"
+            android:strokeColor="#000000"
+            android:strokeWidth="1" />
+        <path
+            android:pathData="M127.5 108Q140.9 106.1 148.5 110Q158.2 114.3 164 122.5L170 136.5L170 149.5Q166.6 164.6 155.5 172Q146.5 180.5 126.5 178Q113.1 174.4 106 164.5L101 155.5L99 142.5L102 128.5L112.5 115L127.5 108Z"
+            android:fillColor="#000000"
+            android:strokeColor="#000000"
+            android:strokeWidth="1" />
+        <path
+            android:pathData="M266.5 108Q279.6 106.4 287.5 110Q296.3 114.3 302 121.5Q310.1 130.4 309 148.5L306 158.5L294.5 172L281.5 178L265.5 178Q252.9 174.6 246 165.5L239 152.5L238 139.5Q240.2 138.3 239 133.5L243 124.5L250.5 116L266.5 108Z"
+            android:fillColor="#000000"
+            android:strokeColor="#000000"
+            android:strokeWidth="1" />
+        <path
+            android:pathData="M81.5 177L88.5 177L97.5 179Q108.8 183.2 115 192.5L120 203.5L120 221.5Q116 235 105.5 242L94.5 247L81.5 248L72.5 246L66.5 243L58 235.5Q48.8 226.7 50 207.5Q52.7 192.7 62.5 185L72.5 179L81.5 177Z"
+            android:fillColor="#000000"
+            android:strokeColor="#000000"
+            android:strokeWidth="1" />
+        <path
+            android:pathData="M319.5 177Q343.3 176.7 352 191.5L358 205.5L358 219.5Q354.9 233.9 344.5 241L332.5 247L319.5 248Q302.3 245.3 294 233.5L288 219.5L288 205.5Q291.1 191.1 301.5 184L310.5 179L319.5 177Z"
+            android:fillColor="#000000"
+            android:strokeColor="#000000"
+            android:strokeWidth="1" />
+    </group>
+</vector>

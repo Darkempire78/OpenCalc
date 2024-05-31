@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ds">
+        <attr name="function_button_font" format="string"/>
         <attr name="foreground_color" format="color"/>
         <attr name="background_color" format="color"/>
         <attr name="popup_background_color" format="color"/>
@@ -10,6 +11,7 @@
         <attr name="text_third_color" format="color"/>
         <attr name="text_category_color" format="color"/>
         <attr name="button_color" format="color"/>
+        <attr name="button_text_color" format="color"/>
         <attr name="button_symbol_color" format="color"/>
         <attr name="button_clear_color" format="color"/>
         <attr name="button_equals_color" format="color"/>
