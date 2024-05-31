@@ -134,7 +134,7 @@
             app:summary="@string/settings_delete_history_element_on_swipe_desc"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
-            app:defaultValue="false"
+            app:defaultValue="true"
             app:icon="@drawable/swipe_left"
             app:widgetLayout="@drawable/material_switch" />
 
