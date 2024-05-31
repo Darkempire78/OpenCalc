@@ -54,4 +54,6 @@
     <string name="copied_result">Sonuç kopyalandı</string>
     <string name="copied_history_calculation">Geçmiş hesaplama kopyalandı</string>
     <string name="copied_history_result">Geçmiş sonucu kopyalandı</string>
+    <string name="settings_delete_history_element_on_swipe">Seçmeli geçmiş silmeye izin ver</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Kaydırıldığında belirli geçmiş ögesini sil</string>
 </resources>
