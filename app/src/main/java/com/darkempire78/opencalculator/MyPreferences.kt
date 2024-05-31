@@ -23,6 +23,7 @@ class MyPreferences(context: Context) {
         private const val KEY_LONG_CLICK_TO_COPY_VALUE = "darkempire78.opencalculator.LONG_CLICK_TO_COPY_VALUE"
         private const val KEY_ADD_MODULO_BUTTON = "darkempire78.opencalculator.ADD_MODULO_BUTTON"
         private const val KEY_SPLIT_PARENTHESIS_BUTTON = "darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
+        private const val KEY_DELETE_HISTORY_ON_SWIPE = "darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -54,6 +55,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_ADD_MODULO_BUTTON, value).apply()
     var splitParenthesisButton = preferences.getBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, false)
         set(value) = preferences.edit().putBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, value).apply()
+    var deleteHistoryOnSwipe = preferences.getBoolean(KEY_DELETE_HISTORY_ON_SWIPE, false)
+        set(value) = preferences.edit().putBoolean(KEY_DELETE_HISTORY_ON_SWIPE, value).apply()
 
 
 

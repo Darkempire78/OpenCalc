@@ -128,6 +128,16 @@
             app:singleLineTitle="false"
             app:icon="@drawable/history" />
 
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
+            app:title="@string/settings_delete_history_element_on_swipe"
+            app:summary="@string/settings_delete_history_element_on_swipe_desc"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:icon="@drawable/swipe_left"
+            app:widgetLayout="@drawable/material_switch" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
