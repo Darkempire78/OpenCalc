@@ -2,18 +2,18 @@
 <resources>
     <string name="app_name_display">कैलकुलेटर</string>
     <string name="settings_general_theme">थीम</string>
-    <string name="menu_about">बारे में</string>
+    <string name="menu_about">ऐप के बारे में</string>
     <string name="infinity">अनंत</string>
-    <string name="settings_category_general">जनरल</string>
+    <string name="settings_category_general">सामान्य</string>
     <string name="settings_category_history">इतिहास</string>
-    <string name="menu_clear_history">इतिहास साफ़ करें</string>
+    <string name="menu_clear_history">इतिहास साफ करें</string>
     <string name="syntax_error">वाक्यविन्यास त्रुटि</string>
-    <string name="theme_amoled">Amoled</string>
+    <string name="theme_amoled">एमोलेड</string>
     <string name="theme_dark">गहरी</string>
     <string name="division_by_0">0 से विभाजित नहीं किया जा सकता</string>
-    <string name="settings_category_advanced">विकसित</string>
+    <string name="settings_category_advanced">उन्नत</string>
     <string name="settings_general_radians">रेडियन</string>
-    <string name="settings_general_radians_desc">डिफ़ॉल्ट रूप से डिग्री के बजाय रेडियन का प्रयोग करें</string>
+    <string name="settings_general_radians_desc">तयशुदा रूप से डिग्री के बजाय रेडियन का प्रयोग करें</string>
     <string name="about_category_help">हमारी मदद करें</string>
     <string name="about_category_social">सामाजिक</string>
     <string name="about_help_translate">अनुवाद</string>
@@ -34,11 +34,11 @@
     <string name="require_real_number">वास्तविक संख्या आवश्यक है</string>
     <string name="value_too_large">मान बहुत बड़ा है</string>
     <string name="settings_general_vibration">कंपन</string>
-    <string name="settings_general_scientific_mode_desc">डिफ़ॉल्ट रूप से वैज्ञानिक मोड सक्रिय करें</string>
+    <string name="settings_general_scientific_mode_desc">तयशुदा रूप से वैज्ञानिक मोड सक्रिय करें</string>
     <string name="settings_general_split_parenthesis_button">कोष्ठक बटन को दो बटनों में विभाजित करें</string>
     <string name="settings_formatting_scientific_notation">वैज्ञानिक संकेतन में संख्या</string>
     <string name="settings_formatting_scientific_notation_desc">सभी परिणामों को वैज्ञानिक संकेतन में परिवर्तित करें</string>
-    <string name="settings_advanced_long_click_copy">मान कॉपी करने के लिए देर तक दबाएँ</string>
+    <string name="settings_advanced_long_click_copy">मान कॉपी करने के लिए देर तक दबाएं</string>
     <string name="settings_advanced_prevent_sleep">डिवाइस को सक्रिय रखें</string>
     <string name="settings_advanced_long_click_copy_desc">लंबे समय तक प्रेस करने से आइटम का चयन करने के बजाय उसका टेक्स्ट कॉपी हो जाता है</string>
     <string name="settings_advanced_prevent_sleep_desc">जब ऐप अग्रभूमि में हो तो डिवाइस को निष्क्रिय होने से रोकें</string>
@@ -46,11 +46,13 @@
     <string name="domain_error">डोमेन त्रुटि</string>
     <string name="copied_result">परिणाम कॉपी किया गया</string>
     <string name="copied_history_calculation">इतिहास गणना की प्रतिलिपि बनाई गई</string>
-    <string name="menu_settings">सेटिंग्स</string>
-    <string name="settings_category_formatting">स्वरूपण</string>
+    <string name="menu_settings">सेटिंग</string>
+    <string name="settings_category_formatting">प्रारूपण</string>
     <string name="settings_history_size">परिणाम इतिहास में सहेजे गए</string>
-    <string name="settings_general_vibration_desc">कोई बटन दबाने पर कंपन हो</string>
+    <string name="settings_general_vibration_desc">कोई बटन दबाने पर कंपन</string>
     <string name="settings_general_split_parenthesis_button_desc">कोष्ठक बटन को दो बटनों में विभाजित करने के लिए \"AC\" बटन को हटा दें</string>
     <string name="settings_general_add_modulo">एक modulo बटन जोड़ें</string>
     <string name="settings_general_add_modulo_desc">\"X²\" बटन को modulo बटन से बदलें (यह तब उपलब्ध होता है जब \"INV\" बटन दबाया जाता है)</string>
+    <string name="settings_delete_history_element_on_swipe">चुनिंदा इतिहास मिटाने की अनुमति दें</string>
+    <string name="settings_delete_history_element_on_swipe_desc">स्वाइप करके विशिष्ट इतिहास तत्व मिटाएं</string>
 </resources>
