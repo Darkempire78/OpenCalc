@@ -78,13 +78,13 @@ class HistoryAdapter(
             private val separator: View = itemView.findViewById(R.id.history_separator)
             private val sameDateSeparator: View = itemView.findViewById(R.id.history_same_date_separator)
 
-            fun wrapInParenthesis(string: String): String {
+            private fun wrapInParenthesis(string: String): String {
                 val wrappedString : String
                 // Verify it is not already in parenthesis
-                if (string.first() != '(' || string.last() != ')') {
-                    return "($string)"
+                return if (string.first() != '(' || string.last() != ')') {
+                    "($string)"
                 } else {
-                    return string
+                    string
                 }
             }
 
