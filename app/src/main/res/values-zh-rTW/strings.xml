@@ -3,47 +3,61 @@
     <string name="app_name_display">計算機</string>
     <!-- App Menu -->
     <string name="settings_general_theme">主題</string>
-    <string name="menu_clear_history">清除計算記錄</string>
+    <string name="menu_clear_history">清除歷史記錄</string>
     <string name="menu_about">關於</string>
     <!-- Theme choices -->
-    <string name="theme_system">預設</string>
-    <string name="theme_amoled">Amoled黑</string>
-    <string name="theme_light">燈光</string>
-    <string name="theme_dark">黑暗</string>
+    <string name="theme_system">系統</string>
+    <string name="theme_amoled">Amoled 黑</string>
+    <string name="theme_light">淺色</string>
+    <string name="theme_dark">深色</string>
     <!-- Others -->
     <string name="value_copied">已複製</string>
     <string name="infinity">無限</string>
     <string name="division_by_0">無法除以 0</string>
-    <string name="domain_error">無法顯示</string>
-    <string name="syntax_error">格式錯誤</string>
-    <string name="menu_settings">設置</string>
+    <string name="domain_error">定義錯誤</string>
+    <string name="syntax_error">語法錯誤</string>
+    <string name="menu_settings">設定</string>
     <string name="value_too_large">數值太大</string>
-
     <!-- Preference Titles -->
     <string name="settings_category_general">一般</string>
     <string name="settings_category_history">歷史</string>
-
     <!-- Messages Preferences -->
-    <string name="settings_advanced_prevent_sleep_desc">當正在使用此應用程式時, 永不關掉屏幕</string>
+    <string name="settings_advanced_prevent_sleep_desc">當正在使用此應用程式時防止裝置休眠</string>
     <string name="settings_general_vibration_desc">按下按鈕時發出震動</string>
     <string name="settings_history_size">儲存在歷史記錄的數目</string>
     <string name="settings_general_vibration">震動</string>
-    <string name="settings_advanced_prevent_sleep">防止休眠</string>
+    <string name="settings_advanced_prevent_sleep">保持裝置喚醒</string>
     <string name="settings_category_advanced">進階</string>
-    <string name="settings_general_scientific_mode_desc">預設啓用科學模式</string>
+    <string name="settings_general_scientific_mode_desc">預設啟用科學模式</string>
     <string name="settings_general_scientific_mode">科學模式</string>
     <string name="settings_general_radians">弧度</string>
     <string name="settings_general_radians_desc">預設使用弧度代替度數</string>
     <string name="about_category_help">幫助我們</string>
     <string name="about_help_donate">贊助</string>
-    <string name="about_category_social">聯係我們</string>
-    <string name="about_category_info">其他</string>
+    <string name="about_category_social">聯繫我們</string>
+    <string name="about_category_info">應用程式資訊</string>
     <string name="about_help_translate">翻譯</string>
-    <string name="about_help_rate">爲此APP評分</string>
+    <string name="about_help_rate">爲此應用程式評分</string>
     <string name="about_other_version">版本</string>
     <string name="about_easter_egg">感謝使用 OpenCalc ❤️</string>
     <string name="about_made_in_france">在法國用 ❤️ 製造</string>
     <string name="settings_formatting_precision">小數位準確性</string>
     <string name="about_other_privacy_policy">隱私政策</string>
     <string name="settings_general_language">語言</string>
+    <string name="settings_delete_history_element_on_swipe">允許選擇性歷史記錄刪除</string>
+    <string name="copied_history_calculation">已複製歷史計算</string>
+    <string name="require_real_number">需要實數</string>
+    <string name="settings_delete_history_element_on_swipe_desc">滑動時刪除特定歷史記錄元素</string>
+    <string name="settings_advanced_long_click_copy_desc">長按以複製項目的文字而不是選擇它</string>
+    <string name="about_other_license">許可證 GPL 3.0</string>
+    <string name="copied_result">已複製結果</string>
+    <string name="copied_history_result">已複製歷史結果</string>
+    <string name="settings_general_split_parenthesis_button">將括號按鈕拆分為兩個按鈕</string>
+    <string name="settings_category_formatting">格式化</string>
+    <string name="settings_general_split_parenthesis_button_desc">移除「AC」按鈕以將括號按鈕拆分為兩個按鈕</string>
+    <string name="settings_general_add_modulo">新增模除按鈕</string>
+    <string name="settings_general_add_modulo_desc">將「X²」按鈕替換為模除按鈕（按下「INV」按鈕時可用）</string>
+    <string name="settings_formatting_scientific_notation">以科學記數法顯示數值</string>
+    <string name="settings_formatting_scientific_notation_desc">將所有結果轉換為科學計數法</string>
+    <string name="settings_advanced_long_click_copy">長按以複製值</string>
 </resources>
