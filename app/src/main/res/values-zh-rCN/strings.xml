@@ -53,4 +53,6 @@
     <string name="copied_result">已复制结果</string>
     <string name="copied_history_calculation">已复制历史计算</string>
     <string name="copied_history_result">已复制历史结果</string>
+    <string name="settings_delete_history_element_on_swipe_desc">滑动删除特定的历史元素</string>
+    <string name="settings_delete_history_element_on_swipe">允许仅删除选中的历史记录</string>
 </resources>
