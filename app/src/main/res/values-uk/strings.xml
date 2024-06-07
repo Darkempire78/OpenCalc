@@ -54,4 +54,6 @@
     <string name="copied_result">Скопійований результат</string>
     <string name="copied_history_calculation">Скопійовано розрахунок з історії</string>
     <string name="copied_history_result">Результат з історії скопійовано</string>
+    <string name="settings_delete_history_element_on_swipe">Дозволити вибіркове видалення історії</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Видалення певного елемента історії свайпом</string>
 </resources>
