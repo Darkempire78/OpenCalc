@@ -1,0 +1,8 @@
+Zlepšení:
+* Aktualizace překladů
+* Implementace funkce BroadcastReceiver pro spuštění aktivity ze služby TileService
+
+Opravy:
+* Problém s formátováním nul za čárkou
+* oprava pádu protokolu při x < 0
+* Pád při stisknutí odmocniny po chybě syntaxe
