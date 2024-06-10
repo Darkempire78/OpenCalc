@@ -1,0 +1,8 @@
+İyileştirmeler:
+* Çeviri güncellemeleri
+* TileService'ten etkinlik başlatmak için BroadcastReceiver kullanımı
+
+Düzeltmeler:
+* Virgülden sonra sıfırlarla ilgili biçimlendirme sorunu
+* x < 0 olduğunda günlük çökmesi
+* Söz dizimi hatasından sonra kareköke basıldığında çökme

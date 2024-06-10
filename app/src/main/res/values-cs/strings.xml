@@ -53,4 +53,6 @@
     <string name="copied_result">Zkopírovaný výsledek</string>
     <string name="copied_history_calculation">Zkopírovaný výpočet z historie</string>
     <string name="copied_history_result">Zkopírovaný výsledek z historie</string>
+    <string name="settings_delete_history_element_on_swipe">Povolit selektivní mazání historie</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Smazat konkrétní položku historie při přejetí prstem</string>
 </resources>
