@@ -249,7 +249,7 @@ class Expression {
                         cleanCalculation = cleanCalculation.substring(0, i) + ')' + cleanCalculation.substring(i + 1)
 
                         // Store i in a temporary variable
-                        var tmp = i
+                        val tmp = i
 
                         // Run until the previous character is a symbol or parenthesis
                         while (i > 0 && cleanCalculation[i-1] !in "()*-/+^") {
