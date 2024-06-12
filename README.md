@@ -48,7 +48,7 @@
 
 ## ⚠️ Requirements
 
-* Android 7.0+
+* Android 5.0+
 
 ## 📷 Screenshots
 
