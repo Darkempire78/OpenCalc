@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() {
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
 
+    private var isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
+    private var lastHistoryElementId = ""
+
     private var calculationResult = BigDecimal.ZERO
 
     private lateinit var itemTouchHelper: ItemTouchHelper
@@ -82,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         binding.backspaceButton.setOnLongClickListener {
             binding.input.setText("")
             binding.resultDisplay.text = ""
+            isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
             true
         }
 
@@ -391,14 +395,12 @@ class MainActivity : AppCompatActivity() {
             val formerValue = binding.input.text.toString()
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
-            val leftValueFormatted =
-                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            val leftValueFormatted = NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            var newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
@@ -552,12 +554,75 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-
                     withContext(Dispatchers.Main) {
                         if (formattedResult != calculation) {
                             binding.resultDisplay.text = formattedResult
                         } else {
                             binding.resultDisplay.text = ""
+                        }
+                    }
+
+                    // Save to history if the option autoSaveCalculationWithoutEqualButton is enabled
+                    if (MyPreferences(this@MainActivity).autoSaveCalculationWithoutEqualButton) {
+                        if (calculation != formattedResult) {
+                            val history = MyPreferences(this@MainActivity).getHistory()
+
+                            if (isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption) {
+                                // If it's the same calculation as the previous one
+                                // Get previous calculation and update it
+                                var previousHistoryElement = MyPreferences(this@MainActivity).getHistoryElementById(this@MainActivity, lastHistoryElementId)
+                                if (previousHistoryElement != null) {
+                                    previousHistoryElement.calculation = calculation
+                                    previousHistoryElement.result = formattedResult
+                                    previousHistoryElement.time = System.currentTimeMillis().toString()
+                                    MyPreferences(this@MainActivity).updateHistoryElementById(this@MainActivity, lastHistoryElementId, previousHistoryElement)
+                                    withContext(Dispatchers.Main) {
+                                        historyAdapter.updateHistoryElement(previousHistoryElement)
+                                    }
+                                }
+                            } else {
+                                // if it's a new calculation
+
+                                // Store time
+                                val currentTime = System.currentTimeMillis().toString()
+
+                                // Save to history
+                                val historyElementId = UUID.randomUUID().toString()
+                                history.add(
+                                    History(
+                                        calculation = calculation,
+                                        result = formattedResult,
+                                        time = currentTime,
+                                        id = historyElementId
+                                    )
+                                )
+
+                                lastHistoryElementId = historyElementId
+                                isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = true
+
+                                MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+
+                                // Update history variables in the UI
+                                withContext(Dispatchers.Main) {
+                                    historyAdapter.appendOneHistoryElement(
+                                        History(
+                                            calculation = calculation,
+                                            result = formattedResult,
+                                            time = currentTime,
+                                            id = UUID.randomUUID().toString() // Generate a random id
+                                        )
+                                    )
+
+                                    // Remove former results if > historySize preference
+                                    val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
+                                    while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
+                                        historyAdapter.removeFirstHistoryElement()
+                                    }
+
+                                    // Scroll to the bottom of the recycle view
+                                    binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                                }
+                            }
                         }
                     }
 
@@ -611,10 +676,8 @@ class MainActivity : AppCompatActivity() {
                 if (previousChar.matches("[+\\-÷×^]".toRegex())) {
                     keyVibration(view)
 
-                    val leftString =
-                        binding.input.text.subSequence(0, cursorPosition - 1).toString()
-                    val rightString =
-                        binding.input.text.subSequence(cursorPosition, textLength).toString()
+                    val leftString = binding.input.text.subSequence(0, cursorPosition - 1).toString()
+                    val rightString = binding.input.text.subSequence(cursorPosition, textLength).toString()
 
                     // Add a parenthesis if there is another symbol before minus
                     if (currentSymbol == "-") {
@@ -640,8 +703,7 @@ class MainActivity : AppCompatActivity() {
                     keyVibration(view)
 
                     val leftString = binding.input.text.subSequence(0, cursorPosition).toString()
-                    val rightString =
-                        binding.input.text.subSequence(cursorPosition + 1, textLength).toString()
+                    val rightString = binding.input.text.subSequence(cursorPosition + 1, textLength).toString()
 
                     if (cursorPosition > 0 && previousChar != "(") {
                         binding.input.setText(leftString + currentSymbol + rightString)
@@ -866,24 +928,28 @@ class MainActivity : AppCompatActivity() {
                                     calculation = calculation,
                                     result = formattedResult,
                                     time = currentTime,
+                                    id = UUID.randomUUID().toString() // Generate a random id
                                 )
                             )
 
                             MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
 
-                            // Update history variables
+                            lastHistoryElementId = history[history.size - 1].id
+                            isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
+
+                            // Update history variables in the UI
                             withContext(Dispatchers.Main) {
                                 historyAdapter.appendOneHistoryElement(
                                     History(
                                         calculation = calculation,
                                         result = formattedResult,
                                         time = currentTime,
+                                        id = UUID.randomUUID().toString() // Generate a random id
                                     )
                                 )
 
                                 // Remove former results if > historySize preference
-                                val historySize =
-                                    MyPreferences(this@MainActivity).historySize!!.toInt()
+                                val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
                                 while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
                                     historyAdapter.removeFirstHistoryElement()
                                 }

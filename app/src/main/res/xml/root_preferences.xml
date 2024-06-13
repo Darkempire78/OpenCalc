@@ -138,6 +138,16 @@
             app:icon="@drawable/swipe_left"
             app:widgetLayout="@drawable/material_switch" />
 
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
+            app:title="@string/settings_auto_save_calculation_without_equal_button"
+            app:summary="@string/settings_auto_save_calculation_without_equal_button_desc"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:icon="@drawable/auto"
+            app:widgetLayout="@drawable/material_switch" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

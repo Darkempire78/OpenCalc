@@ -52,7 +52,8 @@ class HistoryAdapter(
                         this.history[position + 1] = History(
                             calculation = nextHistoryElement.calculation,
                             result = nextHistoryElement.result,
-                            time = historyElement.time
+                            time = historyElement.time,
+                            id = nextHistoryElement.id
                         )
                     }
                 }
@@ -60,6 +61,14 @@ class HistoryAdapter(
             this.history.removeAt(position)
             notifyDataSetChanged()
         }
+
+    fun updateHistoryElement(historyElement: History) {
+        val position = this.history.indexOfFirst { it.id == historyElement.id }
+        if (position != -1) {
+            this.history[position] = historyElement
+            notifyItemChanged(position)
+        }
+    }
 
         fun removeFirstHistoryElement() {
             this.history.removeAt(0)
