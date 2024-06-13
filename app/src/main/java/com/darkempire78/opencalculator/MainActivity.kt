@@ -105,12 +105,13 @@ class MainActivity : AppCompatActivity() {
             false
         )
         binding.historyRecylcleView.layoutManager = historyLayoutMgr
-        historyAdapter = HistoryAdapter(mutableListOf()) { value ->
-            run {
-                //val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
+        historyAdapter = HistoryAdapter(
+            mutableListOf(),
+            { value ->
                 updateDisplay(window.decorView, value)
-            }
-        }
+            },
+            this // Assuming this is an Activity or Fragment with a Context
+        )
         binding.historyRecylcleView.adapter = historyAdapter
         // Set values
         val historyList = MyPreferences(this).getHistory()
@@ -856,6 +857,7 @@ class MainActivity : AppCompatActivity() {
         keyVibration(view)
         binding.input.setText("")
         binding.resultDisplay.text = ""
+        isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
     }
 
     @SuppressLint("SetTextI18n")
@@ -917,25 +919,27 @@ class MainActivity : AppCompatActivity() {
                     if (calculation != formattedResult) {
                         val history = MyPreferences(this@MainActivity).getHistory()
 
+                        isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
+
                         // Do not save to history if the previous entry is the same as the current one
                         if (history.isEmpty() || history[history.size - 1].calculation != calculation) {
                             // Store time
                             val currentTime = System.currentTimeMillis().toString()
 
                             // Save to history
+                            val historyElementId = UUID.randomUUID().toString()
                             history.add(
                                 History(
                                     calculation = calculation,
                                     result = formattedResult,
                                     time = currentTime,
-                                    id = UUID.randomUUID().toString() // Generate a random id
+                                    id = historyElementId // Generate a random id
                                 )
                             )
 
                             MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
 
-                            lastHistoryElementId = history[history.size - 1].id
-                            isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
+                            lastHistoryElementId = historyElementId
 
                             // Update history variables in the UI
                             withContext(Dispatchers.Main) {

@@ -2,6 +2,7 @@ package com.darkempire78.opencalculator
 
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Context.CLIPBOARD_SERVICE
 import android.os.Build
 import android.text.format.DateUtils
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class HistoryAdapter(
     private var history: MutableList<History>,
     private val onElementClick: (value: String) -> Unit,
+    private val context: Context
     ) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
@@ -62,13 +64,18 @@ class HistoryAdapter(
             notifyDataSetChanged()
         }
 
-    fun updateHistoryElement(historyElement: History) {
-        val position = this.history.indexOfFirst { it.id == historyElement.id }
-        if (position != -1) {
-            this.history[position] = historyElement
-            notifyItemChanged(position)
+
+        fun updateHistoryList() {
+            this.history = MyPreferences(context).getHistory()
         }
-    }
+        fun updateHistoryElement(historyElement: History) {
+            updateHistoryList()
+            val position = this.history.indexOfFirst { it.id == historyElement.id }
+            if (position != -1) {
+                this.history[position] = historyElement
+                notifyDataSetChanged()
+            }
+        }
 
         fun removeFirstHistoryElement() {
             this.history.removeAt(0)
