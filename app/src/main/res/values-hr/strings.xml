@@ -53,4 +53,6 @@
     <string name="settings_general_add_modulo_desc">Zamijeni gumb „X²” s gumbom za modulo (dostupno kada se pritisne gumb „INV”)</string>
     <string name="settings_advanced_long_click_copy">Kopiraj vrijednost dugim pritiskom</string>
     <string name="settings_advanced_long_click_copy_desc">Dugim pritiskom se tekst elementa kopira umjesto da se odabere</string>
+    <string name="settings_delete_history_element_on_swipe">Dozvoli selektivno brisanje povijesti</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Izbriši određene elemente povijesti povlačenjem</string>
 </resources>
