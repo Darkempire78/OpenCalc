@@ -1,2 +1,2 @@
-Apa yang diperbaiki:
+Perbaikan:
 - Perbaiki tema Material You

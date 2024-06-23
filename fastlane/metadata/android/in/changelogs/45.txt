@@ -1,24 +1,24 @@
-Apa yang baru:
-- Gunakan BigDecimal alih-alih Double
+Tambahan:
+- Gantikan Double dengan BigDecimal
 - Pengaturan untuk mengonversi hasil ke notasi ilmiah
-- Menambahkan opsi untuk menggunakan modulo
-- Menambahkan opsi untuk memilih nilai alih-alih menyalinnya
-- Menambahkan opsi untuk memisahkan tombol tanda kurung
-- Tambahkan opsi untuk menonaktifkan riwayat
+- Tambahkan opsi menggunakan modulo
+- Tambahkan opsi memilih selain menyalin nilai
+- Tambahkan opsi memisahkan tombol tanda kurung
+- Tambahkan opsi menonaktifkan riwayat
 - Tambahkan lisensi ke bagian tentang kami
 
-Apa yang ditingkatkan:
-- Mengoptimalkan kalkulator
-- Mengganti EditTeks yang tidak penting dengan TextView
+Peningkatan:
+- Optimalisasi kalkulator
+- Mengganti EditTeks dengan TextView
 - Aktifkan simbol sebelum desimal
 - Perbesar hitbox tombol kembali
 - Perbarui beberapa terjemahan
 
-Apa yang diperbaiki
+Perbaikan:
 - Lokasi kursor
-- Masalah penerapan tema dengan mode AMOLED
+- Masalah penerapan tema AMOLED
 - Hasil faktorial desimal
-- Mode bentang menyembunyikan beberapa ikon tombol
-- Persegi panjang abu-abu di samping Pengaturan
+- Mode bentang menyembunyikan ikon tombol
+- Persegi panjang di samping Pengaturan
 - Masalah pemformatan
 - Lainnya...

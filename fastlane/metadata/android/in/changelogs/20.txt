@@ -1,4 +1,4 @@
-Apa yang baru:
+Tambahan:
 - Tutup otomatis tanda kurung
 - Perkalian faktorial tanpa *
-- Otomatis tambahkan 0 ketika nomor dimulai dengan pemisah bernilai desimal
+- Otomatis tambahkan 0 ketika nomor dimulai dengan pemisah desimal

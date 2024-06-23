@@ -1,6 +1,6 @@
-Apa yang baru: 
+Tambahan: 
 - Ikon bertema
 
-Apa yang diperbaiki: 
+Perbaikan: 
 - Memperbarui terjemahan 
-- Menghapus input jika angka ditekan setelah sama dengan
+- Menghapus inputan jika angka ditekan setelah sama dengan

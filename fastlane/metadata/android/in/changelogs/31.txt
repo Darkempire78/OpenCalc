@@ -1,9 +1,9 @@
-Apa yang diubah:
+Perubahan:
 - Mengubah warna teks saat terjadi kesalahan
 - Mengurangi ukuran aplikasi
 - Jangan menyimpan hasil dalam riwayat jika hasilnya sama dengan perhitungan
 - Jangan menyimpan perhitungan dalam riwayat jika hasilnya sama dengan yang sebelumnya
 
-Apa yang diperbaiki:
+Perbaikan:
 - Faktorial 0 menghasilkan nilai 1
 - Tambahkan simbol matematika setelah tombol sama dengan ditekan

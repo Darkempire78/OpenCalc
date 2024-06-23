@@ -1,8 +1,8 @@
-Apa yang baru: 
+Tambahan: 
 - Riwayat
 
-Apa yang diubah: 
+Perubahan: 
 - Pengoptimalan
 
-Apa yang diperbaiki: 
+Perbaikan: 
 - Masalah tampilan hasil

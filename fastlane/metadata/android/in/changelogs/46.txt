@@ -1,0 +1,8 @@
+Peningkata:
+* Perbarui terjemahan
+* Implementasikan BroadcastReceiver ke aktivitas mulai TileService
+
+Perbaikan:
+* Masalah pemformatan pada nilai nol setelah koma
+* Perbaikan galat pada log saat x < 0
+* Galat saat menekan tombol akar pangkat setelah galat Syntax

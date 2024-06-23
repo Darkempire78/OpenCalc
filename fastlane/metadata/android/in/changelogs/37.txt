@@ -1,5 +1,5 @@
-Apa yang baru:
+Tambahan:
 - Bilah Pengaturan Cepat
 
-Apa yang diperbaiki:
+Perbaikan:
 - Toast yang mengganggu

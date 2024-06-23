@@ -1,4 +1,4 @@
-Apa yang diperbaiki:
+Perbaikan:
 - tan() tidak berfungsi dengan baik
 - Menghapus pemisah seribu menyebabkan kursor melompat
 - Penempatan tanda kurung di dalam perhitungan yang ada

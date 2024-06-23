@@ -1,9 +1,9 @@
-Apa yang baru:
+Tambahan:
 - Sistem perhitungan internal
 - Faktorial desimal
 - Mencegah adanya dua pemisah desimal dalam angka yang sama
 
-Apa yang diperbaiki:
+Perbaikan:
 - Gulir riwayat (@MahmoudRH)
 - Keakuratan hasil
 - Tombol backspace dengan pemisah pengelompokan

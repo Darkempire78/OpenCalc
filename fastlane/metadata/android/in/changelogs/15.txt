@@ -1,6 +1,6 @@
-Apa yang diubah:
+Perubahan:
 - Layar pembuka sekarang menjadi gelap
 
-Apa yang diperbaiki: 
+Perbaikan: 
 - masalah keyboard 
 - keyboard masih bergulir
