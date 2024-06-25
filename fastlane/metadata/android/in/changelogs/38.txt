@@ -1,2 +1,2 @@
-Apa yang diperbaiki:
+Perbaikan:
 - Pembagian persen

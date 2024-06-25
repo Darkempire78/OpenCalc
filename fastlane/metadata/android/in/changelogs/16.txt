@@ -1,4 +1,4 @@
-Apa yang diperbaiki: 
+Perbaikan: 
 - Bilah gulir input 
 - Gulir yang diperlukan untuk melihat hasil 
-- Hapus input jika angka ditekan setelah sama dengan
+- Hapus inputan jika tombol angka ditekan setelah sama dengan

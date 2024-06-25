@@ -1,5 +1,5 @@
 Perubahan: 
-- tambahan pemisah untuk angka yang besar 
+- tambahan pemisah untuk nilai besar 
 - tambahan terjemahan bahasa Italia 
 - tambahan terjemahan bahasa Arab 
 - tambahan terjemahan bahasa Turki

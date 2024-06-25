@@ -1,7 +1,7 @@
-Apa yang diubah:
+Perubahan:
 - Tampilkan kalimat "nilai terlalu besar" alih-alih "tak terhingga"
 
-Apa yang diperbaiki:
+Perbaikan:
 - Pembagian dengan bilangan negatif
 - Masalah dengan fungsi faktorial
 - sin(x!) & cos(x!) memberikan hasil yang salah

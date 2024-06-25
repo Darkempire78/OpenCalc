@@ -1,8 +1,8 @@
-Apa yang baru:
+Tambahan:
 - Sistem getaran
 
-Apa yang diubah:
+Perubahan:
 - Peningkatan kode
 
-Apa yang diperbaiki:
+Perbaikan:
 - Mengikuti tema sistem saat peluncuran pertama kali

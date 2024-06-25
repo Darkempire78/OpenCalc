@@ -1,8 +1,8 @@
-Apa yang baru:
+Tambahan:
 - Terjemahan bahasa Spanyol
 
-Apa yang diperbaiki:
-- Keyboard menjadi tidak responsif saat berinteraksi dengan faktorial besar
+Perbaikan:
+- Keyboard tidak responsif saat berinteraksi dengan faktorial besar
 - Pemuatan nilai yang salah dari riwayat
-- Memuat hasil dengan titik desimal dari riwayat akan menghapus operator atau membuat aplikasi macet
+- Memuat hasil dengan nilai desimal dari riwayat akan menghapus operator atau galat
 - Keakuratan

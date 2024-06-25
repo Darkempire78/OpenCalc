@@ -1,5 +1,5 @@
-Apa yang baru:
+Tambahan:
 - Halaman pengaturan
 
-Apa yang diubah:
+Perubahan:
 - Halaman tentang kami

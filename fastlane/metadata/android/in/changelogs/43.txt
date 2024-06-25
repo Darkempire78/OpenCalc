@@ -1,13 +1,13 @@
-Apa yang baru:
+Tambahan:
 - Tambahkan lisensi ke bagian tentang kami
 
-Apa yang diubah:
+Perubahan:
 - Memperbarui beberapa terjemahan
 - Aktifkan simbol sebelum desimal
 
-Apa yang diperbaiki:
+Perbaikan:
 - Lokasi kursor
 - Aplikasi macet saat mencari bentuk akar dari bilangan negatif
 - Aplikasi macet saat melakukan perhitungan log atau ln dari bilangan negatif
 - Aplikasi macet saat melakukan aktivitas utama dalam mode bentang untuk kedua kalinya
-- Segala sesuatu setelah nilai ').' dalam sebuah perhitungan akan diabaikan
+- Apapun setelah nilai ').' dalam perhitungan akan diabaikan

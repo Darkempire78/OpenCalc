@@ -1,7 +1,7 @@
-Apa yang baru: 
+Tambahan: 
 - Klik lama untuk menyalin nilai 
 - Terjemahan bahasa Indonesia
 
-Apa yang diperbaiki: 
+Perbaikan: 
 - gulir pada mode bentang 
 - masalah fokus
