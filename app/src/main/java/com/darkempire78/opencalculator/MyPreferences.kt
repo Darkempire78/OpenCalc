@@ -24,6 +24,7 @@ class MyPreferences(context: Context) {
         private const val KEY_ADD_MODULO_BUTTON = "darkempire78.opencalculator.ADD_MODULO_BUTTON"
         private const val KEY_SPLIT_PARENTHESIS_BUTTON = "darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
         private const val KEY_DELETE_HISTORY_ON_SWIPE = "darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
+        private const val KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON = "darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -55,9 +56,11 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_ADD_MODULO_BUTTON, value).apply()
     var splitParenthesisButton = preferences.getBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, false)
         set(value) = preferences.edit().putBoolean(KEY_SPLIT_PARENTHESIS_BUTTON, value).apply()
-    var deleteHistoryOnSwipe = preferences.getBoolean(KEY_DELETE_HISTORY_ON_SWIPE, false)
+    var deleteHistoryOnSwipe = preferences.getBoolean(KEY_DELETE_HISTORY_ON_SWIPE, true)
         set(value) = preferences.edit().putBoolean(KEY_DELETE_HISTORY_ON_SWIPE, value).apply()
 
+    var autoSaveCalculationWithoutEqualButton = preferences.getBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, true)
+        set(value) = preferences.edit().putBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, value).apply()
 
 
     fun getHistory(): MutableList<History> {
@@ -76,5 +79,19 @@ class MyPreferences(context: Context) {
             history2.removeAt(0)
         }
         MyPreferences(context).history = gson.toJson(history2) // Convert to json
+    }
+
+    fun getHistoryElementById(context: Context, id: String): History? {
+        val history = getHistory()
+        return history.find { it.id == id }
+    }
+
+    fun updateHistoryElementById(context: Context, id: String, history: History) {
+        val historyList = getHistory()
+        val index = historyList.indexOfFirst { it.id == id }
+        if (index != -1) {
+            historyList[index] = history
+            saveHistory(context, historyList)
+        }
     }
 }
