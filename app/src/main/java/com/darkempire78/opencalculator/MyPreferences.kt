@@ -44,7 +44,7 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putString(KEY_HISTORY, value).apply()
     var preventPhoneFromSleepingMode = preferences.getBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, false)
         set(value) = preferences.edit().putBoolean(KEY_PREVENT_PHONE_FROM_SLEEPING, value).apply()
-    var historySize = preferences.getString(KEY_HISTORY_SIZE, "100")
+    var historySize = preferences.getString(KEY_HISTORY_SIZE, "-1")
         set(value) = preferences.edit().putString(KEY_HISTORY_SIZE, value).apply()
     var numberPrecision = preferences.getString(KEY_NUMBER_PRECISION, "10")
         set(value) = preferences.edit().putString(KEY_NUMBER_PRECISION, value).apply()
