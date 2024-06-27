@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.TypedValue
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -220,6 +221,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
+                adjustInputTextSize()
                 /*val afterTextLength = s?.length ?: 0
                 // If the afterTextLength is equals to 0 we have to clear resultDisplay
                 if (afterTextLength == 0) {
@@ -1110,5 +1112,31 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
+    }
+
+    private fun adjustInputTextSize() {
+        val screenWidth = resources.displayMetrics.widthPixels
+
+        // Text size will be reduced a bit before reaching the screen width, for a smoother experience
+        val maxWidth = screenWidth - 50
+
+        val maxTextSize = 55f // TODO: This value should depend on the screen layout
+        val minTextSize = 30f
+
+        var textSize = maxTextSize
+        binding.input.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize)
+
+        val textBounds = android.graphics.Rect()
+        val text = binding.input.text.toString()
+
+        // Measure the text size and adjust until it fits
+        val paint = binding.input.paint
+        paint.getTextBounds(text, 0, text.length, textBounds)
+
+        while (textBounds.width() > maxWidth && textSize > minTextSize) {
+            textSize -= 1f
+            binding.input.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize)
+            paint.getTextBounds(text, 0, text.length, textBounds)
+        }
     }
 }
