@@ -9,6 +9,16 @@
 
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/top_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/foreground_color"
+        app:layout_constraintBottom_toTopOf="@+id/inputHorizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <HorizontalScrollView
         android:id="@+id/inputHorizontalScrollView"
         android:layout_width="match_parent"
@@ -17,7 +27,7 @@
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/menuButton">
 
         <EditText
             android:id="@+id/input"

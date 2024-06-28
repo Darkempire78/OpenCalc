@@ -431,15 +431,27 @@
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
+    <View
+        android:id="@+id/top_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/foreground_color"
+        app:layout_constraintBottom_toTopOf="@+id/sliding_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/menuButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <HorizontalScrollView
         android:id="@+id/inputHorizontalScrollView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="?attr/foreground_color"
+        android:overScrollMode="never"
         android:scrollbars="none"
-        android:overScrollMode="never">
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/menuButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/input"
@@ -448,14 +460,14 @@
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:autofillHints="false"
+            android:background="?attr/foreground_color"
             android:inputType="textNoSuggestions"
-            android:paddingHorizontal="30sp"
+            android:paddingLeft="30sp"
             android:singleLine="true"
             android:text=""
             android:textAlignment="textEnd"
             android:textColor="?attr/text_color"
             android:textSize="55sp"
-            android:background="?attr/foreground_color"
             tools:ignore="RtlCompat" />
 
     </HorizontalScrollView>
@@ -484,36 +496,37 @@
 
     <HorizontalScrollView
         android:id="@+id/resultDisplayHorizontalScrollView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
         android:background="?attr/foreground_color"
-        android:scrollbars="none"
+        android:fillViewport="true"
         android:overScrollMode="never"
-        android:fillViewport="true">
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/top_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="end">
+            android:gravity="end"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/resultDisplay"
                 style="@style/RobotoFontCondensedMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:scrollHorizontally="true"
-                android:textIsSelectable="true"
-                android:singleLine="true"
                 android:background="?attr/foreground_color"
-                android:text=""
-                android:textColor="?attr/text_second_color"
-                android:textAlignment="textEnd"
-                android:textSize="30sp"
                 android:paddingStart="18dp"
-                android:paddingEnd="30sp"/>
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textColor="?attr/text_second_color"
+                android:textIsSelectable="true"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
