@@ -1159,7 +1159,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     Configuration.SCREENLAYOUT_SIZE_NORMAL -> {
                         maxInputTextSize = 85f
-                        minInputTextSize = 35f
+                        minInputTextSize = 40f
                     }
                     Configuration.SCREENLAYOUT_SIZE_LARGE ->  {
                         maxInputTextSize = 85f // TODO: Find the right values
@@ -1171,7 +1171,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     else ->  { // Set default values
                         maxInputTextSize = 85f
-                        minInputTextSize = 35f
+                        minInputTextSize = 40f
                     }
                 }
             }
