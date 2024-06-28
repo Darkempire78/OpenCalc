@@ -29,6 +29,21 @@ class Calculator(
         private val numberPrecision: Int
     ) {
 
+    fun modPow(base: BigDecimal, exponent: BigDecimal, modulus: BigDecimal): BigDecimal {
+        if (modulus == BigDecimal.ONE) return BigDecimal.ZERO
+        var result = BigDecimal.ONE
+        var b = base.remainder(modulus)
+        var e = exponent
+        while (e > BigDecimal.ZERO) {
+            if (e.remainder(BigDecimal("2")) == BigDecimal.ONE) {
+                result = (result * b).remainder(modulus)
+            }
+            e = e.divide(BigDecimal("2"), RoundingMode.DOWN)
+            b = (b * b).remainder(modulus)
+        }
+        return result
+    }
+
     fun factorial(number: BigDecimal): BigDecimal {
         if (number >= BigDecimal(3000)) {
             is_infinity = true
@@ -116,12 +131,20 @@ class Calculator(
                 while (true) {
                     if (eat('*'.code)) x = x.multiply(parseFactor()) // Multiplication
                     else if (eat('#'.code)) { // Modulo
-                        val fractionDenominator = parseFactor()
-                        if (fractionDenominator == BigDecimal.ZERO) {
+                        val modulus = parseFactor()
+                        if (modulus == BigDecimal.ZERO) {
                             division_by_0 = true
                             x = BigDecimal.ZERO
                         } else {
-                            x = x.rem(fractionDenominator)
+                            if (x.scale() <= 0) {  // Check if x is an integer
+                                x = x.remainder(modulus)
+                            } else {
+                                // If x is not an integer, it might be a result of a power operation
+                                // In this case, we need to recalculate using modPow
+                                val base = x.setScale(0, RoundingMode.DOWN)
+                                val exponent = x.subtract(base)
+                                x = modPow(base, exponent, modulus)
+                            }
                         }
                     }
                     else if (eat('/'.code)) { // Division
@@ -298,55 +321,60 @@ class Calculator(
                     syntax_error = true
                 }
                 if (eat('^'.code)) {
-
                     val exponent = parseFactor()
-                    val intPart = exponent.toInt()
-                    val decimalPart = exponent.subtract(BigDecimal(intPart))
+                    // Check if the next operation is modulo (e.g: 2^3#5)
+                    // Related to : https://github.com/Darkempire78/OpenCalc/issues/469
+                    if (eat('#'.code)) {
+                        val modulus = parseFactor()
+                        x = modPow(x, exponent, modulus)
+                    } else { // if the next operation is NOT modulo (normal exponentiation)
+                        val intPart = exponent.toInt()
+                        val decimalPart = exponent.subtract(BigDecimal(intPart))
 
-                    // if the number is null
-                    if (x == BigDecimal.ZERO) {
-                        syntax_error = true
-                        x = BigDecimal.ZERO
-                    }
-                    else {
-                        if (exponent >= BigDecimal(10000)) {
-                            is_infinity = true
+                        // if the number is null
+                        if (x == BigDecimal.ZERO) {
+                            syntax_error = true
                             x = BigDecimal.ZERO
-                        } else {
-                            // If the number is negative and the factor is a float ( e.g : (-5)^0.5 )
-                            if (x < BigDecimal.ZERO && decimalPart != BigDecimal.ZERO) {
-                                require_real_number = true
-                            } // the factor is NOT a float
-                            else if (exponent > BigDecimal.ZERO) {
+                        }
+                        else {
+                            if (exponent >= BigDecimal(10000)) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else {
+                                // If the number is negative and the factor is a float ( e.g : (-5)^0.5 )
+                                if (x < BigDecimal.ZERO && decimalPart != BigDecimal.ZERO) {
+                                    require_real_number = true
+                                } // the factor is NOT a float
+                                else if (exponent > BigDecimal.ZERO) { // the factor is positive
 
-                                // To support bigdecimal exponent (e.g: 3.5)
-                                x = x.pow(intPart, MathContext.DECIMAL64)
-                                    .multiply(BigDecimal.valueOf(
-                                        x.toDouble().pow(decimalPart.toDouble())
-                                    ))
+                                    // To support bigdecimal exponent (e.g: 3.5)
+                                    x = x.pow(intPart, MathContext.DECIMAL64)
+                                        .multiply(BigDecimal.valueOf(
+                                            x.toDouble().pow(decimalPart.toDouble())
+                                        ))
 
-                                // To fix sqrt(2)^2 = 2
-                                val decimal = x.toInt()
-                                val fractional = x.toDouble() - decimal
-                                if (fractional > 0 && fractional < 1.0E-14) {
-                                    x = decimal.toBigDecimal()
+                                    // To fix sqrt(2)^2 = 2
+                                    val decimal = x.toInt()
+                                    val fractional = x.toDouble() - decimal
+                                    if (fractional > 0 && fractional < 1.0E-14) {
+                                        x = decimal.toBigDecimal()
+                                    }
                                 }
-                            }
-                            else {
-                                // To support negative factor
-                                x = x.pow(-intPart, MathContext.DECIMAL64)
-                                    .multiply(BigDecimal.valueOf(
-                                        x.toDouble().pow(-decimalPart.toDouble())
-                                    ))
+                                else { // the factor is negative
+                                    x = x.pow(-intPart, MathContext.DECIMAL64)
+                                        .multiply(BigDecimal.valueOf(
+                                            x.toDouble().pow(-decimalPart.toDouble())
+                                        ))
 
-                                x = try {
-                                    BigDecimal.ONE.divide(x)
-                                } catch (e: ArithmeticException) {
-                                    // if the result is a non-terminating decimal expansion
-                                    BigDecimal.ONE.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
+                                    x = try {
+                                        BigDecimal.ONE.divide(x)
+                                    } catch (e: ArithmeticException) {
+                                        // if the result is a non-terminating decimal expansion
+                                        BigDecimal.ONE.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
+                                    }
                                 }
-                            }
 
+                            }
                         }
                     }
                 }
