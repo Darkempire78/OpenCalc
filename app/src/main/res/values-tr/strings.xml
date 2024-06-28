@@ -56,4 +56,6 @@
     <string name="copied_history_result">Geçmiş sonucu kopyalandı</string>
     <string name="settings_delete_history_element_on_swipe">Seçmeli geçmiş silmeye izin ver</string>
     <string name="settings_delete_history_element_on_swipe_desc">Kaydırıldığında belirli geçmiş ögesini sil</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Hesaplamaları otomatik olarak kaydet</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Eşittir düğmesine tıklamaya gerek kalmadan hesaplamaları otomatik olarak geçmişe kaydet</string>
 </resources>
