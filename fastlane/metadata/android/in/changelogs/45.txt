@@ -1,11 +1,11 @@
 Tambahan:
 - Gantikan Double dengan BigDecimal
-- Pengaturan untuk mengonversi hasil ke notasi ilmiah
-- Tambahkan opsi menggunakan modulo
-- Tambahkan opsi memilih selain menyalin nilai
-- Tambahkan opsi memisahkan tombol tanda kurung
-- Tambahkan opsi menonaktifkan riwayat
-- Tambahkan lisensi ke bagian tentang kami
+- Opsi untuk mengonversi hasil ke notasi ilmiah
+- Opsi menggunakan modulo
+- Opsi memilih selain menyalin nilai
+- Opsi memisahkan tombol tanda kurung
+- Opsi menonaktifkan riwayat
+- Lisensi ke bagian tentang kami
 
 Peningkatan:
 - Optimalisasi kalkulator
