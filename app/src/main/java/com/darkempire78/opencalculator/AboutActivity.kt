@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
+import com.darkempire78.opencalculator.orientation.OrientationRequester
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
@@ -114,5 +115,10 @@ class AboutActivity : AppCompatActivity() {
                 clickAppVersionCount = 0
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        OrientationRequester.requestOrientation(this)
     }
 }

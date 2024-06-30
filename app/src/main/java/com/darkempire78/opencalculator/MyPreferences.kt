@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
+import com.darkempire78.opencalculator.orientation.Orientation
 import com.google.gson.Gson
 
 class MyPreferences(context: Context) {
@@ -11,6 +12,7 @@ class MyPreferences(context: Context) {
     companion object {
         private const val THEME = "darkempire78.opencalculator.THEME"
         private const val FORCE_DAY_NIGHT = "darkempire78.opencalculator.FORCE_DAY_NIGHT"
+        private const val ORIENTATION = "darkempire78.opencalculator.ORIENTATION"
 
         private const val KEY_VIBRATION_STATUS = "darkempire78.opencalculator.KEY_VIBRATION_STATUS"
         private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY"
@@ -33,6 +35,8 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putInt(THEME, value).apply()
     var forceDayNight = preferences.getInt(FORCE_DAY_NIGHT, MODE_NIGHT_UNSPECIFIED)
         set(value) = preferences.edit().putInt(FORCE_DAY_NIGHT, value).apply()
+    var orientation = preferences.getInt(ORIENTATION, Orientation.SYSTEM.ordinal)
+        set(value) = preferences.edit().putInt(ORIENTATION, value).apply()
 
     var vibrationMode = preferences.getBoolean(KEY_VIBRATION_STATUS, true)
         set(value) = preferences.edit().putBoolean(KEY_VIBRATION_STATUS, value).apply()

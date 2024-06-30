@@ -25,6 +25,15 @@
             app:summary="APP THEME"
             app:icon="@drawable/theme" />
 
+        <Preference
+            android:id="@+id/settings_select_app_orientation"
+            app:key="darkempire78.opencalculator.APP_ORIENTATION_SELECTOR"
+            app:selectable="true"
+            app:enabled="true"
+            app:title="@string/settings_general_orientation"
+            app:summary="APP ORIENTATION"
+            app:icon="@drawable/orientation" />
+
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
             app:title="@string/settings_general_vibration"

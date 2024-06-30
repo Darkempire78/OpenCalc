@@ -63,6 +63,8 @@
 
     <string name="settings_general_theme">Theme</string>
 
+    <string name="settings_general_orientation">Orientation</string>
+
     <string name="settings_general_vibration">Vibration</string>
     <string name="settings_general_vibration_desc">Vibrate when a button is pressed</string>
 
@@ -119,6 +121,11 @@
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
     <string name="theme_amoled">Amoled</string>
+
+    <!-- Orientation choices -->
+    <string name="orientation_system">System</string>
+    <string name="orientation_portrait">Portrait</string>
+    <string name="orientation_landscape">Landscape</string>
 
     <!-- Error messages -->
     <string name="division_by_0">Can\'t divide by 0</string>
