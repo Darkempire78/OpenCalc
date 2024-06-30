@@ -209,7 +209,11 @@ class Calculator(
                             }
                         }
                         "xp" -> {
-                            x = BigDecimal(exp(x.toDouble()))
+                            try {
+                                x = BigDecimal(exp(x.toDouble()))
+                            } catch (e: NumberFormatException) {
+                                is_infinity = true
+                            }
                         }
                         "sin" -> {
                             if (isDegreeModeActivated) {
