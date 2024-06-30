@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.darkempire78.opencalculator.orientation.OrientationRequester
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -1117,6 +1118,8 @@ class MainActivity : AppCompatActivity() {
     // Update settings
     override fun onResume() {
         super.onResume()
+
+        OrientationRequester.requestOrientation(this)
 
         // Update the theme
         val themes = Themes(this)

@@ -1,19 +1,20 @@
 package com.darkempire78.opencalculator
 
+import android.content.Context
 import android.content.Intent
-import android.content.res.Resources.Theme
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.View
-import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.darkempire78.opencalculator.orientation.Orientation
+import com.darkempire78.opencalculator.orientation.OrientationRequester
+import com.darkempire78.opencalculator.orientation.OrientationSelectorDialogOpener
 import java.util.*
 
 class SettingsActivity : AppCompatActivity() {
@@ -49,6 +50,11 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        OrientationRequester.requestOrientation(this)
+    }
+
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
@@ -77,6 +83,20 @@ class SettingsActivity : AppCompatActivity() {
 
             appThemePreference?.setOnPreferenceClickListener {
                 Themes.openDialogThemeSelector(this.requireContext())
+                true
+            }
+
+            setupOrientationPreference(requireContext())
+        }
+
+        private fun setupOrientationPreference(context: Context) {
+            // Orientation button
+            val appOrientationPreference = findPreference<Preference>("darkempire78.opencalculator.APP_ORIENTATION_SELECTOR")
+
+            appOrientationPreference?.summary = context.getString(Orientation.getByOrdinal(MyPreferences(context).orientation).resId)
+
+            appOrientationPreference?.setOnPreferenceClickListener {
+                OrientationSelectorDialogOpener.openDialog(requireContext())
                 true
             }
         }
