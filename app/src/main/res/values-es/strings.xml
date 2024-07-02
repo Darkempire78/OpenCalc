@@ -55,4 +55,6 @@
     <string name="copied_history_result">Resultado del historial copiado</string>
     <string name="settings_delete_history_element_on_swipe">Permitir la eliminación selectiva del historial</string>
     <string name="settings_delete_history_element_on_swipe_desc">Eliminar un elemento concreto del historial al deslizar con el dedo</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Guardar cálculos automáticamente</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Guarde automáticamente los cálculos en el historial sin necesidad de hacer clic en el botón igual</string>
 </resources>

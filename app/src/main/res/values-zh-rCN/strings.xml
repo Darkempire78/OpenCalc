@@ -55,4 +55,6 @@
     <string name="copied_history_result">已复制历史结果</string>
     <string name="settings_delete_history_element_on_swipe_desc">滑动删除特定的历史元素</string>
     <string name="settings_delete_history_element_on_swipe">允许仅删除选中的历史记录</string>
+    <string name="settings_auto_save_calculation_without_equal_button">自动保存计算</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">无需单击 = 符号自动将计算保存在历史记录中</string>
 </resources>

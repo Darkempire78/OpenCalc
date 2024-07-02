@@ -55,4 +55,6 @@
     <string name="settings_general_add_modulo_desc">\"X²\" बटन को modulo बटन से बदलें (यह तब उपलब्ध होता है जब \"INV\" बटन दबाया जाता है)</string>
     <string name="settings_delete_history_element_on_swipe">चुनिंदा इतिहास मिटाने की अनुमति दें</string>
     <string name="settings_delete_history_element_on_swipe_desc">स्वाइप करके विशिष्ट इतिहास तत्व मिटाएं</string>
+    <string name="settings_auto_save_calculation_without_equal_button">स्वचालित रूप से गणना सहेजें</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">बराबर बटन पर क्लिक किए बिना इतिहास में गणनाओं को स्वचालित रूप से सहेजें</string>
 </resources>
