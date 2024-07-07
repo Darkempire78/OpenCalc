@@ -9,6 +9,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
+import android.text.Html
 import android.text.TextWatcher
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
@@ -225,31 +226,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
-                /*val afterTextLength = s?.length ?: 0
-                // If the afterTextLength is equals to 0 we have to clear resultDisplay
-                if (afterTextLength == 0) {
-                    binding.resultDisplay.setText("")
-                }
-
-                /* we check if the length of the text entered into the EditText
-                is greater than the length of the text before the change (beforeTextLength)
-                by more than 1 character. If it is, we assume that this is a paste event. */
-                val clipData = clipboardManager.primaryClip
-                if (clipData != null && clipData.itemCount > 0) {
-                    //val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
-
-                    if (s != null) {
-                        //val newValue = s.subSequence(start, start + count).toString()
-                        if (
-                            (afterTextLength - beforeTextLength > 1)
-                            // Removed to avoid anoying notification (https://developer.android.com/develop/ui/views/touch-and-input/copy-paste#PastingSystemNotifications)
-                            //|| (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
-                        ) {
-                            // Handle paste event here
-                            updateResultDisplay()
-                        }
-                    }
-                }*/
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -558,6 +534,8 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (formattedResult != calculation) {
                             binding.resultDisplay.text = formattedResult
+                        } else if ("/" in binding.resultDisplay.text) {
+                            // Pass -> Avoid updating the UI if the result is the same (fraction option ONLY)
                         } else {
                             binding.resultDisplay.text = ""
                         }
@@ -876,7 +854,7 @@ class MainActivity : AppCompatActivity() {
                     groupingSeparatorSymbol
                 )
 
-                // If result is a number and it is finite
+                // If there is no error -> If result is a number and it is finite
                 if (!(division_by_0 || domain_error || syntax_error || is_infinity || require_real_number)) {
 
                     // Remove zeros at the end of the results (after point)
@@ -911,9 +889,6 @@ class MainActivity : AppCompatActivity() {
 
                         // Hide the cursor (do not remove this, it's not a duplicate)
                         binding.input.isCursorVisible = false
-
-                        // Clear resultDisplay
-                        binding.resultDisplay.text = ""
                     }
 
                     if (calculation != formattedResult) {
@@ -964,7 +939,28 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     isEqualLastAction = true
+
+                    // Display the result in fraction if the option is enabled
+                    if (MyPreferences(this@MainActivity).displayResultInFraction) {
+                        val fractionResult = DecimalToFraction().getFraction(calculationResult)
+                        if (fractionResult != binding.resultDisplay.text) { // Avoid updating the UI if the result is the same
+                            withContext(Dispatchers.Main) {
+                                // https://stackoverflow.com/questions/37904739/html-fromhtml-deprecated-in-android-n/37905107#37905107
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                                    binding.resultDisplay.text = Html.fromHtml(fractionResult, Html.FROM_HTML_MODE_LEGACY)
+                                } else {
+                                    @Suppress("DEPRECATION")
+                                    binding.resultDisplay.text =  Html.fromHtml(fractionResult)
+                                }
+                            }
+                        }
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            binding.resultDisplay.text = ""
+                        }
+                    }
                 } else {
+                    // Display error
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
                             setErrorColor(true)

@@ -155,6 +155,16 @@
         app:color="?attr/text_color">
 
         <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.KEY_DISPLAY_RESULT_IN_FRACTION"
+            app:title="@string/settings_advanced_display_fraction"
+            app:summary="@string/settings_advanced_display_fraction_desc"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:icon="@drawable/divide"
+            app:widgetLayout="@drawable/material_switch" />
+
+        <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.LONG_CLICK_TO_COPY_VALUE"
             app:title="@string/settings_advanced_long_click_copy"
             app:summary="@string/settings_advanced_long_click_copy_desc"
