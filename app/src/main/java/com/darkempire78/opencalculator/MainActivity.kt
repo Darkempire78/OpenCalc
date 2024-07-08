@@ -5,14 +5,11 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.TypedValue
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -156,6 +153,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val textSizeAdjuster = TextSizeAdjuster(this)
+
         // Prevent the phone from sleeping (if option enabled)
         if (MyPreferences(this).preventPhoneFromSleepingMode) {
             view.keepScreenOn = true
@@ -228,7 +227,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
-                adjustInputTextSize()
+                textSizeAdjuster.adjustTextSize(binding.input, TextSizeAdjuster.AdjustableTextType.Input)
                 /*val afterTextLength = s?.length ?: 0
                 // If the afterTextLength is equals to 0 we have to clear resultDisplay
                 if (afterTextLength == 0) {
@@ -254,6 +253,22 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }*/
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do nothing
+            }
+        })
+
+        binding.resultDisplay.addTextChangedListener(object: TextWatcher {
+            private var beforeTextLength = 0
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                beforeTextLength = s?.length ?: 0
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                textSizeAdjuster.adjustTextSize(binding.resultDisplay, TextSizeAdjuster.AdjustableTextType.Output)
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -1184,103 +1199,5 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
-    }
-
-    private fun adjustInputTextSize() {
-        val screenWidth = resources.displayMetrics.widthPixels
-
-        // Text size will be reduced a bit before reaching the screen width, for a smoother experience
-        val maxWidth = screenWidth - dpToPx(20f, this)
-
-        // Get the min and max text sizes for the input
-        val (minInputTextSize, maxInputTextSize) = getInputTextSizes(resources.configuration)
-
-        var inputTextSize = maxInputTextSize
-        binding.input.setTextSize(TypedValue.COMPLEX_UNIT_SP, inputTextSize)
-
-        val textBounds = android.graphics.Rect()
-        val inputText = binding.input.text.toString()
-
-        // Measure the text size and adjust until it fits
-        val paint = binding.input.paint
-        paint.getTextBounds(inputText, 0, inputText.length, textBounds)
-
-        // Reduce the text size until it fits
-        while (textBounds.width() > maxWidth && inputTextSize > minInputTextSize) {
-            inputTextSize -= 1f
-            binding.input.setTextSize(TypedValue.COMPLEX_UNIT_SP, inputTextSize)
-            paint.getTextBounds(inputText, 0, inputText.length, textBounds)
-        }
-    }
-
-    private fun getInputTextSizes(configuration: Configuration): Pair<Float, Float> {
-        val screenSize = configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK
-        val orientation = configuration.orientation
-
-        var maxInputTextSize = 0f
-        var minInputTextSize = 0f
-
-        when (orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> { // Portrait
-                when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> {
-                        maxInputTextSize = 85f
-                        minInputTextSize = 40f
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_LARGE ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    else ->  { // Set default values
-                        maxInputTextSize = 85f
-                        minInputTextSize = 40f
-                    }
-                }
-            }
-            Configuration.ORIENTATION_LANDSCAPE -> { // Landscape
-                when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> {
-                        maxInputTextSize = 45f
-                        minInputTextSize = 25f
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_LARGE ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE ->  {
-                        maxInputTextSize = 85f // TODO: Find the right values
-                        minInputTextSize = 35f // TODO: Find the right values
-                    }
-                    else ->  {
-                        maxInputTextSize = 45f
-                        minInputTextSize = 25f
-                    }
-                }
-            }
-            Configuration.ORIENTATION_UNDEFINED -> {
-                println("❌ Undefined orientation : screenSize -> $screenSize orientation -> $orientation")
-            }
-            else -> {
-                println("❌ Undefined orientation (else) : screenSize -> $screenSize orientation -> $orientation")
-            }
-        }
-
-        return Pair(minInputTextSize, maxInputTextSize)
-    }
-
-    private fun dpToPx(dp: Float, context: Context): Float {
-        return dp * context.resources.displayMetrics.density
     }
 }
