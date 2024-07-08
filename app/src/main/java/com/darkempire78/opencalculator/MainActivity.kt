@@ -406,29 +406,25 @@ class MainActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
                 // when you click on the decimalSeparator button
-                if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
-                    if (binding.input.text.toString().isNotEmpty()) {
-                        var lastNumberBefore = ""
-                        if (cursorPosition > 0 && binding.input.text.toString()
-                                .substring(0, cursorPosition)
-                                .last() in "0123456789\\$decimalSeparatorSymbol"
-                        ) {
-                            lastNumberBefore = NumberFormatter.extractNumbers(
-                                binding.input.text.toString().substring(0, cursorPosition),
-                                decimalSeparatorSymbol
-                            ).last()
-                        }
-                        var firstNumberAfter = ""
-                        if (cursorPosition < binding.input.text.length - 1) {
-                            firstNumberAfter = NumberFormatter.extractNumbers(
-                                binding.input.text.toString()
-                                    .substring(cursorPosition, binding.input.text.length),
-                                decimalSeparatorSymbol
-                            ).first()
-                        }
-                        if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
-                            return@withContext
-                        }
+                val textLength = binding.input.text.length
+
+                if (textLength > 0) {
+
+                    // Get next / previous characters relative to the cursor
+                    val nextChar =
+                        if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
+
+                    val previousChar =
+                        if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
+
+                    val currentValue = getValueAroundCursor(cursorPosition)
+
+                    if(value == decimalSeparatorSymbol && currentValue.contains(decimalSeparatorSymbol) ){
+                        return@withContext
+                    }
+
+                    if(value == decimalSeparatorSymbol  && previousChar == decimalSeparatorSymbol || nextChar == decimalSeparatorSymbol){
+                        return@withContext
                     }
                 }
 
@@ -444,6 +440,30 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun getValueAroundCursor(cursorPosition: Int): String {
+
+        val text = binding.input.text.toString()
+
+        if (cursorPosition < 0 || cursorPosition > text.length) {
+            return ""
+        }
+
+        val delimiters = charArrayOf('+', '-', '×', '÷', '(', ')')
+
+        // Find the start of the text around the cursor by looking for the previous delimiter
+        val start = text.substring(0, cursorPosition).lastIndexOfAny(delimiters).let {
+            if (it == -1) 0 else it + 1
+        }
+
+        // Find the end of the text around the cursor by looking for the next delimiter
+        val end = text.indexOfAny(delimiters, cursorPosition).let {
+            if (it == -1) text.length else it
+        }
+
+        // Return the text around the cursor position
+        return text.substring(start, end)
     }
 
     private fun roundResult(result: BigDecimal): BigDecimal {
