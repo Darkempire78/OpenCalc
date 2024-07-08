@@ -1,6 +1,9 @@
 package com.darkempire78.opencalculator
 
 import android.content.Context
+import android.graphics.Typeface
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
 import com.google.gson.Gson
@@ -25,6 +28,7 @@ class MyPreferences(context: Context) {
         private const val KEY_SPLIT_PARENTHESIS_BUTTON = "darkempire78.opencalculator.SPLIT_PARENTHESIS_BUTTON"
         private const val KEY_DELETE_HISTORY_ON_SWIPE = "darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
         private const val KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON = "darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
+        private const val KEY_APP_FONT = "darkempire78.opencalculator.APP_FONT"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -61,6 +65,8 @@ class MyPreferences(context: Context) {
 
     var autoSaveCalculationWithoutEqualButton = preferences.getBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, true)
         set(value) = preferences.edit().putBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, value).apply()
+    var appFont = preferences.getString(KEY_APP_FONT, "default")
+        set(value) = preferences.edit().putString(KEY_APP_FONT, value).apply()
 
 
     fun getHistory(): MutableList<History> {

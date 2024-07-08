@@ -2,13 +2,16 @@ package com.darkempire78.opencalculator
 
 import android.content.Intent
 import android.content.res.Resources.Theme
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -29,9 +32,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.settings_activity)
         if (savedInstanceState == null) {
             supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.settings, SettingsFragment())
-                    .commit()
+                .beginTransaction()
+                .replace(R.id.settings, SettingsFragment())
+                .commit()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -46,7 +49,6 @@ class SettingsActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
             finish()
         }
-
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
@@ -55,7 +57,7 @@ class SettingsActivity : AppCompatActivity() {
 
             val appLanguagePreference = findPreference<Preference>("darkempire78.opencalculator.APP_LANGUAGE")
 
-            // remove the app language button if you are using an Android version lower than v33 (Android 13)
+            // Remove the app language button if you are using an Android version lower than v33 (Android 13)
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
                 appLanguagePreference?.isVisible = false
             } else {
@@ -78,6 +80,30 @@ class SettingsActivity : AppCompatActivity() {
             appThemePreference?.setOnPreferenceClickListener {
                 Themes.openDialogThemeSelector(this.requireContext())
                 true
+            }
+
+            // Font preference
+            val appFontPreference = findPreference<Preference>("darkempire78.opencalculator.APP_FONT")
+            appFontPreference?.setOnPreferenceChangeListener { _, newValue ->
+                applyFont(newValue as String)
+                true
+            }
+        }
+
+        private fun applyFont(fontName: String) {
+            val typeface = Typeface.createFromAsset(requireContext().assets, "font/$fontName.ttf")
+            val rootView = requireActivity().findViewById<ViewGroup>(android.R.id.content)
+            applyFontToViewGroup(rootView, typeface)
+        }
+
+        private fun applyFontToViewGroup(viewGroup: ViewGroup, typeface: Typeface) {
+            for (i in 0 until viewGroup.childCount) {
+                val child = viewGroup.getChildAt(i)
+                if (child is ViewGroup) {
+                    applyFontToViewGroup(child, typeface)
+                } else if (child is TextView) {
+                    child.typeface = typeface
+                }
             }
         }
 
