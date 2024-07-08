@@ -41,13 +41,13 @@ class TextSizeAdjuster(private val context: Context) {
     }
 
     private fun getTextSizeBounds(configuration: Configuration, adjustableTextType: AdjustableTextType): Pair<Float, Float> {
-        val screenSize = configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK
         val orientation = configuration.orientation
+        val screenSize = configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK
 
         val (minTextSize, maxTextSize) = if (adjustableTextType == AdjustableTextType.Input) {
-            getInputTextSizeBounds(screenSize, orientation)
+            getInputTextSizeBounds(orientation, screenSize)
         } else {
-            getResultTextSizeBounds(screenSize, orientation)
+            getResultTextSizeBounds(orientation, screenSize)
         }
 
         return Pair(minTextSize, maxTextSize)
