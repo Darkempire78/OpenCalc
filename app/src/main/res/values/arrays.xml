@@ -86,4 +86,16 @@
         <item>1000</item> <!-- Infinity -->
     </string-array>
 
+
+    <!-- App Font Setting-->
+    <string-array name="app_font_entries">
+        <item>Default</item>
+        <item>OpenSans</item>
+    </string-array>
+
+    <string-array name="app_font_values">
+        <item>default</item>
+        <item>open_sans_medium</item>
+    </string-array>
+
 </resources>

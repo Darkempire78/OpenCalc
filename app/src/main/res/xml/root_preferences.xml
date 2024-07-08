@@ -25,6 +25,16 @@
             app:summary="APP THEME"
             app:icon="@drawable/theme" />
 
+        <ListPreference
+            app:key="darkempire78.opencalculator.APP_FONT"
+            app:title="@string/settings_app_font"
+            app:entries="@array/app_font_entries"
+            app:entryValues="@array/app_font_values"
+            app:defaultValue="Default"
+            app:useSimpleSummaryProvider="true"
+            app:singleLineTitle="false"
+            app:icon="@drawable/font" />
+
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
             app:title="@string/settings_general_vibration"
