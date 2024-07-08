@@ -55,22 +55,14 @@ class TextSizeAdjuster(private val context: Context) {
 
     private fun getInputTextSizeBounds(orientation: Int, screenSize: Int): Pair<Float, Float> {
         return when (orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> {
-                when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(40f, 85f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(40f, 85f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(35f, 85f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(35f, 85f) // TODO: Find the right values
-                    else -> Pair(40f, 85f) // TODO: Find the right values
-                }
-            }
+            Configuration.ORIENTATION_PORTRAIT -> Pair(35f, 55f)
             Configuration.ORIENTATION_LANDSCAPE -> {
                 when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(35f, 85f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(25f, 45f)
-                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(35f, 85f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(35f, 85f) // TODO: Find the right values
-                    else -> Pair(25f, 45f) // TODO: Find the right values
+                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(35f, 55f)
+                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(35f, 55f)
+                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(55f, 95f)
+                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(55f, 95f)
+                    else -> Pair(35f, 55f)
                 }
             }
             Configuration.ORIENTATION_UNDEFINED -> {
@@ -86,22 +78,14 @@ class TextSizeAdjuster(private val context: Context) {
 
     private fun getResultTextSizeBounds(orientation: Int, screenSize: Int): Pair<Float, Float> {
         return when (orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> {
-                when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(40f, 55f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(40f, 55f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(35f, 55f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(35f, 55f) // TODO: Find the right values
-                    else -> Pair(40f, 85f) // TODO: Find the right values
-                }
-            }
+            Configuration.ORIENTATION_PORTRAIT -> Pair(25f, 35f)
             Configuration.ORIENTATION_LANDSCAPE -> {
                 when (screenSize) {
-                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(35f, 55f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(25f, 55f)
-                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(35f, 55f) // TODO: Find the right values
-                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(35f, 55f) // TODO: Find the right values
-                    else -> Pair(25f, 45f) // TODO: Find the right values
+                    Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(20f, 30f)
+                    Configuration.SCREENLAYOUT_SIZE_NORMAL -> Pair(20f, 30f)
+                    Configuration.SCREENLAYOUT_SIZE_LARGE -> Pair(25f, 45f)
+                    Configuration.SCREENLAYOUT_SIZE_XLARGE -> Pair(25f, 45f)
+                    else -> Pair(20f, 30f)
                 }
             }
             Configuration.ORIENTATION_UNDEFINED -> {
