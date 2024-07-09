@@ -23,3 +23,6 @@ Thumbs.db
 obj/
 .externalNativeBuild
 app/release/output-metadata.json
+
+
+*.salive
