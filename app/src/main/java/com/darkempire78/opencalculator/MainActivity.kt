@@ -153,6 +153,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val textSizeAdjuster = TextSizeAdjuster(this)
+
         // Prevent the phone from sleeping (if option enabled)
         if (MyPreferences(this).preventPhoneFromSleepingMode) {
             view.keepScreenOn = true
@@ -225,6 +227,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
+                textSizeAdjuster.adjustTextSize(binding.input, TextSizeAdjuster.AdjustableTextType.Input)
                 /*val afterTextLength = s?.length ?: 0
                 // If the afterTextLength is equals to 0 we have to clear resultDisplay
                 if (afterTextLength == 0) {
@@ -250,6 +253,22 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }*/
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do nothing
+            }
+        })
+
+        binding.resultDisplay.addTextChangedListener(object: TextWatcher {
+            private var beforeTextLength = 0
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                beforeTextLength = s?.length ?: 0
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                textSizeAdjuster.adjustTextSize(binding.resultDisplay, TextSizeAdjuster.AdjustableTextType.Output)
             }
 
             override fun afterTextChanged(s: Editable?) {

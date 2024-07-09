@@ -436,9 +436,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/foreground_color"
-        app:layout_constraintBottom_toTopOf="@+id/sliding_layout"
+        app:layout_constraintBottom_toTopOf="@+id/inputHorizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/menuButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
@@ -449,9 +449,9 @@
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintEnd_toStartOf="@+id/menuButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/menuButton">
 
         <EditText
             android:id="@+id/input"
@@ -462,7 +462,7 @@
             android:autofillHints="false"
             android:background="?attr/foreground_color"
             android:inputType="textNoSuggestions"
-            android:paddingLeft="30sp"
+            android:paddingHorizontal="10dp"
             android:singleLine="true"
             android:text=""
             android:textAlignment="textEnd"
@@ -503,7 +503,7 @@
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/top_background"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline1">
 
@@ -519,7 +519,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?attr/foreground_color"
-                android:paddingStart="18dp"
+                android:paddingHorizontal="10dp"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text=""
@@ -537,21 +537,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.20" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30" />
+        app:layout_constraintGuide_percent="0.38" />
 
     <ImageButton
         android:id="@+id/menuButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/ic_baseline_more_vert_24"
         android:onClick="openAppMenu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -564,9 +565,9 @@
         android:layout_height="wrap_content"
         android:visibility="visible"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         style="@style/RobotoFontCondensedMedium"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:text="DEG"
         android:textColor="?attr/text_third_color"
         app:layout_constraintStart_toStartOf="parent"
