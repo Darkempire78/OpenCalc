@@ -123,7 +123,7 @@
             app:title="@string/settings_history_size"
             app:entries="@array/history_size_entries"
             app:entryValues="@array/history_size_values"
-            app:defaultValue="-1"
+            app:defaultValue="50"
             app:useSimpleSummaryProvider="true"
             app:singleLineTitle="false"
             app:icon="@drawable/history" />
