@@ -138,4 +138,6 @@
     <string name="require_real_number">Real number required</string>
     <string name="settings_auto_save_calculation_without_equal_button">Automatically save calculations</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Automatically save calculations in history without needing to click the equal button</string>
+    <string name="settings_advanced_display_fraction">Fraction</string>
+    <string name="settings_advanced_display_fraction_desc">Display results in fractions</string>
 </resources>
