@@ -1,18 +1,18 @@
 [versions]
-agp = "8.4.1"
+agp = "8.4.2"
 androidslidinguppanel = "4.6.1"
 appcompat = "1.7.0"
 constraintlayout = "2.1.4"
 coreKtx = "1.13.1"
-espressoCore = "3.5.1"
+espressoCore = "3.6.1"
 gson = "2.10.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-lifecycleViewmodelKtx = "2.8.1"
+junitVersion = "1.2.1"
+lifecycleViewmodelKtx = "2.8.3"
 material = "1.12.0"
 preferenceKtx = "1.2.1"
 kotlin = "2.0.0"
-runtime = "1.6.7"
+runtime = "1.6.8"
 
 [libraries]
 androidslidinguppanel = { module = "com.github.hannesa2:AndroidSlidingUpPanel", version.ref = "androidslidinguppanel" }
