@@ -135,6 +135,7 @@ class MainActivity : AppCompatActivity() {
             binding.slidingLayout.isEnabled = true
         }
 
+        // Set the sliding layout
         binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
             override fun onPanelSlide(panel: View, slideOffset: Float) {
                 if (slideOffset == 0f) { // If the panel got collapsed
@@ -148,10 +149,20 @@ class MainActivity : AppCompatActivity() {
                 newState: PanelState
             ) {
                 if (newState == PanelState.ANCHORED) { // To prevent the panel from getting stuck in the middle
-                    binding.slidingLayout.panelState = PanelState.EXPANDED
+                    binding.slidingLayout.setPanelState(PanelState.EXPANDED)
                 }
             }
         })
+
+        // Set the history sliding layout button (click to open or close the history panel)
+        binding.historySlidingLayoutButton.setOnClickListener {
+            if (binding.slidingLayout.getPanelState() == PanelState.EXPANDED) {
+                binding.slidingLayout.setPanelState(PanelState.COLLAPSED)
+            } else {
+                binding.slidingLayout.setPanelState(PanelState.EXPANDED)
+            }
+        }
+
 
         val textSizeAdjuster = TextSizeAdjuster(this)
 
@@ -279,8 +290,8 @@ class MainActivity : AppCompatActivity() {
         // Close the history panel if the user use the back button else close the app
         // https://developer.android.com/guide/navigation/navigation-custom-back#kotlin
         val callback = this.onBackPressedDispatcher.addCallback(this) {
-            if (binding.slidingLayout.panelState == PanelState.EXPANDED) {
-                binding.slidingLayout.panelState = PanelState.COLLAPSED
+            if (binding.slidingLayout.getPanelState() == PanelState.EXPANDED) {
+                binding.slidingLayout.setPanelState(PanelState.COLLAPSED)
             } else {
                 finish()
             }
