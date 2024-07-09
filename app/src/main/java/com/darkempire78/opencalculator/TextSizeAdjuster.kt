@@ -55,7 +55,7 @@ class TextSizeAdjuster(private val context: Context) {
 
     private fun getInputTextSizeBounds(orientation: Int, screenSize: Int): Pair<Float, Float> {
         return when (orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> Pair(35f, 85f)
+            Configuration.ORIENTATION_PORTRAIT -> Pair(35f, 55f)
             Configuration.ORIENTATION_LANDSCAPE -> {
                 when (screenSize) {
                     Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(35f, 55f)
