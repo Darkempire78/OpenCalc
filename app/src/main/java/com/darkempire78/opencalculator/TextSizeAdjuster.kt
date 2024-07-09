@@ -17,7 +17,7 @@ class TextSizeAdjuster(private val context: Context) {
         val screenWidth = context.resources.displayMetrics.widthPixels
 
         // Text size will be reduced a bit before reaching the screen width, for a smoother experience
-        val maxWidth = screenWidth - dpToPx(20f)
+        val maxWidth = screenWidth - dpToPx(25f)
 
         // Get the min and max text sizes
         val (minTextSize, maxTextSize) = getTextSizeBounds(context.resources.configuration, adjustableTextType)
@@ -78,7 +78,7 @@ class TextSizeAdjuster(private val context: Context) {
 
     private fun getResultTextSizeBounds(orientation: Int, screenSize: Int): Pair<Float, Float> {
         return when (orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> Pair(25f, 35f)
+            Configuration.ORIENTATION_PORTRAIT -> Pair(25f, 40f)
             Configuration.ORIENTATION_LANDSCAPE -> {
                 when (screenSize) {
                     Configuration.SCREENLAYOUT_SIZE_SMALL -> Pair(20f, 30f)
