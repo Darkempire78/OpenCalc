@@ -56,4 +56,6 @@
     <string name="copied_history_result">Результат з історії скопійовано</string>
     <string name="settings_delete_history_element_on_swipe">Дозволити вибіркове видалення історії</string>
     <string name="settings_delete_history_element_on_swipe_desc">Видалення певного елемента історії свайпом</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Автоматично зберігати розрахунки</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Автоматично зберігає обчислення в історії без необхідності натискати символ =</string>
 </resources>

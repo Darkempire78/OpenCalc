@@ -55,4 +55,6 @@
     <string name="copied_history_result">Gekopieerd geschiedenisresultaat</string>
     <string name="settings_delete_history_element_on_swipe">Selectieve geschiedenisverwijdering toestaan</string>
     <string name="settings_delete_history_element_on_swipe_desc">Specifiek geschiedeniselement verwijderen met een veeg</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Berekeningen automatisch opslaan</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Sla berekeningen automatisch op in de geschiedenis zonder op de knop = te hoeven klikken</string>
 </resources>

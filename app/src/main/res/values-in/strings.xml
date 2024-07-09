@@ -58,4 +58,6 @@
     <string name="about_category_social">SOSIAL</string>
     <string name="settings_delete_history_element_on_swipe">Penghapusan selektif pada riwayat</string>
     <string name="settings_delete_history_element_on_swipe_desc">Hapus unsur riwayat spesifik dengan menggeser</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Simpan perhitungan</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Otomatis menyimpan hasil perhitungan pada riwayat tanpa menekan tombol sama dengan</string>
 </resources>
