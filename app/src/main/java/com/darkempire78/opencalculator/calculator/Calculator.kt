@@ -77,6 +77,61 @@ class Calculator(
         return BigDecimal(result, MathContext.DECIMAL64)
     }
 
+    private fun exponentiation(x: BigDecimal, parseFactor: BigDecimal): BigDecimal {
+        var value = x
+        val intPart = parseFactor.toInt()
+        val decimalPart = parseFactor.subtract(BigDecimal(intPart))
+
+        // if the number is null
+        if (value == BigDecimal.ZERO) {
+            syntax_error = true
+            value = BigDecimal.ZERO
+        } else {
+            if (parseFactor >= BigDecimal(10000)) {
+                is_infinity = true
+                value = BigDecimal.ZERO
+            } else {
+                // If the number is negative and the factor is a float ( e.g : (-5)^0.5 )
+                if (value < BigDecimal.ZERO && decimalPart != BigDecimal.ZERO) {
+                    require_real_number = true
+                } // the factor is NOT a float
+                else if (parseFactor > BigDecimal.ZERO) {
+
+                    // To support bigdecimal exponent (e.g: 3.5)
+                    value = value.pow(intPart, MathContext.DECIMAL64)
+                        .multiply(
+                            BigDecimal.valueOf(
+                                value.toDouble().pow(decimalPart.toDouble())
+                            )
+                        )
+
+                    // To fix sqrt(2)^2 = 2
+                    val decimal = value.toInt()
+                    val fractional = value.toDouble() - decimal
+                    if (fractional > 0 && fractional < 1.0E-14) {
+                        value = decimal.toBigDecimal()
+                    }
+                } else {
+                    // To support negative factor
+                    value = value.pow(-intPart, MathContext.DECIMAL64)
+                        .multiply(
+                            BigDecimal.valueOf(
+                                value.toDouble().pow(-decimalPart.toDouble())
+                            )
+                        )
+
+                    value = try {
+                        BigDecimal.ONE.divide(x)
+                    } catch (e: ArithmeticException) {
+                        // if the result is a non-terminating decimal expansion
+                        BigDecimal.ONE.divide(value, numberPrecision, RoundingMode.HALF_DOWN)
+                    }
+                }
+            }
+        }
+        return value
+    }
+
     fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
         println("Equation BigDecimal : $equation")
         return object : Any() {
@@ -209,7 +264,7 @@ class Calculator(
                             }
                         }
                         "xp" -> {
-                            x = BigDecimal(exp(x.toDouble()))
+                            x = exponentiation(BigDecimal(Math.E), x)
                         }
                         "sin" -> {
                             if (isDegreeModeActivated) {
@@ -298,57 +353,7 @@ class Calculator(
                     syntax_error = true
                 }
                 if (eat('^'.code)) {
-
-                    val exponent = parseFactor()
-                    val intPart = exponent.toInt()
-                    val decimalPart = exponent.subtract(BigDecimal(intPart))
-
-                    // if the number is null
-                    if (x == BigDecimal.ZERO) {
-                        syntax_error = true
-                        x = BigDecimal.ZERO
-                    }
-                    else {
-                        if (exponent >= BigDecimal(10000)) {
-                            is_infinity = true
-                            x = BigDecimal.ZERO
-                        } else {
-                            // If the number is negative and the factor is a float ( e.g : (-5)^0.5 )
-                            if (x < BigDecimal.ZERO && decimalPart != BigDecimal.ZERO) {
-                                require_real_number = true
-                            } // the factor is NOT a float
-                            else if (exponent > BigDecimal.ZERO) {
-
-                                // To support bigdecimal exponent (e.g: 3.5)
-                                x = x.pow(intPart, MathContext.DECIMAL64)
-                                    .multiply(BigDecimal.valueOf(
-                                        x.toDouble().pow(decimalPart.toDouble())
-                                    ))
-
-                                // To fix sqrt(2)^2 = 2
-                                val decimal = x.toInt()
-                                val fractional = x.toDouble() - decimal
-                                if (fractional > 0 && fractional < 1.0E-14) {
-                                    x = decimal.toBigDecimal()
-                                }
-                            }
-                            else {
-                                // To support negative factor
-                                x = x.pow(-intPart, MathContext.DECIMAL64)
-                                    .multiply(BigDecimal.valueOf(
-                                        x.toDouble().pow(-decimalPart.toDouble())
-                                    ))
-
-                                x = try {
-                                    BigDecimal.ONE.divide(x)
-                                } catch (e: ArithmeticException) {
-                                    // if the result is a non-terminating decimal expansion
-                                    BigDecimal.ONE.divide(x, numberPrecision, RoundingMode.HALF_DOWN)
-                                }
-                            }
-
-                        }
-                    }
+                    x = exponentiation(x, parseFactor())
                 }
                 return x
             }
