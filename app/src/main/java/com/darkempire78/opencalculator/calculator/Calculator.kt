@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.calculator
 
 import java.math.BigDecimal
 import java.math.BigInteger

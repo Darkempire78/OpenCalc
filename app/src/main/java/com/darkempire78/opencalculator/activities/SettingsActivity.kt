@@ -1,19 +1,19 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.activities
 
 import android.content.Intent
-import android.content.res.Resources.Theme
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.View
-import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.darkempire78.opencalculator.MyPreferences
+import com.darkempire78.opencalculator.R
+import com.darkempire78.opencalculator.Themes
 import java.util.*
 
 class SettingsActivity : AppCompatActivity() {
@@ -73,7 +73,8 @@ class SettingsActivity : AppCompatActivity() {
             // Theme button
             val appThemePreference = findPreference<Preference>("darkempire78.opencalculator.APP_THEME_SELECTOR")
 
-            appThemePreference?.summary = Themes(this.requireContext()).getThemeNameFromId(MyPreferences(this.requireContext()).theme)
+            appThemePreference?.summary = Themes(this.requireContext()).getThemeNameFromId(
+                MyPreferences(this.requireContext()).theme)
 
             appThemePreference?.setOnPreferenceClickListener {
                 Themes.openDialogThemeSelector(this.requireContext())

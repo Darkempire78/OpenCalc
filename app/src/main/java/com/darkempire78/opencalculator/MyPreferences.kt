@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
+import com.darkempire78.opencalculator.history.History
 import com.google.gson.Gson
 
 class MyPreferences(context: Context) {

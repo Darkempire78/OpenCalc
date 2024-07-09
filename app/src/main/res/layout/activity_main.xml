@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
 
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <View
         android:id="@+id/top_background"
@@ -124,7 +124,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            tools:context=".activities.MainActivity">
 
             <TableLayout
                 android:id="@+id/tableLayout"
@@ -586,7 +586,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/display_background"
-            tools:context=".MainActivity">
+            tools:context=".activities.MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_recylcle_view"

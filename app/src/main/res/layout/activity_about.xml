@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AboutActivity">
+        tools:context=".activities.AboutActivity">
 
         <ImageView
             android:id="@+id/about_back_button"

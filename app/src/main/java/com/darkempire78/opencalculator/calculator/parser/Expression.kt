@@ -1,4 +1,6 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.calculator.parser
+
+import com.darkempire78.opencalculator.calculator.syntax_error
 
 class Expression {
 

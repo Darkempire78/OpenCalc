@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.calculator.parser
 
 object NumberFormatter {
     fun format(text: String, decimalSeparatorSymbol : String, groupingSeparatorSymbol : String): String {

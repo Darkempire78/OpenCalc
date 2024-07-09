@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.history
 
 import com.google.gson.annotations.SerializedName
 

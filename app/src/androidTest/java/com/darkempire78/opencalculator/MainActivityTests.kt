@@ -3,6 +3,7 @@ package com.darkempire78.opencalculator
 import android.content.pm.ActivityInfo
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.darkempire78.opencalculator.activities.MainActivity
 import org.junit.Test
 import org.junit.runner.RunWith
 

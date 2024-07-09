@@ -1,10 +1,11 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.services
 
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.TileService
 import androidx.annotation.RequiresApi
+import com.darkempire78.opencalculator.activities.MainActivity
 
 @RequiresApi(Build.VERSION_CODES.N)
 class MyTileService : TileService() {

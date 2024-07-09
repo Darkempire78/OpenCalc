@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.darkempire78.opencalculator.activities
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
@@ -25,7 +25,21 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.darkempire78.opencalculator.calculator.Calculator
+import com.darkempire78.opencalculator.calculator.parser.Expression
+import com.darkempire78.opencalculator.MyPreferences
+import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
+import com.darkempire78.opencalculator.R
+import com.darkempire78.opencalculator.TextSizeAdjuster
+import com.darkempire78.opencalculator.Themes
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.darkempire78.opencalculator.calculator.division_by_0
+import com.darkempire78.opencalculator.calculator.domain_error
+import com.darkempire78.opencalculator.history.History
+import com.darkempire78.opencalculator.history.HistoryAdapter
+import com.darkempire78.opencalculator.calculator.is_infinity
+import com.darkempire78.opencalculator.calculator.require_real_number
+import com.darkempire78.opencalculator.calculator.syntax_error
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -238,7 +252,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 updateResultDisplay()
-                textSizeAdjuster.adjustTextSize(binding.input, TextSizeAdjuster.AdjustableTextType.Input)
+                textSizeAdjuster.adjustTextSize(binding.input,
+                    TextSizeAdjuster.AdjustableTextType.Input
+                )
                 /*val afterTextLength = s?.length ?: 0
                 // If the afterTextLength is equals to 0 we have to clear resultDisplay
                 if (afterTextLength == 0) {
@@ -279,7 +295,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                textSizeAdjuster.adjustTextSize(binding.resultDisplay, TextSizeAdjuster.AdjustableTextType.Output)
+                textSizeAdjuster.adjustTextSize(binding.resultDisplay,
+                    TextSizeAdjuster.AdjustableTextType.Output
+                )
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -426,12 +444,14 @@ class MainActivity : AppCompatActivity() {
             val formerValue = binding.input.text.toString()
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
-            val leftValueFormatted = NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            val leftValueFormatted =
+                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            var newValueFormatted =
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
