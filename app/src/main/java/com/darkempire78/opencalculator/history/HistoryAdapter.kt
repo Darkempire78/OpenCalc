@@ -44,10 +44,17 @@ class HistoryAdapter(
 
         fun appendOneHistoryElement(history: History) {
             this.history.add(history)
-            notifyDataSetChanged()
+            // Update the last 2 elements to show the avoid the same date/bar separator
+            if (this.history.size > 1) {
+                notifyItemInserted(this.history.size - 1)
+                notifyItemRangeChanged(this.history.size - 2, 2)
+            } else {
+                notifyItemInserted(this.history.size - 1)
+            }
         }
 
         fun removeHistoryElement(position: Int){
+            // No idea why, but time.isNotEmpty() is not working, only time.isNullOrEmpty() works
             val historyElement = history[position]
             if (!historyElement.time.isNullOrEmpty()){
                 val nextHistoryElement = history.getOrNull(position + 1)
@@ -63,11 +70,11 @@ class HistoryAdapter(
                 }
             }
             this.history.removeAt(position)
-            notifyDataSetChanged()
+            notifyItemRemoved(position)
         }
 
 
-        fun updateHistoryList() {
+        private fun updateHistoryList() {
             this.history = MyPreferences(context).getHistory()
         }
         fun updateHistoryElement(historyElement: History) {
@@ -75,18 +82,18 @@ class HistoryAdapter(
             val position = this.history.indexOfFirst { it.id == historyElement.id }
             if (position != -1) {
                 this.history[position] = historyElement
-                notifyDataSetChanged()
+                notifyItemChanged(position)
             }
         }
 
         fun removeFirstHistoryElement() {
             this.history.removeAt(0)
-            notifyDataSetChanged()
+            notifyItemRemoved(0)
         }
 
         fun clearHistory() {
             this.history.clear()
-            notifyDataSetChanged()
+            notifyItemRangeRemoved(0, history.size)
         }
 
         inner class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -97,7 +104,6 @@ class HistoryAdapter(
             private val sameDateSeparator: View = itemView.findViewById(R.id.history_same_date_separator)
 
             private fun wrapInParenthesis(string: String): String {
-                val wrappedString : String
                 // Verify it is not already in parenthesis
                 return if (string.first() != '(' || string.last() != ')') {
                     "($string)"

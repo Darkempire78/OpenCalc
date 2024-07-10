@@ -82,7 +82,7 @@ class MyPreferences(context: Context) {
         MyPreferences(context).history = gson.toJson(history2) // Convert to json
     }
 
-    fun getHistoryElementById(context: Context, id: String): History? {
+    fun getHistoryElementById(id: String): History? {
         val history = getHistory()
         return history.find { it.id == id }
     }

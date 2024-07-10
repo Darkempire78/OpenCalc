@@ -597,7 +597,9 @@ class MainActivity : AppCompatActivity() {
                             if (isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption) {
                                 // If it's the same calculation as the previous one
                                 // Get previous calculation and update it
-                                val previousHistoryElement = MyPreferences(this@MainActivity).getHistoryElementById(this@MainActivity, lastHistoryElementId)
+                                val previousHistoryElement = MyPreferences(this@MainActivity).getHistoryElementById(
+                                    lastHistoryElementId
+                                )
                                 if (previousHistoryElement != null) {
                                     previousHistoryElement.calculation = calculation
                                     previousHistoryElement.result = formattedResult

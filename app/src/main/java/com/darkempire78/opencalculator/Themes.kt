@@ -115,10 +115,10 @@ class Themes(private val context: Context) {
         var theme = "THEME"
         when (themeID) {
             DEFAULT_THEME_INDEX -> {
-                if (MyPreferences(this.context).forceDayNight == AppCompatDelegate.MODE_NIGHT_YES) {
-                    theme = context.getString(R.string.theme_dark)
+                theme = if (MyPreferences(this.context).forceDayNight == AppCompatDelegate.MODE_NIGHT_YES) {
+                    context.getString(R.string.theme_dark)
                 } else {
-                    theme = context.getString(R.string.theme_light)
+                    context.getString(R.string.theme_light)
                 }
             }
             MATERIAL_YOU_THEME_INDEX -> {
