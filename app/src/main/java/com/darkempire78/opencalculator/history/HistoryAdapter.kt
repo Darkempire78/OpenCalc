@@ -44,7 +44,7 @@ class HistoryAdapter(
 
         fun appendOneHistoryElement(history: History) {
             this.history.add(history)
-            // Update the last 2 elements to show the avoid the same date/bar separator
+            // Update the last 2 elements to avoid to have the same date and bar separator
             if (this.history.size > 1) {
                 notifyItemInserted(this.history.size - 1)
                 notifyItemRangeChanged(this.history.size - 2, 2)
