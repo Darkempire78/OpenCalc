@@ -255,31 +255,6 @@ class MainActivity : AppCompatActivity() {
                 textSizeAdjuster.adjustTextSize(binding.input,
                     TextSizeAdjuster.AdjustableTextType.Input
                 )
-                /*val afterTextLength = s?.length ?: 0
-                // If the afterTextLength is equals to 0 we have to clear resultDisplay
-                if (afterTextLength == 0) {
-                    binding.resultDisplay.setText("")
-                }
-
-                /* we check if the length of the text entered into the EditText
-                is greater than the length of the text before the change (beforeTextLength)
-                by more than 1 character. If it is, we assume that this is a paste event. */
-                val clipData = clipboardManager.primaryClip
-                if (clipData != null && clipData.itemCount > 0) {
-                    //val clipText = clipData.getItemAt(0).coerceToText(this@MainActivity).toString()
-
-                    if (s != null) {
-                        //val newValue = s.subSequence(start, start + count).toString()
-                        if (
-                            (afterTextLength - beforeTextLength > 1)
-                            // Removed to avoid anoying notification (https://developer.android.com/develop/ui/views/touch-and-input/copy-paste#PastingSystemNotifications)
-                            //|| (afterTextLength - beforeTextLength >= 1 && clipText == newValue) // Supports 1+ new caractere if it is equals to the latest element from the clipboard
-                        ) {
-                            // Handle paste event here
-                            updateResultDisplay()
-                        }
-                    }
-                }*/
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -307,7 +282,7 @@ class MainActivity : AppCompatActivity() {
 
         // Close the history panel if the user use the back button else close the app
         // https://developer.android.com/guide/navigation/navigation-custom-back#kotlin
-        val callback = this.onBackPressedDispatcher.addCallback(this) {
+        this.onBackPressedDispatcher.addCallback(this) {
             if (binding.slidingLayout.getPanelState() == PanelState.EXPANDED) {
                 binding.slidingLayout.setPanelState(PanelState.COLLAPSED)
             } else {
@@ -450,7 +425,7 @@ class MainActivity : AppCompatActivity() {
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted =
+            val newValueFormatted =
                 NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
@@ -547,6 +522,7 @@ class MainActivity : AppCompatActivity() {
         isDegreeModeActivated = !isDegreeModeActivated
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             // Reset text color
@@ -621,7 +597,7 @@ class MainActivity : AppCompatActivity() {
                             if (isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption) {
                                 // If it's the same calculation as the previous one
                                 // Get previous calculation and update it
-                                var previousHistoryElement = MyPreferences(this@MainActivity).getHistoryElementById(this@MainActivity, lastHistoryElementId)
+                                val previousHistoryElement = MyPreferences(this@MainActivity).getHistoryElementById(this@MainActivity, lastHistoryElementId)
                                 if (previousHistoryElement != null) {
                                     previousHistoryElement.calculation = calculation
                                     previousHistoryElement.result = formattedResult
@@ -701,6 +677,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, (view as Button).text as String)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun addSymbol(view: View, currentSymbol: String) {
         // Get input text length
         val textLength = binding.input.text.length
@@ -1188,11 +1165,11 @@ class MainActivity : AppCompatActivity() {
             binding.clearButton.visibility = View.GONE
             binding.parenthesesButton.visibility = View.GONE
 
-            // Unhide the left & right parenthesis buttons
+            // Display the left & right parenthesis buttons
             binding.leftParenthesisButton?.visibility = View.VISIBLE
             binding.rightParenthesisButton?.visibility = View.VISIBLE
         } else {
-            // Unhide the AC button
+            // Display the AC button
             binding.clearButton.visibility = View.VISIBLE
             binding.parenthesesButton.visibility = View.VISIBLE
 
