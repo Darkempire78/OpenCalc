@@ -57,4 +57,22 @@
     <string name="settings_delete_history_element_on_swipe_desc">Specifiek geschiedeniselement verwijderen met een veeg</string>
     <string name="settings_auto_save_calculation_without_equal_button">Berekeningen automatisch opslaan</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Sla berekeningen automatisch op in de geschiedenis zonder op de knop = te hoeven klikken</string>
+    <string name="scientificModeSwitchDesc">wetenschappelijke notatie wisselen</string>
+    <string name="sineDesc">sinus</string>
+    <string name="cosineDesc">cosinus</string>
+    <string name="tangentDesc">tangens</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">natuurlijke logaritme</string>
+    <string name="logarithmDesc">logaritme</string>
+    <string name="clearDesc">wissen</string>
+    <string name="parenthesesDesc">haakjes</string>
+    <string name="percentDesc">procent</string>
+    <string name="backspaceDesc">backspace</string>
+    <string name="pointDesc">punt</string>
+    <string name="factorialDesc">faculteit</string>
+    <string name="invertDesc">inverse</string>
+    <string name="degreeDesc">graden</string>
+    <string name="squareDesc">kwadraat</string>
+    <string name="piDesc">pi</string>
+    <string name="exponentDesc">exponent</string>
 </resources>
