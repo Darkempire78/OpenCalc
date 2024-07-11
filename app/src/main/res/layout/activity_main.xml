@@ -144,6 +144,7 @@
 
                     <Button
                         android:id="@+id/squareButton"
+                        android:contentDescription="@string/squareDesc"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -156,6 +157,7 @@
                     <Button
                         android:id="@+id/piButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/piDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -167,6 +169,7 @@
                     <ImageButton
                         android:id="@+id/exponentButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/exponentDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -177,6 +180,7 @@
                     <Button
                         android:id="@+id/factorialButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/factorialDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -188,6 +192,7 @@
                     <ImageButton
                         android:id="@+id/scientistModeSwitchButton"
                         style="@style/Widget.AppCompat.Button.Borderless"
+                        android:contentDescription="@string/scientificModeSwitchDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -213,6 +218,7 @@
                     <Button
                         android:id="@+id/degreeButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/degreeDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -224,6 +230,7 @@
                     <Button
                         android:id="@+id/sineButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/sineDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -234,6 +241,7 @@
                     <Button
                         android:id="@+id/cosineButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/cosineDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -244,6 +252,7 @@
                     <Button
                         android:id="@+id/tangentButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/tangentDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -271,6 +280,7 @@
                     <Button
                         android:id="@+id/invButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/invertDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -281,6 +291,7 @@
                     <Button
                         android:id="@+id/eButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/eDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -291,6 +302,7 @@
                     <Button
                         android:id="@+id/naturalLogarithmButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/naturalLogarithmDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -301,6 +313,7 @@
                     <Button
                         android:id="@+id/logarithmButton"
                         style="@style/CalculatorButton.Function"
+                        android:contentDescription="@string/logarithmDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
@@ -325,6 +338,7 @@
                     <Button
                         android:id="@+id/clearButton"
                         style="@style/CalculatorButton"
+                        android:contentDescription="@string/clearDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -360,6 +374,7 @@
                     <Button
                         android:id="@+id/parenthesesButton"
                         style="@style/CalculatorButton"
+                        android:contentDescription="@string/parenthesesDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -371,6 +386,7 @@
                     <Button
                         android:id="@+id/divideBy100Button"
                         style="@style/CalculatorButton"
+                        android:contentDescription="@string/percentDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -550,6 +566,7 @@
                     <ImageButton
                         android:id="@+id/pointButton"
                         style="@style/CalculatorButton"
+                        android:contentDescription="@string/pointDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -558,6 +575,7 @@
                     <ImageButton
                         android:id="@+id/backspaceButton"
                         style="@style/CalculatorButton"
+                        android:contentDescription="@string/backspaceDesc"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

@@ -48,6 +48,26 @@
     <string name="logarithm" translatable="false">log</string>
     <string name="logarithmInv" translatable="false">10^</string>
 
+    <!-- Symbols -->
+    <string name="squareDesc">square</string>
+    <string name="piDesc">pi</string>
+    <string name="exponentDesc">exponent</string>
+    <string name="factorialDesc">factorial</string>
+    <string name="scientificModeSwitchDesc">scientific mode switch</string>
+    <string name="degreeDesc">degree</string>
+    <string name="sineDesc">sine</string>
+    <string name="cosineDesc">cosine</string>
+    <string name="tangentDesc">tangent</string>
+    <string name="invertDesc">invert</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">natural logarithm</string>
+    <string name="logarithmDesc">logarithm</string>
+    <string name="clearDesc">clear</string>
+    <string name="parenthesesDesc">parentheses</string>
+    <string name="percentDesc">percent</string>
+    <string name="backspaceDesc">back space</string>
+    <string name="pointDesc">point</string>
+
     <!-- App menu -->
     <string name="menu_clear_history">Clear History</string>
     <string name="menu_settings">Settings</string>
