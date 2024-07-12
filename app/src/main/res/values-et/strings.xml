@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_display">Kalkulaator</string>
+    <string name="squareDesc">ruut</string>
+    <string name="piDesc">pii</string>
+    <string name="exponentDesc">astendaja</string>
+    <string name="factorialDesc">faktoriaal</string>
+    <string name="cosineDesc">koosinus</string>
+    <string name="tangentDesc">tangens</string>
+    <string name="invertDesc">pööra</string>
+    <string name="backspaceDesc">tagurdamisklahv</string>
+    <string name="menu_clear_history">Tühjenda ajalugu</string>
+    <string name="menu_settings">Seadistused</string>
+    <string name="menu_about">Rakenduse teave</string>
+    <string name="settings_category_general">ÜLDIST</string>
+    <string name="settings_category_formatting">VORMINDUS</string>
+    <string name="settings_category_history">AJALUGU</string>
+    <string name="settings_category_advanced">LISASEADISTUSED</string>
+    <string name="settings_general_language">Keel</string>
+    <string name="settings_general_theme">Kujundus</string>
+    <string name="settings_general_vibration">Tagasiside värinana</string>
+    <string name="settings_general_vibration_desc">Tagasiside värinana klahvide vajutamisel</string>
+    <string name="pointDesc">punkt</string>
+    <string name="settings_general_radians">Radiaanid</string>
+    <string name="settings_general_radians_desc">Vaikimisi kasuta kraadide asemel radiaane</string>
+    <string name="settings_general_scientific_mode">Teadusarvutus</string>
+    <string name="settings_general_scientific_mode_desc">Vaikimisi lülita sisse teadusarvutuse vaade</string>
+    <string name="settings_general_split_parenthesis_button_desc">Eemalda „AC“ nupp ja jaga ümarsulgude nupp kaheks nupuks</string>
+    <string name="settings_general_add_modulo">Lisa mooduli nupp</string>
+    <string name="settings_formatting_precision">Komakohtade arv</string>
+    <string name="degreeDesc">aste</string>
+    <string name="scientificModeSwitchDesc">teadusarvutused</string>
+    <string name="sineDesc">siinus</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">naturaallogaritm</string>
+    <string name="logarithmDesc">logaritm</string>
+    <string name="clearDesc">Kustuta</string>
+    <string name="parenthesesDesc">sulud</string>
+    <string name="percentDesc">protsent</string>
+    <string name="settings_general_split_parenthesis_button">Jaga ümarsulgude nupp kaheks nupuks</string>
+    <string name="settings_general_add_modulo_desc">Asenda „X²“ nupp mooduli nupuga (avaldub „INV“ nupu vajutamisel)</string>
+</resources>

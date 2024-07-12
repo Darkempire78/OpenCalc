@@ -58,4 +58,22 @@
     <string name="settings_delete_history_element_on_swipe_desc">Kaydırıldığında belirli geçmiş ögesini sil</string>
     <string name="settings_auto_save_calculation_without_equal_button">Hesaplamaları otomatik olarak kaydet</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Eşittir düğmesine tıklamaya gerek kalmadan hesaplamaları otomatik olarak geçmişe kaydet</string>
+    <string name="invertDesc">ters çevir</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">doğal logaritma</string>
+    <string name="logarithmDesc">logaritma</string>
+    <string name="clearDesc">temizle</string>
+    <string name="parenthesesDesc">parantez</string>
+    <string name="percentDesc">yüzde</string>
+    <string name="backspaceDesc">geri</string>
+    <string name="pointDesc">nokta</string>
+    <string name="piDesc">pi</string>
+    <string name="factorialDesc">faktöriyel</string>
+    <string name="exponentDesc">üs</string>
+    <string name="squareDesc">kare</string>
+    <string name="scientificModeSwitchDesc">bilimsel mod geçişi</string>
+    <string name="degreeDesc">derece</string>
+    <string name="tangentDesc">tanjant</string>
+    <string name="sineDesc">sinüs</string>
+    <string name="cosineDesc">kosinüs</string>
 </resources>
