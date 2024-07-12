@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
 
         // Long click to view popup options for double and triple zeroes
         binding.zeroButton.setOnLongClickListener {
-            showPopupMenu(binding.zeroButton, binding.input)
+            showPopupMenu(binding.zeroButton)
             true
         }
 
@@ -300,17 +300,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Displays a popup menu with options to insert double zeros ("00") or triple zeros ("000") into the specified EditText when the zero button is long-pressed.
-    private fun showPopupMenu(zeroButton: Button, input: EditText) {
+    private fun showPopupMenu(zeroButton: Button) {
         val popupMenu = PopupMenu(this, zeroButton)
         popupMenu.menuInflater.inflate(R.menu.popup_menu_zero, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
             when (menuItem.itemId) {
                 R.id.option_double_zero -> {
-                    input.append("00")
+                    updateDisplay(view, "00")
                     true
                 }
                 R.id.option_triple_zero -> {
-                    input.append("000")
+                    updateDisplay(view, "000")
                     true
                 }
                 else -> false
