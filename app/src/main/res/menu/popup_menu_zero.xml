@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_double_zero"
+        android:title="00" />
+    <item
+        android:id="@+id/option_triple_zero"
+        android:title="000" />
+</menu>
