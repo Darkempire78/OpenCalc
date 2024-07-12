@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
+import android.widget.EditText
 import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.activity.addCallback
@@ -100,6 +101,12 @@ class MainActivity : AppCompatActivity() {
             binding.input.setText("")
             binding.resultDisplay.text = ""
             isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
+            true
+        }
+
+        // Long click to view popup options for double and triple zeroes
+        binding.zeroButton.setOnLongClickListener {
+            showPopupMenu(binding.zeroButton)
             true
         }
 
@@ -289,6 +296,27 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+    }
+
+    // Displays a popup menu with options to insert double zeros ("00") or triple zeros ("000") into the specified EditText when the zero button is long-pressed.
+    private fun showPopupMenu(zeroButton: Button) {
+        val popupMenu = PopupMenu(this, zeroButton)
+        popupMenu.menuInflater.inflate(R.menu.popup_menu_zero, popupMenu.menu)
+        popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+            when (menuItem.itemId) {
+                R.id.option_double_zero -> {
+                    updateDisplay(view, "00")
+                    true
+                }
+                R.id.option_triple_zero -> {
+                    updateDisplay(view, "000")
+                    true
+                }
+                else -> false
+            }
+        }
+        popupMenu.show()
 
     }
 
