@@ -57,4 +57,10 @@
     <string name="settings_delete_history_element_on_swipe">允许仅删除选中的历史记录</string>
     <string name="settings_auto_save_calculation_without_equal_button">自动保存计算</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">无需单击 = 符号自动将计算保存在历史记录中</string>
+    <string name="piDesc">π</string>
+    <string name="exponentDesc">幂</string>
+    <string name="scientificModeSwitchDesc">科学模式切换</string>
+    <string name="degreeDesc">度</string>
+    <string name="squareDesc">平方</string>
+    <string name="factorialDesc">阶乘</string>
 </resources>
