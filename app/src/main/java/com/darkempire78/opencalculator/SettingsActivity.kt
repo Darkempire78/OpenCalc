@@ -43,6 +43,9 @@ class SettingsActivity : AppCompatActivity() {
             window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
         }
 
+        // Request orientation
+        OrientationRequester.requestOrientation(this)
+
         // back button
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
             finish()

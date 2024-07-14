@@ -82,6 +82,9 @@ class MainActivity : AppCompatActivity() {
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
 
+        // Request orientation
+        OrientationRequester.requestOrientation(this)
+
         // https://www.geeksforgeeks.org/how-to-detect-long-press-in-android/
         binding.backspaceButton.setOnLongClickListener {
             binding.input.setText("")

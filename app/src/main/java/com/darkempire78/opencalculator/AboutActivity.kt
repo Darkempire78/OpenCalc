@@ -27,6 +27,9 @@ class AboutActivity : AppCompatActivity() {
             window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
         }
 
+        // Request orientation
+        OrientationRequester.requestOrientation(this)
+
         binding = ActivityAboutBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
