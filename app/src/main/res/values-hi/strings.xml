@@ -57,4 +57,22 @@
     <string name="settings_delete_history_element_on_swipe_desc">स्वाइप करके विशिष्ट इतिहास तत्व मिटाएं</string>
     <string name="settings_auto_save_calculation_without_equal_button">स्वचालित रूप से गणना सहेजें</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">बराबर बटन पर क्लिक किए बिना इतिहास में गणनाओं को स्वचालित रूप से सहेजें</string>
+    <string name="piDesc">पाई</string>
+    <string name="exponentDesc">प्रतिपादक</string>
+    <string name="factorialDesc">भाज्य</string>
+    <string name="scientificModeSwitchDesc">वैज्ञानिक मोड स्विच</string>
+    <string name="degreeDesc">डिग्री</string>
+    <string name="sineDesc">ज्या</string>
+    <string name="cosineDesc">कोज्या</string>
+    <string name="tangentDesc">स्पर्शज्या</string>
+    <string name="invertDesc">उल्टेें</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">प्राकृतिक लघुगणक</string>
+    <string name="logarithmDesc">लघुगणक</string>
+    <string name="clearDesc">साफ़</string>
+    <string name="parenthesesDesc">कोष्टक</string>
+    <string name="percentDesc">प्रतिशत</string>
+    <string name="backspaceDesc">बैकस्पेस</string>
+    <string name="pointDesc">बिंदु</string>
+    <string name="squareDesc">वर्ग</string>
 </resources>
