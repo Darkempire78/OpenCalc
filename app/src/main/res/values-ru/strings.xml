@@ -17,7 +17,7 @@
     <string name="domain_error">Ошибка домена</string>
     <string name="menu_settings">Настройки</string>
     <string name="value_too_large">Значение очень большое</string>
-    <string name="settings_category_general">ОСНОВНЫЕ</string>
+    <string name="settings_category_general">ОБЩИЕ</string>
     <string name="settings_general_vibration">Вибрация</string>
     <string name="settings_advanced_prevent_sleep">Запретить спящий режим</string>
     <string name="settings_general_scientific_mode">Научный режим</string>
@@ -26,7 +26,7 @@
     <string name="settings_category_advanced">РАСШИРЕННЫЕ</string>
     <string name="about_category_help">ПОМОЧЬ НАМ</string>
     <string name="about_help_donate">Пожертвовать</string>
-    <string name="about_category_social">СОЦИАЛЬНЫЕ СЕТИ</string>
+    <string name="about_category_social">СООБЩЕСТВО</string>
     <string name="about_help_translate">Перевести</string>
     <string name="about_category_info">ИНФОРМАЦИЯ О ПРИЛОЖЕНИИ</string>
     <string name="about_help_rate">Оценить приложение</string>
