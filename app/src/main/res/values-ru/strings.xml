@@ -10,7 +10,7 @@
     <string name="value_copied">Скопировано</string>
     <string name="theme_light">Светлая</string>
     <string name="theme_dark">Тёмная</string>
-    <string name="division_by_0">Нельзя разделить на 0</string>
+    <string name="division_by_0">Нельзя делить на 0</string>
     <string name="syntax_error">Синтаксическая ошибка</string>
     <string name="theme_system">Системная</string>
     <string name="theme_amoled">AMOLED</string>
@@ -40,12 +40,12 @@
     <string name="settings_general_language">Язык</string>
     <string name="settings_formatting_precision">Количество десятичных разрядов</string>
     <string name="settings_category_history">ИСТОРИЯ</string>
-    <string name="settings_advanced_prevent_sleep_desc">Запретить переход устройства в спящий режим, пока открыто приложение</string>
+    <string name="settings_advanced_prevent_sleep_desc">Запретить переход устройства в спящий режим, пока приложение находится на переднем плане</string>
     <string name="settings_category_formatting">ФОРМАТИРОВАНИЕ</string>
     <string name="settings_general_split_parenthesis_button">Разделить кнопку со скобками на две кнопки</string>
-    <string name="settings_general_split_parenthesis_button_desc">Удалить кнопку «AC», чтобы разделить кнопку со скобками на две кнопки</string>
+    <string name="settings_general_split_parenthesis_button_desc">Удалить кнопку \"AC\", чтобы разделить кнопку со скобками на две кнопки</string>
     <string name="settings_general_add_modulo">Добавить кнопку по модулю</string>
-    <string name="settings_general_add_modulo_desc">Заменить кнопку «X²» на кнопку по модулю (доступна при нажатии кнопки «INV»)</string>
+    <string name="settings_general_add_modulo_desc">Заменить кнопку \"X²\" на кнопку по модулю (доступна при нажатии кнопки \"INV\")</string>
     <string name="settings_formatting_scientific_notation">Число в экспоненциальном представлении</string>
     <string name="settings_formatting_scientific_notation_desc">Преобразовать все результаты в экспоненциальное представление</string>
     <string name="settings_advanced_long_click_copy">Нажать и удерживать для копирования значения</string>
@@ -76,5 +76,5 @@
     <string name="pointDesc">точка</string>
     <string name="settings_auto_save_calculation_without_equal_button">Автоматически сохранять расчёты</string>
     <string name="backspaceDesc">удалить</string>
-    <string name="settings_auto_save_calculation_without_equal_button_desc">Автоматически сохранять расчёты в истории без необходимости нажимать кнопку «Равно»</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Автоматически сохранять расчёты в истории без необходимости нажимать кнопку \"равно\"</string>
 </resources>
