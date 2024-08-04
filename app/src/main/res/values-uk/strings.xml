@@ -58,4 +58,22 @@
     <string name="settings_delete_history_element_on_swipe_desc">Видалення певного елемента історії свайпом</string>
     <string name="settings_auto_save_calculation_without_equal_button">Автоматично зберігати розрахунки</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Автоматично зберігає обчислення в історії без необхідності натискати символ =</string>
+    <string name="degreeDesc">градус</string>
+    <string name="sineDesc">синус</string>
+    <string name="cosineDesc">косинус</string>
+    <string name="tangentDesc">тангенс</string>
+    <string name="invertDesc">інверсія</string>
+    <string name="eDesc">е</string>
+    <string name="naturalLogarithmDesc">натуральний логарифм</string>
+    <string name="logarithmDesc">логарифм</string>
+    <string name="clearDesc">очистити</string>
+    <string name="parenthesesDesc">дужки</string>
+    <string name="percentDesc">відсоток</string>
+    <string name="backspaceDesc">видалити</string>
+    <string name="pointDesc">точка</string>
+    <string name="squareDesc">квадрат</string>
+    <string name="piDesc">число пі</string>
+    <string name="exponentDesc">до степеня</string>
+    <string name="factorialDesc">факторіал</string>
+    <string name="scientificModeSwitchDesc">перемикач наукового режиму</string>
 </resources>

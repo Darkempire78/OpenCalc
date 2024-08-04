@@ -60,4 +60,22 @@
     <string name="settings_delete_history_element_on_swipe_desc">Hapus unsur riwayat spesifik dengan menggeser</string>
     <string name="settings_auto_save_calculation_without_equal_button">Simpan perhitungan</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Otomatis menyimpan hasil perhitungan pada riwayat tanpa menekan tombol sama dengan</string>
+    <string name="factorialDesc">faktorial</string>
+    <string name="squareDesc">kuadrat</string>
+    <string name="eDesc">e</string>
+    <string name="exponentDesc">eksponen</string>
+    <string name="percentDesc">persen</string>
+    <string name="degreeDesc">derajat</string>
+    <string name="cosineDesc">kosinus</string>
+    <string name="sineDesc">sinus</string>
+    <string name="tangentDesc">tangen</string>
+    <string name="naturalLogarithmDesc">logaritma alami</string>
+    <string name="logarithmDesc">logaritma</string>
+    <string name="piDesc">fi</string>
+    <string name="clearDesc">hapus</string>
+    <string name="parenthesesDesc">tanda kurung</string>
+    <string name="scientificModeSwitchDesc">Mode ilmiah</string>
+    <string name="invertDesc">inversi</string>
+    <string name="pointDesc">titik</string>
+    <string name="backspaceDesc">spasi mundur</string>
 </resources>
