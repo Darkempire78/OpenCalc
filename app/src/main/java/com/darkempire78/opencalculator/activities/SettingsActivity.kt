@@ -1,6 +1,7 @@
 package com.darkempire78.opencalculator.activities
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.darkempire78.opencalculator.MyPreferences
@@ -78,6 +80,18 @@ class SettingsActivity : AppCompatActivity() {
 
             appThemePreference?.setOnPreferenceClickListener {
                 Themes.openDialogThemeSelector(this.requireContext())
+                true
+            }
+
+            // Orientation selection
+            val orientationPreference = findPreference<ListPreference>("orientation_preference")
+
+            orientationPreference?.setOnPreferenceChangeListener { _, newValue ->
+                when (newValue) {
+                    "portrait" -> requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                    "landscape" -> requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                    else -> requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                }
                 true
             }
         }

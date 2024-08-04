@@ -158,4 +158,16 @@
     <string name="require_real_number">Real number required</string>
     <string name="settings_auto_save_calculation_without_equal_button">Automatically save calculations</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Automatically save calculations in history without needing to click the equal button</string>
+
+    <!-- Orientation settings -->
+    <string-array name="orientation_options">
+        <item>System</item>
+        <item>Portrait</item>
+        <item>Landscape</item>
+    </string-array>
+    <string-array name="orientation_values">
+        <item>system</item>
+        <item>portrait</item>
+        <item>landscape</item>
+    </string-array>
 </resources>
