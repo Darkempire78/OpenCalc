@@ -1,0 +1,5 @@
+Ceartúcháin:
+- ní oibríonn tan() i gceart
+- Má scriostar míle deighilteoir bíonn an cúrsóir ag léim
+- Lúibíní a shocrú laistigh de na ríomhanna atá ann cheana féin
+- Fadhb le grafaicí i mód tírdhreacha le haghaidh táibléad níos mó ná 10 n-orlach

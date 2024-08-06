@@ -1,0 +1,8 @@
+Nua:
+- Earráidí follasach
+- Athdhearadh na staire
+- Cuir stampaí ama le torthaí staire
+- Ná ceadaigh siombailí matamaitice dúblacha ar ionchur
+
+Nuashonraithe:
+- tá arccos, arcsin agus arctan ar taispeáint anois mar cos⁻¹, sin⁻¹ agus tan⁻¹
