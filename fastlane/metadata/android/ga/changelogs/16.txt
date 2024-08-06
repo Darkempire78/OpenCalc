@@ -1,0 +1,4 @@
+Ceartúcháin:
+- Barra scrollbharra ionchuir
+- Scrollaigh riachtanach chun an toradh a fheiceáil
+- Ionchur soiléir má tá an uimhir brúite tar éis cothrom

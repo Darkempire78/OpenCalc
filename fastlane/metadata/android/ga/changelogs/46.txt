@@ -1,0 +1,8 @@
+Feabhsuithe:
+* Nuashonruithe aistriúcháin
+* BroadcastReceiver a chur i bhfeidhm chun tús a chur le gníomhaíocht ó TileService
+
+Ceartúcháin:
+* Saincheist formáidithe le nialas tar éis camóg
+* tuairteáil loga a shocrú nuair a x < 0
+* Tuairteála nuair a bhrúitear fréimhe cearnach tar éis earráid Comhréire

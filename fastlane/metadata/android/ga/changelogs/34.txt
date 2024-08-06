@@ -1,0 +1,7 @@
+Nuashonraithe:
+- Taispeáin "luach rómhór" in ionad "éigríoch"
+
+Ceartúcháin:
+- Roinnt de réir uimhreacha diúltacha
+- Fadhb le feidhm mhonarcha
+- tugann sin(x!) & cos(x!) torthaí míchearta

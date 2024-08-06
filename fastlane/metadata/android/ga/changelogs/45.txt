@@ -1,0 +1,24 @@
+Nua:
+- Úsáid BigDecimal in ionad Dúbailte
+- Socrú chun torthaí a thiontú go nodaireacht eolaíoch
+- Cuir rogha leis modulo a úsáid
+- Cuir rogha leis chun luach a roghnú seachas é a chóipeáil
+- Cuir rogha leis chun an cnaipe lúibíní a scoilt
+- Cuir rogha leis an stair a dhíchumasú
+- Cuir ceadúnas le thart ar alt
+
+Feabhsuithe:
+- Optamaigh an t-áireamhán
+- Cuir TextView in ionad EditText nach bhfuil riachtanach
+- Cumasaigh siombail roimh dheachúil
+- Scála suas an bosca buailte ar ais
+- Nuashonraigh roinnt aistriúcháin
+
+Ceartúcháin:
+- Suíomh cúrsóra
+- Téama i bhfeidhm saincheist le mód amoled
+- Toradh fachtóireach deachúil
+- Seithí mód tírdhreacha roinnt deilbhíní cnaipe
+- Dronuilleog liath in aice le Socruithe
+- Saincheisteanna foirmithe
+- Go leor réitigh eile ...

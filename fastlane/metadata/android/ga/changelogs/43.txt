@@ -1,0 +1,13 @@
+Nua:
+- Cuir ceadúnas le thart ar alt
+
+Feabhsuithe:
+- Nuashonraigh roinnt aistriúcháin
+- Cumasaigh siombail roimh dheachúil
+
+Ceartúcháin:
+- Suíomh cúrsóra
+- Tuairteála nuair a fhréamh bonn diúltach
+- Tuairteála nuair a bhíonn logáil nó ln d'uimhir dhiúltach á déanamh
+- Tuairteála agus príomhghníomhaíocht an tírdhreacha á athchruthú
+- Gach rud tar éis ').' i ríomh tá neamhaird
