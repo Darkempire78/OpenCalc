@@ -73,4 +73,6 @@
     <string name="percentDesc">百分比</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">自動儲存計算紀錄，無需按下等號按鈕</string>
     <string name="settings_auto_save_calculation_without_equal_button">自動儲存計算結果</string>
+    <string name="squareDesc">方形</string>
+    <string name="degreeDesc">度</string>
 </resources>
