@@ -1,0 +1,11 @@
+Áireamhán simplí agus álainn do Android íosluchtaigh
+
+📖 Gnéithe
+ * Meáchan Éadrom (APK ~2MB)
+ * Gan cead gan ghá
+ * Téama Dorcha, Solas, Amoled agus Ábhar Tú
+ * Modh eolaíoch
+ * Stair
+  * Portráid agus treoshuíomh tírdhreacha
+  * Tíleanna Mear-Socruithe
+  * Níos mó...

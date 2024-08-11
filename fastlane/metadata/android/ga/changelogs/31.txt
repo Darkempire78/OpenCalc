@@ -1,0 +1,9 @@
+Nuashonraithe:
+- Athraigh dath an téacs ar earráid
+- Laghdaigh méid scaoileadh
+- Ná sábháil toradh sa stair má tá sé comhionann leis an ríomh
+- Ná sábháil an ríomh sa stair má tá sé mar an gcéanna ná an ceann is déanaí
+
+Ceartúcháin:
+- Filleann Factoriel 0 ar ais 1
+- Cuir siombail mata tar éis sin brúite comhionann

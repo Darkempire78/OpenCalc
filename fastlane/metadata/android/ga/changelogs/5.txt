@@ -1,0 +1,5 @@
+Athruithe:
+- Ar fáil le haghaidh SDK 21+ (Android 5.0)
+
+Fixex:
+- Deisigh creathadh

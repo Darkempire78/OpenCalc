@@ -1,0 +1,8 @@
+Nua:
+- Tósta nuair a chóipeáil tú luach
+
+Ceartúcháin:
+- Tacaíonn téama an chórais le hÁbhar Tú
+- Feabhas a chur ar thacaíocht do táibléad
+- Feabhas a chur ar thacaíocht do mhéid scáileáin bheaga
+- Níl an deilbhín ar taispeáint le haghaidh Android níos lú ná 8

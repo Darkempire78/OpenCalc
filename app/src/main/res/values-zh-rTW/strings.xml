@@ -60,4 +60,19 @@
     <string name="settings_formatting_scientific_notation">以科學記數法顯示數值</string>
     <string name="settings_formatting_scientific_notation_desc">將所有結果轉換為科學計數法</string>
     <string name="settings_advanced_long_click_copy">長按以複製值</string>
+    <string name="exponentDesc">指數</string>
+    <string name="factorialDesc">階乘</string>
+    <string name="scientificModeSwitchDesc">科學模式切換</string>
+    <string name="cosineDesc">餘弦</string>
+    <string name="sineDesc">正弦</string>
+    <string name="tangentDesc">切線</string>
+    <string name="naturalLogarithmDesc">自然對數</string>
+    <string name="logarithmDesc">對數</string>
+    <string name="clearDesc">清除</string>
+    <string name="parenthesesDesc">括號</string>
+    <string name="percentDesc">百分比</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">自動儲存計算紀錄，無需按下等號按鈕</string>
+    <string name="settings_auto_save_calculation_without_equal_button">自動儲存計算結果</string>
+    <string name="squareDesc">方形</string>
+    <string name="degreeDesc">度</string>
 </resources>
