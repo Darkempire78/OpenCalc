@@ -55,4 +55,24 @@
     <string name="copied_history_result">Zkopírovaný výsledek z historie</string>
     <string name="settings_delete_history_element_on_swipe">Povolit selektivní mazání historie</string>
     <string name="settings_delete_history_element_on_swipe_desc">Smazat konkrétní položku historie při přejetí prstem</string>
+    <string name="tangentDesc">tečna</string>
+    <string name="logarithmDesc">logaritmus</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Automaticky ukládat počty</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Automaticky ukládat počty v historii bez stisknutí tlačítka „rovná se“</string>
+    <string name="squareDesc">na druhou</string>
+    <string name="piDesc">pí</string>
+    <string name="exponentDesc">umocnění</string>
+    <string name="factorialDesc">faktoriál</string>
+    <string name="scientificModeSwitchDesc">přepínač vědeckého režimu</string>
+    <string name="degreeDesc">stupně</string>
+    <string name="sineDesc">sínus</string>
+    <string name="cosineDesc">kosínus</string>
+    <string name="invertDesc">obrátit</string>
+    <string name="eDesc">eulerovo číslo</string>
+    <string name="naturalLogarithmDesc">přirozený logaritmus</string>
+    <string name="parenthesesDesc">závorka</string>
+    <string name="percentDesc">procento</string>
+    <string name="backspaceDesc">smazat</string>
+    <string name="clearDesc">smazat vše</string>
+    <string name="pointDesc">desetiná čárka</string>
 </resources>
