@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name_display">Kalkulator</string>
     <string name="settings_general_theme">Tema</string>
-    <string name="menu_clear_history">Obriši povijest</string>
+    <string name="menu_clear_history">Izbriši povijest</string>
     <string name="menu_about">O aplikaciji</string>
     <string name="theme_system">Sustav</string>
     <string name="theme_amoled">Crna</string>
@@ -55,4 +55,24 @@
     <string name="settings_advanced_long_click_copy_desc">Dugim pritiskom se tekst elementa kopira umjesto da se odabere</string>
     <string name="settings_delete_history_element_on_swipe">Dozvoli selektivno brisanje povijesti</string>
     <string name="settings_delete_history_element_on_swipe_desc">Izbriši određene elemente povijesti povlačenjem</string>
+    <string name="piDesc">pi</string>
+    <string name="naturalLogarithmDesc">prirodni logaritam</string>
+    <string name="squareDesc">kvadrat</string>
+    <string name="scientificModeSwitchDesc">sklopka znanstvenog načina rada</string>
+    <string name="logarithmDesc">logaritam</string>
+    <string name="percentDesc">postotak</string>
+    <string name="pointDesc">točka</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Automatski spremi izračune u povijest bez potrebe pritiskanja gumba jednako</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Automatski spremi izračune</string>
+    <string name="exponentDesc">eksponent</string>
+    <string name="factorialDesc">faktorijel</string>
+    <string name="cosineDesc">kosinus</string>
+    <string name="invertDesc">inverzija</string>
+    <string name="eDesc">e</string>
+    <string name="degreeDesc">stupanj</string>
+    <string name="sineDesc">sinus</string>
+    <string name="tangentDesc">tangenta</string>
+    <string name="clearDesc">izbriši</string>
+    <string name="parenthesesDesc">zagrade</string>
+    <string name="backspaceDesc">izbriši unatrag</string>
 </resources>
