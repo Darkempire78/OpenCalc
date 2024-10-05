@@ -1,10 +1,11 @@
 Egy egyszerű és szép számológép Androidhoz
 
-📖 Funkciók
-	* Kicsi (APK ~2MB)
+📖 Jellemzői
+	* Kis méret (APK ~2MB)
 	* Nincsenek felesleges engedélyek
-	* Sötét. Világos, Amoled és Material You témák
+	* Sötét, világos, amoled és Material You témák
 	* Tudományos mód
 	* Előzmények
-	* Álló- és fekvő nézet
+	* Álló és fekvő nézet
+	* Gyorsbeállítás-csempe
 	* És még más...

@@ -1,5 +1,5 @@
 Változás:
-- Elérhető az SDK 21+ (Android 5.0)-ra
+- Elérhető az SDK 21+ (Android 5.0) rendszerre
 
 Javítás:
 - Rezgés javítása

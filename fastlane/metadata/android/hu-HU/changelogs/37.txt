@@ -1,5 +1,5 @@
 Új:
-- Gyorsbeállítások csempe
+- Gyorsbeállítás-csempe
 
 Javítva:
-- Bosszantó toast értesítések
+- Bosszantó értesítések

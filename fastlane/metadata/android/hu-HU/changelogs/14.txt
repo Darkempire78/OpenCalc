@@ -1,6 +1,6 @@
 Új:
 - Adományozás gomb
 
-Változás:
-- Előzmények bevitelének formátuma
+Változások:
+- Javítva az előzmények formátuma
 - Mínusz karakter frissítése
