@@ -1,0 +1,24 @@
+Új:
+- BigDecimal használata a Dupla helyett
+- Az eredmények tudományos jelölésűvé alakításának beállítása
+- Modulo használatának lehetősége
+- Egy érték kiválasztásának lehetősége a másolás helyett
+- Zárójelgomb felosztásának lehetősége
+- Előzmények letiltásának lehetősége
+- Licenc hozzáadása a névjegylaphoz
+
+Fejlesztés:
+- Számológép optimalizálása
+- EditText cseréje TextView-re
+- Tizedesjegy előtti szimbólum engedélyezése
+- Vissza gomb méretének növelése
+- Néhány fordítás frissítése
+
+Javítva:
+- Kurzor helyzete
+- Amoled téma probléma
+- Tizes alapú faktoriális eredménye
+- Fekvő módban elrejtett gombok, ikonok
+- Szürke téglalap a Beállítások mellett
+- Formázási hibák
+- Egyéb hibák...

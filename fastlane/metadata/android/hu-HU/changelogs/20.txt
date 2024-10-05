@@ -1,4 +1,4 @@
-Javítás:
+Javítások:
 - Zárójelek automatikus bezárása
 - Faktorálisok szorzása * nélkül
-- 0 automatikus hozzáadása, ha a szám tizedesvesszővel kezdődik
+- A 0 automatikus beadása, ha a számot tizedesvesszővel kezdi

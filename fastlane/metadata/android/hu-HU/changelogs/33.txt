@@ -2,12 +2,12 @@ Frissítve:
 - Beviteli terület a teljes képernyőn
 - Zárójeles rendszer
 
-Javítva:
-- Dupla toast, értékek másolásánál A13-ban
+Javítások:
+- Dupla értesítés, értékek másolásánál az Android 13-nál
 - Tangens definíciós tartománya
 - Eredmény kiírása számítás beillesztésekor
 - 0-val közvetett osztás nem definiált
 - Osztás függvényekkel
 - Százalékos problémák
-- Trigonometrikus függvények rossz eredményt adnak vissza, ha az eredmény negatív
+- A trigonometrikus függvények rossz eredményt adnak vissza, ha az eredmény negatív
 - Egyéb javítás
