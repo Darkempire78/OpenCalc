@@ -1,0 +1,8 @@
+Fejlesztések:
+* Fordítások frissítései
+* BroadcastReceiver megvalósítása a TileService tevékenységének indításához
+
+Javítások:
+* Formázási hiba a vessző utáni nullánál
+* log függvény összeomlása ha x < 0
+* Összeomlás egy szintaktikai hibát követő négyzetgyökgomb megnyomásakor
