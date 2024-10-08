@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about_made_in_france">Készült ❤️-el Franciaországban</string>
+    <string name="about_made_in_france">❤️-el készült Franciaországban</string>
     <string name="settings_general_add_modulo_desc">Az \"X²\" gomb a moduló gombbal való lecserélése (az \"INV\" gomb megnyomásával elérhető)</string>
     <string name="menu_clear_history">Előzmények törlése</string>
     <string name="value_copied">Másolva</string>
@@ -29,14 +29,14 @@
     <string name="infinity">Végtelen</string>
     <string name="about_other_privacy_policy">Adatvédelmi irányelvek</string>
     <string name="settings_advanced_long_click_copy">Hosszú gombnyomás az érték másolásához</string>
-    <string name="value_too_large">Érték túl nagy</string>
+    <string name="value_too_large">Túl nagy érték</string>
     <string name="settings_category_general">ÁLTALÁNOS</string>
     <string name="settings_general_add_modulo">Moduló gomb hozzáadása</string>
-    <string name="about_category_help">TÁMOGASS MINKET</string>
+    <string name="about_category_help">SEGÍTS MINKET</string>
     <string name="settings_formatting_scientific_notation">Számok tudományos írásmódban</string>
     <string name="settings_general_theme">Téma</string>
     <string name="settings_general_vibration_desc">Rezgés gombnyomáskor</string>
-    <string name="division_by_0">Nem osztható 0-val</string>
+    <string name="division_by_0">Nem osztható nullával</string>
     <string name="theme_amoled">Monokróm</string>
     <string name="settings_advanced_prevent_sleep">Eszköz ébren tartása</string>
     <string name="domain_error">Tartományhiba</string>
@@ -53,4 +53,19 @@
     <string name="copied_result">Eredmény másolva</string>
     <string name="copied_history_calculation">Számítás az előzményekből kimásolva</string>
     <string name="copied_history_result">Eredmény az előzményekből kimásolva</string>
+    <string name="squareDesc">négyzet</string>
+    <string name="piDesc">pi</string>
+    <string name="naturalLogarithmDesc">természetes logaritmus</string>
+    <string name="logarithmDesc">logaritmus</string>
+    <string name="cosineDesc">koszinusz</string>
+    <string name="sineDesc">szinusz</string>
+    <string name="tangentDesc">tangens</string>
+    <string name="eDesc">e</string>
+    <string name="clearDesc">törlés</string>
+    <string name="parenthesesDesc">zárójel</string>
+    <string name="percentDesc">százalék</string>
+    <string name="factorialDesc">faktoriális</string>
+    <string name="pointDesc">pont</string>
+    <string name="degreeDesc">fok</string>
+    <string name="invertDesc">inverz</string>
 </resources>

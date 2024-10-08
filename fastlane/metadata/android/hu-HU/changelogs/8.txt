@@ -1,2 +1,2 @@
-Javítás:
-- Nagy számok összeomlásának javítása
+Javítva:
+- Összeomlás a nagy számoknál
