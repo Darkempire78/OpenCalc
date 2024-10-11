@@ -1,5 +1,5 @@
 Új:
-- Licenc hozzáadása a kb.
+- A licenc hozzáadása a névjegylaphoz
 
 Frissítések:
 - Több fordítás frissítése
@@ -7,7 +7,7 @@ Frissítések:
 
 Javítások:
 - A kurzor helye
-- Összeomlás, ha a gyök negatív bázisú
+- Összeomlás, ha a gyök negatív alapú
 - Összeomlás negatív számok log vagy ln számolásakor
-- Összeomlás a fekvő nézet fő tevékenységének újbóli létrehozásakor
+- Összeomlás a fekvő nézet főtevékenységének újbóli létrehozásakor
 - A számításban a ').' után minden figyelmen kívül hagyásra kerül

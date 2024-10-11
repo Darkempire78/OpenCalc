@@ -1,2 +1,2 @@
 Javítva:
-- Százalékos felosztás
+- Százalékos osztás
