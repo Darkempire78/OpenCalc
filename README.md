@@ -52,12 +52,12 @@
 
 ## 📷 Screenshots
 
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="15%"/>
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="15%"/>
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="15%"/>
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="15%"/>
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="15%"/>
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Light Theme 1.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Light Theme 2.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Dark Theme 1.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Dark Theme 2.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Amoled Theme 1.png" width="15%"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Amoled Theme 2.png" width="15%"/>
 
 ## ☕ Support
 
