@@ -3,12 +3,12 @@
 - Tizedes faktoriálisok
 - 2 tizedesvessző megakadályozása ugyanabban a számban
 
-Javítás:
-- Előzmény görgetés (@MahmoudRH)
-- Eredmény pontosság
-- Törlés csoportosító elválasztókkal
-- Fekvő mód 10" táblagépekhez
+Javítások:
+- Előzmények görgetése (@MahmoudRH)
+- Eredmény pontossága
+- Törlés az elválasztókkal (csoportosítókkal)
+- Fekvő mód 10 colos táblagépekhez
 - Törlés az egyenlő gomb után
 - Összeomlás az előzményeredményre koppintáskor
 - Formázási kifejezéssel kapcsolatos probléma
-- Egyéb javítás
+- Egyéb javítások
