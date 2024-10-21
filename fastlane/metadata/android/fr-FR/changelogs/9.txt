@@ -1,0 +1,7 @@
+Changement :
+- nouveauté sur les pages
+- ajout d'u séparateur pour le thème amoled
+
+Les Fixes :
+- la couleur des case à coché
+- Nom de l'application (traduit en anglais et en Français)

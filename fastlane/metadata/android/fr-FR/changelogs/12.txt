@@ -1,8 +1,8 @@
-Nouveauté :
+Nouveauté :
 - Historique
 
-Changement :
+Changement :
 - Optimisation
 
-Correction :
+Correction :
 - Le résultat affiche les erreurs

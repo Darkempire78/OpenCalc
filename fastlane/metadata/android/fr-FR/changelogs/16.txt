@@ -1,0 +1,3 @@
+correction :
+- champs avec une barre de defilement
+- effacement de l'entrée si un nombre est appuyé après le égal

@@ -1,6 +1,6 @@
-Changements :
+Changements :
 - L'écran de démarrage est désormais en mode sombre
 
-Corrections :
+Corrections :
 - Problème de clavier
 - Le clavier persiste en défilement
