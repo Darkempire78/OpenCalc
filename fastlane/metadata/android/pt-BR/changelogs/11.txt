@@ -2,8 +2,8 @@ Mudanças:
 - Tradução alemã
 - Tradução russa
 - Tradução grega
-- Tradução de Hindi
-- Tradução de Azerbajian
+- Tradução hindi
+- Tradução azerbaijana
 
-Fixes:
-- Porcento não matemático
+Correção:
+- Porcentagem não matemática

@@ -1,7 +1,7 @@
 Novo:
-- Clique longo para copiar um valor
+- Pressionar e segurar para copiar um valor
 - Tradução indonésia
 
-Corrigido:
-- rolar no modo paisagem
-- questão de foco
+Correções:
+- rolagem no modo paisagem
+- problema de foco

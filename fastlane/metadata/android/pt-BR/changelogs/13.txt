@@ -2,5 +2,5 @@ Novo:
 - Ícone temático
 
 Mudanças:
-- Atualizado traduções
-- Entrada clara se o número pressionado após igual
+- Traduções atualizadas
+- Limpa a tela quando um número é pressionado após pressionar igual

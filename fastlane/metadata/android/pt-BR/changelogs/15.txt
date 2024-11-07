@@ -1,6 +1,6 @@
 Mudança:
-- A tela do Splash está escura agora
+- A splash screen agora está escura
 
 Correção:
-- problema do teclado
-- teclado ainda rolagem
+- problema de teclado
+- rolagem pelo teclado
