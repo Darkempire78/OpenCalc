@@ -73,4 +73,6 @@
     <string name="percentDesc">百分比</string>
     <string name="backspaceDesc">退格</string>
     <string name="pointDesc">点</string>
+    <string name="eDesc">e</string>
+    <string name="invertDesc">倒数</string>
 </resources>
