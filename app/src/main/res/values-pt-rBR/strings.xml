@@ -58,4 +58,21 @@
     <string name="settings_delete_history_element_on_swipe_desc">Excluir um elemento específico do histórico ao deslizar</string>
     <string name="settings_auto_save_calculation_without_equal_button">Salvar cálculos automaticamente</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Salvar cálculos automaticamente no histórico sem precisar pressionar o botão de igual</string>
+    <string name="naturalLogarithmDesc">logaritmo natural</string>
+    <string name="logarithmDesc">logaritmo</string>
+    <string name="clearDesc">limpar</string>
+    <string name="squareDesc">quadrado</string>
+    <string name="piDesc">pi</string>
+    <string name="exponentDesc">expoente</string>
+    <string name="factorialDesc">fatorial</string>
+    <string name="sineDesc">seno</string>
+    <string name="cosineDesc">cosseno</string>
+    <string name="tangentDesc">tangente</string>
+    <string name="eDesc">e</string>
+    <string name="parenthesesDesc">parênteses</string>
+    <string name="percentDesc">por cento</string>
+    <string name="pointDesc">ponto</string>
+    <string name="scientificModeSwitchDesc">ligar modo científico</string>
+    <string name="degreeDesc">grau</string>
+    <string name="invertDesc">inverso</string>
 </resources>
