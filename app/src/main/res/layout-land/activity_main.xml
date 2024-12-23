@@ -269,6 +269,17 @@
                         android:onClick="logarithmButton"
                         android:text="@string/logarithm"
                         android:textAllCaps="false" />
+                    <Button
+                        android:id="@+id/log2Button"
+                        style="@style/CalculatorButton.Function"
+                        android:contentDescription="log2Desc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:onClick="log2Button"
+                        android:text="log2" />
+
 
                     <Button
                         android:id="@+id/oneButton"

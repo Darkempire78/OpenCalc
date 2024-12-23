@@ -846,6 +846,14 @@ class MainActivity : AppCompatActivity() {
             updateDisplay(view, "10^")
         }
     }
+    fun log2Button(view: View) {
+        if (!isInvButtonClicked) {
+            updateDisplay(view, "log2(")
+        } else {
+            updateDisplay(view, "2^")
+        }
+    }
+
 
     fun piButton(view: View) {
         updateDisplay(view, "π")

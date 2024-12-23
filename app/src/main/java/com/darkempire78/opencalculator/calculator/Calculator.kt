@@ -263,6 +263,26 @@ class Calculator(
                                 x = BigDecimal(log10(x.toDouble()))
                             }
                         }
+                        "log2" -> {
+                            if (x <= BigDecimal.ZERO) {
+                                domain_error = true
+                                x = BigDecimal.ZERO // Handle domain error
+                            } else {
+                                // Calculate log2(x) using log10(x) / log10(2)
+                                val logBase10Of2 = Math.log10(2.0)
+                                x = BigDecimal(Math.log10(x.toDouble()) / logBase10Of2)
+
+                                // Round to nearest integer if the result is effectively an integer
+                                if (x.stripTrailingZeros().scale() <= 0) {
+                                    x = x.setScale(0, RoundingMode.HALF_UP)
+                                }
+                            }
+                        }
+
+
+
+
+
                         "xp" -> {
                             x = exponentiation(BigDecimal(Math.E), x)
                         }

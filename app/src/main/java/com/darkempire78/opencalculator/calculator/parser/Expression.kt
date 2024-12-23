@@ -17,6 +17,9 @@ class Expression {
             cleanCalculation = getPercentString(cleanCalculation)
             cleanCalculation = cleanCalculation.replace("%", "/100")
         }
+        if (cleanCalculation.contains("log2")) {
+            cleanCalculation = formatLogBase2(cleanCalculation)
+        }
 
         cleanCalculation = addParenthesis(cleanCalculation)
 
@@ -27,6 +30,8 @@ class Expression {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
         calculation2 = calculation2.replace("log", "logten")
+        calculation2 = calculation2.replace("log₂", "log2")
+
         calculation2 = calculation2.replace("E", "*10^")
         // To avoid that "exp" is interpreted as "e", exp -> xp
         calculation2 = calculation2.replace("exp", "xp")
@@ -204,6 +209,12 @@ class Expression {
         cleanCalculation = cleanCalculation.replace("√", "sqrt")
         return cleanCalculation
     }
+
+    private fun formatLogBase2(calculation: String): String {
+        return calculation.replace("log2(", "log(").replace(")", ")/log(2)")
+    }
+
+
 
     private fun formatFactorial(calculation: String): String {
         var i = calculation.length - 1

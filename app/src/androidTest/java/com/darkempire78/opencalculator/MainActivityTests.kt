@@ -4,6 +4,8 @@ import android.content.pm.ActivityInfo
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.darkempire78.opencalculator.activities.MainActivity
+import com.darkempire78.opencalculator.calculator.parser.Expression
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -27,6 +29,13 @@ class MainActivityTests {
             }
         }
     }
+    @Test
+    fun testLogBase2Parsing() {
+        val expression = Expression()
+        val cleanExpression = expression.getCleanExpression("log₂(8)", ".", ",")
+        assertEquals("log(8)/log(2)", cleanExpression)
+    }
+
 
     @Test
     fun testRecreateMainActivity(){
