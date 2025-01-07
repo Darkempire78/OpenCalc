@@ -2,4 +2,4 @@ Novo:
 - Página de configurações
 
 Atualizado:
-- Sobre a página
+- Página "Sobre"

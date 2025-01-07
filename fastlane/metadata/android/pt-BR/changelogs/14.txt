@@ -2,5 +2,5 @@ Novo:
 - Botão de dica
 
 Mudanças:
-- Formato de história impotente
-- Actualização de caracteres menos
+- Melhorado o formato do histórico
+- Atualização do caractere de menos

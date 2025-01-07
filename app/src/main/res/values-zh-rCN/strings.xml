@@ -63,4 +63,16 @@
     <string name="degreeDesc">度</string>
     <string name="squareDesc">平方</string>
     <string name="factorialDesc">阶乘</string>
+    <string name="sineDesc">正弦</string>
+    <string name="cosineDesc">余弦</string>
+    <string name="tangentDesc">正切</string>
+    <string name="naturalLogarithmDesc">自然对数</string>
+    <string name="logarithmDesc">对数</string>
+    <string name="clearDesc">清空</string>
+    <string name="parenthesesDesc">括号</string>
+    <string name="percentDesc">百分比</string>
+    <string name="backspaceDesc">退格</string>
+    <string name="pointDesc">点</string>
+    <string name="eDesc">e</string>
+    <string name="invertDesc">倒数</string>
 </resources>

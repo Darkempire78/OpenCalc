@@ -7,5 +7,5 @@ Uma simples e bela calculadora para o Android
 	* Modo científico
 	* Histórico
 	* Orientação retrato e paisagem
-	* Tela de Configurações Rápidas
+	* Bloco de Configurações Rápidas
 	* Mais...

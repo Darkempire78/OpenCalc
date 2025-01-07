@@ -53,4 +53,14 @@
     <string name="division_by_0">Nu se poate împărți cu 0</string>
     <string name="syntax_error">Eroare sintaxă</string>
     <string name="value_copied">Copiat</string>
+    <string name="exponentDesc">exponent</string>
+    <string name="squareDesc">pătrat</string>
+    <string name="piDesc">pi</string>
+    <string name="factorialDesc">factorial</string>
+    <string name="degreeDesc">grad</string>
+    <string name="sineDesc">sinus</string>
+    <string name="cosineDesc">cosinus</string>
+    <string name="invertDesc">invers</string>
+    <string name="eDesc">e</string>
+    <string name="tangentDesc">tangent</string>
 </resources>

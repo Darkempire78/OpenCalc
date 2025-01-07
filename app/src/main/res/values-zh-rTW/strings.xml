@@ -75,4 +75,8 @@
     <string name="settings_auto_save_calculation_without_equal_button">自動儲存計算結果</string>
     <string name="squareDesc">方形</string>
     <string name="degreeDesc">度</string>
+    <string name="piDesc">π</string>
+    <string name="eDesc">e</string>
+    <string name="invertDesc">反轉</string>
+    <string name="backspaceDesc">倒退</string>
 </resources>
