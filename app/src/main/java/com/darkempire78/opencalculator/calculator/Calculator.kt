@@ -98,7 +98,7 @@ class Calculator(
                 else if (parseFactor > BigDecimal.ZERO) {
 
                     // To support bigdecimal exponent (e.g: 3.5)
-                    value = value.pow(intPart, MathContext.DECIMAL64)
+                    value = value.pow(intPart, MathContext.UNLIMITED)
                         .multiply(
                             BigDecimal.valueOf(
                                 value.toDouble().pow(decimalPart.toDouble())
