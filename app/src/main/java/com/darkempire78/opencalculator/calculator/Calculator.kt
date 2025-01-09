@@ -121,7 +121,7 @@ class Calculator(
                         )
 
                     value = try {
-                        BigDecimal.ONE.divide(x)
+                        BigDecimal.ONE.divide(value)
                     } catch (e: ArithmeticException) {
                         // if the result is a non-terminating decimal expansion
                         BigDecimal.ONE.divide(value, numberPrecision, RoundingMode.HALF_DOWN)
