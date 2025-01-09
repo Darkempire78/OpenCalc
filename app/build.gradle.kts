@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.darkempire78.opencalculator"
         resourceConfigurations += listOf("ar", "az", "be", "bn", "bs", "cs", "de", "el", "es", "fa", "fr", "hi", "hr", "hu", "in", "it", "ja", "kn", "mk", "ml", "nb-rNO", "nl", "or", "pl", "pt-rBR", "ro", "ru", "sat", "sr", "sv", "tr", "uk", "vi", "zh-rCN", "zh-rHK", "zh-rTW")
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34
         versionCode = 47
         versionName = "3.1.0-beta1"
