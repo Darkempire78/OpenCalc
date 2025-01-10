@@ -48,7 +48,7 @@ class Expression {
             return calculation
         }
         // find the last operator before the last %
-        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '('))
+        val operatorBeforePercentPos = calculation.subSequence(0, percentPos).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '(', ')'))
 
         if (operatorBeforePercentPos < 1) {
             return calculation
@@ -77,6 +77,21 @@ class Expression {
         // check if there are already some parenthesis, so we skip formatting
         if (calculation[operatorBeforePercentPos] == '(') {
             return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+        }
+        if (calculation[operatorBeforePercentPos] == ')') {
+            val openParenPos = calculation.subSequence(0, operatorBeforePercentPos).lastIndexOfAny(
+                charArrayOf('('))
+            if (openParenPos == 0){
+                return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+            }
+            if (openParenPos > 0) {
+                val operatorBeforeParen = calculation.subSequence(0, openParenPos).lastIndexOfAny(
+                    charArrayOf('+', '-', '*', '/')
+                )
+                calculationStringFirst = calculation.substring(0, operatorBeforeParen)
+                return calculationStringFirst + calculation[operatorBeforeParen] + calculationStringFirst + "*(" + calculation.subSequence(openParenPos + 1, percentPos - 1) + ")" + calculation.subSequence(percentPos, calculation.length)
+            }
+
         }
         calculationStringFirst = "($calculationStringFirst)"
 

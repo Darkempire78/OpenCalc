@@ -38,6 +38,24 @@ class ExpressionUnitTest {
 
         result = calculate("900/10%", false).toDouble()
         assertEquals(9000.0, result, 0.0)
+
+        result = calculate("(5+4)%", false).toDouble()
+        assertEquals(0.09, result, 0.0)
+
+        result = calculate("5+4%", false).toDouble()
+        assertEquals(5.2, result, 0.0)
+
+        result = calculate("(5+4)%", false).toDouble()
+        assertEquals(0.09, result, 0.0)
+
+        result = calculate("(50+2)+3%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
+
+        result = calculate("52+(1+2)%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
+
+        result = calculate("(50+2)+(1+2)%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
     }
 
     @Test
