@@ -216,6 +216,12 @@ class ExpressionUnitTest {
         assertEquals(0.03489949670250097, result, 0.0)
     }
 
+    @Test
+    fun log2_isCorrect() {
+        val result = calculate("log2(8)", false).toDouble()
+        assertEquals(3.0, result, 0.0)
+    }
+
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input, decimalSeparatorSymbol, groupingSeparatorSymbol), isDegreeModeActivated)
 
     companion object {

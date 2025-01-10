@@ -50,6 +50,8 @@
     <string name="naturalLogarithmInv" translatable="false">e^</string>
     <string name="logarithm" translatable="false">log</string>
     <string name="logarithmInv" translatable="false">10^</string>
+    <string name="logtwo" translatable="false">log₂</string>
+    <string name="logtwoInv" translatable="false">2^</string>
 
     <!-- Symbols -->
     <string name="squareDesc">square</string>
@@ -65,6 +67,7 @@
     <string name="eDesc">e</string>
     <string name="naturalLogarithmDesc">natural logarithm</string>
     <string name="logarithmDesc">logarithm</string>
+    <string name="log2Desc">base 2 logarithm</string>
     <string name="clearDesc">clear</string>
     <string name="parenthesesDesc">parentheses</string>
     <string name="percentDesc">percent</string>

@@ -858,6 +858,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun log2Button(view: View) {
+        if (!isInvButtonClicked) {
+            updateDisplay(view, "log2(")
+        } else {
+            updateDisplay(view, "2^")
+        }
+    }
+
     fun piButton(view: View) {
         updateDisplay(view, "π")
     }
@@ -902,6 +910,7 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
+            binding.log2Button?.setText(R.string.logtwoInv)
             if (MyPreferences(this).addModuloButton) {
                 binding.squareButton.setText(R.string.squareInvModuloVersion)
             } else {
@@ -917,6 +926,7 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangent)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
             binding.logarithmButton.setText(R.string.logarithm)
+            binding.log2Button?.setText(R.string.logtwo)
             binding.squareButton.setText(R.string.square)
         }
     }

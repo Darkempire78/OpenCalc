@@ -12,6 +12,7 @@ import kotlin.math.atan
 import kotlin.math.cos
 import kotlin.math.exp
 import kotlin.math.ln
+import kotlin.math.log2
 import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.round
@@ -254,6 +255,13 @@ class Calculator(
                                 domain_error = true
                             } else {
                                 x = BigDecimal(ln(x.toDouble()))
+                            }
+                        }
+                        "logtwo" -> {
+                            if (x <= BigDecimal.ZERO) {
+                                domain_error = true
+                            } else {
+                                x = BigDecimal(log2(x.toDouble()))
                             }
                         }
                         "logten" -> {
