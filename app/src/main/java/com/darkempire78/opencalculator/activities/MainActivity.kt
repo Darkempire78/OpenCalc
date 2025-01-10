@@ -529,25 +529,36 @@ class MainActivity : AppCompatActivity() {
             binding.scientistModeRow3.visibility = View.VISIBLE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
             binding.degreeTextView.visibility = View.VISIBLE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            if (isDegreeModeActivated) {
+                binding.degreeButton.text = getString(R.string.radian)
+                binding.degreeTextView.text = getString(R.string.degree)
+            }
+            else {
+                binding.degreeButton.text = getString(R.string.degree)
+                binding.degreeTextView.text = getString(R.string.radian)
+            }
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
             binding.degreeTextView.visibility = View.GONE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
     }
 
     // Switch between degree and radian mode
     private fun toggleDegreeMode() {
-        if (isDegreeModeActivated) binding.degreeButton.text = getString(R.string.radian)
-        else binding.degreeButton.text = getString(R.string.degree)
-
-        binding.degreeTextView.text = binding.degreeButton.text
+        isDegreeModeActivated = !isDegreeModeActivated
+        if (isDegreeModeActivated) {
+            binding.degreeButton.text = getString(R.string.radian)
+            binding.degreeTextView.text = getString(R.string.degree)
+        }
+        else {
+            binding.degreeButton.text = getString(R.string.degree)
+            binding.degreeTextView.text = getString(R.string.radian)
+        }
 
         // Flip the variable afterwards
-        isDegreeModeActivated = !isDegreeModeActivated
+        //isDegreeModeActivated = !isDegreeModeActivated
     }
 
     @SuppressLint("SetTextI18n")
