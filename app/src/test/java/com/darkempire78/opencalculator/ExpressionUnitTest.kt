@@ -123,6 +123,9 @@ class ExpressionUnitTest {
 
         result = calculate("2^-3.5", false).toDouble()
         assertEquals(0.08838834764, result, 0.0000001)
+
+        result = calculate("0^2", false).toDouble()
+        assertEquals(0.0, result, 0.0)
     }
 
     @Test

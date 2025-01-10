@@ -84,7 +84,7 @@ class Calculator(
 
         // if the number is null
         if (value == BigDecimal.ZERO) {
-            syntax_error = true
+            syntax_error = false
             value = BigDecimal.ZERO
         } else {
             if (parseFactor >= BigDecimal(10000)) {
