@@ -26,11 +26,9 @@ class Expression {
     private fun replaceSymbolsFromCalculation(calculation: String, decimalSeparatorSymbol: String, groupingSeparatorSymbol: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
-        if (calculation2.contains("log₂(")) {
-            calculation2 = calculation2.replace("log₂(", "logtwo(")
-        } else if (calculation2.contains("log(")) {
-            calculation2 = calculation2.replace("log(", "logten(")
-        }
+        calculation2 = calculation2.replace("log₂(", "logtwo(")
+        // Need open parenthesis to prevent alteration of log₂
+        calculation2 = calculation2.replace("log(", "logten(")
         calculation2 = calculation2.replace("E", "*10^")
         // To avoid that "exp" is interpreted as "e", exp -> xp
         calculation2 = calculation2.replace("exp", "xp")

@@ -218,8 +218,11 @@ class ExpressionUnitTest {
 
     @Test
     fun log2_isCorrect() {
-        val result = calculate("log2(8)", false).toDouble()
+        var result = calculate("log₂(8)", false).toDouble()
         assertEquals(3.0, result, 0.0)
+
+        result = calculate("log₂(5)+5*log(5)", false).toDouble()
+        assertEquals(5.816778116567456, result, 0.0)
     }
 
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input, decimalSeparatorSymbol, groupingSeparatorSymbol), isDegreeModeActivated)
