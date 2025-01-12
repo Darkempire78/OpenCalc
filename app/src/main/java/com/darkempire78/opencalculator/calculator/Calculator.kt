@@ -192,7 +192,7 @@ class Calculator(
                                 println(x)
                             }
                         }
-                    } // division
+                    }
                     else return x
                 }
             }
