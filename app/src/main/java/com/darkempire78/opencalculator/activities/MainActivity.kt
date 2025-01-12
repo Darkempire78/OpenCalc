@@ -860,7 +860,7 @@ class MainActivity : AppCompatActivity() {
 
     fun log2Button(view: View) {
         if (!isInvButtonClicked) {
-            updateDisplay(view, "log2(")
+            updateDisplay(view, "log₂(")
         } else {
             updateDisplay(view, "2^")
         }
@@ -1135,7 +1135,7 @@ class MainActivity : AppCompatActivity() {
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete
             val functionsList =
-                listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
+                listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "log₂(", "exp(")
             for (function in functionsList) {
                 val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
                 if (leftPart.endsWith(function)) {
