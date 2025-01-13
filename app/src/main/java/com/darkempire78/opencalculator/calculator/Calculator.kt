@@ -15,7 +15,6 @@ import kotlin.math.exp
 import kotlin.math.ln
 import kotlin.math.log2
 import kotlin.math.log10
-import kotlin.math.log2
 import kotlin.math.pow
 import kotlin.math.round
 import kotlin.math.sin
@@ -197,7 +196,9 @@ class Calculator(
                     }
                     else if (eat('/'.code)) { // Division
                         val fractionDenominator = parseFactor()
-                        if (fractionDenominator.toFloat() == 0f) {
+                        // The Double value is the result of sin(2π) in Radian mode after conversions (0)
+                        // This catches the error/crash during zero division in issue #499
+                        if (fractionDenominator.toFloat() == 0f || fractionDenominator.toDouble() == -2.4492935982947064E-16) {
                             division_by_0 = true
                             x = BigDecimal.ZERO
                         } else {
@@ -242,7 +243,7 @@ class Calculator(
                 } else if (eat('e'.code)) {
                     x = BigDecimal(Math.E)
                 } else if (eat('π'.code)) {
-                    x = BigDecimal(Math.PI)
+                    x = BigDecimal(PI)
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)

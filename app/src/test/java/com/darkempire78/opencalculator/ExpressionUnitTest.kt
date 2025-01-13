@@ -126,6 +126,9 @@ class ExpressionUnitTest {
 
         result = calculate("0^2", false).toDouble()
         assertEquals(0.0, result, 0.0)
+
+        result = calculate("2^(2+1)", true).toDouble()
+        assertEquals(8.0, result, 0.0)
     }
 
     @Test
@@ -200,7 +203,7 @@ class ExpressionUnitTest {
         result = calculate("cos(2)", false).toDouble()
         assertEquals(-0.4161468365471424, result, 0.0)
 
-        result = calculate("tan(pi/2)", false).toDouble()
+        result = calculate("tan(π/2)", false).toDouble()
         assertEquals(0.0, result, 0.0) // 0.0 means that it is impossible
 
         result = calculate("tan(45)", true).toDouble()
@@ -214,6 +217,14 @@ class ExpressionUnitTest {
 
         result = calculate("sin(1+1)", true).toDouble()
         assertEquals(0.03489949670250097, result, 0.0)
+
+        result = calculate("1^(1/sin(2π))", true).toDouble()
+        assertEquals(1.0, result, 0.0)
+
+        // This should fail but does not as x is assigned 0 during division of zero
+        // This causes the evaluation of 1 to the power of 0 which is 1
+        result = calculate("1^(1/sin(2π))", false).toDouble()
+        assertEquals(1.0, result, 0.0)
     }
 
     @Test
