@@ -1,5 +1,6 @@
 package com.darkempire78.opencalculator.calculator
 
+import android.os.Build
 import java.math.BigDecimal
 import java.math.BigInteger
 import java.math.MathContext
@@ -14,6 +15,7 @@ import kotlin.math.exp
 import kotlin.math.ln
 import kotlin.math.log2
 import kotlin.math.log10
+import kotlin.math.log2
 import kotlin.math.pow
 import kotlin.math.round
 import kotlin.math.sin
@@ -27,7 +29,7 @@ var is_infinity = false
 var require_real_number = false
 
 class Calculator(
-        private val numberPrecision: Int
+        private val numberPrecisionDecimal: Int
     ) {
 
     fun factorial(number: BigDecimal): BigDecimal {
@@ -125,12 +127,25 @@ class Calculator(
                         BigDecimal.ONE.divide(value)
                     } catch (e: ArithmeticException) {
                         // if the result is a non-terminating decimal expansion
-                        BigDecimal.ONE.divide(value, numberPrecision, RoundingMode.HALF_DOWN)
+                        BigDecimal.ONE.divide(value, numberPrecisionDecimal, RoundingMode.HALF_DOWN)
                     }
                 }
             }
         }
         return value
+    }
+
+    fun bigDecimalSqrtFormerAndroidVersion(value: BigDecimal, mathContext: MathContext): BigDecimal {
+        // Newton's method for square root calculation with Android versions prior to API 33
+        var x0 = BigDecimal(0)
+        var x1 = value.divide(BigDecimal(2), mathContext)
+
+        while (x0 != x1) {
+            x0 = x1
+            x1 = value.divide(x0, mathContext).add(x0).divide(BigDecimal(2), mathContext)
+        }
+
+        return x1
     }
 
     fun evaluate(equation: String, isDegreeModeActivated: Boolean): BigDecimal {
@@ -189,11 +204,11 @@ class Calculator(
                             try {
                                 x = x.divide(fractionDenominator)
                             } catch (e: ArithmeticException) { // if the result is a non-terminating decimal expansion
-                                x = x.divide(fractionDenominator, numberPrecision, RoundingMode.HALF_DOWN)
+                                x = x.divide(fractionDenominator, numberPrecisionDecimal, RoundingMode.HALF_DOWN)
                                 println(x)
                             }
                         }
-                    } // division
+                    }
                     else return x
                 }
             }
@@ -241,7 +256,15 @@ class Calculator(
                     when (func) {
                         "sqrt" -> {
                             if (x >= BigDecimal.ZERO) {
-                                x = BigDecimal(sqrt(x.toDouble()))
+                                // Set the precision for the square root calculation
+                                val integerPartLength = x.toString().length
+                                val maxPrecision = (integerPartLength + 50).coerceAtMost(1000) // Maximum precision is 1000
+                                val precision = MathContext(maxPrecision, RoundingMode.HALF_DOWN)
+                                x = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Use default BigDecimal sqrt function (API 33)
+                                    x.sqrt(precision)
+                                } else { // Use Newton's method for square root calculation with Android versions prior to API 33
+                                    bigDecimalSqrtFormerAndroidVersion(x, precision)
+                                }
                             } else {
                                 require_real_number = true
                             }

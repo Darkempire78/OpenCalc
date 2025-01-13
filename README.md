@@ -43,7 +43,8 @@
 * Scientific mode
 * History
 * Portrait and landscape orientation
-* Quick Settings Tile
+* Quick settings tile
+* Available on locked screen
 * More...
 
 ## ⚠️ Requirements
