@@ -742,6 +742,8 @@ class MainActivity : AppCompatActivity() {
                 if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
             val previousChar =
                 if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
+            val prevSymbol =
+                if (cursorPosition > 1) binding.input.text[cursorPosition - 2].toString() else "0"
 
             if (currentSymbol != previousChar // Ignore multiple presses of the same button
                 && currentSymbol != nextChar
@@ -749,6 +751,7 @@ class MainActivity : AppCompatActivity() {
                 && previousChar != decimalSeparatorSymbol // Ensure that the previous character is not a comma
                 && (previousChar != "(" // Ensure that we are not at the beginning of a parenthesis
                         || currentSymbol == "-")
+                && (prevSymbol !in "+\\-÷×" || previousChar !in "+\\-÷×")
             ) { // Minus symbol is an override
                 // If previous character is a symbol, replace it
                 if (previousChar.matches("[+\\-÷×^]".toRegex())) {
