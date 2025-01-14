@@ -84,8 +84,8 @@ class Calculator(
         val intPart = parseFactor.toInt()
         val decimalPart = parseFactor.subtract(BigDecimal(intPart))
 
-        // if the number is null
-        if (value == BigDecimal.ZERO) {
+        // If value is 0 and the factor is 0, result is undefined
+        if (value == BigDecimal.ZERO && parseFactor == BigDecimal.ZERO) {
             syntax_error = true
             value = BigDecimal.ZERO
         } else {
