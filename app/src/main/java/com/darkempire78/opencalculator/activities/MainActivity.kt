@@ -488,7 +488,7 @@ class MainActivity : AppCompatActivity() {
                                 decimalSeparatorSymbol
                             ).first()
                         }
-                        if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
+                        if (decimalSeparatorSymbol in lastNumberBefore) { // || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
                         }
                     }
