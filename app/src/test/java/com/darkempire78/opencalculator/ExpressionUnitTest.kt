@@ -38,6 +38,24 @@ class ExpressionUnitTest {
 
         result = calculate("900/10%", false).toDouble()
         assertEquals(9000.0, result, 0.0)
+
+        result = calculate("(5+4)%", false).toDouble()
+        assertEquals(0.09, result, 0.0)
+
+        result = calculate("5+4%", false).toDouble()
+        assertEquals(5.2, result, 0.0)
+
+        result = calculate("(5+4)%", false).toDouble()
+        assertEquals(0.09, result, 0.0)
+
+        result = calculate("(50+2)+3%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
+
+        result = calculate("52+(1+2)%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
+
+        result = calculate("(50+2)+(1+2)%", false).toDouble()
+        assertEquals(53.56, result, 0.0)
     }
 
     @Test
@@ -105,6 +123,12 @@ class ExpressionUnitTest {
 
         result = calculate("2^-3.5", false).toDouble()
         assertEquals(0.08838834764, result, 0.0000001)
+
+        result = calculate("0^2", false).toDouble()
+        assertEquals(0.0, result, 0.0)
+
+        result = calculate("2^(2+1)", true).toDouble()
+        assertEquals(8.0, result, 0.0)
     }
 
     @Test
@@ -179,7 +203,7 @@ class ExpressionUnitTest {
         result = calculate("cos(2)", false).toDouble()
         assertEquals(-0.4161468365471424, result, 0.0)
 
-        result = calculate("tan(pi/2)", false).toDouble()
+        result = calculate("tan(π/2)", false).toDouble()
         assertEquals(0.0, result, 0.0) // 0.0 means that it is impossible
 
         result = calculate("tan(45)", true).toDouble()
@@ -193,6 +217,23 @@ class ExpressionUnitTest {
 
         result = calculate("sin(1+1)", true).toDouble()
         assertEquals(0.03489949670250097, result, 0.0)
+
+        result = calculate("1^(1/sin(2π))", true).toDouble()
+        assertEquals(1.0, result, 0.0)
+
+        // This should fail but does not as x is assigned 0 during division of zero
+        // This causes the evaluation of 1 to the power of 0 which is 1
+        result = calculate("1^(1/sin(2π))", false).toDouble()
+        assertEquals(1.0, result, 0.0)
+    }
+
+    @Test
+    fun log2_isCorrect() {
+        var result = calculate("log₂(8)", false).toDouble()
+        assertEquals(3.0, result, 0.0)
+
+        result = calculate("log₂(5)+5*log(5)", false).toDouble()
+        assertEquals(5.816778116567456, result, 0.0)
     }
 
     private fun calculate(input: String, isDegreeModeActivated : Boolean) = calculator.evaluate(expression.getCleanExpression(input, decimalSeparatorSymbol, groupingSeparatorSymbol), isDegreeModeActivated)

@@ -26,7 +26,9 @@ class Expression {
     private fun replaceSymbolsFromCalculation(calculation: String, decimalSeparatorSymbol: String, groupingSeparatorSymbol: String): String {
         var calculation2 = calculation.replace('×', '*')
         calculation2 = calculation2.replace('÷', '/')
-        calculation2 = calculation2.replace("log", "logten")
+        calculation2 = calculation2.replace("log₂(", "logtwo(")
+        // Need open parenthesis to prevent alteration of log₂
+        calculation2 = calculation2.replace("log(", "logten(")
         calculation2 = calculation2.replace("E", "*10^")
         // To avoid that "exp" is interpreted as "e", exp -> xp
         calculation2 = calculation2.replace("exp", "xp")
@@ -48,7 +50,7 @@ class Expression {
             return calculation
         }
         // find the last operator before the last %
-        val operatorBeforePercentPos = calculation.subSequence(0, percentPos - 1).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '('))
+        val operatorBeforePercentPos = calculation.subSequence(0, percentPos).lastIndexOfAny(charArrayOf('-', '+', '*', '/', '(', ')'))
 
         if (operatorBeforePercentPos < 1) {
             return calculation
@@ -77,6 +79,21 @@ class Expression {
         // check if there are already some parenthesis, so we skip formatting
         if (calculation[operatorBeforePercentPos] == '(') {
             return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+        }
+        if (calculation[operatorBeforePercentPos] == ')') {
+            val openParenPos = calculation.subSequence(0, operatorBeforePercentPos).lastIndexOfAny(
+                charArrayOf('('))
+            if (openParenPos == 0){
+                return calculationStringFirst + calculation.subSequence(operatorBeforePercentPos, calculation.length)
+            }
+            if (openParenPos > 0) {
+                val operatorBeforeParen = calculation.subSequence(0, openParenPos).lastIndexOfAny(
+                    charArrayOf('+', '-', '*', '/')
+                )
+                calculationStringFirst = calculation.substring(0, operatorBeforeParen)
+                return calculationStringFirst + calculation[operatorBeforeParen] + calculationStringFirst + "*(" + calculation.subSequence(openParenPos + 1, percentPos - 1) + ")" + calculation.subSequence(percentPos, calculation.length)
+            }
+
         }
         calculationStringFirst = "($calculationStringFirst)"
 

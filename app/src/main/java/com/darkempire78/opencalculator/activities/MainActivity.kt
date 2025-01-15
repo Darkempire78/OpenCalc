@@ -488,7 +488,7 @@ class MainActivity : AppCompatActivity() {
                                 decimalSeparatorSymbol
                             ).first()
                         }
-                        if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
+                        if (decimalSeparatorSymbol in lastNumberBefore) { // || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
                         }
                     }
@@ -538,25 +538,36 @@ class MainActivity : AppCompatActivity() {
             binding.scientistModeRow3.visibility = View.VISIBLE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
             binding.degreeTextView.visibility = View.VISIBLE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
+            if (isDegreeModeActivated) {
+                binding.degreeButton.text = getString(R.string.radian)
+                binding.degreeTextView.text = getString(R.string.degree)
+            }
+            else {
+                binding.degreeButton.text = getString(R.string.degree)
+                binding.degreeTextView.text = getString(R.string.radian)
+            }
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
             binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
             binding.degreeTextView.visibility = View.GONE
-            binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
     }
 
     // Switch between degree and radian mode
     private fun toggleDegreeMode() {
-        if (isDegreeModeActivated) binding.degreeButton.text = getString(R.string.radian)
-        else binding.degreeButton.text = getString(R.string.degree)
-
-        binding.degreeTextView.text = binding.degreeButton.text
+        isDegreeModeActivated = !isDegreeModeActivated
+        if (isDegreeModeActivated) {
+            binding.degreeButton.text = getString(R.string.radian)
+            binding.degreeTextView.text = getString(R.string.degree)
+        }
+        else {
+            binding.degreeButton.text = getString(R.string.degree)
+            binding.degreeTextView.text = getString(R.string.radian)
+        }
 
         // Flip the variable afterwards
-        isDegreeModeActivated = !isDegreeModeActivated
+        //isDegreeModeActivated = !isDegreeModeActivated
     }
 
     @SuppressLint("SetTextI18n")
@@ -731,6 +742,8 @@ class MainActivity : AppCompatActivity() {
                 if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
             val previousChar =
                 if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
+            val prevSymbol =
+                if (cursorPosition > 1) binding.input.text[cursorPosition - 2].toString() else "0"
 
             if (currentSymbol != previousChar // Ignore multiple presses of the same button
                 && currentSymbol != nextChar
@@ -738,6 +751,7 @@ class MainActivity : AppCompatActivity() {
                 && previousChar != decimalSeparatorSymbol // Ensure that the previous character is not a comma
                 && (previousChar != "(" // Ensure that we are not at the beginning of a parenthesis
                         || currentSymbol == "-")
+                && (prevSymbol !in "+\\-÷×" || previousChar !in "+\\-÷×")
             ) { // Minus symbol is an override
                 // If previous character is a symbol, replace it
                 if (previousChar.matches("[+\\-÷×^]".toRegex())) {
@@ -856,6 +870,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun log2Button(view: View) {
+        if (!isInvButtonClicked) {
+            updateDisplay(view, "log₂(")
+        } else {
+            updateDisplay(view, "2^")
+        }
+    }
+
     fun piButton(view: View) {
         updateDisplay(view, "π")
     }
@@ -900,6 +922,7 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangentInv)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
             binding.logarithmButton.setText(R.string.logarithmInv)
+            binding.log2Button?.setText(R.string.logtwoInv)
             if (MyPreferences(this).addModuloButton) {
                 binding.squareButton.setText(R.string.squareInvModuloVersion)
             } else {
@@ -915,6 +938,7 @@ class MainActivity : AppCompatActivity() {
             binding.tangentButton.setText(R.string.tangent)
             binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
             binding.logarithmButton.setText(R.string.logarithm)
+            binding.log2Button?.setText(R.string.logtwo)
             binding.squareButton.setText(R.string.square)
         }
     }
@@ -1123,7 +1147,7 @@ class MainActivity : AppCompatActivity() {
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete
             val functionsList =
-                listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
+                listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "log₂(", "exp(")
             for (function in functionsList) {
                 val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
                 if (leftPart.endsWith(function)) {

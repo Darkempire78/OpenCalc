@@ -13,8 +13,8 @@ import kotlin.math.atan
 import kotlin.math.cos
 import kotlin.math.exp
 import kotlin.math.ln
-import kotlin.math.log10
 import kotlin.math.log2
+import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.round
 import kotlin.math.sin
@@ -86,7 +86,7 @@ class Calculator(
 
         // if the number is null
         if (value == BigDecimal.ZERO) {
-            syntax_error = true
+            syntax_error = false
             value = BigDecimal.ZERO
         } else {
             if (parseFactor >= BigDecimal(10000)) {
@@ -100,7 +100,7 @@ class Calculator(
                 else if (parseFactor > BigDecimal.ZERO) {
 
                     // To support bigdecimal exponent (e.g: 3.5)
-                    value = value.pow(intPart, MathContext.DECIMAL64)
+                    value = value.pow(intPart, MathContext.UNLIMITED)
                         .multiply(
                             BigDecimal.valueOf(
                                 value.toDouble().pow(decimalPart.toDouble())
@@ -196,7 +196,9 @@ class Calculator(
                     }
                     else if (eat('/'.code)) { // Division
                         val fractionDenominator = parseFactor()
-                        if (fractionDenominator.toFloat() == 0f) {
+                        // The Double value is the result of sin(2π) in Radian mode after conversions (0)
+                        // This catches the error/crash during zero division in issue #499
+                        if (fractionDenominator.toFloat() == 0f || fractionDenominator.toDouble() == -2.4492935982947064E-16) {
                             division_by_0 = true
                             x = BigDecimal.ZERO
                         } else {
@@ -241,7 +243,7 @@ class Calculator(
                 } else if (eat('e'.code)) {
                     x = BigDecimal(Math.E)
                 } else if (eat('π'.code)) {
-                    x = BigDecimal(Math.PI)
+                    x = BigDecimal(PI)
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -277,6 +279,13 @@ class Calculator(
                                 domain_error = true
                             } else {
                                 x = BigDecimal(ln(x.toDouble()))
+                            }
+                        }
+                        "logtwo" -> {
+                            if (x <= BigDecimal.ZERO) {
+                                domain_error = true
+                            } else {
+                                x = BigDecimal(log2(x.toDouble()))
                             }
                         }
                         "logten" -> {
