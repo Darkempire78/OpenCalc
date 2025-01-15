@@ -275,21 +275,30 @@ class Calculator(
                             x = factorial(x)
                         }
                         "ln" -> {
-                            if (x <= BigDecimal.ZERO) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (x <= BigDecimal.ZERO) {
                                 domain_error = true
                             } else {
                                 x = BigDecimal(ln(x.toDouble()))
                             }
                         }
                         "logtwo" -> {
-                            if (x <= BigDecimal.ZERO) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (x <= BigDecimal.ZERO) {
                                 domain_error = true
                             } else {
                                 x = BigDecimal(log2(x.toDouble()))
                             }
                         }
                         "logten" -> {
-                            if (x <= BigDecimal.ZERO) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (x <= BigDecimal.ZERO) {
                                 domain_error = true
                             } else {
                                 x = BigDecimal(log10(x.toDouble()))
@@ -299,7 +308,10 @@ class Calculator(
                             x = exponentiation(BigDecimal(Math.E), x)
                         }
                         "sin" -> {
-                            if (isDegreeModeActivated) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (isDegreeModeActivated) {
                                 x = sin(Math.toRadians(x.toDouble())).toBigDecimal()
                                 // https://stackoverflow.com/questions/29516222/how-to-get-exact-value-of-trigonometric-functions-in-java
                             } else {
@@ -310,7 +322,10 @@ class Calculator(
                             }
                         }
                         "cos" -> {
-                            if (isDegreeModeActivated) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (isDegreeModeActivated) {
                                 x = cos(Math.toRadians(x.toDouble())).toBigDecimal()
                             } else {
                                 x = cos(x.toDouble()).toBigDecimal()
@@ -320,7 +335,10 @@ class Calculator(
                             }
                         }
                         "tan" -> {
-                            if (Math.toDegrees(x.toDouble()) == 90.0) {
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if (Math.toDegrees(x.toDouble()) == 90.0) {
                                 // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
                                 domain_error = true
                                 x = BigDecimal.ZERO
@@ -367,10 +385,13 @@ class Calculator(
 
                         }
                         "arcta" -> {
-                            x = if (isDegreeModeActivated) {
-                                (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
+                            if (x > Double.MAX_VALUE.toBigDecimal()) {
+                                is_infinity = true
+                                x = BigDecimal.ZERO
+                            } else if  (isDegreeModeActivated) {
+                                x = (atan(x.toDouble()) * 180 / Math.PI).toBigDecimal()
                             } else {
-                                atan(x.toDouble()).toBigDecimal()
+                                x =atan(x.toDouble()).toBigDecimal()
                             }
                             if (x > BigDecimal.ZERO && x < BigDecimal(1.0E-14)) {
                                 x = round(x.toDouble()).toBigDecimal()
