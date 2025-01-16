@@ -481,14 +481,30 @@ class MainActivity : AppCompatActivity() {
                             ).last()
                         }
                         var firstNumberAfter = ""
+                        var nextChar = ' '
+                        if (cursorPosition <= binding.input.text.length - 1) {
+                            nextChar = binding.input.text[cursorPosition]
+                        }
+
                         if (cursorPosition < binding.input.text.length - 1) {
                             firstNumberAfter = NumberFormatter.extractNumbers(
                                 binding.input.text.toString()
                                     .substring(cursorPosition, binding.input.text.length),
                                 decimalSeparatorSymbol
                             ).first()
+                            // Catch symbols between cursor position and next number
+                            // Can or should this be done elsewhere?
+                            if (!nextChar.isDigit()) {
+                                firstNumberAfter = "0"
+                            }
+                            // Catch for moving cursor to position 0 and entering another decimal
+                            // when one exists
+                            if (nextChar == '.') {
+                                firstNumberAfter = nextChar.toString()
+                            }
                         }
-                        if (decimalSeparatorSymbol in lastNumberBefore) { // || decimalSeparatorSymbol in firstNumberAfter) {
+                        if (decimalSeparatorSymbol in lastNumberBefore
+                            || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
                         }
                     }
