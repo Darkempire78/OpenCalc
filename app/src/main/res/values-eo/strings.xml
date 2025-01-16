@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="piDesc">pi</string>
+    <string name="app_name_display">Kalkulilo</string>
+    <string name="sineDesc">sinuso</string>
+    <string name="cosineDesc">kosinuso</string>
+    <string name="parenthesesDesc">krampoj</string>
+    <string name="settings_category_general">ĜENERALAJ</string>
+    <string name="settings_category_formatting">TEKSTARANĜO</string>
+    <string name="settings_category_history">HISTORIO</string>
+    <string name="settings_category_advanced">ALTNIVELAJ</string>
+    <string name="settings_general_language">Lingvo</string>
+    <string name="settings_general_theme">Etoso</string>
+    <string name="settings_general_vibration">Vibro</string>
+    <string name="menu_settings">Agordoj</string>
+    <string name="menu_about">Pri</string>
+    <string name="menu_clear_history">Vakigi historion</string>
+</resources>
