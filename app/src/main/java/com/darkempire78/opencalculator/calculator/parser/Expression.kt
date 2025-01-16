@@ -102,7 +102,7 @@ class Expression {
 
     }
 
-    private fun addParenthesis(calculation: String): String {
+    fun addParenthesis(calculation: String): String {
         // Add ")" which lack
         var cleanCalculation = calculation
         var openParentheses = 0
@@ -120,6 +120,10 @@ class Expression {
             for (i in 0 until openParentheses - closeParentheses) {
                 cleanCalculation += ')'
             }
+        }
+        // Trigger syntax error if missing '('
+        if (closeParentheses > openParentheses) {
+            syntax_error = true
         }
 
         return cleanCalculation
