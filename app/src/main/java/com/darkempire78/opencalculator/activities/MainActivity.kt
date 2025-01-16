@@ -957,6 +957,8 @@ class MainActivity : AppCompatActivity() {
 
             val calculation = binding.input.text.toString()
 
+            Expression().addParenthesis(calculation)
+
             if (calculation != "") {
 
                 val resultString = calculationResult.toString()
