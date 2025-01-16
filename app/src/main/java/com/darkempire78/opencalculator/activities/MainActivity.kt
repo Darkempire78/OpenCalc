@@ -486,7 +486,7 @@ class MainActivity : AppCompatActivity() {
                             nextChar = binding.input.text[cursorPosition]
                         }
 
-                        if (cursorPosition < binding.input.text.length - 1) {
+                        if (cursorPosition <= binding.input.text.length - 1) {
                             firstNumberAfter = NumberFormatter.extractNumbers(
                                 binding.input.text.toString()
                                     .substring(cursorPosition, binding.input.text.length),
