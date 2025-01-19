@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
 import com.darkempire78.opencalculator.history.History
 import com.google.gson.Gson
-import java.util.UUID
 
 class MyPreferences(context: Context) {
 
@@ -17,7 +16,7 @@ class MyPreferences(context: Context) {
         private const val FORCE_DAY_NIGHT = "darkempire78.opencalculator.FORCE_DAY_NIGHT"
 
         private const val KEY_VIBRATION_STATUS = "darkempire78.opencalculator.KEY_VIBRATION_STATUS"
-        private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY"
+        private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY_ELEMENTS"
         private const val KEY_PREVENT_PHONE_FROM_SLEEPING = "darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
         private const val KEY_HISTORY_SIZE = "darkempire78.opencalculator.HISTORY_SIZE"
         private const val KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT = "darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
@@ -67,30 +66,25 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, value).apply()
 
 
+
+
     fun getHistory(): MutableList<History> {
         val gson = Gson()
-        val historyList = if (preferences.getString(KEY_HISTORY, null) != null) {
-            gson.fromJson(history, Array<History>::class.java).asList().toMutableList()
+
+        val historyJson = preferences.getString(KEY_HISTORY, null)
+
+        return if (historyJson != null) {
+            try {
+                val list = gson.fromJson(historyJson, Array<History>::class.java).asList().toMutableList()
+                list
+            } catch (e: Exception) {
+                mutableListOf()
+            }
         } else {
             mutableListOf()
         }
-
-        // Add IDs to history elements that don't have them (migration from older versions)
-        var hasChanges = false
-        for (element in historyList) {
-            if (element.id.isNullOrEmpty()) {
-                element.id = UUID.randomUUID().toString()
-                hasChanges = true
-            }
-        }
-
-        // Save history if changes were made
-        if (hasChanges) {
-            saveHistory(historyList)
-        }
-
-        return historyList
     }
+
 
 
     fun saveHistory(history: List<History>){

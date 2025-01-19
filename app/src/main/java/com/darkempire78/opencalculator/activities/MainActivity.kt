@@ -143,9 +143,7 @@ class MainActivity : AppCompatActivity() {
             this // Assuming this is an Activity or Fragment with a Context
         )
         binding.historyRecylcleView.adapter = historyAdapter
-        // Set values
-        val historyList = MyPreferences(this).getHistory()
-        historyAdapter.appendHistory(historyList)
+
         // Scroll to the bottom of the recycle view
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
