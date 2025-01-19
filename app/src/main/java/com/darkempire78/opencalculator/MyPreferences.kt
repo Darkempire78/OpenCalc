@@ -8,13 +8,15 @@ import com.google.gson.Gson
 
 class MyPreferences(context: Context) {
 
+    var ctx = context
+
     // https://proandroiddev.com/dark-mode-on-android-app-with-kotlin-dc759fc5f0e1
     companion object {
         private const val THEME = "darkempire78.opencalculator.THEME"
         private const val FORCE_DAY_NIGHT = "darkempire78.opencalculator.FORCE_DAY_NIGHT"
 
         private const val KEY_VIBRATION_STATUS = "darkempire78.opencalculator.KEY_VIBRATION_STATUS"
-        private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY"
+        private const val KEY_HISTORY = "darkempire78.opencalculator.HISTORY_ELEMENTS"
         private const val KEY_PREVENT_PHONE_FROM_SLEEPING = "darkempire78.opencalculator.PREVENT_PHONE_FROM_SLEEPING"
         private const val KEY_HISTORY_SIZE = "darkempire78.opencalculator.HISTORY_SIZE"
         private const val KEY_SCIENTIFIC_MODE_ENABLED_BY_DEFAULT = "darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
@@ -64,22 +66,34 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON, value).apply()
 
 
+
+
     fun getHistory(): MutableList<History> {
         val gson = Gson()
-        return if (preferences.getString(KEY_HISTORY, null) != null) {
-            gson.fromJson(history, Array<History>::class.java).asList().toMutableList()
+
+        val historyJson = preferences.getString(KEY_HISTORY, null)
+
+        return if (historyJson != null) {
+            try {
+                val list = gson.fromJson(historyJson, Array<History>::class.java).asList().toMutableList()
+                list
+            } catch (e: Exception) {
+                mutableListOf()
+            }
         } else {
             mutableListOf()
         }
     }
 
-    fun saveHistory(context: Context, history: List<History>){
+
+
+    fun saveHistory(history: List<History>){
         val gson = Gson()
         val history2 = history.toMutableList()
         while (historySize!!.toInt() > 0 && history2.size > historySize!!.toInt()) {
             history2.removeAt(0)
         }
-        MyPreferences(context).history = gson.toJson(history2) // Convert to json
+        MyPreferences(ctx).history = gson.toJson(history2) // Convert to json
     }
 
     fun getHistoryElementById(id: String): History? {
@@ -87,12 +101,12 @@ class MyPreferences(context: Context) {
         return history.find { it.id == id }
     }
 
-    fun updateHistoryElementById(context: Context, id: String, history: History) {
+    fun updateHistoryElementById(id: String, history: History) {
         val historyList = getHistory()
         val index = historyList.indexOfFirst { it.id == id }
         if (index != -1) {
             historyList[index] = history
-            saveHistory(context, historyList)
+            saveHistory(historyList)
         }
     }
 }

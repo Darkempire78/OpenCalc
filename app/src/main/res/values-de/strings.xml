@@ -42,7 +42,7 @@
     <string name="domain_error">Falscher Definitionsbereich</string>
     <string name="settings_advanced_long_click_copy">Gedrückthalten zum Kopieren</string>
     <string name="settings_advanced_long_click_copy_desc">Gedrückthalten, um Text zu kopieren anstatt ihn zu markieren</string>
-    <string name="settings_category_formatting">Formatierung</string>
+    <string name="settings_category_formatting">FORMATIERUNG</string>
     <string name="squareInvModuloVersion">#</string>
     <string name="settings_formatting_scientific_notation_desc">Alle Ergebnisse in wissenschaftliche Schreibweise umwandeln</string>
     <string name="settings_formatting_scientific_notation">Zahlen in wissenschaftlicher Schreibweise</string>
@@ -55,4 +55,27 @@
     <string name="copied_result">Ergebnis wurde kopiert</string>
     <string name="copied_history_calculation">Berechnung aus dem Verlauf wurde kopiert</string>
     <string name="copied_history_result">Ergebnis aus dem Verlauf wurde kopiert</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Spezifische Elemente aus dem Verlauf per Swipe löschen</string>
+    <string name="squareDesc">Quadrat</string>
+    <string name="factorialDesc">Fakultät</string>
+    <string name="scientificModeSwitchDesc">Wechsel zum wissenschaftlichem Modus</string>
+    <string name="degreeDesc">Grad</string>
+    <string name="log2Desc">Logarithmus zur Basis 2</string>
+    <string name="settings_delete_history_element_on_swipe">Verlaufselemente per Swipe löschen</string>
+    <string name="naturalLogarithmDesc">Natürlicher Logarithmus</string>
+    <string name="parenthesesDesc">Klammer</string>
+    <string name="percentDesc">Prozent</string>
+    <string name="backspaceDesc">Rückstelltaste</string>
+    <string name="invertDesc">invertieren</string>
+    <string name="tangentDesc">Tangens</string>
+    <string name="eDesc">e</string>
+    <string name="logarithmDesc">Logarithmus</string>
+    <string name="clearDesc">Löschen</string>
+    <string name="pointDesc">Komma</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Berechnungen automatisch speichern</string>
+    <string name="cosineDesc">Cosinus</string>
+    <string name="exponentDesc">Exponent</string>
+    <string name="sineDesc">Sinus</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Berechnungen automatisch im Verlauf speichern, ohne die Gleichheitstaste drücken zu müssen</string>
+    <string name="piDesc">Pi</string>
 </resources>
