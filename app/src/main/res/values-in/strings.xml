@@ -78,4 +78,5 @@
     <string name="invertDesc">inversi</string>
     <string name="pointDesc">titik</string>
     <string name="backspaceDesc">spasi mundur</string>
+    <string name="log2Desc">basis 2 logaritma</string>
 </resources>
