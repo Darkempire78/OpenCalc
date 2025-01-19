@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
 import com.darkempire78.opencalculator.history.History
 import com.google.gson.Gson
+import java.util.UUID
 
 class MyPreferences(context: Context) {
+
+    var ctx = context
 
     // https://proandroiddev.com/dark-mode-on-android-app-with-kotlin-dc759fc5f0e1
     companion object {
@@ -66,20 +69,37 @@ class MyPreferences(context: Context) {
 
     fun getHistory(): MutableList<History> {
         val gson = Gson()
-        return if (preferences.getString(KEY_HISTORY, null) != null) {
+        val historyList = if (preferences.getString(KEY_HISTORY, null) != null) {
             gson.fromJson(history, Array<History>::class.java).asList().toMutableList()
         } else {
             mutableListOf()
         }
+
+        // Add IDs to history elements that don't have them (migration from older versions)
+        var hasChanges = false
+        for (element in historyList) {
+            if (element.id.isNullOrEmpty()) {
+                element.id = UUID.randomUUID().toString()
+                hasChanges = true
+            }
+        }
+
+        // Save history if changes were made
+        if (hasChanges) {
+            saveHistory(historyList)
+        }
+
+        return historyList
     }
 
-    fun saveHistory(context: Context, history: List<History>){
+
+    fun saveHistory(history: List<History>){
         val gson = Gson()
         val history2 = history.toMutableList()
         while (historySize!!.toInt() > 0 && history2.size > historySize!!.toInt()) {
             history2.removeAt(0)
         }
-        MyPreferences(context).history = gson.toJson(history2) // Convert to json
+        MyPreferences(ctx).history = gson.toJson(history2) // Convert to json
     }
 
     fun getHistoryElementById(id: String): History? {
@@ -87,12 +107,12 @@ class MyPreferences(context: Context) {
         return history.find { it.id == id }
     }
 
-    fun updateHistoryElementById(context: Context, id: String, history: History) {
+    fun updateHistoryElementById(id: String, history: History) {
         val historyList = getHistory()
         val index = historyList.indexOfFirst { it.id == id }
         if (index != -1) {
             historyList[index] = history
-            saveHistory(context, historyList)
+            saveHistory(historyList)
         }
     }
 }

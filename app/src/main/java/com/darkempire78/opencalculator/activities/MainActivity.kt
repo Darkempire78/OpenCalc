@@ -358,7 +358,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.Default) {
             val history = MyPreferences(this@MainActivity).getHistory()
             history.removeAt(position)
-            MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+            MyPreferences(this@MainActivity).saveHistory(history)
         }
     }
 
@@ -381,7 +381,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clearHistory(menuItem: MenuItem) {
         // Clear preferences
-        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf())
+        MyPreferences(this@MainActivity).saveHistory(mutableListOf())
         // Clear drawer
         historyAdapter.clearHistory()
     }
@@ -502,7 +502,10 @@ class MainActivity : AppCompatActivity() {
                     val cursorOffset = newValueFormatted.length - newValue.length
                     binding.input.setSelection(cursorPosition + value.length + cursorOffset)
                 } else {
-                    binding.input.setSelection(leftValueFormatted.length + value.length)
+                    val desiredCursorPosition = (leftValueFormatted.length + value.length)
+                    // Limit the cursor position to the length of the input
+                    val safeCursorPosition = desiredCursorPosition.coerceAtMost(binding.input.text.length)
+                    binding.input.setSelection(safeCursorPosition)
                 }
             }
         }
@@ -652,7 +655,7 @@ class MainActivity : AppCompatActivity() {
                                     previousHistoryElement.calculation = calculation
                                     previousHistoryElement.result = formattedResult
                                     previousHistoryElement.time = System.currentTimeMillis().toString()
-                                    MyPreferences(this@MainActivity).updateHistoryElementById(this@MainActivity, lastHistoryElementId, previousHistoryElement)
+                                    MyPreferences(this@MainActivity).updateHistoryElementById(lastHistoryElementId, previousHistoryElement)
                                     withContext(Dispatchers.Main) {
                                         historyAdapter.updateHistoryElement(previousHistoryElement)
                                     }
@@ -677,7 +680,7 @@ class MainActivity : AppCompatActivity() {
                                 lastHistoryElementId = historyElementId
                                 isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = true
 
-                                MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                                MyPreferences(this@MainActivity).saveHistory(history)
 
                                 // Update history variables in the UI
                                 withContext(Dispatchers.Main) {
@@ -1027,7 +1030,7 @@ class MainActivity : AppCompatActivity() {
                                 )
                             )
 
-                            MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+                            MyPreferences(this@MainActivity).saveHistory(history)
 
                             lastHistoryElementId = historyElementId
 
@@ -1255,7 +1258,7 @@ class MainActivity : AppCompatActivity() {
         while (historySize > 0 && history.size > historySize) {
             history.removeAt(0)
         }
-        MyPreferences(this@MainActivity).saveHistory(this@MainActivity, history)
+        MyPreferences(this@MainActivity).saveHistory(history)
 
         // Disable history if setting enabled
         if (historySize == 0) {
