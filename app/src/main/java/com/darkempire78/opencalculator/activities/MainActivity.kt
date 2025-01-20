@@ -490,13 +490,7 @@ class MainActivity : AppCompatActivity() {
                                     .substring(cursorPosition, binding.input.text.length),
                                 decimalSeparatorSymbol
                             ).first()
-                            // Catch symbols between cursor position and next number
-                            // Can or should this be done elsewhere?
-                            if (!nextChar.isDigit()) {
-                                firstNumberAfter = "0"
-                            }
-                            // Catch for moving cursor to position 0 and entering another decimal
-                            // when one exists
+
                             if (nextChar == '.') {
                                 firstNumberAfter = nextChar.toString()
                             }
@@ -516,7 +510,7 @@ class MainActivity : AppCompatActivity() {
                     val cursorOffset = newValueFormatted.length - newValue.length
                     binding.input.setSelection(cursorPosition + value.length + cursorOffset)
                 } else {
-                    val desiredCursorPosition = (leftValueFormatted.length + value.length)
+                    val desiredCursorPosition = leftValueFormatted.length + value.length
                     // Limit the cursor position to the length of the input
                     val safeCursorPosition = desiredCursorPosition.coerceAtMost(binding.input.text.length)
                     binding.input.setSelection(safeCursorPosition)
