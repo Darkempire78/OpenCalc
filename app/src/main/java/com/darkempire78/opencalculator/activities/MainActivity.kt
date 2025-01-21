@@ -479,14 +479,24 @@ class MainActivity : AppCompatActivity() {
                             ).last()
                         }
                         var firstNumberAfter = ""
-                        if (cursorPosition < binding.input.text.length - 1) {
+                        var nextChar = ' '
+                        if (cursorPosition <= binding.input.text.length - 1) {
+                            nextChar = binding.input.text[cursorPosition]
+                        }
+
+                        if (cursorPosition <= binding.input.text.length - 1) {
                             firstNumberAfter = NumberFormatter.extractNumbers(
                                 binding.input.text.toString()
                                     .substring(cursorPosition, binding.input.text.length),
                                 decimalSeparatorSymbol
                             ).first()
+
+                            if (nextChar == '.') {
+                                firstNumberAfter = nextChar.toString()
+                            }
                         }
-                        if (decimalSeparatorSymbol in lastNumberBefore) { // || decimalSeparatorSymbol in firstNumberAfter) {
+                        if (decimalSeparatorSymbol in lastNumberBefore
+                            || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
                         }
                     }
@@ -500,7 +510,7 @@ class MainActivity : AppCompatActivity() {
                     val cursorOffset = newValueFormatted.length - newValue.length
                     binding.input.setSelection(cursorPosition + value.length + cursorOffset)
                 } else {
-                    val desiredCursorPosition = (leftValueFormatted.length + value.length)
+                    val desiredCursorPosition = leftValueFormatted.length + value.length
                     // Limit the cursor position to the length of the input
                     val safeCursorPosition = desiredCursorPosition.coerceAtMost(binding.input.text.length)
                     binding.input.setSelection(safeCursorPosition)
@@ -957,6 +967,8 @@ class MainActivity : AppCompatActivity() {
             keyVibration(view)
 
             val calculation = binding.input.text.toString()
+
+            Expression().addParenthesis(calculation)
 
             if (calculation != "") {
 
