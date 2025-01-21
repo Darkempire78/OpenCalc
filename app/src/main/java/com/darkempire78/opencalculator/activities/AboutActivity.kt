@@ -35,7 +35,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(view)
 
         // Set app version
-        val versionName =  this.getString(R.string.about_other_version) + " "+ BuildConfig.VERSION_NAME
+        val versionName =  this.getString(R.string.about_other_version) + " "+ BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")"
         binding.aboutAppVersion.text = versionName
 
         // back button
