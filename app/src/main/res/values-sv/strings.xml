@@ -62,4 +62,18 @@
     <string name="settings_delete_history_element_on_swipe_desc">Radera specifik historikpost vid svepning</string>
     <string name="settings_auto_save_calculation_without_equal_button">Spara uträkningar automatiskt</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Spara automatiskt uträkningar i historiken utan att behöva klicka på likamedknappen</string>
+    <string name="logarithmDesc">logaritm</string>
+    <string name="log2Desc">tvålogaritm</string>
+    <string name="naturalLogarithmDesc">naturlig logaritm</string>
+    <string name="eDesc">e</string>
+    <string name="invertDesc">invertera</string>
+    <string name="tangentDesc">tangens</string>
+    <string name="cosineDesc">cosinus</string>
+    <string name="sineDesc">sinus</string>
+    <string name="degreeDesc">grad</string>
+    <string name="piDesc">pi</string>
+    <string name="exponentDesc">exponent</string>
+    <string name="squareDesc">kvadratrot</string>
+    <string name="factorialDesc">fakultet</string>
+    <string name="scientificModeSwitchDesc">omkopplare för vetenskapligt läge</string>
 </resources>
