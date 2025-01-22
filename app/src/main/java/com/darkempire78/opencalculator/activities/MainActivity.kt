@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
@@ -199,9 +200,11 @@ class MainActivity : AppCompatActivity() {
             view.keepScreenOn = true
         }
 
-        // scientific mode enabled by default (if option enabled)
-        if (MyPreferences(this).scientificMode) {
-            enableOrDisableScientistMode()
+        if (resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            // scientific mode enabled by default in portrait mode (if option enabled)
+            if (MyPreferences(this).scientificMode) {
+                enableOrDisableScientistMode()
+            }
         }
 
         // use radians instead of degrees by default (if option enabled)
