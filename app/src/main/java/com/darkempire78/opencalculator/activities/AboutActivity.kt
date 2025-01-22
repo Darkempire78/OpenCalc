@@ -3,7 +3,10 @@ package com.darkempire78.opencalculator.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.BuildConfig
@@ -64,14 +67,49 @@ class AboutActivity : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
-        // Tip
+        // Donation
         binding.aboutDonate.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://www.paypal.me/ImDarkempire")
-            )
-            startActivity(browserIntent)
+            val dialog = AlertDialog.Builder(this)
+            val inflater = layoutInflater
+            val dialogView = inflater.inflate(R.layout.dialog_donation, null)
+            dialog.setView(dialogView)
+            dialog.setTitle(this.getString(R.string.about_dialog_donation_title))
+
+            val layoutParams = ViewGroup.MarginLayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(15, 15, 15, 15)
+            }
+            dialogView.layoutParams = layoutParams
+
+            val paypalImage = dialogView.findViewById<ImageView>(R.id.paypalImage)
+            val bmacImage = dialogView.findViewById<ImageView>(R.id.bmacImage)
+            val githubImage = dialogView.findViewById<ImageView>(R.id.githubImage)
+
+            paypalImage.setOnClickListener {
+                val paypalIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.me/ImDarkempire"))
+                startActivity(paypalIntent)
+            }
+
+            bmacImage.setOnClickListener {
+                val bmacIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/darkempire78"))
+                startActivity(bmacIntent)
+            }
+
+            githubImage.setOnClickListener {
+                val bmacIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sponsors/Darkempire78"))
+                startActivity(bmacIntent)
+            }
+
+            dialog.setPositiveButton("Fermer") { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            }
+
+            dialog.show()
         }
+
+
 
         // Github
         binding.aboutGithub.setOnClickListener {
