@@ -93,7 +93,7 @@ class HistoryAdapter(
 
         fun clearHistory() {
             this.history.clear()
-            notifyItemRangeRemoved(0, history.size)
+            notifyDataSetChanged()
         }
 
         inner class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
