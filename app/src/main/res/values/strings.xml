@@ -165,4 +165,6 @@
     <string name="require_real_number">Real number required</string>
     <string name="settings_auto_save_calculation_without_equal_button">Automatically save calculations</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Automatically save calculations in history without needing to click the equal button</string>
+    <string name="menu_donate">Support Us</string>
+    <string name="about_dialog_donation_close">Close</string>
 </resources>

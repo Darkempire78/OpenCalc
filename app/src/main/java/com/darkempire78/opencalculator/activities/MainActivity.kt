@@ -43,6 +43,7 @@ import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.darkempire78.opencalculator.calculator.is_infinity
 import com.darkempire78.opencalculator.calculator.require_real_number
 import com.darkempire78.opencalculator.calculator.syntax_error
+import com.darkempire78.opencalculator.dialogs.DonationDialog
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -378,6 +379,10 @@ class MainActivity : AppCompatActivity() {
     fun openSettings(menuItem: MenuItem) {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent, null)
+    }
+
+    fun openDonation(menuItem: MenuItem) {
+        DonationDialog(this, layoutInflater).openDonationDialog()
     }
 
     fun clearHistory(menuItem: MenuItem) {

@@ -14,6 +14,7 @@ import com.darkempire78.opencalculator.MyPreferences
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.Themes
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
+import com.darkempire78.opencalculator.dialogs.DonationDialog
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
@@ -69,47 +70,8 @@ class AboutActivity : AppCompatActivity() {
 
         // Donation
         binding.aboutDonate.setOnClickListener {
-            val dialog = AlertDialog.Builder(this)
-            val inflater = layoutInflater
-            val dialogView = inflater.inflate(R.layout.dialog_donation, null)
-            dialog.setView(dialogView)
-            dialog.setTitle(this.getString(R.string.about_dialog_donation_title))
-
-            val layoutParams = ViewGroup.MarginLayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            ).apply {
-                setMargins(15, 15, 15, 15)
-            }
-            dialogView.layoutParams = layoutParams
-
-            val paypalImage = dialogView.findViewById<ImageView>(R.id.paypalImage)
-            val bmacImage = dialogView.findViewById<ImageView>(R.id.bmacImage)
-            val githubImage = dialogView.findViewById<ImageView>(R.id.githubImage)
-
-            paypalImage.setOnClickListener {
-                val paypalIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.me/ImDarkempire"))
-                startActivity(paypalIntent)
-            }
-
-            bmacImage.setOnClickListener {
-                val bmacIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/darkempire78"))
-                startActivity(bmacIntent)
-            }
-
-            githubImage.setOnClickListener {
-                val bmacIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sponsors/Darkempire78"))
-                startActivity(bmacIntent)
-            }
-
-            dialog.setPositiveButton("Fermer") { dialogInterface, _ ->
-                dialogInterface.dismiss()
-            }
-
-            dialog.show()
+            DonationDialog(this, layoutInflater).openDonationDialog()
         }
-
-
 
         // Github
         binding.aboutGithub.setOnClickListener {
