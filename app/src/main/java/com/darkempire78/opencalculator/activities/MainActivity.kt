@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
@@ -43,6 +44,7 @@ import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.darkempire78.opencalculator.calculator.is_infinity
 import com.darkempire78.opencalculator.calculator.require_real_number
 import com.darkempire78.opencalculator.calculator.syntax_error
+import com.darkempire78.opencalculator.dialogs.DonationDialog
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -201,9 +203,11 @@ class MainActivity : AppCompatActivity() {
             view.keepScreenOn = true
         }
 
-        // scientific mode enabled by default (if option enabled)
-        if (MyPreferences(this).scientificMode) {
-            enableOrDisableScientistMode()
+        if (resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            // scientific mode enabled by default in portrait mode (if option enabled)
+            if (MyPreferences(this).scientificMode) {
+                enableOrDisableScientistMode()
+            }
         }
 
         // use radians instead of degrees by default (if option enabled)
@@ -382,6 +386,10 @@ class MainActivity : AppCompatActivity() {
     fun openSettings(menuItem: MenuItem) {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent, null)
+    }
+
+    fun openDonation(menuItem: MenuItem) {
+        DonationDialog(this, layoutInflater).openDonationDialog()
     }
 
     fun clearHistory(menuItem: MenuItem) {

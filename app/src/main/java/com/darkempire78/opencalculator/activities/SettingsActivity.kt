@@ -62,6 +62,7 @@ class SettingsActivity : AppCompatActivity() {
                 // Display the current selected language
                 appLanguagePreference?.summary = Locale.getDefault().displayLanguage
             }
+
             // Select app language button
             appLanguagePreference?.setOnPreferenceClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

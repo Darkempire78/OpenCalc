@@ -14,4 +14,9 @@
         android:id="@+id/app_menu_about_button"
         android:title="@string/menu_about"
         android:onClick="openAbout" />
+
+    <item
+        android:id="@+id/app_menu_donate_button"
+        android:title="@string/menu_donate"
+        android:onClick="openDonation" />
 </menu>
