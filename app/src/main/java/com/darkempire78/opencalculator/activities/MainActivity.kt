@@ -34,6 +34,7 @@ import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.TextSizeAdjuster
 import com.darkempire78.opencalculator.Themes
+import com.darkempire78.opencalculator.calculator.decimalToFraction
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.darkempire78.opencalculator.calculator.division_by_0
 import com.darkempire78.opencalculator.calculator.domain_error
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
+    private var showFraction = false // default
 
     private var isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
     private var lastHistoryElementId = ""
@@ -207,6 +209,11 @@ class MainActivity : AppCompatActivity() {
         // use radians instead of degrees by default (if option enabled)
         if (MyPreferences(this).useRadiansByDefault) {
             toggleDegreeMode()
+        }
+
+        // Show result fractions if enabled
+        if (MyPreferences(this).showResultFraction) {
+            showFraction = !showFraction
         }
 
         // Focus by default
@@ -390,6 +397,11 @@ class MainActivity : AppCompatActivity() {
                 view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             }
         }
+    }
+
+    private  fun getFractionPrecision(): String {
+        val fractionPrecision = MyPreferences(this).fractionPrecision
+        return fractionPrecision.toString()
     }
 
     private fun setErrorColor(errorStatus: Boolean) {
@@ -641,10 +653,18 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     withContext(Dispatchers.Main) {
-                        if (formattedResult != calculation) {
-                            binding.resultDisplay.text = formattedResult
+                        if (showFraction) {
+                            val precision = getFractionPrecision().toDouble()
+                            if (formattedResult != calculation || '.' !in formattedResult) {
+                                binding.resultDisplay.text = formattedResult
+                            } else {
+                                binding.resultDisplay.text =
+                                    decimalToFraction(calculationResult.toDouble(), precision)
+                            }
                         } else {
-                            binding.resultDisplay.text = ""
+                            if (formattedResult != calculation) {
+                                binding.resultDisplay.text = formattedResult
+                            }
                         }
                     }
 
