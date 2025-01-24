@@ -77,4 +77,7 @@
     <string name="factorialDesc">факторіал</string>
     <string name="scientificModeSwitchDesc">перемикач наукового режиму</string>
     <string name="log2Desc">логарифм основи 2</string>
+    <string name="about_dialog_donation_title">Підтримайте нас</string>
+    <string name="about_dialog_donation_close">Закрити</string>
+    <string name="menu_donate">Підтримати нас</string>
 </resources>
