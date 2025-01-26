@@ -3,7 +3,10 @@ package com.darkempire78.opencalculator.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.BuildConfig
@@ -11,6 +14,7 @@ import com.darkempire78.opencalculator.MyPreferences
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.Themes
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
+import com.darkempire78.opencalculator.dialogs.DonationDialog
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
@@ -35,7 +39,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(view)
 
         // Set app version
-        val versionName =  this.getString(R.string.about_other_version) + " "+ BuildConfig.VERSION_NAME
+        val versionName =  this.getString(R.string.about_other_version) + " "+ BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")"
         binding.aboutAppVersion.text = versionName
 
         // back button
@@ -64,13 +68,9 @@ class AboutActivity : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
-        // Tip
+        // Donation
         binding.aboutDonate.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://www.paypal.me/ImDarkempire")
-            )
-            startActivity(browserIntent)
+            DonationDialog(this, layoutInflater).openDonationDialog()
         }
 
         // Github

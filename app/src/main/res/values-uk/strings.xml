@@ -76,4 +76,5 @@
     <string name="exponentDesc">до степеня</string>
     <string name="factorialDesc">факторіал</string>
     <string name="scientificModeSwitchDesc">перемикач наукового режиму</string>
+    <string name="log2Desc">логарифм основи 2</string>
 </resources>
