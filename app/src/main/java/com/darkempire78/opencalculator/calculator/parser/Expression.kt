@@ -10,13 +10,14 @@ class Expression {
         if (cleanCalculation.contains('√')) {
             cleanCalculation = formatSquare(cleanCalculation)
         }
-        if (cleanCalculation.contains('!')) {
-            cleanCalculation = formatFactorial(cleanCalculation)
-        }
         if (cleanCalculation.contains('%')) {
             cleanCalculation = getPercentString(cleanCalculation)
             cleanCalculation = cleanCalculation.replace("%", "/100")
         }
+        if (cleanCalculation.contains('!')) {
+            cleanCalculation = formatFactorial(cleanCalculation)
+        }
+
 
         cleanCalculation = addParenthesis(cleanCalculation)
 
