@@ -61,7 +61,7 @@
     <string name="scientificModeSwitchDesc">Wechsel zum wissenschaftlichem Modus</string>
     <string name="degreeDesc">Grad</string>
     <string name="log2Desc">Logarithmus zur Basis 2</string>
-    <string name="settings_delete_history_element_on_swipe">Verlaufselemente per Swipe löschen</string>
+    <string name="settings_delete_history_element_on_swipe">Verlaufselemente durch Swipen löschen</string>
     <string name="naturalLogarithmDesc">Natürlicher Logarithmus</string>
     <string name="parenthesesDesc">Klammer</string>
     <string name="percentDesc">Prozent</string>
