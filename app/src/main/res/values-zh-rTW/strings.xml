@@ -7,7 +7,7 @@
     <string name="menu_about">關於</string>
     <!-- Theme choices -->
     <string name="theme_system">系統</string>
-    <string name="theme_amoled">Amoled 黑</string>
+    <string name="theme_amoled">Amoled 純黑色</string>
     <string name="theme_light">淺色</string>
     <string name="theme_dark">深色</string>
     <!-- Others -->
@@ -79,4 +79,8 @@
     <string name="eDesc">e</string>
     <string name="invertDesc">反轉</string>
     <string name="backspaceDesc">倒退</string>
+    <string name="about_dialog_donation_title">支持我們</string>
+    <string name="about_dialog_donation_close">關閉</string>
+    <string name="log2Desc">以2為底的對數</string>
+    <string name="menu_donate">支持我們</string>
 </resources>

@@ -76,4 +76,7 @@
     <string name="piDesc">pi</string>
     <string name="exponentDesc">exponent</string>
     <string name="log2Desc">grondtal 2 logaritme</string>
+    <string name="about_dialog_donation_title">Steun ons</string>
+    <string name="menu_donate">Steun ons</string>
+    <string name="about_dialog_donation_close">Sluiten</string>
 </resources>
