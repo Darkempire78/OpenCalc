@@ -1300,5 +1300,24 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
+
+        if (MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(2)
+            row.removeViewAt(2)
+            row.addView(backButton, 0)
+        } else if (!MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(0)
+            // Only move if backspace is in position zero in row.
+            if ("backspaceButton" in backButton.toString()) {
+                row.removeViewAt(0)
+                row.addView(backButton, 2)
+            }
+        }
+
+
     }
 }

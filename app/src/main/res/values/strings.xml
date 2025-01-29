@@ -168,5 +168,5 @@
     <string name="menu_donate">Support Us</string>
     <string name="about_dialog_donation_close">Close</string>
     <string name="settings_general_backspace">Move Backspace to Left</string>
-    <string name="settings_general_backspace_desc">Move the backspace button to far left in portrait mode. Zero and decimal slide to right. (Restart App or Rotate Screen)</string>
+    <string name="settings_general_backspace_desc">Move the backspace button to far left in portrait mode. Zero and decimal slide to right.</string>
 </resources>
