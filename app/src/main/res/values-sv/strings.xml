@@ -9,7 +9,7 @@
     <string name="about_help_translate">Översätt</string>
     <string name="settings_category_formatting">FORMATERING</string>
     <string name="settings_general_scientific_mode">Vetenskapligt läge</string>
-    <string name="settings_history_size">Resultat sparade i historiken</string>
+    <string name="settings_history_size">Resultat sparade i historik</string>
     <string name="settings_formatting_precision">Antal decimaler</string>
     <string name="settings_general_split_parenthesis_button_desc">Ta bort \"AC\"-knappen för att dela upp parenteser-knappen i två knappar</string>
     <string name="menu_settings">Inställningar</string>
@@ -58,7 +58,7 @@
     <string name="percentDesc">procent</string>
     <string name="parenthesesDesc">parenteser</string>
     <string name="clearDesc">rensa</string>
-    <string name="settings_delete_history_element_on_swipe">Tillåt selektiv radering av historiken</string>
+    <string name="settings_delete_history_element_on_swipe">Tillåt selektiv radering av historik</string>
     <string name="settings_delete_history_element_on_swipe_desc">Radera specifik historikpost vid svepning</string>
     <string name="settings_auto_save_calculation_without_equal_button">Spara uträkningar automatiskt</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Spara automatiskt uträkningar i historiken utan att behöva klicka på likamedknappen</string>
@@ -76,4 +76,7 @@
     <string name="squareDesc">kvadratrot</string>
     <string name="factorialDesc">fakultet</string>
     <string name="scientificModeSwitchDesc">omkopplare för vetenskapligt läge</string>
+    <string name="about_dialog_donation_title">Stöd oss</string>
+    <string name="menu_donate">Stöd oss</string>
+    <string name="about_dialog_donation_close">Stäng</string>
 </resources>

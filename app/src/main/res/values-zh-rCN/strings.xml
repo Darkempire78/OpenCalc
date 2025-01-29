@@ -76,4 +76,7 @@
     <string name="eDesc">e</string>
     <string name="invertDesc">倒数</string>
     <string name="log2Desc">以2为底的对数</string>
+    <string name="menu_donate">支持我们</string>
+    <string name="about_dialog_donation_title">支持我们</string>
+    <string name="about_dialog_donation_close">关闭</string>
 </resources>
