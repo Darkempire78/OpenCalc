@@ -215,11 +215,6 @@ class MainActivity : AppCompatActivity() {
             toggleDegreeMode()
         }
 
-        // Show result fractions if enabled
-        if (MyPreferences(this).showResultFraction) {
-            showFraction = !showFraction
-        }
-
         // Focus by default
         binding.input.requestFocus()
 
@@ -1262,6 +1257,14 @@ class MainActivity : AppCompatActivity() {
             binding.input.setText("")
             binding.resultDisplay.text = ""
         }
+
+        // Show result fractions if enabled
+        if (MyPreferences(this).showResultFraction) {
+            showFraction = true
+        } else {
+            showFraction = false
+        }
+
 
         // Split the parentheses button (if option is enabled)
         if (MyPreferences(this).splitParenthesisButton) {
