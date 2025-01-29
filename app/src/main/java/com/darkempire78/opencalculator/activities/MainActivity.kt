@@ -658,7 +658,7 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (showFraction) {
                             val precision = getFractionPrecision().toDouble()
-                            if (formattedResult != calculation || '.' !in formattedResult) {
+                            if (formattedResult != calculation) {
                                 binding.resultDisplay.text = formattedResult
                             } else {
                                 binding.resultDisplay.text =
