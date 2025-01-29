@@ -1305,8 +1305,10 @@ class MainActivity : AppCompatActivity() {
             && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
             val row = findViewById<TableRow>(R.id.delRow)
             val backButton = row.getChildAt(2)
-            row.removeViewAt(2)
-            row.addView(backButton, 0)
+            if ("backspaceButton" in backButton.toString()) {
+                row.removeViewAt(2)
+                row.addView(backButton, 0)
+            }
         } else if (!MyPreferences(this).moveBackButtonLeft
             && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
             val row = findViewById<TableRow>(R.id.delRow)
