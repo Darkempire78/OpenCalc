@@ -89,6 +89,24 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        app:title="@string/settings_category_fractions">
+
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.SHOW_FRACTION"
+            app:defaultValue="false"
+            app:title="@string/settings_fractions_use"
+            app:summary="@string/settings_fractions_use_desc"
+            app:icon="@drawable/precision"
+            app:widgetLayout="@drawable/material_switch" />
+        <ListPreference
+            app:key="darkempire78.opencalculator.FRACTION_PRECISION"
+            app:title="@string/settings_fractions_precision"
+            app:defaultValue="2"
+            app:entries="@array/fraction_precision_entries"
+            app:entryValues="@array/fraction_precision_values"
+            app:summary="@string/settings_fractions_precision_desc" />
+    </PreferenceCategory>
+    <PreferenceCategory
         app:title="@string/settings_category_formatting"
         app:color="?attr/text_color">
 
