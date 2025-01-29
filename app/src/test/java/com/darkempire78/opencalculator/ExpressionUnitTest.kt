@@ -171,6 +171,18 @@ class ExpressionUnitTest {
     }
 
     @Test
+    fun factorial_percent_isCorrect() {
+        var result = calculate("5!%", false).toDouble()
+        assertEquals(1.2, result, 0.0)
+
+        result = calculate("(5!%)+(5!%)", false).toDouble()
+        assertEquals(2.4, result, 0.0)
+
+        result = calculate("5!%+5!%", false).toDouble()
+        assertEquals(2.64, result, 0.0)
+    }
+
+    @Test
     fun sqrt_isCorrect() {
         var result = calculate("√2^2", false).toDouble()
         assertEquals(2.0, result, 0.0)
