@@ -17,8 +17,8 @@ import android.view.View
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
-import android.widget.EditText
 import android.widget.HorizontalScrollView
+import android.widget.TableRow
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -212,6 +212,15 @@ class MainActivity : AppCompatActivity() {
         if (MyPreferences(this).useRadiansByDefault) {
             toggleDegreeMode()
         }
+
+        if (MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(2)
+            row.removeViewAt(2)
+            row.addView(backButton, 0)
+        }
+
 
         // Focus by default
         binding.input.requestFocus()
