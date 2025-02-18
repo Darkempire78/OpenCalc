@@ -75,4 +75,6 @@
     <string name="pointDesc">point</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Sauvegarder automatiquement les calculs dans l\'historique sans devoir cliquer sur le bouton égal</string>
     <string name="settings_auto_save_calculation_without_equal_button">Sauvegarder automatiquement les calculs</string>
+    <string name="menu_donate">Soutenez nous</string>
+    <string name="log2Desc">Logarithme base 2</string>
 </resources>
