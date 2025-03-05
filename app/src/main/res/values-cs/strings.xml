@@ -76,4 +76,7 @@
     <string name="clearDesc">smazat vše</string>
     <string name="pointDesc">desetiná čárka</string>
     <string name="log2Desc">logaritmus o základu 2</string>
+    <string name="about_dialog_donation_title">Podpořte nás</string>
+    <string name="menu_donate">Podpořte nás</string>
+    <string name="about_dialog_donation_close">Zavřít</string>
 </resources>
