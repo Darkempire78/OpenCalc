@@ -1,2 +1,2 @@
 Correction :
-- correction de nombreux problème de crash
+- correction de nombreux problèmes de crash
