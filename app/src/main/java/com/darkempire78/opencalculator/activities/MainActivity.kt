@@ -144,6 +144,7 @@ class MainActivity : AppCompatActivity() {
             },
             this // Assuming this is an Activity or Fragment with a Context
         )
+        historyAdapter.updateHistoryList()
         binding.historyRecylcleView.adapter = historyAdapter
 
         // Scroll to the bottom of the recycle view
