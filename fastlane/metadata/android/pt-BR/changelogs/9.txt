@@ -1,7 +1,7 @@
-Alterações:
-- nova página de sobre
-- Adicionado separador para o tema amoled
+Mudanças:
+- nova página sobre
+- adicionar separador para o tema amoled
 
-Corrigido:
+Correções:
 - cor da caixa de seleção
-- nome do aplicativo (traduzido em EN & FR)
+- nome do aplicativo (traduzido em EN e FR)

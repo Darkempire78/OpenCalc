@@ -1,2 +1,2 @@
-Alteração:
-- Adicionado suporte a Material You (Obrigado a @MahmoudRH)
+Alterações:
+- Adicionar suporte ao Material You (graças a @MahmoudRH)
