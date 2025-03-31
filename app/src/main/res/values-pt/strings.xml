@@ -1,2 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name_display">Calculadora</string>
+    <string name="squareDesc">quadrado</string>
+    <string name="piDesc">Número π</string>
+    <string name="exponentDesc">expoente</string>
+    <string name="factorialDesc">fatorial</string>
+    <string name="scientificModeSwitchDesc">interrutor de modo científico</string>
+    <string name="cosineDesc">cosseno</string>
+    <string name="tangentDesc">tangente</string>
+    <string name="invertDesc">inverter</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">logaritmo natural</string>
+    <string name="degreeDesc">grau</string>
+    <string name="sineDesc">seno</string>
+    <string name="clearDesc">limpar</string>
+    <string name="percentDesc">por cento</string>
+    <string name="backspaceDesc">espaço traseiro</string>
+    <string name="parenthesesDesc">parênteses</string>
+    <string name="pointDesc">ponto</string>
+    <string name="menu_clear_history">Limpar histórico</string>
+    <string name="menu_about">Sobre nós</string>
+    <string name="settings_category_general">GERAL</string>
+    <string name="settings_category_formatting">FORMATAÇÃO</string>
+    <string name="settings_category_history">HISTÓRICO</string>
+    <string name="settings_category_advanced">AVANÇADO</string>
+    <string name="settings_general_language">Idioma</string>
+    <string name="settings_general_theme">Tema</string>
+    <string name="settings_general_vibration">Vibração</string>
+    <string name="settings_general_radians">Radianos</string>
+    <string name="settings_general_vibration_desc">Vibrar quando um botão é premido</string>
+    <string name="settings_general_scientific_mode">Modo científico</string>
+    <string name="settings_general_radians_desc">Utilizar radianos em vez de graus por defeito</string>
+    <string name="settings_general_scientific_mode_desc">Ativar o modo científico por predefinição</string>
+    <string name="settings_general_split_parenthesis_button">Dividir o botão dos parênteses em dois botões</string>
+    <string name="settings_formatting_precision">Número de casas decimais</string>
+    <string name="settings_general_add_modulo_desc">Substituir o botão “X²” por um botão de módulo (disponível quando o botão “INV” é premido)</string>
+    <string name="settings_general_split_parenthesis_button_desc">Remover o botão “AC” para dividir o botão dos parênteses em dois botões</string>
+    <string name="logarithmDesc">logaritmo</string>
+    <string name="log2Desc">logaritmo de base 2</string>
+    <string name="menu_settings">Definições</string>
+    <string name="settings_general_add_modulo">Adicionar um botão de módulo</string>
+</resources>
