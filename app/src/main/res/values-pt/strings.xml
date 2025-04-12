@@ -40,4 +40,10 @@
     <string name="log2Desc">logaritmo de base 2</string>
     <string name="menu_settings">Definições</string>
     <string name="settings_general_add_modulo">Adicionar um botão de módulo</string>
+    <string name="settings_formatting_scientific_notation_desc">Converter todos os resultados em notação científica</string>
+    <string name="settings_formatting_scientific_notation">Número em notação científica</string>
+    <string name="settings_advanced_long_click_copy">Pressão longa para copiar o valor</string>
+    <string name="settings_history_size">Resultados guardados no histórico</string>
+    <string name="settings_delete_history_element_on_swipe">Permitir a eliminação selectiva do histórico</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Eliminar um elemento específico do histórico ao passar o dedo</string>
 </resources>
