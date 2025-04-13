@@ -1,2 +1,2 @@
 Fehlerbehebungen:
-- Material You Design
+- Material-You-Design

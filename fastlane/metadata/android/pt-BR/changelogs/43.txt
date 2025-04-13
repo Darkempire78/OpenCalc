@@ -1,13 +1,13 @@
 Novo:
-- Adicionado a licença para seção sobre
+- Adicionar licença à seção sobre
 
-Melhorias:
-- Atualizada várias traduções
-- Ativar símbolo antes decimal
+Aprimoramentos:
+- Atualizar várias traduções
+- Ativar o símbolo antes do decimal
 
 Correções:
 - Localização do cursor
-- Crash quando raiz da base negativa
-- Travamento ao fazer log ou ln de um número negativo
-- Travamento quando recriar paisagem na atividade principal
-- Tudo depois ').' em um cálculo é ignorado
+- Falha ao fazer a raiz de uma base negativa
+- Falha ao fazer log ou ln de um número negativo
+- Falha ao recriar a atividade principal da paisagem
+- Tudo após ').' em um cálculo é ignorado

@@ -1,5 +1,5 @@
-Alteração:
+Alterações:
 - Disponível para SDK 21+ (Android 5.0)
 
-Fixes:
-- Corrigido vibração
+Correção:
+- Correção da vibração
