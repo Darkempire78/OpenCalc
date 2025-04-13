@@ -1,2 +1,2 @@
-Corrigido:
-- Adicionando vibrações aos botões que não os têm
+Correções:
+- Adiciona vibrações a botões que não as têm

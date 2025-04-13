@@ -1,2 +1,2 @@
-Corrigido:
-- Tema Material You corrigido
+Correções:
+- Corrigir o tema Material You

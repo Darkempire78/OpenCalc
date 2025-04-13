@@ -38,7 +38,7 @@
     <string name="about_category_social">MEDIA SPOŁECZNOŚCIOWE</string>
     <string name="settings_general_radians">Radiany</string>
     <string name="about_category_help">WSPOMÓŻ NAS</string>
-    <string name="about_help_donate">Wesprzyj nas</string>
+    <string name="about_help_donate">Podaruj</string>
     <string name="settings_category_formatting">FORMATOWANIE</string>
     <string name="settings_general_split_parenthesis_button">Rozdziel przycisk z nawiasami na dwa</string>
     <string name="settings_formatting_scientific_notation">Liczba w postaci wykładniczej</string>
@@ -51,4 +51,22 @@
     <string name="settings_advanced_long_click_copy_desc">Długie naciśnięcie kopiuje tekst zamiast go zaznaczać</string>
     <string name="about_other_license">Licencja GPL 3.0</string>
     <string name="copied_result">Skopiowany wynik</string>
+    <string name="settings_delete_history_element_on_swipe">Zezwalaj na selektywne usuwanie historii</string>
+    <string name="settings_delete_history_element_on_swipe_desc">Usuń określony element historii po przesunięciu</string>
+    <string name="about_dialog_donation_title">Wesprzyj nas</string>
+    <string name="copied_history_calculation">Skopiowano obliczenia historii</string>
+    <string name="copied_history_result">Skopiowano wynik historii</string>
+    <string name="settings_auto_save_calculation_without_equal_button">Automatyczne zapisywanie obliczeń</string>
+    <string name="menu_donate">Wesprzyj nas</string>
+    <string name="about_dialog_donation_close">Zamknij</string>
+    <string name="sineDesc">sinus</string>
+    <string name="clearDesc">wyczyść</string>
+    <string name="percentDesc">procent</string>
+    <string name="scientificModeSwitchDesc">przełącznik trybu naukowego</string>
+    <string name="settings_auto_save_calculation_without_equal_button_desc">Automatyczne zapisywanie obliczeń w historii bez konieczności klikania przycisku równości</string>
+    <string name="naturalLogarithmDesc">logarytm naturalny</string>
+    <string name="logarithmDesc">logarytm</string>
+    <string name="log2Desc">logarytm o podstawie 2</string>
+    <string name="cosineDesc">cosinus</string>
+    <string name="tangentDesc">tangens</string>
 </resources>

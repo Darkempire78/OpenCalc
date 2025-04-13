@@ -2,7 +2,7 @@ Neu:
 - Toast-Nachricht, wenn ein Wert kopiert wird
 
 Fehlerbehebungen:
-- Material You Design folgt dem System Design
+- Material-You-Design folgt dem Systemdesign
 - Unterstützung für Tablets verbessert
 - Unterstützung für kleine Bildschirmgrößen verbessert
-- Icon nicht für Android unter 8 angezeigt
+- Icon wird nicht angezeigt bei Android unter 8

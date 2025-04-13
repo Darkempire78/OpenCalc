@@ -74,7 +74,7 @@ class HistoryAdapter(
         }
 
 
-        private fun updateHistoryList() {
+        fun updateHistoryList() {
             this.history = MyPreferences(context).getHistory()
         }
         fun updateHistoryElement(historyElement: History) {

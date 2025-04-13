@@ -5,4 +5,4 @@ Neu:
 - Codeverbesserung
 
 Fehlerbehebungen:
-- Folge dem System Design beim ersten Start der App
+- Beim ersten Start der App dem Systemdesign folgen

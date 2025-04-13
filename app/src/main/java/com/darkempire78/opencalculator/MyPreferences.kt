@@ -29,6 +29,7 @@ class MyPreferences(context: Context) {
         private const val KEY_DELETE_HISTORY_ON_SWIPE = "darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
         private const val KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON = "darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
         private const val KEY_MOVE_BACK_BUTTON_LEFT = "darkempire78.opencalculator.MOVE_BACK_BUTTON_LEFT"
+        private const val KEY_NUMBERING_SYSTEM = "darkempire78.opencalculator.NUMBERING_SYSTEM"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -68,6 +69,9 @@ class MyPreferences(context: Context) {
 
     var moveBackButtonLeft = preferences.getBoolean(KEY_MOVE_BACK_BUTTON_LEFT, true)
         set(value) = preferences.edit().putBoolean(KEY_MOVE_BACK_BUTTON_LEFT, value).apply()
+
+    var numberingSystem = preferences.getInt(KEY_NUMBERING_SYSTEM, 0)
+        set(value) = preferences.edit().putInt(KEY_NUMBERING_SYSTEM, value).apply()
 
 
 
