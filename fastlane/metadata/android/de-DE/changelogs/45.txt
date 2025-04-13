@@ -1,0 +1,24 @@
+Neu:
+– BigDecimal anstelle von Double verwenden
+– Einstellung zum Konvertieren der Ergebnisse in wissenschaftliche Schreibweise
+– Option zum Verwenden von Modulo
+– Option, um einen Wert auszuwählen, anstatt ihn zu kopieren
+– Option zum Aufteilen der Klammern-Taste
+– Option zum Deaktivieren des Verlaufs
+– Lizenz zum Menü "Über" hinzugefügt
+
+Verbesserungen:
+– Taschenrechner optimiert
+– Nicht notwendiges EditText durch TextView ersetzt
+– Symbol vor dem Dezimalzeichen
+– Hitbox des Zurück-Buttons vergrößert
+– Mehrerere Übersetzungen aktualisiert
+
+Fehlerbehebungen:
+– Cursorposition
+– Problem beim Anwenden des Designs im AMOLED-Modus
+– Dezimales Fakultätsergebnis
+– Querformat versteckt einige Schaltflächensymbole
+– Graues Rechteck neben den Einstellungen
+– Probleme bei der Formatierung
+– Viele andere Korrekturen …

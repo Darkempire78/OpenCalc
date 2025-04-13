@@ -74,5 +74,9 @@
     <string name="pointDesc">ponto</string>
     <string name="scientificModeSwitchDesc">ligar modo científico</string>
     <string name="degreeDesc">grau</string>
-    <string name="invertDesc">inverso</string>
+    <string name="invertDesc">inverter</string>
+    <string name="about_dialog_donation_title">Apoie-nos</string>
+    <string name="menu_donate">Apoie-nos</string>
+    <string name="about_dialog_donation_close">Fechar</string>
+    <string name="log2Desc">logaritmo de base 2</string>
 </resources>
