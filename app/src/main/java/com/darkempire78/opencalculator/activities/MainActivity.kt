@@ -17,7 +17,6 @@ import android.view.View
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
-import android.widget.EditText
 import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.activity.addCallback
@@ -28,22 +27,24 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.darkempire78.opencalculator.calculator.Calculator
-import com.darkempire78.opencalculator.calculator.parser.Expression
 import com.darkempire78.opencalculator.MyPreferences
-import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.TextSizeAdjuster
 import com.darkempire78.opencalculator.Themes
-import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.darkempire78.opencalculator.calculator.Calculator
 import com.darkempire78.opencalculator.calculator.division_by_0
 import com.darkempire78.opencalculator.calculator.domain_error
-import com.darkempire78.opencalculator.history.History
-import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.darkempire78.opencalculator.calculator.is_infinity
+import com.darkempire78.opencalculator.calculator.parser.Expression
+import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
+import com.darkempire78.opencalculator.calculator.parser.NumberingSystem
+import com.darkempire78.opencalculator.calculator.parser.NumberingSystem.Companion.toNumberingSystem
 import com.darkempire78.opencalculator.calculator.require_real_number
 import com.darkempire78.opencalculator.calculator.syntax_error
+import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.darkempire78.opencalculator.dialogs.DonationDialog
+import com.darkempire78.opencalculator.history.History
+import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -52,7 +53,8 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
-import java.util.*
+import java.util.Locale
+import java.util.UUID
 
 
 var appLanguage: Locale = Locale.getDefault()
@@ -65,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol =
         DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+
+    private var numberingSystem = NumberingSystem.INTERNATIONAL
 
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
@@ -97,6 +101,9 @@ class MainActivity : AppCompatActivity() {
         val themes = Themes(this)
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
+
+        val fromPrefs = MyPreferences(this).numberingSystem
+        numberingSystem = fromPrefs.toNumberingSystem()
 
         currentTheme = themes.getTheme()
 
@@ -464,13 +471,13 @@ class MainActivity : AppCompatActivity() {
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
             val leftValueFormatted =
-                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
 
             val newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
 
             withContext(Dispatchers.Main) {
                 // Update Display
@@ -586,7 +593,8 @@ class MainActivity : AppCompatActivity() {
                     var formattedResult = NumberFormatter.format(
                         calculationResult.toString().replace(".", decimalSeparatorSymbol),
                         decimalSeparatorSymbol,
-                        groupingSeparatorSymbol
+                        groupingSeparatorSymbol,
+                        numberingSystem
                     )
 
                     // Remove zeros at the end of the results (after point)
@@ -606,7 +614,9 @@ class MainActivity : AppCompatActivity() {
                                 resultWithoutZeros.replace(
                                     ".",
                                     decimalSeparatorSymbol
-                                ), decimalSeparatorSymbol, groupingSeparatorSymbol
+                                ), decimalSeparatorSymbol,
+                                groupingSeparatorSymbol,
+                                numberingSystem
                             )
                         }
                     }
@@ -976,7 +986,8 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(
                     resultString.replace(".", decimalSeparatorSymbol),
                     decimalSeparatorSymbol,
-                    groupingSeparatorSymbol
+                    groupingSeparatorSymbol,
+                    numberingSystem
                 )
 
                 // If result is a number and it is finite
@@ -995,7 +1006,8 @@ class MainActivity : AppCompatActivity() {
                             resultWithoutZeros.replace(
                                 ".",
                                 decimalSeparatorSymbol
-                            ), decimalSeparatorSymbol, groupingSeparatorSymbol
+                            ), decimalSeparatorSymbol, groupingSeparatorSymbol,
+                            numberingSystem
                         )
                     }
 
@@ -1203,7 +1215,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
             var cursorOffset = newValueFormatted.length - newValue.length - rightSideCommas
             if (cursorOffset < 0) cursorOffset = 0
 
@@ -1217,9 +1229,18 @@ class MainActivity : AppCompatActivity() {
         enableOrDisableScientistMode()
     }
 
+    private fun updateInputDisplay() {
+        val expression = binding.input.text.toString()
+        val formatted = NumberFormatter.format(expression, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
+        binding.input.setText(formatted)
+    }
+
     // Update settings
     override fun onResume() {
         super.onResume()
+
+        val fromPrefs = MyPreferences(this).numberingSystem
+        numberingSystem = fromPrefs.toNumberingSystem()
 
         // Update the theme
         val themes = Themes(this)
@@ -1233,6 +1254,9 @@ class MainActivity : AppCompatActivity() {
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
             binding.resultDisplay.text = ""
+        } else {
+            updateResultDisplay()
+            updateInputDisplay()
         }
 
         // Split the parentheses button (if option is enabled)
