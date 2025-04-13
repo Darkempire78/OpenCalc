@@ -473,44 +473,6 @@ class MainActivity : AppCompatActivity() {
                 NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
-                // Avoid two decimalSeparator in the same number
-                // when you click on the decimalSeparator button
-                if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
-                    if (binding.input.text.toString().isNotEmpty()) {
-                        var lastNumberBefore = ""
-                        if (cursorPosition > 0 && binding.input.text.toString()
-                                .substring(0, cursorPosition)
-                                .last() in "0123456789\\$decimalSeparatorSymbol"
-                        ) {
-                            lastNumberBefore = NumberFormatter.extractNumbers(
-                                binding.input.text.toString().substring(0, cursorPosition),
-                                decimalSeparatorSymbol
-                            ).last()
-                        }
-                        var firstNumberAfter = ""
-                        var nextChar = ' '
-                        if (cursorPosition <= binding.input.text.length - 1) {
-                            nextChar = binding.input.text[cursorPosition]
-                        }
-
-                        if (cursorPosition <= binding.input.text.length - 1) {
-                            firstNumberAfter = NumberFormatter.extractNumbers(
-                                binding.input.text.toString()
-                                    .substring(cursorPosition, binding.input.text.length),
-                                decimalSeparatorSymbol
-                            ).first()
-
-                            if (nextChar == '.') {
-                                firstNumberAfter = nextChar.toString()
-                            }
-                        }
-                        if (decimalSeparatorSymbol in lastNumberBefore
-                            || decimalSeparatorSymbol in firstNumberAfter) {
-                            return@withContext
-                        }
-                    }
-                }
-
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
@@ -843,7 +805,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointButton(view: View) {
-        updateDisplay(view, decimalSeparatorSymbol)
+        val cursorPosition = binding.input.selectionStart
+        var currentNumber = ""
+        if (binding.input.text.toString().isNotEmpty()) {
+            var startPosition = 0
+            var endPosition = 0
+            if (cursorPosition > 0) {
+                startPosition = cursorPosition
+                while (startPosition > 0 && (binding.input.text[startPosition - 1].isDigit()
+                            || binding.input.text[startPosition - 1].toString() == decimalSeparatorSymbol
+                            || binding.input.text[startPosition - 1].toString() == groupingSeparatorSymbol)) {
+                    startPosition -= 1
+                }
+            }
+            if (cursorPosition == binding.input.text.length) {
+                endPosition = binding.input.text.length
+            }
+            if (cursorPosition < binding.input.text.length) {
+                endPosition = if (cursorPosition != 0) cursorPosition else 0
+                while (endPosition < binding.input.text.length
+                    && (binding.input.text[endPosition].isDigit()
+                            || binding.input.text[endPosition].toString() == decimalSeparatorSymbol
+                            || binding.input.text[endPosition].toString() == groupingSeparatorSymbol)) {
+                        endPosition += 1
+                    }
+            }
+            currentNumber = binding.input.text.substring(startPosition, endPosition)
+        }
+        if (decimalSeparatorSymbol !in currentNumber) {
+            updateDisplay(view, decimalSeparatorSymbol)
+        }
     }
 
     fun sineButton(view: View) {
