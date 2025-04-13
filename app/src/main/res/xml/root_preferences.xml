@@ -32,7 +32,7 @@
             app:enabled="true"
             app:title="Numbering System"
             app:summary="APP THEME"
-            app:icon="@drawable/theme" />
+            app:icon="@drawable/numbering_system" />
 
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
