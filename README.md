@@ -118,3 +118,5 @@ OpenCalc doesn't use mXparser anymore since the v2.0.0 for two main reasons:
 
 <div align='center'><a href='https://www.websitecounterfree.com'><img src='https://www.websitecounterfree.com/c.php?d=9&id=54724&s=1' border='0' alt='Free Website Counter'></a></div>
 <!-- View counter added on June 2, 2024 -->
+</div>
+</div>
