@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="menu_clear_history">Wyczyść Historię</string>
+    <string name="menu_clear_history">Wyczyść historię</string>
     <string name="theme_system">System</string>
     <string name="theme_amoled">Amoled</string>
     <string name="theme_light">Jasny</string>
@@ -69,4 +69,12 @@
     <string name="log2Desc">logarytm o podstawie 2</string>
     <string name="cosineDesc">cosinus</string>
     <string name="tangentDesc">tangens</string>
+    <string name="piDesc">liczba pi</string>
+    <string name="invertDesc">inwersja</string>
+    <string name="squareDesc">kwadratowy</string>
+    <string name="eDesc">e</string>
+    <string name="parenthesesDesc">nawias</string>
+    <string name="factorialDesc">silnia</string>
+    <string name="degreeDesc">stopień</string>
+    <string name="exponentDesc">wykładnik</string>
 </resources>
