@@ -46,4 +46,12 @@
     <string name="settings_history_size">Resultados guardados no histórico</string>
     <string name="settings_delete_history_element_on_swipe">Permitir a eliminação selectiva do histórico</string>
     <string name="settings_delete_history_element_on_swipe_desc">Eliminar um elemento específico do histórico ao passar o dedo</string>
+    <string name="settings_advanced_long_click_copy_desc">A pressão prolongada copia o texto do item em vez de o selecionar</string>
+    <string name="settings_advanced_prevent_sleep_desc">Evitar que o dispositivo adormeça enquanto a aplicação está em primeiro plano</string>
+    <string name="settings_advanced_prevent_sleep">Manter o dispositivo acordado</string>
+    <string name="about_category_info">INFORMAÇÕES SOBRE A APLICAÇÃO</string>
+    <string name="about_category_social">SOCIAL</string>
+    <string name="about_category_help">AJUDE-NOS</string>
+    <string name="about_help_donate">Doar</string>
+    <string name="about_dialog_donation_title">Apoie-nos</string>
 </resources>

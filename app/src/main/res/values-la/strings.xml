@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="piDesc">numerus pi</string>
+    <string name="exponentDesc">exponens</string>
+    <string name="factorialDesc">factorialis</string>
+    <string name="settings_general_language">Lingua</string>
+    <string name="settings_general_vibration">Vibratio</string>
+    <string name="settings_general_radians">Radians</string>
+    <string name="about_category_social">MEDIA SOCIALIA</string>
+    <string name="about_category_info">INFORMATIO APPLICATIONIS</string>
+    <string name="about_help_donate">Dona</string>
+    <string name="about_help_translate">Transfer</string>
+    <string name="degreeDesc">gradus</string>
+    <string name="squareDesc">radix quadrata</string>
+    <string name="app_name_display">Calculatrum</string>
+    <string name="theme_amoled">Amoled</string>
+    <string name="settings_category_history">HISTORIA</string>
+    <string name="about_category_help">ADIUVA NOS</string>
+</resources>
