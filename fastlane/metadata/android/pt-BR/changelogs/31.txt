@@ -1,9 +1,9 @@
 Atualizado:
-- Alterar a cor do texto do erro
+- Alterar a cor do texto em caso de erro
 - Reduzir o tamanho da versão
-- Não salve um resultado na história se for igual ao cálculo
-- Não salve o cálculo na história se for o mesmo que o mais recente
+- Não salvar um resultado no histórico se ele for igual ao cálculo
+- Não salvar o cálculo no histórico se ele for igual ao mais recente
 
-Corrigido:
-- Factoriel 0 retorna 1
-- Adicionar símbolo de matemática após então igual foi pressionado
+Correções:
+- O fatorial 0 retorna 1
+- Adicionar o símbolo matemático depois que o botão “igual” for pressionado

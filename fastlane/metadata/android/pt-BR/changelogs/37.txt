@@ -1,5 +1,5 @@
 Novo:
-- Telha de configurações rápidas
+- Bloco de configurações rápidas
 
-Corrigido:
-- Annoying toasts
+Correções:
+- Notificações incômodas

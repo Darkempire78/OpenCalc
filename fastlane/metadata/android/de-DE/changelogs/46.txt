@@ -1,0 +1,8 @@
+Verbesserungen:
+* Übersetzungen aktualisiert
+* BroadcastReceiver implementiert, um Aktivität von TileService zu starten
+
+Fehlerbehebungen:
+* Formatierungsproblem mit Nullen nach dem Komma
+* Log-Absturz behoben, wenn x < 0
+* Absturz beim Drücken der Quadratwurzel nach Syntaxfehler

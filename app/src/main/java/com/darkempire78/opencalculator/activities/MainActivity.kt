@@ -17,7 +17,6 @@ import android.view.View
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
-import android.widget.EditText
 import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.activity.addCallback
@@ -28,23 +27,26 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.darkempire78.opencalculator.calculator.Calculator
-import com.darkempire78.opencalculator.calculator.parser.Expression
 import com.darkempire78.opencalculator.MyPreferences
-import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.TextSizeAdjuster
 import com.darkempire78.opencalculator.Themes
 import com.darkempire78.opencalculator.calculator.decimalToFraction
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.darkempire78.opencalculator.calculator.Calculator
 import com.darkempire78.opencalculator.calculator.division_by_0
 import com.darkempire78.opencalculator.calculator.domain_error
-import com.darkempire78.opencalculator.history.History
-import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.darkempire78.opencalculator.calculator.is_infinity
+import com.darkempire78.opencalculator.calculator.parser.Expression
+import com.darkempire78.opencalculator.calculator.parser.NumberFormatter
+import com.darkempire78.opencalculator.calculator.parser.NumberingSystem
+import com.darkempire78.opencalculator.calculator.parser.NumberingSystem.Companion.toNumberingSystem
 import com.darkempire78.opencalculator.calculator.require_real_number
 import com.darkempire78.opencalculator.calculator.syntax_error
+import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.darkempire78.opencalculator.dialogs.DonationDialog
+import com.darkempire78.opencalculator.history.History
+import com.darkempire78.opencalculator.history.HistoryAdapter
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -53,7 +55,8 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
-import java.util.*
+import java.util.Locale
+import java.util.UUID
 
 
 var appLanguage: Locale = Locale.getDefault()
@@ -66,6 +69,8 @@ class MainActivity : AppCompatActivity() {
         DecimalFormatSymbols.getInstance().decimalSeparator.toString()
     private val groupingSeparatorSymbol =
         DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+
+    private var numberingSystem = NumberingSystem.INTERNATIONAL
 
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
@@ -99,6 +104,9 @@ class MainActivity : AppCompatActivity() {
         val themes = Themes(this)
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
+
+        val fromPrefs = MyPreferences(this).numberingSystem
+        numberingSystem = fromPrefs.toNumberingSystem()
 
         currentTheme = themes.getTheme()
 
@@ -146,6 +154,7 @@ class MainActivity : AppCompatActivity() {
             },
             this // Assuming this is an Activity or Fragment with a Context
         )
+        historyAdapter.updateHistoryList()
         binding.historyRecylcleView.adapter = historyAdapter
 
         // Scroll to the bottom of the recycle view
@@ -470,53 +479,15 @@ class MainActivity : AppCompatActivity() {
             val cursorPosition = binding.input.selectionStart
             val leftValue = formerValue.subSequence(0, cursorPosition).toString()
             val leftValueFormatted =
-                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(leftValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
             val rightValue = formerValue.subSequence(cursorPosition, formerValue.length).toString()
 
             val newValue = leftValue + value + rightValue
 
             val newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
 
             withContext(Dispatchers.Main) {
-                // Avoid two decimalSeparator in the same number
-                // when you click on the decimalSeparator button
-                if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
-                    if (binding.input.text.toString().isNotEmpty()) {
-                        var lastNumberBefore = ""
-                        if (cursorPosition > 0 && binding.input.text.toString()
-                                .substring(0, cursorPosition)
-                                .last() in "0123456789\\$decimalSeparatorSymbol"
-                        ) {
-                            lastNumberBefore = NumberFormatter.extractNumbers(
-                                binding.input.text.toString().substring(0, cursorPosition),
-                                decimalSeparatorSymbol
-                            ).last()
-                        }
-                        var firstNumberAfter = ""
-                        var nextChar = ' '
-                        if (cursorPosition <= binding.input.text.length - 1) {
-                            nextChar = binding.input.text[cursorPosition]
-                        }
-
-                        if (cursorPosition <= binding.input.text.length - 1) {
-                            firstNumberAfter = NumberFormatter.extractNumbers(
-                                binding.input.text.toString()
-                                    .substring(cursorPosition, binding.input.text.length),
-                                decimalSeparatorSymbol
-                            ).first()
-
-                            if (nextChar == '.') {
-                                firstNumberAfter = nextChar.toString()
-                            }
-                        }
-                        if (decimalSeparatorSymbol in lastNumberBefore
-                            || decimalSeparatorSymbol in firstNumberAfter) {
-                            return@withContext
-                        }
-                    }
-                }
-
                 // Update Display
                 binding.input.setText(newValueFormatted)
 
@@ -630,7 +601,8 @@ class MainActivity : AppCompatActivity() {
                     var formattedResult = NumberFormatter.format(
                         calculationResult.toString().replace(".", decimalSeparatorSymbol),
                         decimalSeparatorSymbol,
-                        groupingSeparatorSymbol
+                        groupingSeparatorSymbol,
+                        numberingSystem
                     )
 
                     // Remove zeros at the end of the results (after point)
@@ -650,7 +622,9 @@ class MainActivity : AppCompatActivity() {
                                 resultWithoutZeros.replace(
                                     ".",
                                     decimalSeparatorSymbol
-                                ), decimalSeparatorSymbol, groupingSeparatorSymbol
+                                ), decimalSeparatorSymbol,
+                                groupingSeparatorSymbol,
+                                numberingSystem
                             )
                         }
                     }
@@ -857,7 +831,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pointButton(view: View) {
-        updateDisplay(view, decimalSeparatorSymbol)
+        val cursorPosition = binding.input.selectionStart
+        var currentNumber = ""
+        if (binding.input.text.toString().isNotEmpty()) {
+            var startPosition = 0
+            var endPosition = 0
+            if (cursorPosition > 0) {
+                startPosition = cursorPosition
+                while (startPosition > 0 && (binding.input.text[startPosition - 1].isDigit()
+                            || binding.input.text[startPosition - 1].toString() == decimalSeparatorSymbol
+                            || binding.input.text[startPosition - 1].toString() == groupingSeparatorSymbol)) {
+                    startPosition -= 1
+                }
+            }
+            if (cursorPosition == binding.input.text.length) {
+                endPosition = binding.input.text.length
+            }
+            if (cursorPosition < binding.input.text.length) {
+                endPosition = if (cursorPosition != 0) cursorPosition else 0
+                while (endPosition < binding.input.text.length
+                    && (binding.input.text[endPosition].isDigit()
+                            || binding.input.text[endPosition].toString() == decimalSeparatorSymbol
+                            || binding.input.text[endPosition].toString() == groupingSeparatorSymbol)) {
+                        endPosition += 1
+                    }
+            }
+            currentNumber = binding.input.text.substring(startPosition, endPosition)
+        }
+        if (decimalSeparatorSymbol !in currentNumber) {
+            updateDisplay(view, decimalSeparatorSymbol)
+        }
     }
 
     fun sineButton(view: View) {
@@ -999,7 +1002,8 @@ class MainActivity : AppCompatActivity() {
                 var formattedResult = NumberFormatter.format(
                     resultString.replace(".", decimalSeparatorSymbol),
                     decimalSeparatorSymbol,
-                    groupingSeparatorSymbol
+                    groupingSeparatorSymbol,
+                    numberingSystem
                 )
 
                 // If result is a number and it is finite
@@ -1018,7 +1022,8 @@ class MainActivity : AppCompatActivity() {
                             resultWithoutZeros.replace(
                                 ".",
                                 decimalSeparatorSymbol
-                            ), decimalSeparatorSymbol, groupingSeparatorSymbol
+                            ), decimalSeparatorSymbol, groupingSeparatorSymbol,
+                            numberingSystem
                         )
                     }
 
@@ -1226,7 +1231,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val newValueFormatted =
-                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
             var cursorOffset = newValueFormatted.length - newValue.length - rightSideCommas
             if (cursorOffset < 0) cursorOffset = 0
 
@@ -1240,9 +1245,22 @@ class MainActivity : AppCompatActivity() {
         enableOrDisableScientistMode()
     }
 
+    private fun updateInputDisplay() {
+        val expression = binding.input.text.toString()
+        val formatted = NumberFormatter.format(expression, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
+        val cursorPosition = binding.input.selectionStart
+        binding.input.setText(formatted)
+        // Set cursor to previous location before resume.
+        // Setting text on resume resets cursor to position 0
+        binding.input.setSelection(cursorPosition)
+    }
+
     // Update settings
     override fun onResume() {
         super.onResume()
+
+        val fromPrefs = MyPreferences(this).numberingSystem
+        numberingSystem = fromPrefs.toNumberingSystem()
 
         // Update the theme
         val themes = Themes(this)
@@ -1256,6 +1274,9 @@ class MainActivity : AppCompatActivity() {
             // Clear inputs to avoid conflicts with decimal & grouping separators
             binding.input.setText("")
             binding.resultDisplay.text = ""
+        } else {
+            updateResultDisplay()
+            updateInputDisplay()
         }
 
         // Show result fractions if enabled

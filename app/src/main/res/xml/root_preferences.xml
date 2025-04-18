@@ -25,6 +25,15 @@
             app:summary="APP THEME"
             app:icon="@drawable/theme" />
 
+        <Preference
+            android:id="@+id/settings_select_numbering_system"
+            app:key="darkempire78.opencalculator.NUMBERING_SYSTEM"
+            app:selectable="true"
+            app:enabled="true"
+            app:title="Numbering System"
+            app:summary="APP THEME"
+            app:icon="@drawable/numbering_system" />
+
         <SwitchPreferenceCompat
             app:key="darkempire78.opencalculator.KEY_VIBRATION_STATUS"
             app:title="@string/settings_general_vibration"

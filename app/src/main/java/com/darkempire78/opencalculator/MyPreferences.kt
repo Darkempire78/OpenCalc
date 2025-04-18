@@ -30,6 +30,7 @@ class MyPreferences(context: Context) {
         private const val KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON = "darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
         private const val KEY_SHOW_FRACTION = "darkempire78.opencalculator.SHOW_FRACTION"
         private const val KEY_FRACTION_PRECISION = "darkempire78.opencalculator.FRACTION_PRECISION"
+        private const val KEY_NUMBERING_SYSTEM = "darkempire78.opencalculator.NUMBERING_SYSTEM"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -71,6 +72,10 @@ class MyPreferences(context: Context) {
         set(value) = preferences.edit().putBoolean(KEY_SHOW_FRACTION, value).apply()
     var fractionPrecision = preferences.getString(KEY_FRACTION_PRECISION, "4")
         set(value) = preferences.edit().putString(KEY_FRACTION_PRECISION, value).apply()
+    var numberingSystem = preferences.getInt(KEY_NUMBERING_SYSTEM, 0)
+        set(value) = preferences.edit().putInt(KEY_NUMBERING_SYSTEM, value).apply()
+
+
 
 
     fun getHistory(): MutableList<History> {
