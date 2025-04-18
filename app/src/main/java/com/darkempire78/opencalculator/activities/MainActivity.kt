@@ -1232,7 +1232,11 @@ class MainActivity : AppCompatActivity() {
     private fun updateInputDisplay() {
         val expression = binding.input.text.toString()
         val formatted = NumberFormatter.format(expression, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
+        val cursorPosition = binding.input.selectionStart
         binding.input.setText(formatted)
+        // Set cursor to previous location before resume.
+        // Setting text on resume resets cursor to position 0
+        binding.input.setSelection(cursorPosition)
     }
 
     // Update settings
