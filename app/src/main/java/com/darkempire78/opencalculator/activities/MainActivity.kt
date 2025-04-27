@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -31,9 +32,8 @@ import com.darkempire78.opencalculator.MyPreferences
 import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.TextSizeAdjuster
 import com.darkempire78.opencalculator.Themes
-import com.darkempire78.opencalculator.calculator.decimalToFraction
-import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.darkempire78.opencalculator.calculator.Calculator
+import com.darkempire78.opencalculator.calculator.decimalToFraction
 import com.darkempire78.opencalculator.calculator.division_by_0
 import com.darkempire78.opencalculator.calculator.domain_error
 import com.darkempire78.opencalculator.calculator.is_infinity
@@ -630,18 +630,18 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     withContext(Dispatchers.Main) {
-                        if (showFraction) {
+                        if (showFraction && '.' in calculation) {
+                            val tView = findViewById<TextView>(R.id.resultDisplay)
                             val precision = getFractionPrecision().toDouble()
                             if (formattedResult != calculation) {
                                 binding.resultDisplay.text = formattedResult
                             } else {
-                                binding.resultDisplay.text =
-                                    decimalToFraction(calculationResult.toDouble(), precision)
+                                decimalToFraction(calculation, precision, tView)
                             }
+                        } else if (formattedResult != calculation){
+                            binding.resultDisplay.text = formattedResult
                         } else {
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.text = formattedResult
-                            }
+                            binding.resultDisplay.text = ""
                         }
                     }
 
@@ -1033,7 +1033,9 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     // Display result
-                    withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
+                    withContext(Dispatchers.Main) {
+                        binding.input.setText(formattedResult)
+                    }
 
                     // Set cursor
                     withContext(Dispatchers.Main) {
