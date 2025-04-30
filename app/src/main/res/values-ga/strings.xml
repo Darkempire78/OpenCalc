@@ -77,6 +77,6 @@
     <string name="settings_general_vibration_desc">Creathadh nuair a bhrúitear cnaipe</string>
     <string name="log2Desc">bonn 2 logarithm</string>
     <string name="about_dialog_donation_title">Tacaigh Linn</string>
-    <string name="menu_donate">Tacaigh Linn</string>
+    <string name="menu_donate">Tacaigh linn</string>
     <string name="about_dialog_donation_close">Dún</string>
 </resources>
