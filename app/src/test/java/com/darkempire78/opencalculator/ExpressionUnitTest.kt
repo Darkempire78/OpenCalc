@@ -189,6 +189,12 @@ class ExpressionUnitTest {
 
         result = calculate("√9", false).toDouble()
         assertEquals(3.0, result, 0.0)
+
+        result = calculate("√0.00", false).toDouble()
+        assertEquals(0.0, result, 0.0)
+
+        result = calculate("√0.0", false).toDouble()
+        assertEquals(0.0, result, 0.0)
     }
 
     @Test
