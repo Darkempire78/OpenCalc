@@ -8,23 +8,46 @@ object NumberFormatter {
         numberingSystem: NumberingSystem = NumberingSystem.INTERNATIONAL
     ): String {
         val textNoSeparator = removeSeparators(text, groupingSeparatorSymbol)
-        val numbersList = extractNumbers(textNoSeparator, decimalSeparatorSymbol)
+        val numbersList = extractString(textNoSeparator, decimalSeparatorSymbol)
         val numbersWithSeparators =
             addSeparators(numbersList, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
-        var textWithSeparators = textNoSeparator
-        numbersList.forEachIndexed { index, number ->
-            textWithSeparators =
-                textWithSeparators.replaceFirst(number, numbersWithSeparators[index])
+
+        val newString = StringBuilder()
+
+        for (item in numbersWithSeparators) {
+            newString.append(item)
         }
-        return textWithSeparators
+
+        return newString.toString()
     }
 
-    fun extractNumbers(text: String, decimalSeparatorSymbol: String): List<String> {
-        val numberRegex =
-            "(\\d+\\$decimalSeparatorSymbol\\d+)|(\\d+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol\\d+)|(\\$decimalSeparatorSymbol)|(\\d+)".toRegex()
+    // This function was changed to extract all elements from the input string, not just numbers.
+    // This returns a list of all elements. Once the numbers have had separators added, a new string
+    // can be constructed from the list.
+    private fun extractString(text: String, decimalSeparatorSymbol: String): List<String> {
+        val result = mutableListOf<String>()
+        var currentNumber = StringBuilder()
 
-        val results = numberRegex.findAll(text)
-        return results.map { it.value }.toList()
+        for (char in text) {
+            when {
+                char.isDigit() || char == decimalSeparatorSymbol.single() -> {
+                    currentNumber.append(char)
+                }
+                else -> {
+                    if (currentNumber.isNotEmpty()) {
+                        result.add(currentNumber.toString())
+                        currentNumber = StringBuilder()
+                    }
+                    result.add(char.toString())
+                }
+            }
+        }
+
+        if (currentNumber.isNotEmpty()) {
+            result.add(currentNumber.toString())
+        }
+
+        return result
     }
 
     private fun addSeparators(
