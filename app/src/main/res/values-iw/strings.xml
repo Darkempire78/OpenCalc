@@ -57,4 +57,26 @@
     <string name="settings_general_add_modulo">הוסף מקש מודולוס</string>
     <string name="settings_formatting_scientific_notation_desc">הפוך את כל התוצאות לסימון מדעי</string>
     <string name="settings_history_size">תוצאות שמורות בהיסטוריה</string>
+    <string name="about_dialog_donation_title">תמכו בנו</string>
+    <string name="about_dialog_donation_close">סגור</string>
+    <string name="squareDesc">ריבוע</string>
+    <string name="piDesc">פאי</string>
+    <string name="exponentDesc">מעריך</string>
+    <string name="factorialDesc">עצרת</string>
+    <string name="scientificModeSwitchDesc">מתג מצב מדעי</string>
+    <string name="degreeDesc">מעלה</string>
+    <string name="sineDesc">סינוס</string>
+    <string name="cosineDesc">קוסינוס</string>
+    <string name="tangentDesc">טנגנס</string>
+    <string name="invertDesc">הפונקציה ההופכית</string>
+    <string name="eDesc">e</string>
+    <string name="naturalLogarithmDesc">לוגריתם טבעי</string>
+    <string name="logarithmDesc">לוגריתם</string>
+    <string name="log2Desc">לוגריתם בבסיס 2</string>
+    <string name="clearDesc">נקה</string>
+    <string name="parenthesesDesc">סוגרים</string>
+    <string name="percentDesc">אחוז</string>
+    <string name="backspaceDesc">מחק</string>
+    <string name="pointDesc">נקודה</string>
+    <string name="menu_donate">תמכו בנו</string>
 </resources>

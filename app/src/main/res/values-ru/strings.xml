@@ -77,4 +77,8 @@
     <string name="settings_auto_save_calculation_without_equal_button">Автоматически сохранять расчёты</string>
     <string name="backspaceDesc">удалить</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Автоматически сохранять расчёты в истории без необходимости нажимать кнопку \"равно\"</string>
+    <string name="about_dialog_donation_title">Поддержите Нас</string>
+    <string name="menu_donate">Поддержите нас</string>
+    <string name="about_dialog_donation_close">Закрыть</string>
+    <string name="log2Desc">логарифм по основанию 2</string>
 </resources>
