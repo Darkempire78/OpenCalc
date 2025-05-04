@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.TableRow
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -220,6 +221,15 @@ class MainActivity : AppCompatActivity() {
         if (MyPreferences(this).useRadiansByDefault) {
             toggleDegreeMode()
         }
+
+        if (MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(2)
+            row.removeViewAt(2)
+            row.addView(backButton, 0)
+        }
+
 
         // Focus by default
         binding.input.requestFocus()
@@ -1311,5 +1321,26 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
+
+        if (MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(2)
+            if ("backspaceButton" in backButton.toString()) {
+                row.removeViewAt(2)
+                row.addView(backButton, 0)
+            }
+        } else if (!MyPreferences(this).moveBackButtonLeft
+            && resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
+            val row = findViewById<TableRow>(R.id.delRow)
+            val backButton = row.getChildAt(0)
+            // Only move if backspace is in position zero in row.
+            if ("backspaceButton" in backButton.toString()) {
+                row.removeViewAt(0)
+                row.addView(backButton, 2)
+            }
+        }
+
+
     }
 }
