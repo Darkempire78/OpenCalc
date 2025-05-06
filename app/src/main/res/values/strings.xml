@@ -167,4 +167,5 @@
     <string name="settings_auto_save_calculation_without_equal_button_desc">Automatically save calculations in history without needing to click the equal button</string>
     <string name="menu_donate">Support us</string>
     <string name="about_dialog_donation_close">Close</string>
+    <string name="no_history_available">No History Available</string>
 </resources>
