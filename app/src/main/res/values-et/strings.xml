@@ -79,4 +79,5 @@
     <string name="about_dialog_donation_close">Sulge</string>
     <string name="menu_donate">Toeta meid</string>
     <string name="about_dialog_donation_title">Toeta meid</string>
+    <string name="no_history_available">Ajalugu pole saadaval</string>
 </resources>
