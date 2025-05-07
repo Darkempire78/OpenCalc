@@ -79,4 +79,5 @@
     <string name="about_dialog_donation_title">Tacaigh Linn</string>
     <string name="menu_donate">Tacaigh linn</string>
     <string name="about_dialog_donation_close">Dún</string>
+    <string name="no_history_available">Gan Stair ar Fáil</string>
 </resources>
