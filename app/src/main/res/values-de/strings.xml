@@ -81,4 +81,5 @@
     <string name="about_dialog_donation_title">Unterstütze uns</string>
     <string name="menu_donate">Unterstütze uns</string>
     <string name="about_dialog_donation_close">Schließen</string>
+    <string name="no_history_available">Kein Verlauf verfügbar</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="about_dialog_donation_title">Підтримайте нас</string>
     <string name="about_dialog_donation_close">Закрити</string>
     <string name="menu_donate">Підтримати нас</string>
+    <string name="no_history_available">Історія відсутня</string>
 </resources>

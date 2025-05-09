@@ -79,4 +79,5 @@
     <string name="about_dialog_donation_title">Steun ons</string>
     <string name="menu_donate">Steun ons</string>
     <string name="about_dialog_donation_close">Sluiten</string>
+    <string name="no_history_available">Geen geschiedenis beschikbaar</string>
 </resources>
