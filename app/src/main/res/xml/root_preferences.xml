@@ -84,7 +84,15 @@
             app:defaultValue="true"
             app:widgetLayout="@drawable/material_switch" />
 
-
+        <SwitchPreferenceCompat
+            app:key="darkempire78.opencalculator.ADD_MODULO_BUTTON"
+            app:title="Disable Lock Screen Persistancy"
+            app:summary="@string/settings_general_add_modulo_desc"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/hashtag"
+            app:singleLineTitle="false"
+            app:defaultValue="true"
+            app:widgetLayout="@drawable/material_switch" />
 
 
         <!-- <ListPreference
