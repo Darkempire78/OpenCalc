@@ -11,7 +11,6 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -633,22 +632,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    withContext(Dispatchers.Main) {
-                        if (showFraction && '.' in calculation) {
-                            val tView = findViewById<TextView>(R.id.resultDisplay)
-                            val precision = getFractionPrecision().toDouble()
-                            if (formattedResult != calculation) {
-                                binding.resultDisplay.text = formattedResult
-                            } else {
-                                decimalToFraction(calculation, precision, tView)
-                            }
-                        } else if (formattedResult != calculation){
-                            binding.resultDisplay.text = formattedResult
-                        } else {
-                            binding.resultDisplay.text = ""
-                        }
-                    }
-
                     // Save to history if the option autoSaveCalculationWithoutEqualButton is enabled
                     if (MyPreferences(this@MainActivity).autoSaveCalculationWithoutEqualButton) {
                         if (calculation != formattedResult) {
@@ -1040,6 +1023,11 @@ class MainActivity : AppCompatActivity() {
                     // Display result
                     withContext(Dispatchers.Main) {
                         binding.input.setText(formattedResult)
+                        if (showFraction && '.' in formattedResult) {
+                            val tView = findViewById<TextView>(R.id.resultDisplay)
+                            val precision = getFractionPrecision().toDouble()
+                            decimalToFraction(formattedResult, precision, tView)
+                        }
                     }
 
                     // Set cursor
@@ -1051,7 +1039,9 @@ class MainActivity : AppCompatActivity() {
                         binding.input.isCursorVisible = false
 
                         // Clear resultDisplay
-                        binding.resultDisplay.text = ""
+                        if (!showFraction) {
+                            binding.resultDisplay.text = ""
+                        }
                     }
 
                     if (calculation != formattedResult) {
