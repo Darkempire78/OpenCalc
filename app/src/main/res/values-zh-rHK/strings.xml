@@ -18,11 +18,9 @@
     <string name="syntax_error">格式錯誤</string>
     <string name="menu_settings">設定</string>
     <string name="value_too_large">數值太大</string>
-
     <!-- Preference Titles -->
     <string name="settings_category_general">一般</string>
     <string name="settings_category_history">歷史</string>
-
     <!-- Messages Preferences -->
     <string name="settings_advanced_prevent_sleep_desc">當正在使用此程式時, 永不關掉屏幕</string>
     <string name="settings_general_vibration_desc">按下按鈕時發出震動</string>

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-
     tools:context=".activities.MainActivity">
 
     <View
@@ -119,6 +118,7 @@
         app:umanoScrollableView="@id/history_recylcle_view"
         app:umanoShadowHeight="0dp"
         tools:ignore="MissingConstraints">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -617,6 +617,7 @@
             android:background="@drawable/display_background"
             tools:context=".activities.MainActivity">
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_recylcle_view"
                 android:layout_width="match_parent"
@@ -627,6 +628,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/no_history_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/no_history_available"
+                android:textSize="18sp"
+                android:textColor="?attr/text_color"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:background="?attr/history_background_color"
+                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <View
                 android:id="@+id/history_sliding_layout_button"

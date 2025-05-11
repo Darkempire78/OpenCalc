@@ -13,8 +13,8 @@ import kotlin.math.atan
 import kotlin.math.cos
 import kotlin.math.exp
 import kotlin.math.ln
-import kotlin.math.log2
 import kotlin.math.log10
+import kotlin.math.log2
 import kotlin.math.pow
 import kotlin.math.round
 import kotlin.math.sin
@@ -89,7 +89,7 @@ class Calculator(
             syntax_error = false
             value = BigDecimal.ZERO
         } else {
-            if (parseFactor >= BigDecimal(10000)) {
+            if (parseFactor > BigDecimal(10000)) {
                 is_infinity = true
                 value = BigDecimal.ZERO
             } else {
@@ -110,7 +110,7 @@ class Calculator(
                     // To fix sqrt(2)^2 = 2
                     val decimal = value.toInt()
                     val fractional = value.toDouble() - decimal
-                    if (fractional > 0 && fractional < 1.0E-14) {
+                    if (fractional > 0 && fractional < 1.0E-30) {
                         value = decimal.toBigDecimal()
                     }
                 } else {
@@ -139,7 +139,9 @@ class Calculator(
         var x0 = BigDecimal(0)
         var x1 = value.divide(BigDecimal(2), mathContext)
 
-        while (x0 != x1) {
+        // != evaluated true when comparing 0 and 0.0
+        // This allowed the passing of 0.0 (or more trailing zeroes) to be divided.
+        while (x0 < x1 || x0 > x1) {
             x0 = x1
             x1 = value.divide(x0, mathContext).add(x0).divide(BigDecimal(2), mathContext)
         }

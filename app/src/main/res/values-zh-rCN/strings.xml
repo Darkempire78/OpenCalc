@@ -79,4 +79,5 @@
     <string name="menu_donate">支持我们</string>
     <string name="about_dialog_donation_title">支持我们</string>
     <string name="about_dialog_donation_close">关闭</string>
+    <string name="no_history_available">没有历史记录</string>
 </resources>
