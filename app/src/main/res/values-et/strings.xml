@@ -9,7 +9,7 @@
     <string name="tangentDesc">tangens</string>
     <string name="invertDesc">pööra</string>
     <string name="backspaceDesc">tagurdamisklahv</string>
-    <string name="menu_clear_history">Tühjenda ajalugu</string>
+    <string name="menu_clear_history">Kustuta ajalugu</string>
     <string name="menu_settings">Seadistused</string>
     <string name="menu_about">Rakenduse teave</string>
     <string name="settings_category_general">ÜLDIST</string>
@@ -79,4 +79,5 @@
     <string name="about_dialog_donation_close">Sulge</string>
     <string name="menu_donate">Toeta meid</string>
     <string name="about_dialog_donation_title">Toeta meid</string>
+    <string name="no_history_available">Ajalugu pole saadaval</string>
 </resources>

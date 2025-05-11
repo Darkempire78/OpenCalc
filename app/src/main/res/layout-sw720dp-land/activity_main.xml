@@ -634,6 +634,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"/>
 
+            <TextView
+                android:id="@+id/no_history_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/no_history_available"
+                android:textSize="18sp"
+                android:textColor="?attr/text_color"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:background="?attr/history_background_color"
+                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <View
                 android:id="@+id/history_sliding_layout_button"
                 android:layout_width="match_parent"

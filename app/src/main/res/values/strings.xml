@@ -75,7 +75,7 @@
     <string name="pointDesc">point</string>
 
     <!-- App menu -->
-    <string name="menu_clear_history">Clear History</string>
+    <string name="menu_clear_history">Clear history</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
 
@@ -165,8 +165,9 @@
     <string name="require_real_number">Real number required</string>
     <string name="settings_auto_save_calculation_without_equal_button">Automatically save calculations</string>
     <string name="settings_auto_save_calculation_without_equal_button_desc">Automatically save calculations in history without needing to click the equal button</string>
-    <string name="menu_donate">Support Us</string>
+    <string name="menu_donate">Support us</string>
     <string name="about_dialog_donation_close">Close</string>
     <string name="settings_general_backspace">Move Backspace to Left</string>
     <string name="settings_general_backspace_desc">Move the backspace button to far left in portrait mode. Zero and decimal slide to right.</string>
+    <string name="no_history_available">No History Available</string>
 </resources>

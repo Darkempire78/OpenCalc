@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -159,8 +160,8 @@ class MainActivity : AppCompatActivity() {
         if (historyAdapter.itemCount > 0) {
             binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
         }
-        setSwipeTouchHelperForRecyclerView()
 
+        setSwipeTouchHelperForRecyclerView()
 
         // Disable history if setting enabled
         val historySize = MyPreferences(this).historySize!!.toInt()
@@ -169,10 +170,11 @@ class MainActivity : AppCompatActivity() {
             binding.slidingLayoutButton.visibility = View.GONE
             binding.slidingLayout.isEnabled = false
         } else {
-            binding.historyRecylcleView.visibility = View.VISIBLE
             binding.slidingLayoutButton.visibility = View.VISIBLE
             binding.slidingLayout.isEnabled = true
+            checkEmptyHistoryForNoHistoryLabel()
         }
+
 
         // Set the sliding layout
         binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
@@ -366,6 +368,7 @@ class MainActivity : AppCompatActivity() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.bindingAdapterPosition
                 historyAdapter.removeHistoryElement(position)
+                checkEmptyHistoryForNoHistoryLabel()
                 deleteElementFromHistory(position)
             }
         }
@@ -408,6 +411,7 @@ class MainActivity : AppCompatActivity() {
         MyPreferences(this@MainActivity).saveHistory(mutableListOf())
         // Clear drawer
         historyAdapter.clearHistory()
+        checkEmptyHistoryForNoHistoryLabel()
     }
 
     private fun keyVibration(view: View) {
@@ -697,6 +701,7 @@ class MainActivity : AppCompatActivity() {
                                     while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
                                         historyAdapter.removeFirstHistoryElement()
                                     }
+                                    checkEmptyHistoryForNoHistoryLabel()
 
                                     // Scroll to the bottom of the recycle view
                                     binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
@@ -1082,7 +1087,7 @@ class MainActivity : AppCompatActivity() {
                                 while (historySize != -1 && historyAdapter.itemCount >= historySize && historyAdapter.itemCount > 0) {
                                     historyAdapter.removeFirstHistoryElement()
                                 }
-
+                                checkEmptyHistoryForNoHistoryLabel()
                                 // Scroll to the bottom of the recycle view
                                 binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
                             }
@@ -1242,7 +1247,11 @@ class MainActivity : AppCompatActivity() {
     private fun updateInputDisplay() {
         val expression = binding.input.text.toString()
         val formatted = NumberFormatter.format(expression, decimalSeparatorSymbol, groupingSeparatorSymbol, numberingSystem)
+        val cursorPosition = binding.input.selectionStart
         binding.input.setText(formatted)
+        // Set cursor to previous location before resume.
+        // Setting text on resume resets cursor to position 0
+        binding.input.setSelection(cursorPosition)
     }
 
     // Update settings
@@ -1310,9 +1319,9 @@ class MainActivity : AppCompatActivity() {
             binding.slidingLayoutButton.visibility = View.GONE
             binding.slidingLayout.isEnabled = false
         } else {
-            binding.historyRecylcleView.visibility = View.VISIBLE
             binding.slidingLayoutButton.visibility = View.VISIBLE
             binding.slidingLayout.isEnabled = true
+            checkEmptyHistoryForNoHistoryLabel()
         }
 
         // Disable the keyboard on display EditText
@@ -1338,5 +1347,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun checkEmptyHistoryForNoHistoryLabel() {
+        if (historyAdapter.itemCount==0) {
+            binding.historyRecylcleView.visibility = View.GONE
+            binding.noHistoryText.visibility = View.VISIBLE
+        }else {
+            binding.noHistoryText.visibility = View.GONE
+            binding.historyRecylcleView.visibility = View.VISIBLE
+        }
     }
 }
