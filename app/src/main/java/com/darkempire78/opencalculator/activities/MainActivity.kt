@@ -11,7 +11,6 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MenuItem
 import android.view.View
@@ -19,6 +18,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +33,7 @@ import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.TextSizeAdjuster
 import com.darkempire78.opencalculator.Themes
 import com.darkempire78.opencalculator.calculator.Calculator
+import com.darkempire78.opencalculator.calculator.decimalToFraction
 import com.darkempire78.opencalculator.calculator.division_by_0
 import com.darkempire78.opencalculator.calculator.domain_error
 import com.darkempire78.opencalculator.calculator.is_infinity
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
+    private var showFraction = false // default
 
     private var isStillTheSameCalculation_autoSaveCalculationWithoutEqualOption = false
     private var lastHistoryElementId = ""
@@ -412,6 +414,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private  fun getFractionPrecision(): String {
+        val fractionPrecision = MyPreferences(this).fractionPrecision
+        return fractionPrecision.toString()
+    }
+
     private fun setErrorColor(errorStatus: Boolean) {
         // Only run if the color needs to be updated
         runOnUiThread {
@@ -622,14 +629,6 @@ class MainActivity : AppCompatActivity() {
                                 groupingSeparatorSymbol,
                                 numberingSystem
                             )
-                        }
-                    }
-
-                    withContext(Dispatchers.Main) {
-                        if (formattedResult != calculation) {
-                            binding.resultDisplay.text = formattedResult
-                        } else {
-                            binding.resultDisplay.text = ""
                         }
                     }
 
@@ -1022,7 +1021,14 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     // Display result
-                    withContext(Dispatchers.Main) { binding.input.setText(formattedResult) }
+                    withContext(Dispatchers.Main) {
+                        binding.input.setText(formattedResult)
+                        if (showFraction && '.' in formattedResult) {
+                            val tView = findViewById<TextView>(R.id.resultDisplay)
+                            val precision = getFractionPrecision().toDouble()
+                            decimalToFraction(formattedResult, precision, tView)
+                        }
+                    }
 
                     // Set cursor
                     withContext(Dispatchers.Main) {
@@ -1033,7 +1039,9 @@ class MainActivity : AppCompatActivity() {
                         binding.input.isCursorVisible = false
 
                         // Clear resultDisplay
-                        binding.resultDisplay.text = ""
+                        if (!showFraction) {
+                            binding.resultDisplay.text = ""
+                        }
                     }
 
                     if (calculation != formattedResult) {
@@ -1267,6 +1275,14 @@ class MainActivity : AppCompatActivity() {
             updateResultDisplay()
             updateInputDisplay()
         }
+
+        // Show result fractions if enabled
+        if (MyPreferences(this).showResultFraction) {
+            showFraction = true
+        } else {
+            showFraction = false
+        }
+
 
         // Split the parentheses button (if option is enabled)
         if (MyPreferences(this).splitParenthesisButton) {
