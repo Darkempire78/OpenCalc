@@ -29,6 +29,7 @@ class MyPreferences(context: Context) {
         private const val KEY_DELETE_HISTORY_ON_SWIPE = "darkempire78.opencalculator.DELETE_HISTORY_ELEMENT_ON_SWIPE"
         private const val KEY_AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON = "darkempire78.opencalculator.AUTO_SAVE_CALCULATION_WITHOUT_EQUAL_BUTTON"
         private const val KEY_NUMBERING_SYSTEM = "darkempire78.opencalculator.NUMBERING_SYSTEM"
+        private const val KEY_SHOW_ON_LOCK_SCREEN = "darkempire78.opencalculator.KEY_SHOW_ON_LOCK_SCREEN"
     }
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -69,7 +70,8 @@ class MyPreferences(context: Context) {
     var numberingSystem = preferences.getInt(KEY_NUMBERING_SYSTEM, 0)
         set(value) = preferences.edit().putInt(KEY_NUMBERING_SYSTEM, value).apply()
 
-
+    var showOnLockScreen = preferences.getBoolean(KEY_SHOW_ON_LOCK_SCREEN, true)
+        set(value) = preferences.edit().putBoolean(KEY_SHOW_ON_LOCK_SCREEN, value).apply()
 
 
     fun getHistory(): MutableList<History> {
