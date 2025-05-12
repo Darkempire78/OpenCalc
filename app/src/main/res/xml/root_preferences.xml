@@ -102,6 +102,7 @@
 
         <SwitchPreferenceCompat
             app:defaultValue="false"
+            app:icon="@drawable/ftfrac"
             app:key="darkempire78.opencalculator.SHOW_FRACTION"
             app:summary="@string/settings_fractions_use_desc"
             app:title="@string/settings_fractions_use"
@@ -110,7 +111,7 @@
             app:defaultValue="2"
             app:entries="@array/fraction_precision_entries"
             app:entryValues="@array/fraction_precision_values"
-            app:icon="@drawable/precision"
+            app:icon="@drawable/fracprec"
             app:key="darkempire78.opencalculator.FRACTION_PRECISION"
             app:summary="@string/settings_fractions_precision_desc"
             app:title="@string/settings_fractions_precision" />

@@ -38,10 +38,10 @@ fun decimalToFraction(calculation: String, precision: Double, textView: TextView
         val stringLen = stringSpan.length
         stringSpan.setSpan(SuperscriptSpan(),spaceLoc, stringLen, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         stringSpan.setSpan(RelativeSizeSpan(0.6f),spaceLoc, stringLen, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        textView.setText(stringSpan)
+        textView.text = stringSpan
     } else {
         val tempString = "$n1/$d1"
         val stringSpan = SpannableStringBuilder(tempString)
-        textView.setText(stringSpan)
+        textView.text = stringSpan
     }
 }
