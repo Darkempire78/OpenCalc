@@ -1341,8 +1341,6 @@ class MainActivity : AppCompatActivity() {
 
         // Enable the possibility to show the activity on the lock screen
         val canShowOnLockScreen = MyPreferences(this).showOnLockScreen
-        Log.d("canShowOnLockScreen", "onCreate: ${canShowOnLockScreen}")
-
         handleOnLockScreenAppStatus(canShowOnLockScreen)
 
     }
