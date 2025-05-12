@@ -98,6 +98,8 @@ class SettingsActivity : AppCompatActivity() {
                 openDialogNumberingSystemSelector(this.requireContext())
                 true
             }
+
+
         }
 
         private fun openDialogNumberingSystemSelector(context: Context) {
