@@ -79,4 +79,5 @@
     <string name="about_dialog_donation_title">Podpořte nás</string>
     <string name="menu_donate">Podpořte nás</string>
     <string name="about_dialog_donation_close">Zavřít</string>
+    <string name="no_history_available">Historie není k dispozici</string>
 </resources>
