@@ -79,4 +79,5 @@
     <string name="log2Desc">Logarithme base 2</string>
     <string name="about_dialog_donation_title">Nous soutenir</string>
     <string name="about_dialog_donation_close">Fermer</string>
+    <string name="no_history_available">Pas d\'historique disponible</string>
 </resources>
